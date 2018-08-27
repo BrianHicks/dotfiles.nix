@@ -1,0 +1,4 @@
+[submodule "home-manager"]
+	path = home-manager
+	url = git@github.com:rycee/home-manager
+	branch = release-18.03
