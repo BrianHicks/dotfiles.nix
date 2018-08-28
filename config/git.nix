@@ -8,10 +8,11 @@
     userEmail = "brian@brianthicks.com";
 
     aliases = {
-      st = "status";
+      aa = "add --all";
       ci = "commit";
-      di = "diff";
       dc = "diff --cached";
+      di = "diff";
+      st = "status";
     };
 
     # todo: extraConfig with lfs
