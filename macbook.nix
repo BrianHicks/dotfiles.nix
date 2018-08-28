@@ -3,6 +3,7 @@
 {
   imports = [
     ./config/git.nix
+    ./config/fzf.nix
   ];
 
   programs.man.enable = true;
