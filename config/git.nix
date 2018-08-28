@@ -29,7 +29,15 @@
       "filter \"lfs\"".required = true;
     };
 
-    # todo: global ignores
+    ignores = [
+      "*.swp"
+      "*~"
+      ".#*"
+      ".DS_Store"
+      ".python-version"
+      ".ruby-version"
+      ".vagrant"
+    ];
   };
 
   home.packages = with pkgs; [ git-lfs ];
