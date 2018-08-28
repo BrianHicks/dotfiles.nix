@@ -17,5 +17,10 @@
       size = 10000;
       share = true;
     };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "sunrise";
+    };
   };
 }
