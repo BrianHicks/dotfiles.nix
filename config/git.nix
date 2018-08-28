@@ -19,14 +19,14 @@
     };
 
     extraConfig = {
-      # REmember REbase REsults
       rerere.enabled = true;
 
-      # LFS
-      "filter \"lfs\"".clean = "git-lfs clean -- %f";
-      "filter \"lfs\"".smudge = "git-lfs smudge -- %f";
-      "filter \"lfs\"".process = "git-lfs filter-process";
-      "filter \"lfs\"".required = true;
+      "filter \"lfs\"" = { 
+        clean = "git-lfs clean -- %f";
+        smudge = "git-lfs smudge -- %f";
+        process = "git-lfs filter-process";
+        required = true;
+      };
     };
 
     ignores = [
