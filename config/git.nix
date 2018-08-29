@@ -28,6 +28,9 @@
         process = "git-lfs filter-process";
         required = true;
       };
+
+      # magit
+      github.user = "BrianHicks";
     };
 
     ignores = [
