@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./config/direnv.nix
     ./config/fzf.nix
     ./config/git.nix
     ./config/ssh.nix
