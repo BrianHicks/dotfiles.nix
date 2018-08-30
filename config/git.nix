@@ -38,6 +38,7 @@
       "*~"
       ".#*"
       ".DS_Store"
+      ".envrc" # long-term this may come out, since some project have it checked in.
       ".python-version"
       ".ruby-version"
       ".vagrant"
