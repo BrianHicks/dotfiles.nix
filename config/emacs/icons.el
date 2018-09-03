@@ -11,6 +11,4 @@
                 "i" '(:ignore t :wk "inserting")
                 "ii" 'all-the-icons-insert))
 
-(provide 'icons)
-
 ;;; icons.el ends here

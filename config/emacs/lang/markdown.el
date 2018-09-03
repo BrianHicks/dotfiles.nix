@@ -15,6 +15,4 @@
                  "e" '(:ignore t :wk "edit")
                  "et" 'markdown-toc-generate-or-refresh-toc))
 
-(provide 'markdown)
-
 ;;; markdown.el ends here

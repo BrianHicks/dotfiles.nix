@@ -15,6 +15,4 @@
   :config
   (add-hook 'js2-mode-hook 'prettier-js-mode))
 
-(provide 'javascript)
-
 ;;; javascript.el ends here

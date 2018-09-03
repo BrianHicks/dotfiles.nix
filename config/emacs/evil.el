@@ -82,6 +82,4 @@
 (use-package evil-ediff
   :after evil)
 
-(provide 'vim)
-
 ;;; setup-evil.el ends here

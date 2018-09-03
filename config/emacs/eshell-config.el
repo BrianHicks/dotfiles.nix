@@ -35,6 +35,4 @@
 
 (add-hook 'eshell-output-filter-functions 'spacemin-eshell-remove-ansi-escapes t)
 
-(provide 'fake-shell)
-
 ;;; eshell-config.el ends here
