@@ -124,6 +124,116 @@ let
       file = ./emacs/project-nav.el;
       pkgs = epkgs: [ epkgs.yasnippet ];
     }
+
+    ## languages ##
+    {
+      file = ./emacs/lang/coffeescript.el;
+      pkgs = epkgs: [ epkgs.coffee-mode ];
+    }
+    {
+      file = ./emacs/lang/csv.el;
+      pkgs = epkgs: [ epkgs.csv-mode ];
+    }
+    {
+      file = ./emacs/lang/dockerfile.el;
+      pkgs = epkgs: [ epkgs.dockerfile-mode ];
+    }
+    {
+      file = ./emacs/lang/dockerfile.el;
+      pkgs = epkgs: [
+        epkgs.alchemist
+        epkgs.elixir-mode
+      ];
+    }
+    {
+      file = ./emacs/lang/elm.el;
+      pkgs = epkgs: [
+        epkgs.elm-mode
+        epkgs.flycheck-elm
+      ];
+    }
+    {
+      file = ./emacs/lang/graphviz.el;
+      pkgs = epkgs: [ epkgs.graphviz-dot-mode ];
+    }
+    {
+      file = ./emacs/lang/haml.el;
+      pkgs = epkgs: [ epkgs.haml-mode ];
+    }
+    {
+      file = ./emacs/lang/haskell.el;
+      pkgs = epkgs: [
+        epkgs.haskell-mode
+        epkgs.hindent
+        epkgs.hlint-refactor
+        epkgs.intero
+      ];
+    }
+    {
+      file = ./emacs/lang/html.el;
+      pkgs = epkgs: [
+        epkgs.emmet-mode
+        epkgs.web-mode
+      ];
+    }
+    {
+      file = ./emacs/lang/haml.el;
+      pkgs = epkgs: [ epkgs.idris-mode ];
+    }
+    {
+      file = ./emacs/lang/javascript.el;
+      pkgs = epkgs: [
+        epkgs.js2-mode
+        epkgs.prettier-js
+      ];
+    }
+    {
+      file = ./emacs/lang/json.el;
+      pkgs = epkgs: [ epkgs.json-mode ];
+    }
+    {
+      file = ./emacs/lang/markdown.el;
+      pkgs = epkgs: [
+        epkgs.markdown-mode
+        epkgs.markdown-toc
+      ];
+    }
+    {
+      file = ./emacs/lang/nix.el;
+      pkgs = epkgs: [ epkgs.nix-mode ];
+    }
+    {
+      file = ./emacs/lang/ruby.el;
+      pkgs = epkgs: [
+        epkgs.bundler
+        epkgs.enh-ruby-mode
+        epkgs.rake
+        epkgs.rbenv
+        epkgs.robe
+        epkgs.rspec-mode
+        epkgs.rubocop
+        epkgs.yard-mode
+      ];
+    }
+    {
+      file = ./emacs/lang/rust.el;
+      pkgs = epkgs: [ epkgs.rust-mode ];
+    }
+    {
+      file = ./emacs/lang/terraform.el;
+      pkgs = epkgs: [
+        epkgs.hcl-mode
+        epkgs.terraform-mode
+      ];
+    }
+    {
+      file = ./emacs/lang/toml.el;
+      pkgs = epkgs: [ epkgs.toml-mode ];
+    }
+    {
+      file = ./emacs/lang/yaml.el;
+      pkgs = epkgs: [ epkgs.yaml-mode ];
+    }
   ];
 in
 {
