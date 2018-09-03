@@ -2,7 +2,7 @@
 
 {
   imports = [
-    #./config/emacs.nix
+    ./config/emacs.nix
     ./config/direnv.nix
     ./config/fzf.nix
     ./config/git.nix
