@@ -240,7 +240,11 @@ let
     }
   ];
 
-  extraSystemPackages = [ pkgs.ag ];
+  extraSystemPackages = [
+    pkgs.ag
+    pkgs.ispell
+    pkgs.shellcheck
+  ];
 in
 {
   programs.emacs.enable = true;
