@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./config/emacs.nix
     ./config/direnv.nix
+    ./config/emacs.nix
     ./config/fzf.nix
     ./config/git.nix
     ./config/ssh.nix
