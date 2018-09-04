@@ -239,11 +239,13 @@ let
       pkgs = epkgs: [ epkgs.yaml-mode ];
     }
   ];
+
+  extraSystemPackages = [ pkgs.ag ];
 in
 {
   programs.emacs.enable = true;
 
-  programs.emacs.extraPackages = epkgs: builtins.concatMap (config: config.pkgs epkgs) configs;
+  programs.emacs.extraPackages = epkgs: builtins.concatMap (config: config.pkgs epkgs) configs ++ extraSystemPackages;
 
   home.file.".emacs.d/init.el" = {
     text = builtins.foldl' (soFar: config: soFar + builtins.readFile config.file + "\n") "" configs;
