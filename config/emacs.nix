@@ -50,6 +50,10 @@ let
       pkgs = epkgs: [ epkgs.evil-ediff ];
     }
     {
+      file = ./emacs/direnv.el;
+      pkgs = epkgs: [ epkgs.direnv ];
+    }
+    {
       file = ./emacs/display.el;
       pkgs = epkgs: [
         epkgs.doom-themes
