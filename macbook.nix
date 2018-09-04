@@ -11,6 +11,7 @@
   ];
 
   home.packages = [
+    pkgs.ag
     pkgs.tree
   ];
 
