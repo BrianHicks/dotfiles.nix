@@ -243,7 +243,7 @@ in
 {
   programs.emacs.enable = true;
 
-  programs.emacs.extraPackages = epkgs: builtins.concatLists (builtins.map (config: config.pkgs epkgs) configs);
+  programs.emacs.extraPackages = epkgs: builtins.concatMap (config: config.pkgs epkgs) configs;
 
   home.file.".emacs.d/init.el" = {
     text = builtins.foldl' (soFar: config: soFar + builtins.readFile config.file + "\n") "" configs;
