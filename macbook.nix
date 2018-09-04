@@ -10,6 +10,10 @@
     ./config/zsh.nix
   ];
 
+  home.packages = [
+    pkgs.tree
+  ];
+
   programs.man.enable = true;
 
   programs.home-manager = {
