@@ -42,6 +42,7 @@
       ".python-version"
       ".ruby-version"
       ".vagrant"
+      ".direnv"
     ];
   };
 
