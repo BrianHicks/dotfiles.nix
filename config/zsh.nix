@@ -18,7 +18,7 @@
         echo -n "$EMOJI[$RANDOM%$#EMOJI+1]"
       }
 
-      PROMPT="$(random_emoji)  %B%c%b %F{blue}»%f "
+      PROMPT="$(random_emoji) %B%F{blue}%c%f%b %F{blue}»%f "
     '';
 
     history = {
