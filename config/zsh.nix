@@ -19,6 +19,9 @@
       }
 
       PROMPT="$(random_emoji) %B%F{blue}%c%f%b %F{blue}»%f "
+
+      # add Homebrew's path. This is still needed for some things. :\
+      PATH=/usr/local/bin:$PATH
     '';
 
     history = {
