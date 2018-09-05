@@ -24,7 +24,7 @@
   (doom-themes-org-config)
 
   ;; the 't' argument here tells emacs not to confirm the load is safe
-  (load-theme 'doom-one-light t)
+  (load-theme 'doom-vibrant t)
 
   (set-face-attribute 'font-lock-comment-face nil :foreground "#828B92")
 
