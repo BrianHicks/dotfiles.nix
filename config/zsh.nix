@@ -1,5 +1,10 @@
 { pkgs, ... }:
 
+let
+  extras = [ ./zsh/jump.zsh ];
+
+  extraInitExtra = builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) "" extras;
+in
 {
   programs.zsh = {
     enable = true;
@@ -22,7 +27,7 @@
 
       # add Homebrew's path. This is still needed for some things. :\
       PATH=/usr/local/bin:$PATH
-    '';
+    '' + extraInitExtra;
 
     history = {
       # TODO: why do I need both save and size?
