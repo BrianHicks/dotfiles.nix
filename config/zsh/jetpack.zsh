@@ -1,0 +1,11 @@
+# run jetpack commands
+jetpack_dev() {
+    TARGETS=app/assets/modules
+    SELECTED=$(find "$TARGETS" -type f -name '*.js' | sed "s|$TARGETS/||g" | fzf --select-1 --query="$1")
+
+    if [[ "$?" != 0 ]]; then echo "cancelling!"; return 1; fi
+
+    npx jetpack --debug --warn $TARGETS/$SELECTED
+}
+
+alias jd=jetpack_dev

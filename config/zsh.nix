@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 let
-  extras = [ ./zsh/jump.zsh ];
+  extras = [
+    ./zsh/jetpack.zsh
+    ./zsh/jump.zsh
+    ./zsh/scripts.zsh
+  ];
 
   extraInitExtra = builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) "" extras;
 in
