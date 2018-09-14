@@ -66,10 +66,6 @@
   :config
   (setq shackle-rules '(("\\`*helm.*?\\*\\'" :regexp t :align t :size 0.4))))
 
-;; hydra lets us make nice little GUIs for common tasks like file navigation
-;; TODO: can I remove this?
-(use-package hydra)
-
 ;; hide some minor modes
 (delight 'auto-revert-mode nil "autorevert")
 (delight 'undo-tree-mode nil "undo-tree")

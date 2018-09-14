@@ -27,7 +27,6 @@ let
       file = ./emacs/basics.el;
       pkgs = epkgs: [
         epkgs.bug-hunter
-        epkgs.hydra
         epkgs.shackle
         epkgs.smartparens
         epkgs.which-key
