@@ -5,7 +5,7 @@ let
     {
       file = ./emacs/init.el;
       pkgs = epkgs: [
-    epkgs.general
+        epkgs.general
         epkgs.delight
         epkgs.use-package
       ];
