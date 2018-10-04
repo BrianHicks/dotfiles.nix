@@ -20,6 +20,11 @@ in
     # TODO: environment.pathsToLink (see home-configuration.nix man page)
 
     initExtra = ''
+      # for some reason the nix stuff isn't being source anymore since I
+      # switched to single-user mode. So we'll just source it here to make sure
+      # it's in shells by default.
+      source ~/.nix-profile/etc/profile.d/nix.sh
+
       # from https://gist.github.com/oshybystyi/2c30543cd48b2c9ecab0
       EMOJI=(🐦 🚀 🎨 🍕 🐭 ☕️ 🔬 🐷 🐼 🐶 🐧 🐳 🍔 🍻 🔮 💰 💎 💾 💜 🍪 🌞 🌍 🐌 🐓 🐏 ✈️ )
 
