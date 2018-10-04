@@ -30,27 +30,22 @@
   :config
   (add-hook 'flycheck-mode-hook 'flycheck-elm-setup))
 
-;; TODO: use Juan's newly published package instead of this
-;; (use-package elm-test-el
-;;   ;; :after 'elm-mode
+(use-package elm-test-runner
+  :after 'elm-mode
+  :general
+  (general-nvmap :prefix ","
+                 :keymaps 'elm-mode-map
+                 "t" '(:ignore t :which-key "test")
+                 "tv" 'elm-test-runner-run
+                 "tt" 'elm-test-runner-rerun
+                 "ta" 'elm-test-runner-run-project
+                 "tw" 'elm-test-runner-watch
 
-;;   :straight
-;;   (:host github :repo "juanedi/elm-test-el" :branch "master")
+                 "g" '(:ignore t :which-key "go")
+                 "gt" 'elm-test-runner-toggle-test-and-target)
 
-;;   :general
-;;   (general-nvmap :prefix ","
-;;                  :keymaps 'elm-mode-map
-;;                  "t" '(:ignore t :which-key "test")
-;;                  "tv" 'elm-test-run
-;;                  "tt" 'elm-test-rerun
-;;                  "tp" 'elm-test-run-project
-;;                  "td" 'elm-test-run-directory
-
-;;                  "g" '(:ignore t :which-key "go")
-;;                  "gt" 'elm-test-toggle-test-and-target)
-
-;;   :config
-;;   (setq elm-test-preferred-test-suffix "Spec"))
+  :config
+  (setq elm-test-runner-preferred-test-suffix "Spec"))
 
 (defun spacemin/elm-module-for-path ()
   "Figure out the module name for a path.  Useful in snippets!"

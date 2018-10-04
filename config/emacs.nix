@@ -163,6 +163,7 @@ let
       file = ./emacs/lang/elm.el;
       pkgs = epkgs: [
         epkgs.elm-mode
+        epkgs.elm-test-runner
         epkgs.flycheck-elm
       ];
     }
