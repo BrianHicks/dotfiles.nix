@@ -12,6 +12,7 @@
 
   home.packages = [
     pkgs.ag
+    pkgs.cachix
     pkgs.jq
     pkgs.tree
   ];
