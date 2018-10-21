@@ -5,7 +5,7 @@ jetpack_dev() {
 
     if [[ "$?" != 0 ]]; then echo "cancelling!"; return 1; fi
 
-    npx jetpack --debug --warn $TARGETS/$SELECTED
+    jetpack --debug --warn $TARGETS/$SELECTED
 }
 
 alias jd=jetpack_dev
