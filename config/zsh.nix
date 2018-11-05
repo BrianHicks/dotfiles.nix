@@ -4,6 +4,7 @@ let
   extras = [
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
+    ./zsh/rubofix.zsh
     ./zsh/scripts.zsh
   ];
 
