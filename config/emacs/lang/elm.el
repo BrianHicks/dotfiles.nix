@@ -25,16 +25,13 @@
 
   (add-to-list 'company-backends 'company-elm))
 
-;; TODO: `:after 'elm-mode` doesn't seem to be working! We shouldn't have to do
-;; mode declarations here.
-
 (use-package flycheck-elm
-  :mode "\\.elm\\'"
-  :config
+  :after elm-mode
+  :init
   (add-hook 'flycheck-mode-hook 'flycheck-elm-setup))
 
 (use-package elm-test-runner
-  :mode "\\.elm\\'"
+  :after elm-mode
   :general
   (general-nvmap :prefix ","
                  :keymaps 'elm-mode-map
