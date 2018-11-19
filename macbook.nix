@@ -7,6 +7,7 @@
     ./config/fzf.nix
     ./config/git.nix
     ./config/ssh.nix
+    ./config/tmux.nix
     ./config/zsh.nix
   ];
 
