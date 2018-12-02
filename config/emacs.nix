@@ -259,7 +259,7 @@ let
 in
 {
   programs.emacs.enable = true;
-  programs.emacs.package = pkgs.emacs25Macport;
+  programs.emacs.package = pkgs.emacsMacport;
   programs.emacs.extraPackages = epkgs: builtins.concatMap (config: config.pkgs epkgs) configs ++ extraSystemPackages;
 
   home.file.".emacs.d/init.el" = {
