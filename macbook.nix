@@ -17,6 +17,7 @@
     pkgs.cachix
     pkgs.jq
     pkgs.tree
+    pkgs.watch
   ];
 
   programs.man.enable = true;
