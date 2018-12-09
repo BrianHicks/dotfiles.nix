@@ -16,6 +16,7 @@
     pkgs.ag
     pkgs.cachix
     pkgs.jq
+    pkgs.pv
     pkgs.tree
     pkgs.watch
   ];
