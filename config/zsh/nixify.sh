@@ -1,6 +1,6 @@
 # copied from https://github.com/direnv/direnv/wiki/Nix
 latest_shell() {
-  LATEST_RELEASE="$(curl -Ss --head https://nixos.org/channels/nixpkgs-18.09-darwin | grep -i Location | sed -e 's/\r//g' | awk '{ print $2 }')"
+  LATEST_RELEASE="$(curl -Ss --head https://nixos.org/channels/nixpkgs-18.09-darwin | grep -i Location | tr -d $'\r' | awk '{ print $2 }')"
   GIT_REVISION="$(curl -sS "$LATEST_RELEASE/git-revision")"
   GITHUB_URL="https://github.com/nixos/nixpkgs/archive/${GIT_REVISION}.tar.gz"
   GITHUB_HASH="$(nix-prefetch-url --unpack "$GITHUB_URL")"
