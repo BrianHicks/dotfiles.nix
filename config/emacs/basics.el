@@ -128,4 +128,9 @@
 ;; bisect this configuration to find bugs
 (use-package bug-hunter)
 
+;; system keys... I don't use a lot of them, but I do want a few!
+(general-define-key
+ "M-s" 'save-buffer
+ "M-v" 'yank)
+
 ;;; basics.el ends here
