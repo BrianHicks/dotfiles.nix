@@ -1,5 +1,10 @@
 { pkgs, ... }:
 
+# hey, future me... you might be in here to override a package. But it's
+# frustrating since you can't remember the attributes. Check out this file for a
+# bunch of useful info:
+# https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/emacs-packages.nix
+
 let
   configs = [
     {
