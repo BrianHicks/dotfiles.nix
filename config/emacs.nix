@@ -162,8 +162,19 @@ let
     {
       file = ./emacs/lang/elm.el;
       pkgs = epkgs: [
+        # I want a commit of elm-test-runner that has a specific bug fix! But
+        # the bug fix isn't in the version of MELPA available in my system's
+        # nixpkgs yet. I'm grateful that overriding stuff is so easy! 😁
+        (epkgs.elm-test-runner.overrideAttrs (attrs: {
+          src = pkgs.fetchFromGitHub {
+            owner = "juanedi";
+            repo = "elm-test-runner";
+            rev = "a31d567a64d86d36e3675347abd696824a731e0c";
+            sha256 = "15kgz44ylni4anz461hihrhvg24jvd7jzykqdjacsznyphfv94m9";
+          };
+        }))
+
         epkgs.elm-mode
-        epkgs.elm-test-runner
         epkgs.flycheck-elm
       ];
     }
