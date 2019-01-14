@@ -14,7 +14,6 @@
 
   home.packages = [
     pkgs.ag
-    pkgs.cachix
     pkgs.jq
     pkgs.pv
     pkgs.tree
