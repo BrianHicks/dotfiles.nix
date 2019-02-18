@@ -14,6 +14,7 @@
 
   home.packages = [
     pkgs.ag
+    pkgs.awscli
     pkgs.jq
     pkgs.pv
     pkgs.tree
