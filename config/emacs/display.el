@@ -38,31 +38,24 @@
   (solaire-mode-swap-bg))
 
 ;; pretty modeline
-(use-package telephone-line
+(use-package powerline
   :config
-  (setq telephone-line-primary-left-separator 'telephone-line-flat
-        telephone-line-secondary-left-separator 'telephone-line-flat
-        telephone-line-primary-right-separator 'telephone-line-flat
-        telephone-line-seconary-right-separator 'telephone-line-flat
+  (powerline-default-theme))
 
-        telephone-line-height 30
+(use-package airline-themes
+  :after powerline
+  :config
+  (load-theme 'airline-doom-one t)
 
-        ;; TODO: make nice small names for all the minor modes, or diminish/delight them
-        ;; TODO: remove Git: or Git- from the branch name
-
-        ;; TODO:
-        ;; NORMAL | project (git-branch) | filename --- minors | major | position
-
-        telephone-line-lhs '((evil   . (telephone-line-evil-tag-segment))
-                             (accent . (telephone-line-vc-segment))
-                             (nil    . (telephone-line-minor-mode-segment
-                                        telephone-line-buffer-segment)))
-
-        telephone-line-rhs '((nil    . (telephone-line-misc-info-segment))
-                             (accent . (telephone-line-major-mode-segment))
-                             (evil   . (telephone-line-airline-position-segment))))
-
-  (telephone-line-mode 1))
+  (setq powerline-utf-8-separator-left        #xe0b0
+        powerline-utf-8-separator-right       #xe0b2
+        airline-utf-glyph-separator-left      #xe0b0
+        airline-utf-glyph-separator-right     #xe0b2
+        airline-utf-glyph-subseparator-left   #xe0b1
+        airline-utf-glyph-subseparator-right  #xe0b3
+        airline-utf-glyph-branch              #xe0a0
+        airline-utf-glyph-readonly            #xe0a2
+        airline-utf-glyph-linenumber          #xe0a1))
 
 ;; fonts and ligatures
 (when (window-system)

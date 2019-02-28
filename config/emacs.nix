@@ -71,10 +71,11 @@ let
     {
       file = ./emacs/display.el;
       pkgs = epkgs: [
+        epkgs.airline-themes
         epkgs.doom-themes
         epkgs.hl-todo
+        epkgs.powerline
         epkgs.solaire-mode
-        epkgs.telephone-line
       ];
     }
     {
