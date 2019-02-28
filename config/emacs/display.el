@@ -47,7 +47,8 @@
   :config
   (load-theme 'airline-doom-one t)
 
-  (setq powerline-utf-8-separator-left        #xe0b0
+  (setq airline-helm-colors                   nil
+        powerline-utf-8-separator-left        #xe0b0
         powerline-utf-8-separator-right       #xe0b2
         airline-utf-glyph-separator-left      #xe0b0
         airline-utf-glyph-separator-right     #xe0b2
