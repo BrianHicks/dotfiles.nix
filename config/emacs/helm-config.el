@@ -18,6 +18,7 @@
                  "y" '(:ignore t :wk "yanking")
                  "yp" 'helm-show-kill-ring)
 
+  (general-nmap "-" 'helm-find-files)
   :config
   (helm-mode 1)
 

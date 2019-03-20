@@ -128,11 +128,6 @@ let
       ];
     }
     {
-      file = ./emacs/project-nav.el;
-      pkgs = epkgs: [];
-      # pkgs = epkgs: [ epkgs.diredp ];
-    }
-    {
       file = ./emacs/projects.el;
       pkgs = epkgs: [
         epkgs.ag
