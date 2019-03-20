@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: case statement
+# key: cas
+# --
+case $1 of
+    $2 ->
+        $3

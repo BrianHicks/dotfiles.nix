@@ -114,4 +114,21 @@
                    components)))
     (string-join modules ".")))
 
+(defun elm-extra/elm-module-for-path ()
+  "Figure out the module name for a path.  Useful in snippets!"
+  (let* ((raw-components
+          (replace-regexp-in-string (projectile-project-root)
+                                    ""
+                                    (file-name-sans-extension (buffer-file-name))))
+
+         (components
+          (split-string raw-components "/"))
+
+         (modules
+          (remove-if
+           (lambda (component) (string-equal component (downcase component)))
+           components))
+         )
+    (string-join modules ".")))
+
 ;;; elm.el ends here

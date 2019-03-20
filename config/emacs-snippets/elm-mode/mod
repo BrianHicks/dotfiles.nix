@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: module
+# key: mod
+# --
+module ${1:`(spacemin/elm-module-for-path)`} exposing (${2:..})
+
+{-| -}
+
+$0

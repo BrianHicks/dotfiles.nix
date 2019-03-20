@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: rspec
+# key: rspec
+# --
+require 'rails_helper'
+
+describe $1 do
+end

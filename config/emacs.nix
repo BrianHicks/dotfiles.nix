@@ -268,6 +268,11 @@ let
     pkgs.ispell
     pkgs.shellcheck
   ];
+
+  extraConfig =
+  ''
+  (setq yas-snippet-dirs '("${./emacs-snippets}"))
+  '';
 in
 {
   programs.emacs.enable = true;
@@ -275,6 +280,6 @@ in
   programs.emacs.extraPackages = epkgs: builtins.concatMap (config: config.pkgs epkgs) configs ++ extraSystemPackages;
 
   home.file.".emacs.d/init.el" = {
-    text = builtins.foldl' (soFar: config: soFar + builtins.readFile config.file + "\n") "" configs;
+    text = builtins.foldl' (soFar: config: soFar + builtins.readFile config.file + "\n") extraConfig configs;
   };
 }
