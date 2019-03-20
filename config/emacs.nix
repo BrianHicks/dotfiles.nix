@@ -136,7 +136,7 @@ let
       ];
     }
     {
-      file = ./emacs/project-nav.el;
+      file = ./emacs/snippets.el;
       pkgs = epkgs: [ epkgs.yasnippet ];
     }
 
