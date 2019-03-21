@@ -2,6 +2,7 @@
 
 let
   extras = [
+    ./zsh/elm.zsh
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
     ./zsh/nixify.sh
