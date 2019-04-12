@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  home.stateVersion = "18.09";
+
   imports = [
     ./config/direnv.nix
     ./config/emacs.nix
