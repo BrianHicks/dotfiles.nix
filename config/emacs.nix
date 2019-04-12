@@ -230,6 +230,10 @@ let
       pkgs = epkgs: [ epkgs.nix-mode ];
     }
     {
+      file = ./emacs/lang/org-mode-config.el;
+      pkgs = epkgs: [];
+    }
+    {
       file = ./emacs/lang/ruby.el;
       pkgs = epkgs: [
         epkgs.bundler
