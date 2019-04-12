@@ -1,0 +1,125 @@
+* Home Manager with nix-darwin
+
+I'm going to try and combine Home Manager with nix-darwin. It does not seem
+terribly different from the instructions for NixOS
+(https://rycee.gitlab.io/home-manager/index.html). If this works out, I will
+submit instructions for doing so to the home-manager repo!
+
+I'm following nixpkgs-unstable, so my path looks like this:
+
+** adding the home-manager channel
+
+#+begin_src sh
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+#+end_src
+
+#+RESULTS:
+
+#+begin_src sh
+nix-channel --update --verbose
+#+end_src
+
+#+RESULTS:
+
+I previously installed nix-darwin using the normal method listed at https://github.com/LnL7/nix-darwin
+
+** using the home-manager channel and my config
+
+OK, I think I need to edit my config and bring it into the right place... and
+then maybe change some shell variables to point to the right activation
+functions.
+
+Let's get it into the nix-darwin config first. I'm using ~darwin-rebuild edit~
+to do this for now.
+
+The instructions say to add ~imports = [ <home-manager/nix> ];~... but that does
+not exist. Looks like it's maybe ~/nix-darwin~ now?
+
+(yes, that worked. The NixOS instructions must be wrong.)
+
+Now to add this bit:
+
+#+begin_src nix
+  users.user.brianhicks.isNormalUser = true; # todo: do I need this in nix-darwin?
+  home-manager.users.brianhicks = (builtins.callPackage /Users/brianhicks/dotfiles.nix/macbook.nix { pkgs = pkgs; });
+#+end_src
+
+ah ha! ~users.user~ is not valid in nix-darwin. Removed!
+
+Now it interprets the source OK but the ~imports~ in ~macbook.nix~ are causing
+issues. OK, let's try removing those as a test.
+
+Still having some issues, now it's complaining about overrides not being
+defined. Well that's OK, because it looks like I'm not actually supposed to call
+the package. ~home-manager.users.${username}~ is supposed to be a function of ~{
+pkgs, ... }: ...~
+
+So now it's this:
+
+#+begin_src nix
+  home-manager.users.brianhicks = (import /Users/brianhicks/dotfiles.nix/macbook.nix);
+#+end_src
+
+More issues:
+
+#+begin_src
+error: attribute 'brianhicks' missing, at /Users/brianhicks/.nix-defexpr/channels/home-manager/nix-darwin/default.nix:17:28
+(use '--show-trace' to show detailed location information)
+#+end_src
+
+#+begin_src nix
+      home.username = config.users.users.${name}.name;
+      home.homeDirectory = config.users.users.${name}.home;
+#+end_src
+
+so it looks like I need to define ~config.users.user.brianhicks~ after all? (AH HA it has to be ~users.users~)
+
+#+begin_src nix
+  users.users.brianhicks.isNormalUser = true;
+  home-manager.users.brianhicks = (import /Users/brianhicks/dotfiles.nix/macbook.nix);
+#+end_src
+
+Ah, but ~isNormalUser~ doesn't exist, so let's ry setting the attributes it's looking for above...
+
+#+begin_src nix
+  users.users.brianhicks.name = "brianhicks";
+  users.users.brianhicks.home = "/Users/brianhicks";
+  home-manager.users.brianhicks = (import /Users/brianhicks/dotfiles.nix/macbook.nix);
+#+end_src
+
+Cool! When I run ~darwin-rebuild build~, I get a reasonable-looking activation script in ~result/activate~
+
+#+begin_src
+result
+├── Applications -> /nix/store/qlms1a5rzscr4v7a37si8f7kpxmdvba5-system-applications/Applications
+├── Library
+│   ├── Fonts -> /nix/store/wv01zc1dm35cdzbsyq3p66f4mpwi1xwq-fonts/Library/Fonts
+│   ├── LaunchAgents -> /nix/store/xbmlmv5d9kgx1m636c3kk8vq86rs6hyq-launchd/Library/LaunchAgents
+│   └── LaunchDaemons -> /nix/store/xbmlmv5d9kgx1m636c3kk8vq86rs6hyq-launchd/Library/LaunchDaemons
+├── activate
+├── activate-user
+├── darwin
+├── darwin-changes
+├── darwin-version
+├── etc -> /nix/store/46427lw6jxl6iq5wxq9861vg3476jv02-etc/etc
+├── sw -> /nix/store/0f3naaxfz11z21505la3xqg860cn85qy-system-path
+├── system
+├── systemConfig
+└── user
+    └── Library
+        └── LaunchAgents -> /nix/store/xbmlmv5d9kgx1m636c3kk8vq86rs6hyq-launchd/user/Library/LaunchAgents
+
+11 directories, 6 files
+#+end_src
+
+OK, going for it! ~darwin-rebuild switch~ and it worked! WHEEEEEEEEE!
+
+Looks like I need to add an additional option for it to install packages though. Here we go:
+
+#+begin_src nix
+  home-manager.useUserPackages = true;
+#+end_src
+
+Hmm, so that seems to have not worked. Stuff I install through that like ~jq~ and ~lorri~ are not working.
+
+OK, I've got to fix this another time. Going to switch back to home-manager alone for now. But, mostly working!
