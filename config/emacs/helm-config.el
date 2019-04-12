@@ -12,6 +12,9 @@
 
                  "bb" 'helm-mini
 
+                 ;; helm meta
+                 "hr" 'helm-resume
+
                  ;; jumping prefix defined in jumping.el
                  "jj" 'helm-semantic-or-imenu
 
