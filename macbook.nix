@@ -13,10 +13,11 @@
   # services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
-  # programs.bash.enable = true;
-  # programs.zsh.enable = true;
-  # programs.fish.enable = true;
+  # Create /etc/zshrc that loads the nix-darwin environment.
+  # for some reason I need to add /run/current-system/sw/bin/zsh as the login
+  # shell for iterm. It *looks* like it should be setting the login shell but
+  # it doesn't seem to be taking effect.
+  programs.zsh.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
