@@ -28,8 +28,13 @@
   nix.maxJobs = 4;
   nix.buildCores = 4;
 
-  users.users.brianhicks.name = "brianhicks";
-  users.users.brianhicks.home = "/Users/brianhicks";
-  home-manager.useUserPackages = true;
-  home-manager.users.brianhicks = (import ./macbook-hm.nix);
+  users.users.brianhicks = {
+    name = "brianhicks";
+    home = "/Users/brianhicks";
+  };
+
+  home-manager = {
+    useUserPackages = true;
+    users.brianhicks = (import ./macbook-hm.nix);
+  };
 }
