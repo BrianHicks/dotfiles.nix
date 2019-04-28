@@ -18,6 +18,7 @@
     pkgs.jq
     pkgs.pv
     pkgs.tree
+    pkgs.vim
     pkgs.watch
 
     # local packages. I know I could use overlays for these (cf
