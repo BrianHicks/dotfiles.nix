@@ -37,9 +37,6 @@ in
 
       PROMPT="$(random_emoji)  %B%F{blue}%c%f%b %F{blue}»%f "
 
-      # add Homebrew's path. This is still needed for some things. :\
-      PATH=/usr/local/bin:$PATH
-
       # Although I use emacs for most development, prefer to make quick edits
       # (including stuff like git commit messages) in vim!
       EDITOR=vim
