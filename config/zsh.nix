@@ -35,7 +35,10 @@ in
         echo -n "$EMOJI[$RANDOM%$#EMOJI+1]"
       }
 
+      setopt PROMPT_SUBST
+
       PROMPT="$(random_emoji)  %B%F{blue}%c%f%b %F{blue}»%f "
+      RPROMPT='%F{green}$(test -f .git/HEAD && sed "s|ref: refs/heads/||g" .git/HEAD)%f'
 
       # Although I use emacs for most development, prefer to make quick edits
       # (including stuff like git commit messages) in vim!
