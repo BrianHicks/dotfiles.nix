@@ -5,6 +5,7 @@ let
     ./zsh/elm.zsh
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
+    ./zsh/kill-process.zsh
     ./zsh/nixify.sh
     ./zsh/rubofix.zsh
     ./zsh/scripts.zsh
