@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "18.09";
-
   imports = [
     ./config/direnv.nix
     ./config/emacs.nix
@@ -20,6 +18,7 @@
     pkgs.jq
     pkgs.pv
     pkgs.tree
+    pkgs.vim
     pkgs.watch
 
     # local packages. I know I could use overlays for these (cf

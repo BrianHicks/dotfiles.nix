@@ -5,6 +5,7 @@ let
     ./zsh/elm.zsh
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
+    ./zsh/kill-process.zsh
     ./zsh/nixify.sh
     ./zsh/rubofix.zsh
     ./zsh/scripts.zsh
@@ -30,10 +31,14 @@ in
         echo -n "$EMOJI[$RANDOM%$#EMOJI+1]"
       }
 
-      PROMPT="$(random_emoji)  %B%F{blue}%c%f%b %F{blue}»%f "
+      setopt PROMPT_SUBST
 
-      # add Homebrew's path. This is still needed for some things. :\
-      PATH=/usr/local/bin:$PATH
+      PROMPT="$(random_emoji)  %B%F{blue}%c%f%b %F{blue}»%f "
+      RPROMPT='%F{green}$(test -f .git/HEAD && sed "s|ref: refs/heads/||g" .git/HEAD)%f'
+
+      # Although I use emacs for most development, prefer to make quick edits
+      # (including stuff like git commit messages) in vim!
+      EDITOR=vim
     '' + extraInitExtra;
 
     history = {
