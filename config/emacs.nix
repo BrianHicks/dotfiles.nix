@@ -96,14 +96,6 @@ let
     {
       file = ./emacs/git.el;
       pkgs = epkgs: [
-        # for some reason these package aren't requiring git as an input.
-        # They're just assuming it'll be laying around on the system. Well,
-        # fine, let's provide it.  Fix courtesy of danieldk:
-        # https://github.com/danieldk/nix-home/blob/master/cfg/emacs.nix#L11
-        (epkgs.magithub.overrideAttrs (attrs: {
-          nativeBuildInputs = (attrs.nativeBuildInputs or []) ++ [ pkgs.git ];
-        }))
-
         epkgs.evil-magit
         epkgs.magit
       ];

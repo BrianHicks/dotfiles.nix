@@ -17,12 +17,6 @@
 (use-package evil-magit
   :after magit)
 
-(use-package magithub
-  :after magit
-  :config
-  (magithub-feature-autoinject t)
-  (setq magithub-clone-directory-default "~/code"))
-
 ;; TODO:
 ;;
 ;; - shortcut to jump to a Jenkins build for a branch
