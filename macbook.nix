@@ -33,8 +33,13 @@
   nix.maxJobs = 4;
   nix.buildCores = 4;
 
-  home-manager = {
-    useUserPackages = true;
-    users.brianhicks = (import ./macbook-hm.nix);
-  };
+  # I can't use home-manager with nix-darwin right now because Applications are
+  # not linked in global packages so I cannot use graphical emacs.
+  #
+  # See https://github.com/LnL7/nix-darwin/issues/139 (cf.
+  # https://github.com/rycee/home-manager/pull/702) for updates.
+  # home-manager = {
+  #   useUserPackages = true;
+  #   users.brianhicks = (import ./macbook-hm.nix);
+  # };
 }
