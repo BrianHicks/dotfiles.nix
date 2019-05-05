@@ -33,39 +33,6 @@
   nix.maxJobs = 4;
   nix.buildCores = 4;
 
-  # nix-darwin will not touch users outside this list (but users within this
-  # list will be added/removed, so be careful.) The options documentation says
-  # to not put the admin or other system users in here.
-  users.knownUsers = [ "brianhicks" ];
-
-  users.users.brianhicks = {
-    name = "brianhicks";
-    home = "/Users/brianhicks";
-
-    packages = [];
-    # packages = [
-    #   pkgs.ag
-    #   pkgs.awscli
-    #   pkgs.jq
-    #   pkgs.pv
-    #   pkgs.tree
-    #   pkgs.watch
-
-    #   # local packages. I know I could use overlays for these (cf
-    #   # https://github.com/jwoudenberg/dotfiles/commit/12bd31b269b82f0dc661140b8df275ef24f41b81)
-    #   # but I don't want to have to symlink into the overlays directory manually.
-    #   (pkgs.callPackage ./pkgs/lorri.nix { })
-    # ];
-
-    # TODO: is `uid` OK to put in here? With "brianhicks" in knownUsers,
-    # darwin-rebuild blows up without it:
-    #
-    #    error: The option `users.users.brianhicks.uid' is used but not defined.
-    #
-    # my concern is basically that it is not portable to another mac.
-    uid = 501;
-  };
-
   home-manager = {
     useUserPackages = true;
     users.brianhicks = (import ./macbook-hm.nix);
