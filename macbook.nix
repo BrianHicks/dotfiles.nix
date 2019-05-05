@@ -1,45 +1,36 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./home-manager/nix-darwin ];
-
-  environment.systemPackages = [];
-
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-
-  # Auto upgrade nix package and the daemon service.
-  # services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
-
-  # set NIX_PATH without the root user
-  nix.nixPath = [
-    "darwin-config=$HOME/dotfiles.nix/macbook.nix"
-    "$HOME/.nix-defexpr/channels"
+  imports = [
+    ./config/direnv.nix
+    ./config/emacs.nix
+    ./config/fzf.nix
+    ./config/git.nix
+    ./config/kakoune.nix
+    ./config/ssh.nix
+    ./config/tmux.nix
+    ./config/zsh.nix
   ];
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  # for some reason I need to add /run/current-system/sw/bin/zsh as the login
-  # shell for iterm. It *looks* like it should be setting the login shell but
-  # it doesn't seem to be taking effect.
-  programs.zsh.enable = true;
+  home.packages = [
+    pkgs.ag
+    pkgs.awscli
+    pkgs.jq
+    pkgs.pv
+    pkgs.tree
+    pkgs.vim
+    pkgs.watch
 
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = 3;
+    # local packages. I know I could use overlays for these (cf
+    # https://github.com/jwoudenberg/dotfiles/commit/12bd31b269b82f0dc661140b8df275ef24f41b81)
+    # but I don't want to have to symlink into the overlays directory manually.
+    (pkgs.callPackage ./pkgs/lorri.nix { })
+  ];
 
-  # You should generally set this to the total number of logical cores in your system.
-  # $ sysctl -n hw.ncpu
-  nix.maxJobs = 4;
-  nix.buildCores = 4;
+  programs.man.enable = true;
 
-  # I can't use home-manager with nix-darwin right now because Applications are
-  # not linked in global packages so I cannot use graphical emacs.
-  #
-  # See https://github.com/LnL7/nix-darwin/issues/139 (cf.
-  # https://github.com/rycee/home-manager/pull/702) for updates.
-  # home-manager = {
-  #   useUserPackages = true;
-  #   users.brianhicks = (import ./macbook-hm.nix);
-  # };
+  programs.home-manager = {
+    enable = true;
+    path = "$HOME/dotfiles.nix/home-manager";
+  };
 }
