@@ -7,11 +7,16 @@
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  environment.darwinConfig = "$HOME/dotfiles.nix/macbook.nix";
 
   # Auto upgrade nix package and the daemon service.
   # services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;
+
+  # set NIX_PATH without the root user
+  nix.nixPath = [
+    "darwin-config=$HOME/dotfiles.nix/macbook.nix"
+    "$HOME/.nix-defexpr/channels"
+  ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # for some reason I need to add /run/current-system/sw/bin/zsh as the login
