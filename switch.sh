@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ! which home-manager > /dev/null; then nix-shell ./home-manager -A install; fi
+HERE="$(realpath $(dirname $0))"
 
-home-manager -f macbook.nix $@ switch
+# TODO: restore bootstrapping logic
+
+darwin-rebuild switch -I darwin-config=$HERE/macbook.nix
