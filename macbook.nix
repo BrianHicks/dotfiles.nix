@@ -7,6 +7,7 @@
     ./config/fzf.nix
     ./config/git.nix
     ./config/kakoune.nix
+    ./config/neovim.nix
     ./config/ssh.nix
     ./config/tmux.nix
     ./config/zsh.nix
@@ -18,7 +19,6 @@
     pkgs.jq
     pkgs.pv
     pkgs.tree
-    pkgs.vim
     pkgs.watch
 
     # local packages. I know I could use overlays for these (cf
