@@ -60,7 +60,7 @@
 
 ;; fonts and ligatures
 (when (window-system)
-  (set-face-attribute 'default nil :height 130 :family "Hack")
+  (set-face-attribute 'default nil :height 140 :family "Hack")
   (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
 
 ;; transparent title bar
