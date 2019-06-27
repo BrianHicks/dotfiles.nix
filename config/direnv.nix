@@ -10,19 +10,18 @@
     use_nix() {
       eval "$(lorri direnv)"
 
-      target="$(lsof -p "$$" | grep cwd | awk '{ print $9 }')"
-      for pid in $(ps -o pid,command | grep 'lorri watch' | grep -v 'grep' | awk '{ print $1 }'); do
-        if lsof -p "$pid" | grep cwd | grep -q "$target"; then
-          echo "using existing lorri watch with pid $pid"
-          return 0;
-        fi
-      done
+      COMMAND="lorri daemon"
+      LORRI_PID="$(ps -ao pid,command | grep "$COMMAND" | grep -v grep | cut -d ' ' -f 1)"
 
-      # existing lorri watch wasn't found
-      lorri watch 2>/dev/null 1>/dev/null &
-      lorri_pid=$!
-      disown $lorri_pid
-      echo "started lorri watch with pid $lorri_pid"
+      if test -z "$LORRI_PID"; then
+        lorri daemon 2>&1 1>/tmp/lorri-daemon.log &
+        LORRI_PID=$!
+        disown "$LORRI_PID"
+        sleep 0.25
+        echo "started '$COMMAND' with PID $LORRI_PID"
+      else
+        echo "using existing '$COMMAND' with PID $LORRI_PID"
+      fi
     }
   '';
 }
