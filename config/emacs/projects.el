@@ -40,6 +40,8 @@
   :config
   (projectile-mode 1)
 
+  (setq projectile-completion-system 'helm)
+
   ;; workaround for https://github.com/bbatsov/projectile/issues/1183
   (setq projectile-mode-line
         '(:eval (format " %s " (projectile-project-name)))))
