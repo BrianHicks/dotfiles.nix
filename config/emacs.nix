@@ -87,17 +87,17 @@ let
       pkgs = epkgs: [ epkgs.origami ];
     }
     {
-      file = ./emacs/helm-config.el;
-      pkgs = epkgs: [
-        epkgs.helm
-        epkgs.helm-ag
-      ];
-    }
-    {
       file = ./emacs/git.el;
       pkgs = epkgs: [
         epkgs.evil-magit
         epkgs.magit
+      ];
+    }
+    {
+      file = ./emacs/helm-config.el;
+      pkgs = epkgs: [
+        epkgs.helm
+        epkgs.helm-ag
       ];
     }
     {
