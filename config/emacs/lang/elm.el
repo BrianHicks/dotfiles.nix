@@ -50,24 +50,6 @@
   :config
   (setq elm-test-runner-preferred-test-suffix "Spec"))
 
-(defun spacemin/elm-module-for-path ()
-  "Figure out the module name for a path.  Useful in snippets!"
-  (let* ((raw-components
-          (replace-regexp-in-string (projectile-project-root)
-                                    ""
-                                    (file-name-sans-extension (buffer-file-name))))
-
-         (components
-          (split-string raw-components "/"))
-
-         (modules
-          (remove-if
-           (lambda (component) (string-equal component (downcase component)))
-           components))
-        )
-    (string-join modules ".")))
-
-
 ;;; extra stuff from Juan: https://github.com/juanedi/.spacemacs.d/blob/master/layers/elm-extra/funcs.el
 
 (defun elm-extra/import (&optional input)
