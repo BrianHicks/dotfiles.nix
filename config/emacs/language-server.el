@@ -16,10 +16,18 @@
   (setq lsp-enable-snippet nil
         lsp-enable-indentation t))
 
+(use-package lsp-ui
+  :commands lsp-ui-mode)
+
+(use-package helm-lsp
+  :commands helm-lsp-workspace-symbol)
+
 ;: TODO:
-;; (use-package lsp-ui :commands lsp-ui-mode)
-;; (use-package company-lsp :commands company-lsp)
-;; (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 ;; xref by default for lenses? somehow turn lenses on by default.
+
+;; TODO: company-lsp was giving nonsensical results with the
+;; elm-language-server. Since I haven't ever been able to get completion to work
+;; reliably in Emacs I'm just going to leave it out. Potentailly revisit this
+;; someday.
 
 ;;; language-server.el ends here

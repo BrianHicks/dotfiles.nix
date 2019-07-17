@@ -32,7 +32,8 @@
 
                  "g" '(:ignore t :which-key "go")
                  "gg" 'lsp-find-definition
-                 "gr" 'lsp-find-references)
+                 "gr" 'lsp-find-references
+                 "gf" 'helm-lsp-workspace-symbol)
   :config
   (add-hook 'elm-mode-hook #'elm-format-on-save-mode)
   ;; (add-hook 'elm-mode-hook #'lsp-lens-show)
