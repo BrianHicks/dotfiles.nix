@@ -11,27 +11,34 @@
   :general
   (general-nvmap :prefix ","
                  :keymaps 'elm-mode-map
-                 "c" '(:ignore t :which-key "compile")
-                 "cc" 'elm-compile-buffer
+                 "l" '(:ignore t :which-key "language-server")
+                 "ll" 'lsp-describe-session
+                 "lR" 'lsp-restart-workspace
+
+                 "lw" '(:ignore t :which-key "workspace")
+                 "lww" 'lsp-workspace-folders-switch
+                 "lwa" 'lsp-workspace-folders-add
+                 "lwr" 'lsp-workspace-folders-remove
+
+                 "d" '(:ignore t :which-eky "describe")
+                 "dp" 'lsp-describe-thing-at-point
 
                  "e" '(:ignore t :which-key "edit")
+                 "ep" 'lsp-execute-code-action
+                 "ef" 'elm-format-buffer
+                 "er" 'lsp-rename
                  "ei" 'elm-extra/import
                  "eI" 'elm-extra/import-from-file
-                 "ef" 'elm-mode-format-buffer
 
-                 "y" '(:ignore t :which-key "yank")
-                 "ym" 'elm-extra/show-and-copy-module-name)
-
+                 "g" '(:ignore t :which-key "go")
+                 "gg" 'lsp-find-definition
+                 "gr" 'lsp-find-references)
   :config
-  (setq elm-tags-on-save t
-        elm-format-on-save t)
+  (add-hook 'elm-mode-hook #'elm-format-on-save-mode)
+  ;; (add-hook 'elm-mode-hook #'lsp-lens-show)
 
-  (add-to-list 'company-backends 'company-elm))
-
-(use-package flycheck-elm
-  :after elm-mode
-  :init
-  (add-hook 'flycheck-mode-hook 'flycheck-elm-setup))
+  ;;(add-to-list 'company-backends 'company-elm)
+  )
 
 (use-package elm-test-runner
   :after elm-mode
@@ -40,6 +47,7 @@
                  :keymaps 'elm-mode-map
                  "t" '(:ignore t :which-key "test")
                  "tv" 'elm-test-runner-run
+                 "td" 'elm-test-runner-run-directory
                  "tt" 'elm-test-runner-rerun
                  "ta" 'elm-test-runner-run-project
                  "tw" 'elm-test-runner-watch

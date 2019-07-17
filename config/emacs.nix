@@ -101,6 +101,23 @@ let
       ];
     }
     {
+      file = ./emacs/language-server.el;
+      pkgs = epkgs: [
+        (epkgs.lsp-mode.overrideAttrs (attrs: {
+          src = pkgs.fetchFromGitHub {
+            owner = "emacs-lsp";
+            repo = "lsp-mode";
+            rev = "b529a836d496a6517c8b602906467c6cd0be65d7";
+            sha256 = "0sfvgzskfmi1ql0nwgq3m7v8jskk34ab9i0a3fxi3a6y2lz7m7is";
+          };
+        }))
+
+        epkgs.company-lsp
+        epkgs.helm-lsp
+        epkgs.lsp-ui
+      ];
+    }
+    {
       file = ./emacs/icons.el;
       pkgs = epkgs: [ epkgs.all-the-icons ];
     }
@@ -168,7 +185,7 @@ let
         }))
 
         epkgs.elm-mode
-        epkgs.flycheck-elm
+        # epkgs.flycheck-elm
       ];
     }
     {

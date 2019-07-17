@@ -1,11 +1,7 @@
 { pkgs, ... }:
 
 let
-  brianhicks-nur = import (builtins.fetchTarball rec {
-    name = "brianhicks-nur";
-    url = "https://github.com/BrianHicks/nur-packages/archive/034ea19d72e0efd8d17639ae3258b5c07b9f6f18.tar.gz";
-    sha256 = "16l9cy0kan6vl15n9kzff947nfxy8f00i6fgh9qn5y2zrmad2y1n";
-  }) {};
+  brianhicks-nur = import (builtins.fetchTarball "https://github.com/BrianHicks/nur-packages/archive/4d10cde0e0cc519c624b7fd0d43ee98d261056ff.tar.gz") { };
 in
   {
     imports = [
@@ -27,6 +23,8 @@ in
       pkgs.pv
       pkgs.tree
       pkgs.watch
+
+      # language servers
       brianhicks-nur.elm-language-server
 
       # local packages. I know I could use overlays for these (cf
