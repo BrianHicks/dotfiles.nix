@@ -17,7 +17,7 @@
                  "e" '(:ignore t :which-key "edit")
                  "ei" 'elm-extra/import
                  "eI" 'elm-extra/import-from-file
-                 "ef" 'elm-mode-format-buffer
+                 "ef" 'elm-format-buffer
 
                  "y" '(:ignore t :which-key "yank")
                  "ym" 'elm-extra/show-and-copy-module-name)
