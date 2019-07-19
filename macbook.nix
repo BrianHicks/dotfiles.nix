@@ -8,7 +8,6 @@
     ./config/git.nix
     ./config/neovim.nix
     ./config/ssh.nix
-    ./config/tmux.nix
     ./config/zsh.nix
   ];
 
