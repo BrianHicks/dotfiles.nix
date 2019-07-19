@@ -6,7 +6,6 @@
     ./config/emacs.nix
     ./config/fzf.nix
     ./config/git.nix
-    ./config/kakoune.nix
     ./config/neovim.nix
     ./config/ssh.nix
     ./config/tmux.nix
