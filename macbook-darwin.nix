@@ -3,13 +3,14 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [ pkgs.emacs
-    ];
+  environment.systemPackages = [];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/macbook-darwin.nix
   environment.darwinConfig = "$HOME/dotfiles.nix/macbook-darwin.nix";
+
+  # allow zsh as a login shell
+  environment.shells = [ pkgs.zsh ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
