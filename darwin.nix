@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  macbook = import ./macbook.nix;
+  dotfiles = import ./dotfiles.nix;
 in
   {
     imports = [
@@ -14,7 +14,7 @@ in
 
     # Use a custom configuration.nix location.
     # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/macbook-darwin.nix
-    environment.darwinConfig = "$HOME/dotfiles.nix/macbook-darwin.nix";
+    environment.darwinConfig = "$HOME/dotfiles.nix/darwin.nix";
 
     # allow zsh as a login shell
     environment.shells = [ pkgs.zsh ];
@@ -39,6 +39,6 @@ in
 
     home-manager = {
       useUserPackages = true;
-      users.brianhicks = macbook;
+      users.brianhicks = dotfiles;
     };
   }
