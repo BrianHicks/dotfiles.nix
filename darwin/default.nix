@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 let
-  dotfiles = import ./dotfiles;
+  dotfiles = import ../dotfiles;
 in
   {
     imports = [
-      ./home-manager/nix-darwin
+      ../home-manager/nix-darwin
     ];
 
     # List packages installed in system profile. To search by name, run:
@@ -13,8 +13,8 @@ in
     environment.systemPackages = [];
 
     # Use a custom configuration.nix location.
-    # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/macbook-darwin.nix
-    environment.darwinConfig = "$HOME/dotfiles.nix/darwin.nix";
+    # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/darwin/default.nix
+    environment.darwinConfig = "$HOME/dotfiles.nix/darwin/default.nix";
 
     # allow zsh as a login shell
     environment.shells = [ pkgs.zsh ];
