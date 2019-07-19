@@ -8,8 +8,8 @@
     ];
 
   # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
+  # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/macbook-darwin.nix
+  environment.darwinConfig = "$HOME/dotfiles.nix/macbook-darwin.nix";
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
