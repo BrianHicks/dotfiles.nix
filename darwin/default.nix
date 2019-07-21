@@ -7,6 +7,7 @@ in
     imports = [
       ../home-manager/nix-darwin
       ./lorri.nix
+      ./defaults.nix
     ];
 
     # List packages installed in system profile. To search by name, run:
