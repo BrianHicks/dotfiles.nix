@@ -10,6 +10,7 @@ in
     path = [
       lorri
       pkgs.nix
+      pkgs.gnutar
     ];
 
     serviceConfig = {
