@@ -36,6 +36,12 @@
   nix.maxJobs = 8;
   nix.buildCores = 8;
 
+  # fonts
+  fonts = {
+    enableFontDir = true;
+    fonts = [ pkgs.hack-font ];
+  };
+
   # dotfiles
   home-manager = {
     useUserPackages = true;
