@@ -31,7 +31,7 @@
       ApplePressAndHoldEnabled = false;
 
       # Set a very fast keyboard repeat rate
-      KeyRepeat = 1;
+      KeyRepeat = 2;
       InitialKeyRepeat = 10;
 
       # Enable subpixel font rendering on non-Apple LCDs
