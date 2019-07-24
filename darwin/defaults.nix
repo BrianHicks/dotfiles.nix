@@ -57,7 +57,7 @@
 
     dock = {
       # set the icon size of all dock items
-      tilesize = 45;
+      tilesize = 30;
 
       # enable spring loading (hold a dragged file over an icon to drop/open it there)
       enable-spring-load-actions-on-all-items = true;
