@@ -17,9 +17,7 @@
 
       # TODO: does this have to be called myVimPackage? Why? Seems to be in
       # `pkgs.wrapNeovim`
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ vim-surround ];
-      };
+      packages.myVimPackage = with pkgs.vimPlugins; { start = [ vim-surround ]; };
     };
   };
 }

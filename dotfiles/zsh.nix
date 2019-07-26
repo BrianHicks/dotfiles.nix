@@ -14,8 +14,7 @@ let
   ];
 
   extraInitExtra = builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) "" extras;
-in
-{
+in {
   programs.zsh = {
     enable = true;
 

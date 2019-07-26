@@ -9,11 +9,7 @@ let
   configs = [
     {
       file = ./emacs/init.el;
-      pkgs = epkgs: [
-        epkgs.general
-        epkgs.delight
-        epkgs.use-package
-      ];
+      pkgs = epkgs: [ epkgs.general epkgs.delight epkgs.use-package ];
     }
     {
       file = ./emacs/evil.el;
@@ -22,9 +18,9 @@ let
         # fail to build. We'll patch it out for now and hope it gets fixed in a
         # future version.
         (epkgs.evil-escape.overrideAttrs (attrs: {
-          patches = (attrs.patches or []) ++ [
+          patches = (attrs.patches or [ ]) ++ [
             (pkgs.fetchpatch {
-              url = https://github.com/BrianHicks/evil-escape/commit/b548e8450570a0c8dea47b47221b728c047a9baf.patch;
+              url = "https://github.com/BrianHicks/evil-escape/commit/b548e8450570a0c8dea47b47221b728c047a9baf.patch";
               sha256 = "1a2qrf4bpj7wm84qa3haqdg3pd9d8nh5vrj8v1sc0j1a9jifsbf6";
             })
           ];
@@ -41,24 +37,15 @@ let
     }
     {
       file = ./emacs/basics.el;
-      pkgs = epkgs: [
-        epkgs.bug-hunter
-        epkgs.shackle
-        epkgs.smartparens
-        epkgs.which-key
-        epkgs.exec-path-from-shell
-      ];
+      pkgs = epkgs: [ epkgs.bug-hunter epkgs.shackle epkgs.smartparens epkgs.which-key epkgs.exec-path-from-shell ];
     }
     {
       file = ./emacs/compilation.el;
-      pkgs = epkgs: [];
+      pkgs = epkgs: [ ];
     }
     {
       file = ./emacs/completion.el;
-      pkgs = epkgs: [
-        epkgs.company
-        epkgs.company-statistics
-      ];
+      pkgs = epkgs: [ epkgs.company epkgs.company-statistics ];
     }
     {
       file = ./emacs/diffing.el;
@@ -70,17 +57,11 @@ let
     }
     {
       file = ./emacs/display.el;
-      pkgs = epkgs: [
-        epkgs.airline-themes
-        epkgs.doom-themes
-        epkgs.hl-todo
-        epkgs.powerline
-        epkgs.solaire-mode
-      ];
+      pkgs = epkgs: [ epkgs.airline-themes epkgs.doom-themes epkgs.hl-todo epkgs.powerline epkgs.solaire-mode ];
     }
     {
       file = ./emacs/eshell-config.el;
-      pkgs = epkgs: [];
+      pkgs = epkgs: [ ];
     }
     {
       file = ./emacs/folding.el;
@@ -88,17 +69,11 @@ let
     }
     {
       file = ./emacs/git.el;
-      pkgs = epkgs: [
-        epkgs.evil-magit
-        epkgs.magit
-      ];
+      pkgs = epkgs: [ epkgs.evil-magit epkgs.magit ];
     }
     {
       file = ./emacs/helm-config.el;
-      pkgs = epkgs: [
-        epkgs.helm
-        epkgs.helm-ag
-      ];
+      pkgs = epkgs: [ epkgs.helm epkgs.helm-ag ];
     }
     {
       file = ./emacs/icons.el;
@@ -106,26 +81,15 @@ let
     }
     {
       file = ./emacs/jumping.el;
-      pkgs = epkgs: [
-        epkgs.ace-window
-        epkgs.avy
-      ];
+      pkgs = epkgs: [ epkgs.ace-window epkgs.avy ];
     }
     {
       file = ./emacs/linting.el;
-      pkgs = epkgs: [
-        epkgs.flycheck
-        epkgs.flycheck-status-emoji
-        epkgs.flycheck-color-mode-line
-      ];
+      pkgs = epkgs: [ epkgs.flycheck epkgs.flycheck-status-emoji epkgs.flycheck-color-mode-line ];
     }
     {
       file = ./emacs/projects.el;
-      pkgs = epkgs: [
-        epkgs.ag
-        epkgs.helm-projectile
-        epkgs.projectile
-      ];
+      pkgs = epkgs: [ epkgs.ag epkgs.helm-projectile epkgs.projectile ];
     }
     {
       file = ./emacs/snippets.el;
@@ -147,10 +111,7 @@ let
     }
     {
       file = ./emacs/lang/dockerfile.el;
-      pkgs = epkgs: [
-        epkgs.alchemist
-        epkgs.elixir-mode
-      ];
+      pkgs = epkgs: [ epkgs.alchemist epkgs.elixir-mode ];
     }
     {
       file = ./emacs/lang/elm.el;
@@ -181,19 +142,11 @@ let
     }
     {
       file = ./emacs/lang/haskell.el;
-      pkgs = epkgs: [
-        epkgs.haskell-mode
-        epkgs.hindent
-        epkgs.hlint-refactor
-        epkgs.intero
-      ];
+      pkgs = epkgs: [ epkgs.haskell-mode epkgs.hindent epkgs.hlint-refactor epkgs.intero ];
     }
     {
       file = ./emacs/lang/html.el;
-      pkgs = epkgs: [
-        epkgs.emmet-mode
-        epkgs.web-mode
-      ];
+      pkgs = epkgs: [ epkgs.emmet-mode epkgs.web-mode ];
     }
     {
       file = ./emacs/lang/haml.el;
@@ -201,10 +154,7 @@ let
     }
     {
       file = ./emacs/lang/javascript.el;
-      pkgs = epkgs: [
-        epkgs.js2-mode
-        epkgs.prettier-js
-      ];
+      pkgs = epkgs: [ epkgs.js2-mode epkgs.prettier-js ];
     }
     {
       file = ./emacs/lang/json.el;
@@ -212,10 +162,7 @@ let
     }
     {
       file = ./emacs/lang/markdown.el;
-      pkgs = epkgs: [
-        epkgs.markdown-mode
-        epkgs.markdown-toc
-      ];
+      pkgs = epkgs: [ epkgs.markdown-mode epkgs.markdown-toc ];
     }
     {
       file = ./emacs/lang/nix.el;
@@ -223,7 +170,7 @@ let
     }
     {
       file = ./emacs/lang/org-mode-config.el;
-      pkgs = epkgs: [];
+      pkgs = epkgs: [ ];
     }
     {
       file = ./emacs/lang/ruby.el;
@@ -244,10 +191,7 @@ let
     }
     {
       file = ./emacs/lang/terraform.el;
-      pkgs = epkgs: [
-        epkgs.hcl-mode
-        epkgs.terraform-mode
-      ];
+      pkgs = epkgs: [ epkgs.hcl-mode epkgs.terraform-mode ];
     }
     {
       file = ./emacs/lang/toml.el;
@@ -259,18 +203,12 @@ let
     }
   ];
 
-  extraSystemPackages = [
-    pkgs.ag
-    pkgs.ispell
-    pkgs.shellcheck
-  ];
+  extraSystemPackages = [ pkgs.ag pkgs.ispell pkgs.shellcheck ];
 
-  extraConfig =
-  ''
-  (setq yas-snippet-dirs '("${./emacs-snippets}"))
+  extraConfig = ''
+    (setq yas-snippet-dirs '("${./emacs-snippets}"))
   '';
-in
-{
+in {
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacsMacport;
   programs.emacs.extraPackages = epkgs: builtins.concatMap (config: config.pkgs epkgs) configs ++ extraSystemPackages;

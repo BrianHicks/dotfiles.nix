@@ -1,17 +1,11 @@
 { pkgs, ... }:
 
-let
-  lorri = pkgs.callPackage ../pkgs/lorri.nix {};
-in
-{
+let lorri = pkgs.callPackage ../pkgs/lorri.nix { };
+in {
   launchd.user.agents.lorri = {
     command = "lorri daemon";
 
-    path = [
-      lorri
-      pkgs.nix
-      pkgs.gnutar
-    ];
+    path = [ lorri pkgs.nix pkgs.gnutar ];
 
     serviceConfig = {
       StandardErrorPath = "/usr/local/var/log/lorri.err.log";

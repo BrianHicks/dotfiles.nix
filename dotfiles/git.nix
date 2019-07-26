@@ -14,7 +14,7 @@
       co = "checkout";
       dc = "diff --cached";
       di = "diff";
-      gclone = "!\"gclone() { mkdir -p ~/code/$1; git clone git@github.com:$1.git ~/code/$1; }; gclone\"";
+      gclone = ''!"gclone() { mkdir -p ~/code/$1; git clone git@github.com:$1.git ~/code/$1; }; gclone"'';
       publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)";
       st = "status";
     };

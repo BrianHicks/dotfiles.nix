@@ -1,15 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./direnv.nix
-    ./emacs.nix
-    ./fzf.nix
-    ./git.nix
-    ./neovim.nix
-    ./ssh.nix
-    ./zsh.nix
-  ];
+  imports = [ ./direnv.nix ./emacs.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./zsh.nix ];
 
   home.packages = [
     pkgs.ag
@@ -23,6 +15,11 @@
     # https://github.com/jwoudenberg/dotfiles/commit/12bd31b269b82f0dc661140b8df275ef24f41b81)
     # but I don't want to have to symlink into the overlays directory manually.
     (pkgs.callPackage ../pkgs/lorri.nix { })
+
+    # remote packages. Probably could do this better (or use various cachix
+    # implementations) but I don't really want to.
+    (import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
+    { })
   ];
 
   programs.man.enable = true;
