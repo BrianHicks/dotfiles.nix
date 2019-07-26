@@ -16,10 +16,11 @@
     # but I don't want to have to symlink into the overlays directory manually.
     (pkgs.callPackage ../pkgs/lorri.nix { })
 
-    # remote packages. Probably could do this better (or use various cachix
-    # implementations) but I don't really want to.
+    # remote packages. Probably could do this better but I don't really want to
+    # at the moment.
     (import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { })
+    (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
   ];
 
   programs.man.enable = true;
