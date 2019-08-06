@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
-let plugins = import ./neovim/plugins.nix { inherit pkgs; };
+let
+  plugins = pkgs.callPackage ./neovim/plugins.nix { };
+
+  brian-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
+    owner = "BrianHicks";
+    repo = "nur-packages";
+    rev = "671f226ad54421832183eaa10c0b71d03dc4d7a3";
+    sha256 = "1b2hfrnvsix0j0s3jlhhgqj6pgfgl0bx5j6gy9cr3kgv46ffgggi";
+  }) { };
 in {
   programs.neovim = {
     enable = true;
@@ -80,4 +88,23 @@ in {
       };
     };
   };
+
+  home.file.".config/nvim/coc-settings.json".text = ''
+    {
+      "languageserver": {
+        "elmLS": {
+          "command": "${brian-nur.elm-language-server}/bin/elm-language-server",
+          "args": ["--stdio"],
+          "filetypes": ["elm"],
+          "rootPatterns": ["elm.json"],
+          "initializationOptions": {
+            "elmPath": "elm",
+            "elmFormatPath": "elm-format",
+            "elmTestPath": "elm-test"
+          }
+        }
+      },
+      "coc.preferences.codeLens.enable": true
+    }
+  '';
 }
