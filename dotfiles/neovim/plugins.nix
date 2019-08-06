@@ -22,6 +22,16 @@
     };
   };
 
+  neoclide."coc.nvim" = pkgs.vimUtils.buildVimPlugin {
+    name = "coc.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "neoclide";
+      repo = "coc.nvim";
+      rev = "v0.0.73";
+      sha256 = "1z7573rbh806nmkh75hr1kbhxr4jysv6k9x01fcyjfwricpa3cf7";
+    };
+  };
+
   tpope.vim-sensible = pkgs.vimUtils.buildVimPlugin {
     name = "vim-sensible";
     src = pkgs.fetchFromGitHub {
