@@ -1,15 +1,6 @@
 { pkgs, ... }:
 
-let
-  fzfDotVim = pkgs.vimUtils.buildVimPlugin {
-    name = "fzf.vim";
-    src = pkgs.fetchFromGitHub {
-      owner = "junegunn";
-      repo = "fzf.vim";
-      rev = "359a80e3a34aacbd5257713b6a88aa085337166f";
-      sha256 = "0a01g0gw59m57zizidvm9n89qh8lvj0aq4kyxy27i72ysclp3wsf";
-    };
-  };
+let plugins = import ./neovim/plugins.nix { inherit pkgs; };
 in {
   programs.neovim = {
     enable = true;
@@ -68,14 +59,16 @@ in {
       '';
 
       packages.myVimPackage = {
-        start = with pkgs.vimPlugins; [
-          vim-sensible
-          vim-surround
+        start = with plugins; [
+          tpope.vim-sensible
+          tpope.vim-surround
+
+          # fzf
           pkgs.fzf
-          fzfDotVim
+          junegunn."fzf.vim"
 
           # filetypes
-          vim-nix
+          LnL7.vim-nix
         ];
         opt = with pkgs.vimPlugins; [ ];
       };
