@@ -82,8 +82,8 @@ in {
           neoclide."coc.nvim"
 
           # filetypes
-          LnL7.vim-nix
           ElmCast.elm-vim
+          LnL7.vim-nix
         ];
         opt = with pkgs.vimPlugins; [ ];
       };
