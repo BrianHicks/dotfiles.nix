@@ -83,6 +83,7 @@ in {
 
           # filetypes
           LnL7.vim-nix
+          ElmCast.elm-vim
         ];
         opt = with pkgs.vimPlugins; [ ];
       };

@@ -2,6 +2,16 @@
 
 {
 
+  ElmCast.elm-vim = pkgs.vimUtils.buildVimPlugin {
+    name = "elm-vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "ElmCast";
+      repo = "elm-vim";
+      rev = "165107a9fd2b20c8f050fc4f977b4e41c790b1e7";
+      sha256 = "0gf7b49by0ybx3ndz7sz5dwcfnps4sz6wsr02lyarj8f8116ysy5";
+    };
+  };
+
   LnL7.vim-nix = pkgs.vimUtils.buildVimPlugin {
     name = "vim-nix";
     src = pkgs.fetchFromGitHub {
