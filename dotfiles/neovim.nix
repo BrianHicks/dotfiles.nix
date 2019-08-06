@@ -49,7 +49,7 @@ in {
         } 'git ls-files' " . @%, "sink": "edit"}))<CR>
 
         nnoremap <leader>fF :Files<CR>
-        nnoremap <leader>fb :Buffers<CR>
+        nnoremap <leader>bb :Buffers<CR>
         nnoremap <leader>fs :Ag<CR>
         nnoremap <leader>fl :Lines<CR>
         nnoremap <leader>fh :History<CR>
