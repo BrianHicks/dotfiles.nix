@@ -9,6 +9,9 @@ in {
     viAlias = true;
     vimAlias = true;
 
+    # runtimes
+    withNodeJs = true;
+
     configure = {
       customRC = ''
         inoremap fd <ESC>
@@ -66,6 +69,9 @@ in {
           # fzf
           pkgs.fzf
           junegunn."fzf.vim"
+
+          # language server
+          neoclide."coc.nvim"
 
           # filetypes
           LnL7.vim-nix
