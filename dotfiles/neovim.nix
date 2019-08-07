@@ -109,7 +109,7 @@ in {
           }
         }
       },
-      "coc.preferences.codeLens.enable": true,
+      "codeLens.enable": true,
       "vimlsp.suggest.fromVimruntime": true,
       "vimlsp.suggest.fromRuntimepath": true
     }
