@@ -97,6 +97,17 @@ in {
         nmap ]g <Plug>(coc-git-nextchunk)
         nmap gs <Plug>(coc-git-chunkinfo)
         nmap gc <Plug>(coc-git-commit)
+
+        nnoremap <leader>gS :CocCommand git.chunkStage<CR>
+        nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
+        nnoremap <leader>go :CocCommand git.browserOpen<CR>
+        nnoremap <leader>gf :CocCommand git.foldUnchanged<CR>
+        nnoremap <leader>gC :CocCommand git.copyUrl<CR>
+        nnoremap <leader>gd :CocCommand git.diffCached<CR>
+
+        nnoremap <leader>gs :CocList gstatus<CR>
+        nnoremap <leader>gl :CocList commits<CR>
+        nnoremap <leader>gb :CocList branches<CR>
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
