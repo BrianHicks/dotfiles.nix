@@ -29,7 +29,13 @@ in {
         let mapleader = " "
         let localleader = ","
 
-        color delek
+        " colors
+        " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
+        set termguicolors
+        set background=dark
+        let g:one_allow_italics = 1
+        colorscheme one
+
 
         " automatically change working directory when editing a file, so :edit
         " and friends work relatively. Causes problems with :make, which I will
@@ -79,6 +85,9 @@ in {
         start = with plugins; [
           tpope.vim-sensible
           tpope.vim-surround
+
+          # colors
+          rakr.vim-one
 
           # fzf
           pkgs.fzf

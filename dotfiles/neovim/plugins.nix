@@ -52,6 +52,16 @@
     };
   };
 
+  rakr.vim-one = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-one";
+    src = pkgs.fetchFromGitHub {
+      owner = "rakr";
+      repo = "vim-one";
+      rev = "6695e135415c53a8fbe96672e382200aa1ffb4b4";
+      sha256 = "0951r9kw23zlwd7fda6ib2d9k0akpfd2hvh82pasgw3ks9v1n2vf";
+    };
+  };
+
   tpope.vim-sensible = pkgs.vimUtils.buildVimPlugin {
     name = "vim-sensible";
     src = pkgs.fetchFromGitHub {
