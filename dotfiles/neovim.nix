@@ -81,7 +81,7 @@ in {
         set noshowmode
 
         " language server
-        let g:coc_global_extensions = [ 'coc-git' ]
+        let g:coc_global_extensions = [ 'coc-git', 'coc-json', 'coc-yaml', 'coc-html', 'coc-vimlsp' ]
 
         " git
         nmap [g <Plug>(coc-git-prevchunk)
@@ -109,7 +109,9 @@ in {
           }
         }
       },
-      "coc.preferences.codeLens.enable": true
+      "coc.preferences.codeLens.enable": true,
+      "vimlsp.suggest.fromVimruntime": true,
+      "vimlsp.suggest.fromRuntimepath": true
     }
   '';
 }
