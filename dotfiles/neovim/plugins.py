@@ -89,10 +89,12 @@ def main(args):
 
     packages.sort(key=lambda pkg: pkg.attr())
 
-    print('{ pkgs, ... }:\n\n{\n')
+    print('{ pkgs, ... }:\n\nrec {\n')
     for package in packages:
         print('resolving {}'.format(package.attr()), file=sys.stderr)
         print(textwrap.indent(str(package), '  ') + '\n', file=sys.stdout)
+    print()
+    print('  all = [ {} ];'.format(' '.join(pkg.attr() for pkg in packages)))
     print('}')
 
     with open(args.packages, 'w') as fh:

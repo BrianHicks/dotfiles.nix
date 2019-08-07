@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-{
+rec {
 
   ElmCast.elm-vim = pkgs.vimUtils.buildVimPlugin {
     name = "elm-vim";
@@ -82,4 +82,14 @@
     };
   };
 
+  all = [
+    ElmCast.elm-vim
+    LnL7.vim-nix
+    itchyny."lightline.vim"
+    junegunn."fzf.vim"
+    neoclide."coc.nvim"
+    rakr.vim-one
+    tpope.vim-sensible
+    tpope.vim-surround
+  ];
 }
