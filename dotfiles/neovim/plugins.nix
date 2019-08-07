@@ -67,8 +67,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "tpope";
       repo = "vim-sensible";
-      rev = "67fe033b2b56b6f631a4c7a1179865178665f2a4";
-      sha256 = "1jhj88n0xj6s6xjx5zs5906y6wwzr855wczk3f5myzs8z8y5cih5";
+      rev = "c176d137892f33945d3d4dd766fd21611e9b5ddf";
+      sha256 = "11adqaccwph4z5a4kyycd1gbc1l9np4za0d4fbd3cnh1zqf2xzjz";
     };
   };
 
