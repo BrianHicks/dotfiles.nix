@@ -79,32 +79,18 @@ in {
             \ 'colorscheme': 'one'
             \ }
         set noshowmode
+
+        " language server
+        let g:coc_global_extensions = [ 'coc-git' ]
+
+        " git
+        nmap [g <Plug>(coc-git-prevchunk)
+        nmap ]g <Plug>(coc-git-nextchunk)
+        nmap gs <Plug>(coc-git-chunkinfo)
+        nmap gc <Plug>(coc-git-commit)
       '';
 
-      packages.myVimPackage = {
-        start = with plugins; [
-          tpope.vim-sensible
-          tpope.vim-surround
-
-          # colors
-          rakr.vim-one
-
-          # fzf
-          pkgs.fzf
-          junegunn."fzf.vim"
-
-          # language server
-          neoclide."coc.nvim"
-
-          # statusbar
-          itchyny."lightline.vim"
-
-          # filetypes
-          ElmCast.elm-vim
-          LnL7.vim-nix
-        ];
-        opt = with pkgs.vimPlugins; [ ];
-      };
+      packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
     };
   };
 
