@@ -1,6 +1,7 @@
 [
   "https://github.com/ElmCast/elm-vim#165107a9fd2b20c8f050fc4f977b4e41c790b1e7",
   "https://github.com/LnL7/vim-nix#a3eed01f4de995a51dfdd06287e44fcb231f6adf",
+  "https://github.com/itchyny/lightline.vim#f5039419d87b76accee7000319b394ce25a0dbfb",
   "https://github.com/junegunn/fzf.vim#359a80e3a34aacbd5257713b6a88aa085337166f",
   "https://github.com/neoclide/coc.nvim#v0.0.73",
   "https://github.com/tpope/vim-sensible#67fe033b2b56b6f631a4c7a1179865178665f2a4",

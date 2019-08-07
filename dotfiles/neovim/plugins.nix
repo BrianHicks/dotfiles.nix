@@ -22,6 +22,16 @@
     };
   };
 
+  itchyny."lightline.vim" = pkgs.vimUtils.buildVimPlugin {
+    name = "lightline.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "itchyny";
+      repo = "lightline.vim";
+      rev = "f5039419d87b76accee7000319b394ce25a0dbfb";
+      sha256 = "0cfjw1jpddw92jz62ly8m6waxknj19cazff01x8drk1lr9xj6wdy";
+    };
+  };
+
   junegunn."fzf.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "fzf.vim";
     src = pkgs.fetchFromGitHub {

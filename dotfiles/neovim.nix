@@ -67,6 +67,12 @@ in {
         nnoremap <leader>fc :Commits<CR>
         nnoremap <leader>fC :BCommmits<CR>
         nnoremap <leader>fH :Helptags<CR>
+
+        " statusline
+        let g:lightline = {
+            \ 'colorscheme': 'one'
+            \ }
+        set noshowmode
       '';
 
       packages.myVimPackage = {
@@ -80,6 +86,9 @@ in {
 
           # language server
           neoclide."coc.nvim"
+
+          # statusbar
+          itchyny."lightline.vim"
 
           # filetypes
           ElmCast.elm-vim
