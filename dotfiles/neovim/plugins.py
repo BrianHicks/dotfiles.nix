@@ -7,6 +7,7 @@ import textwrap
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
+
 def escape(input_):
     if '.' in input_:
         return '"{}"'.format(input_)
@@ -14,19 +15,17 @@ def escape(input_):
 
 
 class GithubPackage:
-    def __init__(self, url):
-        self.url = url
-        self._rev = url.fragment or None
-        self._sha256 = None
+    def __init__(self, data):
+        self.data = data
 
     def __str__(self):
         return '{} = {};'.format(self.attr(), self.expression())
 
     def owner(self):
-        return self.url.path.split('/')[1]
+        return self.data['owner']
 
     def repo(self):
-        return self.url.path.split('/')[2]
+        return self.data['repo']
 
     def attr(self):
         return '{}.{}'.format(
@@ -35,17 +34,17 @@ class GithubPackage:
         )
 
     def rev(self):
-        if self._rev is None:
+        if self.data.get('rev', None) is None:
             print('determining latest hash for {}'.format(self.attr()), file=sys.stderr)
             with urlopen('https://api.github.com/repos/{}/{}/commits'.format(self.owner(), self.repo())) as resp:
-                self._rev = json.load(resp)[0]["sha"]
+                self.data['rev'] = json.load(resp)[0]["sha"]
 
-        return self._rev
+        return self.data['rev']
 
     def sha256(self):
-        if self._sha256 is None:
+        if self.data.get('sha256', None) is None:
             print('prefetching sha256 for {}'.format(self.attr()), file=sys.stderr)
-            self._sha256 = subprocess.check_output([
+            self.data['sha256'] = subprocess.check_output([
                 'nix-prefetch-url',
                 '--unpack',
                 'https://github.com/{}/{}/archive/{}.tar.gz'.format(
@@ -55,7 +54,7 @@ class GithubPackage:
                 ),
             ]).decode('utf-8').strip()
 
-        return self._sha256
+        return self.data['sha256']
 
     def expression(self):
         return textwrap.dedent('''\
@@ -76,16 +75,19 @@ class GithubPackage:
             self.sha256(),
         )
 
+
 def main(args):
     packages = []
 
-    for package in json.load(args.packages):
-        url = urlparse(package)
-        if 'github.com' in url.netloc:
-            packages.append(GithubPackage(url))
-        else:
-            print("I don't know how to resolve {}".format(package), file=sys.stderr)
-            return 1
+    with open(args.packages, 'r') as fh:
+        for package in json.load(fh):
+            if package['type'] == 'github':
+                packages.append(GithubPackage(package))
+            else:
+                print("I don't know how to resolve a {} plugin".format(package['type']), file=sys.stderr)
+                return 1
+
+    packages.sort(key=lambda pkg: pkg.attr())
 
     print('{ pkgs, ... }:\n\n{\n')
     for package in packages:
@@ -93,7 +95,14 @@ def main(args):
         print(textwrap.indent(str(package), '  ') + '\n', file=sys.stdout)
     print('}')
 
+    with open(args.packages, 'w') as fh:
+        json.dump(
+            [ pkg.data for pkg in packages ],
+            fh,
+            indent=2,
+        )
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('packages', type=open)
+    parser.add_argument('packages')
     sys.exit(main(parser.parse_args()))

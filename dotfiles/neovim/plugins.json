@@ -1,10 +1,58 @@
 [
-  "https://github.com/ElmCast/elm-vim#165107a9fd2b20c8f050fc4f977b4e41c790b1e7",
-  "https://github.com/LnL7/vim-nix#a3eed01f4de995a51dfdd06287e44fcb231f6adf",
-  "https://github.com/itchyny/lightline.vim#f5039419d87b76accee7000319b394ce25a0dbfb",
-  "https://github.com/junegunn/fzf.vim#359a80e3a34aacbd5257713b6a88aa085337166f",
-  "https://github.com/neoclide/coc.nvim#v0.0.73",
-  "https://github.com/rakr/vim-one/#6695e135415c53a8fbe96672e382200aa1ffb4b4",
-  "https://github.com/tpope/vim-sensible#67fe033b2b56b6f631a4c7a1179865178665f2a4",
-  "https://github.com/tpope/vim-surround#fab8621670f71637e9960003af28365129b1dfd0"
+  {
+    "type": "github",
+    "repo": "elm-vim",
+    "owner": "ElmCast",
+    "rev": "165107a9fd2b20c8f050fc4f977b4e41c790b1e7",
+    "sha256": "0gf7b49by0ybx3ndz7sz5dwcfnps4sz6wsr02lyarj8f8116ysy5"
+  },
+  {
+    "type": "github",
+    "owner": "LnL7",
+    "repo": "vim-nix",
+    "rev": "a3eed01f4de995a51dfdd06287e44fcb231f6adf",
+    "sha256": "0pwdfwws1dj3705m00ghw3dvym5zbm00bfsj023gmbp6vr8wn6yi"
+  },
+  {
+    "type": "github",
+    "owner": "itchyny",
+    "repo": "lightline.vim",
+    "rev": "f5039419d87b76accee7000319b394ce25a0dbfb",
+    "sha256": "0cfjw1jpddw92jz62ly8m6waxknj19cazff01x8drk1lr9xj6wdy"
+  },
+  {
+    "type": "github",
+    "owner": "junegunn",
+    "repo": "fzf.vim",
+    "rev": "359a80e3a34aacbd5257713b6a88aa085337166f",
+    "sha256": "0a01g0gw59m57zizidvm9n89qh8lvj0aq4kyxy27i72ysclp3wsf"
+  },
+  {
+    "type": "github",
+    "owner": "neoclide",
+    "repo": "coc.nvim",
+    "rev": "v0.0.73",
+    "sha256": "1z7573rbh806nmkh75hr1kbhxr4jysv6k9x01fcyjfwricpa3cf7"
+  },
+  {
+    "type": "github",
+    "owner": "rakr",
+    "repo": "vim-one",
+    "rev": "6695e135415c53a8fbe96672e382200aa1ffb4b4",
+    "sha256": "0951r9kw23zlwd7fda6ib2d9k0akpfd2hvh82pasgw3ks9v1n2vf"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
+    "repo": "vim-sensible",
+    "rev": "c176d137892f33945d3d4dd766fd21611e9b5ddf",
+    "sha256": "11adqaccwph4z5a4kyycd1gbc1l9np4za0d4fbd3cnh1zqf2xzjz"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
+    "repo": "vim-surround",
+    "rev": "fab8621670f71637e9960003af28365129b1dfd0",
+    "sha256": "0lkc0isv1cqv34qfia9mjvnp1nzz0qqy3k47z8r3xzb7dxgymkw8"
+  }
 ]
