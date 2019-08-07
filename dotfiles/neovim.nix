@@ -83,6 +83,15 @@ in {
         " language server
         let g:coc_global_extensions = [ 'coc-git', 'coc-json', 'coc-yaml', 'coc-html', 'coc-vimlsp' ]
 
+        nnoremap <leader>lR :CocRestart<CR>
+        nnoremap <leader>la :CocAction<CR>
+        nnoremap <leader>lc :CocCommand<CR>
+        nnoremap <leader>lf :CocFix<CR>
+        nnoremap <leader>li :CocInfo<CR>
+        nnoremap <leader>ll :CocList<CR>
+        nnoremap <leader>lo :CocOpenLog<CR>
+        nnoremap <leader>lr :CocListResume<CR>
+
         " git
         nmap [g <Plug>(coc-git-prevchunk)
         nmap ]g <Plug>(coc-git-nextchunk)
