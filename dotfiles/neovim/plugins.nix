@@ -53,16 +53,6 @@ rec {
     };
   };
 
-  nathanaelkane.vim-indent-guides = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-indent-guides";
-    src = pkgs.fetchFromGitHub {
-      owner = "nathanaelkane";
-      repo = "vim-indent-guides";
-      rev = "54d889a63716ee2f1818aa2ec5082db47147147b";
-      sha256 = "0ahlbjv2ibhhnf9zqn85b2sh3wf9l0kmg2qmavz3z5fmf8sqljj2";
-    };
-  };
-
   neoclide."coc.nvim" = pkgs.vimUtils.buildVimPlugin {
     name = "coc.nvim";
     src = pkgs.fetchFromGitHub {
@@ -219,7 +209,6 @@ rec {
     Raimondi.delimitMate
     itchyny."lightline.vim"
     junegunn."fzf.vim"
-    nathanaelkane.vim-indent-guides
     neoclide."coc.nvim"
     rakr.vim-one
     tpope.vim-abolish
