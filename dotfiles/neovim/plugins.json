@@ -67,6 +67,13 @@
   },
   {
     "type": "github",
+    "owner": "stefandtw",
+    "repo": "quickfix-reflector.vim",
+    "rev": "c76b7a1f496864315eea3ff2a9d02a53128bad50",
+    "sha256": "02vb7qkdprx3ksj4gwnj3j180kkdal8jky69dcjn8ivr0x8g26s8"
+  },
+  {
+    "type": "github",
     "owner": "tpope",
     "repo": "vim-abolish",
     "rev": "b95463a1cffd8fc9aff2a1ff0ae9327944948699",
