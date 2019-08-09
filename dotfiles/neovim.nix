@@ -48,7 +48,6 @@ in {
         let g:one_allow_italics = 1
         colorscheme one
 
-
         " automatically change working directory when editing a file, so :edit
         " and friends work relatively. Causes problems with :make, which I will
         " fix later.
