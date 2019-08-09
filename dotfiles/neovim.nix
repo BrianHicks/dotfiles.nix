@@ -9,6 +9,8 @@ let
     rev = "671f226ad54421832183eaa10c0b71d03dc4d7a3";
     sha256 = "1b2hfrnvsix0j0s3jlhhgqj6pgfgl0bx5j6gy9cr3kgv46ffgggi";
   }) { };
+
+  similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
 in {
   programs.neovim = {
     enable = true;
@@ -81,9 +83,7 @@ in {
           \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
         " bindings for fuzzy-finding
-        nnoremap <leader>ff :call fzf#run(fzf#wrap({"source": "${pkgs.python3}/bin/python ${
-          ./neovim/similar-sort.py
-        } 'git ls-files' " . @%, "sink": "edit"}))<CR>
+        nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%, "sink": "edit"}))<CR>
 
         nnoremap <leader>fF :Files<CR>
         nnoremap <leader>bb :Buffers<CR>
@@ -126,7 +126,7 @@ in {
         " Use `[c` and `]c` to navigate diagnostics
         nmap <silent> [c <Plug>(coc-diagnostic-prev)
         nmap <silent> ]c <Plug>(coc-diagnostic-next)
-        
+
         " Remap keys for gotos
         " TODO: find a way to only call these if the language server is active
         nmap <silent> gd <Plug>(coc-definition)
