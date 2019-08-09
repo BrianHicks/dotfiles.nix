@@ -32,6 +32,12 @@ in {
         " mouse support
         set mouse=a
 
+        " navigation
+        nnoremap <c-j> <c-w><c-j>
+        nnoremap <c-k> <c-w><c-k>
+        nnoremap <c-l> <c-w><c-l>
+        nnoremap <c-h> <c-w><c-h>
+
         " colors
         " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
         set termguicolors
