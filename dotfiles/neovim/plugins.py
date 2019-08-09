@@ -14,6 +14,14 @@ def escape(input_):
     return input_
 
 
+def attrs(kvs):
+    out = []
+    for key, value in kvs.items():
+        out.append("%s = %s;" % (escape(key), value));
+
+    return '\n'.join(out)
+
+
 class GithubPackage:
     def __init__(self, data):
         self.data = data
@@ -65,7 +73,7 @@ class GithubPackage:
                 repo = "%s";
                 rev = "%s";
                 sha256 = "%s";
-              };
+              };%s
             }
         ''') % (
             self.repo(),
@@ -73,6 +81,7 @@ class GithubPackage:
             self.repo(),
             self.rev(),
             self.sha256(),
+            textwrap.indent(attrs(self.data.get("attrs", {})), '    '),
         )
 
 
