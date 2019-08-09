@@ -25,6 +25,13 @@
   },
   {
     "type": "github",
+    "owner": "farmergreg",
+    "repo": "vim-lastplace",
+    "rev": "fbb88789b531e1fc1abe25b2f44f4f4c8a73f14d",
+    "sha256": "0661dnm0idaqy28pw03fznq5hpl2pbb4r0c1gvdmf59ywhsa2dav"
+  },
+  {
+    "type": "github",
     "owner": "itchyny",
     "repo": "lightline.vim",
     "rev": "f5039419d87b76accee7000319b394ce25a0dbfb",

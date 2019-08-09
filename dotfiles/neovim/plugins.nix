@@ -33,6 +33,16 @@ rec {
     buildInputs = [ pkgs.zip pkgs.vim ];
   };
 
+  farmergreg.vim-lastplace = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-lastplace";
+    src = pkgs.fetchFromGitHub {
+      owner = "farmergreg";
+      repo = "vim-lastplace";
+      rev = "fbb88789b531e1fc1abe25b2f44f4f4c8a73f14d";
+      sha256 = "0661dnm0idaqy28pw03fznq5hpl2pbb4r0c1gvdmf59ywhsa2dav";
+    };
+  };
+
   itchyny."lightline.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "lightline.vim";
     src = pkgs.fetchFromGitHub {
@@ -227,6 +237,7 @@ rec {
     ElmCast.elm-vim
     LnL7.vim-nix
     Raimondi.delimitMate
+    farmergreg.vim-lastplace
     itchyny."lightline.vim"
     junegunn."fzf.vim"
     neoclide."coc.nvim"
