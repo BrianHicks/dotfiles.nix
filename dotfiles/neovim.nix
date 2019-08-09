@@ -83,7 +83,10 @@ in {
           \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
         " bindings for fuzzy-finding
-        nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%, "sink": "edit"}))<CR>
+        nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                           \ "sink": "edit",
+                                                           \ "options": "--tiebreak index"
+                                                           \ }))<CR>
 
         nnoremap <leader>fF :Files<CR>
         nnoremap <leader>bb :Buffers<CR>
