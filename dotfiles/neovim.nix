@@ -156,10 +156,6 @@ in {
         nnoremap <leader>lo :CocOpenLog<CR>
         nnoremap <leader>lr :CocListResume<CR>
 
-        nnoremap <leader>er <Plug>(coc-rename)
-        xmap <leader>ef <Plug>(coc-format)
-        nmap <leader>ef <Plug>(coc-format)
-
         augroup mygroup
           autocmd!
           " Setup formatexpr specified filetype(s).
@@ -192,6 +188,16 @@ in {
 
         " gundo
         nnoremap <leader>u :GundoToggle<CR>
+
+        " editing
+        nnoremap <leader>er <Plug>(coc-rename)
+        xmap <leader>ef <Plug>(coc-format)
+        nmap <leader>ef <Plug>(coc-format)
+
+        nnoremap <leader>eD :Delete<CR>
+        nnoremap <leader>er :Rename
+        nnoremap <leader>ec :Chmod
+        nnoremap <leader>em :Mkdir
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];

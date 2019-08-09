@@ -96,6 +96,13 @@
   {
     "type": "github",
     "owner": "tpope",
+    "repo": "vim-eunuch",
+    "rev": "e066a0999e442d9d96f24ad9d203b1bd030ef72e",
+    "sha256": "12n7fzgppiwqhqnxlbxmky1m1flb82kr4zlyggysgzz1lqb122zf"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
     "repo": "vim-fugitive",
     "rev": "bc3d36e559e446d963e0b1dd832d3b39ea233241",
     "sha256": "1072ldcvp1kq5kckzxvr6g6qijf2a6ccrig1v63jydpdqmn8h6kq"
