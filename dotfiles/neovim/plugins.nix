@@ -233,6 +233,16 @@ rec {
     };
   };
 
+  wellle."visual-split.vim" = pkgs.vimUtils.buildVimPlugin {
+    name = "visual-split.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "wellle";
+      repo = "visual-split.vim";
+      rev = "423a25911b3e8da04a28d29f205e1059a06e6afa";
+      sha256 = "0n495ikgp10y105q9hackdk2gylnzcdadh7gflh94f3b9h0glj5z";
+    };
+  };
+
   all = [
     ElmCast.elm-vim
     LnL7.vim-nix
@@ -257,5 +267,6 @@ rec {
     tpope.vim-vinegar
     vim-ruby.vim-ruby
     wellle."targets.vim"
+    wellle."visual-split.vim"
   ];
 }
