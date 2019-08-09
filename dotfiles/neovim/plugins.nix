@@ -203,6 +203,16 @@ rec {
     };
   };
 
+  wellle."targets.vim" = pkgs.vimUtils.buildVimPlugin {
+    name = "targets.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "wellle";
+      repo = "targets.vim";
+      rev = "a79447f261e4b8b4327557aa03726f3849334b84";
+      sha256 = "0x6a9rmv220kncjgak6aw3gbf3sidnj6nijphnsm5360lvi3ck4w";
+    };
+  };
+
   all = [
     ElmCast.elm-vim
     LnL7.vim-nix
@@ -224,5 +234,6 @@ rec {
     tpope.vim-surround
     tpope.vim-unimpaired
     vim-ruby.vim-ruby
+    wellle."targets.vim"
   ];
 }

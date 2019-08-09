@@ -141,5 +141,12 @@
     "repo": "vim-ruby",
     "rev": "1aa8f0cd0411c093d81f4139d151f93808e53966",
     "sha256": "04ng7mjjdacajkmx20pfwlfh1h43sh6sx58id830q9jjl7kvyhhp"
+  },
+  {
+    "type": "github",
+    "owner": "wellle",
+    "repo": "targets.vim",
+    "rev": "a79447f261e4b8b4327557aa03726f3849334b84",
+    "sha256": "0x6a9rmv220kncjgak6aw3gbf3sidnj6nijphnsm5360lvi3ck4w"
   }
 ]
