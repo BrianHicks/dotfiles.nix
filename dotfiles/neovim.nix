@@ -104,6 +104,8 @@ in {
         nnoremap <leader>gC :CocCommand git.copyUrl<CR>
         nnoremap <leader>gd :CocCommand git.diffCached<CR>
 
+        nnoremap <leader>gr :Gmove<CR>
+        nnoremap <leader>gR :Gremove<CR>
         nnoremap <leader>gw :CocCommand git.chunkStage<CR>
         nnoremap <leader>gW :Gwrite<CR>
         nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
