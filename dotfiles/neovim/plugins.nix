@@ -22,6 +22,16 @@ rec {
     };
   };
 
+  Raimondi.delimitMate = pkgs.vimUtils.buildVimPlugin {
+    name = "delimitMate";
+    src = pkgs.fetchFromGitHub {
+      owner = "Raimondi";
+      repo = "delimitMate";
+      rev = "728b57a6564c1d2bdfb9b9e0f2f8c5ba3d7e0c5c";
+      sha256 = "0fskm9gz81dk8arcidrm71mv72a7isng1clssqkqn5wnygbiimsn";
+    };
+  };
+
   itchyny."lightline.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "lightline.vim";
     src = pkgs.fetchFromGitHub {
@@ -195,6 +205,7 @@ rec {
   all = [
     ElmCast.elm-vim
     LnL7.vim-nix
+    Raimondi.delimitMate
     itchyny."lightline.vim"
     junegunn."fzf.vim"
     neoclide."coc.nvim"
