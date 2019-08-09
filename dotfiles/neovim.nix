@@ -98,6 +98,7 @@ in {
         nmap gs <Plug>(coc-git-chunkinfo)
         nmap gc <Plug>(coc-git-commit)
 
+        nnoremap <leader>gb :Gblame<CR>
         nnoremap <leader>gC :CocCommand git.copyUrl<CR>
         nnoremap <leader>gd :CocCommand git.diffCached<CR>
         nnoremap <leader>gf :CocCommand git.foldUnchanged<CR>
