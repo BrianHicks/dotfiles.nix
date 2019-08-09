@@ -8,6 +8,7 @@ let
     ./zsh/jump.zsh
     ./zsh/kill-process.zsh
     ./zsh/lorri.zsh
+    ./zsh/neovim.zsh
     ./zsh/nix.zsh
     ./zsh/nixify.sh
     ./zsh/rubofix.zsh
