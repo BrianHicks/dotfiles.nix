@@ -2,8 +2,12 @@
 
 v() {
   if test -d .git; then
-    vim $(git ls-files | fzf)
+    SOURCE="$(git ls-files)"
   else
-    vim $(find . -type f | fzf)
+    SOURCE="$(find . -type f)"
   fi
+
+  files="$(fzf --preview='head -$FZF_PREVIEW_LINES {}' --select-1 --multi --query="$@" <<< "$SOURCE")"
+  if [[ "$?" != "0" ]]; then return 1; fi
+  vim $files
 }
