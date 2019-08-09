@@ -60,13 +60,6 @@
   },
   {
     "type": "github",
-    "owner": "sjl",
-    "repo": "gundo.vim",
-    "rev": "46c443ee9d5854320eb965a1fdee781ba83a070e",
-    "sha256": "0adk7agzmbfv342zw6lc8jad6yjs1wap4c0ca98s0qm2bs0r1hl2"
-  },
-  {
-    "type": "github",
     "owner": "stefandtw",
     "repo": "quickfix-reflector.vim",
     "rev": "c76b7a1f496864315eea3ff2a9d02a53128bad50",
