@@ -99,7 +99,6 @@ in {
         nmap gc <Plug>(coc-git-commit)
 
         nnoremap <leader>gs :Gstatus<CR>
-        nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
         nnoremap <leader>go :CocCommand git.browserOpen<CR>
         nnoremap <leader>gf :CocCommand git.foldUnchanged<CR>
         nnoremap <leader>gC :CocCommand git.copyUrl<CR>
@@ -107,6 +106,7 @@ in {
 
         nnoremap <leader>gw :CocCommand git.chunkStage<CR>
         nnoremap <leader>gW :Gwrite<CR>
+        nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
 
         nnoremap <leader>gl :CocList commits<CR>
         nnoremap <leader>gb :CocList branches<CR>
