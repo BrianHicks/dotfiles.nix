@@ -72,6 +72,16 @@ rec {
     };
   };
 
+  tpope.vim-repeat = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-repeat";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-repeat";
+      rev = "ae361bea990e27d5beade3a8d9fa22e25cec3100";
+      sha256 = "0myqas20r81gfvfrph4ww38db1nz32qlph7syr6ym8zl7c1fcjd4";
+    };
+  };
+
   tpope.vim-sensible = pkgs.vimUtils.buildVimPlugin {
     name = "vim-sensible";
     src = pkgs.fetchFromGitHub {
@@ -92,6 +102,16 @@ rec {
     };
   };
 
+  tpope.vim-unimpaired = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-unimpaired";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-unimpaired";
+      rev = "ab7082c0e89df594a5ba111e18af17b3377d216d";
+      sha256 = "1gvzjihkxnc84kd7sdh26kmm0rqi19xmwiisfqhf307yqyqa6lkj";
+    };
+  };
+
   all = [
     ElmCast.elm-vim
     LnL7.vim-nix
@@ -100,7 +120,9 @@ rec {
     neoclide."coc.nvim"
     rakr.vim-one
     tpope.vim-fugitive
+    tpope.vim-repeat
     tpope.vim-sensible
     tpope.vim-surround
+    tpope.vim-unimpaired
   ];
 }

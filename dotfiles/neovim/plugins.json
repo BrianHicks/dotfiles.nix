@@ -51,6 +51,13 @@
   {
     "type": "github",
     "owner": "tpope",
+    "repo": "vim-repeat",
+    "rev": "ae361bea990e27d5beade3a8d9fa22e25cec3100",
+    "sha256": "0myqas20r81gfvfrph4ww38db1nz32qlph7syr6ym8zl7c1fcjd4"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
     "repo": "vim-sensible",
     "rev": "c176d137892f33945d3d4dd766fd21611e9b5ddf",
     "sha256": "11adqaccwph4z5a4kyycd1gbc1l9np4za0d4fbd3cnh1zqf2xzjz"
@@ -61,5 +68,12 @@
     "repo": "vim-surround",
     "rev": "fab8621670f71637e9960003af28365129b1dfd0",
     "sha256": "0lkc0isv1cqv34qfia9mjvnp1nzz0qqy3k47z8r3xzb7dxgymkw8"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
+    "repo": "vim-unimpaired",
+    "rev": "ab7082c0e89df594a5ba111e18af17b3377d216d",
+    "sha256": "1gvzjihkxnc84kd7sdh26kmm0rqi19xmwiisfqhf307yqyqa6lkj"
   }
 ]
