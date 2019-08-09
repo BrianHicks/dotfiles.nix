@@ -29,6 +29,9 @@ in {
         let mapleader = " "
         let localleader = ","
 
+        " mouse support
+        set mouse=a
+
         " colors
         " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
         set termguicolors
