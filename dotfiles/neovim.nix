@@ -115,7 +115,7 @@ in {
         nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
 
         nnoremap <leader>gb :CocList branches<CR>
-        nnoremap <leader>gl :CocList commits<CR>
+        nnoremap <leader>gl :Glog<CR>
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
