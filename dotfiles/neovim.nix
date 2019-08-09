@@ -73,8 +73,7 @@ in {
             \ endif
         augroup END
 
-        "" FZF ""
-        """""""""
+        " fzf
 
         " don't show fzf statusline
         autocmd! FileType fzf
