@@ -98,6 +98,7 @@ in {
         nmap gs <Plug>(coc-git-chunkinfo)
         nmap gc <Plug>(coc-git-commit)
 
+        nnoremap <leader>gs :Gstatus<CR>
         nnoremap <leader>gS :CocCommand git.chunkStage<CR>
         nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
         nnoremap <leader>go :CocCommand git.browserOpen<CR>
@@ -105,7 +106,6 @@ in {
         nnoremap <leader>gC :CocCommand git.copyUrl<CR>
         nnoremap <leader>gd :CocCommand git.diffCached<CR>
 
-        nnoremap <leader>gs :CocList gstatus<CR>
         nnoremap <leader>gl :CocList commits<CR>
         nnoremap <leader>gb :CocList branches<CR>
       '';
