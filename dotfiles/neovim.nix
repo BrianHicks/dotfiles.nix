@@ -108,7 +108,7 @@ in {
         nnoremap <leader>go :CocCommand git.browserOpen<CR>
         nnoremap <leader>gs :Gstatus<CR>
 
-        nnoremap <leader>gr :Gmove<CR>
+        nnoremap <leader>gr :Gmove
         nnoremap <leader>gR :Gremove<CR>
         nnoremap <leader>gw :CocCommand git.chunkStage<CR>
         nnoremap <leader>gW :Gwrite<CR>
