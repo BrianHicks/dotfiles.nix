@@ -41,6 +41,10 @@ in {
         set splitbelow
         set splitright
 
+        " show stuff in the gutter
+        set signcolumn=yes
+        set number
+
         " colors
         " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
         set termguicolors
