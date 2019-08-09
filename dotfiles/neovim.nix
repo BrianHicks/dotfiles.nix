@@ -52,6 +52,12 @@ in {
         let g:one_allow_italics = 1
         colorscheme one
 
+        " delimiters
+        let delimitMate_expand_space=1
+        let delimitMate_expand_cr=1
+        let delimitMate_nesting_quotes = ['"', '`']
+        let backspace=2
+
         " automatically change working directory when editing a file, so :edit
         " and friends work relatively. Causes problems with :make, which I will
         " fix later.
