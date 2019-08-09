@@ -9,10 +9,6 @@ import "unicode/utf8"
 
 func main() {
 	target := strings.Join(os.Args[1:], " ")
-	if target == "" {
-		fmt.Println("need an argument to sort against! (just give me args)")
-		os.Exit(1)
-	}
 
 	s := bufio.NewScanner(os.Stdin)
 	var lines []WithDistance
