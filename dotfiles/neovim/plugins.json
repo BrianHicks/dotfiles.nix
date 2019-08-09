@@ -137,6 +137,13 @@
   },
   {
     "type": "github",
+    "owner": "tpope",
+    "repo": "vim-vinegar",
+    "rev": "09ac84c4d152a944caa341e913220087211c72ef",
+    "sha256": "18ki85s1l4f0q40k26jvcdcbq6a73x870dnxkw20ji3pfwdaa5v3"
+  },
+  {
+    "type": "github",
     "owner": "vim-ruby",
     "repo": "vim-ruby",
     "rev": "1aa8f0cd0411c093d81f4139d151f93808e53966",

@@ -193,6 +193,16 @@ rec {
     };
   };
 
+  tpope.vim-vinegar = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-vinegar";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-vinegar";
+      rev = "09ac84c4d152a944caa341e913220087211c72ef";
+      sha256 = "18ki85s1l4f0q40k26jvcdcbq6a73x870dnxkw20ji3pfwdaa5v3";
+    };
+  };
+
   vim-ruby.vim-ruby = pkgs.vimUtils.buildVimPlugin {
     name = "vim-ruby";
     src = pkgs.fetchFromGitHub {
@@ -233,6 +243,7 @@ rec {
     tpope.vim-sleuth
     tpope.vim-surround
     tpope.vim-unimpaired
+    tpope.vim-vinegar
     vim-ruby.vim-ruby
     wellle."targets.vim"
   ];
