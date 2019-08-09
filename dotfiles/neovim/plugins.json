@@ -60,6 +60,13 @@
   },
   {
     "type": "github",
+    "owner": "sjl",
+    "repo": "gundo.vim",
+    "rev": "46c443ee9d5854320eb965a1fdee781ba83a070e",
+    "sha256": "0adk7agzmbfv342zw6lc8jad6yjs1wap4c0ca98s0qm2bs0r1hl2"
+  },
+  {
+    "type": "github",
     "owner": "tpope",
     "repo": "vim-abolish",
     "rev": "b95463a1cffd8fc9aff2a1ff0ae9327944948699",

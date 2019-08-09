@@ -83,6 +83,16 @@ rec {
     };
   };
 
+  sjl."gundo.vim" = pkgs.vimUtils.buildVimPlugin {
+    name = "gundo.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "sjl";
+      repo = "gundo.vim";
+      rev = "46c443ee9d5854320eb965a1fdee781ba83a070e";
+      sha256 = "0adk7agzmbfv342zw6lc8jad6yjs1wap4c0ca98s0qm2bs0r1hl2";
+    };
+  };
+
   tpope.vim-abolish = pkgs.vimUtils.buildVimPlugin {
     name = "vim-abolish";
     src = pkgs.fetchFromGitHub {
@@ -262,6 +272,7 @@ rec {
     junegunn."fzf.vim"
     neoclide."coc.nvim"
     rakr.vim-one
+    sjl."gundo.vim"
     tpope.vim-abolish
     tpope.vim-bundler
     tpope.vim-commentary

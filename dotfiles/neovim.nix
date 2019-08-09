@@ -134,6 +134,9 @@ in {
 
         nnoremap <leader>gb :CocList branches<CR>
         nnoremap <leader>gl :Glog<CR>
+
+        " gundo
+        nnoremap <leader>u :GundoToggle<CR>
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
