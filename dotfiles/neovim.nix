@@ -107,7 +107,7 @@ in {
         nmap [g <Plug>(coc-git-prevchunk)
         nmap ]g <Plug>(coc-git-nextchunk)
         nmap gs <Plug>(coc-git-chunkinfo)
-        nmap gc <Plug>(coc-git-commit)
+        nmap gc :Gcommit<CR>
 
         nnoremap <leader>gb :Gblame<CR>
         nnoremap <leader>gC :CocCommand git.copyUrl<CR>
