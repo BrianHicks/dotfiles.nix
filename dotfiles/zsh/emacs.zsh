@@ -3,5 +3,3 @@
 open_emacs() {
     open -a $(dirname $(dirname $(readlink $(which emacs))))/Applications/Emacs.app
 }
-
-alias e=open_emacs
