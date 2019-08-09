@@ -1,6 +1,6 @@
 ## neovim shortcuts
 
-v() {
+find_and_edit() {
   if test -d .git; then
     SOURCE="$(git ls-files)"
   else
@@ -11,3 +11,5 @@ v() {
   if [[ "$?" != "0" ]]; then return 1; fi
   vim $files
 }
+
+alias v=find_and_edit
