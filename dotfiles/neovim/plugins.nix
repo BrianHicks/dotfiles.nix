@@ -103,6 +103,16 @@ rec {
     };
   };
 
+  tpope.vim-commentary = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-commentary";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-commentary";
+      rev = "141d9d32a9fb58fe474fcc89cd7221eb2dd57b3a";
+      sha256 = "0nncs32ayfhr557aiynq7b0sc7rxqwv7xanram53x1wvmfy14zf0";
+    };
+  };
+
   tpope.vim-endwise = pkgs.vimUtils.buildVimPlugin {
     name = "vim-endwise";
     src = pkgs.fetchFromGitHub {
@@ -254,6 +264,7 @@ rec {
     rakr.vim-one
     tpope.vim-abolish
     tpope.vim-bundler
+    tpope.vim-commentary
     tpope.vim-endwise
     tpope.vim-fugitive
     tpope.vim-projectionist

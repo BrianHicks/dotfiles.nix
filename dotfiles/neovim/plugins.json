@@ -75,6 +75,13 @@
   {
     "type": "github",
     "owner": "tpope",
+    "repo": "vim-commentary",
+    "rev": "141d9d32a9fb58fe474fcc89cd7221eb2dd57b3a",
+    "sha256": "0nncs32ayfhr557aiynq7b0sc7rxqwv7xanram53x1wvmfy14zf0"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
     "repo": "vim-endwise",
     "rev": "f67d022169bd04d3c000f47b1c03bfcbc4209470",
     "sha256": "0lq2sphh2mfciva184b4b3if202hr4yls4d2gzbjx7ibch45zb9i"
