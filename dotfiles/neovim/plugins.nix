@@ -62,6 +62,16 @@ rec {
     };
   };
 
+  tpope.vim-fugitive = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-fugitive";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-fugitive";
+      rev = "bc3d36e559e446d963e0b1dd832d3b39ea233241";
+      sha256 = "1072ldcvp1kq5kckzxvr6g6qijf2a6ccrig1v63jydpdqmn8h6kq";
+    };
+  };
+
   tpope.vim-sensible = pkgs.vimUtils.buildVimPlugin {
     name = "vim-sensible";
     src = pkgs.fetchFromGitHub {
@@ -89,6 +99,7 @@ rec {
     junegunn."fzf.vim"
     neoclide."coc.nvim"
     rakr.vim-one
+    tpope.vim-fugitive
     tpope.vim-sensible
     tpope.vim-surround
   ];

@@ -44,6 +44,13 @@
   {
     "type": "github",
     "owner": "tpope",
+    "repo": "vim-fugitive",
+    "rev": "bc3d36e559e446d963e0b1dd832d3b39ea233241",
+    "sha256": "1072ldcvp1kq5kckzxvr6g6qijf2a6ccrig1v63jydpdqmn8h6kq"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
     "repo": "vim-sensible",
     "rev": "c176d137892f33945d3d4dd766fd21611e9b5ddf",
     "sha256": "11adqaccwph4z5a4kyycd1gbc1l9np4za0d4fbd3cnh1zqf2xzjz"
