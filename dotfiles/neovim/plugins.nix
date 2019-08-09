@@ -193,6 +193,16 @@ rec {
     };
   };
 
+  tpope.vim-rsi = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-rsi";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-rsi";
+      rev = "8b7abe2d470b7fffac6562818468e14594735564";
+      sha256 = "1fvswbqd51gs4qhcabnz3zdmmlhcijs3pnbp3f2zgfi7lqvjc6s5";
+    };
+  };
+
   tpope.vim-sensible = pkgs.vimUtils.buildVimPlugin {
     name = "vim-sensible";
     src = pkgs.fetchFromGitHub {
@@ -293,6 +303,7 @@ rec {
     tpope.vim-rails
     tpope.vim-rake
     tpope.vim-repeat
+    tpope.vim-rsi
     tpope.vim-sensible
     tpope.vim-sleuth
     tpope.vim-surround

@@ -138,6 +138,13 @@
   {
     "type": "github",
     "owner": "tpope",
+    "repo": "vim-rsi",
+    "rev": "8b7abe2d470b7fffac6562818468e14594735564",
+    "sha256": "1fvswbqd51gs4qhcabnz3zdmmlhcijs3pnbp3f2zgfi7lqvjc6s5"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
     "repo": "vim-sensible",
     "rev": "c176d137892f33945d3d4dd766fd21611e9b5ddf",
     "sha256": "11adqaccwph4z5a4kyycd1gbc1l9np4za0d4fbd3cnh1zqf2xzjz"
