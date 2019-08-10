@@ -89,41 +89,20 @@ in {
         set noshowmode
 
         "" LANGUAGE SERVER
-        set cmdheight=2
-        set updatetime=300
-        set shortmess+=c
 
-        augroup Autoformatter
-          autocmd!
-          " Setup formatexpr specified filetype(s).
-          autocmd FileType elm setl formatexpr=CocAction('formatSelected')
-          " Update signature help on jump placeholder
-          autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-        augroup end
-
-        let g:coc_global_extensions = [ 'coc-git', 'coc-json', 'coc-yaml', 'coc-html', 'coc-vimlsp' ]
-
-        " https://github.com/neoclide/coc.nvim#example-vim-configuration
-        " Use tab for trigger completion with characters ahead and navigate.
-        " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-        inoremap <silent><expr> <TAB>
-              \ pumvisible() ? "\<C-n>" :
-              \ <SID>check_back_space() ? "\<TAB>" :
-              \ coc#refresh()
-        inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-        function! s:check_back_space() abort
-          let col = col('.') - 1
-          return !col || getline('.')[col - 1]  =~# '\s'
-        endfunction
+        " augroup Autoformatter
+        "   autocmd!
+        "   " Setup formatexpr specified filetype(s).
+        "   autocmd FileType elm setl formatexpr=CocAction('formatSelected')
+        "   " Update signature help on jump placeholder
+        "   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+        " augroup end
 
         "" KEYBINDINGS
         " Where possible, keybindings act like normal vim bindings.
         " Leader keybindings are organized by object, then action. 
 
         " Use `[c` and `]c` to navigate diagnostics
-        nmap <silent> [c <Plug>(coc-diagnostic-prev)
-        nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
         " bindings for fuzzy-finding
         nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
@@ -140,60 +119,20 @@ in {
         nnoremap <leader>fC :BCommmits<CR>
         nnoremap <leader>fH :Helptags<CR>
 
-        " Remap keys for gotos
-        " TODO: find a way to only call these if the language server is active
-        nmap <silent> gd <Plug>(coc-definition)
-        nmap <silent> gy <Plug>(coc-type-definition)
-        nmap <silent> gi <Plug>(coc-implementation)
-        nmap <silent> gr <Plug>(coc-references)
-
-        " Use K to show documentation in preview window
-        nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-        function! s:show_documentation()
-          if (index(['vim','help'], &filetype) >= 0)
-            execute 'h '.expand('<cword>')
-          else
-            call CocAction('doHover')
-          endif
-        endfunction
-
-        nnoremap <leader>lR :CocRestart<CR>
-        nnoremap <leader>la :CocAction<CR>
-        nnoremap <leader>lc :CocCommand<CR>
-        nnoremap <leader>lf :CocFix<CR>
-        nnoremap <leader>li :CocInfo<CR>
-        nnoremap <leader>ll :CocList<CR>
-        nnoremap <leader>lo :CocOpenLog<CR>
-        nnoremap <leader>lr :CocListResume<CR>
-
         " git
-        nmap [g <Plug>(coc-git-prevchunk)
-        nmap ]g <Plug>(coc-git-nextchunk)
-        nmap gs <Plug>(coc-git-chunkinfo)
         nmap gc :Gcommit<CR>
 
         nnoremap <leader>gb :Gblame<CR>
-        nnoremap <leader>gC :CocCommand git.copyUrl<CR>
-        nnoremap <leader>gd :CocCommand git.diffCached<CR>
-        nnoremap <leader>gf :CocCommand git.foldUnchanged<CR>
-        nnoremap <leader>go :CocCommand git.browserOpen<CR>
+        nnoremap <leader>go :Gbrowse<CR>
         nnoremap <leader>gs :Gstatus<CR>
 
         nnoremap <leader>gr :Gmove
         nnoremap <leader>gR :Gremove<CR>
-        nnoremap <leader>gw :CocCommand git.chunkStage<CR>
         nnoremap <leader>gW :Gwrite<CR>
-        nnoremap <leader>gX :CocCommand git.chunkUndo<CR>
 
-        nnoremap <leader>gb :CocList branches<CR>
         nnoremap <leader>gl :Glog<CR>
 
         " editing
-        nnoremap <leader>er <Plug>(coc-rename)
-        xmap <leader>ef <Plug>(coc-format)
-        nmap <leader>ef <Plug>(coc-format)
-
         nnoremap <leader>eD :Delete<CR>
         nnoremap <leader>er :Rename
         nnoremap <leader>ec :Chmod
