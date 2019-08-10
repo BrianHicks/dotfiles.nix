@@ -31,10 +31,10 @@ in {
         let mapleader = " "
         let localleader = ","
 
-        " mouse support
+        "" MOUSE SUPPORT
         set mouse=a
 
-        " splits
+        "" SPLITS
         nnoremap <c-j> <c-w><c-j>
         nnoremap <c-k> <c-w><c-k>
         nnoremap <c-l> <c-w><c-l>
@@ -47,19 +47,20 @@ in {
         set signcolumn=yes
         set number
 
-        " colors
+        "" COLORS
         " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
         set termguicolors
         set background=dark
         let g:one_allow_italics = 1
         colorscheme one
 
-        " delimiters
+        "" DELIMITERS
         let delimitMate_expand_space=1
         let delimitMate_expand_cr=1
         let delimitMate_nesting_quotes = ['"', '`']
         let backspace=2
 
+        "" FIXING LITTLE ANNOYING THINGS
         " automatically change working directory when editing a file, so :edit
         " and friends work relatively. Causes problems with :make, which I will
         " fix later.
@@ -75,38 +76,32 @@ in {
             \ endif
         augroup END
 
-        " fzf
-
+        "" FZF
         " don't show fzf statusline
         autocmd! FileType fzf
         autocmd  FileType fzf set laststatus=0 noshowmode noruler
           \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-        " bindings for fuzzy-finding
-        nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
-                                                           \ "sink": "edit",
-                                                           \ "options": "--tiebreak index"
-                                                           \ }))<CR>
-
-        nnoremap <leader>fF :Files<CR>
-        nnoremap <leader>bb :Buffers<CR>
-        nnoremap <leader>fs :Ag<CR>
-        nnoremap <leader>fl :Lines<CR>
-        nnoremap <leader>fh :History<CR>
-        nnoremap <leader>fc :Commits<CR>
-        nnoremap <leader>fC :BCommmits<CR>
-        nnoremap <leader>fH :Helptags<CR>
-
-        " statusline
+        "" STATUSLINE
         let g:lightline = {
             \ 'colorscheme': 'one'
             \ }
         set noshowmode
 
-        " language server
+        "" LANGUAGE SERVER
         set cmdheight=2
         set updatetime=300
         set shortmess+=c
+
+        augroup Autoformatter
+          autocmd!
+          " Setup formatexpr specified filetype(s).
+          autocmd FileType elm setl formatexpr=CocAction('formatSelected')
+          " Update signature help on jump placeholder
+          autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+        augroup end
+
+        let g:coc_global_extensions = [ 'coc-git', 'coc-json', 'coc-yaml', 'coc-html', 'coc-vimlsp' ]
 
         " https://github.com/neoclide/coc.nvim#example-vim-configuration
         " Use tab for trigger completion with characters ahead and navigate.
@@ -122,13 +117,28 @@ in {
           return !col || getline('.')[col - 1]  =~# '\s'
         endfunction
 
-        " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-        " Coc only does snippet and additional edit on confirm.
-        " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+        "" KEYBINDINGS
+        " Where possible, keybindings act like normal vim bindings.
+        " Leader keybindings are organized by object, then action. 
 
         " Use `[c` and `]c` to navigate diagnostics
         nmap <silent> [c <Plug>(coc-diagnostic-prev)
         nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+        " bindings for fuzzy-finding
+        nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                           \ "sink": "edit",
+                                                           \ "options": "--tiebreak index"
+                                                           \ }))<CR>
+
+        nnoremap <leader>fF :Files<CR>
+        nnoremap <leader>bb :Buffers<CR>
+        nnoremap <leader>fs :Ag<CR>
+        nnoremap <leader>fl :Lines<CR>
+        nnoremap <leader>fh :History<CR>
+        nnoremap <leader>fc :Commits<CR>
+        nnoremap <leader>fC :BCommmits<CR>
+        nnoremap <leader>fH :Helptags<CR>
 
         " Remap keys for gotos
         " TODO: find a way to only call these if the language server is active
@@ -148,8 +158,6 @@ in {
           endif
         endfunction
 
-        let g:coc_global_extensions = [ 'coc-git', 'coc-json', 'coc-yaml', 'coc-html', 'coc-vimlsp' ]
-
         nnoremap <leader>lR :CocRestart<CR>
         nnoremap <leader>la :CocAction<CR>
         nnoremap <leader>lc :CocCommand<CR>
@@ -158,14 +166,6 @@ in {
         nnoremap <leader>ll :CocList<CR>
         nnoremap <leader>lo :CocOpenLog<CR>
         nnoremap <leader>lr :CocListResume<CR>
-
-        augroup mygroup
-          autocmd!
-          " Setup formatexpr specified filetype(s).
-          autocmd FileType elm setl formatexpr=CocAction('formatSelected')
-          " Update signature help on jump placeholder
-          autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-        augroup end
 
         " git
         nmap [g <Plug>(coc-git-prevchunk)
