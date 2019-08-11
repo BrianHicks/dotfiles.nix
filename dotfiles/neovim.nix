@@ -6,8 +6,8 @@ let
   brian-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
     owner = "BrianHicks";
     repo = "nur-packages";
-    rev = "671f226ad54421832183eaa10c0b71d03dc4d7a3";
-    sha256 = "1b2hfrnvsix0j0s3jlhhgqj6pgfgl0bx5j6gy9cr3kgv46ffgggi";
+    rev = "ff14246eb1403a0113d8819bcfbefa801decff3a";
+    sha256 = "0gcrkpwqfarxycyignxj1x1sg7gi3swwnbwj92nwlzp010j8alcv";
   }) { };
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
