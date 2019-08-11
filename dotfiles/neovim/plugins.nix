@@ -33,6 +33,18 @@ rec {
     buildInputs = [ pkgs.zip pkgs.vim ];
   };
 
+  autozimu.LanguageClient-neovim = pkgs.vimUtils.buildVimPlugin {
+    name = "LanguageClient-neovim";
+    src = pkgs.fetchFromGitHub {
+      owner = "autozimu";
+      repo = "LanguageClient-neovim";
+      rev = "2c9c0913f16e776b40959404dcf4e23eca7a369b";
+      sha256 = "0xnc2f36n9rdi5nmxnp8m2ac2za79m08a99a4ynsv1z3s4nb8087";
+    };
+    buildInputs = [ pkgs.curl pkgs.cacert ];
+    buildPhase = "./install.sh";
+  };
+
   farmergreg.vim-lastplace = pkgs.vimUtils.buildVimPlugin {
     name = "vim-lastplace";
     src = pkgs.fetchFromGitHub {
@@ -277,6 +289,7 @@ rec {
     ElmCast.elm-vim
     LnL7.vim-nix
     Raimondi.delimitMate
+    autozimu.LanguageClient-neovim
     farmergreg.vim-lastplace
     itchyny."lightline.vim"
     junegunn."fzf.vim"

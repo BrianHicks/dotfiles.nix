@@ -25,6 +25,17 @@
   },
   {
     "type": "github",
+    "owner": "autozimu",
+    "repo": "LanguageClient-neovim",
+    "rev": "2c9c0913f16e776b40959404dcf4e23eca7a369b",
+    "sha256": "0xnc2f36n9rdi5nmxnp8m2ac2za79m08a99a4ynsv1z3s4nb8087",
+    "attrs": {
+      "buildInputs": "[ pkgs.curl pkgs.cacert ]",
+      "buildPhase": "\"./install.sh\""
+    }
+  },
+  {
+    "type": "github",
     "owner": "farmergreg",
     "repo": "vim-lastplace",
     "rev": "fbb88789b531e1fc1abe25b2f44f4f4c8a73f14d",
