@@ -98,7 +98,7 @@ def main(args):
 
     packages.sort(key=lambda pkg: pkg.attr())
 
-    print('{ pkgs, ... }:\n\nrec {\n')
+    print('{ pkgs ? import <nixpkgs> { }, ... }:\n\nrec {\n')
     for package in packages:
         print('resolving {}'.format(package.attr()), file=sys.stderr)
         print(textwrap.indent(str(package), '  ') + '\n', file=sys.stdout)
