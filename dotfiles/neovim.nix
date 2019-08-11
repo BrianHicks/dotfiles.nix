@@ -142,25 +142,4 @@ in {
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
     };
   };
-
-  home.file.".config/nvim/coc-settings.json".text = ''
-    {
-      "languageserver": {
-        "elmLS": {
-          "command": "${brian-nur.elm-language-server}/bin/elm-language-server",
-          "args": ["--stdio"],
-          "filetypes": ["elm"],
-          "rootPatterns": ["elm.json"],
-          "initializationOptions": {
-            "elmPath": "elm",
-            "elmFormatPath": "elm-format",
-            "elmTestPath": "elm-test"
-          }
-        }
-      },
-      "codeLens.enable": true,
-      "vimlsp.suggest.fromVimruntime": true,
-      "vimlsp.suggest.fromRuntimepath": true
-    }
-  '';
 }
