@@ -111,10 +111,10 @@ in {
             nnoremap <buffer> <silent> gD :call LanguageClient#textDocument_typeDefinition()<CR>
             nnoremap <buffer> <silent> gi :call LanguageClient#textDocument_implementation()<CR>
             nnoremap <buffer> <silent> ge :call LanguageClient#explainErrorAtPoint()<CR>
+            nnoremap <buffer> <silent> gr :call LanguageClient#textDocument_references()<CR>
             nnoremap <buffer> <silent> <leader>er :call LanguageClient#textDocument_rename()<CR>
             nnoremap <buffer> <silent> <leader>fv :call LanguageClient#textDocument_documentSymbol()<CR>
             nnoremap <buffer> <silent> <leader>fV :call LanguageClient#workspace_symbol()<CR>
-            nnoremap <buffer> <silent> <leader>fr :call LanguageClient#textDocument_references()<CR>
             nnoremap <buffer> <silent> <leader>ea :call LanguageClient#textDocument_codeAction()<CR>
             nnoremap <buffer> <silent> <leader>eA :call LanguageClient#workspace_applyEdit()<CR>
             nnoremap <buffer> <silent> <leader>ef :call LanguageClient#textDocument_formatting()<CR>
