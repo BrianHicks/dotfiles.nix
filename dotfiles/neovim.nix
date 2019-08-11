@@ -137,22 +137,29 @@ in {
         " augroup end
 
         "" KEYBINDINGS
-        " Where possible, keybindings act like normal vim bindings.
-        " Leader keybindings are organized by object, then action. 
+        " Where possible, keybindings act like normal vim bindings. Leader
+        " keybindings are organized by action, then object (except for git,
+        " which owns `g`)
 
         " bindings for fuzzy-finding
-        nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
-                                                           \ "sink": "edit",
-                                                           \ "options": "--tiebreak index"
-                                                           \ }))<CR>
+          nnoremap <silent> <C-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                        \ "sink": "edit",
+                                                        \ "options": "--tiebreak index"
+                                                        \ }))<CR>
+          nnoremap <silent> <C-T> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                        \ "sink": "vsplit",
+                                                        \ "options": "--tiebreak index"
+                                                        \ }))<CR>
+          nnoremap <silent> <A-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                        \ "sink": "split",
+                                                        \ "options": "--tiebreak index"
+                                                        \ }))<CR>
 
-        nnoremap <leader>fF :Files<CR>
-        nnoremap <leader>bb :Buffers<CR>
-        nnoremap <leader>fs :Ag<CR>
+        nnoremap <leader>ff :Files<CR>
+        nnoremap <leader>fb :Buffers<CR>
+        nnoremap <leader>ft :Ag<CR>
         nnoremap <leader>fl :Lines<CR>
         nnoremap <leader>fh :History<CR>
-        nnoremap <leader>fc :Commits<CR>
-        nnoremap <leader>fC :BCommmits<CR>
         nnoremap <leader>fH :Helptags<CR>
 
         " git
@@ -161,12 +168,12 @@ in {
         nnoremap <leader>gb :Gblame<CR>
         nnoremap <leader>go :Gbrowse<CR>
         nnoremap <leader>gs :Gstatus<CR>
+        nnoremap <leader>gc :Commits<CR>
+        nnoremap <leader>gC :BCommmits<CR>
 
         nnoremap <leader>gr :Gmove
         nnoremap <leader>gR :Gremove<CR>
         nnoremap <leader>gW :Gwrite<CR>
-
-        nnoremap <leader>gl :Glog<CR>
 
         " editing
         nnoremap <leader>eD :Delete<CR>
