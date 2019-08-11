@@ -103,6 +103,31 @@ in {
         " this is the default, but do we want it? Time will tell.
         " let g:LanguageClient_selectionUI = "fzf"
 
+        " only apply language server maps when the language client is active
+        function SetLCMaps()
+          if has_key(g:LanguageClient_serverCommands, &filetype)
+            nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
+            nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+            nnoremap <buffer> <silent> gD :call LanguageClient#textDocument_typeDefinition()<CR>
+            nnoremap <buffer> <silent> gi :call LanguageClient#textDocument_implementation()<CR>
+            nnoremap <buffer> <silent> ge :call LanguageClient#explainErrorAtPoint()<CR>
+            nnoremap <buffer> <silent> <leader>er :call LanguageClient#textDocument_rename()<CR>
+            nnoremap <buffer> <silent> <leader>fv :call LanguageClient#textDocument_documentSymbol()<CR>
+            nnoremap <buffer> <silent> <leader>fV :call LanguageClient#workspace_symbol()<CR>
+            nnoremap <buffer> <silent> <leader>fr :call LanguageClient#textDocument_references()<CR>
+            nnoremap <buffer> <silent> <leader>ea :call LanguageClient#textDocument_codeAction()<CR>
+            nnoremap <buffer> <silent> <leader>eA :call LanguageClient#workspace_applyEdit()<CR>
+            nnoremap <buffer> <silent> <leader>ef :call LanguageClient#textDocument_formatting()<CR>
+
+            " TODO: I think these need a little more work but this is basically what I want.
+            " vnoremap <buffer> <silent> <leader>ef :call LanguageClient#textDocument_rangeFormatting()<CR>
+          endif
+        endfunction
+
+        augroup LC
+          autocmd FileType * call SetLCMaps()
+        augroup END
+
         " augroup Autoformatter
         "   autocmd!
         "   " Setup formatexpr specified filetype(s).
