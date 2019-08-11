@@ -140,8 +140,6 @@ in {
         " Where possible, keybindings act like normal vim bindings.
         " Leader keybindings are organized by object, then action. 
 
-        " Use `[c` and `]c` to navigate diagnostics
-
         " bindings for fuzzy-finding
         nnoremap <silent> <leader>ff :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
                                                            \ "sink": "edit",
