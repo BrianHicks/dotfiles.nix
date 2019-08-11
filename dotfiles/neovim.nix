@@ -90,6 +90,19 @@ in {
 
         "" LANGUAGE SERVER
 
+        let g:LanguageClient_serverCommands = {
+          \   'elm': ['${brian-nur.elm-language-server}/bin/elm-language-server', '--stdio'],
+          \ }
+
+        let g:LanguageClient_rootMarkers = {
+          \   'elm': ['elm.json'],
+          \ }
+
+        let g:LanguageClient_changeThrottle = 0.25
+
+        " this is the default, but do we want it? Time will tell.
+        " let g:LanguageClient_selectionUI = "fzf"
+
         " augroup Autoformatter
         "   autocmd!
         "   " Setup formatexpr specified filetype(s).
