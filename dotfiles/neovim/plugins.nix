@@ -115,6 +115,16 @@ rec {
     };
   };
 
+  tommcdo.vim-exchange = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-exchange";
+    src = pkgs.fetchFromGitHub {
+      owner = "tommcdo";
+      repo = "vim-exchange";
+      rev = "05d82b87711c6c8b9b7389bfb91c24bc4f62aa87";
+      sha256 = "09fa156y8pxpzdbngifa7yzg1vjg1fjsgp1h9inj818zbig8mamb";
+    };
+  };
+
   tpope.vim-abolish = pkgs.vimUtils.buildVimPlugin {
     name = "vim-abolish";
     src = pkgs.fetchFromGitHub {
@@ -317,6 +327,7 @@ rec {
     junegunn."fzf.vim"
     rakr.vim-one
     stefandtw."quickfix-reflector.vim"
+    tommcdo.vim-exchange
     tpope.vim-abolish
     tpope.vim-bundler
     tpope.vim-commentary

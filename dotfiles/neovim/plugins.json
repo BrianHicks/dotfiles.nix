@@ -85,6 +85,13 @@
   },
   {
     "type": "github",
+    "owner": "tommcdo",
+    "repo": "vim-exchange",
+    "rev": "05d82b87711c6c8b9b7389bfb91c24bc4f62aa87",
+    "sha256": "09fa156y8pxpzdbngifa7yzg1vjg1fjsgp1h9inj818zbig8mamb"
+  },
+  {
+    "type": "github",
     "owner": "tpope",
     "repo": "vim-abolish",
     "rev": "b95463a1cffd8fc9aff2a1ff0ae9327944948699",
