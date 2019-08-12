@@ -33,6 +33,8 @@ in {
 
         set clipboard=unnamed
 
+        au FocusGained,BufEnter * :checktime
+
         "" MOUSE SUPPORT
         set mouse=a
 
