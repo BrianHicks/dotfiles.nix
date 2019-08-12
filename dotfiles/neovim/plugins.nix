@@ -33,6 +33,16 @@ rec {
     buildInputs = [ pkgs.zip pkgs.vim ];
   };
 
+  airblade.vim-gitgutter = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-gitgutter";
+    src = pkgs.fetchFromGitHub {
+      owner = "airblade";
+      repo = "vim-gitgutter";
+      rev = "9bf988bd1d2d8001f84126d8bf74036bab33bb9b";
+      sha256 = "0ksz7k29nzs00apnimp2r3hqjamdhcpr9h241hcagil3dqraqi5d";
+    };
+  };
+
   autozimu.LanguageClient-neovim = pkgs.vimUtils.buildVimPlugin {
     name = "LanguageClient-neovim";
     src = pkgs.fetchFromGitHub {
@@ -289,6 +299,7 @@ rec {
     ElmCast.elm-vim
     LnL7.vim-nix
     Raimondi.delimitMate
+    airblade.vim-gitgutter
     autozimu.LanguageClient-neovim
     farmergreg.vim-lastplace
     itchyny."lightline.vim"

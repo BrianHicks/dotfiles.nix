@@ -88,6 +88,11 @@ in {
             \ }
         set noshowmode
 
+        "" GIT GUTTER
+        let g:gitgutter_git_executable = "${pkgs.git}/bin/git"
+        let g:gitgutter_map_keys = 0
+        set updatetime=100
+
         "" LANGUAGE SERVER
 
         let g:LanguageClient_serverCommands = {
@@ -170,10 +175,23 @@ in {
         nnoremap <leader>gs :Gstatus<CR>
         nnoremap <leader>gc :Commits<CR>
         nnoremap <leader>gC :BCommmits<CR>
+        nnoremap <leader>gW :Gwrite<CR>
 
         nnoremap <leader>gr :Gmove
         nnoremap <leader>gR :Gremove<CR>
-        nnoremap <leader>gW :Gwrite<CR>
+
+        nmap <leader>gw <Plug>GitGutterStageHunk
+        nmap <leader>gX <Plug>GitGutterUndoHunk
+        nmap <leader>gp <Plug>GitGutterPreviewHunk
+        nnoremap <leader>gf :GitGutterFold<CR>
+
+        omap ic <Plug>GitGutterTextObjectInnerPending
+        omap ac <Plug>GitGutterTextObjectOuterPending
+        xmap ic <Plug>GitGutterTextObjectInnerVisual
+        xmap ac <Plug>GitGutterTextObjectOuterVisual
+
+        nmap ]c <Plug>GitGutterNextHunk
+        nmap [c <Plug>GitGutterPrevHunk
 
         " editing
         nnoremap <leader>eD :Delete<CR>

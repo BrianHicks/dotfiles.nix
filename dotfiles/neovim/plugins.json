@@ -25,6 +25,13 @@
   },
   {
     "type": "github",
+    "owner": "airblade",
+    "repo": "vim-gitgutter",
+    "rev": "9bf988bd1d2d8001f84126d8bf74036bab33bb9b",
+    "sha256": "0ksz7k29nzs00apnimp2r3hqjamdhcpr9h241hcagil3dqraqi5d"
+  },
+  {
+    "type": "github",
     "owner": "autozimu",
     "repo": "LanguageClient-neovim",
     "rev": "2c9c0913f16e776b40959404dcf4e23eca7a369b",
