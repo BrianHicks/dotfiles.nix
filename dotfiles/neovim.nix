@@ -84,8 +84,22 @@ in {
 
         "" STATUSLINE
         let g:lightline = {
-            \ 'colorscheme': 'one'
-            \ }
+          \ 'colorscheme': 'one'
+          \ }
+
+        let g:lightline.active = {
+          \ 'left': [ [ 'mode', 'paste' ],
+          \           [ 'readonly', 'filename', 'modified' ],
+          \           [ 'gitbranch' ] ],
+          \ 'right': [ [ 'lineinfo' ],
+          \            [ 'percent' ],
+          \            [ 'filetype' ] ]
+          \ }
+
+        let g:lightline.component_function = {
+          \ 'gitbranch': 'fugitive#head',
+          \ }
+
         set noshowmode
 
         "" GIT GUTTER
