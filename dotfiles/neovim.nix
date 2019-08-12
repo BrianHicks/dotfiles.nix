@@ -31,6 +31,8 @@ in {
         let mapleader = " "
         let localleader = ","
 
+        set clipboard=unnamed
+
         "" MOUSE SUPPORT
         set mouse=a
 
