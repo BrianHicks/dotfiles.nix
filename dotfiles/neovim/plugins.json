@@ -1,13 +1,6 @@
 [
   {
     "type": "github",
-    "repo": "elm-vim",
-    "owner": "ElmCast",
-    "rev": "165107a9fd2b20c8f050fc4f977b4e41c790b1e7",
-    "sha256": "0gf7b49by0ybx3ndz7sz5dwcfnps4sz6wsr02lyarj8f8116ysy5"
-  },
-  {
-    "type": "github",
     "owner": "LnL7",
     "repo": "vim-nix",
     "rev": "a3eed01f4de995a51dfdd06287e44fcb231f6adf",
@@ -29,6 +22,13 @@
     "repo": "vim-gitgutter",
     "rev": "9bf988bd1d2d8001f84126d8bf74036bab33bb9b",
     "sha256": "0ksz7k29nzs00apnimp2r3hqjamdhcpr9h241hcagil3dqraqi5d"
+  },
+  {
+    "type": "github",
+    "owner": "andys8",
+    "repo": "vim-elm-syntax",
+    "rev": "d614325a037982489574012e4db04d7f8f134c17",
+    "sha256": "1wjv4z5wikh9kzgklg1b4rwsjwqnmvzppqs4hsqx3pyv8g0khdk1"
   },
   {
     "type": "github",

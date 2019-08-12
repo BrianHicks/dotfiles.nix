@@ -2,16 +2,6 @@
 
 rec {
 
-  ElmCast.elm-vim = pkgs.vimUtils.buildVimPlugin {
-    name = "elm-vim";
-    src = pkgs.fetchFromGitHub {
-      owner = "ElmCast";
-      repo = "elm-vim";
-      rev = "165107a9fd2b20c8f050fc4f977b4e41c790b1e7";
-      sha256 = "0gf7b49by0ybx3ndz7sz5dwcfnps4sz6wsr02lyarj8f8116ysy5";
-    };
-  };
-
   LnL7.vim-nix = pkgs.vimUtils.buildVimPlugin {
     name = "vim-nix";
     src = pkgs.fetchFromGitHub {
@@ -40,6 +30,16 @@ rec {
       repo = "vim-gitgutter";
       rev = "9bf988bd1d2d8001f84126d8bf74036bab33bb9b";
       sha256 = "0ksz7k29nzs00apnimp2r3hqjamdhcpr9h241hcagil3dqraqi5d";
+    };
+  };
+
+  andys8.vim-elm-syntax = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-elm-syntax";
+    src = pkgs.fetchFromGitHub {
+      owner = "andys8";
+      repo = "vim-elm-syntax";
+      rev = "d614325a037982489574012e4db04d7f8f134c17";
+      sha256 = "1wjv4z5wikh9kzgklg1b4rwsjwqnmvzppqs4hsqx3pyv8g0khdk1";
     };
   };
 
@@ -296,10 +296,10 @@ rec {
   };
 
   all = [
-    ElmCast.elm-vim
     LnL7.vim-nix
     Raimondi.delimitMate
     airblade.vim-gitgutter
+    andys8.vim-elm-syntax
     autozimu.LanguageClient-neovim
     farmergreg.vim-lastplace
     itchyny."lightline.vim"
