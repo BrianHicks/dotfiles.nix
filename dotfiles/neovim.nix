@@ -212,6 +212,13 @@ in {
         nnoremap <leader>er :Rename
         nnoremap <leader>ec :Chmod
         nnoremap <leader>em :Mkdir
+
+        " testing
+        nnoremap <silent> <leader>tn :TestNearest<CR>
+        nnoremap <silent> <leader>tf :TestFile<CR>
+        nnoremap <silent> <leader>ta :TestSuite<CR>
+        nnoremap <silent> <leader>tt :TestLast<CR>
+        nnoremap <silent> gt :TestVisit<CR>
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];

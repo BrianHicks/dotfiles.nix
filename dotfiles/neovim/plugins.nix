@@ -75,6 +75,16 @@ rec {
     };
   };
 
+  janko.vim-test = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-test";
+    src = pkgs.fetchFromGitHub {
+      owner = "janko";
+      repo = "vim-test";
+      rev = "21499f536a004a98a853e54c446ba6128809fdc5";
+      sha256 = "1m509p9jnb0h294vf9xjgf79gjlkxiqzx8sz75kr0msyvpnnyp6j";
+    };
+  };
+
   junegunn."fzf.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "fzf.vim";
     src = pkgs.fetchFromGitHub {
@@ -303,6 +313,7 @@ rec {
     autozimu.LanguageClient-neovim
     farmergreg.vim-lastplace
     itchyny."lightline.vim"
+    janko.vim-test
     junegunn."fzf.vim"
     rakr.vim-one
     stefandtw."quickfix-reflector.vim"
