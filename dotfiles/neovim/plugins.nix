@@ -65,6 +65,16 @@ rec {
     };
   };
 
+  godlygeek.tabular = pkgs.vimUtils.buildVimPlugin {
+    name = "tabular";
+    src = pkgs.fetchFromGitHub {
+      owner = "godlygeek";
+      repo = "tabular";
+      rev = "339091ac4dd1f17e225fe7d57b48aff55f99b23a";
+      sha256 = "0jq91770wsp2waw7pywxjqx59v0vg54gfzirgcd85pg61w22bfla";
+    };
+  };
+
   itchyny."lightline.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "lightline.vim";
     src = pkgs.fetchFromGitHub {
@@ -92,6 +102,16 @@ rec {
       repo = "fzf.vim";
       rev = "359a80e3a34aacbd5257713b6a88aa085337166f";
       sha256 = "0a01g0gw59m57zizidvm9n89qh8lvj0aq4kyxy27i72ysclp3wsf";
+    };
+  };
+
+  plasticboy.vim-markdown = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-markdown";
+    src = pkgs.fetchFromGitHub {
+      owner = "plasticboy";
+      repo = "vim-markdown";
+      rev = "da5a7ac96f517e0fd6f886bc3fbe27156ca1f946";
+      sha256 = "198bsv88njz6l2pf9yjxb8292aj7x8n2sxi50q3cdsg29a3y2i5c";
     };
   };
 
@@ -332,9 +352,11 @@ rec {
     andys8.vim-elm-syntax
     autozimu.LanguageClient-neovim
     farmergreg.vim-lastplace
+    godlygeek.tabular
     itchyny."lightline.vim"
     janko.vim-test
     junegunn."fzf.vim"
+    plasticboy.vim-markdown
     rakr.vim-one
     stefandtw."quickfix-reflector.vim"
     tommcdo.vim-exchange
