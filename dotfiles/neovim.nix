@@ -159,6 +159,10 @@ in {
         "   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
         " augroup end
 
+        "" MARKDOWN
+        " vim-markdown collapses and expands in a way that I don't like by default.
+        let g:vim_markdown_folding_disabled = 1
+
         "" KEYBINDINGS
         " Where possible, keybindings act like normal vim bindings. Leader
         " keybindings are organized by action, then object (except for git,
