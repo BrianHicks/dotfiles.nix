@@ -125,6 +125,16 @@ rec {
     };
   };
 
+  sbdchd.neoformat = pkgs.vimUtils.buildVimPlugin {
+    name = "neoformat";
+    src = pkgs.fetchFromGitHub {
+      owner = "sbdchd";
+      repo = "neoformat";
+      rev = "528b5e47ec9c29fbbd470f2af71b8ad994a96bdb";
+      sha256 = "09cq8a4ryhxvnpjvpbm0dq22ccqfmym59avxr4c0ablx1sqy9lhy";
+    };
+  };
+
   stefandtw."quickfix-reflector.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "quickfix-reflector.vim";
     src = pkgs.fetchFromGitHub {
@@ -358,6 +368,7 @@ rec {
     junegunn."fzf.vim"
     plasticboy.vim-markdown
     rakr.vim-one
+    sbdchd.neoformat
     stefandtw."quickfix-reflector.vim"
     tommcdo.vim-exchange
     tpope.vim-abolish
