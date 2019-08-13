@@ -105,6 +105,16 @@ rec {
     };
   };
 
+  kkoomen.vim-doge = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-doge";
+    src = pkgs.fetchFromGitHub {
+      owner = "kkoomen";
+      repo = "vim-doge";
+      rev = "2fdd86981b54a57dfedba2133bd318663566b3cc";
+      sha256 = "1gxpjj4hg1bl36n1fhli3dqfv0y2a1f6hfhkyh5j83gpd19wi4ny";
+    };
+  };
+
   plasticboy.vim-markdown = pkgs.vimUtils.buildVimPlugin {
     name = "vim-markdown";
     src = pkgs.fetchFromGitHub {
@@ -366,6 +376,7 @@ rec {
     itchyny."lightline.vim"
     janko.vim-test
     junegunn."fzf.vim"
+    kkoomen.vim-doge
     plasticboy.vim-markdown
     rakr.vim-one
     sbdchd.neoformat

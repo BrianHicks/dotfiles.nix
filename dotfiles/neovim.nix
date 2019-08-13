@@ -169,6 +169,10 @@ in {
           autocmd BufWritePre * undojoin | Neoformat
         augroup END
 
+        "" DOCUMENTATION
+        let g:doge_enable_mappings = 0
+        nnoremap <silent> <leader>ed :DogeGenerate<CR>
+
         "" KEYBINDINGS
         " Where possible, keybindings act like normal vim bindings. Leader
         " keybindings are organized by action, then object (except for git,

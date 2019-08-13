@@ -78,6 +78,13 @@
   },
   {
     "type": "github",
+    "owner": "kkoomen",
+    "repo": "vim-doge",
+    "rev": "2fdd86981b54a57dfedba2133bd318663566b3cc",
+    "sha256": "1gxpjj4hg1bl36n1fhli3dqfv0y2a1f6hfhkyh5j83gpd19wi4ny"
+  },
+  {
+    "type": "github",
     "owner": "plasticboy",
     "repo": "vim-markdown",
     "rev": "da5a7ac96f517e0fd6f886bc3fbe27156ca1f946",
