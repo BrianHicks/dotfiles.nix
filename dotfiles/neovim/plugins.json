@@ -163,6 +163,13 @@
   {
     "type": "github",
     "owner": "tpope",
+    "repo": "vim-rhubarb",
+    "rev": "c509c7eedeea641f5b0bdae708581ff610fbff5b",
+    "sha256": "19zhhnlrnkgsxacykck9q19rhk4gj31qjj6i4sl6bzi086kmf0z9"
+  },
+  {
+    "type": "github",
+    "owner": "tpope",
     "repo": "vim-rsi",
     "rev": "8b7abe2d470b7fffac6562818468e14594735564",
     "sha256": "1fvswbqd51gs4qhcabnz3zdmmlhcijs3pnbp3f2zgfi7lqvjc6s5"

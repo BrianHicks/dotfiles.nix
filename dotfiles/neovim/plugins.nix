@@ -225,6 +225,16 @@ rec {
     };
   };
 
+  tpope.vim-rhubarb = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-rhubarb";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-rhubarb";
+      rev = "c509c7eedeea641f5b0bdae708581ff610fbff5b";
+      sha256 = "19zhhnlrnkgsxacykck9q19rhk4gj31qjj6i4sl6bzi086kmf0z9";
+    };
+  };
+
   tpope.vim-rsi = pkgs.vimUtils.buildVimPlugin {
     name = "vim-rsi";
     src = pkgs.fetchFromGitHub {
@@ -338,6 +348,7 @@ rec {
     tpope.vim-rails
     tpope.vim-rake
     tpope.vim-repeat
+    tpope.vim-rhubarb
     tpope.vim-rsi
     tpope.vim-sensible
     tpope.vim-sleuth
