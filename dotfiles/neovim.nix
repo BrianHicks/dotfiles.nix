@@ -197,18 +197,18 @@ in {
         " which owns `g`)
 
         " bindings for fuzzy-finding
-          nnoremap <silent> <C-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
-                                                        \ "sink": "edit",
-                                                        \ "options": "--tiebreak index"
-                                                        \ }))<CR>
-          nnoremap <silent> <S-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
-                                                        \ "sink": "vsplit",
-                                                        \ "options": "--tiebreak index"
-                                                        \ }))<CR>
-          nnoremap <silent> <A-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
-                                                        \ "sink": "split",
-                                                        \ "options": "--tiebreak index"
-                                                        \ }))<CR>
+        nnoremap <silent> <C-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                      \ "sink": "edit",
+                                                      \ "options": "--tiebreak index"
+                                                      \ }))<CR>
+        nnoremap <silent> <S-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                      \ "sink": "vsplit",
+                                                      \ "options": "--tiebreak index"
+                                                      \ }))<CR>
+        nnoremap <silent> <A-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
+                                                      \ "sink": "split",
+                                                      \ "options": "--tiebreak index"
+                                                      \ }))<CR>
 
         nnoremap <leader>ff :Files<CR>
         nnoremap <leader>fb :Buffers<CR>
