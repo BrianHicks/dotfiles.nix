@@ -157,14 +157,6 @@ in {
           autocmd FileType * call SetLCMaps()
         augroup END
 
-        " augroup Autoformatter
-        "   autocmd!
-        "   " Setup formatexpr specified filetype(s).
-        "   autocmd FileType elm setl formatexpr=CocAction('formatSelected')
-        "   " Update signature help on jump placeholder
-        "   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-        " augroup end
-
         "" MARKDOWN
         " vim-markdown collapses and expands in a way that I don't like by default.
         let g:vim_markdown_folding_disabled = 1
