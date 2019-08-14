@@ -11,6 +11,10 @@ let
   }) { };
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
+
+  nixFmt =
+    import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
+    { };
 in {
   programs.neovim = {
     enable = true;
@@ -170,6 +174,14 @@ in {
           autocmd!
           autocmd BufWritePre * undojoin | Neoformat
         augroup END
+
+        let g:neoformat_nix_nixfmt = {
+          \ 'exe': '${nixFmt}/bin/nixfmt',
+          \ 'args': ['--width', '120'],
+          \ 'stdin': 1,
+          \ }
+
+        let g:neoformat_enabled_nix = ['nixfmt']
 
         "" DOCUMENTATION
         let g:doge_enable_mappings = 0
