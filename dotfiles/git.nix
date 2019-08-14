@@ -31,9 +31,6 @@
 
       # magit
       github.user = "BrianHicks";
-
-      # credential caching
-      credential.helper = "osxkeychain";
     };
 
     ignores = [
