@@ -50,6 +50,20 @@
   },
   {
     "type": "github",
+    "owner": "glts",
+    "repo": "vim-magnum",
+    "rev": "2c9c3e35322ed3607528629ae561f19d6933e66a",
+    "sha256": "14aq35p2sx068isfp0wkv81kbghwfy4gh1r0y6bdwki3zxbxpf1b"
+  },
+  {
+    "type": "github",
+    "owner": "glts",
+    "repo": "vim-radical",
+    "rev": "d3f1d33c53c8b1b378b5c1ef3e078452025f46b0",
+    "sha256": "0qjjis28142035djrn2ahm4dfxgrxi7gs6r19za009hmllbamag8"
+  },
+  {
+    "type": "github",
     "owner": "godlygeek",
     "repo": "tabular",
     "rev": "339091ac4dd1f17e225fe7d57b48aff55f99b23a",

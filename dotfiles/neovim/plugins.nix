@@ -65,6 +65,26 @@ rec {
     };
   };
 
+  glts.vim-magnum = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-magnum";
+    src = pkgs.fetchFromGitHub {
+      owner = "glts";
+      repo = "vim-magnum";
+      rev = "2c9c3e35322ed3607528629ae561f19d6933e66a";
+      sha256 = "14aq35p2sx068isfp0wkv81kbghwfy4gh1r0y6bdwki3zxbxpf1b";
+    };
+  };
+
+  glts.vim-radical = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-radical";
+    src = pkgs.fetchFromGitHub {
+      owner = "glts";
+      repo = "vim-radical";
+      rev = "d3f1d33c53c8b1b378b5c1ef3e078452025f46b0";
+      sha256 = "0qjjis28142035djrn2ahm4dfxgrxi7gs6r19za009hmllbamag8";
+    };
+  };
+
   godlygeek.tabular = pkgs.vimUtils.buildVimPlugin {
     name = "tabular";
     src = pkgs.fetchFromGitHub {
@@ -382,6 +402,8 @@ rec {
     andys8.vim-elm-syntax
     autozimu.LanguageClient-neovim
     farmergreg.vim-lastplace
+    glts.vim-magnum
+    glts.vim-radical
     godlygeek.tabular
     itchyny."lightline.vim"
     janko.vim-test
