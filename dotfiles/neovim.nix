@@ -12,7 +12,7 @@ let
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
 
-  nixFmt =
+  nixfmt =
     import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { };
 in {
@@ -176,7 +176,7 @@ in {
         augroup END
 
         let g:neoformat_nix_nixfmt = {
-          \ 'exe': '${nixFmt}/bin/nixfmt',
+          \ 'exe': '${nixfmt}/bin/nixfmt',
           \ 'args': ['--width', '120'],
           \ 'stdin': 1,
           \ }
