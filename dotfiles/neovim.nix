@@ -173,6 +173,24 @@ in {
         let g:doge_enable_mappings = 0
         nnoremap <silent> <leader>ed :DogeGenerate<CR>
 
+        "" DISPATCH
+        let g:dispatch_no_maps = 1
+
+        nnoremap <silent> <leader>cc :Make<CR>
+        nnoremap <silent> <leader>cC :Make!<CR>
+        nnoremap          <leader>c<Space> :Make<Space>
+
+        nnoremap <silent> <leader>co :Copen<CR>
+        nnoremap <silent> <leader>cO :Copen!<CR>
+
+        nnoremap <silent> <leader>cd :Dispatch<CR>
+        nnoremap <silent> <leader>cD :Dispatch!<CR>
+        nnoremap          <leader>cf :FocusDispatch<Space>
+        nnoremap          <leader>c? :FocusDispatch<CR>
+
+        nnoremap <leader>pp :Start<Space>
+        nnoremap <leader>pP :Spawn<Space>
+
         "" KEYBINDINGS
         " Where possible, keybindings act like normal vim bindings. Leader
         " keybindings are organized by action, then object (except for git,

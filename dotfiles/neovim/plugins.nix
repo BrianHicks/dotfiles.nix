@@ -195,6 +195,16 @@ rec {
     };
   };
 
+  tpope.vim-dispatch = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-dispatch";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-dispatch";
+      rev = "a76bec9196fe27e195d167a5c2ee1da763d31b96";
+      sha256 = "0a9sxpdpll68drk3w98xvmv2z31q4afw70iwjrb7lmp8raxn0i2z";
+    };
+  };
+
   tpope.vim-endwise = pkgs.vimUtils.buildVimPlugin {
     name = "vim-endwise";
     src = pkgs.fetchFromGitHub {
@@ -385,6 +395,7 @@ rec {
     tpope.vim-abolish
     tpope.vim-bundler
     tpope.vim-commentary
+    tpope.vim-dispatch
     tpope.vim-endwise
     tpope.vim-eunuch
     tpope.vim-fugitive
