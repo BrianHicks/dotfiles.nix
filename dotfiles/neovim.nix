@@ -191,6 +191,13 @@ in {
         nnoremap <leader>pp :Start<Space>
         nnoremap <leader>pP :Spawn<Space>
 
+        "" YOINK
+        nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+        nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+        nmap p <plug>(YoinkPaste_p)
+        nmap P <plug>(YoinkPaste_P)
+
         "" KEYBINDINGS
         " Where possible, keybindings act like normal vim bindings. Leader
         " keybindings are organized by action, then object (except for git,

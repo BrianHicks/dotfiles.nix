@@ -175,6 +175,16 @@ rec {
     };
   };
 
+  svermeulen.vim-yoink = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-yoink";
+    src = pkgs.fetchFromGitHub {
+      owner = "svermeulen";
+      repo = "vim-yoink";
+      rev = "e6748f69de44fb043d41237e57c1e3883e524aef";
+      sha256 = "1msf9iqm4hnqymkl5rm3ild2a2lpz7cwwjav8jqqv95jpz9pq5kn";
+    };
+  };
+
   tommcdo.vim-exchange = pkgs.vimUtils.buildVimPlugin {
     name = "vim-exchange";
     src = pkgs.fetchFromGitHub {
@@ -413,6 +423,7 @@ rec {
     rakr.vim-one
     sbdchd.neoformat
     stefandtw."quickfix-reflector.vim"
+    svermeulen.vim-yoink
     tommcdo.vim-exchange
     tpope.vim-abolish
     tpope.vim-bundler

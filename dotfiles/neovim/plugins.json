@@ -127,6 +127,13 @@
   },
   {
     "type": "github",
+    "owner": "svermeulen",
+    "repo": "vim-yoink",
+    "rev": "e6748f69de44fb043d41237e57c1e3883e524aef",
+    "sha256": "1msf9iqm4hnqymkl5rm3ild2a2lpz7cwwjav8jqqv95jpz9pq5kn"
+  },
+  {
+    "type": "github",
     "owner": "tommcdo",
     "repo": "vim-exchange",
     "rev": "05d82b87711c6c8b9b7389bfb91c24bc4f62aa87",
