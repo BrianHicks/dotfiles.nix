@@ -7,7 +7,7 @@ find_and_edit() {
     SOURCE="$(find . -type f)"
   fi
 
-  files="$(fzf --preview='head -$FZF_PREVIEW_LINES {}' --select-1 --multi --query="$@" <<< "$SOURCE")"
+  files="$(fzf --preview='bat --color=always --paging=never --style=changes {} | head -$FZF_PREVIEW_LINES' --select-1 --multi --query="$@" <<< "$SOURCE")"
   if [[ "$?" != "0" ]]; then return 1; fi
   vim $files
 }
