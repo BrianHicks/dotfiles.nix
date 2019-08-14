@@ -35,6 +35,8 @@ in {
 
         au FocusGained,BufEnter * :checktime
 
+        set cursorline
+
         "" MOUSE SUPPORT
         set mouse=a
 
