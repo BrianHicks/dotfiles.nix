@@ -4,6 +4,7 @@ let
   extras = [
     ./zsh/elm.zsh
     ./zsh/emacs.zsh
+    ./zsh/git.zsh
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
     ./zsh/kill-process.zsh
