@@ -41,6 +41,8 @@ in {
 
         set cursorline
 
+        set inccommand=split
+
         "" MOUSE SUPPORT
         set mouse=a
 
