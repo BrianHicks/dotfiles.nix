@@ -3,13 +3,6 @@
 let
   plugins = pkgs.callPackage ./neovim/plugins.nix { };
 
-  brian-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
-    owner = "BrianHicks";
-    repo = "nur-packages";
-    rev = "ff14246eb1403a0113d8819bcfbefa801decff3a";
-    sha256 = "0gcrkpwqfarxycyignxj1x1sg7gi3swwnbwj92nwlzp010j8alcv";
-  }) { };
-
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
 
   nixfmt =
@@ -119,46 +112,6 @@ in {
         let g:gitgutter_map_keys = 0
         set updatetime=100
 
-        "" LANGUAGE SERVER
-
-        let g:LanguageClient_serverCommands = {
-          \   'elm': ['${brian-nur.elm-language-server}/bin/elm-language-server', '--stdio'],
-          \ }
-
-        let g:LanguageClient_rootMarkers = {
-          \   'elm': ['elm.json'],
-          \ }
-
-        let g:LanguageClient_changeThrottle = 0.25
-
-        " this is the default, but do we want it? Time will tell.
-        " let g:LanguageClient_selectionUI = "fzf"
-
-        " only apply language server maps when the language client is active
-        function SetLCMaps()
-          if has_key(g:LanguageClient_serverCommands, &filetype)
-            nnoremap <buffer> <silent> <leader>ea :call LanguageClient#textDocument_codeAction()<CR>
-            nnoremap <buffer> <silent> <leader>eA :call LanguageClient#workspace_applyEdit()<CR>
-            nnoremap <buffer> <silent> <leader>ef :call LanguageClient#textDocument_formatting()<CR>
-            nnoremap <buffer> <silent> <leader>er :call LanguageClient#textDocument_rename()<CR>
-            nnoremap <buffer> <silent> <leader>fv :call LanguageClient#textDocument_documentSymbol()<CR>
-            nnoremap <buffer> <silent> <leader>fV :call LanguageClient#workspace_symbol()<CR>
-            nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-            nnoremap <buffer> <silent> gD :call LanguageClient#textDocument_typeDefinition()<CR>
-            nnoremap <buffer> <silent> ge :call LanguageClient#explainErrorAtPoint()<CR>
-            nnoremap <buffer> <silent> gi :call LanguageClient#textDocument_implementation()<CR>
-            nnoremap <buffer> <silent> gr :call LanguageClient#textDocument_references()<CR>
-            nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
-
-            " TODO: I think these need a little more work but this is basically what I want.
-            " vnoremap <buffer> <silent> <leader>ef :call LanguageClient#textDocument_rangeFormatting()<CR>
-          endif
-        endfunction
-
-        augroup LC
-          autocmd FileType * call SetLCMaps()
-        augroup END
-
         "" MARKDOWN
         " vim-markdown collapses and expands in a way that I don't like by default.
         let g:vim_markdown_folding_disabled = 1
@@ -214,6 +167,11 @@ in {
         nnoremap <silent> <leader>ta :TestSuite<CR>
         nnoremap <silent> <leader>tt :TestLast<CR>
         nnoremap <silent> gt :TestVisit<CR>
+
+        "" LINTING
+        let g:ale_cursor_detail = 1
+        let g:ale_disable_lsp = 1
+        let g:ale_echo_cursor = 0
 
         "" KEYBINDINGS
         " Where possible, keybindings act like normal vim bindings. Leader

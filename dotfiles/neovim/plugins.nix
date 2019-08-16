@@ -43,16 +43,14 @@ rec {
     };
   };
 
-  autozimu.LanguageClient-neovim = pkgs.vimUtils.buildVimPlugin {
-    name = "LanguageClient-neovim";
+  dense-analysis.ale = pkgs.vimUtils.buildVimPlugin {
+    name = "ale";
     src = pkgs.fetchFromGitHub {
-      owner = "autozimu";
-      repo = "LanguageClient-neovim";
-      rev = "2c9c0913f16e776b40959404dcf4e23eca7a369b";
-      sha256 = "0xnc2f36n9rdi5nmxnp8m2ac2za79m08a99a4ynsv1z3s4nb8087";
+      owner = "dense-analysis";
+      repo = "ale";
+      rev = "28c93ab1854ef41a46855401cc4addbaf7dfb9d4";
+      sha256 = "12kfvnycdf4sshajhzj3b5l92zbdgvnj1sdzfj7mc77d0k4mzskq";
     };
-    buildInputs = [ pkgs.curl pkgs.cacert ];
-    buildPhase = "./install.sh";
   };
 
   farmergreg.vim-lastplace = pkgs.vimUtils.buildVimPlugin {
@@ -410,7 +408,7 @@ rec {
     Raimondi.delimitMate
     airblade.vim-gitgutter
     andys8.vim-elm-syntax
-    autozimu.LanguageClient-neovim
+    dense-analysis.ale
     farmergreg.vim-lastplace
     glts.vim-magnum
     glts.vim-radical
