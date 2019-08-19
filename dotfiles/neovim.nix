@@ -158,6 +158,9 @@ in {
 
         let g:neoformat_basic_format_trim = 1
 
+        " https://github.com/sbdchd/neoformat/issues/251
+        let g:neoformat_enabled_ruby = []
+
         "" DOCUMENTATION
         let g:doge_enable_mappings = 0
         nnoremap <silent> <leader>ed :DogeGenerate<CR>
