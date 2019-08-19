@@ -10,11 +10,11 @@
     "type": "github",
     "owner": "Raimondi",
     "repo": "delimitMate",
-    "rev": "728b57a6564c1d2bdfb9b9e0f2f8c5ba3d7e0c5c",
-    "sha256": "0fskm9gz81dk8arcidrm71mv72a7isng1clssqkqn5wnygbiimsn",
     "attrs": {
       "buildInputs": "[ pkgs.zip pkgs.vim ]"
-    }
+    },
+    "rev": "728b57a6564c1d2bdfb9b9e0f2f8c5ba3d7e0c5c",
+    "sha256": "0fskm9gz81dk8arcidrm71mv72a7isng1clssqkqn5wnygbiimsn"
   },
   {
     "type": "github",
@@ -27,8 +27,8 @@
     "type": "github",
     "owner": "airblade",
     "repo": "vim-gitgutter",
-    "rev": "71bbe88525c0b36f4f3843a2a577442bbd7fd957",
-    "sha256": "0rmdc0rgpmzjbij08aa102jg8shy4qbl1k5p1kw4xvn5l4faddvv"
+    "rev": "46f15ed42ad987b003ef5e81ec114c748c73ea89",
+    "sha256": "0lr3i22b949d64d2l1gvlgb3hzmhhvkdjjz7nqr5bda0pj3rxhzw"
   },
   {
     "type": "github",
@@ -41,8 +41,8 @@
     "type": "github",
     "owner": "dense-analysis",
     "repo": "ale",
-    "rev": "28c93ab1854ef41a46855401cc4addbaf7dfb9d4",
-    "sha256": "12kfvnycdf4sshajhzj3b5l92zbdgvnj1sdzfj7mc77d0k4mzskq"
+    "rev": "73812c3e41c1c7fcf1705811f35ac4c9ccec003e",
+    "sha256": "166hgzyx1j1n717icj0mq2n8jkg4kpi1iy5gk3q0l28nd88w5hlb"
   },
   {
     "type": "github",
@@ -76,15 +76,15 @@
     "type": "github",
     "owner": "itchyny",
     "repo": "lightline.vim",
-    "rev": "1f3da6f1bb78bfe0e6113d0812828329f3874b3e",
-    "sha256": "0lwrb4x9sgwxdr1q4pwcc8fkq23ay4qyz6gb5scq2vivpzhj5y87"
+    "rev": "09c61dc3f650eccd2c165c36db8330496321aa50",
+    "sha256": "14g79s9pn8bb50kwd50sw8knss5mgq8iihxa2bwkjr55jj5ghkwb"
   },
   {
     "type": "github",
     "owner": "janko",
     "repo": "vim-test",
-    "rev": "21499f536a004a98a853e54c446ba6128809fdc5",
-    "sha256": "1m509p9jnb0h294vf9xjgf79gjlkxiqzx8sz75kr0msyvpnnyp6j"
+    "rev": "4ab87cfc827ddf3b98b18eee352ca4b4edc56363",
+    "sha256": "1jxacncn8iklx93fw0732bqpr0p51hlw9f4fjv3jd0l2qkjv0jp7"
   },
   {
     "type": "github",
@@ -97,7 +97,7 @@
     "type": "github",
     "owner": "kkoomen",
     "repo": "vim-doge",
-    "rev": "2fdd86981b54a57dfedba2133bd318663566b3cc",
+    "rev": "bd49e4abb30cfd0f75e656d6e6056e1e8d05c63e",
     "sha256": "1gxpjj4hg1bl36n1fhli3dqfv0y2a1f6hfhkyh5j83gpd19wi4ny"
   },
   {
@@ -188,8 +188,8 @@
     "type": "github",
     "owner": "tpope",
     "repo": "vim-fugitive",
-    "rev": "f33a53bceb2b0461222cbe931adcaf9c66235535",
-    "sha256": "00w1nkqh6iqcivasjqryca9k5w3ivlg1w05sd6gz0hcz9xg4amlm"
+    "rev": "c63fd1b71be037d4fd583649303875ad0fd17b57",
+    "sha256": "0mq0hbhlcw3wz35iqshr9xd85w3wyhw6kan130kmcqi3qnrb9rpc"
   },
   {
     "type": "github",
@@ -202,8 +202,8 @@
     "type": "github",
     "owner": "tpope",
     "repo": "vim-rails",
-    "rev": "2b33a3df78f337ec44874fa9fb2862ab229614ce",
-    "sha256": "06nhfbj410lbfn1ik3hdg0xd4533xn2d7ir5c4imra211svgyzwx"
+    "rev": "e191b246e2475b26e07e7b18928a80735c31ffa9",
+    "sha256": "03l895d2a226i8k1n0p8fxw685mxfgip5daxihnp3i2cw0kn432m"
   },
   {
     "type": "github",
@@ -223,8 +223,8 @@
     "type": "github",
     "owner": "tpope",
     "repo": "vim-rhubarb",
-    "rev": "c509c7eedeea641f5b0bdae708581ff610fbff5b",
-    "sha256": "19zhhnlrnkgsxacykck9q19rhk4gj31qjj6i4sl6bzi086kmf0z9"
+    "rev": "9edacf9d5b4d6e0570af33f88500f51ec4288c2e",
+    "sha256": "0m91nvxjkgmbgaib3q27rk2nzkpxx18pa8nrv143r2k8na9bry0p"
   },
   {
     "type": "github",
