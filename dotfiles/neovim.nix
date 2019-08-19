@@ -36,6 +36,7 @@ in {
 
         set inccommand=split
 
+        set ignorecase
         set smartcase
 
         "" MOUSE SUPPORT
