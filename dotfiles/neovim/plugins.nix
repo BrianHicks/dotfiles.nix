@@ -23,6 +23,16 @@ rec {
     buildInputs = [ pkgs.zip pkgs.vim ];
   };
 
+  Shougo.neco-syntax = pkgs.vimUtils.buildVimPlugin {
+    name = "neco-syntax";
+    src = pkgs.fetchFromGitHub {
+      owner = "Shougo";
+      repo = "neco-syntax";
+      rev = "98cba4a98a4f44dcff80216d0b4aa6f41c2ce3e3";
+      sha256 = "1cjcbgx3h00g91ifgw30q5n97x4nprsr4kwirydws79fcs4vkgip";
+    };
+  };
+
   airblade.vim-gitgutter = pkgs.vimUtils.buildVimPlugin {
     name = "vim-gitgutter";
     src = pkgs.fetchFromGitHub {
@@ -60,6 +70,16 @@ rec {
       repo = "vim-lastplace";
       rev = "fbb88789b531e1fc1abe25b2f44f4f4c8a73f14d";
       sha256 = "0661dnm0idaqy28pw03fznq5hpl2pbb4r0c1gvdmf59ywhsa2dav";
+    };
+  };
+
+  fgrsnau.ncm2-otherbuf = pkgs.vimUtils.buildVimPlugin {
+    name = "ncm2-otherbuf";
+    src = pkgs.fetchFromGitHub {
+      owner = "fgrsnau";
+      repo = "ncm2-otherbuf";
+      rev = "8625b68044db9e2a2b896952c2226ee11918ace4";
+      sha256 = "0sir3a6vwyci5ynxii6d1mxli05cwz5z4j8rqflm3sb645c7vjsv";
     };
   };
 
@@ -133,6 +153,46 @@ rec {
     };
   };
 
+  ncm2.ncm2 = pkgs.vimUtils.buildVimPlugin {
+    name = "ncm2";
+    src = pkgs.fetchFromGitHub {
+      owner = "ncm2";
+      repo = "ncm2";
+      rev = "53b6531769e43c7e3c9051e3a12ab31e3e06a422";
+      sha256 = "1kf2gfcw0wmyib72na3j2dsw6q4qff1r9lvdbk7cm7iclhwylhma";
+    };
+  };
+
+  ncm2.ncm2-bufword = pkgs.vimUtils.buildVimPlugin {
+    name = "ncm2-bufword";
+    src = pkgs.fetchFromGitHub {
+      owner = "ncm2";
+      repo = "ncm2-bufword";
+      rev = "1d42750114e47a31286268880affcd66c6ae48d5";
+      sha256 = "14q76n5c70wvi48wm1alyckba71rp5300i35091ga197nkgphyaz";
+    };
+  };
+
+  ncm2.ncm2-path = pkgs.vimUtils.buildVimPlugin {
+    name = "ncm2-path";
+    src = pkgs.fetchFromGitHub {
+      owner = "ncm2";
+      repo = "ncm2-path";
+      rev = "84b1e6b5f28ced2245ff08e6694101f029fdfca8";
+      sha256 = "0yqga8d423k2j6iknkyx1qs1shddpshi4sx78992sa15dax9d394";
+    };
+  };
+
+  ncm2.ncm2-syntax = pkgs.vimUtils.buildVimPlugin {
+    name = "ncm2-syntax";
+    src = pkgs.fetchFromGitHub {
+      owner = "ncm2";
+      repo = "ncm2-syntax";
+      rev = "7cd3857001a219be4bc7593b7378034b462415e4";
+      sha256 = "0l36qvsclhg8vr1ix1kpdl0kh739gp6b7s03f18vf9f0aj0im6w2";
+    };
+  };
+
   plasticboy.vim-markdown = pkgs.vimUtils.buildVimPlugin {
     name = "vim-markdown";
     src = pkgs.fetchFromGitHub {
@@ -153,6 +213,16 @@ rec {
     };
   };
 
+  roxma.nvim-yarp = pkgs.vimUtils.buildVimPlugin {
+    name = "nvim-yarp";
+    src = pkgs.fetchFromGitHub {
+      owner = "roxma";
+      repo = "nvim-yarp";
+      rev = "8fcb1af27772174df5446d49de29052cac47e46f";
+      sha256 = "0ya3xgbnpps6s67rxfwpcfv39micl1d2wblzb7xvs1pmsymwbj0r";
+    };
+  };
+
   sbdchd.neoformat = pkgs.vimUtils.buildVimPlugin {
     name = "neoformat";
     src = pkgs.fetchFromGitHub {
@@ -170,6 +240,16 @@ rec {
       repo = "quickfix-reflector.vim";
       rev = "c76b7a1f496864315eea3ff2a9d02a53128bad50";
       sha256 = "02vb7qkdprx3ksj4gwnj3j180kkdal8jky69dcjn8ivr0x8g26s8";
+    };
+  };
+
+  svermeulen.ncm2-yoink = pkgs.vimUtils.buildVimPlugin {
+    name = "ncm2-yoink";
+    src = pkgs.fetchFromGitHub {
+      owner = "svermeulen";
+      repo = "ncm2-yoink";
+      rev = "802070a996527c4ee227287fc2cdf1f5a8f5d4f2";
+      sha256 = "10lzw3xmxcjk9iwii0xbik8y4cmd0bl3r7kc3xcdvs4mzqpnbypa";
     };
   };
 
@@ -406,10 +486,12 @@ rec {
   all = [
     LnL7.vim-nix
     Raimondi.delimitMate
+    Shougo.neco-syntax
     airblade.vim-gitgutter
     andys8.vim-elm-syntax
     dense-analysis.ale
     farmergreg.vim-lastplace
+    fgrsnau.ncm2-otherbuf
     glts.vim-magnum
     glts.vim-radical
     godlygeek.tabular
@@ -417,10 +499,16 @@ rec {
     janko.vim-test
     junegunn."fzf.vim"
     kkoomen.vim-doge
+    ncm2.ncm2
+    ncm2.ncm2-bufword
+    ncm2.ncm2-path
+    ncm2.ncm2-syntax
     plasticboy.vim-markdown
     rakr.vim-one
+    roxma.nvim-yarp
     sbdchd.neoformat
     stefandtw."quickfix-reflector.vim"
+    svermeulen.ncm2-yoink
     svermeulen.vim-yoink
     tommcdo.vim-exchange
     tpope.vim-abolish
