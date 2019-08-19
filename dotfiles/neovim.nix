@@ -230,7 +230,7 @@ in {
         nnoremap <leader>fh :History<CR>
         nnoremap <leader>fH :Helptags<CR>
 
-        " EDITING
+        "" EDITING
         nnoremap <leader>eD :Delete<CR>
         nnoremap <leader>er :Rename
         nnoremap <leader>ec :Chmod
