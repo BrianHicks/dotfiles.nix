@@ -156,6 +156,8 @@ in {
 
         let g:neoformat_enabled_nix = ['nixfmt']
 
+        let g:neoformat_basic_format_trim = 1
+
         "" DOCUMENTATION
         let g:doge_enable_mappings = 0
         nnoremap <silent> <leader>ed :DogeGenerate<CR>
