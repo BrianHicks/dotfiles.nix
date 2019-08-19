@@ -237,7 +237,6 @@ in {
         nnoremap <leader>em :Mkdir
 
         "" COMPLETION
-        let g:deoplete#enable_at_startup = 1
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];

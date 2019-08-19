@@ -23,16 +23,6 @@ rec {
     buildInputs = [ pkgs.zip pkgs.vim ];
   };
 
-  Shougo."deoplete.nvim" = pkgs.vimUtils.buildVimPlugin {
-    name = "deoplete.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "Shougo";
-      repo = "deoplete.nvim";
-      rev = "bb2b16309b94695a3344c713282368b3329a2412";
-      sha256 = "0dbph7p921ibh2nyfansj5pzqw98vh1w4m9kv04n3wwyygzym5q9";
-    };
-  };
-
   airblade.vim-gitgutter = pkgs.vimUtils.buildVimPlugin {
     name = "vim-gitgutter";
     src = pkgs.fetchFromGitHub {
@@ -416,7 +406,6 @@ rec {
   all = [
     LnL7.vim-nix
     Raimondi.delimitMate
-    Shougo."deoplete.nvim"
     airblade.vim-gitgutter
     andys8.vim-elm-syntax
     dense-analysis.ale
