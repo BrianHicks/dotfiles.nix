@@ -18,6 +18,13 @@
   },
   {
     "type": "github",
+    "owner": "Shougo",
+    "repo": "deoplete.nvim",
+    "rev": "bb2b16309b94695a3344c713282368b3329a2412",
+    "sha256": "0dbph7p921ibh2nyfansj5pzqw98vh1w4m9kv04n3wwyygzym5q9"
+  },
+  {
+    "type": "github",
     "owner": "airblade",
     "repo": "vim-gitgutter",
     "rev": "71bbe88525c0b36f4f3843a2a577442bbd7fd957",

@@ -235,6 +235,9 @@ in {
         nnoremap <leader>er :Rename
         nnoremap <leader>ec :Chmod
         nnoremap <leader>em :Mkdir
+
+        "" COMPLETION
+        let g:deoplete#enable_at_startup = 1
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
