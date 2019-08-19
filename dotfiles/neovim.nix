@@ -107,10 +107,35 @@ in {
 
         set noshowmode
 
-        "" GIT GUTTER
+        "" GIT
         let g:gitgutter_git_executable = "${pkgs.git}/bin/git"
         let g:gitgutter_map_keys = 0
         set updatetime=100
+
+        nmap gc :Gcommit<CR>
+
+        nnoremap <leader>gb :Gblame<CR>
+        nnoremap <leader>go :Gbrowse<CR>
+        nnoremap <leader>gs :Gstatus<CR>
+        nnoremap <leader>gc :Commits<CR>
+        nnoremap <leader>gC :BCommmits<CR>
+        nnoremap <leader>gW :Gwrite<CR>
+
+        nnoremap <leader>gr :Gmove
+        nnoremap <leader>gR :Gremove<CR>
+
+        nmap <leader>gw <Plug>GitGutterStageHunk
+        nmap <leader>gX <Plug>GitGutterUndoHunk
+        nmap <leader>gp <Plug>GitGutterPreviewHunk
+        nnoremap <leader>gf :GitGutterFold<CR>
+
+        omap ic <Plug>GitGutterTextObjectInnerPending
+        omap ac <Plug>GitGutterTextObjectOuterPending
+        xmap ic <Plug>GitGutterTextObjectInnerVisual
+        xmap ac <Plug>GitGutterTextObjectOuterVisual
+
+        nmap ]c <Plug>GitGutterNextHunk
+        nmap [c <Plug>GitGutterPrevHunk
 
         "" MARKDOWN
         " vim-markdown collapses and expands in a way that I don't like by default.
@@ -199,33 +224,7 @@ in {
         nnoremap <leader>fh :History<CR>
         nnoremap <leader>fH :Helptags<CR>
 
-        " git
-        nmap gc :Gcommit<CR>
-
-        nnoremap <leader>gb :Gblame<CR>
-        nnoremap <leader>go :Gbrowse<CR>
-        nnoremap <leader>gs :Gstatus<CR>
-        nnoremap <leader>gc :Commits<CR>
-        nnoremap <leader>gC :BCommmits<CR>
-        nnoremap <leader>gW :Gwrite<CR>
-
-        nnoremap <leader>gr :Gmove
-        nnoremap <leader>gR :Gremove<CR>
-
-        nmap <leader>gw <Plug>GitGutterStageHunk
-        nmap <leader>gX <Plug>GitGutterUndoHunk
-        nmap <leader>gp <Plug>GitGutterPreviewHunk
-        nnoremap <leader>gf :GitGutterFold<CR>
-
-        omap ic <Plug>GitGutterTextObjectInnerPending
-        omap ac <Plug>GitGutterTextObjectOuterPending
-        xmap ic <Plug>GitGutterTextObjectInnerVisual
-        xmap ac <Plug>GitGutterTextObjectOuterVisual
-
-        nmap ]c <Plug>GitGutterNextHunk
-        nmap [c <Plug>GitGutterPrevHunk
-
-        " editing
+        " EDITING
         nnoremap <leader>eD :Delete<CR>
         nnoremap <leader>er :Rename
         nnoremap <leader>ec :Chmod
