@@ -23,8 +23,14 @@ def attrs(kvs):
 
 
 class GithubPackage:
-    def __init__(self, data):
+    def __init__(self, data, update=False):
         self.data = data
+        if update:
+            if 'rev' in self.data:
+                del self.data['rev']
+
+            if 'sha256' in self.data:
+                del self.data['sha256']
 
     def __str__(self):
         return '{} = {};'.format(self.attr(), self.expression())
@@ -91,7 +97,7 @@ def main(args):
     with open(args.packages, 'r') as fh:
         for package in json.load(fh):
             if package['type'] == 'github':
-                packages.append(GithubPackage(package))
+                packages.append(GithubPackage(package, update=args.update))
             else:
                 print("I don't know how to resolve a {} plugin".format(package['type']), file=sys.stderr)
                 return 1
@@ -116,4 +122,5 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('packages')
+    parser.add_argument('--update', action='store_true')
     sys.exit(main(parser.parse_args()))
