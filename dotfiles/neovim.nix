@@ -209,6 +209,8 @@ in {
 
         "" FINDING STUFF
 
+        let g:ackprg = '${pkgs.ag}/bin/ag --vimgrep'
+
         " bindings for fuzzy-finding
         nnoremap <silent> <C-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
                                                       \ "sink": "edit",
@@ -225,7 +227,7 @@ in {
 
         nnoremap <leader>ff :Files<CR>
         nnoremap <leader>fb :Buffers<CR>
-        nnoremap <leader>ft :Ag<CR>
+        nnoremap <leader>ft :Ack<Space>
         nnoremap <leader>fl :Lines<CR>
         nnoremap <leader>fh :History<CR>
         nnoremap <leader>fH :Helptags<CR>

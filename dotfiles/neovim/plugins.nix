@@ -153,6 +153,16 @@ rec {
     };
   };
 
+  mileszs."ack.vim" = pkgs.vimUtils.buildVimPlugin {
+    name = "ack.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "mileszs";
+      repo = "ack.vim";
+      rev = "36e40f9ec91bdbf6f1adf408522a73a6925c3042";
+      sha256 = "0yppr89hd1jyp0pj56hxdjbn32sr7pj3mihd18wxispvl5dqd6fm";
+    };
+  };
+
   ncm2.ncm2 = pkgs.vimUtils.buildVimPlugin {
     name = "ncm2";
     src = pkgs.fetchFromGitHub {
@@ -499,6 +509,7 @@ rec {
     janko.vim-test
     junegunn."fzf.vim"
     kkoomen.vim-doge
+    mileszs."ack.vim"
     ncm2.ncm2
     ncm2.ncm2-bufword
     ncm2.ncm2-path
