@@ -207,10 +207,7 @@ in {
         let g:ale_disable_lsp = 1
         let g:ale_echo_cursor = 0
 
-        "" KEYBINDINGS
-        " Where possible, keybindings act like normal vim bindings. Leader
-        " keybindings are organized by action, then object (except for git,
-        " which owns `g`)
+        "" FINDING STUFF
 
         " bindings for fuzzy-finding
         nnoremap <silent> <C-t> :call fzf#run(fzf#wrap({"source": "git ls-files \| ${similar-sort}/bin/similar-sort " . @%,
