@@ -16,7 +16,10 @@
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  nix.package = pkgs.nix;
+  # nix.package = pkgs.nixUnstable;
+  nix.allowedUsers = [ "brianhicks" ];
+  nix.trustedUsers = [ "brianhicks" ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   # programs.bash.enable = true;
