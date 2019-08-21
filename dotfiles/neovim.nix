@@ -215,9 +215,15 @@ in {
         nnoremap <silent> gt :TestVisit<CR>
 
         "" LINTING
-        let g:ale_cursor_detail = 1
+        let g:ale_cursor_detail = 0
         let g:ale_disable_lsp = 1
-        let g:ale_echo_cursor = 0
+        let g:ale_echo_cursor = 1
+
+        nnoremap <silent> [e :ALEPreviousWrap<CR>
+        nnoremap <silent> [E :ALEFirst<CR>
+        nnoremap <silent> ]e :ALENextWrap<CR>
+        nnoremap <silent> ]E :ALELast<CR>
+        nnoremap <silent> ge :ALEDetail<CR>
 
         "" FINDING STUFF
 
