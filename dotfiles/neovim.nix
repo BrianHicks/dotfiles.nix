@@ -115,13 +115,10 @@ in {
         let g:gitgutter_map_keys = 0
         set updatetime=100
 
-        nmap gc :Gcommit<CR>
-
         nnoremap <leader>gb :Gblame<CR>
         nnoremap <leader>go :Gbrowse<CR>
         nnoremap <leader>gs :Gstatus<CR>
-        nnoremap <leader>gc :Commits<CR>
-        nnoremap <leader>gC :BCommmits<CR>
+        nnoremap <leader>gc :Commit<CR>
         nnoremap <leader>gW :Gwrite<CR>
 
         nnoremap <leader>gr :Gmove
