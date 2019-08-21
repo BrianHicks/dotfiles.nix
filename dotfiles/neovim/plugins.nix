@@ -153,6 +153,16 @@ rec {
     };
   };
 
+  maximbaz.lightline-ale = pkgs.vimUtils.buildVimPlugin {
+    name = "lightline-ale";
+    src = pkgs.fetchFromGitHub {
+      owner = "maximbaz";
+      repo = "lightline-ale";
+      rev = "dd59077f9537b344f7ae80f713c1e4856ec1520c";
+      sha256 = "1f9v6nsksy36s5i27nfx6vmyfyjk27p2w2g6x25cw56b0r3sgxmx";
+    };
+  };
+
   mileszs."ack.vim" = pkgs.vimUtils.buildVimPlugin {
     name = "ack.vim";
     src = pkgs.fetchFromGitHub {
@@ -509,6 +519,7 @@ rec {
     janko.vim-test
     junegunn."fzf.vim"
     kkoomen.vim-doge
+    maximbaz.lightline-ale
     mileszs."ack.vim"
     ncm2.ncm2
     ncm2.ncm2-bufword

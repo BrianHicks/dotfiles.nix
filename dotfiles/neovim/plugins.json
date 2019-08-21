@@ -109,6 +109,13 @@
   },
   {
     "type": "github",
+    "owner": "maximbaz",
+    "repo": "lightline-ale",
+    "rev": "dd59077f9537b344f7ae80f713c1e4856ec1520c",
+    "sha256": "1f9v6nsksy36s5i27nfx6vmyfyjk27p2w2g6x25cw56b0r3sgxmx"
+  },
+  {
+    "type": "github",
     "owner": "mileszs",
     "repo": "ack.vim",
     "rev": "36e40f9ec91bdbf6f1adf408522a73a6925c3042",
