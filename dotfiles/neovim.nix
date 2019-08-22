@@ -173,6 +173,10 @@ in {
 
         let g:neoformat_basic_format_trim = 1
 
+        " the formatters do not respect the indent levels in some of the files
+        " I work with regularly.
+        let g:neoformat_enabled_json = []
+
         " https://github.com/sbdchd/neoformat/issues/251
         let g:neoformat_enabled_ruby = ['rufo', 'rubybeautify']
 
