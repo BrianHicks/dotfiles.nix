@@ -102,6 +102,13 @@
   },
   {
     "type": "github",
+    "owner": "kassio",
+    "repo": "neoterm",
+    "rev": "c96ff95c9a41d716bbdca41b4cc2dc62e4b188a1",
+    "sha256": "0jbrgsdljh9n1cr3dpgq83gpd3hx7ss4hbc0i0hls15laczlzipc"
+  },
+  {
+    "type": "github",
     "owner": "kkoomen",
     "repo": "vim-doge",
     "rev": "bd49e4abb30cfd0f75e656d6e6056e1e8d05c63e",

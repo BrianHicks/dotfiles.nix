@@ -143,6 +143,16 @@ rec {
     };
   };
 
+  kassio.neoterm = pkgs.vimUtils.buildVimPlugin {
+    name = "neoterm";
+    src = pkgs.fetchFromGitHub {
+      owner = "kassio";
+      repo = "neoterm";
+      rev = "c96ff95c9a41d716bbdca41b4cc2dc62e4b188a1";
+      sha256 = "0jbrgsdljh9n1cr3dpgq83gpd3hx7ss4hbc0i0hls15laczlzipc";
+    };
+  };
+
   kkoomen.vim-doge = pkgs.vimUtils.buildVimPlugin {
     name = "vim-doge";
     src = pkgs.fetchFromGitHub {
@@ -528,6 +538,7 @@ rec {
     itchyny."lightline.vim"
     janko.vim-test
     junegunn."fzf.vim"
+    kassio.neoterm
     kkoomen.vim-doge
     maximbaz.lightline-ale
     mileszs."ack.vim"
