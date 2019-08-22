@@ -27,8 +27,8 @@
     "type": "github",
     "owner": "airblade",
     "repo": "vim-gitgutter",
-    "rev": "46f15ed42ad987b003ef5e81ec114c748c73ea89",
-    "sha256": "0lr3i22b949d64d2l1gvlgb3hzmhhvkdjjz7nqr5bda0pj3rxhzw"
+    "rev": "e929cb8b868aba97331231ece6f9f3e1204babea",
+    "sha256": "0naf2pyjcylqgrw7j6nvl6kb4g2gc5936621w957qhj98c3cp8fx"
   },
   {
     "type": "github",
@@ -83,8 +83,8 @@
     "type": "github",
     "owner": "itchyny",
     "repo": "lightline.vim",
-    "rev": "09c61dc3f650eccd2c165c36db8330496321aa50",
-    "sha256": "14g79s9pn8bb50kwd50sw8knss5mgq8iihxa2bwkjr55jj5ghkwb"
+    "rev": "8b3aa1632c08784928458b2b85faf5c89feefccf",
+    "sha256": "0bxvxkk0zps2qxnzp8dip7ngpv9b1a74y2wjzjqqvxzljk81a714"
   },
   {
     "type": "github",
@@ -258,15 +258,15 @@
     "type": "github",
     "owner": "tpope",
     "repo": "vim-fugitive",
-    "rev": "c63fd1b71be037d4fd583649303875ad0fd17b57",
-    "sha256": "0mq0hbhlcw3wz35iqshr9xd85w3wyhw6kan130kmcqi3qnrb9rpc"
+    "rev": "f04a2275dbe525df5e0a4dcdfb368d768850f8dd",
+    "sha256": "10fxg6d91mj4i1657pgm42pj3fc9yxjqy9vnyl6dl6ga7xg1qy4z"
   },
   {
     "type": "github",
     "owner": "tpope",
     "repo": "vim-projectionist",
-    "rev": "94001f00825c36fab63b9f3ca47a204111e561a2",
-    "sha256": "0pppaavma07c3lxqlbk8cghdsirncxng52mjmv5qk8yar8kxqvbr"
+    "rev": "b1a826329c0891416f2357bf77a43ac49b441e6d",
+    "sha256": "0za2hnsg888nl3ddhawll053j64sgqhiqpxciqi05j50bz34cs8n"
   },
   {
     "type": "github",
