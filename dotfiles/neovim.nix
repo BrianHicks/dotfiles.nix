@@ -225,6 +225,11 @@ in {
         nnoremap <silent> ]E :ALELast<CR>
         nnoremap <silent> ge :ALEDetail<CR>
 
+        "" REPLACEMENT
+        nmap s <plug>(SubversiveSubvertRange)
+        xmap s <plug>(SubversiveSubvertRange)
+        nmap <leader>ss <plug>(SubversiveSubvertWordRange)
+
         "" FINDING STUFF
 
         let g:ackprg = '${pkgs.ag}/bin/ag --vimgrep'

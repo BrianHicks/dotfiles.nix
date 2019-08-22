@@ -273,6 +273,16 @@ rec {
     };
   };
 
+  svermeulen.vim-subversive = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-subversive";
+    src = pkgs.fetchFromGitHub {
+      owner = "svermeulen";
+      repo = "vim-subversive";
+      rev = "5837cb38f656f120e7a04ae73f749303d78b9191";
+      sha256 = "0n04mxdq80xkjgi75n1c2gg2s6am5kns8rj7pz6dvvlqr4vxyrjf";
+    };
+  };
+
   svermeulen.vim-yoink = pkgs.vimUtils.buildVimPlugin {
     name = "vim-yoink";
     src = pkgs.fetchFromGitHub {
@@ -531,6 +541,7 @@ rec {
     sbdchd.neoformat
     stefandtw."quickfix-reflector.vim"
     svermeulen.ncm2-yoink
+    svermeulen.vim-subversive
     svermeulen.vim-yoink
     tommcdo.vim-exchange
     tpope.vim-abolish

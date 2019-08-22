@@ -194,6 +194,13 @@
   {
     "type": "github",
     "owner": "svermeulen",
+    "repo": "vim-subversive",
+    "rev": "5837cb38f656f120e7a04ae73f749303d78b9191",
+    "sha256": "0n04mxdq80xkjgi75n1c2gg2s6am5kns8rj7pz6dvvlqr4vxyrjf"
+  },
+  {
+    "type": "github",
+    "owner": "svermeulen",
     "repo": "vim-yoink",
     "rev": "e6748f69de44fb043d41237e57c1e3883e524aef",
     "sha256": "1msf9iqm4hnqymkl5rm3ild2a2lpz7cwwjav8jqqv95jpz9pq5kn"
