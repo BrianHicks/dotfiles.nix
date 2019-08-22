@@ -261,6 +261,10 @@ in {
         nnoremap <leader>ec :Chmod
         nnoremap <leader>em :Mkdir
 
+        "" TEXT OBJECTS
+        onoremap ib :exec "normal! ggVG"<CR>
+        onoremap iv :exec "normal! HVL"<CR>
+
         "" COMPLETION
         autocmd BufEnter * call ncm2#enable_for_buffer()
         set completeopt=noinsert,menuone,noselect
