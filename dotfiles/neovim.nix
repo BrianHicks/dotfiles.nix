@@ -133,7 +133,7 @@ in {
         nnoremap <leader>gb :Gblame<CR>
         nnoremap <leader>go :Gbrowse<CR>
         nnoremap <leader>gs :Gstatus<CR>
-        nnoremap <leader>gc :Commit<CR>
+        nnoremap <leader>gc :Gcommit --verbose<CR>
         nnoremap <leader>gW :Gwrite<CR>
 
         nnoremap <leader>gr :Gmove
