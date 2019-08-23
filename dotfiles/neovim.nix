@@ -28,16 +28,17 @@ in {
         let mapleader = " "
         let localleader = ","
 
-        set clipboard=unnamed
-
         au FocusGained,BufEnter * :checktime
 
+        let showbreak= '↪ '
+        set clipboard=unnamed
         set cursorline
-
-        set inccommand=split
-
+        set hidden
         set ignorecase
+        set inccommand=split
         set smartcase
+        set undodir=~/.config/vim/undo
+        set undofile
 
         "" MOUSE SUPPORT
         set mouse=a
