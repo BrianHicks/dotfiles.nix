@@ -287,9 +287,12 @@ in {
         autocmd BufEnter * call ncm2#enable_for_buffer()
         set completeopt=noinsert,menuone,noselect
         set shortmess+=c
-
         inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
         inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+        " I don't like accepting completion suggestions with <CR>. I'd rather
+        " use <Tab>.
+        inoremap <expr> <CR> pumvisible() ? "\<C-e>\<CR>" : "\<CR>"
       '';
 
       packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
