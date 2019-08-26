@@ -181,6 +181,9 @@ in {
         " https://github.com/sbdchd/neoformat/issues/251
         let g:neoformat_enabled_ruby = ['rufo', 'rubybeautify']
 
+        " I want to use prettier before anything else for JS code
+        let g:neoformat_enabled_javascript = [ 'prettier', 'prettier-eslint', 'js-beautify', 'prettydiff', 'clang-format', 'esformatter', 'standard' ]
+
         "" DOCUMENTATION
         let g:doge_enable_mappings = 0
         nnoremap <silent> <leader>ed :DogeGenerate<CR>
