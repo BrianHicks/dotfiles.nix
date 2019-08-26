@@ -245,6 +245,11 @@ in {
         nnoremap <silent> ]e :ALENextWrap<CR>
         nnoremap <silent> ]E :ALELast<CR>
         nnoremap <silent> ge :ALEDetail<CR>
+        nnoremap <silent> <leader>eF <Plug>(ale_fix)
+
+        let g:ale_fixers = {
+          \ 'ruby': [ 'rubocop' ]
+          \ }
 
         "" REPLACEMENT
         nmap s <plug>(SubversiveSubvertRange)
