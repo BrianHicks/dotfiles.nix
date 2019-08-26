@@ -240,12 +240,12 @@ in {
         let g:ale_disable_lsp = 1
         let g:ale_echo_cursor = 1
 
-        nnoremap <silent> [e <Plug>(ale_previous_wrap)
-        nnoremap <silent> [E <Plug>(ale_first)
-        nnoremap <silent> ]e <Plug>(ale_next_wrap)
-        nnoremap <silent> ]E <Plug>(ale_last)
-        nnoremap <silent> ge <Plug>(ale_detail)
-        nnoremap <silent> <leader>eF <Plug>(ale_fix)
+        nnoremap <silent> [e :ALEPreviousWrap<CR>
+        nnoremap <silent> [E :ALEFirst<CR>
+        nnoremap <silent> ]e :ALENextWrap<CR>
+        nnoremap <silent> ]E :ALELast<CR>
+        nnoremap <silent> ge :ALEDetail<CR>
+        nnoremap <silent> <leader>eF :ALEFix<CR>
 
         let g:ale_fixers = {
           \ 'ruby': [ 'rubocop' ]
