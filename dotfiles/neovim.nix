@@ -281,6 +281,10 @@ in {
         nnoremap <leader>fh :History<CR>
         nnoremap <leader>fH :Helptags<CR>
 
+        nmap <leader><leader> <plug>(fzf-maps-n)
+        xmap <leader><leader> <plug>(fzf-maps-x)
+        omap <leader><leader> <plug>(fzf-maps-o)
+
         "" EDITING
         nnoremap <leader>eD :Delete<CR>
         nnoremap <leader>er :Rename
