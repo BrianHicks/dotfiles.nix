@@ -226,7 +226,7 @@ in {
         let g:neoterm_default_mod = "vsplit"
         let g:neoterm_autoinsert = 1
 
-        nnoremap <silent> <leader>' :<c-u>exec v:count.'Ttoggle'<CR>
+        nnoremap <silent> <leader>' :<c-u>exec v:count.'Topen'<CR>
         tnoremap fd <c-\><c-n>:<c-u>Ttoggle<CR>
         tnoremap <ESC> <c-\><c-n>:<c-u>Ttoggle<CR>
 
