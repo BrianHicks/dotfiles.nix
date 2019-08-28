@@ -38,7 +38,7 @@
   # fonts
   fonts = {
     enableFontDir = true;
-    fonts = [ pkgs.hack-font ];
+    fonts = [ pkgs.hack-font pkgs.fira-code ];
   };
 
   # dotfiles
