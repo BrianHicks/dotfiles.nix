@@ -278,6 +278,7 @@ in {
         nnoremap <leader>fb :Buffers<CR>
         nnoremap <leader>ft :Ack<Space>
         nnoremap <leader>fl :Lines<CR>
+        nnoremap <leader>fj :BLines<CR>
         nnoremap <leader>fh :History<CR>
         nnoremap <leader>fH :Helptags<CR>
 
