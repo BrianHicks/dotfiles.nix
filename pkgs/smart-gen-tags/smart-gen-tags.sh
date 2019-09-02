@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
+set -x
 
-if test -d .git; then
-    /usr/bin/git ls-files --others --cached --modified --exclude-standard -z | xargs -0 /usr/bin/ctags --totals
+if test -n "${@:-}"; then
+    ctags --totals --append $@
+elif test -d .git; then
+    git ls-files --others --cached --modified --exclude-standard -z | xargs -0 ctags --totals
 else
-    echo "I don't know how to handle non-git tag finding yet"
-    # but... `ctags -R .` and then `find . -newer tags | xargs ctags` to update
-    exit 1
+    ctags -R .
 fi

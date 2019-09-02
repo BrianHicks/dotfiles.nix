@@ -6,9 +6,8 @@ pkgs.stdenv.mkDerivation {
   src = ./.;
 
   buildPhase = ''
-    cat smart-gen-tags.sh \
-      | sed 's|/usr/bin/git|${pkgs.git}/bin/git|g' \
-      | sed 's|/usr/bin/ctags|${pkgs.universal-ctags}/bin/ctags|g' \
+    sed '/\/usr\/bin\/env bash/aPATH=$PATH:${pkgs.git}\/bin:${pkgs.universal-ctags}\/bin' \
+      < smart-gen-tags.sh \
       > smart-gen-tags
 
     chmod +x smart-gen-tags
