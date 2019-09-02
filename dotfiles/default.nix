@@ -16,6 +16,7 @@
     # https://github.com/jwoudenberg/dotfiles/commit/12bd31b269b82f0dc661140b8df275ef24f41b81)
     # but I don't want to have to symlink into the overlays directory manually.
     (pkgs.callPackage ../pkgs/lorri.nix { })
+    (pkgs.callPackage ../pkgs/smart-gen-tags { })
 
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
