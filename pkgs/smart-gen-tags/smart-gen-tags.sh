@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-set -x
 
 if test -n "${@:-}"; then
     ctags --totals --append $@
