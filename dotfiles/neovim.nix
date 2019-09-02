@@ -296,7 +296,6 @@ in {
         nnoremap <leader>em :Mkdir
 
         "" TAGS
-        " TODO: add a handler if a non-zero exit code
         autocmd BufWritePost * silent !${smart-gen-tags}/bin/smart-gen-tags %
 
         "" TEXT OBJECTS
