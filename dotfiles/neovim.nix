@@ -298,6 +298,8 @@ in {
         "" TAGS
         autocmd BufWritePost * silent !${smart-gen-tags}/bin/smart-gen-tags %
 
+        nnoremap <leader>a :Dispatch! ${smart-gen-tags}/bin/smart-gen-tags<CR>
+
         "" TEXT OBJECTS
         onoremap ib :exec "normal! ggVG"<CR>
         onoremap iv :exec "normal! HVL"<CR>
