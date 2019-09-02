@@ -276,13 +276,14 @@ in {
                                                       \ "options": "--tiebreak index"
                                                       \ }))<CR>
 
-        nnoremap <leader>ff :Files<CR>
         nnoremap <leader>fb :Buffers<CR>
-        nnoremap <leader>ft :Ack<Space>
-        nnoremap <leader>fl :Lines<CR>
-        nnoremap <leader>fj :BLines<CR>
-        nnoremap <leader>fh :History<CR>
+        nnoremap <leader>ff :Files<CR>
         nnoremap <leader>fH :Helptags<CR>
+        nnoremap <leader>fh :History<CR>
+        nnoremap <leader>fj :BLines<CR>
+        nnoremap <leader>fl :Lines<CR>
+        nnoremap <leader>fs :Ack<Space>
+        nnoremap <leader>ft :Tags<CR>
 
         nmap <leader><leader> <plug>(fzf-maps-n)
         xmap <leader><leader> <plug>(fzf-maps-x)
