@@ -5,6 +5,8 @@ let
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
 
+  smart-gen-tags = pkgs.callPackage ../pkgs/smart-gen-tags { };
+
   nixfmt =
     import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { };
@@ -291,6 +293,10 @@ in {
         nnoremap <leader>er :Rename
         nnoremap <leader>ec :Chmod
         nnoremap <leader>em :Mkdir
+
+        "" TAGS
+        " TODO: add a handler if a non-zero exit code
+        autocmd BufWritePost * silent !${smart-gen-tags}/bin/smart-gen-tags
 
         "" TEXT OBJECTS
         onoremap ib :exec "normal! ggVG"<CR>

@@ -10,6 +10,7 @@
     pkgs.pv
     pkgs.tree
     pkgs.watch
+    pkgs.universal-ctags
 
     # local packages. I know I could use overlays for these (cf
     # https://github.com/jwoudenberg/dotfiles/commit/12bd31b269b82f0dc661140b8df275ef24f41b81)
