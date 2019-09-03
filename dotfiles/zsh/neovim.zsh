@@ -2,7 +2,7 @@
 
 find_and_edit() {
   if test -d .git; then
-    SOURCE="$(git ls-files)"
+    SOURCE="$(git ls-files --others --cached --modified --exclude-standard)"
   else
     SOURCE="$(find . -type f)"
   fi
