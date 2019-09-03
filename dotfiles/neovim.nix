@@ -7,6 +7,13 @@ let
 
   smart-gen-tags = pkgs.callPackage ../pkgs/smart-gen-tags { };
 
+  brianhicks-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
+    owner = "BrianHicks";
+    repo = "nur-packages";
+    rev = "c83ba70902bd88178d61e9a2a9247702b4cb52b1";
+    sha256 = "08jlvbs0dpcsxdzysf6d6zy3dy0b14bcrfcjahs15fa1945nfk0q";
+  }) { };
+
   nixfmt =
     import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { };
@@ -237,7 +244,7 @@ in {
         tmap <c-l> <c-\><c-n><c-w><c-l>
         tmap <c-h> <c-\><c-n><c-w><c-h>
 
-        "" LINTING
+        "" LINTING / LANGUAGE SERVER
         let g:ale_cursor_detail = 0
         let g:ale_disable_lsp = 1
         let g:ale_echo_cursor = 1
@@ -252,6 +259,13 @@ in {
         let g:ale_fixers = {
           \ 'ruby': [ 'rubocop' ]
           \ }
+
+        let g:ale_linters = {
+          \ 'elm': [ 'elm_ls' ]
+          \ }
+
+        let g:ale_elm_ls_use_global = 1
+        let g:ale_elm_ls_executable = "${brianhicks-nur.elm-language-server}/bin/elm-language-server"
 
         "" REPLACEMENT
         nmap s <plug>(SubversiveSubvertRange)
