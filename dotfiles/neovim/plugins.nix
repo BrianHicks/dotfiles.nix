@@ -183,6 +183,16 @@ rec {
     };
   };
 
+  mityu.vim-applescript = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-applescript";
+    src = pkgs.fetchFromGitHub {
+      owner = "mityu";
+      repo = "vim-applescript";
+      rev = "9c94b6e3be384034314571849800bf8a2f8c8104";
+      sha256 = "16bjj3wvy3ik4wlid95amlcchm9r74iaqqs9flb4kmf2knmlbl4d";
+    };
+  };
+
   ncm2.ncm2 = pkgs.vimUtils.buildVimPlugin {
     name = "ncm2";
     src = pkgs.fetchFromGitHub {
@@ -532,6 +542,7 @@ rec {
     kkoomen.vim-doge
     maximbaz.lightline-ale
     mileszs."ack.vim"
+    mityu.vim-applescript
     ncm2.ncm2
     ncm2.ncm2-bufword
     ncm2.ncm2-path

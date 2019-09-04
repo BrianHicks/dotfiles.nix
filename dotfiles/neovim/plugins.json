@@ -130,6 +130,13 @@
   },
   {
     "type": "github",
+    "owner": "mityu",
+    "repo": "vim-applescript",
+    "rev": "9c94b6e3be384034314571849800bf8a2f8c8104",
+    "sha256": "16bjj3wvy3ik4wlid95amlcchm9r74iaqqs9flb4kmf2knmlbl4d"
+  },
+  {
+    "type": "github",
     "owner": "ncm2",
     "repo": "ncm2",
     "rev": "53b6531769e43c7e3c9051e3a12ab31e3e06a422",
