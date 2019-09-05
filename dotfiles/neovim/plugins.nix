@@ -61,6 +61,13 @@ rec {
       rev = "6e18c03d80c323e740f87103fc05955b5c61b54e";
       sha256 = "0jgqmliy48fqdhc1lnsbvkgg24z85n7dv8z6k6xxnilcsrhfzds2";
     };
+    patches = [
+      (pkgs.fetchpatch {
+        url =
+          "https://patch-diff.githubusercontent.com/raw/dense-analysis/ale/pull/2750.patch";
+        sha256 = "075zrk6njjya62kzkr24px9l02n77si50z2pnxnm03l2cmrm3ffw";
+      })
+    ];
   };
 
   farmergreg.vim-lastplace = pkgs.vimUtils.buildVimPlugin {
