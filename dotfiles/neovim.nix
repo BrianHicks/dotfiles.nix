@@ -10,8 +10,8 @@ let
   brianhicks-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
     owner = "BrianHicks";
     repo = "nur-packages";
-    rev = "c83ba70902bd88178d61e9a2a9247702b4cb52b1";
-    sha256 = "08jlvbs0dpcsxdzysf6d6zy3dy0b14bcrfcjahs15fa1945nfk0q";
+    rev = "bf925c79c5d0ffd940e79081f831d554bee447b2";
+    sha256 = "03v03wav9w5iriyb5inwl51zn0z3np1s2jymgxv2390b4lsnda2y";
   }) { };
 
   nixfmt =
