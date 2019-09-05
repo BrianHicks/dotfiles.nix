@@ -58,8 +58,8 @@ rec {
     src = pkgs.fetchFromGitHub {
       owner = "dense-analysis";
       repo = "ale";
-      rev = "73812c3e41c1c7fcf1705811f35ac4c9ccec003e";
-      sha256 = "166hgzyx1j1n717icj0mq2n8jkg4kpi1iy5gk3q0l28nd88w5hlb";
+      rev = "6e18c03d80c323e740f87103fc05955b5c61b54e";
+      sha256 = "0jgqmliy48fqdhc1lnsbvkgg24z85n7dv8z6k6xxnilcsrhfzds2";
     };
   };
 
