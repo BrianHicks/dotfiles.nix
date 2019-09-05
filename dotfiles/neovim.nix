@@ -266,6 +266,7 @@ in {
 
         let g:ale_elm_ls_use_global = 1
         let g:ale_elm_ls_executable = "${brianhicks-nur.elm-language-server}/bin/elm-language-server"
+        let g:ale_elm_ls_elm_analyse_trigger = 'never'
 
         "" REPLACEMENT
         nmap s <plug>(SubversiveSubvertRange)
