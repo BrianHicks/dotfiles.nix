@@ -50,7 +50,10 @@ in {
         set undofile
 
         "" quickfix window
-        " autocmd FileType qf wincmd L | vertical resize 80
+        autocmd FileType qf setlocal nonumber
+        autocmd FileType qf wincmd L
+        let g:dispatch_quickfix_height = 9999
+
         nnoremap <Leader>qq :cwindow<CR>
         nnoremap <Leader>qo :copen<CR>
 
