@@ -51,7 +51,7 @@ in {
 
         "" quickfix window
         autocmd FileType qf setlocal nonumber
-        autocmd FileType qf wincmd L
+        autocmd FileType qf wincmd L | vertical resize 80
         let g:dispatch_quickfix_height = 9999
 
         nnoremap <Leader>qq :cwindow<CR>
