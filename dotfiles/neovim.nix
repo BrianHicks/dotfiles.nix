@@ -225,7 +225,7 @@ in {
         nmap P <plug>(YoinkPaste_P)
 
         "" TESTING
-        let test#strategy = "neoterm"
+        let test#strategy = "dispatch"
 
         nnoremap <silent> <leader>tn :TestNearest<CR>
         nnoremap <silent> <leader>tf :TestFile<CR>
