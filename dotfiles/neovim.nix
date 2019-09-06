@@ -87,12 +87,6 @@ in {
         let backspace=2
 
         "" FIXING LITTLE ANNOYING THINGS
-        " automatically change working directory when editing a file, so :edit
-        " and friends work relatively. Causes problems with :make, which I will
-        " fix later.
-        " TODO: fix this to always work
-        nnoremap <leader>cd :lcd %:p:h<CR>
-
         " automatically make missing directories on write
         augroup Mkdir
           autocmd!
