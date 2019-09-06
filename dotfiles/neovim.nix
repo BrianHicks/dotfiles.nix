@@ -49,6 +49,9 @@ in {
         set undodir=~/.config/vim/undo
         set undofile
 
+        "" quickfix window
+        autocmd FileType qf wincmd L | vertical resize 80
+
         "" MOUSE SUPPORT
         set mouse=a
 
