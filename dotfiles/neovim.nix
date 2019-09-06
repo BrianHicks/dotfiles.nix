@@ -51,6 +51,8 @@ in {
 
         "" quickfix window
         autocmd FileType qf wincmd L | vertical resize 80
+        nnoremap <Leader>qq :cwindow<CR>
+        nnoremap <Leader>qo :copen<CR>
 
         "" MOUSE SUPPORT
         set mouse=a
