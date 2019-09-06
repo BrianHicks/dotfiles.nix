@@ -23,6 +23,8 @@
     (import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { })
     (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
+    (import (fetchTarball "https://github.com/nmattia/niv/archive/213315b65807ceae979da902875efaad1c53dc1d.tar.gz")
+    { }).niv
   ];
 
   programs.man.enable = true;
