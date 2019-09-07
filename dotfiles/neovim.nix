@@ -265,10 +265,15 @@ in {
           \ 'elm': [ 'elm_ls' ]
           \ }
 
+        " ALE in Elm
         let g:ale_disable_lsp = 0
         let g:ale_elm_ls_use_global = 1
         let g:ale_elm_ls_executable = "${brianhicks-nur.elm-language-server}/bin/elm-language-server"
         let g:ale_elm_ls_elm_analyse_trigger = 'never'
+
+        autocmd FileType elm nmap gd <Plug>(ale_go_to_definition)
+        autocmd FileType elm nmap gr <Plug>(ale_find_references)
+        autocmd FileType elm nmap K <Plug>(ale_hover)
 
         "" REPLACEMENT
         nmap s <plug>(SubversiveSubvertRange)
