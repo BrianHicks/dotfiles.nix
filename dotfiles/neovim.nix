@@ -248,7 +248,6 @@ in {
 
         "" LINTING / LANGUAGE SERVER
         let g:ale_cursor_detail = 0
-        let g:ale_disable_lsp = 1
         let g:ale_echo_cursor = 1
 
         nnoremap <silent> [e :ALEPreviousWrap<CR>
@@ -266,6 +265,7 @@ in {
           \ 'elm': [ 'elm_ls' ]
           \ }
 
+        let g:ale_disable_lsp = 0
         let g:ale_elm_ls_use_global = 1
         let g:ale_elm_ls_executable = "${brianhicks-nur.elm-language-server}/bin/elm-language-server"
         let g:ale_elm_ls_elm_analyse_trigger = 'never'
