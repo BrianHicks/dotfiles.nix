@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
-let lorri = pkgs.callPackage ../pkgs/lorri.nix { };
+let
+  sources = import ../nix/sources.nix;
+
+  lorri = import sources.lorri { };
 in {
   launchd.user.agents.lorri = {
     command = "lorri daemon";
