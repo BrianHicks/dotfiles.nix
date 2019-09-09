@@ -233,6 +233,8 @@ in {
         nnoremap <silent> <leader>tt :TestLast<CR>
         nnoremap <silent> gt :TestVisit<CR>
 
+        let g:test#ruby#rspec#options = '--format documentation --profile 30'
+
         "" TERMINAL
         let g:neoterm_default_mod = "vsplit"
         let g:neoterm_autoinsert = 1
