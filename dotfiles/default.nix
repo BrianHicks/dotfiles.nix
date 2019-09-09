@@ -6,6 +6,8 @@ let
   pkgs = import sources.nixpkgs { };
 
   niv = import sources.niv { };
+
+  nixfmt = import sources.nixfmt { };
 in {
   imports = [ ./direnv.nix ./emacs.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./zsh.nix ];
 
@@ -26,8 +28,7 @@ in {
 
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
-    (import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
-    { })
+    nixfmt
     (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
     niv.niv
   ];

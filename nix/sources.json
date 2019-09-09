@@ -22,5 +22,17 @@
         "type": "tarball",
         "url": "https://github.com/NixOS/nixpkgs-channels/archive/e19054ab3cd5b7cc9a01d0efc71c8fe310541065.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixfmt": {
+        "branch": "master",
+        "description": "A formatter for Nix code",
+        "homepage": "https://github.com/serokell/nixfmt",
+        "owner": "serokell",
+        "repo": "nixfmt",
+        "rev": "921bbd3bb9c95cf2d677a8558b1a27fca6cee597",
+        "sha256": "0x08xsjal6db95y1sxxinwv9ks2k6fayvg8435s6zqy7zq42jxm4",
+        "type": "tarball",
+        "url": "https://github.com/serokell/nixfmt/archive/921bbd3bb9c95cf2d677a8558b1a27fca6cee597.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
