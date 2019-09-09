@@ -18,8 +18,10 @@ let
 
   extraInitExtra = builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) "" extras;
 in {
-  # for fzf previews
-  home.packages = [ pkgs.bat ];
+  home.packages = [
+    # for fzf previews
+    pkgs.bat
+  ];
 
   programs.zsh = {
     enable = true;
