@@ -7,6 +7,7 @@ let
 
   smart-gen-tags = pkgs.callPackage ../pkgs/smart-gen-tags { };
 
+  # TODO: import me from niv
   brianhicks-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
     owner = "BrianHicks";
     repo = "nur-packages";
@@ -14,6 +15,7 @@ let
     sha256 = "03v03wav9w5iriyb5inwl51zn0z3np1s2jymgxv2390b4lsnda2y";
   }) { };
 
+  # TODO: import me from niv
   nixfmt =
     import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { };
