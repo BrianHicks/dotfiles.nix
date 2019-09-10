@@ -1,8 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
-  plugins = pkgs.callPackage ./neovim/plugins.nix { };
-
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
 
   smart-gen-tags = pkgs.callPackage ../pkgs/smart-gen-tags { };
@@ -19,6 +17,29 @@ let
   nixfmt =
     import (fetchTarball "https://github.com/serokell/nixfmt/archive/e4f31f45799554ff378370256a24f606a3025b0a.tar.gz")
     { };
+
+  sources = import ../nix/sources.nix;
+
+  vimSources = lib.filterAttrs (_: source: lib.hasAttrByPath [ "vim" ] source) sources;
+
+  unpatched = lib.mapAttrs (name: source:
+    pkgs.vimUtils.buildVimPlugin {
+      name = name;
+      src = source;
+    }) vimSources;
+
+  plugins = unpatched // {
+    ale = unpatched.ale.overrideAttrs (attrs: {
+      patches = [
+        (pkgs.fetchpatch {
+          url = "https://patch-diff.githubusercontent.com/raw/dense-analysis/ale/pull/2750.patch";
+          sha256 = "075zrk6njjya62kzkr24px9l02n77si50z2pnxnm03l2cmrm3ffw";
+        })
+      ];
+    });
+
+    delimitMate = unpatched.delimitMate.overrideAttrs (attrs: { buildInputs = [ pkgs.zip pkgs.vim ]; });
+  };
 in {
   programs.neovim = {
     enable = true;
@@ -342,7 +363,7 @@ in {
         inoremap <expr> <CR> pumvisible() ? "\<C-e>\<CR>" : "\<CR>"
       '';
 
-      packages.myVimPackage.start = plugins.all ++ [ pkgs.fzf ];
+      packages.myVimPackage.start = (lib.mapAttrsToList (_: plugin: plugin) plugins) ++ [ pkgs.fzf ];
     };
   };
 }
