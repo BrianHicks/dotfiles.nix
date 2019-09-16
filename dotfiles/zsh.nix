@@ -51,7 +51,6 @@ in {
     '' + extraInitExtra;
 
     history = {
-      # TODO: why do I need both save and size?
       save = 10000;
       size = 10000;
       share = true;
