@@ -670,6 +670,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "vim-toml": {
+        "branch": "master",
+        "description": "Vim syntax for TOML",
+        "homepage": "",
+        "owner": "cespare",
+        "repo": "vim-toml",
+        "rev": "a4ec206052aa347d7df90dc4b6697b7f2b7929bc",
+        "sha256": "1dgykq4vl7vvj2f8lvg58rzqddm53i278g26ljwfimgqc8l6gmqd",
+        "type": "tarball",
+        "url": "https://github.com/cespare/vim-toml/archive/a4ec206052aa347d7df90dc4b6697b7f2b7929bc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "vim-unimpaired": {
         "branch": "master",
         "description": "TODO",
