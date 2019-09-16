@@ -25,6 +25,32 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "base16-vim": {
+        "branch": "master",
+        "description": "Base16 for Vim",
+        "homepage": "https://github.com/chriskempson/base16",
+        "owner": "chriskempson",
+        "repo": "base16-vim",
+        "rev": "6191622d5806d4448fa2285047936bdcee57a098",
+        "sha256": "1qz21jizcy533mqk9wff1wqchhixkcfkysqcqs0x35wwpbri6nz8",
+        "type": "tarball",
+        "url": "https://github.com/chriskempson/base16-vim/archive/6191622d5806d4448fa2285047936bdcee57a098.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
+    "base16-vim-lightline": {
+        "branch": "master",
+        "description": "lightline.vim colorschemes for all available base16 themes",
+        "homepage": "",
+        "owner": "mike-hearn",
+        "repo": "base16-vim-lightline",
+        "rev": "cea11b7d0a407eccf0085feefb5e3be2ec99bdbb",
+        "sha256": "0lcxcikkbk03lvsjjjqv22ypl9wpa7zkb6ndbc2gasskckzk3fa9",
+        "type": "tarball",
+        "url": "https://github.com/mike-hearn/base16-vim-lightline/archive/cea11b7d0a407eccf0085feefb5e3be2ec99bdbb.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "delimitMate": {
         "branch": "master",
         "description": "TODO",
@@ -496,19 +522,6 @@
         "repo": "vim-nix",
         "rev": "a3eed01f4de995a51dfdd06287e44fcb231f6adf",
         "sha256": "0pwdfwws1dj3705m00ghw3dvym5zbm00bfsj023gmbp6vr8wn6yi",
-        "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "vim": "true"
-    },
-    "vim-one": {
-        "branch": "master",
-        "description": "TODO",
-        "homepage": "https://github.com/rakr/vim-one",
-        "owner": "rakr",
-        "repo": "vim-one",
-        "rev": "6695e135415c53a8fbe96672e382200aa1ffb4b4",
-        "sha256": "0951r9kw23zlwd7fda6ib2d9k0akpfd2hvh82pasgw3ks9v1n2vf",
         "type": "tarball",
         "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
