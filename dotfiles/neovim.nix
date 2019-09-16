@@ -98,21 +98,9 @@ in {
 
         "" COLORS
         " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
-        function! s:base16_customize() abort
-          call Base16hi("SignColumn", g:base16_gui03, g:base16_gui02, g:base16_cterm03, g:base16_cterm02, "", "")
-          call Base16hi("LineNr", g:base16_gui03, g:base16_gui02, g:base16_cterm03, g:base16_cterm02, "", "")
-          call Base16hi("CursorLine", "", g:base16_gui02, "", g:base16_cterm02, "", "")
-          call Base16hi("CursorLineNr",  g:base16_gui04, g:base16_gui02, g:base16_cterm04, g:base16_cterm02, "", "")
-        endfunction
-
-        augroup on_change_colorschema
-          autocmd!
-          autocmd ColorScheme * call s:base16_customize()
-        augroup END
-
         set termguicolors
         set background=dark
-        colorscheme base16-material-palenight
+        colorscheme base16-dracula
 
         "" DELIMITERS
         let delimitMate_expand_space=1
@@ -138,7 +126,7 @@ in {
 
         "" STATUSLINE
         let g:lightline = {
-          \ 'colorscheme': 'base16_material_palenight'
+          \ 'colorscheme': 'base16_dracula'
           \ }
 
         let g:lightline.active = {
