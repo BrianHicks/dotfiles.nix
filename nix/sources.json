@@ -333,6 +333,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "vim-coffee-script": {
+        "branch": "master",
+        "description": "CoffeeScript support for vim",
+        "homepage": "",
+        "owner": "kchmck",
+        "repo": "vim-coffee-script",
+        "rev": "9e3b4de2a476caeb6ff21b5da20966d7c67a98bb",
+        "sha256": "1yzhyi12r508r2yjkzbcnddv3q4whjf3kchp23xs0snhwd9b981x",
+        "type": "tarball",
+        "url": "https://github.com/kchmck/vim-coffee-script/archive/9e3b4de2a476caeb6ff21b5da20966d7c67a98bb.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "vim-commentary": {
         "branch": "master",
         "description": "TODO",
