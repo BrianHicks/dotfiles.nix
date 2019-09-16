@@ -236,10 +236,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "e19054ab3cd5b7cc9a01d0efc71c8fe310541065",
-        "sha256": "0b92yhkj3pq58svyrx7jp0njhaykwr29079izqn6qs638v8zvhl2",
+        "rev": "c4196cca9acd1c51f62baf10fcbe34373e330bb3",
+        "sha256": "0jsisiw8yckq96r5rgdmkrl3a7y9vg9ivpw12h11m8w6rxsfn5m5",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/e19054ab3cd5b7cc9a01d0efc71c8fe310541065.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/c4196cca9acd1c51f62baf10fcbe34373e330bb3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-yarp": {
