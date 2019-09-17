@@ -3,7 +3,6 @@
 let
   extras = [
     ./zsh/elm.zsh
-    ./zsh/emacs.zsh
     ./zsh/git.zsh
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
@@ -45,8 +44,6 @@ in {
       PROMPT="$(random_emoji)  %B%F{blue}%c%f%b %F{blue}»%f "
       RPROMPT='%F{green}$(test -f .git/HEAD && sed "s|ref: refs/heads/||g" .git/HEAD)%f'
 
-      # Although I use emacs for most development, prefer to make quick edits
-      # (including stuff like git commit messages) in vim!
       EDITOR=vim
     '' + extraInitExtra;
 

@@ -11,7 +11,7 @@ let
 
   lorri = import sources.lorri { };
 in {
-  imports = [ ./direnv.nix ./emacs.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./zsh.nix ];
+  imports = [ ./direnv.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./zsh.nix ];
 
   home.packages = [
     pkgs.ag
