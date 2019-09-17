@@ -5,17 +5,11 @@ let
 
   smart-gen-tags = pkgs.callPackage ../pkgs/smart-gen-tags { };
 
-  # TODO: import me from niv
-  brianhicks-nur = pkgs.callPackage (pkgs.fetchFromGitHub {
-    owner = "BrianHicks";
-    repo = "nur-packages";
-    rev = "bf925c79c5d0ffd940e79081f831d554bee447b2";
-    sha256 = "03v03wav9w5iriyb5inwl51zn0z3np1s2jymgxv2390b4lsnda2y";
-  }) { };
-
   sources = import ../nix/sources.nix;
 
   nixfmt = import sources.nixfmt { };
+
+  brianhicks-nur = import sources.brianhicks-nur { };
 
   vimSources = lib.filterAttrs (_: source: lib.hasAttrByPath [ "vim" ] source) sources;
 
