@@ -29,7 +29,6 @@ in {
 
     enableAutosuggestions = true;
     enableCompletion = true;
-    # TODO: environment.pathsToLink (see home-configuration.nix man page)
 
     initExtra = ''
       # from https://gist.github.com/oshybystyi/2c30543cd48b2c9ecab0
