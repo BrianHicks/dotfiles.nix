@@ -473,7 +473,8 @@
         "sha256": "0naf2pyjcylqgrw7j6nvl6kb4g2gc5936621w957qhj98c3cp8fx",
         "type": "tarball",
         "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
     },
     "vim-lastplace": {
         "branch": "master",
