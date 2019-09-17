@@ -16,8 +16,8 @@ in {
 
       EnvironmentVariables = {
         # enable the variables below to make lorri output debug stuff
-        # RUST_BACKTRACE = "full";
-        # RUST_LOG = "lorri=debug";
+        RUST_BACKTRACE = "full";
+        RUST_LOG = "lorri=debug";
       };
 
       KeepAlive = true;
