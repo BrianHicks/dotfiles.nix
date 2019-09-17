@@ -90,6 +90,7 @@ in {
         "" COLORS
         " note: possibly need instructions at https://github.com/rakr/vim-one if I ever add tmux stuff
         function! s:base16_customize() abort
+          " For palenight, darken status line, numbers, line column. Too bright for me by default.
           call Base16hi("SignColumn", g:base16_gui03, g:base16_gui02, g:base16_cterm03, g:base16_cterm02, "", "")
           call Base16hi("LineNr", g:base16_gui03, g:base16_gui02, g:base16_cterm03, g:base16_cterm02, "", "")
           call Base16hi("CursorLine", "", g:base16_gui02, "", g:base16_cterm02, "", "")
