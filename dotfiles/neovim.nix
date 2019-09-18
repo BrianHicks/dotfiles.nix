@@ -95,6 +95,10 @@ in {
           call Base16hi("LineNr", g:base16_gui03, g:base16_gui02, g:base16_cterm03, g:base16_cterm02, "", "")
           call Base16hi("CursorLine", "", g:base16_gui02, "", g:base16_cterm02, "", "")
           call Base16hi("CursorLineNr",  g:base16_gui04, g:base16_gui02, g:base16_cterm04, g:base16_cterm02, "", "")
+
+          " Brighten base text by default--it's a little light.
+          call Base16hi("Normal", "CBD4E6", g:base16_gui00, g:base16_cterm06, g:base16_cterm00, "", "")
+          call Base16hi("Comment", g:base16_gui05, g:base16_gui00, g:base16_gui05, g:base16_cterm00, "", "")
         endfunction
 
         augroup on_change_colorschema
