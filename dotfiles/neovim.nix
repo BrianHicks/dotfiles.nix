@@ -99,6 +99,31 @@ in {
           " Brighten base text by default--it's a little light.
           call Base16hi("Normal", "CBD4E6", g:base16_gui00, g:base16_cterm06, g:base16_cterm00, "", "")
           call Base16hi("Comment", g:base16_gui05, g:base16_gui00, g:base16_gui05, g:base16_cterm00, "", "")
+
+          " customize Elm highlighting
+          "
+          "   import Foo.Bar.Baz as Baz
+          "   ****** ^^^^^^^.&&& ** &&&
+          "
+          "   type alias Quux =
+          "   !!!! @@@@@ &&&& #
+          "       { blah : Int
+          "       @ %%%% # &&&
+          "       }
+          "       @
+          "
+          " ! Typedef
+          " # Operator
+          " % elmTypeLevelTypedef
+          " & Identifier
+          " * Include
+          " . Normal
+          " @ Delimiter
+          " ^ Type
+          "
+          call Base16hi("Delimiter", g:base16_gui06, "", g:base16_cterm06, "", "", "")
+          call Base16hi("Identifier", g:base16_gui0C, "", g:base16_cterm0C, "", "", "")
+          call Base16hi("Type", g:base16_gui0C, "", g:base16_cterm0C, "", "", "")
         endfunction
 
         augroup on_change_colorschema
@@ -109,6 +134,13 @@ in {
         set termguicolors
         set background=dark
         colorscheme base16-material-palenight
+
+        function! SynGroup()
+          let l:s = synID(line('.'), col('.'), 1)
+          echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+        endfun
+
+        command SynGroup :call SynGroup()
 
         "" DELIMITERS
         let delimitMate_expand_space=1
