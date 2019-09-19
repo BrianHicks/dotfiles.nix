@@ -51,6 +51,18 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "brianhicks-nur": {
+        "branch": "master",
+        "description": "Nix packages I'm using which aren't upstream for whatever reason",
+        "homepage": null,
+        "owner": "BrianHicks",
+        "repo": "nur-packages",
+        "rev": "bf925c79c5d0ffd940e79081f831d554bee447b2",
+        "sha256": "03v03wav9w5iriyb5inwl51zn0z3np1s2jymgxv2390b4lsnda2y",
+        "type": "tarball",
+        "url": "https://github.com/BrianHicks/nur-packages/archive/bf925c79c5d0ffd940e79081f831d554bee447b2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "delimitMate": {
         "branch": "master",
         "description": "TODO",
@@ -266,18 +278,6 @@
         "sha256": "0jsisiw8yckq96r5rgdmkrl3a7y9vg9ivpw12h11m8w6rxsfn5m5",
         "type": "tarball",
         "url": "https://github.com/NixOS/nixpkgs-channels/archive/c4196cca9acd1c51f62baf10fcbe34373e330bb3.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "brianhicks-nur": {
-        "branch": "master",
-        "description": "Nix packages I'm using which aren't upstream for whatever reason",
-        "homepage": null,
-        "owner": "BrianHicks",
-        "repo": "nur-packages",
-        "rev": "bf925c79c5d0ffd940e79081f831d554bee447b2",
-        "sha256": "03v03wav9w5iriyb5inwl51zn0z3np1s2jymgxv2390b4lsnda2y",
-        "type": "tarball",
-        "url": "https://github.com/BrianHicks/nur-packages/archive/bf925c79c5d0ffd940e79081f831d554bee447b2.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-yarp": {
