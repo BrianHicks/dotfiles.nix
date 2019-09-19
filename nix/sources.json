@@ -403,10 +403,10 @@
         "homepage": "https://github.com/tpope/vim-dispatch",
         "owner": "tpope",
         "repo": "vim-dispatch",
-        "rev": "a76bec9196fe27e195d167a5c2ee1da763d31b96",
-        "sha256": "0a9sxpdpll68drk3w98xvmv2z31q4afw70iwjrb7lmp8raxn0i2z",
+        "rev": "ccc9856ce8f3cd96b2c83b55f5b1cff3de694e25",
+        "sha256": "09dk2xqwgy4pnddz8jimjrng1lkivm4kjc1knfba50hlpkm9dn28",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/tpope/vim-dispatch/archive/ccc9856ce8f3cd96b2c83b55f5b1cff3de694e25.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
