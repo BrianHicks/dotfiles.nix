@@ -637,10 +637,10 @@
         "homepage": "https://github.com/vim-ruby/vim-ruby",
         "owner": "vim-ruby",
         "repo": "vim-ruby",
-        "rev": "1aa8f0cd0411c093d81f4139d151f93808e53966",
-        "sha256": "04ng7mjjdacajkmx20pfwlfh1h43sh6sx58id830q9jjl7kvyhhp",
+        "rev": "1c70532339889b7794a52b956f389b4f9ab9b3eb",
+        "sha256": "1rj06j71f08b1may9pm27xf6k19bcw3jq3jbwndd975qram7zcr0",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/vim-ruby/vim-ruby/archive/1c70532339889b7794a52b956f389b4f9ab9b3eb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
