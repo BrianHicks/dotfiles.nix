@@ -468,10 +468,10 @@
         "homepage": "https://github.com/tpope/vim-fugitive",
         "owner": "tpope",
         "repo": "vim-fugitive",
-        "rev": "f04a2275dbe525df5e0a4dcdfb368d768850f8dd",
-        "sha256": "10fxg6d91mj4i1657pgm42pj3fc9yxjqy9vnyl6dl6ga7xg1qy4z",
+        "rev": "1d8c0a38b2fc4ce9ca4204676573b6335725ff75",
+        "sha256": "0ln11qdpsssgqd122zldfmjvwyvxild8a0yxgdazp720dypkvgjm",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/tpope/vim-fugitive/archive/1d8c0a38b2fc4ce9ca4204676573b6335725ff75.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
