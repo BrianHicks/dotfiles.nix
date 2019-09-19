@@ -108,10 +108,10 @@
         "homepage": "https://github.com/itchyny/lightline.vim",
         "owner": "itchyny",
         "repo": "lightline.vim",
-        "rev": "8b3aa1632c08784928458b2b85faf5c89feefccf",
-        "sha256": "0bxvxkk0zps2qxnzp8dip7ngpv9b1a74y2wjzjqqvxzljk81a714",
+        "rev": "c9ab296e856bed4e694180efb6ffb692cf18ed8f",
+        "sha256": "1sw71fyihcyjb6vlwzw5wah6q1dz2mfcswm594wrdkjxm71i0c0d",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/itchyny/lightline.vim/archive/c9ab296e856bed4e694180efb6ffb692cf18ed8f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
