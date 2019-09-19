@@ -650,10 +650,10 @@
         "homepage": "https://github.com/tpope/vim-sensible",
         "owner": "tpope",
         "repo": "vim-sensible",
-        "rev": "c176d137892f33945d3d4dd766fd21611e9b5ddf",
-        "sha256": "11adqaccwph4z5a4kyycd1gbc1l9np4za0d4fbd3cnh1zqf2xzjz",
+        "rev": "5dc6eb2d8026b4ce812a5a9c966d232b1f50c9c7",
+        "sha256": "05mig86l1hi0q1y5sj7bp09i1lwbyn7v9xp3hd853fv7z026fza0",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/tpope/vim-sensible/archive/5dc6eb2d8026b4ce812a5a9c966d232b1f50c9c7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
