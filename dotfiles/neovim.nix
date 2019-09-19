@@ -98,7 +98,7 @@ in {
 
           " Brighten base text by default--it's a little light.
           call Base16hi("Normal", "CBD4E6", g:base16_gui00, g:base16_cterm06, g:base16_cterm00, "", "")
-          call Base16hi("Comment", g:base16_gui05, g:base16_gui00, g:base16_gui05, g:base16_cterm00, "", "")
+          call Base16hi("Comment", g:base16_gui05, "", g:base16_gui05, "", "", "")
 
           " customize Elm highlighting
           "
