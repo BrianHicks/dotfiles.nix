@@ -154,15 +154,15 @@
         "vim": "true"
     },
     "ncm2-otherbuf": {
-        "branch": "master",
-        "description": "TODO",
-        "homepage": "https://github.com/fgrsnau/ncm2-otherbuf",
+        "branch": "ncm2",
+        "description": "ncm2 plugin for completing words in other buffers",
+        "homepage": "",
         "owner": "fgrsnau",
         "repo": "ncm2-otherbuf",
         "rev": "8625b68044db9e2a2b896952c2226ee11918ace4",
         "sha256": "0sir3a6vwyci5ynxii6d1mxli05cwz5z4j8rqflm3sb645c7vjsv",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/fgrsnau/ncm2-otherbuf/archive/8625b68044db9e2a2b896952c2226ee11918ace4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
