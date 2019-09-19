@@ -754,10 +754,10 @@
         "homepage": "https://github.com/svermeulen/vim-yoink",
         "owner": "svermeulen",
         "repo": "vim-yoink",
-        "rev": "e6748f69de44fb043d41237e57c1e3883e524aef",
-        "sha256": "1msf9iqm4hnqymkl5rm3ild2a2lpz7cwwjav8jqqv95jpz9pq5kn",
+        "rev": "28a77ca191cf4ecbe532b8a5cc1d2354c0d0ec0e",
+        "sha256": "1kgsyajr0iwlld5x5kbw3c2m0jvr5b3ar0q9wry795g0cfvqk4xg",
         "type": "tarball",
-        "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
+        "url": "https://github.com/svermeulen/vim-yoink/archive/28a77ca191cf4ecbe532b8a5cc1d2354c0d0ec0e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
