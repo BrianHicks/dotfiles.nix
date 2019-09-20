@@ -6,9 +6,9 @@
     enableZshIntegration = true;
   };
 
-  home.file.".direnvrc".text = ''
-    use_nix() {
-      eval "$(lorri direnv)"
-    }
-  '';
+  # home.file.".direnvrc".text = ''
+  #   use_nix() {
+  #     eval "$(lorri direnv)"
+  #   }
+  # '';
 }
