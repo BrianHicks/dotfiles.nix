@@ -239,6 +239,8 @@ in {
         au BufWritePre js  undojoin | Neoformat
       augroup END
 
+      nnoremap <leader>ef :Neoformat<CR>
+
       let g:neoformat_nix_nixfmt = {
         \ 'exe': '${nixfmt}/bin/nixfmt',
         \ 'args': ['--width', '120'],
