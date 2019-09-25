@@ -234,8 +234,9 @@ in {
       "" FORMATTING
       augroup fmt
         autocmd!
-        " https://github.com/sbdchd/neoformat/issues/134
-        au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+        " maybe needs https://github.com/sbdchd/neoformat/issues/134 again in the future. We'll see.
+        au BufWritePre elm undojoin | Neoformat
+        au BufWritePre js  undojoin | Neoformat
       augroup END
 
       let g:neoformat_nix_nixfmt = {
