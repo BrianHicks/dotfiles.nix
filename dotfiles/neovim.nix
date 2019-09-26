@@ -237,6 +237,7 @@ in {
         " maybe needs https://github.com/sbdchd/neoformat/issues/134 again in the future. We'll see.
         autocmd BufWritePre *.elm undojoin | Neoformat
         autocmd BufWritePre *.js  undojoin | Neoformat
+        autocmd BufWritePre *.nix undojoin | Neoformat
       augroup END
 
       nnoremap <leader>ef :Neoformat<CR>
