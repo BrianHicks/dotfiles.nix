@@ -235,8 +235,8 @@ in {
       augroup fmt
         autocmd!
         " maybe needs https://github.com/sbdchd/neoformat/issues/134 again in the future. We'll see.
-        au BufWritePre elm undojoin | Neoformat
-        au BufWritePre js  undojoin | Neoformat
+        autocmd BufWritePre *.elm undojoin | Neoformat
+        autocmd BufWritePre *.js  undojoin | Neoformat
       augroup END
 
       nnoremap <leader>ef :Neoformat<CR>
