@@ -332,19 +332,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "unison": {
-        "branch": "master",
-        "description": "Next generation programming language, currently in development",
-        "homepage": "http://unisonweb.org",
-        "owner": "unisonweb",
-        "repo": "unison",
-        "rev": "737b2ece8b6b5449f55fe3d23dac09c0927b6dbd",
-        "sha256": "0xp0yra7w6877gyx6gjpw83hlc6k44rarbnhwh11vn98iyjlnyx3",
-        "type": "tarball",
-        "url": "https://github.com/unisonweb/unison/archive/737b2ece8b6b5449f55fe3d23dac09c0927b6dbd.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "vim": "true"
-    },
     "vim-abolish": {
         "branch": "master",
         "description": "TODO",
