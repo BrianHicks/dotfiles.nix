@@ -20,6 +20,9 @@ in {
   home.packages = [
     # for fzf previews
     pkgs.bat
+
+    # for shell autocorrections
+    pkgs.thefuck
   ];
 
   programs.zsh = {
@@ -44,6 +47,8 @@ in {
       RPROMPT='%F{green}$(test -f .git/HEAD && sed "s|ref: refs/heads/||g" .git/HEAD)%f'
 
       EDITOR=vim
+
+      eval $(${pkgs.thefuck}/bin/thefuck --alias heck)
     '' + extraInitExtra;
 
     history = {
