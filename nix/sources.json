@@ -76,6 +76,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "deoplete.nvim": {
+        "branch": "master",
+        "description": ":stars: Dark powered asynchronous completion framework for neovim/Vim8",
+        "homepage": "",
+        "owner": "Shougo",
+        "repo": "deoplete.nvim",
+        "rev": "503c42d17deb812ee5363e271cca0e68856a289d",
+        "sha256": "1b4hd4g3s96gbq3bi4jbry02jhbzvhx09jss574krhp771mrkzl2",
+        "type": "tarball",
+        "url": "https://github.com/Shougo/deoplete.nvim/archive/503c42d17deb812ee5363e271cca0e68856a289d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "fzf.vim": {
         "branch": "master",
         "description": "TODO",

@@ -30,6 +30,12 @@ let
     });
 
     delimitMate = unpatched.delimitMate.overrideAttrs (attrs: { buildInputs = [ pkgs.zip pkgs.vim ]; });
+
+    "deoplete.nvim" = unpatched."deoplete.nvim".overrideAttrs (attrs: {
+      # deoplete has a Makefile but it looks like it's only for test stuff, so
+      # we can just ignore it. The plugin should be usable as-checked-in.
+      buildPhase = "true";
+    });
   };
 in {
   programs.neovim = {
