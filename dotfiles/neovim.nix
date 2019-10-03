@@ -219,18 +219,18 @@ in {
       nnoremap <leader>gr :Gmove
       nnoremap <leader>gR :Gremove<CR>
 
-      nmap <leader>gw <Plug>GitGutterStageHunk
-      nmap <leader>gX <Plug>GitGutterUndoHunk
-      nmap <leader>gp <Plug>GitGutterPreviewHunk
+      nmap <leader>gw <Plug>(GitGutterStageHunk)
+      nmap <leader>gX <Plug>(GitGutterUndoHunk)
+      nmap <leader>gp <Plug>(GitGutterPreviewHunk)
       nnoremap <leader>gf :GitGutterFold<CR>
 
-      omap ic <Plug>GitGutterTextObjectInnerPending
-      omap ac <Plug>GitGutterTextObjectOuterPending
-      xmap ic <Plug>GitGutterTextObjectInnerVisual
-      xmap ac <Plug>GitGutterTextObjectOuterVisual
+      omap ic <Plug>(GitGutterTextObjectInnerPending)
+      omap ac <Plug>(GitGutterTextObjectOuterPending)
+      xmap ic <Plug>(GitGutterTextObjectInnerVisual)
+      xmap ac <Plug>(GitGutterTextObjectOuterVisual)
 
-      nmap ]c <Plug>GitGutterNextHunk
-      nmap [c <Plug>GitGutterPrevHunk
+      nmap ]c <Plug>(GitGutterNextHunk)
+      nmap [c <Plug>(GitGutterPrevHunk)
 
       "" MARKDOWN
       " vim-markdown collapses and expands in a way that I don't like by default.
