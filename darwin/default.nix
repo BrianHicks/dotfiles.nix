@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../home-manager/nix-darwin ./lorri.nix ./defaults.nix ];
+  imports = [ ../home-manager/nix-darwin ./defaults.nix ];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget

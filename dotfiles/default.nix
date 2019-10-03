@@ -8,8 +8,6 @@ let
   niv = import sources.niv { };
 
   nixfmt = import sources.nixfmt { };
-
-  lorri = import sources.lorri { };
 in {
   imports = [ ./direnv.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./zsh.nix ];
 
@@ -25,7 +23,6 @@ in {
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
     (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
-    lorri
     niv.niv
     nixfmt
   ];

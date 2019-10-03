@@ -140,18 +140,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "lorri": {
-        "branch": "rolling-release",
-        "description": "Your project's nix-env",
-        "homepage": "",
-        "owner": "target",
-        "repo": "lorri",
-        "rev": "38eae3d487526ece9d1b8c9bb0d27fb45cf60816",
-        "sha256": "11k9lxg9cv6dlxj4haydvw4dhcfyszwvx7jx9p24jadqsy9jmbj4",
-        "type": "tarball",
-        "url": "https://github.com/target/lorri/archive/38eae3d487526ece9d1b8c9bb0d27fb45cf60816.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "neco-syntax": {
         "branch": "master",
         "description": "Syntax source for neocomplete/deoplete/ncm",
