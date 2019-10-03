@@ -3,8 +3,6 @@
 let
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
 
-  smart-gen-tags = pkgs.callPackage ../pkgs/smart-gen-tags { };
-
   sources = import ../nix/sources.nix;
 
   nixfmt = import sources.nixfmt { };
@@ -380,8 +378,7 @@ in {
       nnoremap <leader>fh :History<CR>
       nnoremap <leader>fj :BLines<CR>
       nnoremap <leader>fl :Lines<CR>
-      nnoremap <leader>fs :Ack<Space>
-      nnoremap <leader>ft :Tags<CR>
+      nnoremap <leader>ft :Ack<Space>
 
       nmap <leader><leader> <plug>(fzf-maps-n)
       xmap <leader><leader> <plug>(fzf-maps-x)
@@ -392,11 +389,6 @@ in {
       nnoremap <leader>er :Rename
       nnoremap <leader>ec :Chmod
       nnoremap <leader>em :Mkdir
-
-      "" TAGS
-      autocmd BufWritePost * silent !${smart-gen-tags}/bin/smart-gen-tags %
-
-      nnoremap <leader>a :Dispatch! ${smart-gen-tags}/bin/smart-gen-tags<CR>
 
       "" TEXT OBJECTS
       onoremap ib :exec "normal! ggVG"<CR>
