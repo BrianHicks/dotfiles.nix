@@ -396,6 +396,7 @@ in {
 
       "" COMPLETION
       let g:deoplete#enable_at_startup = 1
+      let g:deoplete#num_processes = 1
 
       " I don't like accepting completion suggestions with <CR>. I'd rather
       " use <Tab>.
