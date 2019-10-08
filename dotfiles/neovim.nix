@@ -256,6 +256,13 @@ in {
 
       let g:neoformat_enabled_nix = ['nixfmt']
 
+      let g:neoformat_haskell_ormolu = {
+        \ 'exe': 'ormolu',
+        \ 'args': ['--mode', 'stdout'],
+        \ }
+
+      let g:neoformat_enabled_haskell = [ 'ormolu', 'stylish-haskell', 'hindent', 'hfmt', 'brittany', 'sort-imports', 'floskell' ]
+
       let g:neoformat_basic_format_trim = 1
 
       " the formatters do not respect the indent levels in some of the files
