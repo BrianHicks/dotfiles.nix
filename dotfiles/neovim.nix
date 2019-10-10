@@ -332,6 +332,11 @@ in {
       let g:ale_cursor_detail = 0
       let g:ale_echo_cursor = 1
 
+      " the main project I use rubocop on makes these untenable as defaults.
+      " Too bad, they're kinda nice!
+      let g:ale_lint_on_text_changed = 0
+      let g:ale_lint_on_insert_leave = 0
+
       nnoremap <silent> [e :ALEPreviousWrap<CR>
       nnoremap <silent> [E :ALEFirst<CR>
       nnoremap <silent> ]e :ALENextWrap<CR>
