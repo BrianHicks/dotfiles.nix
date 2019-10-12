@@ -34,6 +34,11 @@ let
       # we can just ignore it. The plugin should be usable as-checked-in.
       buildPhase = "true";
     });
+
+    "vim-terraform" = unpatched.vim-terraform.overrideAttrs (attrs: {
+      # avoiding a Makefile
+      buildPhase = "true";
+    });
   };
 in {
   programs.neovim = {
@@ -274,6 +279,9 @@ in {
 
       " I want to use prettier before anything else for JS code
       let g:neoformat_enabled_javascript = [ 'prettier', 'prettier-eslint', 'js-beautify', 'prettydiff', 'clang-format', 'esformatter', 'standard' ]
+
+      " terraform autoformatting
+      let g:terraform_fmt_on_save=1
 
       "" DOCUMENTATION
       let g:doge_enable_mappings = 0

@@ -631,6 +631,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "vim-terraform": {
+        "branch": "master",
+        "description": "basic vim/terraform integration",
+        "homepage": "http://hashivim.github.io/vim-terraform",
+        "owner": "hashivim",
+        "repo": "vim-terraform",
+        "rev": "ffdf2dc17aaef733164a7079f95dd74f6cda9241",
+        "sha256": "1y4v2hn44rjyfh18ninzyb37xxc47fl20wzhnvs5gnnhjfsyfbqj",
+        "type": "tarball",
+        "url": "https://github.com/hashivim/vim-terraform/archive/ffdf2dc17aaef733164a7079f95dd74f6cda9241.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "vim-test": {
         "branch": "master",
         "description": "TODO",
