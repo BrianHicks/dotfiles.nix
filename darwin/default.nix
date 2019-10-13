@@ -36,6 +36,11 @@
   nix.maxJobs = 8;
   nix.buildCores = 8;
 
+  # enabling distributed builds removes a blank config line from
+  # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
+  # rest just fine.
+  nix.distributedBuilds = true;
+
   # fonts
   fonts = {
     enableFontDir = true;
