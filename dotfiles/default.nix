@@ -8,6 +8,8 @@ let
   niv = import sources.niv { };
 
   nixfmt = import sources.nixfmt { };
+
+  brianhicks-nur = import sources.brianhicks-nur { };
 in {
   imports = [ ./direnv.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./zsh.nix ];
 
@@ -25,6 +27,7 @@ in {
     (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
     niv.niv
     nixfmt
+    brianhicks-nur.tea
   ];
 
   programs.man.enable = true;
