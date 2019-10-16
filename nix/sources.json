@@ -57,10 +57,10 @@
         "homepage": null,
         "owner": "BrianHicks",
         "repo": "nur-packages",
-        "rev": "d3bb7a11c39306a38f22e8e498e0a2bbed1e0a03",
-        "sha256": "1lsbfnq04jlimfc0111rdyn85pjl6vqff93dlizanqywlpi3g3s9",
+        "rev": "a0537adba617f77795898b331c44009f6eb50949",
+        "sha256": "03l5c3az2477lxwq9kb0lm09xh7qlrrcjzv9yissp795s5ma6ppk",
         "type": "tarball",
-        "url": "https://github.com/BrianHicks/nur-packages/archive/d3bb7a11c39306a38f22e8e498e0a2bbed1e0a03.tar.gz",
+        "url": "https://github.com/BrianHicks/nur-packages/archive/a0537adba617f77795898b331c44009f6eb50949.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "delimitMate": {
