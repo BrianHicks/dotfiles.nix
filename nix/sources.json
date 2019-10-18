@@ -267,6 +267,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "typescript-vim": {
+        "branch": "master",
+        "description": "Typescript syntax files for Vim",
+        "homepage": null,
+        "owner": "leafgarland",
+        "repo": "typescript-vim",
+        "rev": "5a319ea5504e18215d155576c78d1b7fb8e22c8f",
+        "sha256": "1hz42blc1sshkms9ramdhzwnphqs26p83q8smw5y14blp1zdb628",
+        "type": "tarball",
+        "url": "https://github.com/leafgarland/typescript-vim/archive/5a319ea5504e18215d155576c78d1b7fb8e22c8f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "vim-abolish": {
         "branch": "master",
         "description": "TODO",
