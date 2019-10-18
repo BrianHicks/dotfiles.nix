@@ -18,15 +18,6 @@ let
     }) vimSources;
 
   plugins = unpatched // {
-    ale = unpatched.ale.overrideAttrs (attrs: {
-      patches = [
-        (pkgs.fetchpatch {
-          url = "https://patch-diff.githubusercontent.com/raw/dense-analysis/ale/pull/2750.patch";
-          sha256 = "075zrk6njjya62kzkr24px9l02n77si50z2pnxnm03l2cmrm3ffw";
-        })
-      ];
-    });
-
     delimitMate = unpatched.delimitMate.overrideAttrs (attrs: { buildInputs = [ pkgs.zip pkgs.vim ]; });
 
     "deoplete.nvim" = unpatched."deoplete.nvim".overrideAttrs (attrs: {
