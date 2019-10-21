@@ -27,7 +27,6 @@ in {
     (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
     niv.niv
     nixfmt
-    brianhicks-nur.tea
   ];
 
   programs.man.enable = true;
