@@ -696,19 +696,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "vim-yoink": {
-        "branch": "master",
-        "description": "TODO",
-        "homepage": "https://github.com/svermeulen/vim-yoink",
-        "owner": "svermeulen",
-        "repo": "vim-yoink",
-        "rev": "28a77ca191cf4ecbe532b8a5cc1d2354c0d0ec0e",
-        "sha256": "1kgsyajr0iwlld5x5kbw3c2m0jvr5b3ar0q9wry795g0cfvqk4xg",
-        "type": "tarball",
-        "url": "https://github.com/svermeulen/vim-yoink/archive/28a77ca191cf4ecbe532b8a5cc1d2354c0d0ec0e.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "vim": "true"
-    },
     "visual-split.vim": {
         "branch": "master",
         "description": "TODO",

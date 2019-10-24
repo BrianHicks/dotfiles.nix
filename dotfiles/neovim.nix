@@ -292,13 +292,6 @@ in {
       nnoremap <leader>pp :Start<Space>
       nnoremap <leader>pP :Spawn<Space>
 
-      "" YOINK
-      nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-      nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-
-      nmap p <plug>(YoinkPaste_p)
-      nmap P <plug>(YoinkPaste_P)
-
       "" TESTING
       let test#strategy = "dispatch"
 
