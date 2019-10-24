@@ -20,12 +20,6 @@ let
   plugins = unpatched // {
     delimitMate = unpatched.delimitMate.overrideAttrs (attrs: { buildInputs = [ pkgs.zip pkgs.vim ]; });
 
-    "deoplete.nvim" = unpatched."deoplete.nvim".overrideAttrs (attrs: {
-      # deoplete has a Makefile but it looks like it's only for test stuff, so
-      # we can just ignore it. The plugin should be usable as-checked-in.
-      buildPhase = "true";
-    });
-
     "vim-terraform" = unpatched.vim-terraform.overrideAttrs (attrs: {
       # avoiding a Makefile
       buildPhase = "true";
@@ -320,11 +314,6 @@ in {
       let g:ale_cursor_detail = 0
       let g:ale_echo_cursor = 1
 
-      " the main project I use rubocop on makes these untenable as defaults.
-      " Too bad, they're kinda nice!
-      let g:ale_lint_on_text_changed = 0
-      let g:ale_lint_on_insert_leave = 0
-
       nnoremap <silent> [e :ALEPreviousWrap<CR>
       nnoremap <silent> [E :ALEFirst<CR>
       nnoremap <silent> ]e :ALENextWrap<CR>
@@ -336,19 +325,12 @@ in {
         \ 'ruby': [ 'rubocop' ]
         \ }
 
+      " disable ALE linting for languages where coc.nvim manages language servers
+      " (also Rubocop)
       let g:ale_linters = {
-        \ 'elm': [ 'elm_ls' ]
+        \ 'elm': [],
+        \ 'ruby': []
         \ }
-
-      " ALE in Elm
-      let g:ale_disable_lsp = 0
-      let g:ale_elm_ls_use_global = 1
-      let g:ale_elm_ls_executable = "${brianhicks-nur.elm-language-server}/bin/elm-language-server"
-      let g:ale_elm_ls_elm_analyse_trigger = 'never'
-
-      autocmd FileType elm nmap gd <Plug>(ale_go_to_definition)
-      autocmd FileType elm nmap gr <Plug>(ale_find_references)
-      autocmd FileType elm nmap K <Plug>(ale_hover)
 
       "" REPLACEMENT
       nmap s <plug>(SubversiveSubvertRange)
@@ -395,15 +377,42 @@ in {
       onoremap ib :exec "normal! ggVG"<CR>
       onoremap iv :exec "normal! HVL"<CR>
 
-      "" COMPLETION
-      let g:deoplete#enable_at_startup = 1
-      let g:deoplete#num_processes = 1
-      let g:deoplete#max_list = 25
-      let g:ale_completion_enabled = 1
+      "" COMPLETION (coc.nvim)
+      " TODO: keybindings
+      " TODO: how do this and ALE play nicely?
+      " TOOD: diagnostic info in status line (:help coc-status-lightline@en)
 
-      " I don't like accepting completion suggestions with <CR>. I'd rather
-      " use <Tab>.
-      inoremap <expr> <CR> pumvisible() ? "\<C-e>\<CR>" : "\<CR>"
+      " ALE in Elm
+      " autocmd FileType elm nmap gd <Plug>(ale_go_to_definition)
+      " autocmd FileType elm nmap gr <Plug>(ale_find_references)
+      " autocmd FileType elm nmap K <Plug>(ale_hover)
     '';
+  };
+
+  home.file.".config/nvim/coc-settings.json".text = builtins.toJSON {
+    ## Potential pieces of config from reading the docs
+    # diagnostic.displayByAle = true
+    # diagnostic.locationlist = true
+    # suggest.enablePreview = true
+    # coc.preferences.fomatOnType = true # but could be really annoying?
+
+    # coc preferences
+    "coc.preferences.useQuickfixForLocations" = true;
+
+    # diagnostics
+    "diagnostic.displayByAle" = true;
+
+    # code lenses
+    "codeLens.enable" = true;
+
+    # language servers
+    languageserver = {
+      elmLS = {
+        command = "${brianhicks-nur.elm-language-server}/bin/elm-language-server";
+        filetypes = [ "elm" ];
+        rootPatterns = [ "elm.json" ];
+        initializationOptions.elmAnalyseTrigger = "never";
+      };
+    };
   };
 }

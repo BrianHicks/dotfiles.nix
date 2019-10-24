@@ -63,6 +63,19 @@
         "url": "https://github.com/BrianHicks/nur-packages/archive/ddbd889941fabda48f2379a0cba7244973acf78e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "coc.nvim": {
+        "branch": "release",
+        "description": "Intellisense engine for vim8 & neovim, full language server protocol support as VSCode ",
+        "homepage": "https://salt.bountysource.com/teams/coc-nvim",
+        "owner": "neoclide",
+        "repo": "coc.nvim",
+        "rev": "71d65f7e36d6745c948775aa7b0be3552ce5bdbc",
+        "sha256": "1dxazg93m29ahqrhhdlygxdvqr4vbxghjxygs2g1m0jb10szqgq8",
+        "type": "tarball",
+        "url": "https://github.com/neoclide/coc.nvim/archive/71d65f7e36d6745c948775aa7b0be3552ce5bdbc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "delimitMate": {
         "branch": "master",
         "description": "TODO",
@@ -73,31 +86,6 @@
         "sha256": "0fskm9gz81dk8arcidrm71mv72a7isng1clssqkqn5wnygbiimsn",
         "type": "tarball",
         "url": "https://github.com/{owner}/{repo}/archive/{rev}.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "vim": "true"
-    },
-    "deoplete-emoji": {
-        "branch": "master",
-        "description": "Deoplete source for emoji codes",
-        "homepage": "",
-        "owner": "fszymanski",
-        "repo": "deoplete-emoji",
-        "rev": "1dfa2da6ae3ee146ddfbfdba48cf45f0c1d57d7d",
-        "sha256": "0drqbdmy8igq6rv7s2qlxsp391pydcynlr9gkaadzrg7pk4nlgsb",
-        "type": "tarball",
-        "url": "https://github.com/fszymanski/deoplete-emoji/archive/1dfa2da6ae3ee146ddfbfdba48cf45f0c1d57d7d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "deoplete.nvim": {
-        "branch": "master",
-        "description": ":stars: Dark powered asynchronous completion framework for neovim/Vim8",
-        "homepage": "",
-        "owner": "Shougo",
-        "repo": "deoplete.nvim",
-        "rev": "2a6236d9d73f2cbbde4b802787d37cb8cbca2b33",
-        "sha256": "196kka23cidgbig86kvapzv58wqp5qgql8c0m1wkgig1v8gldssv",
-        "type": "tarball",
-        "url": "https://github.com/Shougo/deoplete.nvim/archive/2a6236d9d73f2cbbde4b802787d37cb8cbca2b33.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
