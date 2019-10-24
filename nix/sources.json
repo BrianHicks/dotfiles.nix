@@ -358,19 +358,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "vim-doge": {
-        "branch": "master",
-        "description": "TODO",
-        "homepage": "https://github.com/kkoomen/vim-doge",
-        "owner": "kkoomen",
-        "repo": "vim-doge",
-        "rev": "e820516e0464a12613d572fa33d1d6fcd39d5f46",
-        "sha256": "0cm2jrarfwblxbqfnhsl2l7l0hiwksqgpzdynj4jwn29196yklgq",
-        "type": "tarball",
-        "url": "https://github.com/kkoomen/vim-doge/archive/e820516e0464a12613d572fa33d1d6fcd39d5f46.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "vim": "true"
-    },
     "vim-elm-syntax": {
         "branch": "master",
         "description": "TODO",

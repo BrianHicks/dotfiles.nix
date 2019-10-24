@@ -274,10 +274,6 @@ in {
       " terraform autoformatting
       let g:terraform_fmt_on_save=1
 
-      "" DOCUMENTATION
-      let g:doge_enable_mappings = 0
-      nnoremap <silent> <leader>ed :DogeGenerate<CR>
-
       "" DISPATCH
       let g:dispatch_no_maps = 1
 
