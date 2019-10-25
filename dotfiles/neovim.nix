@@ -402,19 +402,12 @@ in {
 
   home.file.".config/nvim/coc-settings.json".text = builtins.toJSON {
     ## Potential pieces of config from reading the docs
-    # diagnostic.displayByAle = true
-    # diagnostic.locationlist = true
-    # suggest.enablePreview = true
     # coc.preferences.fomatOnType = true # but could be really annoying?
 
-    # coc preferences
     "coc.preferences.useQuickfixForLocations" = true;
-
-    # diagnostics
-    "diagnostic.displayByAle" = true;
-
-    # code lenses
     "codeLens.enable" = true;
+    "diagnostic.displayByAle" = true;
+    "suggest.enablePreview" = true;
 
     # language servers
     languageserver = {
