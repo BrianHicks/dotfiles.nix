@@ -404,10 +404,10 @@
         "homepage": "https://github.com/airblade/vim-gitgutter",
         "owner": "airblade",
         "repo": "vim-gitgutter",
-        "rev": "5c73edb3c2fd8794661d7c7ac72eed1fc9d36761",
-        "sha256": "0k93phv42195i3gdm4dwz5l5vni7mpqhpj7d4n0znn21kgwwca38",
+        "rev": "af20a9fcfff9b5277fc8482e802c4dec291ea589",
+        "sha256": "0jakfv1b1kc8mq1izj7bzd83d55z38igl7xl1c7n1vb9m2dy0nn3",
         "type": "tarball",
-        "url": "https://github.com/airblade/vim-gitgutter/archive/5c73edb3c2fd8794661d7c7ac72eed1fc9d36761.tar.gz",
+        "url": "https://github.com/airblade/vim-gitgutter/archive/af20a9fcfff9b5277fc8482e802c4dec291ea589.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
