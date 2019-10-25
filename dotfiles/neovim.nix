@@ -377,15 +377,26 @@ in {
       onoremap ib :exec "normal! ggVG"<CR>
       onoremap iv :exec "normal! HVL"<CR>
 
-      "" COMPLETION (coc.nvim)
-      " TODO: keybindings
-      " TODO: how do this and ALE play nicely?
+      "" COMPLETION / LANGUAGE SERVER (coc.nvim)
+      nmap <silent> <Leader>er <Plug>(coc-rename)
+      nmap <silent> <Leader>ol :<C-u>CocList<CR>
+      nmap <silent> <Leader>od :<C-u>CocList diagnostics<CR>
+      nmap <silent> <Leader>oo :<C-u>CocList commands<CR>
+      nmap <silent> <Leader>or :<C-u>CocListResume<CR>
+
+      " mnemonic: j for jump, J for big jump!
+      nmap <silent> <Leader>j :<C-u>CocList outline<CR>
+      nmap <silent> <Leader>J :<C-u>CocList outline<CR>
+
       " TOOD: diagnostic info in status line (:help coc-status-lightline@en)
 
-      " ALE in Elm
-      " autocmd FileType elm nmap gd <Plug>(ale_go_to_definition)
-      " autocmd FileType elm nmap gr <Plug>(ale_find_references)
-      " autocmd FileType elm nmap K <Plug>(ale_hover)
+      " Elm Language Server
+      " TODO: do all of these make sense in the context of Elm?
+      autocmd FileType elm nmap <silent> gd <Plug>(coc-definition)
+      autocmd FileType elm nmap <silent> gy <Plug>(coc-type-definition)
+      autocmd FileType elm nmap <silent> gi <Plug>(coc-implementation)
+      autocmd FileType elm nmap <silent> gr <Plug>(coc-references)
+      autocmd FileType elm nnoremap <silent> K :call <SID>show_documentation()<CR>
     '';
   };
 
