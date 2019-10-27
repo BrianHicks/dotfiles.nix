@@ -1,2 +1,2 @@
-HERE="$(realpath $(dirname $0))"
+HERE="$(dirname $0)"
 darwin-rebuild $@ -I "darwin-config=$HERE/darwin/default.nix"
