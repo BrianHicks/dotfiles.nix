@@ -14,10 +14,6 @@
   # allow zsh as a login shell
   environment.shells = [ pkgs.zsh ];
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-  nix.package = pkgs.nix;
-
   # nix.package = pkgs.nixUnstable;
   nix.allowedUsers = [ "brianhicks" ];
   nix.trustedUsers = [ "brianhicks" ];
@@ -35,6 +31,7 @@
   # $ sysctl -n hw.ncpu
   nix.maxJobs = 8;
   nix.buildCores = 8;
+  services.nix-daemon.enable = false;
 
   # enabling distributed builds removes a blank config line from
   # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
