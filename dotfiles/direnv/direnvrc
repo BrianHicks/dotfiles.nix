@@ -21,7 +21,12 @@ use_nix() {
     [[ shell.nix -nt "$cache" ]];
   then
     [ -d .direnv ] || mkdir .direnv
-    nix-shell --show-trace --pure "$@" --run "\"$direnv\" dump bash" > "$cache"
+    nix-shell --show-trace \
+              --option cores "0" \
+              --option max-jobs "auto" \
+              --pure \
+              "$@" \
+              --run "\"$direnv\" dump bash" > "$cache"
     update_drv=1
   else
     log_status using cached derivation
