@@ -24,6 +24,8 @@ let
       # avoiding a Makefile
       buildPhase = "true";
     });
+
+    "ghcid" = unpatched.ghcid.overrideAttrs (attrs: { src = "${attrs.src}/plugins/nvim"; });
   };
 in {
   programs.neovim = {

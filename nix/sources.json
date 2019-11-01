@@ -102,6 +102,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "ghcid": {
+        "branch": "master",
+        "description": "Very low feature GHCi based IDE",
+        "homepage": null,
+        "owner": "ndmitchell",
+        "repo": "ghcid",
+        "rev": "3318e1f29fde78bd75b2863d6cae6e1035f814de",
+        "sha256": "0nbmg9m6ydma7hx8kb2dgswv1ksy68iqcpsgj81782g0ksimdf8b",
+        "type": "tarball",
+        "url": "https://github.com/ndmitchell/ghcid/archive/3318e1f29fde78bd75b2863d6cae6e1035f814de.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "lightline-ale": {
         "branch": "master",
         "description": "TODO",
