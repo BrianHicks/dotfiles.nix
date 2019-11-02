@@ -29,9 +29,9 @@
 
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
-  services.nix-daemon.enable = false;
-  nix.maxJobs = 4; # normally 8 but I'm running this on a loaner laptop from Apple
-  nix.buildCores = 4; # same as above
+  services.nix-daemon.enable = true;
+  nix.maxJobs = 8;
+  nix.buildCores = 8;
 
   # enabling distributed builds removes a blank config line from
   # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
@@ -47,6 +47,6 @@
   # dotfiles
   home-manager = {
     useUserPackages = true;
-    users.brian = (import ../dotfiles);
+    users.brianhicks = (import ../dotfiles);
   };
 }
