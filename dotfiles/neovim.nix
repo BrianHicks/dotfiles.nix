@@ -316,10 +316,13 @@ in {
       let g:ale_cursor_detail = 0
       let g:ale_echo_cursor = 1
 
-      nnoremap <silent> [e :ALEPreviousWrap<CR>
-      nnoremap <silent> [E :ALEFirst<CR>
-      nnoremap <silent> ]e :ALENextWrap<CR>
-      nnoremap <silent> ]E :ALELast<CR>
+      command! Cnext try | cnext | catch | cfirst | catch | endtry
+      command! Cprev try | cprev | catch | clast | catch | endtry
+
+      nnoremap <silent> [e :Cprev<CR>
+      nnoremap <silent> [E :cfirst<CR>
+      nnoremap <silent> ]e :Cnext<CR>
+      nnoremap <silent> ]E :clast<CR>
       nnoremap <silent> ge :ALEDetail<CR>
       nnoremap <silent> <leader>eF :ALEFix<CR>
 
@@ -327,11 +330,12 @@ in {
         \ 'ruby': [ 'rubocop' ]
         \ }
 
-      " disable ALE linting for languages where coc.nvim manages language servers
-      " (also Rubocop)
+      " disable ALE linting for languages where we don't use ALE (including
+      " disabling Ruby, as rubocop takes over the CPU in annoying ways.)
       let g:ale_linters = {
         \ 'elm': [],
-        \ 'ruby': []
+        \ 'ruby': [],
+        \ 'haskell': []
         \ }
 
       "" REPLACEMENT
