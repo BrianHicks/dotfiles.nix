@@ -11,7 +11,7 @@ Well!
 It turns out to be really useful to do fuzzy file finding a large project.
 
 When I am in some filesystem hierarchy and I trigger my fuzzy-finder, I want to see sibling files before I see similarly-named files further away.
-I also wnat to match on test files pretty easily.
+I also want to match on test files pretty easily.
 Say I have this project structure:
 
 ```
