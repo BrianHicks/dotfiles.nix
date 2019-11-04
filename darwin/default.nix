@@ -29,7 +29,7 @@
 
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
-  services.nix-daemon.enable = true;
+  services.nix-daemon.enable = false;
   nix.maxJobs = 8;
   nix.buildCores = 8;
 
