@@ -38,12 +38,6 @@
   # rest just fine.
   nix.distributedBuilds = true;
 
-  # fonts
-  fonts = {
-    enableFontDir = true;
-    fonts = [ pkgs.hack-font pkgs.fira-code ];
-  };
-
   # dotfiles
   home-manager = {
     useUserPackages = true;
