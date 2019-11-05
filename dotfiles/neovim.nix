@@ -424,7 +424,7 @@ in {
     # coc.preferences.fomatOnType = true # but could be really annoying?
 
     "coc.preferences.useQuickfixForLocations" = true;
-    "codeLens.enable" = true;
+    "codeLens.enable" = false;
     "diagnostic.displayByAle" = true;
     "suggest.enablePreview" = true;
 
