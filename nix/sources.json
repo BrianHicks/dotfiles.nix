@@ -186,10 +186,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "6da5c19aa220dfd840031e0cdbe83bf8f807fd50",
-        "sha256": "173gkldf4in77ksm8bgf7bhkfyc4ayddka4cgxv5361kpgyvgccw",
+        "rev": "064c17dc003c43d388ee36160182cc84e0f08ae1",
+        "sha256": "0k89liza0jwj6rrjkvxhl21xsswcc3m5flcx8q8h4i0vbyy0yba6",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/6da5c19aa220dfd840031e0cdbe83bf8f807fd50.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/064c17dc003c43d388ee36160182cc84e0f08ae1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixfmt": {
@@ -210,10 +210,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "84d582f4c6d491a5e1f0848b10cecf871778822f",
-        "sha256": "0ipgmwq7c0xydpbir5prd5dkgm5rphpvxlwmbkzv1dhzc3v9sd4r",
+        "rev": "93e8c34e2e4bfb27c881270720cee933ae5ba336",
+        "sha256": "1x7nhdkyy4w7q10612srsbcd66dbayly956s2pfw4g49mn01pjvv",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/84d582f4c6d491a5e1f0848b10cecf871778822f.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/93e8c34e2e4bfb27c881270720cee933ae5ba336.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-yarp": {
@@ -417,10 +417,10 @@
         "homepage": "https://github.com/airblade/vim-gitgutter",
         "owner": "airblade",
         "repo": "vim-gitgutter",
-        "rev": "af20a9fcfff9b5277fc8482e802c4dec291ea589",
-        "sha256": "0jakfv1b1kc8mq1izj7bzd83d55z38igl7xl1c7n1vb9m2dy0nn3",
+        "rev": "b97acf2c8aa8f2756b3de3506ed9b97b863277eb",
+        "sha256": "13ihhjxc2ff60k8yy3y06jf8cmyz05217a8127mfarxq1vxnw7ml",
         "type": "tarball",
-        "url": "https://github.com/airblade/vim-gitgutter/archive/af20a9fcfff9b5277fc8482e802c4dec291ea589.tar.gz",
+        "url": "https://github.com/airblade/vim-gitgutter/archive/b97acf2c8aa8f2756b3de3506ed9b97b863277eb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
