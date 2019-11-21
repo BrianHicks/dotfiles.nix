@@ -348,13 +348,13 @@ in {
         \ "options": "--tiebreak index"
         \ }))<CR>
 
-      nnoremap <silent> <S-t> :call fzf#run(fzf#wrap({
+      nnoremap <silent> <C-s> :call fzf#run(fzf#wrap({
         \ "source": "git ls-files --others --cached --exclude-standard \| ${similar-sort}/bin/similar-sort " . @%,
         \ "sink": "vsplit",
         \ "options": "--tiebreak index"
         \ }))<CR>
 
-      nnoremap <silent> <A-t> :call fzf#run(fzf#wrap({
+      nnoremap <silent> <S-s> :call fzf#run(fzf#wrap({
         \ "source": "git ls-files --others --cached --exclude-standard \| ${similar-sort}/bin/similar-sort " . @%,
         \ "sink": "split",
         \ "options": "--tiebreak index"
