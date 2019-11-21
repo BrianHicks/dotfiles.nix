@@ -285,9 +285,6 @@ in {
       nnoremap          <leader>cf :FocusDispatch<Space>
       nnoremap          <leader>c? :FocusDispatch<CR>
 
-      nnoremap <leader>pp :Start<Space>
-      nnoremap <leader>pP :Spawn<Space>
-
       "" TESTING
       let test#strategy = "dispatch"
 
