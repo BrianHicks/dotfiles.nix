@@ -406,7 +406,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -431,8 +431,12 @@
 	<string>0 163 224 275 0 0 1680 1027 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>5098 98 620 392 4688 -1510 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4688 -1131 570 467 4688 -1510 1440 2537 </string>
+	<string>4688 -1505 717 841 4688 -1510 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>1680 -642 3008 1669 1680 -642 3008 1669 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1171,15 +1175,19 @@
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>9EA74C1E-D71C-4461-ACD5-E82FC8ECD1F2</string>
+	<key>NoSyncLastTipTime</key>
+	<real>595952416.01748395</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>4</integer>
+	<integer>9</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>594610171.73305202</real>
+	<real>594842396.15771902</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
+	<true/>
+	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
@@ -1895,8 +1903,28 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>List</string>
+	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>594437371.73289001</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>0004</string>
+		<string>0000</string>
+		<string>0010</string>
+		<string>0007</string>
+		<string>0003</string>
+		<string>0006</string>
+		<string>0002</string>
+		<string>000</string>
+		<string>0009</string>
+		<string>0005</string>
+		<string>0001</string>
+		<string>0008</string>
+		<string>0011</string>
+	</array>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1941,9 +1969,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-04T16:30:27Z</date>
+	<date>2019-11-20T17:35:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>SoundForEsc</key>
@@ -1964,6 +1994,8 @@
 	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.6</string>
 </dict>
