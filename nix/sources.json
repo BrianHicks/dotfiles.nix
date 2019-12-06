@@ -281,6 +281,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "unison": {
+        "branch": "master",
+        "description": "A friendly programming language from the future",
+        "homepage": "https://unisonweb.org",
+        "owner": "unisonweb",
+        "repo": "unison",
+        "rev": "6841df00e87bf5c7c8a600c01233dee94e7263df",
+        "sha256": "1xa1cx6w00c54wafsxncqdn220f57wc223ghdpir6v9k41g0z67x",
+        "type": "tarball",
+        "url": "https://github.com/unisonweb/unison/archive/6841df00e87bf5c7c8a600c01233dee94e7263df.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "vim": "true"
+    },
     "vim-abolish": {
         "branch": "master",
         "description": "TODO",

@@ -26,6 +26,8 @@ let
     });
 
     "ghcid" = unpatched.ghcid.overrideAttrs (attrs: { src = "${attrs.src}/plugins/nvim"; });
+
+    "unison" = unpatched.unison.overrideAttrs (attrs: { src = "${attrs.src}/editor-support/vim"; });
   };
 in {
   programs.neovim = {
