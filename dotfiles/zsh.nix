@@ -31,6 +31,7 @@ in {
 
     initExtra = ''
       EDITOR=vim
+      RPROMPT=
 
       eval $(${pkgs.thefuck}/bin/thefuck --alias heck)
     '' + extraInitExtra;
