@@ -11,7 +11,7 @@ let
 
   brianhicks-nur = import sources.brianhicks-nur { };
 in {
-  imports = [ ./direnv.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./taskwarrior.nix ./zsh.nix ];
+  imports = [ ./bat.nix ./direnv.nix ./fzf.nix ./git.nix ./neovim.nix ./ssh.nix ./taskwarrior.nix ./zsh.nix ];
 
   home.packages = [
     pkgs.ag

@@ -17,9 +17,6 @@ let
   extraInitExtra = builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) "" extras;
 in {
   home.packages = [
-    # for fzf previews
-    pkgs.bat
-
     # for shell autocorrections
     pkgs.thefuck
   ];
