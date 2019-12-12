@@ -24,6 +24,8 @@
         "time"
         "character"
       ];
+
+      git_branch.symbol = "";
     };
   };
 }
