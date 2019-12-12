@@ -27,9 +27,5 @@ in {
   ];
 
   programs.man.enable = true;
-
-  programs.home-manager = {
-    enable = true;
-    path = "$HOME/dotfiles.nix/home-manager";
-  };
+  programs.home-manager.enable = true;
 }
