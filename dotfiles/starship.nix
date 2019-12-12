@@ -26,6 +26,11 @@
       ];
 
       git_branch.symbol = "";
+      git_status = {
+        style = "bold green";
+        prefix = "";
+        suffix = " ";
+      };
     };
   };
 }
