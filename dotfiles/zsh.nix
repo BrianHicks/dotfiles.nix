@@ -30,18 +30,6 @@ in {
     enableCompletion = true;
 
     initExtra = ''
-      # from https://gist.github.com/oshybystyi/2c30543cd48b2c9ecab0
-      EMOJI=(🐦 🚀 🎨 🍕 🐭 ☕️ 🔬 🐷 🐼 🐶 🐧 🐳 🍔 🍻 🔮 💰 💎 💾 💜 🍪 🌞 🌍 🐌 🐓 🐏 ✈️ )
-
-      function random_emoji {
-        echo -n "$EMOJI[$RANDOM%$#EMOJI+1]"
-      }
-
-      setopt PROMPT_SUBST
-
-      PROMPT="$(random_emoji)  %B%F{blue}%c%f%b %F{blue}»%f "
-      RPROMPT='%F{green}$(test -f .git/HEAD && sed "s|ref: refs/heads/||g" .git/HEAD)%f'
-
       EDITOR=vim
 
       eval $(${pkgs.thefuck}/bin/thefuck --alias heck)
