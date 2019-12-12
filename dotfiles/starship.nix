@@ -6,7 +6,7 @@
     enableZshIntegration = true;
 
     settings = {
-      add_newline = false;
+      add_newline = true;
       prompt_order = [
         "kubernetes"
         "directory"
