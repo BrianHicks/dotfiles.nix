@@ -10,6 +10,7 @@ let
     ./zsh/neovim.zsh
     ./zsh/nix.zsh
     ./zsh/nixify.sh
+    ./zsh/root.zsh
     ./zsh/rubofix.zsh
     ./zsh/scripts.zsh
   ];
