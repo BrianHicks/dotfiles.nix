@@ -49,6 +49,14 @@ in {
         indent = true;
         marker = "⎁";
       };
+
+      hooks = [
+        {
+          name = "WinCreate";
+          option = ".*";
+          commands = "auto-pairs-enable";
+        }
+      ];
     };
   };
 

@@ -25,6 +25,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "auto-pairs.kak": {
+        "branch": "master",
+        "description": "Kakoune extension to enable automatic closing of pairs",
+        "homepage": "https://kakoune.org",
+        "kakoune": "plugin",
+        "owner": "alexherbo2",
+        "repo": "auto-pairs.kak",
+        "rev": "5df771d1c695f35ee28ee41bd8616c8f8b950ca5",
+        "sha256": "1kc05g3m1g425gwz3jdlwibw3xnbz3xcc776xlf0kh83bsidypvy",
+        "type": "tarball",
+        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/5df771d1c695f35ee28ee41bd8616c8f8b950ca5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "base16-vim": {
         "branch": "master",
         "description": "Base16 for Vim",
