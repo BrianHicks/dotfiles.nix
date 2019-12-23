@@ -15,16 +15,14 @@ let
     kakoune.mkPlugin {
       name = name;
       src = source;
-    }
-  ) pluginSources;
+    }) pluginSources;
   plugins = lib.mapAttrsToList (_: plugin: plugin) pluginAttrs;
 
   colorAttrs = lib.mapAttrs (name: source:
     kakoune.mkColorPlugin {
       name = name;
       src = source;
-    }
-  ) colorSources;
+    }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
   programs.kakoune = {
@@ -37,7 +35,7 @@ in {
       };
       numberLines = {
         enable = true;
-        separator = "\" \"";
+        separator = ''" "'';
       };
       showMatching = true;
       ui.enableMouse = true;
