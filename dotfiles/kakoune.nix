@@ -68,6 +68,11 @@ in {
           name = "WinCreate";
           option = ".*";
         }
+        {
+          commands = "mkdir-buffer";
+          name = "BufWritePre";
+          option = ".*";
+        }
       ];
     };
   };

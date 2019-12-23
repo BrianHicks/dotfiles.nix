@@ -180,6 +180,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "mkdir.kak": {
+        "branch": "master",
+        "description": "mkdir integration for Kakoune",
+        "homepage": "https://kakoune.org",
+        "kakoune": "plugin",
+        "owner": "alexherbo2",
+        "repo": "mkdir.kak",
+        "rev": "fed14455f2b48586f630e1f8cc0efc48278dd2fe",
+        "sha256": "19c1jsg90dwmq86mc3rk0pnsj5fa5x5lfk6jk6jrmih6h0kavr37",
+        "type": "tarball",
+        "url": "https://github.com/alexherbo2/mkdir.kak/archive/fed14455f2b48586f630e1f8cc0efc48278dd2fe.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "neco-syntax": {
         "branch": "master",
         "description": "Syntax source for neocomplete/deoplete/ncm",
