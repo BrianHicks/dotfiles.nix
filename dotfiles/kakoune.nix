@@ -20,7 +20,7 @@ in {
       };
       numberLines = {
         enable = true;
-        separator = " ";
+        separator = "\" \"";
       };
       showMatching = true;
       ui.enableMouse = true;
