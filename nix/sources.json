@@ -115,19 +115,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "kakoune-colors": {
-        "branch": "master",
-        "description": "Color schemes for kakoune",
-        "homepage": "http://kakoune.org",
-        "kakoune": "colors",
-        "owner": "Delapouite",
-        "repo": "kakoune-colors",
-        "rev": "390b97672227f65b87e476aa925acd3a898fc339",
-        "sha256": "1b9flzwdakffcg7lnrlisp291scnhnii86pg683vqllpwfkgazd9",
-        "type": "tarball",
-        "url": "https://github.com/Delapouite/kakoune-colors/archive/390b97672227f65b87e476aa925acd3a898fc339.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-palette": {
         "branch": "master",
         "description": "Preview face colors in kakoune",
