@@ -22,18 +22,13 @@ let
     kakoune.mkColorPlugin {
       name = name;
       src = source;
-    }) colorSources // {
-      colors = kakoune.mkColorPlugin {
-        name = "colors";
-        src = ./kakoune/colors;
-      };
-    };
+    }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
   programs.kakoune = {
     enable = true;
     config = {
-      colorScheme = "city-lights";
+      colorScheme = "palenight";
       scrollOff = {
         columns = 0;
         lines = 5;
