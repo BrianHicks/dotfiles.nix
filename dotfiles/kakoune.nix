@@ -74,6 +74,14 @@ in {
           option = ".*";
         }
       ];
+
+      keyMappings = [
+        {
+          mode = "normal";
+          key = "<c-t>";
+          effect = ": fzf-mode<ret>";
+        }
+      ];
     };
   };
 
