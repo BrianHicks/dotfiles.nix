@@ -23,6 +23,11 @@ with lib; {
             ln -s $plugin autoload/$(basename $plugin)
           done
         done
+
+        # if this directory is linked in `<rtpath>/share/autoload`, Kakoune
+        # will ignore the built-in autoloads. We can get around this by
+        # linking those autoloads into our output.
+        ln -s ${pkgs.kakoune-unwrapped}/share/kak/autoload autoload/builtin
       '';
       installPhase = ''
         mkdir -p $out/share/kak
