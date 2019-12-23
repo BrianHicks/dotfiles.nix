@@ -127,6 +127,19 @@
         "url": "https://github.com/Delapouite/kakoune-colors/archive/390b97672227f65b87e476aa925acd3a898fc339.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "kakoune-palette": {
+        "branch": "master",
+        "description": "Preview face colors in kakoune",
+        "homepage": "http://kakoune.org",
+        "kakoune": true,
+        "owner": "Delapouite",
+        "repo": "kakoune-palette",
+        "rev": "052cab5f48578679d94717ed5f62429be9865d5d",
+        "sha256": "1p9mpzx6i816pcw9sala2kvy0ky39kwccxgsf3y3bpw6m8pi6kby",
+        "type": "tarball",
+        "url": "https://github.com/Delapouite/kakoune-palette/archive/052cab5f48578679d94717ed5f62429be9865d5d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lightline-ale": {
         "branch": "master",
         "description": "TODO",
