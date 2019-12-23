@@ -52,13 +52,11 @@ in {
 
       hooks = [
         {
+          commands = "auto-pairs-enable";
           name = "WinCreate";
           option = ".*";
-          commands = "auto-pairs-enable";
         }
         {
-          name = "WinCreate";
-          option = ".*";
           commands = ''
             declare-user-mode surround
             map global surround s ':surround<ret>' -docstring 'Surround'
@@ -67,6 +65,8 @@ in {
             map global surround t ':select-surrounding-tag<ret>' -docstring 'Select tag'
             map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
           '';
+          name = "WinCreate";
+          option = ".*";
         }
       ];
     };
