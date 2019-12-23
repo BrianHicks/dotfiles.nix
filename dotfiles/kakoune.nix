@@ -8,17 +8,24 @@ let
   };
 
   # plugins
-  kakoune-palette = kakoune.mkPlugin {
-    name = "kakoune-palette";
-    src = sources.kakoune-palette;
-  };
-  kakoune-colors = kakoune.mkColorPlugin {
-    name = "kakoune-colors";
-    src = sources.kakoune-colors;
-  };
+  pluginSources = lib.filterAttrs (_: source: lib.attrByPath [ "kakoune" ] "" source == "plugin") sources;
+  colorSources = lib.filterAttrs (_: source: lib.attrByPath [ "kakoune" ] "" source == "colors") sources;
 
-  colors = kakoune.mkColors [ kakoune-colors ];
-  plugins = kakoune.mkPlugins [ kakoune-palette ];
+  pluginAttrs = lib.mapAttrs (name: source:
+    kakoune.mkPlugin {
+      name = name;
+      src = source;
+    }
+  ) pluginSources;
+  plugins = lib.mapAttrsToList (_: plugin: plugin) pluginAttrs;
+
+  colorAttrs = lib.mapAttrs (name: source:
+    kakoune.mkColorPlugin {
+      name = name;
+      src = source;
+    }
+  ) colorSources;
+  colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
   programs.kakoune = {
     enable = true;
@@ -43,6 +50,6 @@ in {
   };
 
   # plugins
-  home.file.".config/kak/colors".source = "${colors}/share/kak/colors";
-  home.file.".config/kak/autoload".source = "${plugins}/share/kak/autoload";
+  home.file.".config/kak/colors".source = "${kakoune.mkColors colors}/share/kak/colors";
+  home.file.".config/kak/autoload".source = "${kakoune.mkPlugins plugins}/share/kak/autoload";
 }
