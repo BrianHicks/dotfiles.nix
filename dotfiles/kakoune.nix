@@ -1,13 +1,20 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+let
+  sources = import ../nix/sources.nix;
+in
+{
   programs.kakoune = {
     enable = true;
     config = {
-      # colorScheme = "";
+      colorScheme = "gotham";
       scrollOff = {
         columns = 0;
         lines = 5;
       };
-      numberLines.enable = true;
+      numberLines = {
+       enable = true;
+       separator = " ";
+      };
       showMatching = true;
       ui.enableMouse = true;
       wrapLines = {
@@ -17,4 +24,7 @@
       };
     };
   };
+
+  # plugins
+  home.file.".config/kak/colors".source = sources.kakoune-colors;
 }
