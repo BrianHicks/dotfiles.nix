@@ -56,6 +56,18 @@ in {
           option = ".*";
           commands = "auto-pairs-enable";
         }
+        {
+          name = "WinCreate";
+          option = ".*";
+          commands = ''
+            declare-user-mode surround
+            map global surround s ':surround<ret>' -docstring 'Surround'
+            map global surround c ':change-surround<ret>' -docstring 'Change'
+            map global surround d ':delete-surround<ret>' -docstring 'Delete'
+            map global surround t ':select-surrounding-tag<ret>' -docstring 'Select tag'
+            map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
+          '';
+        }
       ];
     };
   };

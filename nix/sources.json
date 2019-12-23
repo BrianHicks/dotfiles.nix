@@ -141,6 +141,19 @@
         "url": "https://github.com/Delapouite/kakoune-palette/archive/052cab5f48578679d94717ed5f62429be9865d5d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "kakoune-surround": {
+        "branch": "master",
+        "description": "Surround selection, Change/Delete surrounder",
+        "homepage": null,
+        "kakoune": "plugin",
+        "owner": "h-youhei",
+        "repo": "kakoune-surround",
+        "rev": "efe74c6f434d1e30eff70d4b0d737f55bf6c5022",
+        "sha256": "09fd7qhlsazf4bcl3z7xh9z0fklw69c5j32hminphihq74qrry6h",
+        "type": "tarball",
+        "url": "https://github.com/h-youhei/kakoune-surround/archive/efe74c6f434d1e30eff70d4b0d737f55bf6c5022.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lightline-ale": {
         "branch": "master",
         "description": "TODO",
