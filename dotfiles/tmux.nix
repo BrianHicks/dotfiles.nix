@@ -14,6 +14,10 @@
 
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
+
+      # status line
+      set status-bg colour0
+      set status-fg colour16
     '';
   };
 }
