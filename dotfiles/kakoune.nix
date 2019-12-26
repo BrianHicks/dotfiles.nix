@@ -29,7 +29,7 @@ let
     }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
-  home.packages = [ kak-lsp ];
+  home.packages = [ kak-lsp pkgs.shellcheck ];
 
   programs.kakoune = {
     enable = true;

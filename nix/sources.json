@@ -319,6 +319,18 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "shellcheck.kak": {
+        "branch": "master",
+        "description": "ShellCheck integration for Kakoune",
+        "homepage": null,
+        "owner": "whereswaldon",
+        "repo": "shellcheck.kak",
+        "rev": "9acad49508ee95c215541e58353335d9d5b8a927",
+        "sha256": "00hyiag96qx74mmp0z0mpysb6x85n6wfb0cy50xnddgxv58pglg4",
+        "type": "tarball",
+        "url": "https://github.com/whereswaldon/shellcheck.kak/archive/9acad49508ee95c215541e58353335d9d5b8a927.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "tabular": {
         "branch": "master",
         "description": "TODO",
