@@ -77,11 +77,6 @@ in {
         }
         {
           commands = "git update-diff";
-          name = "NormalIdle";
-          option = ".*";
-        }
-        {
-          commands = "git update-diff";
           name = "BufReload";
           option = ".*";
         }
