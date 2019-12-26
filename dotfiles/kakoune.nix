@@ -116,6 +116,26 @@ in {
           effect = "<esc>: git prev-hunk<ret>";
           docstring = "previous hunk";
         }
+
+        # vertical selection
+        {
+          mode = "user";
+          key = "v";
+          effect = ": vertical-selection-down<ret>";
+          docstring = "vertical selection down";
+        }
+        {
+          mode = "user";
+          key = "<a-v>";
+          effect = ": vertical-selection-up<ret>";
+          docstring = "vertical selection up";
+        }
+        {
+          mode = "user";
+          key = "V";
+          effect = ": vertical-selection-up-and-down<ret>";
+          docstring = "vertical selection up and down";
+        }
       ];
     };
 
