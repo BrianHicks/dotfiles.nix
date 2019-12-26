@@ -13,7 +13,7 @@ let
   colorSources = lib.filterAttrs
     (_: source: lib.attrByPath [ "kakoune" ] "" source == "colors") sources;
 
-  kak-lsp = import ../pkgs/kak-lsp {  };
+  kak-lsp = import ../pkgs/kak-lsp { };
 
   pluginAttrs = lib.mapAttrs (name: source:
     kakoune.mkPlugin {
@@ -86,13 +86,11 @@ in {
         }
       ];
 
-      keyMappings = [
-        {
-          mode = "normal";
-          key = "<c-t>";
-          effect = ": fzf-mode<ret>";
-        }
-      ];
+      keyMappings = [{
+        mode = "normal";
+        key = "<c-t>";
+        effect = ": fzf-mode<ret>";
+      }];
     };
 
     extraConfig = ''
