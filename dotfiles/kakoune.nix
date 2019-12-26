@@ -52,20 +52,23 @@ in {
           option = ".*";
         }
         {
-          commands = ''
-            declare-user-mode surround
-            map global surround s ':surround<ret>' -docstring 'Surround'
-            map global surround c ':change-surround<ret>' -docstring 'Change'
-            map global surround d ':delete-surround<ret>' -docstring 'Delete'
-            map global surround t ':select-surrounding-tag<ret>' -docstring 'Select tag'
-            map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
-          '';
+          commands = "mkdir-buffer";
+          name = "BufWritePre";
+          option = ".*";
+        }
+        {
+          commands = "git show-diff";
+          name = "BufOpenFile";
+          option = ".*";
+        }
+        {
+          commands = "git show-diff";
           name = "WinCreate";
           option = ".*";
         }
         {
-          commands = "mkdir-buffer";
-          name = "BufWritePre";
+          commands = "git update-diff";
+          name = "BufWritePost";
           option = ".*";
         }
       ];
@@ -78,6 +81,15 @@ in {
         }
       ];
     };
+
+    extraConfig = ''
+      declare-user-mode surround
+      map global surround s ':surround<ret>' -docstring 'Surround'
+      map global surround c ':change-surround<ret>' -docstring 'Change'
+      map global surround d ':delete-surround<ret>' -docstring 'Delete'
+      map global surround t ':select-surrounding-tag<ret>' -docstring 'Select tag'
+      map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
+    '';
   };
 
   # plugins
