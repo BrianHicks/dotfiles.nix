@@ -8,8 +8,10 @@ let
   };
 
   # plugins
-  pluginSources = lib.filterAttrs (_: source: lib.attrByPath [ "kakoune" ] "" source == "plugin") sources;
-  colorSources = lib.filterAttrs (_: source: lib.attrByPath [ "kakoune" ] "" source == "colors") sources;
+  pluginSources = lib.filterAttrs
+    (_: source: lib.attrByPath [ "kakoune" ] "" source == "plugin") sources;
+  colorSources = lib.filterAttrs
+    (_: source: lib.attrByPath [ "kakoune" ] "" source == "colors") sources;
 
   pluginAttrs = lib.mapAttrs (name: source:
     kakoune.mkPlugin {
@@ -93,6 +95,8 @@ in {
   };
 
   # plugins
-  home.file.".config/kak/colors".source = "${kakoune.mkColors colors}/share/kak/colors";
-  home.file.".config/kak/autoload".source = "${kakoune.mkPlugins plugins}/share/kak/autoload";
+  home.file.".config/kak/colors".source =
+    "${kakoune.mkColors colors}/share/kak/colors";
+  home.file.".config/kak/autoload".source =
+    "${kakoune.mkPlugins plugins}/share/kak/autoload";
 }
