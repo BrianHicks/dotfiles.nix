@@ -13,12 +13,14 @@ let
   colorSources = lib.filterAttrs
     (_: source: lib.attrByPath [ "kakoune" ] "" source == "colors") sources;
 
+  kak-lsp = import ../pkgs/kak-lsp {  };
+
   pluginAttrs = lib.mapAttrs (name: source:
     kakoune.mkPlugin {
       name = name;
       src = source;
     }) pluginSources;
-  plugins = lib.mapAttrsToList (_: plugin: plugin) pluginAttrs;
+  plugins = lib.mapAttrsToList (_: plugin: plugin) pluginAttrs ++ [ kak-lsp ];
 
   colorAttrs = lib.mapAttrs (name: source:
     kakoune.mkColorPlugin {
@@ -27,6 +29,8 @@ let
     }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
+  home.packages = [ kak-lsp ];
+
   programs.kakoune = {
     enable = true;
     config = {
