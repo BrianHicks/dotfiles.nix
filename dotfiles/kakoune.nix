@@ -84,6 +84,18 @@ in {
           name = "BufReload";
           option = ".*";
         }
+
+        # Nix
+        {
+          commands = "set-option buffer formatcmd nixfmt";
+          name = "WinCreate";
+          option = ".*.nix";
+        }
+        {
+          commands = "format";
+          name = "BufWritePre";
+          option = ".*.nix";
+        }
       ];
 
       keyMappings = [{
