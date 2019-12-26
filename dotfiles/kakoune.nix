@@ -58,6 +58,8 @@ in {
           name = "BufWritePre";
           option = ".*";
         }
+
+        # Git Status
         {
           commands = "git show-diff";
           name = "BufOpenFile";
@@ -71,6 +73,16 @@ in {
         {
           commands = "git update-diff";
           name = "BufWritePost";
+          option = ".*";
+        }
+        {
+          commands = "git update-diff";
+          name = "NormalIdle";
+          option = ".*";
+        }
+        {
+          commands = "git update-diff";
+          name = "BufReload";
           option = ".*";
         }
       ];
