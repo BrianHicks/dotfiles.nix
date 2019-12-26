@@ -98,11 +98,25 @@ in {
         }
       ];
 
-      keyMappings = [{
-        mode = "normal";
-        key = "<c-t>";
-        effect = ": fzf-mode<ret>";
-      }];
+      keyMappings = [
+        {
+          mode = "normal";
+          key = "<c-t>";
+          effect = ": fzf-mode<ret>";
+        }
+        {
+          mode = "goto";
+          key = "d";
+          effect = "<esc>: git next-hunk<ret>";
+          docstring = "next hunk";
+        }
+        {
+          mode = "goto";
+          key = "<a-d>";
+          effect = "<esc>: git prev-hunk<ret>";
+          docstring = "previous hunk";
+        }
+      ];
     };
 
     extraConfig = ''
