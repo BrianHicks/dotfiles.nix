@@ -106,13 +106,13 @@ in {
         }
         {
           mode = "goto";
-          key = "d";
+          key = "u";
           effect = "<esc>: git next-hunk<ret>";
           docstring = "next hunk";
         }
         {
           mode = "goto";
-          key = "<a-d>";
+          key = "<a-u>";
           effect = "<esc>: git prev-hunk<ret>";
           docstring = "previous hunk";
         }
