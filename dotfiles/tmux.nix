@@ -3,6 +3,8 @@
     enable = true;
     terminal = "tmux-256color";
     shortcut = "a";
+    keyMode = "vi";
+    secureSocket = false;
     extraConfig = ''
       set -ga terminal-overrides ",*col*:Tc"
 
