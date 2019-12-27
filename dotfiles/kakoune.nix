@@ -13,8 +13,6 @@ let
   colorSources = lib.filterAttrs
     (_: source: lib.attrByPath [ "kakoune" ] "" source == "colors") sources;
 
-  kak-lsp = import ../pkgs/kak-lsp { };
-
   pluginAttrs = lib.mapAttrs (name: source:
     kakoune.mkPlugin {
       name = name;
@@ -29,7 +27,7 @@ let
     }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
-  home.packages = [ kak-lsp pkgs.shellcheck ];
+  home.packages = [ pkgs.shellcheck ];
 
   programs.kakoune = {
     enable = true;
@@ -136,26 +134,6 @@ in {
           effect = ": vertical-selection-up-and-down<ret>";
           docstring = "vertical selection up and down";
         }
-
-        # kak-lsp
-        {
-          mode = "goto";
-          key = "r";
-          effect = "<esc>: lsp-find-error<ret>";
-          docstring = "next error";
-        }
-        {
-          mode = "goto";
-          key = "<a-r>";
-          effect = "<esc>: lsp-find-error --previous<ret>";
-          docstring = "previous error";
-        }
-        {
-          mode = "user";
-          key = "l";
-          effect = ": enter-user-mode lsp<ret>";
-          docstring = "language server";
-        }
       ];
     };
 
@@ -166,10 +144,6 @@ in {
       map global surround d ': delete-surround<ret>' -docstring 'Delete'
       map global surround t ': select-surrounding-tag<ret>' -docstring 'Select tag'
       map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
-
-      # kak-lsp
-      eval %sh{kak-lsp --kakoune --session $kak_session}
-      lsp-enable
     '';
   };
 
@@ -178,35 +152,4 @@ in {
     "${kakoune.mkColors colors}/share/kak/colors";
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
-
-  # kak-lsp
-  home.file."Library/Preferences/kak-lsp/kak-lsp.toml".text = ''
-    snippet_support = false
-    verbosity = 2
-
-    [server]
-    # exit session if no requests were received during given period in seconds
-    # works only in unix sockets mode (-s/--session)
-    # set to 0 to disable
-    timeout = 1800 # seconds = 30 minutes
-
-    [language.haskell]
-    filetypes = ["haskell"]
-    roots = ["Setup.hs", "stack.yaml", "*.cabal"]
-    command = "hie"
-    args = ["--lsp"]
-
-    [language.elm]
-    filetypes = ["elm"]
-    roots = ["elm.json"]
-    command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server"
-    args = ["--stdio"]
-
-    [language.elm.initialization_options]
-    runtime = "node"
-    elmPath = "elm"
-    elmFormatPath = "elm-format"
-    elmTestPath = "elm-test"
-    elmAnalyseTrigger = "never"
-  '';
 }

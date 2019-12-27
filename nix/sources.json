@@ -141,18 +141,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "kak-lsp": {
-        "branch": "v7.0.0",
-        "description": "Kakoune Language Server Protocol Client",
-        "homepage": null,
-        "owner": "ul",
-        "repo": "kak-lsp",
-        "rev": "bd8825bad96fc7d18d8f3123f34b5fbddeef0be6",
-        "sha256": "1b9v417g0z9q1sqgnms5vy740xggg4fcz0fdwbc4hfvfj6jkyaad",
-        "type": "tarball",
-        "url": "https://github.com/ul/kak-lsp/archive/bd8825bad96fc7d18d8f3123f34b5fbddeef0be6.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-palette": {
         "branch": "master",
         "description": "Preview face colors in kakoune",
