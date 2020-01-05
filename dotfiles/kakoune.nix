@@ -94,6 +94,24 @@ in {
           name = "BufWritePre";
           option = ".*.nix";
         }
+
+        # Elm
+        {
+          name = "WinCreate";
+          option = ".*.elm";
+          commands = ''
+            evaluate-commands %sh{
+              if which elm-format > /dev/null; then
+                echo 'set-option buffer formatcmd "elm-format --stdin"'
+              fi
+            }
+          '';
+        }
+        {
+          commands = "format";
+          name = "BufWritePre";
+          option = ".*.elm";
+        }
       ];
 
       keyMappings = [
