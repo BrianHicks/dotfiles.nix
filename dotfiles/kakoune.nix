@@ -162,6 +162,12 @@ in {
       map global surround d ': delete-surround<ret>' -docstring 'Delete'
       map global surround t ': select-surrounding-tag<ret>' -docstring 'Select tag'
       map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
+
+      # escape with fd
+      hook global InsertChar d %{ try %{
+        exec -draft hH <a-k>fd<ret> d
+        exec <esc>
+      }}
     '';
   };
 
