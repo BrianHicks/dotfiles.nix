@@ -18,8 +18,8 @@
       set -sg escape-time 25
 
       # status line
-      set status-bg colour0
-      set status-fg colour16
+      # set status-bg colour0
+      # set status-fg colour16
     '';
   };
 }
