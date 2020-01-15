@@ -89,6 +89,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "connect.kak": {
+        "branch": "master",
+        "description": "Connect a program to Kakoune clients",
+        "homepage": "https://kakoune.org",
+        "kakoune": "plugin",
+        "owner": "alexherbo2",
+        "repo": "connect.kak",
+        "rev": "27c954775038787e56250d83c621767f13a4d209",
+        "sha256": "1bdds341blq8i90g044m2n6zw5jagwv43fh6cfrvkkx3r1rrhxwg",
+        "type": "tarball",
+        "url": "https://github.com/alexherbo2/connect.kak/archive/27c954775038787e56250d83c621767f13a4d209.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "delimitMate": {
         "branch": "master",
         "description": "TODO",
@@ -101,6 +114,19 @@
         "url": "https://github.com/Raimondi/delimitMate/archive/728b57a6564c1d2bdfb9b9e0f2f8c5ba3d7e0c5c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
+    },
+    "explore.kak": {
+        "branch": "master",
+        "description": "Explore things with your favorite explorer",
+        "homepage": "https://kakoune.org",
+        "kakoune": "plugin",
+        "owner": "alexherbo2",
+        "repo": "explore.kak",
+        "rev": "86fb1412521598d018e657fcfe8d1a026cfe8725",
+        "sha256": "0dhf8mmz5nick3nd5dm4n788476clcq0r582zy63dk5vz0ypk9y8",
+        "type": "tarball",
+        "url": "https://github.com/alexherbo2/explore.kak/archive/86fb1412521598d018e657fcfe8d1a026cfe8725.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fzf.kak": {
         "branch": "master",
