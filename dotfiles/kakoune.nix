@@ -120,6 +120,8 @@ in {
           key = "<c-t>";
           effect = ": fzf-mode<ret>";
         }
+
+        # git browsing
         {
           mode = "goto";
           key = "u";
