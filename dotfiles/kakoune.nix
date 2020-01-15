@@ -135,6 +135,14 @@ in {
           docstring = "previous hunk";
         }
 
+        # file browsing
+        {
+          mode = "normal";
+          key = "_";
+          effect =
+            ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
+        }
+
         # vertical selection
         {
           mode = "user";
