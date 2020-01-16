@@ -7,6 +7,8 @@ let
     lib = nixpkgs.lib;
   };
 
+  similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
+
   # plugins
   pluginSources = lib.filterAttrs
     (_: source: lib.attrByPath [ "kakoune" ] "" source == "plugin") sources;
@@ -141,6 +143,18 @@ in {
           key = "_";
           effect =
             ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
+        }
+        {
+          mode = "normal";
+          key = "<minus>";
+          effect =
+            ": connect-terminal sh -c %{ edit $(git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak index) } -- %val{bufname}<ret>";
+        }
+        {
+          mode = "normal";
+          key = "<a-minus>";
+          effect =
+            ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
         }
 
         # vertical selection
