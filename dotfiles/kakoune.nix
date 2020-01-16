@@ -45,6 +45,7 @@ in {
       };
       showMatching = true;
       ui.enableMouse = true;
+      ui.assistant = "clippy";
       wrapLines = {
         enable = true;
         indent = true;
