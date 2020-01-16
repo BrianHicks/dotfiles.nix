@@ -34,7 +34,7 @@ in {
   programs.kakoune = {
     enable = true;
     config = {
-      colorScheme = "palenight";
+      colorScheme = "lucius";
       scrollOff = {
         columns = 0;
         lines = 5;
