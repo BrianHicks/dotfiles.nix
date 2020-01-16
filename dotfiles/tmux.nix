@@ -5,6 +5,7 @@
     shortcut = "a";
     keyMode = "vi";
     secureSocket = false;
+    baseIndex = 1;
     extraConfig = ''
       set -ga terminal-overrides ",*col*:Tc"
 
