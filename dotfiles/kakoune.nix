@@ -55,7 +55,7 @@ in {
       hooks = [
         {
           commands = "auto-pairs-enable";
-          name = "WinSetOption";
+          name = "WinCreate";
           option = ".*";
         }
         {
@@ -72,7 +72,7 @@ in {
         }
         {
           commands = "git show-diff";
-          name = "WinSetOption";
+          name = "WinCreate";
           option = ".*";
         }
         {
@@ -88,8 +88,11 @@ in {
 
         # Nix
         {
-          commands = "set-option buffer formatcmd nixfmt";
-          name = "WinSetOption";
+          commands = ''
+            set-option buffer formatcmd nixfmt
+            set-option buffer indentwidth 2
+          '';
+          name = "WinCreate";
           option = ".*.nix";
         }
         {
@@ -98,9 +101,16 @@ in {
           option = ".*.nix";
         }
 
+        # Ruby
+        {
+          commands = "set-option buffer indentwidth 2";
+          name = "WinCreate";
+          option = ".*.rb";
+        }
+
         # Elm
         {
-          name = "WinSetOption";
+          name = "WinCreate";
           option = ".*.elm";
           commands = ''
             evaluate-commands %sh{
