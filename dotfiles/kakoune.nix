@@ -130,12 +130,6 @@ in {
       ];
 
       keyMappings = [
-        {
-          mode = "normal";
-          key = "<c-t>";
-          effect = ": fzf-mode<ret>";
-        }
-
         # git browsing
         {
           mode = "goto";
