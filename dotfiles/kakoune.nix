@@ -55,7 +55,7 @@ in {
       hooks = [
         {
           commands = "auto-pairs-enable";
-          name = "WinCreate";
+          name = "WinSetOption";
           option = ".*";
         }
         {
@@ -72,7 +72,7 @@ in {
         }
         {
           commands = "git show-diff";
-          name = "WinCreate";
+          name = "WinSetOption";
           option = ".*";
         }
         {
@@ -89,7 +89,7 @@ in {
         # Nix
         {
           commands = "set-option buffer formatcmd nixfmt";
-          name = "WinCreate";
+          name = "WinSetOption";
           option = ".*.nix";
         }
         {
@@ -100,7 +100,7 @@ in {
 
         # Elm
         {
-          name = "WinCreate";
+          name = "WinSetOption";
           option = ".*.elm";
           commands = ''
             evaluate-commands %sh{
