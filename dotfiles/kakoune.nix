@@ -8,6 +8,8 @@ let
   };
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
+  similar-sort-files-cmd = arg:
+    "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | fzf --tiebreak index";
 
   # plugins
   pluginSources = lib.filterAttrs
@@ -158,8 +160,9 @@ in {
         {
           mode = "normal";
           key = "<minus>";
-          effect =
-            ": connect-terminal sh -c %{ edit $(git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak index) } -- %val{bufname}<ret>";
+          effect = ": connect-terminal sh -c %{ edit $(${
+              similar-sort-files-cmd "$1"
+            }) } -- %val{bufname}<ret>";
         }
         {
           mode = "normal";
@@ -197,6 +200,15 @@ in {
       map global surround d ': delete-surround<ret>' -docstring 'Delete'
       map global surround t ': select-surrounding-tag<ret>' -docstring 'Select tag'
       map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
+
+      declare-user-mode window
+      map global window v ': tmux-terminal-horizontal sh -c %{ kak -c $1 $(${
+        similar-sort-files-cmd "$2"
+      }) } -- %val{client_pid} $val{bufname}<ret>' -docstring "vertical split with selection"
+      map global window s ': tmux-terminal-vertical sh -c %{ kak -c $1 $(${
+        similar-sort-files-cmd "$2"
+      }) } -- %val{client_pid} $val{bufname}<ret>' -docstring "horizontal split with selection"
+      map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
 
       # escape with fd
       hook global InsertChar d %{ try %{
