@@ -345,6 +345,19 @@
         "url": "https://github.com/whereswaldon/shellcheck.kak/archive/9acad49508ee95c215541e58353335d9d5b8a927.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "smarttab.kak": {
+        "branch": "master",
+        "description": "Automatic handling different styles of indentation and alignment. Mirror of https://gitlab.com/andreyorst/smarttab.kak",
+        "homepage": "",
+        "kakoune": "plugin",
+        "owner": "andreyorst",
+        "repo": "smarttab.kak",
+        "rev": "1321c308edac6bd892e2bd2f683432402a04be98",
+        "sha256": "048qq8aj405q3zm28jjh6ardxb8ixkq6gs1h3bwdv2qc4zi2nj4g",
+        "type": "tarball",
+        "url": "https://github.com/andreyorst/smarttab.kak/archive/1321c308edac6bd892e2bd2f683432402a04be98.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "tabular": {
         "branch": "master",
         "description": "TODO",

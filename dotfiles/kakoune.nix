@@ -99,7 +99,6 @@ in {
         {
           commands = ''
             set-option buffer formatcmd nixfmt
-            set-option buffer indentwidth 2
           '';
           name = "WinCreate";
           option = ".*.nix";
@@ -108,13 +107,6 @@ in {
           commands = "format";
           name = "BufWritePre";
           option = ".*.nix";
-        }
-
-        # Ruby
-        {
-          commands = "set-option buffer indentwidth 2";
-          name = "WinCreate";
-          option = ".*.rb";
         }
 
         # Elm
@@ -133,6 +125,26 @@ in {
           commands = "format";
           name = "BufWritePre";
           option = ".*.elm";
+        }
+
+        # Indents
+        {
+          name = "WinCreate";
+          option = ".*.(nix|rb)";
+          commands = ''
+            expandtab
+            set-option buffer tabstop 2
+            set-option buffer softtabstop 2
+          '';
+        }
+        {
+          name = "WinCreate";
+          option = ".*.elm";
+          commands = ''
+            expandtab
+            set-option buffer tabstop 4
+            set-option buffer softtabstop 4
+          '';
         }
       ];
 
