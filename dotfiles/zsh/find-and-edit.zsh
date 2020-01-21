@@ -1,7 +1,7 @@
 ## finding files quickly
 
 find_and_edit() {
-  if test -d .git; then
+  if git status > /dev/null; then
     SOURCE="$(git ls-files --others --cached --exclude-standard)"
   else
     SOURCE="$(find . -type f)"
