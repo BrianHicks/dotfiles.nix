@@ -21,6 +21,9 @@
       # status line
       # set status-bg colour0
       # set status-fg colour16
+
+      # mouse
+      set -g mouse on
     '';
   };
 }
