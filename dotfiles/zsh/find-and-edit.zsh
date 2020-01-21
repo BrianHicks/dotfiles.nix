@@ -1,4 +1,4 @@
-## neovim shortcuts
+## finding files quickly
 
 find_and_edit() {
   if test -d .git; then
@@ -9,7 +9,7 @@ find_and_edit() {
 
   files="$(fzf --preview='bat --color=always --paging=never --style=changes {}' --select-1 --multi --query="$@" <<< "$SOURCE")"
   if [[ "$?" != "0" ]]; then return 1; fi
-  vim $files
+  $EDITOR $files
 }
 
-alias v=find_and_edit
+alias e=find_and_edit

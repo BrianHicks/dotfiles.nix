@@ -7,7 +7,7 @@ let
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
     ./zsh/kill-process.zsh
-    ./zsh/neovim.zsh
+    ./zsh/find-and-edit.zsh
     ./zsh/nix.zsh
     ./zsh/nixify.sh
     ./zsh/root.zsh
@@ -15,7 +15,9 @@ let
     ./zsh/scripts.zsh
   ];
 
-  extraInitExtra = builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) "" extras;
+  extraInitExtra =
+    builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) ""
+    extras;
 in {
   home.packages = [
     # for shell autocorrections
