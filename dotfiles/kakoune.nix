@@ -38,7 +38,8 @@ let
     }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
-  home.packages = [ pkgs.shellcheck ];
+  home.packages =
+    [ pkgs.shellcheck (pkgs.callPackages ../pkgs/kak-session { }) ];
 
   programs.kakoune = {
     enable = true;
