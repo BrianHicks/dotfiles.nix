@@ -216,13 +216,13 @@ in {
       map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
 
       declare-user-mode window
+      map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
       map global window v ': tmux-terminal-horizontal sh -c %{ kak -c $1 $(${
         similar-sort-files-cmd "$2"
-      }) } -- %val{client_pid} $val{bufname}<ret>' -docstring "vertical split with selection"
+      }) } -- %val{session} $val{bufname}<ret>' -docstring "vertical split with selection"
       map global window s ': tmux-terminal-vertical sh -c %{ kak -c $1 $(${
         similar-sort-files-cmd "$2"
-      }) } -- %val{client_pid} $val{bufname}<ret>' -docstring "horizontal split with selection"
-      map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
+      }) } -- %val{session} $val{bufname}<ret>' -docstring "horizontal split with selection"
 
       # escape with fd
       hook global InsertChar d %{ try %{
