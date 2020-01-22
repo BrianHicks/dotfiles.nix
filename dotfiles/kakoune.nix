@@ -239,7 +239,7 @@ in {
       map global tree <a-l> ': tree-select-first-child<ret>' -docstring 'First Child'
       map global tree j ': tree-select-next-node<ret>' -docstring 'Next Node'
       map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
-      map global tree ? ': tree-node-sexp<ret>' -docstring 'Show Node'
+      map global tree i ': tree-node-sexp<ret>' -docstring 'Show Node'
     '';
   };
 
