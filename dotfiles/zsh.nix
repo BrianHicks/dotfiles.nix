@@ -33,7 +33,9 @@ in {
     enableCompletion = true;
 
     initExtra = ''
-      EDITOR=kak
+      EDITOR=kak-session
+      alias kak=kak-session
+
       setopt PROMPT_SUBST
 
       PROMPT="%B%F{blue}%c%f%b %F{blue}»%f "
