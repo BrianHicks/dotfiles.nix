@@ -219,13 +219,13 @@ in {
       map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
       map global window v ': tmux-terminal-horizontal sh -c %{ kak -c $1 $(${
         similar-sort-files-cmd "$2"
-      }) } -- %val{session} %val{bufname}<ret>' -docstring "vertical split with selection"
-      map global window <a-v> ': tmux-terminal-horizontal sh -c %{ kak -c $1 } -- %val{session}<ret>'
+      }) } -- %val{session} %val{bufname}<ret>' -docstring "vertical split with fzf"
+      map global window <a-v> ': tmux-terminal-horizontal sh -c %{ kak -c $1 } -- %val{session}<ret>' -docstring "vertical split"
 
       map global window s ': tmux-terminal-vertical sh -c %{ kak -c $1 $(${
         similar-sort-files-cmd "$2"
-      }) } -- %val{session} %val{bufname}<ret>' -docstring "horizontal split with selection"
-      map global window <a-s> ': tmux-terminal-vertical sh -c %{ kak -c $1 } -- %val{session}<ret>'
+      }) } -- %val{session} %val{bufname}<ret>' -docstring "horizontal split with fzf"
+      map global window <a-s> ': tmux-terminal-vertical sh -c %{ kak -c $1 } -- %val{session}<ret>' -docstring "horizontal split"
 
       # escape with fd
       hook global InsertChar d %{ try %{
