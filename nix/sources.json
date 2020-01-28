@@ -301,10 +301,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "ec1c46e2e587e5b4b793aa93359318b22985d5ab",
-        "sha256": "1qzgzvc9g3a7sxqfa0xgs8slvvsyn17a27slp12d96l5z2nnc05y",
+        "rev": "d6430f3f77e64ae677fe59bbf41da1f9d85cad4b",
+        "sha256": "0vh5w507sab9gmhypaqlh53cpfh6kbxdx1k8r40bwvm8j165wjfp",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/ec1c46e2e587e5b4b793aa93359318b22985d5ab.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/d6430f3f77e64ae677fe59bbf41da1f9d85cad4b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-yarp": {
