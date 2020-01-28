@@ -115,19 +115,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "explore.kak": {
-        "branch": "master",
-        "description": "Explore things with your favorite explorer",
-        "homepage": "https://kakoune.org",
-        "kakoune": "plugin",
-        "owner": "alexherbo2",
-        "repo": "explore.kak",
-        "rev": "86fb1412521598d018e657fcfe8d1a026cfe8725",
-        "sha256": "0dhf8mmz5nick3nd5dm4n788476clcq0r582zy63dk5vz0ypk9y8",
-        "type": "tarball",
-        "url": "https://github.com/alexherbo2/explore.kak/archive/86fb1412521598d018e657fcfe8d1a026cfe8725.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "fzf.vim": {
         "branch": "master",
         "description": "TODO",
