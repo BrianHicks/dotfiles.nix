@@ -24,6 +24,11 @@
 
       # mouse
       set -g mouse on
+
+      # open new terminals in the same working directory
+      bind '"' split-window -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
     '';
   };
 }
