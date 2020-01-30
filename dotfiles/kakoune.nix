@@ -128,6 +128,24 @@ in {
           option = ".*.elm";
         }
 
+        # Haskell
+        {
+          name = "WinCreate";
+          option = ".*.hs";
+          commands = ''
+            evaluate-commands %sh{
+              if which ormolu > /dev/null; then
+                echo 'set-option buffer formatcmd ormolu'
+              fi
+            }
+          '';
+        }
+        {
+          commands = "format";
+          name = "BufWritePre";
+          option = ".*.hs";
+        }
+
         # Indents
         {
           name = "WinCreate";
