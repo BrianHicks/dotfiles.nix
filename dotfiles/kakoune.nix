@@ -149,7 +149,7 @@ in {
         # Indents
         {
           name = "WinCreate";
-          option = ".*.(nix|rb)";
+          option = ".*.(nix|rb|hs)";
           commands = ''
             expandtab
             set-option buffer tabstop 2
