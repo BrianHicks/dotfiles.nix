@@ -76,6 +76,18 @@
         "url": "https://github.com/BrianHicks/nur-packages/archive/ddbd889941fabda48f2379a0cba7244973acf78e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "gh-cli": {
+        "branch": "master",
+        "description": "the GitHub CLI",
+        "homepage": "",
+        "owner": "cli",
+        "repo": "cli",
+        "rev": "ae3e03373dc673c48bf48cdd030ef2489479bb69",
+        "sha256": "033y9bwdaj8735nmj22k8lrgkgimji7hyly9i4jyp11iaa7cgd7a",
+        "type": "tarball",
+        "url": "https://github.com/cli/cli/archive/ae3e03373dc673c48bf48cdd030ef2489479bb69.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "coc.nvim": {
         "branch": "release",
         "description": "Intellisense engine for vim8 & neovim, full language server protocol support as VSCode ",
