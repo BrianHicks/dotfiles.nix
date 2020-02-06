@@ -3,11 +3,11 @@
 let
   extras = [
     ./zsh/elm.zsh
+    ./zsh/find-and-edit.zsh
     ./zsh/git.zsh
     ./zsh/jetpack.zsh
     ./zsh/jump.zsh
-    ./zsh/kill-process.zsh
-    ./zsh/find-and-edit.zsh
+    ./zsh/kill.zsh
     ./zsh/nix.zsh
     ./zsh/nixify.sh
     ./zsh/root.zsh
