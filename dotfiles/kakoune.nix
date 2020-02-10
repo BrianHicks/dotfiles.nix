@@ -164,6 +164,24 @@ in {
           option = ".*.py";
         }
 
+        # JavaScript
+        {
+          name = "WinCreate";
+          option = ".*.js";
+          commands = ''
+            evaluate-commands %sh{
+              if which prettier > /dev/null; then
+                echo 'set-option buffer formatcmd "prettier --parser=typescript"'
+              fi
+            }
+          '';
+        }
+        {
+          commands = "format";
+          name = "BufWritePre";
+          option = ".*.js";
+        }
+
         # Indents
         {
           name = "WinCreate";
