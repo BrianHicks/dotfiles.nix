@@ -153,6 +153,19 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "kakboard": {
+        "branch": "master",
+        "description": "Clipboard integration for Kakoune",
+        "homepage": null,
+        "kakoune": "plugin",
+        "owner": "lePerdu",
+        "repo": "kakboard",
+        "rev": "731396b047849e01177ee4ad459db0d795fc0b9b",
+        "sha256": "15nqi226ix49pg9qndr9b923sknjl1akwbwiifrkxl1nxadwyfwk",
+        "type": "tarball",
+        "url": "https://github.com/lePerdu/kakboard/archive/731396b047849e01177ee4ad459db0d795fc0b9b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kakoune-palette": {
         "branch": "master",
         "description": "Preview face colors in kakoune",

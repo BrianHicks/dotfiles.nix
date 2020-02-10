@@ -165,6 +165,13 @@ in {
             set-option buffer softtabstop 4
           '';
         }
+
+        # kakboard
+        {
+          name = "WinCreate";
+          option = ".*";
+          commands = "kakboard-enable";
+        }
       ];
 
       keyMappings = [
