@@ -146,6 +146,24 @@ in {
           option = ".*.hs";
         }
 
+        # Python
+        {
+          name = "WinCreate";
+          option = ".*.py";
+          commands = ''
+            evaluate-commands %sh{
+              if which black > /dev/null; then
+                echo 'set-option buffer formatcmd "black - --quiet --fast"'
+              fi
+            }
+          '';
+        }
+        {
+          commands = "format";
+          name = "BufWritePre";
+          option = ".*.py";
+        }
+
         # Indents
         {
           name = "WinCreate";

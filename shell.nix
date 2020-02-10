@@ -10,6 +10,9 @@ stdenv.mkDerivation {
     ## meta-information for managing dotfiles
     niv.niv
 
+    ## formatting
+    python3Packages.black
+
     ## sample projects
     # elm
     # elmPackages.elm
