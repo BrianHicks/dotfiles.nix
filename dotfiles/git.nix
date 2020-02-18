@@ -10,12 +10,14 @@
     aliases = {
       aa = "add --all";
       amend = "commit --amend";
-      bclone = ''!"bclone() { mkdir -p ~/code/$1; git clone git@git.bytes.zone:$1.git ~/code/$1; }; bclone"'';
+      bclone = ''
+        !"bclone() { mkdir -p ~/code/$1; git clone git@git.bytes.zone:$1.git ~/code/$1; }; bclone"'';
       ci = "commit";
       co = "checkout";
       dc = "diff --cached";
       di = "diff";
-      hclone = ''!"hclone() { mkdir -p ~/code/$1; git clone git@github.com:$1.git ~/code/$1; }; hclone"'';
+      hclone = ''
+        !"hclone() { mkdir -p ~/code/$1; git clone git@github.com:$1.git ~/code/$1; }; hclone"'';
       publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)";
       st = "status";
       yoda = "push --force-with-lease";
