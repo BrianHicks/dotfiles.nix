@@ -18,7 +18,7 @@
       di = "diff";
       hclone = ''
         !"hclone() { mkdir -p ~/code/$1; git clone git@github.com:$1.git ~/code/$1; }; hclone"'';
-      publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)";
+      publish = "git push -u origin HEAD";
       st = "status";
       yoda = "push --force-with-lease";
     };
