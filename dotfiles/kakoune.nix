@@ -11,8 +11,6 @@ let
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | fzf --tiebreak index";
 
-  kak-tree = pkgs.callPackages ../pkgs/kak-tree { };
-
   # plugins
   pluginSources = lib.filterAttrs
     (_: source: lib.attrByPath [ "kakoune" ] "" source == "plugin") sources;
@@ -24,12 +22,7 @@ let
       name = name;
       src = source;
     }) pluginSources;
-  plugins = (lib.mapAttrsToList (_: plugin: plugin) pluginAttrs) ++ [
-    (kakoune.mkPlugin {
-      name = "kak-tree";
-      src = "${kak-tree.src}/rc";
-    })
-  ];
+  plugins = (lib.mapAttrsToList (_: plugin: plugin) pluginAttrs) ++ [ ];
 
   colorAttrs = lib.mapAttrs (name: source:
     kakoune.mkColorPlugin {
@@ -293,18 +286,6 @@ in {
         exec -draft hH <a-k>fd<ret> d
         exec <esc>
       }}
-
-      # kak-tree
-      set global tree_cmd '${kak-tree.kak-tree}/bin/kak-tree -vvv'
-
-      declare-user-mode tree
-      map global user t ': enter-user-mode -lock tree<ret>' -docstring 'Tree Selection'
-      map global tree h ': tree-select-parent-node<ret>' -docstring 'Parent'
-      map global tree l ': tree-select-children<ret>' -docstring 'Children'
-      map global tree <a-l> ': tree-select-first-child<ret>' -docstring 'First Child'
-      map global tree j ': tree-select-next-node<ret>' -docstring 'Next Node'
-      map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
-      map global tree i ': tree-node-sexp<ret>' -docstring 'Show Node'
     '';
   };
 
