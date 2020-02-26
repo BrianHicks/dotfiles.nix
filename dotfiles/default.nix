@@ -17,7 +17,7 @@ in {
     ./fzf.nix
     ./git.nix
     ./kakoune.nix
-    ./neovim.nix
+    # ./neovim.nix
     ./ssh.nix
     ./tmux.nix
     ./zsh.nix
