@@ -128,18 +128,6 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
-    "gh-cli": {
-        "branch": "master",
-        "description": "the GitHub CLI",
-        "homepage": "",
-        "owner": "cli",
-        "repo": "cli",
-        "rev": "fdf940eeba57740b26a4e5ea8b151720ebe94028",
-        "sha256": "1n4n75gr84mf2ppnl81hqjjylnyk1b204k5sa04yx0xxxpqklqp1",
-        "type": "tarball",
-        "url": "https://github.com/cli/cli/archive/fdf940eeba57740b26a4e5ea8b151720ebe94028.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "ghcid": {
         "branch": "master",
         "description": "Very low feature GHCi based IDE",

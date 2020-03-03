@@ -35,7 +35,6 @@ in {
     (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
     niv.niv
     nixfmt
-    (import ../pkgs/gh-cli { })
   ];
 
   programs.man.enable = true;
