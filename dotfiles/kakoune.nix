@@ -62,7 +62,7 @@ in {
           option = ".*";
         }
         {
-          commands = "mkdir-buffer %val{bufname}";
+          commands = "mkdir %val{bufname}";
           name = "BufWritePre";
           option = ".*";
         }
