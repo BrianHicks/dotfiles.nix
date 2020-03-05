@@ -30,6 +30,8 @@ let
       src = source;
     }) colorSources;
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
+
+  kak-lsp = import ../pkgs/kak-lsp { };
 in {
   home.packages =
     [ pkgs.shellcheck (pkgs.callPackages ../pkgs/kak-session { }) ];
@@ -286,6 +288,12 @@ in {
         exec -draft hH <a-k>fd<ret> d
         exec <esc>
       }}
+
+      # LSP
+      eval %sh{${kak-lsp}/bin/kak-lsp --kakoune -s $kak_session}
+      map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
+      lsp-enable
+      lsp-auto-hover-enable
     '';
   };
 
@@ -295,4 +303,52 @@ in {
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
   home.file.".config/kak/kak-tree.toml".text = "";
+  home.file."Library/Preferences/kak-lsp/kak-lsp.toml".text = ''
+    snippet_support = true
+    verbosity = 2
+
+    [semantic_scopes]
+    # Map textmate scopes to kakoune faces for semantic highlighting
+    # the underscores are translated to dots, and indicate nesting.
+    # That is, if variable_other_field is omitted, it will try the face for
+    # variable_other and then variable
+    #
+    # To see a list of available scopes in the debug buffer, run lsp-semantic-available-scopes
+    variable="variable"
+    entity_name_function="function"
+    entity_name_type="type"
+    variable_other_enummember="variable"
+    entity_name_namespace="module"
+
+    [server]
+    # exit session if no requests were received during given period in seconds
+    # works only in unix sockets mode (-s/--session)
+    # set to 0 to disable
+    timeout = 0
+
+    [language.ruby]
+    filetypes = ["ruby"]
+    roots = ["Gemfile"]
+    command = "solargraph"
+    args = ["stdio"]
+
+    # [language.haskell]
+    # filetypes = ["haskell"]
+    # roots = ["Setup.hs", "stack.yaml", "*.cabal"]
+    # command = "hie"
+    # args = ["--lsp"]
+
+    [language.elm]
+    filetypes = ["elm"]
+    roots = ["elm.json"]
+    command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server"
+    args = ["--stdio"]
+
+    [language.elm.initialization_options]
+    runtime = "node"
+    elmPath = "elm"
+    elmFormatPath = "elm-format"
+    elmTestPath = "elm-test"
+    elmAnalyseTrigger = "change"
+  '';
 }

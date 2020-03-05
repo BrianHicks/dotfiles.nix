@@ -141,6 +141,18 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "vim": "true"
     },
+    "kak-lsp": {
+        "branch": "master",
+        "description": "Kakoune Language Server Protocol Client",
+        "homepage": null,
+        "owner": "ul",
+        "repo": "kak-lsp",
+        "rev": "17fc6a6573251a77811ec7e75bf3807e24277cbb",
+        "sha256": "1ysidrb78y7i1d8db301mnjnxsc2s26wvqk6kgd0jzra744wvpnn",
+        "type": "tarball",
+        "url": "https://github.com/ul/kak-lsp/archive/17fc6a6573251a77811ec7e75bf3807e24277cbb.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kakboard": {
         "branch": "master",
         "description": "Clipboard integration for Kakoune",
