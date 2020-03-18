@@ -57,23 +57,6 @@ in {
 
       # hooks = [
 
-      #   # Haskell
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*.hs";
-      #     commands = ''
-      #       evaluate-commands %sh{
-      #         if which ormolu > /dev/null; then
-      #           echo 'set-option buffer formatcmd ormolu'
-      #         fi
-      #       }
-      #     '';
-      #   }
-      #   {
-      #     commands = "format";
-      #     name = "BufWritePre";
-      #     option = ".*.hs";
-      #   }
 
       #   # Python
       #   {
@@ -109,7 +92,7 @@ in {
       #   # Indents
       #   {
       #     name = "WinCreate";
-      #     option = ".*.(rb|hs)";
+      #     option = ".*.rb";
       #     commands = ''
       #       expandtab
       #       set-option buffer tabstop 2
@@ -235,6 +218,18 @@ in {
         # formatting
         set-option buffer formatcmd 'elm-format --stdin'
         hook buffer BufWritePre .* format
+      }
+
+      hook global WinSetOption filetype=haskell %{
+        expandtab
+        set-option buffer tabstop 2
+
+        evaluate-commands %sh{
+          if which ormolu > /dev/null; then
+            echo 'set-option buffer formatcmd ormolu'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
       }
     '';
   };
