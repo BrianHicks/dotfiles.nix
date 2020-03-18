@@ -239,10 +239,9 @@ in {
       hook global BufWritePre .* %{ mkdir %val{bufname} }
 
       # Git status
-      # hook global BufOpenFile .* %{ git show-diff }
-      # hook global WinCreate .* %{ git show-diff }
-      # hook global BufWritePost .* %{ git update-diff }
-      # hook global BufReload .* %{ git update-diff }
+      hook global WinSetOption filetype=.+ %{ git show-diff }
+      hook global BufWritePost .* %{ git update-diff }
+      hook global BufReload .* %{ git update-diff }
       # TODO: NormalIdle?
 
       ## LANGUAGES
