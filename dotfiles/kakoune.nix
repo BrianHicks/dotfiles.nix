@@ -59,18 +59,6 @@ in {
 
 
 
-      #   # JavaScript
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*.js";
-      #     commands = ''
-      #       evaluate-commands %sh{
-      #         if which prettier > /dev/null; then
-      #           echo 'set-option buffer formatcmd "prettier --parser=typescript"'
-      #         fi
-      #       }
-      #     '';
-      #   }
 
       #   # Indents
       #   {
@@ -222,6 +210,18 @@ in {
         evaluate-commands %sh{
           if which black > /dev/null; then
             echo 'set-option buffer formatcmd "black - --quiet --fast"'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
+
+      hook global WinSetOption filetype=javascript %{
+        expandtab
+        set-option buffer tabstop 2
+
+        evaluate-commands %sh{
+          if which prettier > /dev/null; then
+            echo 'set-option buffer formatcmd "prettier --parser=typescript"'
             echo 'hook buffer BufWritePre .* format'
           fi
         }
