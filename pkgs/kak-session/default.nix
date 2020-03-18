@@ -37,5 +37,7 @@ stdenv.mkDerivation {
     mkdir -p $out/bin
     cp kak-session.sh $out/bin/kak-session
     chmod +x $out/bin/kak-session
+
+    ln -s ${pkgs.kakoune}/bin/kak $out/bin/indiekak
   '';
 }
