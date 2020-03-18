@@ -60,16 +60,6 @@ in {
 
 
 
-      #   # Indents
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*.rb";
-      #     commands = ''
-      #       expandtab
-      #       set-option buffer tabstop 2
-      #       set-option buffer softtabstop 2
-      #     '';
-      #   }
 
       #   # kakboard
       #   {
@@ -225,6 +215,11 @@ in {
             echo 'hook buffer BufWritePre .* format'
           fi
         }
+      }
+
+      hook global WinSetOption filetyp=ruby %{
+        expandtab
+        set-option buffer tabstop 2
       }
     '';
   };
