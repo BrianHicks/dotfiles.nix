@@ -61,14 +61,6 @@ in {
 
 
 
-      #   # kakboard
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*";
-      #     commands = "kakboard-enable";
-      #   }
-      # ];
-
       # keyMappings = [
       #   # git browsing
       #   {
@@ -161,6 +153,9 @@ in {
       hook global BufWritePost .* %{ git update-diff }
       hook global BufReload .* %{ git update-diff }
       # TODO: NormalIdle?
+
+      # Clipboard
+      hook global WinCreate .* kakboard-enable
 
       # Languages
       hook global WinSetOption filetype=nix %{
