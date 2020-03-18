@@ -55,12 +55,6 @@ in {
         marker = "⎁";
       };
 
-      # hooks = [
-
-
-
-
-
       # keyMappings = [
       #   # git browsing
       #   {
