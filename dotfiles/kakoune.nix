@@ -249,9 +249,7 @@ in {
       hook global WinSetOption filetype=nix %{
         set-option buffer formatcmd nixfmt
         set-option buffer tabstop 2
-
         hook buffer BufWritePre .* format
-        echo "IT'S NIX!"
       }
     '';
   };
