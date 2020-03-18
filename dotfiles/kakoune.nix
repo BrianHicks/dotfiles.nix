@@ -184,5 +184,4 @@ in {
     "${kakoune.mkColors colors}/share/kak/colors";
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
-  home.file.".config/kak/kak-tree.toml".text = "";
 }
