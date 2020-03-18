@@ -32,10 +32,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "auto-pairs.kak",
-        "rev": "11fbd7c44f04c6092b5197419d669ec505a02f01",
-        "sha256": "14abpmhmzpm96rblg2lk38l5vzl4vxf23r3454p51h690683hv04",
+        "rev": "3e529e8002fe07e952c3a895f50dc749eb2b40de",
+        "sha256": "066z9l369fgvf9zrh44pw5xsmyv7figsf67z91rdv2iihwvjqxcf",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/11fbd7c44f04c6092b5197419d669ec505a02f01.tar.gz",
+        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/3e529e8002fe07e952c3a895f50dc749eb2b40de.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "base16-vim": {
