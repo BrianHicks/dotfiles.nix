@@ -55,210 +55,158 @@ in {
         marker = "⎁";
       };
 
-      hooks = [
-        {
-          commands = "auto-pairs-enable";
-          name = "WinCreate";
-          option = ".*";
-        }
-        {
-          commands = "mkdir %val{bufname}";
-          name = "BufWritePre";
-          option = ".*";
-        }
+      # hooks = [
+      #   # Elm
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*.elm";
+      #     commands = ''
+      #       evaluate-commands %sh{
+      #         if which elm-format > /dev/null; then
+      #           echo 'set-option buffer formatcmd "elm-format --stdin"'
+      #         fi
+      #       }
+      #     '';
+      #   }
+      #   {
+      #     commands = "format";
+      #     name = "BufWritePre";
+      #     option = ".*.elm";
+      #   }
 
-        # Git Status
-        {
-          commands = "git show-diff";
-          name = "BufOpenFile";
-          option = ".*";
-        }
-        {
-          commands = "git show-diff";
-          name = "WinCreate";
-          option = ".*";
-        }
-        {
-          commands = "git update-diff";
-          name = "BufWritePost";
-          option = ".*";
-        }
-        {
-          commands = "git update-diff";
-          name = "BufReload";
-          option = ".*";
-        }
+      #   # Haskell
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*.hs";
+      #     commands = ''
+      #       evaluate-commands %sh{
+      #         if which ormolu > /dev/null; then
+      #           echo 'set-option buffer formatcmd ormolu'
+      #         fi
+      #       }
+      #     '';
+      #   }
+      #   {
+      #     commands = "format";
+      #     name = "BufWritePre";
+      #     option = ".*.hs";
+      #   }
 
-        # Nix
-        {
-          commands = ''
-            set-option buffer formatcmd nixfmt
-          '';
-          name = "WinCreate";
-          option = ".*.nix";
-        }
-        {
-          commands = "format";
-          name = "BufWritePre";
-          option = ".*.nix";
-        }
+      #   # Python
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*.py";
+      #     commands = ''
+      #       evaluate-commands %sh{
+      #         if which black > /dev/null; then
+      #           echo 'set-option buffer formatcmd "black - --quiet --fast"'
+      #         fi
+      #       }
+      #     '';
+      #   }
+      #   {
+      #     commands = "format";
+      #     name = "BufWritePre";
+      #     option = ".*.py";
+      #   }
 
-        # Elm
-        {
-          name = "WinCreate";
-          option = ".*.elm";
-          commands = ''
-            evaluate-commands %sh{
-              if which elm-format > /dev/null; then
-                echo 'set-option buffer formatcmd "elm-format --stdin"'
-              fi
-            }
-          '';
-        }
-        {
-          commands = "format";
-          name = "BufWritePre";
-          option = ".*.elm";
-        }
+      #   # JavaScript
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*.js";
+      #     commands = ''
+      #       evaluate-commands %sh{
+      #         if which prettier > /dev/null; then
+      #           echo 'set-option buffer formatcmd "prettier --parser=typescript"'
+      #         fi
+      #       }
+      #     '';
+      #   }
 
-        # Haskell
-        {
-          name = "WinCreate";
-          option = ".*.hs";
-          commands = ''
-            evaluate-commands %sh{
-              if which ormolu > /dev/null; then
-                echo 'set-option buffer formatcmd ormolu'
-              fi
-            }
-          '';
-        }
-        {
-          commands = "format";
-          name = "BufWritePre";
-          option = ".*.hs";
-        }
+      #   # Indents
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*.(rb|hs)";
+      #     commands = ''
+      #       expandtab
+      #       set-option buffer tabstop 2
+      #       set-option buffer softtabstop 2
+      #     '';
+      #   }
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*.elm";
+      #     commands = ''
+      #       expandtab
+      #       set-option buffer tabstop 4
+      #       set-option buffer softtabstop 4
+      #     '';
+      #   }
 
-        # Python
-        {
-          name = "WinCreate";
-          option = ".*.py";
-          commands = ''
-            evaluate-commands %sh{
-              if which black > /dev/null; then
-                echo 'set-option buffer formatcmd "black - --quiet --fast"'
-              fi
-            }
-          '';
-        }
-        {
-          commands = "format";
-          name = "BufWritePre";
-          option = ".*.py";
-        }
+      #   # kakboard
+      #   {
+      #     name = "WinCreate";
+      #     option = ".*";
+      #     commands = "kakboard-enable";
+      #   }
+      # ];
 
-        # JavaScript
-        {
-          name = "WinCreate";
-          option = ".*.js";
-          commands = ''
-            evaluate-commands %sh{
-              if which prettier > /dev/null; then
-                echo 'set-option buffer formatcmd "prettier --parser=typescript"'
-              fi
-            }
-          '';
-        }
-        {
-          commands = "format";
-          name = "BufWritePre";
-          option = ".*.js";
-        }
+      # keyMappings = [
+      #   # git browsing
+      #   {
+      #     mode = "goto";
+      #     key = "u";
+      #     effect = "<esc>: git next-hunk<ret>";
+      #     docstring = "next hunk";
+      #   }
+      #   {
+      #     mode = "goto";
+      #     key = "<a-u>";
+      #     effect = "<esc>: git prev-hunk<ret>";
+      #     docstring = "previous hunk";
+      #   }
 
-        # Indents
-        {
-          name = "WinCreate";
-          option = ".*.(nix|rb|hs)";
-          commands = ''
-            expandtab
-            set-option buffer tabstop 2
-            set-option buffer softtabstop 2
-          '';
-        }
-        {
-          name = "WinCreate";
-          option = ".*.elm";
-          commands = ''
-            expandtab
-            set-option buffer tabstop 4
-            set-option buffer softtabstop 4
-          '';
-        }
+      #   # file browsing
+      #   {
+      #     mode = "normal";
+      #     key = "_";
+      #     effect =
+      #       ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
+      #   }
+      #   {
+      #     mode = "normal";
+      #     key = "<minus>";
+      #     effect = ": connect-terminal sh -c %{ edit $(${
+      #         similar-sort-files-cmd "$1"
+      #       }) } -- %val{bufname}<ret>";
+      #   }
+      #   {
+      #     mode = "normal";
+      #     key = "<a-minus>";
+      #     effect =
+      #       ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
+      #   }
 
-        # kakboard
-        {
-          name = "WinCreate";
-          option = ".*";
-          commands = "kakboard-enable";
-        }
-      ];
-
-      keyMappings = [
-        # git browsing
-        {
-          mode = "goto";
-          key = "u";
-          effect = "<esc>: git next-hunk<ret>";
-          docstring = "next hunk";
-        }
-        {
-          mode = "goto";
-          key = "<a-u>";
-          effect = "<esc>: git prev-hunk<ret>";
-          docstring = "previous hunk";
-        }
-
-        # file browsing
-        {
-          mode = "normal";
-          key = "_";
-          effect =
-            ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
-        }
-        {
-          mode = "normal";
-          key = "<minus>";
-          effect = ": connect-terminal sh -c %{ edit $(${
-              similar-sort-files-cmd "$1"
-            }) } -- %val{bufname}<ret>";
-        }
-        {
-          mode = "normal";
-          key = "<a-minus>";
-          effect =
-            ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
-        }
-
-        # vertical selection
-        {
-          mode = "user";
-          key = "v";
-          effect = ": vertical-selection-down<ret>";
-          docstring = "vertical selection down";
-        }
-        {
-          mode = "user";
-          key = "<a-v>";
-          effect = ": vertical-selection-up<ret>";
-          docstring = "vertical selection up";
-        }
-        {
-          mode = "user";
-          key = "V";
-          effect = ": vertical-selection-up-and-down<ret>";
-          docstring = "vertical selection up and down";
-        }
-      ];
+      #   # vertical selection
+      #   {
+      #     mode = "user";
+      #     key = "v";
+      #     effect = ": vertical-selection-down<ret>";
+      #     docstring = "vertical selection down";
+      #   }
+      #   {
+      #     mode = "user";
+      #     key = "<a-v>";
+      #     effect = ": vertical-selection-up<ret>";
+      #     docstring = "vertical selection up";
+      #   }
+      #   {
+      #     mode = "user";
+      #     key = "V";
+      #     effect = ": vertical-selection-up-and-down<ret>";
+      #     docstring = "vertical selection up and down";
+      #   }
+      # ];
     };
 
     extraConfig = ''
@@ -286,6 +234,26 @@ in {
         exec -draft hH <a-k>fd<ret> d
         exec <esc>
       }}
+
+      # automatically create directories on save
+      hook global BufWritePre .* %{ mkdir %val{bufname} }
+
+      # Git status
+      # hook global BufOpenFile .* %{ git show-diff }
+      # hook global WinCreate .* %{ git show-diff }
+      # hook global BufWritePost .* %{ git update-diff }
+      # hook global BufReload .* %{ git update-diff }
+      # TODO: NormalIdle?
+
+      ## LANGUAGES
+      # Nix
+      hook global WinSetOption filetype=nix %{
+        set-option buffer formatcmd nixfmt
+        set-option buffer tabstop 2
+
+        hook buffer BufWritePre .* format
+        echo "IT'S NIX!"
+      }
     '';
   };
 
