@@ -56,23 +56,6 @@ in {
       };
 
       # hooks = [
-      #   # Elm
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*.elm";
-      #     commands = ''
-      #       evaluate-commands %sh{
-      #         if which elm-format > /dev/null; then
-      #           echo 'set-option buffer formatcmd "elm-format --stdin"'
-      #         fi
-      #       }
-      #     '';
-      #   }
-      #   {
-      #     commands = "format";
-      #     name = "BufWritePre";
-      #     option = ".*.elm";
-      #   }
 
       #   # Haskell
       #   {
@@ -131,15 +114,6 @@ in {
       #       expandtab
       #       set-option buffer tabstop 2
       #       set-option buffer softtabstop 2
-      #     '';
-      #   }
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*.elm";
-      #     commands = ''
-      #       expandtab
-      #       set-option buffer tabstop 4
-      #       set-option buffer softtabstop 4
       #     '';
       #   }
 
@@ -244,11 +218,22 @@ in {
       hook global BufReload .* %{ git update-diff }
       # TODO: NormalIdle?
 
-      ## LANGUAGES
-      # Nix
+      # Languages
       hook global WinSetOption filetype=nix %{
-        set-option buffer formatcmd nixfmt
+        expandtab
         set-option buffer tabstop 2
+
+        # formatting
+        set-option buffer formatcmd nixfmt
+        hook buffer BufWritePre .* format
+      }
+
+      hook global WinSetOption filetype=elm %{
+        expandtab
+        set-option buffer tabstop 4
+
+        # formatting
+        set-option buffer formatcmd 'elm-format --stdin'
         hook buffer BufWritePre .* format
       }
     '';
