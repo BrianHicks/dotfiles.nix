@@ -55,62 +55,28 @@ in {
         marker = "⎁";
       };
 
-      # keyMappings = [
-      #   # git browsing
-      #   {
-      #     mode = "goto";
-      #     key = "u";
-      #     effect = "<esc>: git next-hunk<ret>";
-      #     docstring = "next hunk";
-      #   }
-      #   {
-      #     mode = "goto";
-      #     key = "<a-u>";
-      #     effect = "<esc>: git prev-hunk<ret>";
-      #     docstring = "previous hunk";
-      #   }
-
-      #   # file browsing
-      #   {
-      #     mode = "normal";
-      #     key = "_";
-      #     effect =
-      #       ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
-      #   }
-      #   {
-      #     mode = "normal";
-      #     key = "<minus>";
-      #     effect = ": connect-terminal sh -c %{ edit $(${
-      #         similar-sort-files-cmd "$1"
-      #       }) } -- %val{bufname}<ret>";
-      #   }
-      #   {
-      #     mode = "normal";
-      #     key = "<a-minus>";
-      #     effect =
-      #       ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
-      #   }
-
-      #   # vertical selection
-      #   {
-      #     mode = "user";
-      #     key = "v";
-      #     effect = ": vertical-selection-down<ret>";
-      #     docstring = "vertical selection down";
-      #   }
-      #   {
-      #     mode = "user";
-      #     key = "<a-v>";
-      #     effect = ": vertical-selection-up<ret>";
-      #     docstring = "vertical selection up";
-      #   }
-      #   {
-      #     mode = "user";
-      #     key = "V";
-      #     effect = ": vertical-selection-up-and-down<ret>";
-      #     docstring = "vertical selection up and down";
-      #   }
-      # ];
+      keyMappings = [
+        # file browsing
+        {
+          mode = "normal";
+          key = "_";
+          effect =
+            ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
+        }
+        {
+          mode = "normal";
+          key = "<minus>";
+          effect = ": connect-terminal sh -c %{ edit $(${
+              similar-sort-files-cmd "$1"
+            }) } -- %val{bufname}<ret>";
+        }
+        {
+          mode = "normal";
+          key = "<a-minus>";
+          effect =
+            ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
+        }
+      ];
     };
 
     extraConfig = ''

@@ -180,19 +180,6 @@
         "url": "https://github.com/h-youhei/kakoune-surround/archive/efe74c6f434d1e30eff70d4b0d737f55bf6c5022.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakoune-vertical-selection": {
-        "branch": "master",
-        "description": "Select up and down lines that match the same pattern",
-        "homepage": "",
-        "kakoune": "plugin",
-        "owner": "occivink",
-        "repo": "kakoune-vertical-selection",
-        "rev": "c420f8b867ce47375fac303886e31623669a42b7",
-        "sha256": "13jdyd2j45wvgqvxdzw9zww14ly93bqjb6700zzxj7mkbiff6wsb",
-        "type": "tarball",
-        "url": "https://github.com/occivink/kakoune-vertical-selection/archive/c420f8b867ce47375fac303886e31623669a42b7.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "lightline-ale": {
         "branch": "master",
         "description": "TODO",
