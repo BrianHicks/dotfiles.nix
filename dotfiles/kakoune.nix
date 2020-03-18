@@ -58,23 +58,6 @@ in {
       # hooks = [
 
 
-      #   # Python
-      #   {
-      #     name = "WinCreate";
-      #     option = ".*.py";
-      #     commands = ''
-      #       evaluate-commands %sh{
-      #         if which black > /dev/null; then
-      #           echo 'set-option buffer formatcmd "black - --quiet --fast"'
-      #         fi
-      #       }
-      #     '';
-      #   }
-      #   {
-      #     commands = "format";
-      #     name = "BufWritePre";
-      #     option = ".*.py";
-      #   }
 
       #   # JavaScript
       #   {
@@ -227,6 +210,18 @@ in {
         evaluate-commands %sh{
           if which ormolu > /dev/null; then
             echo 'set-option buffer formatcmd ormolu'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
+
+      hook global WinSetOption filetype=python %{
+        expandtab
+        set-option buffer tabstop 4
+
+        evaluate-commands %sh{
+          if which black > /dev/null; then
+            echo 'set-option buffer formatcmd "black - --quiet --fast"'
             echo 'hook buffer BufWritePre .* format'
           fi
         }
