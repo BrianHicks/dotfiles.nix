@@ -121,6 +121,8 @@ in {
       hook global WinSetOption filetype=nix %{
         expandtab
         set-option buffer tabstop 2
+        set-option buffer softtabstop 2
+        set-option buffer indentwidth 2
 
         # formatting
         set-option buffer formatcmd nixfmt
@@ -129,7 +131,9 @@ in {
 
       hook global WinSetOption filetype=elm %{
         expandtab
+        set-option buffer softtabstop 4
         set-option buffer tabstop 4
+        set-option buffer indentwidth 4
 
         # formatting
         set-option buffer formatcmd 'elm-format --stdin'
@@ -138,7 +142,9 @@ in {
 
       hook global WinSetOption filetype=haskell %{
         expandtab
+        set-option buffer softtabstop 2
         set-option buffer tabstop 2
+        set-option buffer indentwidth 2
 
         evaluate-commands %sh{
           if which ormolu > /dev/null; then
@@ -150,7 +156,9 @@ in {
 
       hook global WinSetOption filetype=python %{
         expandtab
+        set-option buffer softtabstop 4
         set-option buffer tabstop 4
+        set-option buffer indentwidth 4
 
         evaluate-commands %sh{
           if which black > /dev/null; then
@@ -162,7 +170,9 @@ in {
 
       hook global WinSetOption filetype=javascript %{
         expandtab
+        set-option buffer softtabstop 2
         set-option buffer tabstop 2
+        set-option buffer indentwidth 2
 
         evaluate-commands %sh{
           if which prettier > /dev/null; then
@@ -173,6 +183,11 @@ in {
       }
 
       hook global WinSetOption filetype=rust %{
+        expandtab
+        set-option buffer softtabstop 4
+        set-option buffer tabstop 4
+        set-option buffer indentwidth 4
+
         evaluate-commands %sh{
           if which rustfmt > /dev/null; then
             echo 'set-option buffer formatcmd rustfmt'
@@ -181,9 +196,11 @@ in {
         }
       }
 
-      hook global WinSetOption filetyp=ruby %{
+      hook global WinSetOption filetype=ruby %{
         expandtab
+        set-option buffer softtabstop 2
         set-option buffer tabstop 2
+        set-option buffer indentwidth 2
       }
     '';
   };
