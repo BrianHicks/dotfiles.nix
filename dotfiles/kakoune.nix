@@ -172,6 +172,15 @@ in {
         }
       }
 
+      hook global WinSetOption filetype=rust %{
+        evaluate-commands %sh{
+          if which rustfmt > /dev/null; then
+            echo 'set-option buffer formatcmd rustfmt'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
+
       hook global WinSetOption filetyp=ruby %{
         expandtab
         set-option buffer tabstop 2
