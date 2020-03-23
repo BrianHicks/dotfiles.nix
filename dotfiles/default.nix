@@ -26,7 +26,6 @@ in {
   home.packages = [
     pkgs.ag
     pkgs.jq
-    pkgs.ranger
     pkgs.tree
     pkgs.watch
 

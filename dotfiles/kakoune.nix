@@ -59,12 +59,6 @@ in {
         # file browsing
         {
           mode = "normal";
-          key = "_";
-          effect =
-            ": connect-terminal sh -c %{ ranger --choosefile=/tmp/magic-file-selector $(dirname $1); if test -f /tmp/magic-file-selector; then edit $(cat /tmp/magic-file-selector); rm /tmp/magic-file-selector; fi } -- %val{bufname}<ret>";
-        }
-        {
-          mode = "normal";
           key = "<minus>";
           effect = ": connect-terminal sh -c %{ edit $(${
               similar-sort-files-cmd "$1"
@@ -72,7 +66,7 @@ in {
         }
         {
           mode = "normal";
-          key = "<a-minus>";
+          key = "_";
           effect =
             ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
         }
