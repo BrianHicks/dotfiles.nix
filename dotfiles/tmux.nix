@@ -18,10 +18,6 @@
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
 
-      # status line
-      # set status-bg colour0
-      # set status-fg colour16
-
       # mouse
       set -g mouse on
 
@@ -33,6 +29,18 @@
       bind '|' split-window -h -c "#{pane_current_path}"
 
       bind c new-window -c "#{pane_current_path}"
+
+      # status line (thanks, Ju!)
+      set-option -g status-justify left
+      set-option -g status-left '#[bg=colour72] #[bg=colour237] #[bg=colour236] #[bg=colour235]#[fg=colour185] #S #[bg=colour236] '
+      set-option -g status-left-length 16
+      set-option -g status-bg colour237
+      set-option -g status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] %a %R #[bg=colour236]#[fg=colour3] #[bg=colour237] #[bg=colour72] #[]'
+      set-option -g status-interval 60
+      set-option -g pane-active-border-style fg=colour246
+      set-option -g pane-border-style fg=colour238
+      set-window-option -g window-status-format '#[bg=colour238]#[fg=colour107] #I #[bg=colour239]#[fg=colour110] #[bg=colour240]#W#[bg=colour239]#[fg=colour195]#F#[bg=colour238] '
+      set-window-option -g window-status-current-format '#[bg=colour236]#[fg=colour215] #I #[bg=colour235]#[fg=colour167] #[bg=colour234]#W#[bg=colour235]#[fg=colour195]#F#[bg=colour236] '
     '';
   };
 }
