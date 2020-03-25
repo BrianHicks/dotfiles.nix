@@ -88,18 +88,6 @@
         "url": "https://github.com/nmattia/niv/archive/98c74a80934123cb4c3bf3314567f67311eb711a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "nixfmt": {
-        "branch": "master",
-        "description": "A formatter for Nix code",
-        "homepage": "https://github.com/serokell/nixfmt",
-        "owner": "serokell",
-        "repo": "nixfmt",
-        "rev": "2877200f198370b9ec66e5d8f6706b4ab2fe25d0",
-        "sha256": "0dkqf7rcgzhrq1p5yqfqzg928k59sqdcfz1lbycjxrlxm588kdbr",
-        "type": "tarball",
-        "url": "https://github.com/serokell/nixfmt/archive/2877200f198370b9ec66e5d8f6706b4ab2fe25d0.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "nixpkgs": {
         "branch": "nixpkgs-unstable",
         "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",

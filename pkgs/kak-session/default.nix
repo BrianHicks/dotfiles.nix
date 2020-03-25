@@ -1,8 +1,6 @@
-{ ... }:
-let
-  sources = import ../../nix/sources.nix;
-  nixpkgs = import sources.nixpkgs { };
-in with nixpkgs;
+{ sources ? import ../../nix/sources.nix, nixpkgs ? import sources.nixpkgs { }
+}:
+with nixpkgs;
 stdenv.mkDerivation {
   name = "kak-session";
 

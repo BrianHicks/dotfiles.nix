@@ -32,7 +32,7 @@ let
   colors = lib.mapAttrsToList (_: color: color) colorAttrs;
 in {
   home.packages =
-    [ pkgs.shellcheck (pkgs.callPackages ../pkgs/kak-session { }) ];
+    [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) ];
 
   programs.kakoune = {
     enable = true;
