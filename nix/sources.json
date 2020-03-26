@@ -100,6 +100,19 @@
         "url": "https://github.com/NixOS/nixpkgs-channels/archive/9b3515eb95d9b3bc033f43cd562fe2b14f9efd86.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "prelude.kak": {
+        "branch": "master",
+        "description": "Prelude of shell blocks for Kakoune",
+        "homepage": "https://kakoune.org",
+        "kakoune": "plugin",
+        "owner": "alexherbo2",
+        "repo": "prelude.kak",
+        "rev": "05b2642b1e014bd46423f9d738cc38a624947b63",
+        "sha256": "180p8hq8z7mznzd9w9ma5as3ijs7zbzcj96prcpswqg263a0b329",
+        "type": "tarball",
+        "url": "https://github.com/alexherbo2/prelude.kak/archive/05b2642b1e014bd46423f9d738cc38a624947b63.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "shellcheck.kak": {
         "branch": "master",
         "description": "ShellCheck integration for Kakoune",
