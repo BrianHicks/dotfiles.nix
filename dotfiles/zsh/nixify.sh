@@ -1,8 +1,6 @@
 nixify() {
   if [[ ! -e nix/sources.json ]]; then
     niv init
-    niv modify nixpkgs --branch nixpkgs-unstable
-    niv update nixpkgs
   fi
 
   if [[ ! -e ./.envrc ]]; then
