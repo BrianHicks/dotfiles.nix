@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# find the git root directory for the project
+ROOT="${1:-$(pwd)}"
+while ! test -d "$ROOT/.git" && test "$ROOT" != "/"; do
+  ROOT=$(dirname $ROOT)
+done
+
+if test "$ROOT" = "/"; then
+  ROOT=$(pwd)
+fi
+
+SESSION=$(basename $ROOT | sed 's/\./-/g')
+
+if test -z "${TMUX:-}"; then
+  exec env TMUX_TMPDIR=/tmp tmux -u2 new-session -As "$SESSION" -c "$ROOT"
+else
+  if ! tmux has-session -t "$SESSION" > /dev/null; then
+    tmux new-session -ds "$SESSION" -c "$ROOT"
+  fi
+  exec tmux switch-client -t "$SESSION"
+fi
