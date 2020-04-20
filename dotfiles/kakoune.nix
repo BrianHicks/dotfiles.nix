@@ -199,6 +199,13 @@ in {
         set-option buffer tabstop 2
         set-option buffer indentwidth 2
       }
+
+      hook global WinSetOption filetype=ts %{
+        expandtab
+        set-option buffer softtabstop 2
+        set-option buffer tabstop 2
+        set-option buffer indentwidth 2
+      }
     '';
   };
 
