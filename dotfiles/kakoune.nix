@@ -114,6 +114,15 @@ in {
       # Wrapping
       map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
 
+      # Grepping
+      declare-user-mode find
+      map global find f ': find<ret>' -docstring 'Find'
+      map global find s ': find-apply-changes<ret>' -docstring 'Apply Changes'
+      map global find n ': find-next-match<ret>' -docstring 'Next'
+      map global find p ': find-previous-match<ret>' -docstring 'Previous'
+      map global find o ': buffer *find*<ret>' -docstring 'Open Matches'
+      map global user f ':enter-user-mode find<ret>' -docstring 'Find'
+
       # Languages
       hook global WinSetOption filetype=nix %{
         expandtab

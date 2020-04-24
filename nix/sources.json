@@ -50,6 +50,19 @@
         "url": "https://github.com/lePerdu/kakboard/archive/4cc87b2e2a1cb1e8d61d36de172751e874ff9300.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "kakoune-find": {
+        "branch": "master",
+        "description": "Find and replace on open buffers",
+        "homepage": "",
+        "kakoune": "plugin",
+        "owner": "occivink",
+        "repo": "kakoune-find",
+        "rev": "81b998bee9284f26ebcaae8c6e0e5774f7ccd9ed",
+        "sha256": "0v4nd11rzx3zalx4qa20d8jw4mbkh6p5g76w9fzs86n168jvm7am",
+        "type": "tarball",
+        "url": "https://github.com/occivink/kakoune-find/archive/81b998bee9284f26ebcaae8c6e0e5774f7ccd9ed.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kakoune-palette": {
         "branch": "master",
         "description": "Preview face colors in kakoune",
