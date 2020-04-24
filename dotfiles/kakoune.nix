@@ -114,7 +114,7 @@ in {
       # Wrapping
       map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
 
-      # Grepping
+      # Finding
       set global grepcmd '${pkgs.ripgrep}/bin/rg --follow --with-filename --line-number'
       declare-user-mode find
       map global find f ': grep<ret>' -docstring 'Find'
