@@ -115,11 +115,13 @@ in {
       map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
 
       # Grepping
+      set global grepcmd '${pkgs.ripgrep}/bin/rg --follow --with-filename --line-number'
       declare-user-mode find
-      map global find f ': find<ret>' -docstring 'Find'
-      map global find s ': find-apply-changes<ret>' -docstring 'Apply Changes'
-      map global find n ': find-next-match<ret>' -docstring 'Next'
-      map global find p ': find-previous-match<ret>' -docstring 'Previous'
+      map global find f ': grep<ret>' -docstring 'Find'
+      map global find : ':grep ' -docstring 'Search'
+      map global find s ': find-apply-changes -force<ret>: write-all<ret>' -docstring 'Apply Changes'
+      map global find n ': grep-next-match<ret>' -docstring 'Next'
+      map global find p ': grep-previous-match<ret>' -docstring 'Previous'
       map global find o ': buffer *find*<ret>' -docstring 'Open Matches'
       map global user f ':enter-user-mode find<ret>' -docstring 'Find'
 
