@@ -127,11 +127,11 @@ in {
 
       # Git
       declare-user-mode git
-      map global git a ': git add<ret>' -docstring 'Add File'
-      map global git A ': git add --all<ret>' -docstring 'Add All Files'
+      map global git a ': git add<ret>: git update-diff<ret>' -docstring 'Add File'
+      map global git A ': git add --all<ret>: git update-diff<ret>' -docstring 'Add All Files'
       map global git s ': tmux-terminal-vertical ${pkgs.tig}/bin/tig<ret>' -docstring 'Status'
       map global git c ':git commit -m ""<left>' -docstring 'Commit'
-      map global git C ':git commit --amend --no-edit<ret>' -docstring 'Amend, No Edit'
+      map global git C ':git commit --amend --no-edit<ret>: git update-diff<ret>' -docstring 'Amend, No Edit'
       map global user g ':enter-user-mode git<ret>' -docstring 'Git'
 
       # Languages
