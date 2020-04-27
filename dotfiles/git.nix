@@ -35,6 +35,14 @@
 
       # magit
       github.user = "BrianHicks";
+
+      # delta
+      core.pager = ''
+        ${pkgs.gitAndTools.delta}/bin/delta --theme=1337 --plus-color="#32473d" --minus-color="#643632"
+      '';
+      interactive.diffFilter = ''
+        ${pkgs.gitAndTools.delta}/bin/delta --color-only --theme=1337 --plus-color="#32473d" --minus-color="#643632"
+      '';
     };
 
     ignores = [
@@ -50,5 +58,5 @@
     ];
   };
 
-  home.packages = with pkgs; [ git-lfs lazygit ];
+  home.packages = with pkgs; [ git-lfs lazygit pkgs.gitAndTools.delta ];
 }
