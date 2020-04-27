@@ -1,6 +1,7 @@
 { pkgs, ... }:
-
-{
+let
+  deltaTheme = ''--theme=1337 --plus-color="#32473d" --minus-color="#643632"'';
+in {
   programs.git = {
     enable = true;
 
@@ -37,12 +38,9 @@
       github.user = "BrianHicks";
 
       # delta
-      core.pager = ''
-        ${pkgs.gitAndTools.delta}/bin/delta --theme=1337 --plus-color="#32473d" --minus-color="#643632"
-      '';
-      interactive.diffFilter = ''
-        ${pkgs.gitAndTools.delta}/bin/delta --color-only --theme=1337 --plus-color="#32473d" --minus-color="#643632"
-      '';
+      core.pager = "${pkgs.gitAndTools.delta}/bin/delta ${deltaTheme}";
+      interactive.diffFilter =
+        "${pkgs.gitAndTools.delta}/bin/delta --color-only ${deltaTheme}";
     };
 
     ignores = [
