@@ -56,5 +56,11 @@ in {
     ];
   };
 
+  home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
+    builtins.toJSON {
+      reporting = "off";
+      startupPopupVersion = 1;
+    };
+
   home.packages = with pkgs; [ git-lfs lazygit pkgs.gitAndTools.delta ];
 }
