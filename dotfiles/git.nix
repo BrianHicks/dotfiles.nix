@@ -50,5 +50,5 @@
     ];
   };
 
-  home.packages = with pkgs; [ git-lfs ];
+  home.packages = with pkgs; [ git-lfs lazygit ];
 }
