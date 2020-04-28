@@ -89,18 +89,6 @@
         "url": "https://github.com/h-youhei/kakoune-surround/archive/efe74c6f434d1e30eff70d4b0d737f55bf6c5022.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "lazygit": {
-        "branch": "master",
-        "description": "simple terminal UI for git commands",
-        "homepage": "",
-        "owner": "jesseduffield",
-        "repo": "lazygit",
-        "rev": "0852f53455d53be263ee418ff0d9ded2c83ba241",
-        "sha256": "1r9l1hp69zjzsq3c8hmmisd6xabzgwzgv6q8chybxsa3cpgiglk9",
-        "type": "tarball",
-        "url": "https://github.com/jesseduffield/lazygit/archive/0852f53455d53be263ee418ff0d9ded2c83ba241.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
