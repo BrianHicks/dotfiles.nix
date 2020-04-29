@@ -122,7 +122,7 @@ in {
       map global find s ': find-apply-changes -force<ret>: write-all<ret>' -docstring 'Apply Changes'
       map global find n ': grep-next-match<ret>' -docstring 'Next'
       map global find p ': grep-previous-match<ret>' -docstring 'Previous'
-      map global find o ': buffer *find*<ret>' -docstring 'Open Matches'
+      map global find o ': buffer *grep*<ret>' -docstring 'Open Matches'
       map global user f ':enter-user-mode find<ret>' -docstring 'Find'
 
       # Git
