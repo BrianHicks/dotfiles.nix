@@ -60,6 +60,16 @@ in {
     builtins.toJSON {
       reporting = "off";
       startupPopupVersion = 1;
+
+      update.method = "never"; # managed through nixpkgs
+
+      keybindings = {
+        universal.return = "q";
+        universal.createRebaseOptionsMenu = "M";
+        branches.mergeIntoCurrentBranch = "m";
+        commits.moveUpCommit = "<a-j>";
+        commits.moveDownCommit = "<a-k>";
+      };
     };
 
   home.packages = with pkgs; [ git-lfs lazygit pkgs.gitAndTools.delta ];
