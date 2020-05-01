@@ -44,7 +44,7 @@ Then add this to your vim config:
 
 ```vim
 nnoremap <silent> <C-t> :call fzf#run(fzf#wrap({
-  \ "source": "git ls-files --others --cached --exclude-standard \| similar-sort " . @%,
+  \ "source": "git ls-files --others --cached --exclude-standard \| similar-sort " . @% . " \| grep -v " . @%,
   \ "sink": "edit",
   \ "options": "--tiebreak index"
   \ }))<CR>

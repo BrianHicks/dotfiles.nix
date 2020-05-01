@@ -9,7 +9,7 @@ let
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
   similar-sort-files-cmd = arg:
-    "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | fzf --tiebreak index";
+    "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 
   # plugins
   pluginSources = lib.filterAttrs
@@ -61,14 +61,14 @@ in {
           mode = "normal";
           key = "<minus>";
           effect = ": connect-terminal sh -c %{ edit $(${
-              similar-sort-files-cmd "$1"
-            }) } -- %val{bufname}<ret>";
+            similar-sort-files-cmd "$1"
+          }) } -- %val{bufname}<ret>";
         }
         {
           mode = "normal";
           key = "_";
           effect =
-            ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
+            ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | grep -v $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
         }
       ];
     };
