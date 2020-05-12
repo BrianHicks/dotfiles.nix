@@ -31,10 +31,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "connect.kak",
-        "rev": "a98d65798c3565a6e763bc135cfb4d4af79b7686",
-        "sha256": "1pywwx0khm00jynb2cpzc0sil3jizrqlfn2zcv3cy975bbfs42kn",
+        "rev": "1d3e863e52439c089fdf340c30c5150af6f03b33",
+        "sha256": "0iy42am3674j9y1p8nhi711q94k6vqrz353r3g41nrv9zdqgwmds",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/connect.kak/archive/a98d65798c3565a6e763bc135cfb4d4af79b7686.tar.gz",
+        "url": "https://github.com/alexherbo2/connect.kak/archive/1d3e863e52439c089fdf340c30c5150af6f03b33.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kakboard": {
@@ -44,10 +44,10 @@
         "kakoune": "plugin",
         "owner": "lePerdu",
         "repo": "kakboard",
-        "rev": "4cc87b2e2a1cb1e8d61d36de172751e874ff9300",
-        "sha256": "06gdz5d5i3c15lhx3r8v88xsvy62q746bmrv122yr0cs8qlmza8i",
+        "rev": "2f13f5cd99591b76ad5cba230815b80138825120",
+        "sha256": "1kvnbsv20y09rlnyar87qr0h26i16qsq801krswvxcwhid7ijlvd",
         "type": "tarball",
-        "url": "https://github.com/lePerdu/kakboard/archive/4cc87b2e2a1cb1e8d61d36de172751e874ff9300.tar.gz",
+        "url": "https://github.com/lePerdu/kakboard/archive/2f13f5cd99591b76ad5cba230815b80138825120.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kakoune-find": {
@@ -107,10 +107,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "10100a97c8964e82b30f180fda41ade8e6f69e41",
-        "sha256": "011f36kr3c1ria7rag7px26bh73d1b0xpqadd149bysf4hg17rln",
+        "rev": "cfe68f2b68b7a7c2e5347c496b6963af30d18d3f",
+        "sha256": "1m202ifx2iy06dqmgih84a1gzf1vj5kw17dqzv3sc2ikwz1d7rnp",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/10100a97c8964e82b30f180fda41ade8e6f69e41.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/cfe68f2b68b7a7c2e5347c496b6963af30d18d3f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "prelude.kak": {
