@@ -32,6 +32,8 @@
 
       bind c new-window -c "#{pane_current_path}"
 
+      bind l select-layout main-vertical
+
       # status line (thanks, Ju!)
       set-option -g status-justify left
       set-option -g status-left '#[bg=colour72] #[bg=colour237] #[bg=colour236] #[bg=colour235]#[fg=colour185] #S #[bg=colour236] '
