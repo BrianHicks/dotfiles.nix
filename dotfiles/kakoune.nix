@@ -61,8 +61,8 @@ in {
           mode = "normal";
           key = "<minus>";
           effect = ": connect-terminal sh -c %{ edit $(${
-            similar-sort-files-cmd "$1"
-          }) } -- %val{bufname}<ret>";
+              similar-sort-files-cmd "$1"
+            }) } -- %val{bufname}<ret>";
         }
         {
           mode = "normal";
