@@ -226,6 +226,15 @@ in {
         set-option buffer tabstop 2
         set-option buffer indentwidth 2
       }
+
+      hook global WinSetOption filetype=terraform %{
+        evaluate-commands %sh{
+          if which terraform > /dev/null; then
+            echo 'set-option buffer formatcmd "terraform fmt -"'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
     '';
   };
 
