@@ -7,6 +7,8 @@ let
     lib = nixpkgs.lib;
   };
 
+  kak-tree = pkgs.callPackage ../pkgs/kak-tree { };
+
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
@@ -22,7 +24,12 @@ let
       name = name;
       src = source;
     }) pluginSources;
-  plugins = (lib.mapAttrsToList (_: plugin: plugin) pluginAttrs) ++ [ ];
+  plugins = (lib.mapAttrsToList (_: plugin: plugin) pluginAttrs) ++ [
+    (kakoune.mkPlugin {
+      name = "kak-tree";
+      src = "${kak-tree.src}/rc";
+    })
+  ];
 
   colorAttrs = lib.mapAttrs (name: source:
     kakoune.mkColorPlugin {
@@ -133,6 +140,18 @@ in {
       map global git c ':git commit -m ""<left>' -docstring 'Commit'
       map global git C ':git commit --amend --no-edit<ret>: git update-diff<ret>' -docstring 'Amend, No Edit'
       map global user g ':enter-user-mode git<ret>' -docstring 'Git'
+
+      # kak-tree
+      set global tree_cmd '${kak-tree.kak-tree}/bin/kak-tree'
+
+      declare-user-mode tree
+      map global user t ': enter-user-mode -lock tree<ret>' -docstring 'Tree Selection'
+      map global tree h ': tree-select-parent-node<ret>' -docstring 'Parent'
+      map global tree <a-l> ': tree-select-children<ret>' -docstring 'Children'
+      map global tree l ': tree-select-first-child<ret>' -docstring 'First Child'
+      map global tree j ': tree-select-next-node<ret>' -docstring 'Next Node'
+      map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
+      map global tree d ': tree-select-parent-node value_declaration<ret>' -docstring 'Parent Declaration'
 
       # Languages
       hook global WinSetOption filetype=nix %{
