@@ -247,6 +247,11 @@ in {
       }
 
       hook global WinSetOption filetype=terraform %{
+        expandtab
+        set-option buffer softtabstop 2
+        set-option buffer tabstop 2
+        set-option buffer indentwidth 2
+        
         evaluate-commands %sh{
           if which terraform > /dev/null; then
             echo 'set-option buffer formatcmd "terraform fmt -"'
