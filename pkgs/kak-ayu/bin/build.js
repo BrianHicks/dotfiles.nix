@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 let ayu = require('ayu');
 let fs = require('fs');
 
