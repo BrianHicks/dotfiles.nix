@@ -8,6 +8,7 @@ let
   };
 
   kak-tree = pkgs.callPackage ../pkgs/kak-tree { };
+  kak-ayu = pkgs.callPackage ../pkgs/kak-ayu { };
 
   similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
   similar-sort-files-cmd = arg:
@@ -36,7 +37,12 @@ let
       name = name;
       src = source;
     }) colorSources;
-  colors = lib.mapAttrsToList (_: color: color) colorAttrs;
+  colors = (lib.mapAttrsToList (_: color: color) colorAttrs) ++ [
+    (kakoune.mkColorPlugin {
+      name = "ayu";
+      src = kak-ayu;
+    })
+  ];
 in {
   home.packages =
     [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) ];
@@ -44,7 +50,7 @@ in {
   programs.kakoune = {
     enable = true;
     config = {
-      colorScheme = "lucius";
+      colorScheme = "ayu-mirage";
       scrollOff = {
         columns = 0;
         lines = 5;
