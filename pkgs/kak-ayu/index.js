@@ -27,7 +27,7 @@ face global operator  ${rgb(colors.syntax.operator)}
 face global attribute ${rgb(colors.syntax.operator)}
 face global comment   ${rgb(colors.syntax.comment)}+i
 face global meta      ${rgb(colors.syntax.special)}
-face global builtin   ${rgb(colors.syntax.tag)}+b
+face global builtin   ${rgb(colors.syntax.tag)}
 
 # Markdown highlighting
 face global title     ${rgb(colors.syntax.tag)}+b
