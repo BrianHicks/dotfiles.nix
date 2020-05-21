@@ -51,6 +51,7 @@ in {
       };
       numberLines = {
         enable = true;
+        highlightCursor = true;
         separator = ''" "'';
       };
       showMatching = true;
