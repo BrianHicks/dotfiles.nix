@@ -50,6 +50,32 @@
         "url": "https://github.com/lePerdu/kakboard/archive/2f13f5cd99591b76ad5cba230815b80138825120.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "kakoune-auto-percent": {
+        "branch": "master",
+        "description": "Enhance some primitives with bigger selections.",
+        "homepage": "http://kakoune.org",
+        "kakoune": "plugin",
+        "owner": "Delapouite",
+        "repo": "kakoune-auto-percent",
+        "rev": "efca07df24074823425b5e56487c7a24c97111f5",
+        "sha256": "1ff1fc6lqa42hia2nlyxqyg9bsbf8msi0x8vxyl6wpl5j2wvmpay",
+        "type": "tarball",
+        "url": "https://github.com/Delapouite/kakoune-auto-percent/archive/efca07df24074823425b5e56487c7a24c97111f5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "kakoune-auto-star": {
+        "branch": "master",
+        "description": "Auto-fill search register if empty",
+        "homepage": "http://kakoune.org/",
+        "kakoune": "plugin",
+        "owner": "Delapouite",
+        "repo": "kakoune-auto-star",
+        "rev": "21b01425005a656e14deeaeb4818de3be6f4d1ab",
+        "sha256": "0kc08rnhmsdc9dfmqmrlj9ypa42hlb9j0m1xvrsjz8kn0yqc1cqn",
+        "type": "tarball",
+        "url": "https://github.com/Delapouite/kakoune-auto-star/archive/21b01425005a656e14deeaeb4818de3be6f4d1ab.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kakoune-find": {
         "branch": "master",
         "description": "Find and replace on open buffers",
