@@ -26,7 +26,7 @@ face global string    ${rgb(colors.syntax.string)}
 face global keyword   ${rgb(colors.syntax.keyword)}
 face global operator  ${rgb(colors.syntax.operator)}
 face global attribute ${rgb(colors.syntax.operator)}
-face global comment   ${rgb(colors.syntax.comment)}+i
+face global comment   ${rgb(colors.syntax.comment.brighten(0.5))}+i
 face global meta      ${rgb(colors.syntax.special)}
 face global builtin   ${rgb(colors.syntax.tag)}
 
@@ -63,11 +63,11 @@ face global StatusLineMode  ${rgb(colors.common.bg)},${rgb(colors.common.accent)
 face global StatusLineInfo  ${rgb(colors.ui.selection.border)},${rgb(colors.common.fg)}
 face global StatusLineValue ${rgb(colors.common.bg)},${rgb(colors.common.accent)}
 face global Prompt          ${rgb(colors.common.accent)}
-# BuferPadding
+# BufferPadding
 
-face global LineNumbers        ${rgb(colors.common.ui)}
-face global LineNumbersCursor  ${rgb(colors.common.ui)}
-face global LineNumbersWrapped ${rgb(colors.common.ui)}+b
+face global LineNumbers        ${rgb(colors.common.fg)}
+face global LineNumberCursor   ${rgb(colors.common.fg)}+b
+face global LineNumbersWrapped ${rgb(colors.common.ui)}
 
 face global MatchingChar default,${rgb(colors.ui.selection.bg)}+b
 
