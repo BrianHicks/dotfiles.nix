@@ -9,6 +9,8 @@ My dotfiles.
 
 ## Fixes
 
+### Root Channels
+
 If Nix says:
 
 ```
@@ -19,3 +21,13 @@ warning: Nix search path entry '/nix/var/nix/profiles/per-user/root/channels' do
 mkdir -p /nix/var/nix/profiles/per-user/root
 touch /nix/var/nix/profiles/per-user/root/channels
 ```
+
+### Terminfo
+
+If `lazygit` doesn't load correctly, or Kakoune colors look weird, load the terminfo:
+
+```sh
+tic manual-fixes/tmux-256color.terminfo
+```
+
+(It's vendored from the Kakoune contrib source tree.)
