@@ -22,11 +22,14 @@ in {
 
   home.packages = [
     pkgs.ag
+    pkgs.du-dust
+    pkgs.hyperfine
     pkgs.jq
     pkgs.pastel
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
+    pkgs.zenith
 
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
