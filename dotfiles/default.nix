@@ -23,6 +23,7 @@ in {
   home.packages = [
     pkgs.ag
     pkgs.jq
+    pkgs.pastel
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
