@@ -70,6 +70,14 @@ in {
         commits.moveUpCommit = "<a-j>";
         commits.moveDownCommit = "<a-k>";
       };
+
+      gui.theme = {
+        lightTheme = false;
+        activeBorderColor = [ "green" "bold" ];
+        inactiveBorderColor = [ "white" ];
+        optionsTextColor = [ "blue" ];
+        selectedLineBgColor = [ "bold" ];
+      };
     };
 
   home.packages = with pkgs; [ git-lfs lazygit pkgs.gitAndTools.delta ];
