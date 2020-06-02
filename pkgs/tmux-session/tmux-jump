@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+QUERY="${1:-}"
+BASE="$HOME/code"
+SELECTED=$(find "$BASE" -mindepth 2 -maxdepth 2 -type d | sed "s|$BASE/||g" | fzf --tiebreak=end --select-1 --query="$QUERY")
+
+if [[ "$?" != 0 ]]; then echo "cancelling!"; return 1; fi
+
+tmux-session "$BASE/$SELECTED"

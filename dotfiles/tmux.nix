@@ -1,5 +1,7 @@
-{ pkgs, lib, ... }: {
-  home.packages = [ (pkgs.callPackage ../pkgs/tmux-session { }) ];
+{ pkgs, lib, ... }:
+let tmux-session = pkgs.callPackage ../pkgs/tmux-session { };
+in {
+  home.packages = [ tmux-session ];
 
   programs.tmux = {
     enable = true;
@@ -19,6 +21,7 @@
 
       # quickly open CLI tools
       bind h run-shell "tmux switch-client -t :lazygit || tmux new-window -k -n 'lazygit' -c '#{pane_current_path}' ${pkgs.lazygit}/bin/lazygit"
+      bind j split-window -h ${tmux-session}/bin/tmux-jump
 
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
