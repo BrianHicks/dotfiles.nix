@@ -143,7 +143,6 @@ in {
       declare-user-mode git
       map global git a ': git add<ret>: git update-diff<ret>' -docstring 'Add File'
       map global git A ': git add --all<ret>: git update-diff<ret>' -docstring 'Add All Files'
-      map global git s ': tmux-terminal-vertical ${pkgs.lazygit}/bin/lazygit<ret>' -docstring 'Status'
       map global git c ':git commit -m ""<left>' -docstring 'Commit'
       map global git C ':git commit --amend --no-edit<ret>: git update-diff<ret>' -docstring 'Amend, No Edit'
       map global git r ': git update-diff<ret>' -docstring 'Refresh diff markers'

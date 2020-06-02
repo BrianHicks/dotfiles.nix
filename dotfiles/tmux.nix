@@ -17,6 +17,9 @@
       bind-key -n C-k select-pane -U
       bind-key -n C-l select-pane -R
 
+      # quickly open CLI tools
+      bind h run-shell "tmux switch-client -t :lazygit || tmux new-window -k -n 'lazygit' -c '#{pane_current_path}' ${pkgs.lazygit}/bin/lazygit"
+
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
 
