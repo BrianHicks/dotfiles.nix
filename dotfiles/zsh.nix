@@ -42,8 +42,6 @@ in {
       RPROMPT=
 
       eval $(${pkgs.thefuck}/bin/thefuck --alias heck)
-
-      alias g=lazygit
     '' + extraInitExtra;
 
     history = {

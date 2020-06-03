@@ -1,7 +1,9 @@
 { pkgs, lib, ... }:
-let tmux-session = pkgs.callPackage ../pkgs/tmux-session { };
+let
+  tmux-session = pkgs.callPackage ../pkgs/tmux-session { };
+  lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { };
 in {
-  home.packages = [ tmux-session ];
+  home.packages = [ tmux-session lazygit-window ];
 
   programs.tmux = {
     enable = true;
@@ -20,7 +22,7 @@ in {
       bind-key -n C-l select-pane -R
 
       # quickly open CLI tools
-      bind h run-shell "tmux switch-client -t :lazygit || tmux new-window -k -n 'lazygit' -c '#{pane_current_path}' ${pkgs.lazygit}/bin/lazygit"
+      bind h run-shell "${lazygit-window}/bin/lazygit-window"
       bind j split-window -h ${tmux-session}/bin/tmux-jump
 
       # get rid of the half-second escape time for kakoune's escape key

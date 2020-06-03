@@ -7,3 +7,5 @@ checkout_branch() {
 }
 
 alias co=checkout_branch
+
+alias g=lazygit-window
