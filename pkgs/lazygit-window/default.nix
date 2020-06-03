@@ -2,6 +2,8 @@
 }:
 with nixpkgs;
 stdenv.mkDerivation {
+  # inspired by one of Stöffel's keybindings at
+  # https://github.com/stoeffel/.dots/blob/master/tmux/keybindings.conf
   name = "lazygit-window";
   src = ./.;
   buildInputs = [ pkgs.makeWrapper ];

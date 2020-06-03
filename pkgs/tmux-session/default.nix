@@ -2,8 +2,6 @@
 }:
 with nixpkgs;
 stdenv.mkDerivation {
-  # inspired by one of Stöffel's keybindings at
-  # https://github.com/stoeffel/.dots/blob/master/tmux/keybindings.conf
   name = "tmux-session";
   src = ./.;
   buildInputs = [ pkgs.makeWrapper ];
