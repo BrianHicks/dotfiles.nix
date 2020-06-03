@@ -164,6 +164,13 @@
         "url": "https://github.com/whereswaldon/shellcheck.kak/archive/9acad49508ee95c215541e58353335d9d5b8a927.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "similar-sort": {
+        "sha256": "0sykdp82cby1ikw4pxzcp1hrhj51dwz0zpprcsj03hhsyg0c1j7b",
+        "type": "tarball",
+        "url": "https://git.bytes.zone/brian/similar-sort/archive/301de2b5f83aba77a14b4df33347e8157de4f9ca.tar.gz",
+        "url_template": "https://git.bytes.zone/brian/similar-sort/archive/<version>.tar.gz",
+        "version": "301de2b5f83aba77a14b4df33347e8157de4f9ca"
+    },
     "smarttab.kak": {
         "branch": "master",
         "description": "Automatic handling different styles of indentation and alignment. Mirror of https://gitlab.com/andreyorst/smarttab.kak",

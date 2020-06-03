@@ -10,7 +10,7 @@ let
   kak-tree = pkgs.callPackage ../pkgs/kak-tree { };
   kak-ayu = pkgs.callPackage ../pkgs/kak-ayu { };
 
-  similar-sort = pkgs.callPackage ../pkgs/similar-sort { };
+  similar-sort = import sources.similar-sort { pkgs = nixpkgs.pkgs; };
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 
