@@ -160,6 +160,20 @@ in {
       map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
       map global tree d ': tree-select-parent-node value_declaration<ret>' -docstring 'Parent Declaration'
 
+      # clipboard handling
+      # https://github.com/mawww/config/blob/43bd5cea453d629dd119d361cb237d433d09a0eb/kakrc#L61-L75
+      evaluate-commands %sh{
+        case $(uname) in
+          Linux)  copy="xclip -i"; paste="xclip -o" ;;
+          Darwin) copy="pbcopy";   paste="pbpaste"  ;;
+        esac
+
+        printf "map global user -docstring 'paste (after) from clipboard' p '!%s<ret>'\n" "$paste"
+        printf "map global user -docstring 'paste (before) from clipboard' P '<a-!>%s<ret>'\n" "$paste"
+        printf "map global user -docstring 'yank to clipboard' y '<a-|>%s<ret>: echo -markup %%{{Information}copied selection to clipboard}<ret>'\n" "$copy"
+        printf "map global user -docstring 'replace from clipboard' R '|%s<ret>'\n" "$paste"
+      }
+
       # Languages
       hook global WinSetOption filetype=nix %{
         expandtab

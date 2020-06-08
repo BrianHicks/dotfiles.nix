@@ -37,19 +37,6 @@
         "url": "https://github.com/alexherbo2/connect.kak/archive/c066a22edf8220f2667311df8347d90b89eab967.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakboard": {
-        "branch": "master",
-        "description": "Clipboard integration for Kakoune",
-        "homepage": null,
-        "kakoune": "plugin",
-        "owner": "lePerdu",
-        "repo": "kakboard",
-        "rev": "2f13f5cd99591b76ad5cba230815b80138825120",
-        "sha256": "1kvnbsv20y09rlnyar87qr0h26i16qsq801krswvxcwhid7ijlvd",
-        "type": "tarball",
-        "url": "https://github.com/lePerdu/kakboard/archive/2f13f5cd99591b76ad5cba230815b80138825120.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-auto-percent": {
         "branch": "master",
         "description": "Enhance some primitives with bigger selections.",
