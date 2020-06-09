@@ -171,6 +171,9 @@ in {
         printf "map global user -docstring 'replace from clipboard' R '|%s<ret>'\n" "$paste"
       }
 
+      # selections
+      map global user Z '<a-z>aZ' -docstring 'Add to selection'
+
       # Languages
       hook global WinSetOption filetype=nix %{
         expandtab
