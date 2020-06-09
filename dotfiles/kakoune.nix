@@ -122,9 +122,6 @@ in {
       hook global BufReload .* %{ git update-diff }
       # TODO: NormalIdle?
 
-      # Clipboard
-      hook global WinCreate .* kakboard-enable
-
       # Wrapping
       map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
 
