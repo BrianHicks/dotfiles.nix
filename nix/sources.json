@@ -143,6 +143,7 @@
         "branch": "master",
         "description": "ShellCheck integration for Kakoune",
         "homepage": null,
+        "kakoune": "plugin",
         "owner": "whereswaldon",
         "repo": "shellcheck.kak",
         "rev": "9acad49508ee95c215541e58353335d9d5b8a927",
