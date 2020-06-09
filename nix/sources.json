@@ -31,10 +31,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "connect.kak",
-        "rev": "c066a22edf8220f2667311df8347d90b89eab967",
-        "sha256": "1hk34ynw9aanlr8jgs0123hwnyjsvrgl0vdkdwb8znwn3fbi1xd7",
+        "rev": "dc139a7f2fb5a1214ecac5f4ce66b3197d8b7827",
+        "sha256": "1vylppbycbrml6a8awjzxgpl8m1fyxmhdrcxka0b59w3dzcslyr5",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/connect.kak/archive/c066a22edf8220f2667311df8347d90b89eab967.tar.gz",
+        "url": "https://github.com/alexherbo2/connect.kak/archive/dc139a7f2fb5a1214ecac5f4ce66b3197d8b7827.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kakoune-auto-percent": {
@@ -120,10 +120,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "571212eb839d482992adb05479b86eeb6a9c7b2f",
-        "sha256": "0ncsh5rkjbcdaksngmn7apiq1qhm5z1z6xa1x70svxq91znibp4f",
+        "rev": "dcb64ea42e64aaecd8e6fef65cc86245c9666818",
+        "sha256": "0i77sgs0gic6pwbkvk9lbpfshgizdrqyh18law2ji1409azc09w0",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/571212eb839d482992adb05479b86eeb6a9c7b2f.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/dcb64ea42e64aaecd8e6fef65cc86245c9666818.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "prelude.kak": {
