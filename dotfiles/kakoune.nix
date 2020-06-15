@@ -165,8 +165,8 @@ in {
           Darwin) copy="pbcopy";   paste="pbpaste"  ;;
         esac
 
-        printf "map global user -docstring 'paste (after) from clipboard' p '!%s<ret>'\n" "$paste"
-        printf "map global user -docstring 'paste (before) from clipboard' P '<a-!>%s<ret>'\n" "$paste"
+        printf "map global user -docstring 'paste (after) from clipboard' P '!%s<ret>'\n" "$paste"
+        printf "map global user -docstring 'paste (before) from clipboard' p '<a-!>%s<ret>'\n" "$paste"
         printf "map global user -docstring 'yank to clipboard' y '<a-|>%s<ret>: echo -markup %%{{Information}copied selection to clipboard}<ret>'\n" "$copy"
         printf "map global user -docstring 'replace from clipboard' R '|%s<ret>'\n" "$paste"
       }
