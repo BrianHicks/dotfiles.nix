@@ -144,6 +144,9 @@ in {
       map global git r ': git update-diff<ret>' -docstring 'Refresh diff markers'
       map global user g ':enter-user-mode git<ret>' -docstring 'Git'
 
+      # Commenting
+      map global normal '#' ': comment-line<ret>'
+
       # kak-tree
       set global tree_cmd '${kak-tree.kak-tree}/bin/kak-tree'
 
