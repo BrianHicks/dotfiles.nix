@@ -66,7 +66,6 @@ in {
       wrapLines = {
         enable = true;
         indent = true;
-        marker = "⎁";
       };
 
       keyMappings = [
