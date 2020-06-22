@@ -175,6 +175,7 @@ in {
 
       # selections
       map global user Z '<a-z>aZ' -docstring 'Add to selection'
+      map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
 
       # Languages
       hook global WinSetOption filetype=nix %{
