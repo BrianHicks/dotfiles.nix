@@ -1,6 +1,8 @@
 { pkgs, ... }:
 let
   deltaTheme = ''--theme=1337 --plus-color="#32473d" --minus-color="#643632"'';
+
+  git-gclone = import ../pkgs/git-gclone { };
 in {
   programs.git = {
     enable = true;
@@ -11,14 +13,10 @@ in {
     aliases = {
       aa = "add --all";
       amend = "commit --amend";
-      bclone = ''
-        !"bclone() { mkdir -p ~/code/$1; git clone git@git.bytes.zone:$1.git ~/code/$1; }; bclone"'';
       ci = "commit";
       co = "checkout";
       dc = "diff --cached";
       di = "diff";
-      hclone = ''
-        !"hclone() { mkdir -p ~/code/$1; git clone git@github.com:$1.git ~/code/$1; }; hclone"'';
       publish = "push -u origin HEAD";
       st = "status";
       yoda = "push --force-with-lease";
@@ -80,5 +78,10 @@ in {
       };
     };
 
-  home.packages = with pkgs; [ git-lfs lazygit pkgs.gitAndTools.delta ];
+  home.packages = with pkgs; [
+    git-lfs
+    lazygit
+    pkgs.gitAndTools.delta
+    git-gclone
+  ];
 }
