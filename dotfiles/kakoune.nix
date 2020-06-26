@@ -123,6 +123,7 @@ in {
 
       # Wrapping
       map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
+      map global normal <a-=> ': format<ret>: echo formatted with %opt{formatcmd}<ret>'
 
       # Finding
       set global grepcmd '${pkgs.ripgrep}/bin/rg --follow --with-filename --line-number'
