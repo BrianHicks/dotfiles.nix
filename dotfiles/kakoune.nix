@@ -30,6 +30,10 @@ let
       name = "kak-tree";
       src = "${kak-tree.src}/rc";
     })
+    (kakoune.mkPlugin {
+      name = "kak-elm-imports";
+      src = ../pkgs/kak-elm-imports/rc;
+    })
   ];
 
   colorAttrs = lib.mapAttrs (name: source:
