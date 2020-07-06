@@ -14,3 +14,7 @@ define-command -docstring "Jump to the imports section in an Elm file" elm-jump-
         }
     }
 }
+
+define-command -docstring "Sort the imports in this file" elm-sort-imports %{
+    execute-keys -draft '/(import.+?\n)+<ret>|sort<ret>'
+}
