@@ -203,6 +203,9 @@ in {
         # formatting
         set-option buffer formatcmd 'elm-format --stdin'
         hook buffer BufWritePre .* format
+
+        # extra commands
+        map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
       }
 
       hook global WinSetOption filetype=haskell %{
