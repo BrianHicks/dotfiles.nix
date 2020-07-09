@@ -13,6 +13,7 @@ let
     ./zsh/root.zsh
     ./zsh/rubofix.zsh
     ./zsh/scripts.zsh
+    ./zsh/search.zsh
   ];
 
   extraInitExtra =
