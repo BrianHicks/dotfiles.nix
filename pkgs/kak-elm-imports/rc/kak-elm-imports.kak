@@ -2,7 +2,7 @@ define-command -docstring "Jump to the imports section in an Elm file" elm-jump-
     try %{
         # a string like `import Foo as Bar` is in the file, so we can just
         # search for it.
-        execute-keys '/import<ret>;gh'
+        execute-keys 'gg/import<ret>;gh'
     } catch %{
         # no import stanzas in the file, so we need to get past the module
         # declaration (which may be multiple lines) and any module docs (which
