@@ -96,7 +96,7 @@ in {
       map global surround c ': change-surround<ret>' -docstring 'Change'
       map global surround d ': delete-surround<ret>' -docstring 'Delete'
       map global surround t ': select-surrounding-tag<ret>' -docstring 'Select tag'
-      map global user s ':enter-user-mode surround<ret>' -docstring 'Surround'
+      map global user s ': enter-user-mode surround<ret>' -docstring 'Surround'
 
       declare-user-mode window
       map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
@@ -138,7 +138,7 @@ in {
       map global find n ': grep-next-match<ret>' -docstring 'Next'
       map global find p ': grep-previous-match<ret>' -docstring 'Previous'
       map global find o ': buffer *grep*<ret>' -docstring 'Open Matches'
-      map global user f ':enter-user-mode find<ret>' -docstring 'Find'
+      map global user f ': enter-user-mode find<ret>' -docstring 'Find'
 
       # Git
       declare-user-mode git
@@ -147,7 +147,7 @@ in {
       map global git c ':git commit -m ""<left>' -docstring 'Commit'
       map global git C ':git commit --amend --no-edit<ret>: git update-diff<ret>' -docstring 'Amend, No Edit'
       map global git r ': git update-diff<ret>' -docstring 'Refresh diff markers'
-      map global user g ':enter-user-mode git<ret>' -docstring 'Git'
+      map global user g ': enter-user-mode git<ret>' -docstring 'Git'
 
       # Commenting
       map global normal '#' ': comment-line<ret>'
