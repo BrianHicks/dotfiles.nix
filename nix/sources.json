@@ -24,19 +24,6 @@
         "url": "https://github.com/BrianHicks/nur-packages/archive/ddbd889941fabda48f2379a0cba7244973acf78e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "connect.kak": {
-        "branch": "master",
-        "description": "Connect a program to Kakoune clients",
-        "homepage": "https://kakoune.org",
-        "kakoune": "plugin",
-        "owner": "alexherbo2",
-        "repo": "connect.kak",
-        "rev": "bc537819bb40a25884f322b194e652074346f55d",
-        "sha256": "018mw4fy0d6d82qdjk45x2nj3wmajfr9y7r7ll9bqkxrvik8g18i",
-        "type": "tarball",
-        "url": "https://github.com/alexherbo2/connect.kak/archive/bc537819bb40a25884f322b194e652074346f55d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-auto-percent": {
         "branch": "master",
         "description": "Enhance some primitives with bigger selections.",

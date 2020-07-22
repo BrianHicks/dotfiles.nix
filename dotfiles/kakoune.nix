@@ -34,6 +34,10 @@ let
       name = "kak-elm-imports";
       src = ../pkgs/kak-elm-imports/rc;
     })
+    (kakoune.mkPlugin {
+      name = "kak-open";
+      src = ../pkgs/kak-open/rc;
+    })
   ];
 
   colorAttrs = lib.mapAttrs (name: source:
@@ -71,23 +75,6 @@ in {
         enable = true;
         indent = true;
       };
-
-      keyMappings = [
-        # file browsing
-        {
-          mode = "normal";
-          key = "<minus>";
-          effect = ": connect-terminal sh -c %{ edit $(${
-              similar-sort-files-cmd "$1"
-            }) } -- %val{bufname}<ret>";
-        }
-        {
-          mode = "normal";
-          key = "_";
-          effect =
-            ": connect-terminal sh -c %{ buffer $(buffer | ${similar-sort}/bin/similar-sort $1 | grep -v $1 | fzf --tiebreak=index) } -- %val{bufname}<ret>";
-        }
-      ];
     };
 
     extraConfig = ''
@@ -139,6 +126,11 @@ in {
       map global find p ': grep-previous-match<ret>' -docstring 'Previous'
       map global find o ': buffer *grep*<ret>' -docstring 'Open Matches'
       map global user f ': enter-user-mode find<ret>' -docstring 'Find'
+
+      # File Browsing
+      set global similar_sort_path '${similar-sort}/bin/similar-sort'
+      map global normal <minus> ': open-similar<ret>'
+      map global normal _ ': open-similar-buffer<ret>'
 
       # Git
       declare-user-mode git
