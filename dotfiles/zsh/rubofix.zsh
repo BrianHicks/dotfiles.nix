@@ -1,4 +1,5 @@
 # fix rubocop errors automatically
 function rubofix() {
-    git diff --name-only $(git rev-parse origin/master)...$(git rev-parse HEAD) | xargs rubocop --auto-correct
+    TOPLEVEL="$(git rev-parse --show-toplevel)"
+    git diff --name-only $(git rev-parse origin/master)...$(git rev-parse HEAD) | sed "s|^|$TOPLEVEL|g" | xargs rubocop --auto-correct
 }
