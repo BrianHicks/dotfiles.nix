@@ -5,7 +5,7 @@ jetpack_dev() {
 
     if [[ "$?" != 0 ]]; then echo "cancelling!"; return 1; fi
 
-    jetpack $TARGETS/$SELECTED
+    jetpack ${JETPACK_ARGS:-} $TARGETS/$SELECTED
 }
 
 alias jd=jetpack_dev
