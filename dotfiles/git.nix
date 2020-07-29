@@ -23,6 +23,8 @@ in {
     };
 
     extraConfig = {
+      init.defaultBranch = "main";
+
       rerere.enabled = true;
 
       "filter \"lfs\"" = {
