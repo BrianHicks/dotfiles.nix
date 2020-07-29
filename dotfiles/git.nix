@@ -28,9 +28,9 @@ in {
       rerere.enabled = true;
 
       "filter \"lfs\"" = {
-        clean = "git-lfs clean -- %f";
-        smudge = "git-lfs smudge -- %f";
-        process = "git-lfs filter-process";
+        clean = "${pkgs.git-lfs}/bin/git-lfs clean -- %f";
+        smudge = "${pkgs.git-lfs}/bin/git-lfs smudge -- %f";
+        process = "${pkgs.git-lfs}/bin/git-lfs filter-process";
         required = true;
       };
 
