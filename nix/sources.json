@@ -6,10 +6,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "auto-pairs.kak",
-        "rev": "5b4b3b723c34c8b7f40cee60868204974349bf9f",
-        "sha256": "1wgrv03f1lkzflbbaz8n23glij5rvfxf8pcqysd668mbx1hcrk9i",
+        "rev": "256da1954268ca8f14572f7c85a4620f64f0bdbf",
+        "sha256": "0knsfg2phcv7yj235h9n1j7sn6d3y6bzrv2kvs9fs2kp3s53nsxd",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/5b4b3b723c34c8b7f40cee60868204974349bf9f.tar.gz",
+        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/256da1954268ca8f14572f7c85a4620f64f0bdbf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "brianhicks-nur": {
@@ -95,10 +95,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "febd3530f0c2f2fb74752ee4d9dd2518d302f618",
-        "sha256": "1gifi50k4h6wk9ix0yvp66p7jk8rrqgr39r5rf4lyha6pbs7dbk6",
+        "rev": "ab9cc41caf44d1f1d465d8028e4bc0096fd73238",
+        "sha256": "17k52n8zwp832cqifsc4458mhy4044wmk22f807171hf6p7l4xvr",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/febd3530f0c2f2fb74752ee4d9dd2518d302f618.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/ab9cc41caf44d1f1d465d8028e4bc0096fd73238.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -107,10 +107,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "55079328c219fb53f3120a34fdba3a80d3be601b",
-        "sha256": "0imgkaf4x5k184nqdbrz31fmng69rn7d9na1a4kpv6swq9vnwbfj",
+        "rev": "970b2b853d41ec80a3c2aba3e585f52818fbbfa3",
+        "sha256": "0cwm2gvnb7dfw9pjrwzlxb2klix58chc36nnymahjqaa1qmnpbpq",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/55079328c219fb53f3120a34fdba3a80d3be601b.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/970b2b853d41ec80a3c2aba3e585f52818fbbfa3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "prelude.kak": {
@@ -153,10 +153,10 @@
         "kakoune": "plugin",
         "owner": "andreyorst",
         "repo": "smarttab.kak",
-        "rev": "1321c308edac6bd892e2bd2f683432402a04be98",
-        "sha256": "048qq8aj405q3zm28jjh6ardxb8ixkq6gs1h3bwdv2qc4zi2nj4g",
+        "rev": "c585da5aa3e5cf9d1264e6296b6e6ee808e3d102",
+        "sha256": "060pw2i089lf171k61h9h9y73w59dkyjfncpkxpv044scrlzzmyi",
         "type": "tarball",
-        "url": "https://github.com/andreyorst/smarttab.kak/archive/1321c308edac6bd892e2bd2f683432402a04be98.tar.gz",
+        "url": "https://github.com/andreyorst/smarttab.kak/archive/c585da5aa3e5cf9d1264e6296b6e6ee808e3d102.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tug": {
