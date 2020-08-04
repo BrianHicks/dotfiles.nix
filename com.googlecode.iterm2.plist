@@ -1678,14 +1678,16 @@
 	<string>0 163 224 275 0 0 1680 1027 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>2784 273 799 448 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>2984 513 400 129 1680 -642 3008 1669 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>2834 143 700 622 1680 -642 3008 1669 </string>
+	<string>5058 -74 700 622 4688 -1510 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1680 -642 3008 1669 1680 -642 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 10 714 836 0 0 1680 1027 </string>
+	<string>4688 -1500 714 836 4688 -1510 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>5304 -15 650 404 4688 -1510 1440 2537 </string>
+	<string>4688 -1500 714 836 4688 -1510 1440 2537 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2349,6 +2351,8 @@
 			<string>AppleColorEmoji 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
+			<key>Non-ASCII Ligatures</key>
+			<false/>
 			<key>Normal Font</key>
 			<string>Input-Regular 13</string>
 			<key>Open Toolbelt</key>
@@ -3164,7 +3168,9 @@
 	<array>
 		<string>3.3.9</string>
 		<string>3.3.8</string>
+		<string>3.3.11</string>
 		<string>3.3.7</string>
+		<string>3.3.12</string>
 		<string>3.3.6</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
@@ -3186,16 +3192,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1680, -642}, {3008, 1692}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{3462, 631}</string>
+		<string>{657, 743}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>9EA74C1E-D71C-4461-ACD5-E82FC8ECD1F2</string>
 	<key>NoSyncLastTipTime</key>
 	<real>598040242.38931406</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>35</integer>
+	<integer>44</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4039,13 +4045,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-15T10:53:38Z</date>
+	<date>2020-07-30T10:12:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>1162869871</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SeparateWindowTitlePerTab</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
@@ -4077,7 +4083,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
