@@ -15,7 +15,7 @@ in with nixpkgs; rec {
     name = "kak-tree";
     src = src;
 
-    # note: when updating, this needs to be set to all 1's so that Nix will
+    # note: when updating, this needs to be set to all 0's so that Nix will
     # re-fetch the dependencies from crates.io
     cargoSha256 = "015isbvr1byxz7icks0wny289in559hc7kd04fsmavbnqr100rrf";
     verifyCargoDeps = true;
