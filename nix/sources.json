@@ -95,10 +95,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "ab9cc41caf44d1f1d465d8028e4bc0096fd73238",
-        "sha256": "17k52n8zwp832cqifsc4458mhy4044wmk22f807171hf6p7l4xvr",
+        "rev": "303f442c43f918bc43400ab4a0b662a82ca7748b",
+        "sha256": "19z1qypd6zd4qzhrhjm7j55v85fzf8wln8l9vslvn9dpspcwxv7c",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/ab9cc41caf44d1f1d465d8028e4bc0096fd73238.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/303f442c43f918bc43400ab4a0b662a82ca7748b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -107,10 +107,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "970b2b853d41ec80a3c2aba3e585f52818fbbfa3",
-        "sha256": "0cwm2gvnb7dfw9pjrwzlxb2klix58chc36nnymahjqaa1qmnpbpq",
+        "rev": "5e7fb7699c84da3420495e40459dfbff459c16e4",
+        "sha256": "12rqn4a88maggk1vhhfi2vn2j0vf543qnv2zby922mnnrij476gw",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/970b2b853d41ec80a3c2aba3e585f52818fbbfa3.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/5e7fb7699c84da3420495e40459dfbff459c16e4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "prelude.kak": {
@@ -120,10 +120,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "prelude.kak",
-        "rev": "05b2642b1e014bd46423f9d738cc38a624947b63",
-        "sha256": "180p8hq8z7mznzd9w9ma5as3ijs7zbzcj96prcpswqg263a0b329",
+        "rev": "bd66886500ab004baa255065f2dad19909ece2c4",
+        "sha256": "1j3a48sblg6vckhrd2li1y5snr5bxrb6qmv7330jfnnr9a995f9g",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/prelude.kak/archive/05b2642b1e014bd46423f9d738cc38a624947b63.tar.gz",
+        "url": "https://github.com/alexherbo2/prelude.kak/archive/bd66886500ab004baa255065f2dad19909ece2c4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "shellcheck.kak": {
