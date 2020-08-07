@@ -7,7 +7,8 @@ if test -z "$REPO"; then
   exit 1
 fi
 
-REPO_ROOT="${REPO_ROOT:-~/code}"
+ROOT="${HOME:-}/"
+REPO_ROOT="${REPO_ROOT:-${ROOT}code}"
 
 mkdir -p "$REPO_ROOT/$REPO"
 git clone "$(printf 'git@github.com:%s.git' "$REPO")" "$REPO_ROOT/$REPO"
