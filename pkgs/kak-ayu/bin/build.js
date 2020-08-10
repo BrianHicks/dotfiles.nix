@@ -3,7 +3,7 @@ let ayu = require('ayu');
 let fs = require('fs');
 
 function rgb(color) {
-  return `rgb:${color.hex('rgb').slice(1)}`
+  return `rgba:${color.hex('rgba').slice(1)}`
 }
 
 [
