@@ -13,13 +13,13 @@ let
         sha512 = "m33zg9cRLtuaUSzlbMrr7iLIKNzrD4+M6Unt5+9mCu4BhR5NwnRjVKblINCwzcBXooukIgld8DtEncP8qpvbNg==";
       };
     };
-    "ayu-7.2.1" = {
+    "ayu-7.3.1" = {
       name = "ayu";
       packageName = "ayu";
-      version = "7.2.1";
+      version = "7.3.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/ayu/-/ayu-7.2.1.tgz";
-        sha512 = "igs4HOihUE/n80rIXrM5YiD2H9rGx7Xl4VgGH7+Tps/nUHHwqNx3gLnCEEE9pwgHSFDaC4rNqi+bPvCXRzhYEg==";
+        url = "https://registry.npmjs.org/ayu/-/ayu-7.3.1.tgz";
+        sha512 = "tflnLFex6AdRBsZONyznXVh3JYLzpkD+i5ZrzGbjddkWWhRCGDq3H3qAuk1m1bafo0u6qh+BANg/aE+E2KhzvA==";
       };
     };
     "chroma-js-2.1.0" = {
@@ -40,13 +40,13 @@ let
         sha512 = "+KqxF6LCvfhWvADcDPqo64yVIB31gv/jQulX2NGzKS/g3GEVz6/pt4wjHFtFWsHMddebWD/sDthJemzM4MaAag==";
       };
     };
-    "cross-spawn-7.0.2" = {
+    "cross-spawn-7.0.3" = {
       name = "cross-spawn";
       packageName = "cross-spawn";
-      version = "7.0.2";
+      version = "7.0.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.2.tgz";
-        sha512 = "PD6G8QG3S4FK/XCGFbEQrDqO2AnMMsy0meR7lerlIOHAAbkuavGU/pOqprrlvfTNjvowivTeBsjebAL0NSoMxw==";
+        url = "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz";
+        sha512 = "iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==";
       };
     };
     "isexe-2.0.0" = {
@@ -111,10 +111,10 @@ let
     src = ./.;
     dependencies = [
       sources."@types/chroma-js-1.4.3"
-      sources."ayu-7.2.1"
+      sources."ayu-7.3.1"
       sources."chroma-js-2.1.0"
       sources."cross-env-6.0.3"
-      sources."cross-spawn-7.0.2"
+      sources."cross-spawn-7.0.3"
       sources."isexe-2.0.0"
       sources."nonenumerable-1.1.1"
       sources."path-key-3.1.1"
