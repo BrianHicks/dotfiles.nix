@@ -284,6 +284,15 @@ in {
           fi
         }
       }
+
+      hook global WinSetOption filetype=sh %{
+        expandtab
+        set-option buffer softtabstop 2
+        set-option buffer tabstop 2
+        set-option buffer indentwidth 2
+
+        hook buffer BufWritePre .* lint
+      }
     '';
   };
 
