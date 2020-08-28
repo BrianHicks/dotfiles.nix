@@ -20,6 +20,7 @@ in {
       publish = "push -u origin HEAD";
       st = "status";
       yoda = "push --force-with-lease";
+      root = "rev-parse --show-toplevel";
     };
 
     extraConfig = {
