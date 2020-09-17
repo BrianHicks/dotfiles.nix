@@ -3,6 +3,7 @@
 let
   sources = import ../../nix/sources.nix;
   nixpkgs = import sources.nixpkgs { };
+  naersk = nixpkgs.callPackage sources.naersk { };
 in with nixpkgs; rec {
   src = pkgs.fetchgit {
     url = "https://github.com/ul/kak-tree.git";
@@ -11,17 +12,11 @@ in with nixpkgs; rec {
     fetchSubmodules = true;
   };
 
-  kak-tree = pkgs.rustPlatform.buildRustPackage {
-    name = "kak-tree";
-    src = src;
-
-    # note: when updating, this needs to be set to all 0's so that Nix will
-    # re-fetch the dependencies from crates.io
-    cargoSha256 = "015isbvr1byxz7icks0wny289in559hc7kd04fsmavbnqr100rrf";
-    verifyCargoDeps = true;
-
-    cargoBuildFlags = [
-      ''--features "bash css elm haskell html javascript json python ruby"''
-    ];
+  kak-tree = naersk.buildPackage {
+    root = src;
+    cargoBuildOptions = (defaults:
+      defaults ++ [
+        ''--features "bash css elm haskell html javascript json python ruby"''
+      ]);
   };
 }
