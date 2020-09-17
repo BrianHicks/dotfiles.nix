@@ -14,7 +14,8 @@ fi
 SESSION=$(basename "$ROOT" | sed 's/\./-/g')
 
 if ! kak -l | grep -q "$SESSION"; then
-  kak -d -s "$SESSION"
+  kak -d -s "$SESSION" &
+  disown $!
 fi
 
 exec kak -c "$SESSION" "${@}"
