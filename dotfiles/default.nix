@@ -31,6 +31,7 @@ in {
     pkgs.watch
     pkgs.zenith
     (import ../pkgs/percollate { inherit pkgs; })
+    (import sources.comma { inherit pkgs; })
 
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
