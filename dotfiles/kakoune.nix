@@ -103,6 +103,10 @@ in {
         exec <esc>
       }}
 
+      # automatically match opening/closing pairs like () and []
+      require-module auto-pairs
+      auto-pairs-enable
+
       # automatically create directories on save
       hook global BufWritePre .* %{ mkdir %val{bufname} }
 
