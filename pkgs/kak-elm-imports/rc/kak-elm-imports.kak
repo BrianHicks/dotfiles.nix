@@ -21,7 +21,7 @@ define-command -docstring "Sort the imports in this file" elm-sort-imports %{
 
 define-command -docstring "Copy an import line from elsewhere into this file" elm-copy-import-line %{
     tmux-terminal-vertical sh -c %{
-        IMPORTS=$(rg -INt elm '^import ' | sort | uniq -c | sort -rn | sed -E 's/^\s+[0-9]+\s//g' | fzf --multi --tiebreak end,length)
+        IMPORTS=$(rg -INt elm '^import ' | sort | uniq -c | sort -rn | sed -E 's/^\s*[0-9]+\s*//g' | fzf --multi --tiebreak end,length)
         printf "execute-keys -draft -client $1 ': elm-jump-to-imports<ret>o%s<esc>: elm-sort-imports<ret>\n'" "$IMPORTS" | indiekak -p $2
     } -- %val{client} %val{session}
 }
