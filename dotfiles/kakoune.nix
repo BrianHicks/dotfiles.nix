@@ -297,6 +297,13 @@ in {
 
         hook buffer BufWritePre .* lint
       }
+
+      hook global WinSetOption filetype=html %{
+        expandtab
+        set-option buffer softtabstop 2
+        set-option buffer tabstop 2
+        set-option buffer indentwidth 2
+      }
     '';
   };
 
