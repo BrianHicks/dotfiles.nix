@@ -304,6 +304,13 @@ in {
         set-option buffer tabstop 2
         set-option buffer indentwidth 2
       }
+
+      hook global WinSetOption filetype=json %{
+        expandtab
+        set-option buffer softtabstop 2
+        set-option buffer tabstop 2
+        set-option buffer indentwidth 2
+      }
     '';
   };
 
