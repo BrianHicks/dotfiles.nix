@@ -15,7 +15,7 @@ stdenv.mkDerivation {
 
     ## sample projects
     # elm
-    # elmPackages.elm
-    # elmPackages.elm-format
+    elmPackages.elm
+    elmPackages.elm-format
   ];
 }
