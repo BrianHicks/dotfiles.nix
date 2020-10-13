@@ -4,7 +4,6 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
+    enableNixDirenvIntegration = true;
   };
-
-  home.file.".direnvrc".source = ./direnv/direnvrc;
 }
