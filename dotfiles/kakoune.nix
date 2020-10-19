@@ -160,6 +160,8 @@ in {
       map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
       map global tree d ': tree-select-parent-node value_declaration<ret>' -docstring 'Parent Declaration'
 
+      map global user r ': tree-select-parent-node<ret>' -docstring 'Select Parent'
+
       # clipboard handling
       # https://github.com/mawww/config/blob/43bd5cea453d629dd119d361cb237d433d09a0eb/kakrc#L61-L75
       evaluate-commands %sh{
