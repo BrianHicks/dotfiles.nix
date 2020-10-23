@@ -27,6 +27,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
+    pkgs.xsv
     (import ../pkgs/percollate { inherit pkgs; })
     (import sources.comma { inherit pkgs; })
 
