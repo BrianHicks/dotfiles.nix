@@ -94,10 +94,10 @@
         "homepage": "",
         "owner": "nmattia",
         "repo": "naersk",
-        "rev": "22b96210b2433228d42bce460f3befbdcfde7520",
-        "sha256": "0qa8jnw71qk1i1fgpydx1nv17cnvlydb9jhd6f7gvhglagm19b4v",
+        "rev": "d645515b7159c75087b3d51f23a68047c2c09699",
+        "sha256": "16hjyf1nkvwhb5nw989qhm3gdlim5wfw515bnvxpix5ff8jfbh9x",
         "type": "tarball",
-        "url": "https://github.com/nmattia/naersk/archive/22b96210b2433228d42bce460f3befbdcfde7520.tar.gz",
+        "url": "https://github.com/nmattia/naersk/archive/d645515b7159c75087b3d51f23a68047c2c09699.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
