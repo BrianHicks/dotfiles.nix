@@ -14,9 +14,7 @@ nixify() {
       echo '{ ... }:'
       echo 'let'
       echo '  sources = import ./nix/sources.nix;'
-      echo
       echo '  nixpkgs = import sources.nixpkgs { };'
-      echo
       echo '  niv = import sources.niv { };'
       echo 'in with nixpkgs;'
       echo 'stdenv.mkDerivation {'
