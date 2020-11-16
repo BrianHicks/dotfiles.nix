@@ -1679,15 +1679,15 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>2784 273 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>2984 513 400 129 1680 -642 3008 1669 </string>
+	<string>640 673 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>5058 -74 700 622 4688 -1510 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 -642 3008 1669 1680 -642 3008 1669 </string>
+	<string>0 10 714 836 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4688 -1500 714 836 4688 -1510 1440 2537 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>4688 -1500 714 836 4688 -1510 1440 2537 </string>
+	<string>3184 -237 1114 708 1680 -642 3008 1669 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2409,6 +2409,8 @@
 			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Unicode Normalization</key>
+			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -3192,16 +3194,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{1680, -642}, {3008, 1692}}</string>
 		<key>topLeft</key>
-		<string>{657, 743}</string>
+		<string>{2532, 576}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>9EA74C1E-D71C-4461-ACD5-E82FC8ECD1F2</string>
 	<key>NoSyncLastTipTime</key>
 	<real>598040242.38931406</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>44</integer>
+	<integer>56</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4045,7 +4047,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-30T10:12:39Z</date>
+	<date>2020-11-11T11:11:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
