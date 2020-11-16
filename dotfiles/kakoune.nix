@@ -147,6 +147,7 @@ in {
 
       # Commenting
       map global normal '#' ': comment-line<ret>'
+      map global normal '<a-3>' ': comment-block<ret>'
 
       # kak-tree
       set global tree_cmd '${kak-tree.kak-tree}/bin/kak-tree'
