@@ -94,10 +94,10 @@
         "homepage": "",
         "owner": "nmattia",
         "repo": "naersk",
-        "rev": "ce273fa593dcc94a629d0d869f07d96d2b337e37",
-        "sha256": "1hx47l7gfim0cs9fn8r91wwl0641wi2fdq67ygb4ydx7msb8sm6h",
+        "rev": "a76924cbbb17c387e5ae4998a4721d88a3ac95c0",
+        "sha256": "09b5g2krf8mfpajgz2bgapkv3dpimg0qx1nfpjafcrsk0fhxmqay",
         "type": "tarball",
-        "url": "https://github.com/nmattia/naersk/archive/ce273fa593dcc94a629d0d869f07d96d2b337e37.tar.gz",
+        "url": "https://github.com/nmattia/naersk/archive/a76924cbbb17c387e5ae4998a4721d88a3ac95c0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -164,10 +164,10 @@
         "kakoune": "plugin",
         "owner": "andreyorst",
         "repo": "smarttab.kak",
-        "rev": "e7fe8efd0b91ab8dc1c99c131f138de9b38fd965",
-        "sha256": "0x93mmxv9qi7vxsyqdhg4x5bvsl8sss9m2mq2qks6ghr5h9pmigk",
+        "rev": "6e3264df7a9a786961e634d5ae8fb117ca86ef0a",
+        "sha256": "00r9i4v6aiy6yabf22y27idl2cvjivdfwn21aypxr0d849rfg6q8",
         "type": "tarball",
-        "url": "https://github.com/andreyorst/smarttab.kak/archive/e7fe8efd0b91ab8dc1c99c131f138de9b38fd965.tar.gz",
+        "url": "https://github.com/andreyorst/smarttab.kak/archive/6e3264df7a9a786961e634d5ae8fb117ca86ef0a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tug": {
