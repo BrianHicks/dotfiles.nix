@@ -182,11 +182,11 @@ in {
       map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
 
       # LSP
-      eval %sh{kak-lsp --kakoune -s $kak_session}
-      set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
-      lsp-enable
+      # eval %sh{kak-lsp --kakoune -s $kak_session}
+      # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+      # lsp-enable
 
-      map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
+      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
 
       # Languages
       hook global WinSetOption filetype=nix %{
@@ -215,7 +215,7 @@ in {
         map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
 
         # lsp
-        lsp-inline-diagnostics-enable window
+        # lsp-inline-diagnostics-enable window
       }
 
       hook global WinSetOption filetype=haskell %{
