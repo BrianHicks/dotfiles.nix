@@ -41,6 +41,10 @@ face global link      ${rgb(colors.syntax.markup)}
 face global bullet    ${rgb(colors.syntax.markup)}
 face global list      ${rgb(colors.syntax.markup)}
 
+# LSP
+face global DiagnosticError   ${rgb(colors.syntax.error)}
+face global DiagnosticWarning ${rgb(colors.syntax.error.fade(0.3))}
+
 # builtin
 face global Default ${rgb(colors.common.fg)},${rgb(colors.common.bg)}
 face global Error   ${rgb(colors.syntax.error)}
@@ -63,8 +67,8 @@ face global StatusLineMode  ${rgb(colors.common.bg)},${rgb(colors.common.accent)
 face global StatusLineInfo  ${rgb(colors.ui.selection.border)},${rgb(colors.common.fg)}
 face global StatusLineValue ${rgb(colors.common.bg)},${rgb(colors.common.accent)}
 face global Prompt          ${rgb(colors.common.accent)}
-# BufferPadding
 
+# BufferPadding
 face global LineNumbers        ${rgb(colors.common.fg)}
 face global LineNumberCursor   ${rgb(colors.common.fg)}+b
 face global LineNumbersWrapped ${rgb(colors.common.ui)}
