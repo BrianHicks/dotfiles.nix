@@ -335,10 +335,10 @@ in {
 
   # LSP
   home.file."Library/Preferences/kak-lsp/kak-lsp.toml".text = ''
-    [language.elm]
-    filetypes = ["elm"]
-    roots = ["elm.json"]
-    command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server"
+    # [language.elm]
+    # filetypes = ["elm"]
+    # roots = ["elm.json"]
+    # command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server"
 
     # [language.elm.initialization_options]
     # runtime = "node"
