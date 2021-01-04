@@ -53,7 +53,7 @@ let
   ];
 in {
   home.packages =
-    [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) ];
+    [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) pkgs.kak-lsp ];
 
   programs.kakoune = {
     enable = true;
@@ -181,6 +181,13 @@ in {
       map global user Z '<a-z>aZ' -docstring 'Add to selection'
       map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
 
+      # LSP
+      eval %sh{kak-lsp --kakoune -s $kak_session}
+      set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+      lsp-enable
+
+      map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
+
       # Languages
       hook global WinSetOption filetype=nix %{
         expandtab
@@ -206,6 +213,9 @@ in {
         # extra commands
         map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
         map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
+
+        # lsp
+        lsp-inline-diagnostics-enable window
       }
 
       hook global WinSetOption filetype=haskell %{
@@ -322,4 +332,18 @@ in {
     "${kakoune.mkColors colors}/share/kak/colors";
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
+
+  # LSP
+  home.file."Library/Preferences/kak-lsp/kak-lsp.toml".text = ''
+    [language.elm]
+    filetypes = ["elm"]
+    roots = ["elm.json"]
+    command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server"
+
+    # [language.elm.initialization_options]
+    # runtime = "node"
+    # elmPath = "elm"
+    # elmFormatPath = "elm-format"
+    # elmTestPath = "elm-test"
+  '';
 }
