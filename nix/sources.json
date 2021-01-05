@@ -170,6 +170,12 @@
         "url": "https://github.com/andreyorst/smarttab.kak/archive/6e3264df7a9a786961e634d5ae8fb117ca86ef0a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "tree-grepper": {
+        "branch": "main",
+        "repo": "https://git.bytes.zone/brian/tree-grepper.git",
+        "rev": "7f1edd11d115eec84d91e33ec30f73fc5efdfd40",
+        "type": "git"
+    },
     "tug": {
         "branch": "master",
         "description": "Unix commands for the kakoune editor",

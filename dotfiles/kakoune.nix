@@ -14,6 +14,8 @@ let
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 
+  tree-grepper = import sources.tree-grepper { pkgs = nixpkgs.pkgs; };
+
   # plugins
   pluginSources = lib.filterAttrs
     (_: source: lib.attrByPath [ "kakoune" ] "" source == "plugin") sources;
@@ -37,6 +39,10 @@ let
     (kakoune.mkPlugin {
       name = "kak-open";
       src = ../pkgs/kak-open/rc;
+    })
+    (kakoune.mkPlugin {
+      name = "kak-tree-grepper";
+      src = ../pkgs/kak-tree-grepper/rc;
     })
   ];
 
@@ -188,6 +194,10 @@ in {
 
       # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
 
+      # outline jumping
+      set global tree_grepper_path "${tree-grepper}/bin/tree-grepper"
+      set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
+
       # Languages
       hook global WinSetOption filetype=nix %{
         expandtab
@@ -213,6 +223,8 @@ in {
         # extra commands
         map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
         map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
+
+        map buffer normal <a-minus> ': outline-jump-elm<ret>'
 
         # lsp
         # lsp-inline-diagnostics-enable window
