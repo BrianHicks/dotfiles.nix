@@ -225,6 +225,7 @@ in {
         map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
 
         map buffer normal <a-minus> ': outline-jump-elm<ret>'
+        map buffer normal <a-_> '<a-i>w: outline-jump-elm %val{selection}<ret>'
 
         # lsp
         # lsp-inline-diagnostics-enable window
