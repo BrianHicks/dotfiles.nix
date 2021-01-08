@@ -42,6 +42,11 @@ in {
       core.pager = "${pkgs.gitAndTools.delta}/bin/delta ${deltaTheme}";
       interactive.diffFilter =
         "${pkgs.gitAndTools.delta}/bin/delta --color-only ${deltaTheme}";
+
+      delta = {
+        features = "side-by-side line-numbers";
+        whitespace-error-style = "22 reverse";
+      };
     };
 
     ignores = [
