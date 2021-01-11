@@ -10,11 +10,11 @@ let
   kak-tree = pkgs.callPackage ../pkgs/kak-tree { };
   kak-ayu = pkgs.callPackage ../pkgs/kak-ayu { };
 
-  similar-sort = import sources.similar-sort { pkgs = nixpkgs.pkgs; };
+  similar-sort = pkgs.callPackage sources.similar-sort { };
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 
-  tree-grepper = import sources.tree-grepper { pkgs = nixpkgs.pkgs; };
+  tree-grepper = pkgs.callPackage sources.tree-grepper { };
 
   # plugins
   pluginSources = lib.filterAttrs
