@@ -173,7 +173,7 @@
     "tree-grepper": {
         "branch": "main",
         "repo": "https://git.bytes.zone/brian/tree-grepper.git",
-        "rev": "1d423444cf824f8b596d8d65f463decc2b91d189",
+        "rev": "b20fc8929e8d10e8b3df6401cdcff124db127b9c",
         "type": "git"
     },
     "tug": {
