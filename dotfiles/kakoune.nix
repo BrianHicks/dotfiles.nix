@@ -292,6 +292,9 @@ in {
         set-option buffer softtabstop 2
         set-option buffer tabstop 2
         set-option buffer indentwidth 2
+
+        map buffer normal <a-minus> ': outline-jump-ruby<ret>'
+        map buffer goto d '<a-i>w: outline-jump-ruby %val{selection}<ret>' -docstring 'Def (same file)'
       }
 
       hook global WinSetOption filetype=ts %{

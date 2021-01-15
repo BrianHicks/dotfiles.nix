@@ -25,3 +25,27 @@ define-command -override -docstring "jump somewhere in an Elm file's definition 
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
     } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
 }
+
+define-command -override -docstring "jump somewhere in a Ruby file's definition outline" -params 0..1 outline-jump-ruby %{
+    tmux-terminal-horizontal sh -c %{
+        set -euo pipefail
+
+        # what tools do we have available?
+        TREE_GREPPER=${1:-tree-grepper}
+        FZF=${2:-fzf}
+
+        # what do we care about?
+        FILE=$3
+        FZF_QUERY=$4
+
+        # where do we return results?
+        CLIENT=$5
+        SESSION=$6
+
+        # do the magic!
+        QUERY="(module name: (_) @module) (class name: (_) @class) (method name: (_) @method) (singleton_method name: (_) @singleton-method) (assignment left: (_) @assignment) (operator_assignment left: (_) @assignment)"
+
+        EDIT_LOCATION="$("$TREE_GREPPER" --language ruby "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 | cut -d : -f 1-3 | tr : ' ')"
+        printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
+    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
+}
