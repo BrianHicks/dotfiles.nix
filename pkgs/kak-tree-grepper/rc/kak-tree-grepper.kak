@@ -21,7 +21,7 @@ define-command -override -docstring "jump somewhere in an Elm file's definition 
         QUERY="(function_declaration_left (lower_case_identifier)@function) (type_declaration (type) (upper_case_identifier)@type) (type_alias_declaration (type) (alias) (upper_case_identifier)@alias) (union_variant (upper_case_identifier)@constructor) (field_type (lower_case_identifier)@field)"
         # TODO: maybe also (import_clause (import) (upper_case_qid)@import)?
 
-        EDIT_LOCATION="$("$TREE_GREPPER" "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 | cut -d : -f 1-3 | tr : ' ')"
+        EDIT_LOCATION="$("$TREE_GREPPER" --language elm "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
     } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
 }
