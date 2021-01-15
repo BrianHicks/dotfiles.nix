@@ -43,7 +43,7 @@ define-command -override -docstring "jump somewhere in a Ruby file's definition 
         SESSION=$6
 
         # do the magic!
-        QUERY="(module name: (_) @module) (class name: (_) @class) (method name: (_) @method) (singleton_method name: (_) @singleton-method) (assignment left: (_) @assignment) (operator_assignment left: (_) @assignment)"
+        QUERY="(module name: (_) @module) (class name: (_) @class) (method name: (_) @method) (singleton_method name: (_) @method) (assignment left: (_) @assignment) (operator_assignment left: (_) @assignment)"
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language ruby "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
