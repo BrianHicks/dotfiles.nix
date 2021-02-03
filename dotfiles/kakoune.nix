@@ -106,6 +106,10 @@ in {
         exec <esc>
       }}
 
+      # exit from insert mode and save. Useful for triggering file watchers
+      # or whatever, as the alternative is `fd:w<ret>`
+      map global insert <c-o> '<esc>: write<ret>'
+
       # automatically match opening/closing pairs like () and []
       require-module auto-pairs
       auto-pairs-enable
