@@ -46,17 +46,7 @@ in {
       };
     };
 
-    ignores = [
-      "*.swp"
-      "*~"
-      ".#*"
-      ".DS_Store"
-      ".direnv"
-      ".python-version"
-      ".ruby-version"
-      ".vagrant"
-      "TAGS"
-    ];
+    ignores = [ ".DS_Store" ];
   };
 
   home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
