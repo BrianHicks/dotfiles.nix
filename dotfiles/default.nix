@@ -34,8 +34,6 @@ in {
     pkgs.nixfmt
   ];
 
-  home.file.".config/kitty/kitty.conf".source = ./kitty.conf;
-
   programs.man.enable = true;
   programs.home-manager.enable = true;
 }
