@@ -24,8 +24,8 @@ in {
     pkgs.tree
     pkgs.watch
     pkgs.xsv
-    (import ../pkgs/percollate { inherit pkgs; })
-    (import sources.comma { inherit pkgs; })
+    (pkgs.callPackage ../pkgs/percollate { })
+    (pkgs.callPackage sources.comma { })
 
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
