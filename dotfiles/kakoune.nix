@@ -2,10 +2,7 @@
 let
   sources = import ../nix/sources.nix;
   nixpkgs = import sources.nixpkgs { };
-  kakoune = import ../lib/kakoune.nix {
-    pkgs = nixpkgs.pkgs;
-    lib = nixpkgs.lib;
-  };
+  kakoune = pkgs.callPackage ../lib/kakoune.nix { };
 
   kak-tree = pkgs.callPackage ../pkgs/kak-tree { };
   kak-ayu = pkgs.callPackage ../pkgs/kak-ayu { };
