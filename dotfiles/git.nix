@@ -35,9 +35,6 @@ in {
         required = true;
       };
 
-      # magit
-      github.user = "BrianHicks";
-
       # delta
       core.pager = "${pkgs.gitAndTools.delta}/bin/delta ${deltaTheme}";
       interactive.diffFilter =
