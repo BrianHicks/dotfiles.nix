@@ -46,7 +46,7 @@ in {
       };
     };
 
-    ignores = [ ".DS_Store" ];
+    ignores = [ ".direnv" ".DS_Store" ];
   };
 
   home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
