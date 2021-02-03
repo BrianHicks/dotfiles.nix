@@ -23,7 +23,6 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
-    pkgs.xsv
     (pkgs.callPackage ../pkgs/percollate { })
     (pkgs.callPackage sources.comma { })
 
