@@ -2,12 +2,8 @@
 
 let
   sources = import ../nix/sources.nix;
-
   pkgs = import sources.nixpkgs { };
-
   niv = import sources.niv { };
-
-  brianhicks-nur = import sources.brianhicks-nur { };
 in {
   imports = [
     ./bat.nix

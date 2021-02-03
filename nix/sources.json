@@ -12,18 +12,6 @@
         "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/fd735ec149ef0d9ca5f628a95b1e52858b5afbdc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "brianhicks-nur": {
-        "branch": "master",
-        "description": "Nix packages I'm using which aren't upstream for whatever reason",
-        "homepage": null,
-        "owner": "BrianHicks",
-        "repo": "nur-packages",
-        "rev": "ddbd889941fabda48f2379a0cba7244973acf78e",
-        "sha256": "0xan93pznsk0jkja9yfixvcmvn8c78w2s92dc4q6fqrikgbxxv1s",
-        "type": "tarball",
-        "url": "https://github.com/BrianHicks/nur-packages/archive/ddbd889941fabda48f2379a0cba7244973acf78e.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "comma": {
         "branch": "master",
         "description": null,
