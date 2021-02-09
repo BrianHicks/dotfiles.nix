@@ -1,8 +1,5 @@
 { pkgs, ... }:
-let
-  deltaTheme = ''--theme=1337 --plus-color="#32473d" --minus-color="#643632"'';
-
-  git-gclone = import ../pkgs/git-gclone { };
+let git-gclone = import ../pkgs/git-gclone { };
 in {
   programs.git = {
     enable = true;
@@ -34,19 +31,20 @@ in {
         process = "${pkgs.git-lfs}/bin/git-lfs filter-process";
         required = true;
       };
-
-      # delta
-      core.pager = "${pkgs.gitAndTools.delta}/bin/delta ${deltaTheme}";
-      interactive.diffFilter =
-        "${pkgs.gitAndTools.delta}/bin/delta --color-only ${deltaTheme}";
-
-      delta = {
-        features = "side-by-side line-numbers";
-        whitespace-error-style = "22 reverse";
-      };
     };
 
     ignores = [ ".direnv" ".DS_Store" ];
+
+    delta = {
+      enable = true;
+      options = {
+        syntax-theme = "1337";
+        plus-color = "#32473d";
+        minus-color = "#643632";
+        features = "line-numbers";
+        whitespace-error-style = "22 reverse";
+      };
+    };
   };
 
   home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
