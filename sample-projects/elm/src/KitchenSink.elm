@@ -1,4 +1,4 @@
-module KitchenSink exposing (..)
+port module KitchenSink exposing (..)
 
 
 type Id
@@ -30,3 +30,9 @@ deconstructions =
             "nope"
     in
     b
+
+
+port outgoingPort : Int -> Cmd msg
+
+
+port incomingPort : Sub Int
