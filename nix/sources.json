@@ -6,10 +6,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "auto-pairs.kak",
-        "rev": "fd735ec149ef0d9ca5f628a95b1e52858b5afbdc",
-        "sha256": "07795kv9njlnp6mckwv141ny2ns6wyf5r0dfjaxh9ngd105zgif1",
+        "rev": "97fa4462e20946ba049353017dfce45149aa7a8d",
+        "sha256": "0p8qvyb9x3sxcnjh3j91lqhpii8rd1bms8pkdg6zmmxl0gq5ww0m",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/fd735ec149ef0d9ca5f628a95b1e52858b5afbdc.tar.gz",
+        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/97fa4462e20946ba049353017dfce45149aa7a8d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "comma": {
@@ -82,10 +82,10 @@
         "homepage": "",
         "owner": "nmattia",
         "repo": "naersk",
-        "rev": "6e149bfd726a8ebefa415f2d713ba6d942435abd",
-        "sha256": "1rzxr4xvsbbfdwcc0np1pl16m6cqql73qnbdsisswgqnjjswnjgc",
+        "rev": "e0fe990b478a66178a58c69cf53daec0478ca6f9",
+        "sha256": "0qjyfmw5v7s6ynjns4a61vlyj9cghj7vbpgrp9147ngb1f8krz2c",
         "type": "tarball",
-        "url": "https://github.com/nmattia/naersk/archive/6e149bfd726a8ebefa415f2d713ba6d942435abd.tar.gz",
+        "url": "https://github.com/nmattia/naersk/archive/e0fe990b478a66178a58c69cf53daec0478ca6f9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -119,10 +119,10 @@
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "prelude.kak",
-        "rev": "f1e0f4d5cb62a36924e3f8ba6824d6aed8c19d23",
+        "rev": "5dbdc020c546032885c1fdb463e366cc89fc15ad",
         "sha256": "1pncr8azqvl2z9yvzhc68p1s9fld8cvak8yz88zgrp5ypx2cxl8c",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/prelude.kak/archive/f1e0f4d5cb62a36924e3f8ba6824d6aed8c19d23.tar.gz",
+        "url": "https://github.com/alexherbo2/prelude.kak/archive/5dbdc020c546032885c1fdb463e366cc89fc15ad.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "shellcheck.kak": {
@@ -152,10 +152,10 @@
         "kakoune": "plugin",
         "owner": "andreyorst",
         "repo": "smarttab.kak",
-        "rev": "6e3264df7a9a786961e634d5ae8fb117ca86ef0a",
-        "sha256": "00r9i4v6aiy6yabf22y27idl2cvjivdfwn21aypxr0d849rfg6q8",
+        "rev": "1dd3f33c4f65da5c13aee5d44b2e77399595830f",
+        "sha256": "0g49k47ggppng95nwanv2rqmcfsjsgy3z1764wrl5b49h9wifhg2",
         "type": "tarball",
-        "url": "https://github.com/andreyorst/smarttab.kak/archive/6e3264df7a9a786961e634d5ae8fb117ca86ef0a.tar.gz",
+        "url": "https://github.com/andreyorst/smarttab.kak/archive/1dd3f33c4f65da5c13aee5d44b2e77399595830f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tree-grepper": {
