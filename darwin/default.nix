@@ -43,4 +43,7 @@
     useUserPackages = true;
     users.brianhicks = (import ../dotfiles);
   };
+
+  # darwin-rebuild told me to add this, so here we are
+  users.nix.configureBuildUsers = true;
 }
