@@ -20,11 +20,6 @@ let
     builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) ""
     extras;
 in {
-  home.packages = [
-    # for shell autocorrections
-    pkgs.thefuck
-  ];
-
   programs.zsh = {
     enable = true;
 
@@ -41,8 +36,6 @@ in {
 
       PROMPT="%B%F{blue}%c%f%b %F{blue}»%f "
       RPROMPT=
-
-      eval $(${pkgs.thefuck}/bin/thefuck --alias heck)
     '' + extraInitExtra;
 
     history = {
