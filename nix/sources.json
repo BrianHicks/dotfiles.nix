@@ -1,15 +1,15 @@
 {
     "auto-pairs.kak": {
-        "branch": "master",
+        "branch": "fd735ec149ef0d9ca5f628a95b1e52858b5afbdc",
         "description": "Kakoune extension to enable automatic closing of pairs",
         "homepage": "https://kakoune.org",
         "kakoune": "plugin",
         "owner": "alexherbo2",
         "repo": "auto-pairs.kak",
-        "rev": "97fa4462e20946ba049353017dfce45149aa7a8d",
-        "sha256": "0p8qvyb9x3sxcnjh3j91lqhpii8rd1bms8pkdg6zmmxl0gq5ww0m",
+        "rev": "fd735ec149ef0d9ca5f628a95b1e52858b5afbdc",
+        "sha256": "07795kv9njlnp6mckwv141ny2ns6wyf5r0dfjaxh9ngd105zgif1",
         "type": "tarball",
-        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/97fa4462e20946ba049353017dfce45149aa7a8d.tar.gz",
+        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/fd735ec149ef0d9ca5f628a95b1e52858b5afbdc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "comma": {
