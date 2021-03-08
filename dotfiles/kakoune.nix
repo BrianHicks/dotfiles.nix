@@ -11,7 +11,7 @@ let
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 
-  tree-grepper = pkgs.callPackage sources.tree-grepper { };
+  tree-grepper = pkgs.callPackage ../pkgs/tree-grepper { };
 
   # plugins
   pluginSources = lib.filterAttrs
