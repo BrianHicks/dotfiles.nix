@@ -1,4 +1,4 @@
 [submodule "home-manager"]
 	path = home-manager
-	url = git@github.com:rycee/home-manager
-	branch = release-18.03
+	url = https://github.com/nix-community/home-manager
+	branch = release-20.09
