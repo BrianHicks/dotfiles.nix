@@ -23,7 +23,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
-    (pkgs.callPackage ../pkgs/percollate { })
+    # (pkgs.callPackage ../pkgs/percollate { })
     (pkgs.callPackage sources.comma { })
 
     # remote packages. Probably could do this better but I don't really want to
