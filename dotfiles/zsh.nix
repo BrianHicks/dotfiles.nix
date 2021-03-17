@@ -36,6 +36,9 @@ in {
 
       PROMPT="%B%F{blue}%c%f%b %F{blue}»%f "
       RPROMPT=
+
+      # fzf and mcfly both try to set ^R bindings. We choose... mcfly!
+      bindkey '^R' mcfly-history-widget
     '' + extraInitExtra;
 
     history = {

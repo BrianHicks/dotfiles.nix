@@ -11,6 +11,7 @@ in {
     ./fzf.nix
     ./git.nix
     ./kakoune.nix
+    ./mcfly.nix
     ./ssh.nix
     ./tmux.nix
     ./zsh.nix
