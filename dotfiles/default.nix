@@ -35,4 +35,7 @@ in {
 
   programs.man.enable = true;
   programs.home-manager.enable = true;
+
+  manual.html.enable = true; # adds home-manager-help
+  manual.manpages.enable = true;
 }
