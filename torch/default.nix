@@ -1,18 +1,19 @@
 { config, pkgs, ... }:
-
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../home-manager/nixos
-    ];
+let sources = import ../nix/sources.nix { };
+in {
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../home-manager/nixos
+    ("${sources.nixos-hardware}/apple/macbook-pro/12-1")
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "torch"; # Define your hostname.
-  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable =
+    false; # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -43,7 +44,7 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
-  home-manager.users.brian = (import ../dotfiles/default.nix {});
+  home-manager.users.brian = (import ../dotfiles/default.nix { });
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -53,5 +54,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
 }
-
 
