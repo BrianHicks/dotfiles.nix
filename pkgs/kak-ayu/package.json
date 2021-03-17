@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ayu": "^7.3.0"
+    "ayu": "7.3.1"
   }
 }
