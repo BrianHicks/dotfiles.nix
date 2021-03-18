@@ -28,7 +28,10 @@ in {
   services.xserver.enable = true;
 
   # Enable the GNOME 3 Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
   services.xserver.desktopManager.gnome3.enable = true;
 
   # Configure keymap in X11
