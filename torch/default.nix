@@ -54,7 +54,7 @@ in {
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
-  home-manager.users.brian = { imports = [ ../dotfiles ]; };
+  home-manager.users.brian = { imports = [ ../dotfiles ./sway.nix ]; };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
