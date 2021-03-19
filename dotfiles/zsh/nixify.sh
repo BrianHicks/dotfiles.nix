@@ -14,12 +14,10 @@ nixify() {
       echo '{ ... }:'
       echo 'let'
       echo '  sources = import ./nix/sources.nix;'
-      echo '  nixpkgs = import sources.nixpkgs { };'
+      echo '  pkgs = import sources.nixpkgs { };'
       echo '  niv = import sources.niv { };'
-      echo 'in with nixpkgs;'
-      echo 'stdenv.mkDerivation {'
-      echo "  name = \"$(basename "$(pwd)")\";"
-      echo "  buildInputs = [ niv.niv git ];"
+      echo 'in pkgs.mkShell {'
+      echo "  buildInputs = with pkgs; [ niv.niv git ];"
       echo '}'
     ) > shell.nix
     ${EDITOR:-vim} shell.nix
