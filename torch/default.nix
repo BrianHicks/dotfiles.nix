@@ -34,7 +34,7 @@ in {
   };
   programs.sway = {
     enable = true;
-    # wrapperOptions.gtkToolkit = true;
+    wrapperFeatures.gtk = true;
   };
 
   # Configure keymap in X11
