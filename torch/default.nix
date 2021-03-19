@@ -32,7 +32,10 @@ in {
     enable = true;
     wayland = true;
   };
-  services.xserver.desktopManager.gnome3.enable = true;
+  programs.sway = {
+    enable = true;
+    # wrapperOptions.gtkToolkit = true;
+  };
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
