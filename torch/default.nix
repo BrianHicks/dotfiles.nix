@@ -38,6 +38,13 @@ in {
     wrapperFeatures.gtk = true;
   };
 
+  # Audio
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudioFull; # JACK, bluetooth
+  };
+  environment.systemPackages = [ pkgs.pulseaudio-ctl ];
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 

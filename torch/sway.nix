@@ -43,6 +43,10 @@
 
     extraConfig = ''
       output "Apple Computer Inc Color LCD 0x00000000" scale 1.5
+
+      # Start the pulseaudio unit so audio works when the system starts. TODO:
+      # is this right? it feels like there's probably a better way to start it?
+      exec systemctl start --user pulseaudio
     '';
   };
 }
