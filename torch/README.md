@@ -13,3 +13,4 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [ ] top bar in sway
 - [ ] clipboard
 - [ ] keyboard illumination
+- [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl)
