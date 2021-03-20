@@ -1,8 +1,12 @@
-{ ... }: {
+{ pkgs, lib, ... }: {
   wayland.windowManager.sway = {
     enable = true;
-    config = {
-      modifier = "Mod4";
+    config = let modifier = "Mod4";
+    in {
+      modifier = modifier;
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+      };
 
       # this is the default and I'm trying it for now but I'm not completely sold
       focus.followMouse = "yes";
