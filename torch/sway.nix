@@ -36,5 +36,9 @@
         };
       }];
     };
+
+    extraConfig = ''
+      output "Apple Computer Inc Color LCD 0x00000000" scale 1.5
+    '';
   };
 }
