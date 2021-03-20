@@ -12,3 +12,4 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [ ] launcher
 - [ ] top bar in sway
 - [ ] clipboard
+- [ ] keyboard illumination
