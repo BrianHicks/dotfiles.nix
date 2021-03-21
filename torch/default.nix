@@ -45,6 +45,9 @@ in {
   };
   environment.systemPackages = [ pkgs.pulseaudio-ctl ];
 
+  # Brightness
+  hardware.brillo.enable = true;
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -54,7 +57,7 @@ in {
     shell = pkgs.zsh;
 
     # Enable ‘sudo’ for the user.
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video" ];
   };
 
   home-manager.users.brian = { imports = [ ../dotfiles ./sway.nix ]; };

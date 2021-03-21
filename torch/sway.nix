@@ -7,12 +7,19 @@
       keybindings = lib.mkOptionDefault {
         "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
 
-        # audio
+        # Audio
+        # note: get special key names with `xev -event keyboard`
         "XF86AudioRaiseVolume" =
           "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" =
           "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+
+        # Brightness
+        "XF86MonBrightnessDown" = "exec brillo -U 5";
+        "XF86MonBrightnessUp" = "exec brillo -A 5";
+        "XF86KbdBrightnessDown" = "exec brillo -k -U 5";
+        "XF86KbdBrightnessUp" = "exec brillo -k -A 5";
       };
 
       # this is the default and I'm trying it for now but I'm not completely sold
