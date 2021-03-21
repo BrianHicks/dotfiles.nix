@@ -15,3 +15,10 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] keyboard illumination
 - [ ] ssh-agent
 - [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl)
+- [ ] display management
+- [ ] document, image, video viewer
+- [ ] day/night shifting
+- [ ] notifications
+- [ ] screen locking
+- [ ] screenshots and recording
+- [ ] wallpapers
