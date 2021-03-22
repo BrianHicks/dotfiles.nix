@@ -47,4 +47,10 @@ in {
       share = true;
     };
   };
+
+  xdg.configFile."zsh/.zprofile".text = ''
+    if test "''${GDMSESSION:-}" = "sway"; then
+      eval "$(ssh-agent)"
+    fi
+  '';
 }
