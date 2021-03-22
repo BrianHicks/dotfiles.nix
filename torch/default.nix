@@ -62,6 +62,22 @@ in {
 
   home-manager.users.brian = { imports = [ ../dotfiles ./sway.nix ]; };
 
+  systemd.user.services.ssh-agent = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+
+    description = "SSH key agent";
+    documentation = [
+      "https://wiki.archlinux.org/index.php/SSH_keys#Start_ssh-agent_with_systemd_user"
+    ];
+
+    environment = {
+      SSH_AUTH_SOCK = "%t/ssh-agent.socket";
+      DISPLAY = ":0";
+    };
+    script = "${pkgs.openssh}/bin/ssh-agent -D -a $SSH_AUTH_SOCK";
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
