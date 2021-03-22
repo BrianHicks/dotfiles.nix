@@ -19,10 +19,10 @@
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
 
         # Brightness
-        "XF86MonBrightnessDown" = "exec brillo -U 5";
-        "XF86MonBrightnessUp" = "exec brillo -A 5";
-        "XF86KbdBrightnessDown" = "exec brillo -k -U 5";
-        "XF86KbdBrightnessUp" = "exec brillo -k -A 5";
+        "XF86MonBrightnessDown" = "exec brillo -q -U 5";
+        "XF86MonBrightnessUp" = "exec brillo -q -A 5";
+        "XF86KbdBrightnessDown" = "exec brillo -q -k -U 5";
+        "XF86KbdBrightnessUp" = "exec brillo -q -k -A 5";
       };
 
       # this is the default and I'm trying it for now but I'm not completely sold
