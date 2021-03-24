@@ -6,6 +6,7 @@
       modifier = modifier;
       keybindings = lib.mkOptionDefault {
         "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+        "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
 
         # Audio
         # note: get special key names with `xev -event keyboard`

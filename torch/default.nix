@@ -60,7 +60,9 @@ in {
     extraGroups = [ "wheel" "networkmanager" "video" ];
   };
 
-  home-manager.users.brian = { imports = [ ../dotfiles ./sway.nix ]; };
+  home-manager.users.brian = {
+    imports = [ ../dotfiles ./rofi.nix ./sway.nix ];
+  };
 
   systemd.user.services.ssh-agent = {
     enable = true;
