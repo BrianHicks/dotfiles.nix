@@ -64,6 +64,13 @@
       # Start the pulseaudio unit so audio works when the system starts. TODO:
       # is this right? it feels like there's probably a better way to start it?
       exec systemctl start --user pulseaudio
+
+      # Same for ssh-agent
+      exec systemctl start --user ssh-agent
     '';
   };
+
+  xdg.configFile."environment.d/ssh-agent.conf".text = ''
+    SSH_AUTH_SOCK=''${XDG_RUNTIME_DIR}/ssh-agent.socket
+  '';
 }
