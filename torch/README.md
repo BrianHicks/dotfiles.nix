@@ -4,7 +4,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] ssh-agent
 - [ ] launcher
 - [ ] top bar in sway
 - [ ] clipboard
@@ -22,6 +21,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] audio
 - [x] display brightness (on keys)
 - [x] keyboard illumination
+- [x] ssh-agent
 
 ## Misc Resources to Look At
 
