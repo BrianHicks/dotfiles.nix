@@ -61,7 +61,7 @@ in {
   };
 
   home-manager.users.brian = {
-    imports = [ ../dotfiles ./rofi.nix ./sway.nix ];
+    imports = [ ../dotfiles ./rofi.nix ./sway.nix ./waybar.nix ];
   };
 
   systemd.user.services.ssh-agent = {

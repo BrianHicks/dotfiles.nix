@@ -41,22 +41,7 @@
         xkb_options = "ctrl:nocaps"; # caps lock is ctrl
       };
 
-      # for now I'm just converting /etc/sway/config's default bar to
-      # home-manager's syntax
-      bars = [{
-        position = "top";
-        statusCommand = "while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done";
-
-        colors = {
-          statusline = "#ffffff";
-          background = "#323232";
-          inactiveWorkspace = {
-            border = "#32323200";
-            background = "#32323200";
-            text = "#5c5c5c";
-          };
-        };
-      }];
+      bars = [{ command = "waybar"; }];
     };
 
     extraConfig = ''
