@@ -6,7 +6,7 @@
 
       modules-left = [ "sway/workspaces" "sway/mode" ];
       modules-center = [ "sway/window" ];
-      modules-right = [ "battery" "clock" ];
+      modules-right = [ "cpu" "battery" "clock" ];
 
       modules = {
         "sway/window".max-length = 50;
@@ -17,6 +17,8 @@
         };
 
         clock.format = "{:%a, %d. %b  %H:%M}";
+
+        cpu.format = "{}% ";
       };
     }];
   };
