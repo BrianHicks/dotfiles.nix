@@ -60,6 +60,8 @@ in {
     extraGroups = [ "wheel" "networkmanager" "video" ];
   };
 
+  fonts.fonts = [ pkgs.font-awesome ];
+
   home-manager.users.brian = {
     imports = [ ../dotfiles ./rofi.nix ./sway.nix ./waybar.nix ];
   };
