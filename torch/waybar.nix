@@ -5,12 +5,10 @@
       layer = "top";
 
       modules-left = [ "sway/workspaces" "sway/mode" ];
-      modules-center = [ "sway/window" ];
+      modules-center = [ ];
       modules-right = [ "cpu" "battery" "clock" ];
 
       modules = {
-        "sway/window".max-length = 50;
-
         battery = {
           format = "{capacity}% {icon}";
           format-icons = [ "" "" "" "" "" ];
