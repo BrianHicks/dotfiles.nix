@@ -26,3 +26,4 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 ## Misc Resources to Look At
 
 - [Wayland in 2021](https://shibumi.dev/posts/wayland-in-2021/)
+- [pywal](https://github.com/dylanaraps/pywal)
