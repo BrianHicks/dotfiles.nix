@@ -47,6 +47,8 @@ in {
     };
   };
 
+  programs.gh.enabled = true;
+
   home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
     builtins.toJSON {
       reporting = "off";
