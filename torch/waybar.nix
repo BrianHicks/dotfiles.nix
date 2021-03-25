@@ -14,7 +14,7 @@
           format-icons = [ "" "" "" "" "" ];
         };
 
-        clock.format = "{:%a, %d. %b  %H:%M}";
+        clock.format = "{:%a, %b %d %H:%M}";
 
         cpu.format = "{}% ";
       };
