@@ -64,6 +64,7 @@ in {
 
   home-manager.users.brian = {
     imports = [ ../dotfiles ./rofi.nix ./sway.nix ./waybar.nix ];
+    home.packages = [ pkgs.wl-clipboard ];
   };
 
   systemd.user.services.ssh-agent = {

@@ -4,7 +4,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] clipboard
 - [ ] wallpapers
 - [ ] day/night shifting
 - [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl, and mpd status in waybar)
@@ -22,6 +21,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] ssh-agent
 - [x] launcher
 - [x] top bar in sway
+- [x] clipboard
 
 ## Misc Resources to Look At
 
