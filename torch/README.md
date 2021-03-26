@@ -8,7 +8,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [ ] clipboard
 - [ ] wallpapers
 - [ ] day/night shifting
-- [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl)
+- [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl, and mpd status in waybar)
 - [ ] notifications
 - [ ] screen locking
 - [ ] document, image, video viewer
