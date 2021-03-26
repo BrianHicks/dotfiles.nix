@@ -4,7 +4,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] top bar in sway
 - [ ] clipboard
 - [ ] wallpapers
 - [ ] day/night shifting
@@ -22,6 +21,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] keyboard illumination
 - [x] ssh-agent
 - [x] launcher
+- [x] top bar in sway
 
 ## Misc Resources to Look At
 
