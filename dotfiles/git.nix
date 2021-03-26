@@ -47,7 +47,7 @@ in {
     };
   };
 
-  programs.gh.enabled = true;
+  programs.gh.enable = true;
 
   home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
     builtins.toJSON {
