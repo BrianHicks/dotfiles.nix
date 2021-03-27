@@ -4,8 +4,10 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] Chrome with wayland, or Firefox with wayland. Either way, with an adblock plugin
 - [ ] screen locking
+- [ ] Chrome with wayland, or Firefox with wayland. Either way, with an adblock plugin
+- [ ] Obsidian or Neuron or something to manage notes
+- [ ] password manager
 - [ ] document, image, video viewer
 - [ ] display management
 - [ ] file manager
