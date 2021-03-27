@@ -48,11 +48,10 @@
       output "Apple Computer Inc Color LCD 0x00000000" scale 1.6
       output * background ${../wallpapers/alien-moon.png} fill
 
-      # Start the pulseaudio unit so audio works when the system starts. TODO:
-      # is this right? it feels like there's probably a better way to start it?
+      # Start user units
+      # TODO: is this right? Is there a better way to start them?
+      exec systemctl start --user gammastep
       exec systemctl start --user pulseaudio
-
-      # Same for ssh-agent
       exec systemctl start --user ssh-agent
     '';
   };

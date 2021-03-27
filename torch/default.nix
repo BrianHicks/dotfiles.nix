@@ -63,7 +63,8 @@ in {
   fonts.fonts = [ pkgs.font-awesome ];
 
   home-manager.users.brian = {
-    imports = [ ../dotfiles ./rofi.nix ./sway.nix ./waybar.nix ];
+    imports =
+      [ ../dotfiles ./gammastep.nix ./rofi.nix ./sway.nix ./waybar.nix ];
     home.packages = [ pkgs.wl-clipboard ];
   };
 
@@ -81,6 +82,15 @@ in {
       DISPLAY = ":0";
     };
     script = "${pkgs.openssh}/bin/ssh-agent -D -a $SSH_AUTH_SOCK";
+  };
+
+  systemd.user.services.gammastep = {
+    enable = true;
+
+    description = "gammastep";
+    documentation = [ "https://gitlab.com/chinstrap/gammastep" ];
+
+    script = "${pkgs.gammastep}/bin/gammastep";
   };
 
   # This value determines the NixOS release from which the default
