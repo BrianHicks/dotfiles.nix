@@ -48,6 +48,8 @@
       output "Apple Computer Inc Color LCD 0x00000000" scale 1.6
       output * background ${../wallpapers/alien-moon.png} fill
 
+      exec mako
+
       # Start user units
       # TODO: is this right? Is there a better way to start them?
       exec systemctl start --user gammastep

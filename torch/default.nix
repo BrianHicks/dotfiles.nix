@@ -65,8 +65,14 @@ in {
   fonts.fonts = [ pkgs.font-awesome ];
 
   home-manager.users.brian = {
-    imports =
-      [ ../dotfiles ./gammastep.nix ./rofi.nix ./sway.nix ./waybar.nix ];
+    imports = [
+      ../dotfiles
+      ./gammastep.nix
+      ./rofi.nix
+      ./mako.nix
+      ./sway.nix
+      ./waybar.nix
+    ];
     home.packages = [ pkgs.wl-clipboard ];
   };
 

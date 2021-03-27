@@ -4,7 +4,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] notifications
 - [ ] screen locking
 - [ ] document, image, video viewer
 - [ ] display management
@@ -23,6 +22,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] clipboard
 - [x] wallpapers
 - [x] day/night shifting
+- [x] notifications
 
 ## Misc Resources to Look At
 
