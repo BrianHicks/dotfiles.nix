@@ -45,7 +45,7 @@
     };
 
     extraConfig = ''
-      output "Apple Computer Inc Color LCD 0x00000000" scale 1.6
+      output "Apple Computer Inc Color LCD 0x00000000" scale 1.5
       output * background ${../wallpapers/alien-moon.png} fill
 
       exec mako
