@@ -48,6 +48,18 @@
       output "Apple Computer Inc Color LCD 0x00000000" scale 1.5
       output * background ${../wallpapers/alien-moon.png} fill
 
+      # Idle
+      exec ${pkgs.swayidle}/bin/swayidle -w \
+           timeout 300 '${pkgs.swaylock-effects}/bin/swaylock --fade-in 1 -i ${
+             ../wallpapers/alien-moon.png
+           }' \
+           timeout 600 'swaymsg "output * dpms off"' \
+           resume 'swaymsg "output * dpms on"' \
+           before-sleep '${pkgs.swaylock-effects}/bin/swaylock -i ${
+             ../wallpapers/alien-moon.png
+           }'
+
+      # Notifications
       exec mako
 
       # Start user units
