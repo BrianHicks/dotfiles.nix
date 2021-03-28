@@ -73,7 +73,8 @@ in {
       ./sway.nix
       ./waybar.nix
     ];
-    home.packages = [ pkgs.wl-clipboard ];
+    home.packages =
+      [ pkgs.wl-clipboard (pkgs.callPackage ../pkgs/chromium-wayland { }) ];
   };
 
   systemd.user.services.ssh-agent = {
