@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-let sources = import ../nix/sources.nix { };
+let
+  sources = import ../nix/sources.nix { };
+  unstable = import sources.nixpkgs { config.allowUnfree = true; };
 in {
   nixpkgs.config.allowUnfree = true;
 
@@ -73,8 +75,11 @@ in {
       ./sway.nix
       ./waybar.nix
     ];
-    home.packages =
-      [ pkgs.wl-clipboard (pkgs.callPackage ../pkgs/chromium-wayland { }) ];
+    home.packages = [
+      pkgs.wl-clipboard
+      (pkgs.callPackage ../pkgs/chromium-wayland { })
+      unstable.obsidian
+    ];
   };
 
   systemd.user.services.ssh-agent = {
