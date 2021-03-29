@@ -79,6 +79,7 @@ in {
       pkgs.wl-clipboard
       (pkgs.callPackage ../pkgs/chromium-wayland { })
       unstable.obsidian
+      pkgs._1password-gui
     ];
   };
 

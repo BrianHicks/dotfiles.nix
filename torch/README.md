@@ -4,7 +4,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] password manager
 - [ ] document, image, video viewer
 - [ ] display management
 - [ ] file manager
@@ -26,6 +25,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] screen locking
 - [x] Chrome with wayland
 - [x] Obsidian or Neuron or something to manage notes
+- [x] password manager
 
 ## Misc Resources to Look At
 
