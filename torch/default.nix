@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   sources = import ../nix/sources.nix { };
-  unstable = import sources.nixpkgs { config.allowUnfree = true; };
+  unstable = import sources.nixos-unstable { config.allowUnfree = true; };
 in {
   nixpkgs.config.allowUnfree = true;
 
