@@ -4,7 +4,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 ## Setting up
 
-- [ ] document, image, video viewer
 - [ ] display management
 - [ ] screenshots and recording
 - [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl, and mpd status in waybar)
@@ -26,6 +25,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] Obsidian or Neuron or something to manage notes
 - [x] password manager
 - [x] file manager
+- [x] document, image, video viewer
 
 ## Misc Resources to Look At
 

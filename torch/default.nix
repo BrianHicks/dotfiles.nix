@@ -83,6 +83,8 @@ in {
       pkgs.gnome3.nautilus
       pkgs.gnome3.sushi
       unstable.dropbox-cli
+      pkgs.zathura
+      pkgs.imv
     ];
   };
 
