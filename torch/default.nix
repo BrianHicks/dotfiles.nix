@@ -85,6 +85,7 @@ in {
       unstable.dropbox-cli
       pkgs.zathura
       pkgs.imv
+      pkgs.wdisplays
     ];
   };
 
