@@ -82,6 +82,7 @@ in {
       pkgs._1password-gui
       pkgs.gnome3.nautilus
       pkgs.gnome3.sushi
+      unstable.dropbox-cli
     ];
   };
 
@@ -108,6 +109,29 @@ in {
     documentation = [ "https://gitlab.com/chinstrap/gammastep" ];
 
     script = "${pkgs.gammastep}/bin/gammastep";
+  };
+
+  systemd.user.services.dropbox = {
+    # https://nixos.wiki/wiki/Dropbox
+    description = "Dropbox";
+    wantedBy = [ "graphical-session.target" ];
+
+    environment = {
+      QT_PLUGIN_PATH = "/run/current-system/sw/"
+        + pkgs.qt5.qtbase.qtPluginPrefix;
+      QML2_IMPORT_PATH = "/run/current-system/sw/"
+        + pkgs.qt5.qtbase.qtQmlPrefix;
+    };
+
+    serviceConfig = {
+      ExecStart = "${unstable.dropbox}/bin/dropbox";
+      ExecReload = "${pkgs.coreutils}/bin/kill -HUP $MAINPID";
+      KillMode = "control-group"; # upstream recommends process
+      Restart = "on-failure";
+      PrivateTmp = true;
+      ProtectSystem = "full";
+      Nice = 10;
+    };
   };
 
   # This value determines the NixOS release from which the default
