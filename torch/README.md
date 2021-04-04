@@ -6,7 +6,6 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 
 - [ ] document, image, video viewer
 - [ ] display management
-- [ ] file manager
 - [ ] screenshots and recording
 - [ ] music (spotifyd, maybe? And don't forget the media keys with playerctl, and mpd status in waybar)
 - [ ] emoji font (https://wiki.archlinux.org/index.php/Fonts#Emoji_and_symbols)
@@ -26,6 +25,7 @@ A Early 2015 MacBook Pro (12,2) that I put NixOS on!
 - [x] Chrome with wayland
 - [x] Obsidian or Neuron or something to manage notes
 - [x] password manager
+- [x] file manager
 
 ## Misc Resources to Look At
 

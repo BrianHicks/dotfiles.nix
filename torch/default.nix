@@ -80,6 +80,8 @@ in {
       (pkgs.callPackage ../pkgs/chromium-wayland { })
       unstable.obsidian
       pkgs._1password-gui
+      pkgs.gnome3.nautilus
+      pkgs.gnome3.sushi
     ];
   };
 
