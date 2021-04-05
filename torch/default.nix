@@ -33,24 +33,8 @@ in {
   services.xserver.enable = true;
 
   # Enable the GNOME 3 Desktop Environment.
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
-  # Audio
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull; # JACK, bluetooth
-  };
-  environment.systemPackages = [ pkgs.pulseaudio-ctl ];
-
-  # Brightness
-  hardware.brillo.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -64,17 +48,8 @@ in {
     extraGroups = [ "wheel" "networkmanager" "video" ];
   };
 
-  fonts.fonts = [ pkgs.font-awesome ];
-
   home-manager.users.brian = {
-    imports = [
-      ../dotfiles
-      ./gammastep.nix
-      ./rofi.nix
-      ./mako.nix
-      ./sway.nix
-      ./waybar.nix
-    ];
+    imports = [ ../dotfiles ];
     home.packages = [
       pkgs.wl-clipboard
       (pkgs.callPackage ../pkgs/chromium-wayland {
