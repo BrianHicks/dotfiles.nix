@@ -56,10 +56,10 @@
         "kakoune": "plugin",
         "owner": "occivink",
         "repo": "kakoune-find",
-        "rev": "7ce0fa88b6f034de157f2c459afd6497cf9f6a2f",
-        "sha256": "0s5j4qpwprvz6km3yb45g6jgfvbajqbv0y7kg3ks9x1lj09yg6ya",
+        "rev": "cd6efb6da4ab7460ff8d87e27a4bf134b4632244",
+        "sha256": "0y0bz65wmv9yswp63367w3fziy5k9ckzxy1m9bm1vn523a8ipc1f",
         "type": "tarball",
-        "url": "https://github.com/occivink/kakoune-find/archive/7ce0fa88b6f034de157f2c459afd6497cf9f6a2f.tar.gz",
+        "url": "https://github.com/occivink/kakoune-find/archive/cd6efb6da4ab7460ff8d87e27a4bf134b4632244.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kakoune-palette": {
