@@ -1,20 +1,20 @@
-{ pkgs ? import <nixpkgs> { }, ... }:
+{ pkgs ? import <nixpkgs> { }, chromium ? pkgs.chromium, ... }:
 pkgs.stdenv.mkDerivation {
   name = "chromium-wayland";
 
   src = ./.;
 
-  buildInputs = with pkgs; [ makeWrapper chromium ];
+  buildInputs = [ pkgs.makeWrapper chromium ];
   buildPhase = "true";
 
   installPhase = ''
     mkdir $out/
 
-    ln -s ${pkgs.chromium}/bin $out/bin
+    ln -s ${chromium}/bin $out/bin
 
     mkdir $out/share
-    ln -s ${pkgs.chromium}/share/icons $out/share/icons
-    ln -s ${pkgs.chromium}/share/man $out/share/man
+    ln -s ${chromium}/share/icons $out/share/icons
+    ln -s ${chromium}/share/man $out/share/man
 
     # the rest of this setup is all to prepare with this... just adding two
     # flags to the desktop entry!

@@ -77,7 +77,9 @@ in {
     ];
     home.packages = [
       pkgs.wl-clipboard
-      (pkgs.callPackage ../pkgs/chromium-wayland { })
+      (pkgs.callPackage ../pkgs/chromium-wayland {
+        chromium = unstable.chromium;
+      })
       unstable.obsidian
       pkgs._1password-gui
       pkgs.gnome3.nautilus
