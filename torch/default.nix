@@ -52,17 +52,15 @@ in {
     imports = [ ../dotfiles ];
     home.packages = [
       pkgs.wl-clipboard
-      (pkgs.callPackage ../pkgs/chromium-wayland {
-        chromium = unstable.chromium;
-      })
+      unstable.chromium
       unstable.obsidian
       pkgs._1password-gui
       pkgs.gnome3.nautilus
       pkgs.gnome3.sushi
       unstable.dropbox-cli
-      pkgs.zathura
-      pkgs.imv
-      pkgs.wdisplays
+      pkgs.gnomeExtensions.paperwm
+      pkgs.gnome3.gnome-tweak-tool
+      pkgs.alacritty
     ];
   };
 
