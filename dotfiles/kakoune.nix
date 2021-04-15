@@ -68,7 +68,7 @@ let
     "${pkgs.wl-clipboard}/bin/wl-paste";
 in {
   home.packages =
-    [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) pkgs.kak-lsp ];
+    [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) ];
 
   programs.kakoune = {
     enable = true;
@@ -207,13 +207,6 @@ in {
       map global user Z '<a-z>aZ' -docstring 'Add to selection'
       map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
 
-      # LSP
-      # eval %sh{kak-lsp --kakoune -s $kak_session}
-      # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
-      # lsp-enable
-
-      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
-
       # outline jumping
       set global tree_grepper_path "${tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
@@ -246,9 +239,6 @@ in {
 
         map buffer normal <a-minus> ': outline-jump-elm<ret>'
         map buffer goto d '<a-i>w: outline-jump-elm %val{selection}<ret>' -docstring 'Def (same file)'
-
-        # lsp
-        # lsp-inline-diagnostics-enable window
       }
 
       hook global WinSetOption filetype=haskell %{
@@ -368,18 +358,4 @@ in {
     "${kakoune.mkColors colors}/share/kak/colors";
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
-
-  # LSP
-  home.file."Library/Preferences/kak-lsp/kak-lsp.toml".text = ''
-    # [language.elm]
-    # filetypes = ["elm"]
-    # roots = ["elm.json"]
-    # command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server"
-
-    # [language.elm.initialization_options]
-    # runtime = "node"
-    # elmPath = "elm"
-    # elmFormatPath = "elm-format"
-    # elmTestPath = "elm-test"
-  '';
 }
