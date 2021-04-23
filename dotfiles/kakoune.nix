@@ -253,6 +253,8 @@ in {
             echo 'hook buffer BufWritePre .* format'
           fi
         }
+
+        map buffer normal <a-minus> ': outline-jump-haskell<ret>'
       }
 
       hook global WinSetOption filetype=python %{
