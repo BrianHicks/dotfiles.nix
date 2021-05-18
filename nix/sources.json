@@ -94,10 +94,10 @@
         "homepage": "",
         "owner": "nmattia",
         "repo": "naersk",
-        "rev": "e0fe990b478a66178a58c69cf53daec0478ca6f9",
-        "sha256": "0qjyfmw5v7s6ynjns4a61vlyj9cghj7vbpgrp9147ngb1f8krz2c",
+        "rev": "a3f40fe42cc6d267ff7518fa3199e99ff1444ac4",
+        "sha256": "1nf7fn8anghwf6p5p58ywbcwdkjxq112qv663rn52jq9k95iakdi",
         "type": "tarball",
-        "url": "https://github.com/nmattia/naersk/archive/e0fe990b478a66178a58c69cf53daec0478ca6f9.tar.gz",
+        "url": "https://github.com/nmattia/naersk/archive/a3f40fe42cc6d267ff7518fa3199e99ff1444ac4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -106,10 +106,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "af958e8057f345ee1aca714c1247ef3ba1c15f5e",
-        "sha256": "1qjavxabbrsh73yck5dcq8jggvh3r2jkbr6b5nlz5d9yrqm9255n",
+        "rev": "94080ae8286024820c570a2a24ed7c36d7ad04a9",
+        "sha256": "0wlk52zwlrq727x3z1vg9d9qq4zw62ab5jzg4068iqb6hyb0cr0w",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/af958e8057f345ee1aca714c1247ef3ba1c15f5e.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/94080ae8286024820c570a2a24ed7c36d7ad04a9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixos-hardware": {
@@ -118,10 +118,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "085790185c3e8a7dd6c2f456eaf15ffcc66b0ac9",
-        "sha256": "0p9vli8k7gcvd0q6brq8xzkqkd7jd2xzp3rn6qmilvwih00bk28f",
+        "rev": "c4399b921fa7ff5f93ee10b3521b56b722ed74d8",
+        "sha256": "1c5dyir39xvxdpzdxkb0rkhipbn7jn0pkj6a1qmcbzd805b8lqqk",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixos-hardware/archive/085790185c3e8a7dd6c2f456eaf15ffcc66b0ac9.tar.gz",
+        "url": "https://github.com/NixOS/nixos-hardware/archive/c4399b921fa7ff5f93ee10b3521b56b722ed74d8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixos-unstable": {
@@ -130,10 +130,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "04a2b269d8921505a2969fc9ec25c1f517f2b307",
-        "sha256": "15hgx2i71pqgvzv56jwzfs8rkhjbm35wk1i6mxrqbq6wd0y10isv",
+        "rev": "83d907fd760d9ee4f49b4b7e4b1c6682f137b573",
+        "sha256": "0qc8gfkbga7v5p8r6h2hbdi8bjl3piikdwcbb9fff5cjnxi7v7qa",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/04a2b269d8921505a2969fc9ec25c1f517f2b307.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/83d907fd760d9ee4f49b4b7e4b1c6682f137b573.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -197,7 +197,7 @@
     "tree-grepper": {
         "branch": "main",
         "repo": "https://git.bytes.zone/brian/tree-grepper.git",
-        "rev": "cdf01e3f5c893b1abe41b883a3caf9d2505c8217",
+        "rev": "181d75a403511648e8b6585da44e5cf0a6f99ce4",
         "type": "git"
     },
     "tug": {
