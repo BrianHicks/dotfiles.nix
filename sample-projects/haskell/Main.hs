@@ -52,3 +52,10 @@ functionWithArgs a b = a ++ b
 lambdaWithArgs :: String -> String -> String
 -- (function name: (variable) rhs: (exp_lambda (pat_name (variable)) (pat_name (variable)) (exp_infix (exp_name (variable)) (operator) (exp_name (variable))))))
 lambdaWithArgs = \a b -> a ++ b
+
+data Union = Ctor1 Int | Ctor2 String
+
+newtype Thing = Thing String
+
+instance Show Thing where
+  show (Thing inner) = inner

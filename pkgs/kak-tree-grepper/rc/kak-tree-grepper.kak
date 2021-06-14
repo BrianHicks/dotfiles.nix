@@ -68,7 +68,7 @@ define-command -override -docstring "jump somewhere in an Haskell file's definit
         # do the magic!
         # note: tree-sitter-haskell doesn't distinguish between imports and
         # import-hidings, so we just show the entire import statements.
-        QUERY="(import)@import (signature)@signature (function name: (_)@function) (pat_name (_)@name)"
+        QUERY="(import)@import (signature)@signature (function name: (_)@function) (pat_name (_)@name) (adt (type)@data) (data_constructor)@constructor (newtype (type)@newtype) (newtype_constructor)@constructor (instance_head)@instance"
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language haskell "$QUERY" "$FILE" | fzf --with-nth 4.. --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
