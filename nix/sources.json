@@ -75,6 +75,19 @@
         "url": "https://github.com/Delapouite/kakoune-palette/archive/052cab5f48578679d94717ed5f62429be9865d5d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "kakoune-snow": {
+        "branch": "master",
+        "description": "nightsense's snow colorscheme for Kakoune",
+        "homepage": "",
+        "kakoune": "colors",
+        "owner": "caksoylar",
+        "repo": "kakoune-snow",
+        "rev": "35f81876bcaea061982396f8071b89528940ae61",
+        "sha256": "14pndx88xm350a5kq8rha1k0436a3hl2qgfw9xkcfp1gkmzijx19",
+        "type": "tarball",
+        "url": "https://github.com/caksoylar/kakoune-snow/archive/35f81876bcaea061982396f8071b89528940ae61.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kakoune-surround": {
         "branch": "master",
         "description": "Surround selection, Change/Delete surrounder",
