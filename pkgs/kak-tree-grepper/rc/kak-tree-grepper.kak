@@ -74,3 +74,27 @@ define-command -override -docstring "jump somewhere in an Haskell file's definit
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
     } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
 }
+
+define-command -override -docstring "jump somewhere in an Rust file's definition outline" -params 0..1 outline-jump-rust %{
+    tmux-terminal-horizontal sh -c %{
+        set -euo pipefail
+
+        # what tools do we have available?
+        TREE_GREPPER=${1:-tree-grepper}
+        FZF=${2:-fzf}
+
+        # what do we care about?
+        FILE=$3
+        FZF_QUERY=$4
+
+        # where do we return results?
+        CLIENT=$5
+        SESSION=$6
+
+        # do the magic!
+        QUERY="(use_declaration)@use (function_item _ (_) @function) (struct_item (type_identifier) @out) (field_declaration)@field (parameter) (let_declaration)@let (enum_item (type_identifier)@enum) (enum_variant)"
+
+        EDIT_LOCATION="$("$TREE_GREPPER" --language rust "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 | cut -d : -f 1-3 | tr : ' ')"
+        printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
+    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
+}

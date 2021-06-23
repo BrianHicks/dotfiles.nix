@@ -297,6 +297,8 @@ in {
             echo 'hook buffer BufWritePre .* format'
           fi
         }
+
+        map buffer normal <a-minus> ': outline-jump-rust<ret>'
       }
 
       hook global WinSetOption filetype=ruby %{
