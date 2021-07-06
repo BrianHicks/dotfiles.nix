@@ -42,6 +42,9 @@ in {
 
       bind l select-layout main-vertical
 
+      # let active-window.kak know when it's focused
+      set -g focus-events on
+
       # status line (thanks, Ju!)
       set-option -g status-justify left
       set-option -g status-left '#[bg=colour2] #[bg=colour8] #[bg=colour0] #S '
