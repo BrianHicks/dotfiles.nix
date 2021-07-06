@@ -55,6 +55,7 @@ face global PrimaryCursor      ${rgb(colors.common.bg)},${rgb(colors.common.acce
 face global SecondaryCursor    ${rgb(colors.common.bg)},${rgb(colors.common.accent.fade(0.3))}
 face global PrimaryCursorEol   ${rgb(colors.common.bg)},${rgb(colors.common.accent.fade(0.5))}
 face global SecondaryCursorEol ${rgb(colors.common.bg)},${rgb(colors.common.accent.fade(0.8))}
+face global InactiveCursor     ${rgb(colors.common.bg)},${rgb(colors.common.accent.fade(0.5))}
 
 face global MenuForeground ${rgb(colors.common.fg)},${rgb(colors.ui.selection.bg)}+b
 face global MenuBackground ${rgb(colors.common.fg)},${rgb(colors.ui.selection.inactive)}
