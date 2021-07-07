@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 let
+  sources = import ../nix/sources.nix;
+
   extras = [
     ./zsh/elm.zsh
     ./zsh/find-and-edit.zsh
@@ -27,6 +29,11 @@ in {
 
     enableAutosuggestions = true;
     enableCompletion = true;
+
+    plugins = [{
+      name = "fzf-tab";
+      src = sources.fzf-tab;
+    }];
 
     initExtra = ''
       EDITOR=kak-session

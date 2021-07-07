@@ -24,6 +24,18 @@
         "url": "https://github.com/Shopify/comma/archive/4a62ec17e20ce0e738a8e5126b4298a73903b468.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "fzf-tab": {
+        "branch": "master",
+        "description": "Replace zsh's default completion selection menu with fzf!",
+        "homepage": "",
+        "owner": "Aloxaf",
+        "repo": "fzf-tab",
+        "rev": "bc086fc38cfd680a90c694210fa5c5d88e3d1691",
+        "sha256": "17in1byqxw8d6av30fpl4dlri2wma543aymp6a9xpibr64lmi373",
+        "type": "tarball",
+        "url": "https://github.com/Aloxaf/fzf-tab/archive/bc086fc38cfd680a90c694210fa5c5d88e3d1691.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kak-subvert": {
         "branch": "master",
         "description": "Port of Tim Pope's vim abolish plugin coertion features to Kakoune",
