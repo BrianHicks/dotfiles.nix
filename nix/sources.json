@@ -12,19 +12,6 @@
         "url": "https://github.com/greenfork/active-window.kak/archive/988db69cfbb88bd741d089bb43b0be551693e7c1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "auto-pairs.kak": {
-        "branch": "fd735ec149ef0d9ca5f628a95b1e52858b5afbdc",
-        "description": "Kakoune extension to enable automatic closing of pairs",
-        "homepage": "https://kakoune.org",
-        "kakoune": "plugin",
-        "owner": "alexherbo2",
-        "repo": "auto-pairs.kak",
-        "rev": "fd735ec149ef0d9ca5f628a95b1e52858b5afbdc",
-        "sha256": "07795kv9njlnp6mckwv141ny2ns6wyf5r0dfjaxh9ngd105zgif1",
-        "type": "tarball",
-        "url": "https://github.com/alexherbo2/auto-pairs.kak/archive/fd735ec149ef0d9ca5f628a95b1e52858b5afbdc.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "comma": {
         "branch": "master",
         "description": null,

@@ -43,6 +43,10 @@ let
       name = "kak-tree-grepper";
       src = ../pkgs/kak-tree-grepper/rc;
     })
+    (kakoune.mkPlugin {
+      name = "auto-pairs.kak";
+      src = ../vendor/auto-pairs.kak/rc;
+    })
   ];
 
   colorAttrs = lib.mapAttrs (name: source:
