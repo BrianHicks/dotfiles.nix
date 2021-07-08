@@ -1,12 +1,14 @@
 { pkgs, lib, ... }:
 let
-  tmux-session = pkgs.callPackage ../pkgs/tmux-session { };
+  tmux = pkgs.callPackage ../pkgs/tmux { };
+  tmux-session = pkgs.callPackage ../pkgs/tmux-session { tmux = tmux; };
   lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { };
 in {
   home.packages = [ tmux-session lazygit-window ];
 
   programs.tmux = {
     enable = true;
+    package = tmux;
     terminal = "tmux-256color";
     shortcut = "a";
     keyMode = "vi";
