@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 let
+  sources = import ../nix/sources.nix { };
+  pkgs = import sources.nixpkgs { };
+
   tmux = pkgs.callPackage ../pkgs/tmux { };
   tmux-session = pkgs.callPackage ../pkgs/tmux-session { tmux = tmux; };
   lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { };
