@@ -31,7 +31,7 @@ in {
 
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
-    (import (fetchTarball "https://cachix.org/api/v1/install") { }).cachix
+    pkgs.cachix
     niv.niv
     pkgs.nixfmt
   ];
