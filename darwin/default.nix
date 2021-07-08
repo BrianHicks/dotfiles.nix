@@ -7,8 +7,8 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
     # https://nixos.wiki/wiki/Flakes#Installation_as_an_extra_command
-    (pkgs.writeShellScriptBin "nix-flake" ''
-      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" flake "$@"
+    (pkgs.writeShellScriptBin "flix" ''
+      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
   ];
 
