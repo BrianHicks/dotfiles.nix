@@ -1,7 +1,6 @@
-{ sources ? import ../../nix/sources.nix, nixpkgs ? import sources.nixpkgs { }
-}:
-with nixpkgs;
-stdenv.mkDerivation {
+{ sources ? import ../../nix/sources.nix, pkgs ? import sources.nixpkgs { }
+, tmux ? pkgs.tmux }:
+pkgs.stdenv.mkDerivation {
   name = "tmux-session";
   src = ./.;
   buildInputs = [ pkgs.makeWrapper ];
@@ -15,7 +14,7 @@ stdenv.mkDerivation {
 
     cp ./tmux-jump $out/bin/tmux-jump
     wrapProgram $out/bin/tmux-jump --prefix PATH : ${
-      pkgs.lib.makeBinPath [ findutils fzf ]
+      pkgs.lib.makeBinPath [ pkgs.findutils pkgs.fzf ]
     }
   '';
 }
