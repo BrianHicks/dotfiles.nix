@@ -5,7 +5,12 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [ ];
+  environment.systemPackages = [
+    # https://nixos.wiki/wiki/Flakes#Installation_as_an_extra_command
+    (pkgs.writeShellScriptBin "nix-flake" ''
+      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" flake "$@"
+    '')
+  ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/darwin/default.nix
