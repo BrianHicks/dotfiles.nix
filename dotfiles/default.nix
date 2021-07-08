@@ -16,6 +16,9 @@ in {
     ./zsh.nix
   ];
 
+  nixpkgs.overlays =
+    [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
+
   home.packages = [
     pkgs.ag
     pkgs.hyperfine
