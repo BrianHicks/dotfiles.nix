@@ -1,5 +1,4 @@
-{ sources ? import ../../nix/sources.nix, pkgs ? import sources.nixpkgs { }
-, tmux ? pkgs.callPackage ../tmux { } }:
+{ sources ? import ../../nix/sources.nix, pkgs ? import sources.nixpkgs { } }:
 pkgs.stdenv.mkDerivation {
   # inspired by one of Stöffel's keybindings at
   # https://github.com/stoeffel/.dots/blob/master/tmux/keybindings.conf
@@ -11,7 +10,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out/bin
     cp ./lazygit-window.sh $out/bin/lazygit-window
     wrapProgram $out/bin/lazygit-window --prefix PATH : ${
-      pkgs.lib.makeBinPath [ tmux pkgs.lazygit ]
+      pkgs.lib.makeBinPath [ pkgs.tmux pkgs.lazygit ]
     }
   '';
 }

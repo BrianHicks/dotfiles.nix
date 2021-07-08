@@ -1,17 +1,12 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 let
-  sources = import ../nix/sources.nix { };
-  pkgs = import sources.nixpkgs { };
-
-  tmux = pkgs.callPackage ../pkgs/tmux { };
-  tmux-session = pkgs.callPackage ../pkgs/tmux-session { inherit tmux; };
-  lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { inherit tmux; };
+  tmux-session = pkgs.callPackage ../pkgs/tmux-session { };
+  lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { };
 in {
   home.packages = [ tmux-session lazygit-window ];
 
   programs.tmux = {
     enable = true;
-    package = tmux;
     terminal = "tmux-256color";
     shortcut = "a";
     keyMode = "vi";
