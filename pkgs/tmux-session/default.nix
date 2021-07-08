@@ -1,5 +1,5 @@
 { sources ? import ../../nix/sources.nix, pkgs ? import sources.nixpkgs { }
-, tmux ? pkgs.tmux }:
+, tmux ? pkgs.callPackage ../tmux { } }:
 pkgs.stdenv.mkDerivation {
   name = "tmux-session";
   src = ./.;

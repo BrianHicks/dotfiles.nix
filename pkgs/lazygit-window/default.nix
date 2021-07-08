@@ -1,7 +1,6 @@
-{ sources ? import ../../nix/sources.nix, nixpkgs ? import sources.nixpkgs { }
-}:
-with nixpkgs;
-stdenv.mkDerivation {
+{ sources ? import ../../nix/sources.nix, pkgs ? import sources.nixpkgs { }
+, tmux ? pkgs.callPackage ../tmux { } }:
+pkgs.stdenv.mkDerivation {
   # inspired by one of Stöffel's keybindings at
   # https://github.com/stoeffel/.dots/blob/master/tmux/keybindings.conf
   name = "lazygit-window";
@@ -12,7 +11,7 @@ stdenv.mkDerivation {
     mkdir -p $out/bin
     cp ./lazygit-window.sh $out/bin/lazygit-window
     wrapProgram $out/bin/lazygit-window --prefix PATH : ${
-      pkgs.lib.makeBinPath [ tmux lazygit ]
+      pkgs.lib.makeBinPath [ tmux pkgs.lazygit ]
     }
   '';
 }

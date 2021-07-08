@@ -4,8 +4,8 @@ let
   pkgs = import sources.nixpkgs { };
 
   tmux = pkgs.callPackage ../pkgs/tmux { };
-  tmux-session = pkgs.callPackage ../pkgs/tmux-session { tmux = tmux; };
-  lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { };
+  tmux-session = pkgs.callPackage ../pkgs/tmux-session { inherit tmux; };
+  lazygit-window = pkgs.callPackage ../pkgs/lazygit-window { inherit tmux; };
 in {
   home.packages = [ tmux-session lazygit-window ];
 
