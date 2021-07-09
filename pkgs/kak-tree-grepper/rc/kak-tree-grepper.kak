@@ -92,7 +92,7 @@ define-command -override -docstring "jump somewhere in an Rust file's definition
         SESSION=$6
 
         # do the magic!
-        QUERY="(use_declaration)@use (function_item _ (_) @function) (struct_item (type_identifier) @out) (field_declaration)@field (parameter) (let_declaration)@let (enum_item (type_identifier)@enum) (enum_variant)"
+        QUERY="(use_declaration)@use (function_item _ (_) @function) (struct_item (type_identifier) @struct) (field_declaration)@field (parameter) (let_declaration)@let (enum_item (type_identifier)@enum) (enum_variant)"
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language rust "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }"' | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
