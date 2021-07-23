@@ -23,7 +23,7 @@ in {
 
       # quickly open CLI tools
       bind h run-shell "${lazygit-window}/bin/lazygit-window"
-      bind j split-window -h ${tmux-session}/bin/tmux-jump
+      bind j display-popup -E ${tmux-session}/bin/tmux-jump
 
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
