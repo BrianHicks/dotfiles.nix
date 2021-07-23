@@ -7,6 +7,7 @@
 # tables so that tmux can get the correct character widths.
 pkgs.tmux.overrideAttrs (attrs:
   attrs // {
+    src = sources.tmux;
     buildInputs = attrs.buildInputs ++ [ pkgs.utf8proc ];
     configureFlags = attrs.configureFlags ++ [ "--enable-utf8proc" ];
   })
