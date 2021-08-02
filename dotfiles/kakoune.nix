@@ -47,6 +47,17 @@ let
       name = "auto-pairs.kak";
       src = ../vendor/auto-pairs.kak/rc;
     })
+    ((kakoune.mkPlugin {
+      name = "kakoune-idris";
+      src = sources.kakoune-idris;
+    }).overrideAttrs (attrs: {
+      patches = [
+        (builtins.fetchurl
+          "https://patch-diff.githubusercontent.com/raw/stoand/kakoune-idris/pull/8.patch")
+        (builtins.fetchurl
+          "https://patch-diff.githubusercontent.com/raw/stoand/kakoune-idris/pull/9.patch")
+      ];
+    }))
   ];
 
   colorAttrs = lib.mapAttrs (name: source:
@@ -357,6 +368,16 @@ in {
         set-option buffer softtabstop 2
         set-option buffer tabstop 2
         set-option buffer indentwidth 2
+      }
+
+      hook global WinSetOption filetype=idris %{
+        expandtab
+        set-option buffer softtabstop 2
+        set-option buffer tabstop 2
+        set-option buffer indentwidth 2
+
+        set buffer idris_node_binary_path "${pkgs.nodejs}/bin/node"
+        map global user d ': enter-user-mode idris-ide<ret>' -docstring 'Idris IDE'
       }
     '';
   };
