@@ -2,6 +2,7 @@
 nixify() {
   if [[ ! -e nix/sources.json ]]; then
     niv init
+    niv add nmattia/niv
   fi
 
   if [[ ! -e ./.envrc ]]; then
