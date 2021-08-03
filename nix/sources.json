@@ -36,6 +36,18 @@
         "url": "https://github.com/Aloxaf/fzf-tab/archive/bc086fc38cfd680a90c694210fa5c5d88e3d1691.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "kak-lsp": {
+        "branch": "master",
+        "description": "Kakoune Language Server Protocol Client",
+        "homepage": null,
+        "owner": "kak-lsp",
+        "repo": "kak-lsp",
+        "rev": "a0cc198fbd1c49c75b658e27ec76ff5bb8983d94",
+        "sha256": "0s66csg1d3iz6qan8h9797bdjfjbzqd5ij4k0xvvm95ld53qvldv",
+        "type": "tarball",
+        "url": "https://github.com/kak-lsp/kak-lsp/archive/a0cc198fbd1c49c75b658e27ec76ff5bb8983d94.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "kak-subvert": {
         "branch": "master",
         "description": "Port of Tim Pope's vim abolish plugin coertion features to Kakoune",
