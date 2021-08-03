@@ -74,8 +74,7 @@ in {
 
       git.paging = {
         colorArg = "always";
-        pager =
-          "${pkgs.gitAndTools.delta}/bin/delta --side-by-side --paging=never";
+        pager = "${pkgs.gitAndTools.delta}/bin/delta --paging=never";
       };
     };
 
