@@ -71,6 +71,12 @@ in {
         optionsTextColor = [ "blue" ];
         selectedLineBgColor = [ "bold" ];
       };
+
+      git.paging = {
+        colorArg = "always";
+        pager =
+          "${pkgs.gitAndTools.delta}/bin/delta --side-by-side --paging=never";
+      };
     };
 
   home.packages = with pkgs; [
