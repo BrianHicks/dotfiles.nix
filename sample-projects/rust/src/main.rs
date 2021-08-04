@@ -6,14 +6,14 @@ fn main() {
 }
 
 struct Foo {
-    fieldName: String,
+    field_name: String,
     count: u8,
 }
 
 impl Foo {
     pub fn new(bar: String) -> Foo {
         Foo {
-            fieldName: bar,
+            field_name: bar,
             count: 0
         }
     }
