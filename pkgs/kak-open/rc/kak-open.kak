@@ -5,7 +5,7 @@ define-command -docstring 'open files named similarly to the current buffer' ope
         set -euo pipefail
         cd $5
 
-        FILE="$(git ls-files --others --cached --exclude-standard | $1 $2 | grep -Ev "^$2\$" | fzf --tiebreak index --preview "bat --color=always -p {}")"
+        FILE="$(git ls-files --others --cached --exclude-standard | $1 $2 | grep -Fxv "$2" | fzf --tiebreak index --preview "bat --color=always -p {}")"
         printf "evaluate-commands -client %s edit %s\n" "$3" "$FILE" | indiekak -p $4
     } -- %opt{similar_sort_path} %val{bufname} %val{client} %val{session} %sh{ echo $PWD }
 }
@@ -20,7 +20,7 @@ define-command -docstring 'open buffers named similarly to the current buffer' o
           OPTIONS="$(printf "%s\n%s" "$OPTIONS" "$OPTION")"
         done
 
-        BUFFER="$(echo "$OPTIONS" | $1 $2 | grep -Ev "^$2\$" | grep -ve '^$' | fzf --tiebreak index --preview "bat --color=always -p {}")"
+        BUFFER="$(echo "$OPTIONS" | $1 $2 | grep -Fxv "$2" | grep -ve '^$' | fzf --tiebreak index --preview "bat --color=always -p {}")"
         printf "evaluate-commands -client %s edit '%s'\n" "$3" "$BUFFER" | indiekak -p $4
     } -- %opt{similar_sort_path} %val{bufname} %val{client} %val{session} %sh{ echo $PWD } %val{buflist}
 }
