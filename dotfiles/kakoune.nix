@@ -229,6 +229,7 @@ in {
 
       # language server
       eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
+      map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
 
       # Languages
       hook global WinSetOption filetype=nix %{
