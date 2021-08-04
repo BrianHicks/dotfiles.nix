@@ -17,5 +17,10 @@ stdenv.mkDerivation {
     # elm
     elmPackages.elm
     elmPackages.elm-format
+
+    # rust
+    cargo
+    libiconv
+    rustc
   ];
 }
