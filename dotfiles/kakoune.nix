@@ -6,6 +6,7 @@ let
 
   kak-tree = pkgs.callPackage ../pkgs/kak-tree { };
   kak-ayu = pkgs.callPackage ../pkgs/kak-ayu { };
+  kak-lsp = pkgs.callPackage ../pkgs/kak-lsp { };
 
   similar-sort = pkgs.callPackage sources.similar-sort { };
   similar-sort-files-cmd = arg:
@@ -226,6 +227,9 @@ in {
       set global tree_grepper_path "${tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
 
+      # language server
+      eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
+
       # Languages
       hook global WinSetOption filetype=nix %{
         expandtab
@@ -314,6 +318,22 @@ in {
         }
 
         map buffer normal <a-minus> ': outline-jump-rust<ret>'
+
+        lsp-enable-window
+
+        hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
+        hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
+        hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
+        hook -once -always window WinSetOption filetype=.* %{
+          remove-hooks window rust-inlay-hints
+        }
+
+        hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+        hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+        hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+        hook -once -always window WinSetOption filetype=.* %{
+          remove-hooks window semantic-tokens
+        }
       }
 
       hook global WinSetOption filetype=ruby %{
@@ -387,4 +407,11 @@ in {
     "${kakoune.mkColors colors}/share/kak/colors";
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
+
+  home.file.".config/kak-lsp/kak-lsp.toml".text = ''
+    [language.rust]
+    filetypes = ["rust"]
+    roots = ["Cargo.toml"]
+    command = "${pkgs.rust-analyzer}/bin/rust-analyzer"
+  '';
 }
