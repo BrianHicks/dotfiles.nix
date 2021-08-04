@@ -17,12 +17,13 @@ define-command -override -docstring "jump somewhere in an Elm file's definition 
         CLIENT=$5
         SESSION=$6
 
+        cd $7
         # do the magic!
         QUERY="(function_declaration_left (lower_case_identifier)@function) (type_declaration (type) (upper_case_identifier)@type) (type_alias_declaration (type) (alias) (upper_case_identifier)@alias) (union_variant (upper_case_identifier)@constructor) (field_type (lower_case_identifier)@field) (lower_pattern)@pattern (exposed_type)@exposed_type (exposed_value)@exposed_value (as_clause (as) (upper_case_identifier)@module_alias) (port_annotation (port) (lower_case_identifier)@port)"
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language elm "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }" | bc):$(($(echo {2}) + 7))" {1}' | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
-    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
+    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session} %sh{ echo $PWD }
 }
 
 define-command -override -docstring "jump somewhere in a Ruby file's definition outline" -params 0..1 outline-jump-ruby %{
@@ -41,12 +42,13 @@ define-command -override -docstring "jump somewhere in a Ruby file's definition 
         CLIENT=$5
         SESSION=$6
 
+        cd $7
         # do the magic!
         QUERY="(module name: (_) @module) (class name: (_) @class) (method name: (_) @method) (singleton_method name: (_) @method) (assignment left: (_) @assignment) (operator_assignment left: (_) @assignment)"
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language ruby "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1  --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }" | bc):$(($(echo {2}) + 7))" {1}' | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
-    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
+    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session} %sh{ echo $PWD }
 }
 
 define-command -override -docstring "jump somewhere in an Haskell file's definition outline" -params 0..1 outline-jump-haskell %{
@@ -65,6 +67,7 @@ define-command -override -docstring "jump somewhere in an Haskell file's definit
         CLIENT=$5
         SESSION=$6
 
+        cd $7
         # do the magic!
         # note: tree-sitter-haskell doesn't distinguish between imports and
         # import-hidings, so we just show the entire import statements.
@@ -72,7 +75,7 @@ define-command -override -docstring "jump somewhere in an Haskell file's definit
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language haskell "$QUERY" "$FILE" | fzf --with-nth 4.. --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }" | bc):$(($(echo {2}) + 7))" {1}' | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
-    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
+    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session} %sh{ echo $PWD }
 }
 
 define-command -override -docstring "jump somewhere in an Rust file's definition outline" -params 0..1 outline-jump-rust %{
@@ -91,10 +94,11 @@ define-command -override -docstring "jump somewhere in an Rust file's definition
         CLIENT=$5
         SESSION=$6
 
+        cd $7
         # do the magic!
         QUERY="(use_declaration)@use (function_item _ (_) @function) (struct_item (type_identifier) @struct) (field_declaration)@field (parameter) (let_declaration)@let (enum_item (type_identifier)@enum) (enum_variant)"
 
         EDIT_LOCATION="$("$TREE_GREPPER" --language rust "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }" | bc):$(($(echo {2}) + 7))" {1}' | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | indiekak -p "$SESSION"
-    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session}
+    } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{1} %val{client} %val{session} %sh{ echo $PWD }
 }
