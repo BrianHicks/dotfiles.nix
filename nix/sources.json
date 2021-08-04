@@ -167,10 +167,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "41775780a0b6b32b3d32dcc32bb9bc6df809062d",
-        "sha256": "0121bmdga42zkn4y3wsy71b5lglzn180q7vmxaprqp5lvr27v8ik",
+        "rev": "09ed30ff3bb67f5efe9c77e0d79aca01793526ca",
+        "sha256": "0x4rwvxkyvpn9qpm2jbb0cbqhbcmps47p30xgda5kh65qxapf7qg",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixos-hardware/archive/41775780a0b6b32b3d32dcc32bb9bc6df809062d.tar.gz",
+        "url": "https://github.com/NixOS/nixos-hardware/archive/09ed30ff3bb67f5efe9c77e0d79aca01793526ca.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixos-unstable": {
@@ -179,10 +179,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "036dc0c709650e0c833822307af801f576d67273",
-        "sha256": "0pnrygs6xf7id63zi17pq5379hfppwbb5cfazhypcqz6l3dfk00g",
+        "rev": "aaf9676fbb7fb4570216ca1e189a3dc769d62c45",
+        "sha256": "1kkngmj6kafq6gp922cjn4a2ijkk4hyxmjcn64v64vbkanq0qp81",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/036dc0c709650e0c833822307af801f576d67273.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/aaf9676fbb7fb4570216ca1e189a3dc769d62c45.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -261,16 +261,16 @@
         "homepage": "",
         "owner": "tmux",
         "repo": "tmux",
-        "rev": "7cbf4c902779c5493190266b31157ed111e567ab",
-        "sha256": "1npl90ax3x63f1aw1fw9dcb1m0qzknj4137gs29117ag41jy1jp7",
+        "rev": "63f9f3113c731b7a7ced2f10b047722647d7b544",
+        "sha256": "1nbff4dhjay8n7va903f3baqwb008b1aagfjkx5q7pr2vxb8l8ax",
         "type": "tarball",
-        "url": "https://github.com/tmux/tmux/archive/7cbf4c902779c5493190266b31157ed111e567ab.tar.gz",
+        "url": "https://github.com/tmux/tmux/archive/63f9f3113c731b7a7ced2f10b047722647d7b544.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tree-grepper": {
         "branch": "main",
         "repo": "https://git.bytes.zone/brian/tree-grepper.git",
-        "rev": "29b957d8c6684af77b03fc51b13d0bd99aa85cbb",
+        "rev": "facc9c3644d5751c21b0f01e8c53e6f7f4d052d1",
         "type": "git"
     },
     "tug": {
