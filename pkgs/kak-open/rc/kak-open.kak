@@ -16,11 +16,11 @@ define-command -docstring 'open buffers named similarly to the current buffer' o
         cd $5
 
         OPTIONS=""
-        for OPTION in "${@:5}"; do
+        for OPTION in "${@:6}"; do
           OPTIONS="$(printf "%s\n%s" "$OPTIONS" "$OPTION")"
         done
 
         BUFFER="$(echo "$OPTIONS" | $1 $2 | grep -Ev "^$2\$" | grep -ve '^$' | fzf --tiebreak index --preview "bat --color=always -p {}")"
         printf "evaluate-commands -client %s edit '%s'\n" "$3" "$BUFFER" | indiekak -p $4
-    } -- %opt{similar_sort_path} %val{bufname} %val{client} %val{session} %val{buflist} %sh{ echo $PWD }
+    } -- %opt{similar_sort_path} %val{bufname} %val{client} %val{session} %sh{ echo $PWD } %val{buflist}
 }
