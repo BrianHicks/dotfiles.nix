@@ -201,7 +201,7 @@ in {
 
       # kak-subvert
       declare-user-mode subvert
-      map global user c ':enter-user-mode subvert<ret>' -docstring 'case changes'
+      map global user c ': enter-user-mode subvert<ret>' -docstring 'case changes'
       map global subvert c '<esc> | ${kak-subvert} camel <ret>' -docstring 'convert to camelCase'
       map global subvert k '<esc> | ${kak-subvert} kebab <ret>' -docstring 'convert to kebab-case'
       map global subvert p '<esc> | ${kak-subvert} pascal <ret>' -docstring 'convert to PascalCase'
