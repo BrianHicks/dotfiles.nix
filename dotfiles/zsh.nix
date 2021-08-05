@@ -37,7 +37,7 @@ in {
 
     initExtra = ''
       EDITOR=kak-session
-      alias kak=kak-session
+      alias ks=kak-session
 
       setopt PROMPT_SUBST
 
