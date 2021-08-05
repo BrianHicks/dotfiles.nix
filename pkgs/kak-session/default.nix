@@ -14,7 +14,5 @@ stdenv.mkDerivation {
     wrapProgram $out/bin/kak-session --prefix PATH : ${
       pkgs.lib.makeBinPath [ pkgs.kakoune ]
     }
-
-    ln -s ${pkgs.kakoune}/bin/kak $out/bin/indiekak
   '';
 }
