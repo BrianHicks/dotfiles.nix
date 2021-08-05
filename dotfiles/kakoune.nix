@@ -228,8 +228,8 @@ in {
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
 
       # language server
-      # eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
-      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
+      eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
+      map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
 
       # Languages
       hook global WinSetOption filetype=nix %{
@@ -320,21 +320,21 @@ in {
 
         map buffer normal <a-minus> ': outline-jump-rust<ret>'
 
-        # lsp-enable-window
+        lsp-enable-window
 
-        # hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
-        # hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
-        # hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
-        # hook -once -always window WinSetOption filetype=.* %{
-        #   remove-hooks window rust-inlay-hints
-        # }
+        hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
+        hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
+        hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
+        hook -once -always window WinSetOption filetype=.* %{
+          remove-hooks window rust-inlay-hints
+        }
 
-        # hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
-        # hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
-        # hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
-        # hook -once -always window WinSetOption filetype=.* %{
-        #   remove-hooks window semantic-tokens
-        # }
+        hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+        hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+        hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+        hook -once -always window WinSetOption filetype=.* %{
+          remove-hooks window semantic-tokens
+        }
       }
 
       hook global WinSetOption filetype=ruby %{
