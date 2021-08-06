@@ -1,12 +1,18 @@
 { sources ? import ../../nix/sources.nix { }, ... }:
 let
   nixpkgs-mozilla = import sources.nixpkgs-mozilla;
+
+  pinnedNightly = {
+    date = "2021-08-06";
+    channel = "nightly";
+  };
+
   pkgs = import sources.nixpkgs {
     overlays = [
       nixpkgs-mozilla
       (self: super: {
-        rustc = self.latest.rustChannels.nightly.rust;
-        cargo = self.latest.rustChannels.nightly.rust;
+        rustc = (self.rustChannelOf pinnedNightly).rust;
+        cargo = (self.rustChannelOf pinnedNightly).rust;
       })
     ];
   };
