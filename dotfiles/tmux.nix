@@ -42,6 +42,8 @@ in {
 
       bind l select-layout main-vertical
 
+      bind k switch-client -l
+
       # let active-window.kak know when it's focused
       set -g focus-events on
 
