@@ -44,6 +44,8 @@ in {
 
       bind k switch-client -l
 
+      set -g history-limit 20000 # default is 2000
+
       # let active-window.kak know when it's focused
       set -g focus-events on
 
