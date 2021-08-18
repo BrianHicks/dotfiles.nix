@@ -7,6 +7,7 @@ inputs:
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
   ];
 
   nix = {
