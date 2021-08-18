@@ -1,7 +1,7 @@
 {
   description = "Brian's Dotfiles";
 
-  inputs = { nixpkgs.url = "github:NixOS/nixpkgs"; };
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/release-21.05"; };
 
   outputs = inputs: {
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {
