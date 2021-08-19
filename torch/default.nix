@@ -12,10 +12,10 @@ inputs:
 
     # system setup
     ../nixos/bluetooth
+    ../nixos/gnome-keyring
     ../nixos/nix
     ../nixos/upower
     ../nixos/xmonad
-    ../nixos/gnome-keyring
   ];
 
   # Use the systemd-boot EFI boot loader.

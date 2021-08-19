@@ -10,7 +10,7 @@
   outputs = inputs: {
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ (import ./torch/configuration.nix inputs) ];
+      modules = [ (import ./torch inputs) ];
     };
   };
 }
