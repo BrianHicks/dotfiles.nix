@@ -5,8 +5,9 @@ inputs:
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
     ./hardware-configuration.nix
+    ../nixos/xmonad
     "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
   ];
 
@@ -52,10 +53,6 @@ inputs:
 
   # Enable the GNOME 3 Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.windowManager.xmonad = {
-    enable = true;
-    enableContribAndExtras = true;
-  };
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
