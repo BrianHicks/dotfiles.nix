@@ -19,7 +19,10 @@
         touchpad.disableWhileTyping = true;
       };
 
-      displayManager.defaultSession = "none+xmonad";
+      displayManager = {
+        gdm.enable = true;
+        defaultSession = "none+xmonad";
+      };
 
       windowManager.xmonad = {
         enable = true;
