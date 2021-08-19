@@ -1,4 +1,4 @@
 { ... }: {
   xsession.enable = true;
-  # xsession.windowManager.command = "...";
+  xsession.windowManager.command = "xmonad";
 }
