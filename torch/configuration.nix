@@ -6,9 +6,14 @@ inputs:
 
 {
   imports = [
+    # hardware
     ./hardware-configuration.nix
-    ../nixos/xmonad
     "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
+
+    # system setup
+    ../nixos/xmonad/configuration.nix
+    ../nixos/bluetooth/configuration.nix
+    ../nixos/upower/configuration.nix
   ];
 
   nix = {
