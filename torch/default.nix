@@ -14,6 +14,7 @@ inputs:
     ./bluetooth
     ./brian
     ./gnome-keyring
+    ./networkmanager
     ./nix
     ./upower
     ./xmonad
