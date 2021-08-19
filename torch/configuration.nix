@@ -11,19 +11,11 @@ inputs:
     "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
 
     # system setup
-    ../nixos/xmonad
     ../nixos/bluetooth
+    ../nixos/nix
     ../nixos/upower
+    ../nixos/xmonad
   ];
-
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-
-  nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
