@@ -3,8 +3,6 @@
   #
   # - https://gvolpe.com/blog/xmonad-polybar-nixos/
   services = {
-    gnome.gnome-keyring.enable = true;
-
     dbus = {
       enable = true;
       packages = [ pkgs.gnome.dconf ];

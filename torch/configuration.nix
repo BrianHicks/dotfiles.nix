@@ -15,6 +15,7 @@ inputs:
     ../nixos/nix
     ../nixos/upower
     ../nixos/xmonad
+    ../nixos/gnome-keyring
   ];
 
   # Use the systemd-boot EFI boot loader.
