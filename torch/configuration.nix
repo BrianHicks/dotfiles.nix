@@ -11,9 +11,9 @@ inputs:
     "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
 
     # system setup
-    ../nixos/xmonad/configuration.nix
-    ../nixos/bluetooth/configuration.nix
-    ../nixos/upower/configuration.nix
+    ../nixos/xmonad
+    ../nixos/bluetooth
+    ../nixos/upower
   ];
 
   nix = {
