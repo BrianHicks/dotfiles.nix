@@ -12,6 +12,7 @@ inputs:
 
     # system setup
     ./bluetooth
+    ./brian
     ./gnome-keyring
     ./nix
     ./upower
@@ -44,18 +45,6 @@ inputs:
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.brian = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.brian = import ../dotfiles;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
