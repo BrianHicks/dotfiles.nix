@@ -15,5 +15,10 @@
         inputs.home-manager.nixosModules.home-manager
       ];
     };
+
+    nixosConfigurations.nixos-dev = inputs.nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [ (import ./vbox inputs) ];
+    };
   };
 }
