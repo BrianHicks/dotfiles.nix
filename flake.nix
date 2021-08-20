@@ -11,14 +11,14 @@
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        (import ./torch inputs)
+        (import ./machines/torch inputs)
         inputs.home-manager.nixosModules.home-manager
       ];
     };
 
     nixosConfigurations.nixos-dev = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ (import ./vbox inputs) ];
+      modules = [ (import ./machines/nixos-dev inputs) ];
     };
   };
 }
