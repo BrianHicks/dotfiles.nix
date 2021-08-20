@@ -8,7 +8,11 @@ inputs:
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      ../../nixos/brian
       ../../nixos/nix
+      ../../nixos/xmonad
+      ../../nixos/xserver
     ];
 
   # Use the GRUB 2 boot loader.
@@ -44,12 +48,6 @@ inputs:
     keyMap = "us";
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-
-  
-
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
@@ -63,12 +61,6 @@ inputs:
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.brian = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
