@@ -16,9 +16,9 @@
       ];
     };
 
-    nixosConfigurations.nixos-dev = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.vbox-dev = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ (import ./machines/nixos-dev inputs) ];
+      modules = [ (import ./machines/vbox-dev inputs) ];
     };
   };
 }

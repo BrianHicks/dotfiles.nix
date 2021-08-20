@@ -21,7 +21,7 @@ inputs:
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.initrd.checkJournalingFS = false;
 
-  networking.hostName = "nixos-dev"; # Define your hostname.
+  networking.hostName = "vbox-dev"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
