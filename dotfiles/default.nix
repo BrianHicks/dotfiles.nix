@@ -2,5 +2,6 @@
   imports = [
     ./tmux
     ./xsession
+    ./zoom
   ];
 }
