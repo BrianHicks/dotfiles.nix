@@ -68,7 +68,24 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "tmux": "tmux"
+      }
+    },
+    "tmux": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1629558086,
+        "narHash": "sha256-KyAsIXdzLh/PKEvPCmQATVCYPfEyUJu81vH5F9QV7XI=",
+        "owner": "tmux",
+        "repo": "tmux",
+        "rev": "4d3367e9657002c4b68867c8d58e2f5b7ae90612",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tmux",
+        "repo": "tmux",
+        "type": "github"
       }
     }
   },

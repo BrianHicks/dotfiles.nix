@@ -1,3 +1,4 @@
+inputs:
 { pkgs, ... }: {
   nix = {
     # TODO: might have to disable this to get home-manager working
@@ -7,5 +8,8 @@
     '';
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ inputs.self.overlay ];
+  };
 }

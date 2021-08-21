@@ -9,8 +9,9 @@ inputs:
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
+      (import ../../nixos/nix inputs)
+
       ../../nixos/brian
-      ../../nixos/nix
       ../../nixos/xmonad
       ../../nixos/xserver
     ];

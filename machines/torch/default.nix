@@ -11,11 +11,12 @@ inputs:
     "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
 
     # system setup
+    (import ../../nixos/nix inputs)
+
     ../../nixos/bluetooth
     ../../nixos/brian
     ../../nixos/gnome-keyring
     ../../nixos/networkmanager
-    ../../nixos/nix
     ../../nixos/upower
     ../../nixos/xmonad
   ];
