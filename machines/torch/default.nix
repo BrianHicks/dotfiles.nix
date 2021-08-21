@@ -11,13 +11,13 @@ inputs:
     "${inputs.nixos-hardware}/apple/macbook-pro/12-1"
 
     # system setup
-    ./bluetooth
-    ./brian
-    ./gnome-keyring
-    ./networkmanager
-    ./nix
-    ./upower
-    ./xmonad
+    ../../nixos/bluetooth
+    ../../nixos/brian
+    ../../nixos/gnome-keyring
+    ../../nixos/networkmanager
+    ../../nixos/nix
+    ../../nixos/upower
+    ../../nixos/xmonad
   ];
 
   # Use the systemd-boot EFI boot loader.
