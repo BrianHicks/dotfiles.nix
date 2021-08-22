@@ -4,6 +4,7 @@
   imports = [
     ./chromium
     ./tmux
+    ./rofi
     ./xsession
     ./xmonad
     ./zoom
