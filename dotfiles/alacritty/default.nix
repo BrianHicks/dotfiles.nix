@@ -3,7 +3,7 @@
     enable = true;
     # see https://github.com/alacritty/alacritty/blob/master/alacritty.yml
     settings = {
-      font.size = 8.0;
+      font.size = 7.0;
     };
   };
 }
