@@ -5,6 +5,7 @@
     ./alacritty
     ./bat
     ./chromium
+    ./fzf
     ./git
     ./keyboard
     ./rofi
