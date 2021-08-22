@@ -27,6 +27,8 @@
           configureFlags = attrs.configureFlags ++ [ "--enable-utf8proc" ];
         }
       );
+
+      git-gclone = final.callPackage ./pkgs/git-gclone {};
     };
 
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {

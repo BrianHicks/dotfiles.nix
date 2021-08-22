@@ -1,5 +1,8 @@
 { pkgs, ... }:
-let git-gclone = import ../pkgs/git-gclone { };
+let lazygit-config =
+      if pkgs.stdenv.isDarwin
+        then "Library/Application Support/jesseduffield/lazygit/config.yml"
+        else ".config/jesseduffield/lazygit/config.yml";
 in {
   programs.git = {
     enable = true;
@@ -33,7 +36,7 @@ in {
       };
     };
 
-    ignores = [ ".direnv" ".DS_Store" ];
+    ignores = [ ".DS_Store" ];
 
     delta = {
       enable = true;
@@ -49,7 +52,7 @@ in {
 
   programs.gh.enable = true;
 
-  home.file."Library/Application Support/jesseduffield/lazygit/config.yml".text =
+  home.file."${lazygit-config}".text =
     builtins.toJSON {
       reporting = "off";
       startupPopupVersion = 1;
@@ -60,8 +63,6 @@ in {
         universal.return = "q";
         universal.createRebaseOptionsMenu = "M";
         branches.mergeIntoCurrentBranch = "m";
-        commits.moveUpCommit = "<a-j>";
-        commits.moveDownCommit = "<a-k>";
       };
 
       gui.theme = {
@@ -78,10 +79,10 @@ in {
       };
     };
 
-  home.packages = with pkgs; [
-    git-lfs
-    lazygit
+  home.packages = [
+    pkgs.git-lfs
+    pkgs.lazygit
     pkgs.gitAndTools.delta
-    git-gclone
+    pkgs.git-gclone
   ];
 }

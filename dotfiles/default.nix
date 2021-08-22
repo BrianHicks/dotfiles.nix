@@ -4,6 +4,7 @@
   imports = [
     ./alacritty
     ./chromium
+    ./git
     ./tmux
     ./rofi
     ./xsession
