@@ -5,6 +5,7 @@
     ./alacritty
     ./bat
     ./chromium
+    ./direnv
     ./fzf
     ./git
     ./keyboard
