@@ -3,6 +3,7 @@
 
   imports = [
     ./alacritty
+    ./bat
     ./chromium
     ./git
     ./keyboard
