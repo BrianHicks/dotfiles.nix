@@ -4,6 +4,7 @@
   imports = [
     ./tmux
     ./xsession
+    ./xmonad
     ./zoom
   ];
 }
