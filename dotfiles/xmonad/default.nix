@@ -8,7 +8,6 @@
 
       main = xmonad $ defaultConfig
           { terminal = "alacritty"
-          , modMask = mod4Mask
           }
           `additionalKeysP`
             [ ( "M-p", spawn "rofi" )
