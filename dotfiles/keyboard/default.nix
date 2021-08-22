@@ -1,1 +1,1 @@
-{ ... }: { home.keyboard.options = [ "caps:ctrl_modifier" ]; }
+{ ... }: { home.keyboard.options = [ "ctrl:swapcaps" ]; }
