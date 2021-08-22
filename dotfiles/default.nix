@@ -5,10 +5,11 @@
     ./alacritty
     ./chromium
     ./git
-    ./tmux
+    ./keyboard
     ./rofi
-    ./xsession
+    ./tmux
     ./xmonad
+    ./xsession
     ./zoom
   ];
 }

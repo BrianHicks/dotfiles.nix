@@ -1,1 +1,3 @@
-{ ... }: { xsession.enable = true; }
+{ ... }: {
+  xsession.enable = true;
+}
