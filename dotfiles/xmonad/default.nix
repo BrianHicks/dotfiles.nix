@@ -10,7 +10,7 @@
           { terminal = "alacritty"
           }
           `additionalKeysP`
-            [ ( "M-p", spawn "rofi" )
+            [ ( "M-p", spawn "rofi -show run" )
             ]
     '';
   };
