@@ -10,6 +10,11 @@
       url = "github:tmux/tmux";
       flake = false;
     };
+
+    fzf-tab = {
+      url = "github:Aloxaf/fzf-tab";
+      flake = false;
+    };
   };
 
   outputs = inputs: {
@@ -29,6 +34,9 @@
       );
 
       git-gclone = final.callPackage ./pkgs/git-gclone {};
+
+      # is this going to cause problems by not actually being a package?
+      fzf-tab = inputs.fzf-tab;
     };
 
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {

@@ -14,5 +14,6 @@
     ./xmonad
     ./xsession
     ./zoom
+    ./zsh
   ];
 }

@@ -1,21 +1,18 @@
 { pkgs, ... }:
-
 let
-  sources = import ../nix/sources.nix;
-
   extras = [
-    ./zsh/elm.zsh
-    ./zsh/find-and-edit.zsh
-    ./zsh/git.zsh
-    ./zsh/jetpack.zsh
-    ./zsh/jump.zsh
-    ./zsh/kill.zsh
-    ./zsh/nix.zsh
-    ./zsh/nixify.sh
-    ./zsh/root.zsh
-    ./zsh/rubofix.zsh
-    ./zsh/scripts.zsh
-    ./zsh/search.zsh
+    ./elm.zsh
+    ./find-and-edit.zsh
+    ./git.zsh
+    ./jetpack.zsh
+    ./jump.zsh
+    ./kill.zsh
+    ./nix.zsh
+    ./nixify.sh
+    ./root.zsh
+    ./rubofix.zsh
+    ./scripts.zsh
+    ./search.zsh
   ];
 
   extraInitExtra =
@@ -32,7 +29,7 @@ in {
 
     plugins = [{
       name = "fzf-tab";
-      src = sources.fzf-tab;
+      src = pkgs.fzf-tab;
     }];
 
     initExtra = ''
