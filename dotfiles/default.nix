@@ -8,6 +8,7 @@
     ./direnv
     ./fzf
     ./git
+    ./home-manager
     ./keyboard
     ./rofi
     ./ssh
