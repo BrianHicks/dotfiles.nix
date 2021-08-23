@@ -39,6 +39,8 @@
       fzf-tab = inputs.fzf-tab;
 
       lazygit-window = final.callPackage ./pkgs/lazygit-window {};
+
+      tmux-session = final.callPackage ./pkgs/tmux-session {};
     };
 
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {

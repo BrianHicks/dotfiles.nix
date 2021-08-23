@@ -17,6 +17,7 @@
 
       # quickly open CLI tools
       bind h run-shell "${pkgs.lazygit-window}/bin/lazygit-window"
+      bind j display-popup -E ${pkgs.tmux-session}/bin/tmux-jump
 
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
