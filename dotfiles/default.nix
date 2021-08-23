@@ -10,6 +10,7 @@
     ./git
     ./keyboard
     ./rofi
+    ./ssh
     ./tmux
     ./xmonad
     ./xsession

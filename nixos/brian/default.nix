@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  environment.shells = [ pkgs.zsh ];
+
   users.users.brian = {
     isNormalUser = true;
     shell = pkgs.zsh;
