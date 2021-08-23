@@ -1,4 +1,4 @@
-{ sources ? import ../../nix/sources.nix, pkgs ? import sources.nixpkgs { } }:
+{ pkgs ? import <nixpkgs> { } }:
 pkgs.stdenv.mkDerivation {
   # inspired by one of Stöffel's keybindings at
   # https://github.com/stoeffel/.dots/blob/master/tmux/keybindings.conf

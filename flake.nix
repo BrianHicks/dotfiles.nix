@@ -37,6 +37,8 @@
 
       # is this going to cause problems by not actually being a package?
       fzf-tab = inputs.fzf-tab;
+
+      lazygit-window = final.callPackage ./pkgs/lazygit-window {};
     };
 
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {

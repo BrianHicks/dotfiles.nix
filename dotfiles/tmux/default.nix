@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.tmux = {
     enable = true;
     terminal = "tmux-256color";
@@ -14,6 +14,9 @@
       bind-key -n C-j select-pane -D
       bind-key -n C-k select-pane -U
       bind-key -n C-l select-pane -R
+
+      # quickly open CLI tools
+      bind h run-shell "${pkgs.lazygit-window}/bin/lazygit-window"
 
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
