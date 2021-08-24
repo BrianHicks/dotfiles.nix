@@ -20,7 +20,6 @@ in {
     [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
 
   home.packages = [
-    pkgs.jq
     pkgs.tree
     pkgs.watch
     (pkgs.callPackage sources.comma { })

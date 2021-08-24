@@ -10,6 +10,7 @@
     ./git
     ./home-manager
     ./hyperfine
+    ./jq
     ./keyboard
     ./rofi
     ./ripgrep
