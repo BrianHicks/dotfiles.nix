@@ -3,6 +3,7 @@
     ./alacritty
     ./bat
     ./chromium
+    ./comma
     ./direnv
     ./fzf
     ./git

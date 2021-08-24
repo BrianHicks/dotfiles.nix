@@ -20,7 +20,6 @@ in {
     [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
 
   home.packages = [
-    (pkgs.callPackage sources.comma { })
     (pkgs.callPackage ../pkgs/tree-grepper { })
 
     # remote packages. Probably could do this better but I don't really want to

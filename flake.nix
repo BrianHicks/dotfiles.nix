@@ -15,6 +15,11 @@
       url = "github:Aloxaf/fzf-tab";
       flake = false;
     };
+
+    comma = {
+      url = "github:shopify/comma";
+      flake = false;
+    };
   };
 
   outputs = inputs: {
@@ -41,6 +46,8 @@
       lazygit-window = final.callPackage ./pkgs/lazygit-window {};
 
       tmux-session = final.callPackage ./pkgs/tmux-session {};
+
+      comma = final.callPackage inputs.comma {};
     };
 
     nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {

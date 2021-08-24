@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "comma": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1588170489,
+        "narHash": "sha256-IT7zlcM1Oh4sWeCJ1m4NkteuajPxTnNo1tbitG0eqlg=",
+        "owner": "shopify",
+        "repo": "comma",
+        "rev": "4a62ec17e20ce0e738a8e5126b4298a73903b468",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shopify",
+        "repo": "comma",
+        "type": "github"
+      }
+    },
     "fzf-tab": {
       "flake": false,
       "locked": {
@@ -82,6 +98,7 @@
     },
     "root": {
       "inputs": {
+        "comma": "comma",
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
