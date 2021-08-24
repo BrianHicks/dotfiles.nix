@@ -36,7 +36,7 @@ in {
       };
     };
 
-    ignores = [ ".DS_Store" ];
+    ignores = [ ".direnv" ".DS_Store" ];
 
     delta = {
       enable = true;
