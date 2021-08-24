@@ -20,7 +20,6 @@ in {
     [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
 
   home.packages = [
-    pkgs.hyperfine
     pkgs.jq
     pkgs.tree
     pkgs.watch

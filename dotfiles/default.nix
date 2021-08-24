@@ -9,6 +9,7 @@
     ./fzf
     ./git
     ./home-manager
+    ./hyperfine
     ./keyboard
     ./rofi
     ./ripgrep
