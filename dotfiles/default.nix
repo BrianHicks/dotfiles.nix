@@ -1,6 +1,4 @@
 { ... }: {
-  programs.home-manager.enable = true;
-
   imports = [
     ./alacritty
     ./bat
