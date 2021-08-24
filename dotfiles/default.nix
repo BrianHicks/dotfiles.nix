@@ -17,6 +17,7 @@
     ./ssh
     ./tmux
     ./tree
+    ./watch
     ./xmonad
     ./xsession
     ./zoom

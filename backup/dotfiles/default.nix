@@ -20,7 +20,6 @@ in {
     [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
 
   home.packages = [
-    pkgs.watch
     (pkgs.callPackage sources.comma { })
     (pkgs.callPackage ../pkgs/tree-grepper { })
 
