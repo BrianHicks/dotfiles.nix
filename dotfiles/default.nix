@@ -11,6 +11,7 @@
     ./home-manager
     ./keyboard
     ./rofi
+    ./ripgrep
     ./ssh
     ./tmux
     ./xmonad

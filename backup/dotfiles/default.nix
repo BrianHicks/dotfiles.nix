@@ -20,10 +20,8 @@ in {
     [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
 
   home.packages = [
-    pkgs.ag
     pkgs.hyperfine
     pkgs.jq
-    pkgs.ripgrep
     pkgs.tree
     pkgs.watch
     (pkgs.callPackage sources.comma { })
