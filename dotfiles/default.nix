@@ -16,6 +16,7 @@
     ./ripgrep
     ./ssh
     ./tmux
+    ./tree
     ./xmonad
     ./xsession
     ./zoom
