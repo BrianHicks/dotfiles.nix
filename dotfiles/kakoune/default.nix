@@ -42,6 +42,10 @@ in {
       hook global BufWritePost .* %{ git update-diff }
       hook global BufReload .* %{ git update-diff }
       # TODO: NormalIdle?
+
+      # Wrapping
+      map global normal = '|fmt -w $kak_opt_autowrap_column<ret>'
+      map global normal <a-=> ': format<ret>: echo formatted with %opt{formatcmd}<ret>'
     '';
   };
 }
