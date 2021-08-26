@@ -69,6 +69,10 @@ in {
 
       map global goto n '<esc>: git next-hunk<ret>' -docstring 'Next hunk'
       map global goto N '<esc>: git prev-hunk<ret>' -docstring 'Prev hunk'
+
+      # Commenting
+      map global normal '#' ': comment-line<ret>'
+      map global normal '<a-3>' ': comment-block<ret>'
     '';
   };
 }
