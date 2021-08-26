@@ -164,13 +164,6 @@ in {
       map global subvert T '<esc> | ${kak-subvert} title <ret>' -docstring 'convert to Title Case'
       map global subvert u '<esc> | ${kak-subvert} ugly <ret>' -docstring 'convert to Ugly_Case'
 
-      # clipboard handling
-      # inspired by https://github.com/mawww/config/blob/43bd5cea453d629dd119d361cb237d433d09a0eb/kakrc#L61-L75
-      map global user -docstring 'paste (after) from clipboard' P '!${pasteCommand}<ret>'
-      map global user -docstring 'paste (before) from clipboard' p '<a-!>${pasteCommand}<ret>'
-      map global user -docstring 'yank to clipboard' y '<a-|>${copyCommand}<ret>: echo -markup %{{Information}copied selection to clipboard}<ret>'
-      map global user -docstring 'replace from clipboard' R '|${pasteCommand}<ret>'
-
       # selections
       map global user Z '<a-z>aZ' -docstring 'Add to selection'
       map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'

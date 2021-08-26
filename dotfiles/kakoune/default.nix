@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  copyCommand = if pkgs.stdenv.isDarwin then "pbcopy" else "UNKNOWN";
-  pasteCommand = if pkgs.stdenv.isDarwin then "pbpaste" else "UNKNOWN";
+  copyCommand = if pkgs.stdenv.isDarwin then "pbcopy" else "${pkgs.xclip}/bin/xclip -in";
+  pasteCommand = if pkgs.stdenv.isDarwin then "pbpaste" else "${pkgs.xclip}/bin/xclip -out";
 in {
   programs.kakoune = {
     enable = true;
@@ -73,6 +73,13 @@ in {
       # Commenting
       map global normal '#' ': comment-line<ret>'
       map global normal '<a-3>' ': comment-block<ret>'
+
+      # clipboard handling
+      # inspired by https://github.com/mawww/config/blob/43bd5cea453d629dd119d361cb237d433d09a0eb/kakrc#L61-L75
+      map global user -docstring 'paste (after) from clipboard' P '!${pasteCommand}<ret>'
+      map global user -docstring 'paste (before) from clipboard' p '<a-!>${pasteCommand}<ret>'
+      map global user -docstring 'yank to clipboard' y '<a-|>${copyCommand}<ret>: echo -markup %{{Information}copied selection to clipboard}<ret>'
+      map global user -docstring 'replace from clipboard' R '|${pasteCommand}<ret>'
     '';
   };
 }
