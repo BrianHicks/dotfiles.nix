@@ -57,6 +57,18 @@ in {
       map global find p ': grep-previous-match<ret>' -docstring 'Previous'
       map global find o ': buffer *grep*<ret>' -docstring 'Open Matches'
       map global user f ': enter-user-mode find<ret>' -docstring 'Find'
+
+      # Git
+      declare-user-mode git
+      map global git a ': git add<ret>: git update-diff<ret>' -docstring 'Add File'
+      map global git A ': git add --all<ret>: git update-diff<ret>' -docstring 'Add All Files'
+      map global git c ':git commit -m ""<left>' -docstring 'Commit'
+      map global git C ':git commit --amend --no-edit<ret>: git update-diff<ret>' -docstring 'Amend, No Edit'
+      map global git r ': git update-diff<ret>' -docstring 'Refresh diff markers'
+      map global user g ': enter-user-mode git<ret>' -docstring 'Git'
+
+      map global goto n '<esc>: git next-hunk<ret>' -docstring 'Next hunk'
+      map global goto N '<esc>: git prev-hunk<ret>' -docstring 'Prev hunk'
     '';
   };
 }
