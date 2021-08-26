@@ -132,17 +132,6 @@ in {
       require-module auto-pairs
       auto-pairs-enable
 
-      # Finding
-      set global grepcmd '${pkgs.ripgrep}/bin/rg --follow --with-filename --line-number'
-      declare-user-mode find
-      map global find f ': grep<ret>' -docstring 'Find'
-      map global find : ':grep ' -docstring 'Search'
-      map global find s ': find-apply-changes -force<ret>: write-all<ret>' -docstring 'Apply Changes'
-      map global find n ': grep-next-match<ret>' -docstring 'Next'
-      map global find p ': grep-previous-match<ret>' -docstring 'Previous'
-      map global find o ': buffer *grep*<ret>' -docstring 'Open Matches'
-      map global user f ': enter-user-mode find<ret>' -docstring 'Find'
-
       # File Browsing
       set global similar_sort_path '${similar-sort}/bin/similar-sort'
       map global normal <minus> ': open-similar<ret>'
