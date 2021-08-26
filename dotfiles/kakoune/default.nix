@@ -84,6 +84,18 @@ in {
       # selections
       map global user Z '<a-z>aZ' -docstring 'Add to selection'
       map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
+
+      # Languages
+      hook global WinSetOption filetype=nix %{
+        expandtab
+        set-option buffer tabstop 2
+        set-option buffer softtabstop 2
+        set-option buffer indentwidth 2
+
+        # formatting
+        set-option buffer formatcmd ${pkgs.nixfmt}/bin/nixfmt
+        hook buffer BufWritePre .* format
+      }
     '';
   };
 }

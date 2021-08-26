@@ -172,18 +172,6 @@ in {
       # eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
       # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
 
-      # Languages
-      hook global WinSetOption filetype=nix %{
-        expandtab
-        set-option buffer tabstop 2
-        set-option buffer softtabstop 2
-        set-option buffer indentwidth 2
-
-        # formatting
-        set-option buffer formatcmd nixfmt
-        hook buffer BufWritePre .* format
-      }
-
       hook global WinSetOption filetype=elm %{
         expandtab
         set-option buffer softtabstop 4
