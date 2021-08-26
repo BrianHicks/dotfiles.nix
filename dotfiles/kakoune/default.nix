@@ -80,6 +80,10 @@ in {
       map global user -docstring 'paste (before) from clipboard' p '<a-!>${pasteCommand}<ret>'
       map global user -docstring 'yank to clipboard' y '<a-|>${copyCommand}<ret>: echo -markup %{{Information}copied selection to clipboard}<ret>'
       map global user -docstring 'replace from clipboard' R '|${pasteCommand}<ret>'
+
+      # selections
+      map global user Z '<a-z>aZ' -docstring 'Add to selection'
+      map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
     '';
   };
 }

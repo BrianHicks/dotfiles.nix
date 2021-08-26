@@ -164,10 +164,6 @@ in {
       map global subvert T '<esc> | ${kak-subvert} title <ret>' -docstring 'convert to Title Case'
       map global subvert u '<esc> | ${kak-subvert} ugly <ret>' -docstring 'convert to Ugly_Case'
 
-      # selections
-      map global user Z '<a-z>aZ' -docstring 'Add to selection'
-      map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
-
       # outline jumping
       set global tree_grepper_path "${tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
