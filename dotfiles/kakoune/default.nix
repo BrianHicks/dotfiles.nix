@@ -21,5 +21,27 @@ in {
         indent = true;
       };
     };
+
+    extraConfig = ''
+      # escape with fd
+      hook global InsertChar d %{ try %{
+        exec -draft hH <a-k>fd<ret> d
+        exec <exc>
+      }}
+
+      # exit from insert mode and save. Useful for triggering file watchers
+      # or whatever, as the alternative is `fd:w<ret>`
+      map global insert <c-o> '<esc>: write<ret>'
+      map global user , ': write<ret>' -docstring "Save current file"
+
+      # automatically create directories on save
+      hook global BufWritePre .* %{ mkdir %val{bufname} }
+
+      # Git status
+      hook global WinSetOption filetype=.+ %{ git show-diff }
+      hook global BufWritePost .* %{ git update-diff }
+      hook global BufReload .* %{ git update-diff }
+      # TODO: NormalIdle?
+    '';
   };
 }
