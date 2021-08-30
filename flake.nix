@@ -57,19 +57,19 @@
         })
       ];
     in {
-      nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {
+      nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
-          ({ ... }: { nixpkgs.overlays = mkOverlays "x86_64-linux"; })
+          ({ ... }: { nixpkgs.overlays = mkOverlays system; })
           (import ./machines/torch inputs)
           inputs.home-manager.nixosModules.home-manager
         ];
       };
 
-      nixosConfigurations.vbox-dev = inputs.nixpkgs.lib.nixosSystem {
+      nixosConfigurations.vbox-dev = inputs.nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
-          ({ ... }: { nixpkgs.overlays = mkOverlays "x86_64-linux"; })
+          ({ ... }: { nixpkgs.overlays = mkOverlays system; })
           (import ./machines/vbox-dev inputs)
           inputs.home-manager.nixosModules.home-manager
         ];
