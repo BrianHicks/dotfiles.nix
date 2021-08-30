@@ -28,6 +28,12 @@
       url = "github:shopify/comma";
       flake = false;
     };
+
+    # kakoune plugins
+    tug = {
+      url = "github:matthias-margush/tug";
+      flake = false;
+    };
   };
 
   outputs = inputs:
@@ -61,6 +67,14 @@
           comma = final.callPackage inputs.comma { };
 
           kak-session = final.callPackage ./pkgs/kak-session { };
+
+          kakounePlugins = prev.kakounePlugins // {
+            tug = final.kakouneUtils.buildKakounePlugin {
+              name = inputs.tug.name;
+              version = inputs.tug.rev;
+              src = inputs.tug;
+            };
+          };
         })
       ];
     in {

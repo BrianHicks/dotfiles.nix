@@ -8,6 +8,8 @@ in {
   programs.kakoune = {
     enable = true;
 
+    plugins = with pkgs.kakounePlugins; [ kak-auto-pairs tug ];
+
     config = {
       scrollOff.lines = 5;
       numberLines = {

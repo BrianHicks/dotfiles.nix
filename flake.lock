@@ -216,7 +216,8 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "similar-sort": "similar-sort",
         "tmux": "tmux",
-        "tree-grepper": "tree-grepper"
+        "tree-grepper": "tree-grepper",
+        "tug": "tug"
       }
     },
     "similar-sort": {
@@ -277,6 +278,22 @@
       "original": {
         "owner": "BrianHicks",
         "repo": "tree-grepper",
+        "type": "github"
+      }
+    },
+    "tug": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1582353132,
+        "narHash": "sha256-cW11DPsjBBtjOfU9gizH8dGSV3B1rQiD0qeO/Ab8jWI=",
+        "owner": "matthias-margush",
+        "repo": "tug",
+        "rev": "23adaadb795af2d86dcb3daf7af3ebe12e932441",
+        "type": "github"
+      },
+      "original": {
+        "owner": "matthias-margush",
+        "repo": "tug",
         "type": "github"
       }
     }
