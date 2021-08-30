@@ -272,18 +272,5 @@
         "repo": "https://git.bytes.zone/brian/tree-grepper.git",
         "rev": "62cfa89a596e8eff5a053ed02508113bd550f79f",
         "type": "git"
-    },
-    "tug": {
-        "branch": "master",
-        "description": "Unix commands for the kakoune editor",
-        "homepage": null,
-        "kakoune": "plugin",
-        "owner": "matthias-margush",
-        "repo": "tug",
-        "rev": "23adaadb795af2d86dcb3daf7af3ebe12e932441",
-        "sha256": "0qldzh3gr3m7sa1hibbmf1br5lgiqwn84ggm75iin113zc67avbi",
-        "type": "tarball",
-        "url": "https://github.com/matthias-margush/tug/archive/23adaadb795af2d86dcb3daf7af3ebe12e932441.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
