@@ -10,7 +10,9 @@
       "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
     similar-sort.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     tree-grepper.url = "github:BrianHicks/tree-grepper";
+    tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     tmux = {
       url = "github:tmux/tmux";
