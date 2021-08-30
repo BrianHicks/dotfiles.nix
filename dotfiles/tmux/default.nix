@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  home.packages = [ pkgs.tmux-session ];
+
   programs.tmux = {
     enable = true;
     terminal = "tmux-256color";
