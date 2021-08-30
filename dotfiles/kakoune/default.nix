@@ -35,7 +35,7 @@ in {
       map global user , ': write<ret>' -docstring "Save current file"
 
       # automatically create directories on save
-      hook global BufWritePre .* %{ mkdir %val{bufname} }
+      #hook global BufWritePre .* %{ mkdir %val{bufname} }
 
       # Git status
       hook global WinSetOption filetype=.+ %{ git show-diff }
@@ -87,10 +87,10 @@ in {
 
       # Languages
       hook global WinSetOption filetype=nix %{
-        expandtab
-        set-option buffer tabstop 2
-        set-option buffer softtabstop 2
-        set-option buffer indentwidth 2
+        #expandtab
+        #set-option buffer tabstop 2
+        #set-option buffer softtabstop 2
+        #set-option buffer indentwidth 2
 
         # formatting
         set-option buffer formatcmd ${pkgs.nixfmt}/bin/nixfmt
