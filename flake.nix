@@ -10,6 +10,8 @@
       "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
     similar-sort.inputs.nixpkgs.follows = "nixpkgs";
 
+    tree-grepper.url = "github:BrianHicks/tree-grepper";
+
     tmux = {
       url = "github:tmux/tmux";
       flake = false;
@@ -30,6 +32,7 @@
     let
       mkOverlays = system: [
         inputs.similar-sort.overlay."${system}"
+        inputs.tree-grepper.overlay."${system}"
         (final: prev: {
           tmux = prev.tmux.overrideAttrs (attrs:
             attrs // {
