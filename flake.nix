@@ -54,6 +54,8 @@
           tmux-session = final.callPackage ./pkgs/tmux-session { };
 
           comma = final.callPackage inputs.comma { };
+
+          kak-session = final.callPackage ./pkgs/kak-session { };
         })
       ];
     in {

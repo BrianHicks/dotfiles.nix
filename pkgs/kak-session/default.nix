@@ -1,7 +1,5 @@
-{ sources ? import ../../nix/sources.nix, nixpkgs ? import sources.nixpkgs { }
-}:
-with nixpkgs;
-stdenv.mkDerivation {
+{ pkgs ? import <nixpkgs> { }, ... }:
+pkgs.stdenv.mkDerivation {
   name = "kak-session";
   src = ./.;
   buildInputs = [ pkgs.makeWrapper ];

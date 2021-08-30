@@ -48,4 +48,6 @@ in {
       share = true;
     };
   };
+
+  home.packages = [ pkgs.kak-session ];
 }

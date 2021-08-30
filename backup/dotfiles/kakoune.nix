@@ -83,8 +83,7 @@ let
   else
     "${pkgs.wl-clipboard}/bin/wl-paste";
 in {
-  home.packages =
-    [ pkgs.shellcheck (pkgs.callPackage ../pkgs/kak-session { }) ];
+  home.packages = [ pkgs.shellcheck ];
 
   programs.kakoune = {
     enable = true;
