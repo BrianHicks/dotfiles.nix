@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "active-window": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1589392870,
+        "narHash": "sha256-6GLt9g20ddbXb29Vdl0YXFDWC73qip9cVU8EgdNlYbs=",
+        "owner": "greenfork",
+        "repo": "active-window.kak",
+        "rev": "988db69cfbb88bd741d089bb43b0be551693e7c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "greenfork",
+        "repo": "active-window.kak",
+        "type": "github"
+      }
+    },
     "comma": {
       "flake": false,
       "locked": {
@@ -208,6 +224,7 @@
     },
     "root": {
       "inputs": {
+        "active-window": "active-window",
         "comma": "comma",
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",

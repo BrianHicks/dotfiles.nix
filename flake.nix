@@ -30,6 +30,10 @@
     };
 
     # kakoune plugins
+    active-window = {
+      url = "github:greenfork/active-window.kak";
+      flake = false;
+    };
     tug = {
       url = "github:matthias-margush/tug";
       flake = false;
@@ -76,6 +80,8 @@
                 src = input;
               };
           in prev.kakounePlugins // {
+            active-window =
+              buildKakounePlugin "active-window" inputs.active-window;
             tug = buildKakounePlugin "tug" inputs.tug;
           };
         })

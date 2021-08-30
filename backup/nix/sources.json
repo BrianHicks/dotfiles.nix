@@ -1,17 +1,4 @@
 {
-    "active-window.kak": {
-        "branch": "master",
-        "description": "Cursor is colored only in the active window",
-        "homepage": null,
-        "kakoune": "plugin",
-        "owner": "greenfork",
-        "repo": "active-window.kak",
-        "rev": "988db69cfbb88bd741d089bb43b0be551693e7c1",
-        "sha256": "1fv1cp9q212gamf9z2papl5xcl2w31fpcmbgdzbxcxdl1pvfsqp8",
-        "type": "tarball",
-        "url": "https://github.com/greenfork/active-window.kak/archive/988db69cfbb88bd741d089bb43b0be551693e7c1.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "comma": {
         "branch": "master",
         "description": null,
