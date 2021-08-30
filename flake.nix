@@ -6,7 +6,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
 
-    similar-sort.url = "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
+    similar-sort.url =
+      "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
     similar-sort.inputs.nixpkgs.follows = "nixpkgs";
 
     tmux = {
@@ -26,9 +27,10 @@
   };
 
   outputs = inputs:
-    let mkOverlays = system:
-      [ inputs.similar-sort.overlay."${system}"
-        (final: prev:{
+    let
+      mkOverlays = system: [
+        inputs.similar-sort.overlay."${system}"
+        (final: prev: {
           tmux = prev.tmux.overrideAttrs (attrs:
             attrs // {
               src = inputs.tmux;
@@ -40,37 +42,37 @@
               # can get the correct character widths.
               buildInputs = attrs.buildInputs ++ [ prev.utf8proc ];
               configureFlags = attrs.configureFlags ++ [ "--enable-utf8proc" ];
-            }
-          );
+            });
 
-          git-gclone = final.callPackage ./pkgs/git-gclone {};
+          git-gclone = final.callPackage ./pkgs/git-gclone { };
 
           # is this going to cause problems by not actually being a package?
           fzf-tab = inputs.fzf-tab;
 
-          lazygit-window = final.callPackage ./pkgs/lazygit-window {};
+          lazygit-window = final.callPackage ./pkgs/lazygit-window { };
 
-          tmux-session = final.callPackage ./pkgs/tmux-session {};
+          tmux-session = final.callPackage ./pkgs/tmux-session { };
 
-          comma = final.callPackage inputs.comma {};
-        })];
+          comma = final.callPackage inputs.comma { };
+        })
+      ];
     in {
-    nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ({ ... }: { nixpkgs.overlays = mkOverlays "x86_64-linux"; })
-        (import ./machines/torch inputs)
-        inputs.home-manager.nixosModules.home-manager
-      ];
-    };
+      nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ({ ... }: { nixpkgs.overlays = mkOverlays "x86_64-linux"; })
+          (import ./machines/torch inputs)
+          inputs.home-manager.nixosModules.home-manager
+        ];
+      };
 
-    nixosConfigurations.vbox-dev = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ({ ... }: { nixpkgs.overlays = mkOverlays "x86_64-linux"; })
-        (import ./machines/vbox-dev inputs)
-        inputs.home-manager.nixosModules.home-manager
-      ];
+      nixosConfigurations.vbox-dev = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ({ ... }: { nixpkgs.overlays = mkOverlays "x86_64-linux"; })
+          (import ./machines/vbox-dev inputs)
+          inputs.home-manager.nixosModules.home-manager
+        ];
+      };
     };
-  };
 }

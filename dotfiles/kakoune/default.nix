@@ -1,7 +1,9 @@
 { pkgs, ... }:
 let
-  copyCommand = if pkgs.stdenv.isDarwin then "pbcopy" else "${pkgs.xclip}/bin/xclip -in";
-  pasteCommand = if pkgs.stdenv.isDarwin then "pbpaste" else "${pkgs.xclip}/bin/xclip -out";
+  copyCommand =
+    if pkgs.stdenv.isDarwin then "pbcopy" else "${pkgs.xclip}/bin/xclip -in";
+  pasteCommand =
+    if pkgs.stdenv.isDarwin then "pbpaste" else "${pkgs.xclip}/bin/xclip -out";
 in {
   programs.kakoune = {
     enable = true;

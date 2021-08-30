@@ -1,8 +1,9 @@
 { pkgs, ... }:
-let lazygit-config =
-      if pkgs.stdenv.isDarwin
-        then "Library/Application Support/jesseduffield/lazygit/config.yml"
-        else ".config/jesseduffield/lazygit/config.yml";
+let
+  lazygit-config = if pkgs.stdenv.isDarwin then
+    "Library/Application Support/jesseduffield/lazygit/config.yml"
+  else
+    ".config/jesseduffield/lazygit/config.yml";
 in {
   programs.git = {
     enable = true;
@@ -52,37 +53,32 @@ in {
 
   programs.gh.enable = true;
 
-  home.file."${lazygit-config}".text =
-    builtins.toJSON {
-      reporting = "off";
-      startupPopupVersion = 1;
+  home.file."${lazygit-config}".text = builtins.toJSON {
+    reporting = "off";
+    startupPopupVersion = 1;
 
-      update.method = "never"; # managed through nixpkgs
+    update.method = "never"; # managed through nixpkgs
 
-      keybindings = {
-        universal.return = "q";
-        universal.createRebaseOptionsMenu = "M";
-        branches.mergeIntoCurrentBranch = "m";
-      };
-
-      gui.theme = {
-        lightTheme = false;
-        activeBorderColor = [ "green" "bold" ];
-        inactiveBorderColor = [ "white" ];
-        optionsTextColor = [ "blue" ];
-        selectedLineBgColor = [ "bold" ];
-      };
-
-      git.paging = {
-        colorArg = "always";
-        pager = "${pkgs.gitAndTools.delta}/bin/delta --paging=never";
-      };
+    keybindings = {
+      universal.return = "q";
+      universal.createRebaseOptionsMenu = "M";
+      branches.mergeIntoCurrentBranch = "m";
     };
 
-  home.packages = [
-    pkgs.git-lfs
-    pkgs.lazygit
-    pkgs.gitAndTools.delta
-    pkgs.git-gclone
-  ];
+    gui.theme = {
+      lightTheme = false;
+      activeBorderColor = [ "green" "bold" ];
+      inactiveBorderColor = [ "white" ];
+      optionsTextColor = [ "blue" ];
+      selectedLineBgColor = [ "bold" ];
+    };
+
+    git.paging = {
+      colorArg = "always";
+      pager = "${pkgs.gitAndTools.delta}/bin/delta --paging=never";
+    };
+  };
+
+  home.packages =
+    [ pkgs.git-lfs pkgs.lazygit pkgs.gitAndTools.delta pkgs.git-gclone ];
 }

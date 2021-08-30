@@ -5,16 +5,15 @@ inputs:
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      (import ../../nixos/nix inputs)
+    (import ../../nixos/nix inputs)
 
-      ../../nixos/brian
-      ../../nixos/xmonad
-      ../../nixos/xserver
-    ];
+    ../../nixos/brian
+    ../../nixos/xmonad
+    ../../nixos/xserver
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -65,9 +64,7 @@ inputs:
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    kakoune
-  ];
+  environment.systemPackages = with pkgs; [ kakoune ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
