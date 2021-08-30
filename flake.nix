@@ -68,12 +68,15 @@
 
           kak-session = final.callPackage ./pkgs/kak-session { };
 
-          kakounePlugins = prev.kakounePlugins // {
-            tug = final.kakouneUtils.buildKakounePlugin {
-              name = inputs.tug.name;
-              version = inputs.tug.rev;
-              src = inputs.tug;
-            };
+          kakounePlugins = let
+            buildKakounePlugin = name: input:
+              final.kakouneUtils.buildKakounePlugin {
+                inherit name;
+                version = input.rev;
+                src = input;
+              };
+          in prev.kakounePlugins // {
+            tug = buildKakounePlugin "tug" inputs.tug;
           };
         })
       ];
