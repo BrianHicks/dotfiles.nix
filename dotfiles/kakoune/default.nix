@@ -28,7 +28,7 @@ in {
       # escape with fd
       hook global InsertChar d %{ try %{
         exec -draft hH <a-k>fd<ret> d
-        exec <exc>
+        exec <esc>
       }}
 
       # exit from insert mode and save. Useful for triggering file watchers
