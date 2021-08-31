@@ -47,7 +47,7 @@ in {
       map global user , ': write<ret>' -docstring "Save current file"
 
       # automatically create directories on save
-      hook global BufWritePre .* %{ mkdir %val{bufname} }
+      # hook global BufWritePre .* %{ mkdir %val{bufname} }
 
       # Git status
       hook global WinSetOption filetype=.+ %{ git show-diff }
