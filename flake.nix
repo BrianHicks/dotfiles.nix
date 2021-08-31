@@ -114,7 +114,7 @@
             kakounePlugins = let
               buildKakounePlugin = name: input:
                 final.kakouneUtils.buildKakounePlugin {
-                  inherit name;
+                  pname = name;
                   version = input.rev;
                   src = input;
                 };
