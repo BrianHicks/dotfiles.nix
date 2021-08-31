@@ -113,6 +113,22 @@
         "type": "github"
       }
     },
+    "kakoune-idris": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1630054531,
+        "narHash": "sha256-F6CHxF6nzOuurx96Ms36yV1HFMzcK4oPQanHlPq5XKc=",
+        "owner": "stoand",
+        "repo": "kakoune-idris",
+        "rev": "02911cc9d4808e4838da9885d71b8be9406f8246",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stoand",
+        "repo": "kakoune-idris",
+        "type": "github"
+      }
+    },
     "kakoune-surround": {
       "flake": false,
       "locked": {
@@ -261,6 +277,7 @@
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "kakoune-find": "kakoune-find",
+        "kakoune-idris": "kakoune-idris",
         "kakoune-surround": "kakoune-surround",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",

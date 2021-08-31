@@ -36,18 +36,6 @@
         "url": "https://github.com/Delapouite/kakoune-auto-percent/archive/efca07df24074823425b5e56487c7a24c97111f5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakoune-idris": {
-        "branch": "master",
-        "description": "Idris 2 IDE Protocol Integration for Kakoune",
-        "homepage": "",
-        "owner": "stoand",
-        "repo": "kakoune-idris",
-        "rev": "1acdfb5d89e3951ae4bdf4a5fa2377b36448083d",
-        "sha256": "06qny8790j9d7vjs0pfyw71xvc6hmkjl8ssi483mbwbxs0zv6j9r",
-        "type": "tarball",
-        "url": "https://github.com/stoand/kakoune-idris/archive/1acdfb5d89e3951ae4bdf4a5fa2377b36448083d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-palette": {
         "branch": "master",
         "description": "Preview face colors in kakoune",

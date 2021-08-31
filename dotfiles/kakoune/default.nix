@@ -12,6 +12,7 @@ in {
       active-window
       kak-auto-pairs
       kakoune-find
+      kakoune-idris
       kakoune-surround
       shellcheck-kak
       smarttab-kak
@@ -111,6 +112,13 @@ in {
         set-option buffer tabstop %arg{1}
         set-option buffer softtabstop %arg{1}
         set-option buffer indentwidth %arg{1}
+      }
+
+      hook global WinSetOption filetype=idris %{
+        expandtab-with-width 2
+
+        set buffer idris_node_binary_path "${pkgs.nodejs}/bin/node"
+        map global user d ': enter-user-mode idris-ide<ret>' -docstring 'Idris IDE'
       }
 
       hook global WinSetOption filetype=nix %{
