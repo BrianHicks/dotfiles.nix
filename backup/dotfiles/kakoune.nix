@@ -296,15 +296,6 @@ in {
         }
       }
 
-      hook global WinSetOption filetype=sh %{
-        expandtab
-        set-option buffer softtabstop 2
-        set-option buffer tabstop 2
-        set-option buffer indentwidth 2
-
-        hook buffer BufWritePre .* lint
-      }
-
       hook global WinSetOption filetype=html %{
         expandtab
         set-option buffer softtabstop 2

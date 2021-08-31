@@ -38,6 +38,10 @@
       url = "github:occivink/kakoune-find";
       flake = false;
     };
+    shellcheck-kak = {
+      url = "github:whereswaldon/shellcheck.kak";
+      flake = false;
+    };
     tug = {
       url = "github:matthias-margush/tug";
       flake = false;
@@ -88,6 +92,8 @@
               buildKakounePlugin "active-window" inputs.active-window;
             kakoune-find =
               buildKakounePlugin "kakoune-find" inputs.kakoune-find;
+            shellcheck-kak =
+              buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
             tug = buildKakounePlugin "tug" inputs.tug;
           };
         })

@@ -12,6 +12,7 @@ in {
       active-window
       kak-auto-pairs
       kakoune-find
+      shellcheck-kak
       tug
     ];
 
@@ -104,6 +105,15 @@ in {
         # formatting
         set-option buffer formatcmd ${pkgs.nixfmt}/bin/nixfmt
         hook buffer BufWritePre .* format
+      }
+
+      hook global WinSetOption filetype=sh %{
+        #expandtab
+        #set-option buffer softtabstop 2
+        #set-option buffer tabstop 2
+        #set-option buffer indentwidth 2
+
+        hook buffer BufWritePre .* lint
       }
     '';
   };

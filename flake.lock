@@ -248,10 +248,27 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "shellcheck-kak": "shellcheck-kak",
         "similar-sort": "similar-sort",
         "tmux": "tmux",
         "tree-grepper": "tree-grepper",
         "tug": "tug"
+      }
+    },
+    "shellcheck-kak": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1602383725,
+        "narHash": "sha256-shorXndYik+SsEyVJ6noOdiQzzwM+x+joMsfNAiUSZg=",
+        "owner": "whereswaldon",
+        "repo": "shellcheck.kak",
+        "rev": "4e633978c119bbb71f215828f7b59cea71a2c5a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "whereswaldon",
+        "repo": "shellcheck.kak",
+        "type": "github"
       }
     },
     "similar-sort": {

@@ -136,19 +136,6 @@
         "url": "https://github.com/alexherbo2/prelude.kak/archive/5dbdc020c546032885c1fdb463e366cc89fc15ad.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "shellcheck.kak": {
-        "branch": "master",
-        "description": "ShellCheck integration for Kakoune",
-        "homepage": null,
-        "kakoune": "plugin",
-        "owner": "whereswaldon",
-        "repo": "shellcheck.kak",
-        "rev": "4e633978c119bbb71f215828f7b59cea71a2c5a4",
-        "sha256": "1629jh4387ybl2iizyqc7k7r1n1rx2ljg5acn294z2jqfxg2n6mj",
-        "type": "tarball",
-        "url": "https://github.com/whereswaldon/shellcheck.kak/archive/4e633978c119bbb71f215828f7b59cea71a2c5a4.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "smarttab.kak": {
         "branch": "master",
         "description": "Automatic handling different styles of indentation and alignment. Mirror of https://gitlab.com/andreyorst/smarttab.kak",
