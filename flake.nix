@@ -98,14 +98,19 @@
           in prev.kakounePlugins // {
             active-window =
               buildKakounePlugin "active-window" inputs.active-window;
+
             kakoune-find =
               buildKakounePlugin "kakoune-find" inputs.kakoune-find;
+
             kakoune-surround =
               buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
+
             shellcheck-kak =
               buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
+
             smarttab-kak =
               buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
+
             tug = buildKakounePlugin "tug" inputs.tug;
           };
         })
