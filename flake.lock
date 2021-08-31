@@ -113,6 +113,22 @@
         "type": "github"
       }
     },
+    "kakoune-surround": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1537174588,
+        "narHash": "sha256-0PicMTkYRnhtrFAMWVgynE4HfoL9/EHZIu4rTSE+zSU=",
+        "owner": "h-youhei",
+        "repo": "kakoune-surround",
+        "rev": "efe74c6f434d1e30eff70d4b0d737f55bf6c5022",
+        "type": "github"
+      },
+      "original": {
+        "owner": "h-youhei",
+        "repo": "kakoune-surround",
+        "type": "github"
+      }
+    },
     "naersk": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -245,6 +261,7 @@
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "kakoune-find": "kakoune-find",
+        "kakoune-surround": "kakoune-surround",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",

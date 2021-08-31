@@ -74,19 +74,6 @@
         "url": "https://github.com/caksoylar/kakoune-snow/archive/35f81876bcaea061982396f8071b89528940ae61.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakoune-surround": {
-        "branch": "master",
-        "description": "Surround selection, Change/Delete surrounder",
-        "homepage": null,
-        "kakoune": "plugin",
-        "owner": "h-youhei",
-        "repo": "kakoune-surround",
-        "rev": "efe74c6f434d1e30eff70d4b0d737f55bf6c5022",
-        "sha256": "09fd7qhlsazf4bcl3z7xh9z0fklw69c5j32hminphihq74qrry6h",
-        "type": "tarball",
-        "url": "https://github.com/h-youhei/kakoune-surround/archive/efe74c6f434d1e30eff70d4b0d737f55bf6c5022.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",

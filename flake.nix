@@ -38,6 +38,10 @@
       url = "github:occivink/kakoune-find";
       flake = false;
     };
+    kakoune-surround = {
+      url = "github:h-youhei/kakoune-surround";
+      flake = false;
+    };
     shellcheck-kak = {
       url = "github:whereswaldon/shellcheck.kak";
       flake = false;
@@ -92,6 +96,8 @@
               buildKakounePlugin "active-window" inputs.active-window;
             kakoune-find =
               buildKakounePlugin "kakoune-find" inputs.kakoune-find;
+            kakoune-surround =
+              buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
             shellcheck-kak =
               buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
             tug = buildKakounePlugin "tug" inputs.tug;

@@ -12,6 +12,7 @@ in {
       active-window
       kak-auto-pairs
       kakoune-find
+      kakoune-surround
       shellcheck-kak
       tug
     ];
@@ -94,6 +95,14 @@ in {
       # selections
       map global user Z '<a-z>aZ' -docstring 'Add to selection'
       map global user a 's[^, ]+<ret>' -docstring 'Split selection into arguments'
+
+      # surrounding
+      declare-user-mode surround
+      map global surround s ': surround<ret>' -docstring 'Surround'
+      map global surround c ': change-surround<ret>' -docstring 'Change'
+      map global surround d ': delete-surround<ret>' -docstring 'Delete'
+      map global surround t ': select-surrounding-tag<ret>' -docstring 'Select tag'
+      map global user s ': enter-user-mode surround<ret>' -docstring 'Surround'
 
       # Languages
       hook global WinSetOption filetype=nix %{
