@@ -24,32 +24,6 @@
         "url": "https://github.com/Delapouite/kakoune-auto-percent/archive/efca07df24074823425b5e56487c7a24c97111f5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakoune-palette": {
-        "branch": "master",
-        "description": "Preview face colors in kakoune",
-        "homepage": "http://kakoune.org",
-        "kakoune": "plugin",
-        "owner": "Delapouite",
-        "repo": "kakoune-palette",
-        "rev": "052cab5f48578679d94717ed5f62429be9865d5d",
-        "sha256": "1p9mpzx6i816pcw9sala2kvy0ky39kwccxgsf3y3bpw6m8pi6kby",
-        "type": "tarball",
-        "url": "https://github.com/Delapouite/kakoune-palette/archive/052cab5f48578679d94717ed5f62429be9865d5d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "kakoune-snow": {
-        "branch": "master",
-        "description": "nightsense's snow colorscheme for Kakoune",
-        "homepage": "",
-        "kakoune": "colors",
-        "owner": "caksoylar",
-        "repo": "kakoune-snow",
-        "rev": "35f81876bcaea061982396f8071b89528940ae61",
-        "sha256": "14pndx88xm350a5kq8rha1k0436a3hl2qgfw9xkcfp1gkmzijx19",
-        "type": "tarball",
-        "url": "https://github.com/caksoylar/kakoune-snow/archive/35f81876bcaea061982396f8071b89528940ae61.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "nixpkgs-mozilla": {
         "branch": "master",
         "description": "mozilla related nixpkgs (extends nixos/nixpkgs repo)",
@@ -60,19 +34,6 @@
         "sha256": "1hpig8z4pzdwc2vazr6hg7qyxllbgznsaivaigjnmrdszlxz55zz",
         "type": "tarball",
         "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/b1001ed670666ca4ce1c1b064481f88694315c1d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "prelude.kak": {
-        "branch": "master",
-        "description": "Prelude of shell blocks for Kakoune",
-        "homepage": "https://kakoune.org",
-        "kakoune": "plugin",
-        "owner": "alexherbo2",
-        "repo": "prelude.kak",
-        "rev": "5dbdc020c546032885c1fdb463e366cc89fc15ad",
-        "sha256": "1pncr8azqvl2z9yvzhc68p1s9fld8cvak8yz88zgrp5ypx2cxl8c",
-        "type": "tarball",
-        "url": "https://github.com/alexherbo2/prelude.kak/archive/5dbdc020c546032885c1fdb463e366cc89fc15ad.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
