@@ -6,13 +6,19 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
 
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    naersk.url = "github:nix-community/naersk";
+    naersk.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     similar-sort.url =
       "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
     similar-sort.inputs.nixpkgs.follows = "nixpkgs";
+    similar-sort.inputs.naersk.follows = "naersk";
 
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     tree-grepper.url = "github:BrianHicks/tree-grepper";
     tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    tree-grepper.inputs.naersk.follows = "naersk";
 
     tmux = {
       url = "github:tmux/tmux";

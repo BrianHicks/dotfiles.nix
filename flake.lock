@@ -147,7 +147,9 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
       },
       "locked": {
         "lastModified": 1629707199,
@@ -159,24 +161,6 @@
       },
       "original": {
         "owner": "nix-community",
-        "repo": "naersk",
-        "type": "github"
-      }
-    },
-    "naersk_2": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_4"
-      },
-      "locked": {
-        "lastModified": 1629707199,
-        "narHash": "sha256-sGxlmfp5eXL5sAMNqHSb04Zq6gPl+JeltIZ226OYN0w=",
-        "owner": "nmattia",
-        "repo": "naersk",
-        "rev": "df71f5e4babda41cd919a8684b72218e2e809fa9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nmattia",
         "repo": "naersk",
         "type": "github"
       }
@@ -242,34 +226,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1629843882,
-        "narHash": "sha256-pNaVImPmlXzOENlEqKla2CCh/nqdHRuFhBdgiNAnSkE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "4b8708cad7da691c7ceb67a1fce79b13bd90e57f",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
-        "lastModified": 1629798441,
-        "narHash": "sha256-4soqFXGviXxajMnYXyUNR47na6J2F0+C15VurqxXwLA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3cd570dfcd3f7be23e816f91dccee0d7637759cd",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
     "root": {
       "inputs": {
         "active-window": "active-window",
@@ -279,6 +235,7 @@
         "kakoune-find": "kakoune-find",
         "kakoune-idris": "kakoune-idris",
         "kakoune-surround": "kakoune-surround",
+        "naersk": "naersk",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
@@ -309,7 +266,9 @@
     "similar-sort": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "naersk": "naersk",
+        "naersk": [
+          "naersk"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -364,7 +323,9 @@
     "tree-grepper": {
       "inputs": {
         "flake-utils": "flake-utils_2",
-        "naersk": "naersk_2",
+        "naersk": [
+          "naersk"
+        ],
         "nixpkgs": [
           "nixpkgs-unstable"
         ]
