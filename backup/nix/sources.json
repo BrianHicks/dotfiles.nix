@@ -1,28 +1,4 @@
 {
-    "comma": {
-        "branch": "master",
-        "description": null,
-        "homepage": null,
-        "owner": "Shopify",
-        "repo": "comma",
-        "rev": "4a62ec17e20ce0e738a8e5126b4298a73903b468",
-        "sha256": "0n5a3rnv9qnnsrl76kpi6dmaxmwj1mpdd2g0b4n1wfimqfaz6gi1",
-        "type": "tarball",
-        "url": "https://github.com/Shopify/comma/archive/4a62ec17e20ce0e738a8e5126b4298a73903b468.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "fzf-tab": {
-        "branch": "master",
-        "description": "Replace zsh's default completion selection menu with fzf!",
-        "homepage": "",
-        "owner": "Aloxaf",
-        "repo": "fzf-tab",
-        "rev": "89a33154707c09789177a893e5a8ebbb131d5d3d",
-        "sha256": "1g8011ldrghbw5ibchsp0p93r31cwyx2r1z5xplksd779jw79wdx",
-        "type": "tarball",
-        "url": "https://github.com/Aloxaf/fzf-tab/archive/89a33154707c09789177a893e5a8ebbb131d5d3d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kak-lsp": {
         "branch": "master",
         "description": "Kakoune Language Server Protocol Client",
@@ -124,18 +100,6 @@
         "url": "https://github.com/h-youhei/kakoune-surround/archive/efe74c6f434d1e30eff70d4b0d737f55bf6c5022.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "naersk": {
-        "branch": "master",
-        "description": "Build rust crates in Nix. No configuration, no code generation, no IFD. Sandbox friendly.",
-        "homepage": "",
-        "owner": "nmattia",
-        "repo": "naersk",
-        "rev": "e09c320446c5c2516d430803f7b19f5833781337",
-        "sha256": "0k1pk2ixnxl6njjrgy750gm6m1nkkdsah383n3wp4ybrzacnav5h",
-        "type": "tarball",
-        "url": "https://github.com/nmattia/naersk/archive/e09c320446c5c2516d430803f7b19f5833781337.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
@@ -158,30 +122,6 @@
         "sha256": "0xhhm1gk28fhzqsd260kr007vpir10xvp5cq0sdy1fnzzp8wcyf5",
         "type": "tarball",
         "url": "https://github.com/NixOS/nixos-hardware/archive/7da029f26849f8696ac49652312c9171bf9eb170.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "nixos-unstable": {
-        "branch": "nixos-unstable",
-        "description": "Nix Packages collection",
-        "homepage": "",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6ef4f522d63f22b40004319778761040d3197390",
-        "sha256": "0cz02l0mdjr5vnv0kfkiabdjc3mv26lva414ksaf3xpan3sp08s1",
-        "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/6ef4f522d63f22b40004319778761040d3197390.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "nixpkgs": {
-        "branch": "nixpkgs-unstable",
-        "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",
-        "homepage": "https://github.com/NixOS/nixpkgs",
-        "owner": "NixOS",
-        "repo": "nixpkgs-channels",
-        "rev": "502845c3e31ef3de0e424f3fcb09217df2ce6df6",
-        "sha256": "0fcqpsy6y7dgn0y0wgpa56gsg0b0p8avlpjrd79fp4mp9bl18nda",
-        "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/502845c3e31ef3de0e424f3fcb09217df2ce6df6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-mozilla": {
@@ -222,13 +162,6 @@
         "url": "https://github.com/whereswaldon/shellcheck.kak/archive/4e633978c119bbb71f215828f7b59cea71a2c5a4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "similar-sort": {
-        "sha256": "0sykdp82cby1ikw4pxzcp1hrhj51dwz0zpprcsj03hhsyg0c1j7b",
-        "type": "tarball",
-        "url": "https://git.bytes.zone/brian/similar-sort/archive/301de2b5f83aba77a14b4df33347e8157de4f9ca.tar.gz",
-        "url_template": "https://git.bytes.zone/brian/similar-sort/archive/<version>.tar.gz",
-        "version": "301de2b5f83aba77a14b4df33347e8157de4f9ca"
-    },
     "smarttab.kak": {
         "branch": "master",
         "description": "Automatic handling different styles of indentation and alignment. Mirror of https://gitlab.com/andreyorst/smarttab.kak",
@@ -241,23 +174,5 @@
         "type": "tarball",
         "url": "https://github.com/andreyorst/smarttab.kak/archive/1dd3f33c4f65da5c13aee5d44b2e77399595830f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "tmux": {
-        "branch": "master",
-        "description": "tmux source code",
-        "homepage": "",
-        "owner": "tmux",
-        "repo": "tmux",
-        "rev": "33e332428c41408cc51ade69c9cbf1994dbab431",
-        "sha256": "0vqjsbbw5r9a8g012szrvhc2k3dwpks9kp4hrybj72yid8df3mxg",
-        "type": "tarball",
-        "url": "https://github.com/tmux/tmux/archive/33e332428c41408cc51ade69c9cbf1994dbab431.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "tree-grepper": {
-        "branch": "main",
-        "repo": "https://git.bytes.zone/brian/tree-grepper.git",
-        "rev": "62cfa89a596e8eff5a053ed02508113bd550f79f",
-        "type": "git"
     }
 }
