@@ -8,7 +8,12 @@ in {
   programs.kakoune = {
     enable = true;
 
-    plugins = with pkgs.kakounePlugins; [ active-window kak-auto-pairs tug ];
+    plugins = with pkgs.kakounePlugins; [
+      active-window
+      kak-auto-pairs
+      kakoune-find
+      tug
+    ];
 
     config = {
       scrollOff.lines = 5;

@@ -34,6 +34,10 @@
       url = "github:greenfork/active-window.kak";
       flake = false;
     };
+    kakoune-find = {
+      url = "github:occivink/kakoune-find";
+      flake = false;
+    };
     tug = {
       url = "github:matthias-margush/tug";
       flake = false;
@@ -82,6 +86,8 @@
           in prev.kakounePlugins // {
             active-window =
               buildKakounePlugin "active-window" inputs.active-window;
+            kakoune-find =
+              buildKakounePlugin "kakoune-find" inputs.kakoune-find;
             tug = buildKakounePlugin "tug" inputs.tug;
           };
         })

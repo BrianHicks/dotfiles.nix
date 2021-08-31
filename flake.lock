@@ -97,6 +97,22 @@
         "type": "github"
       }
     },
+    "kakoune-find": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1628326515,
+        "narHash": "sha256-LrAbkRqi2B3qSjX4/idLs/j43eDHjGEu1z7tyov5C3g=",
+        "owner": "occivink",
+        "repo": "kakoune-find",
+        "rev": "618b4a613ce7652c646dfecc3dff0bb35ebafb91",
+        "type": "github"
+      },
+      "original": {
+        "owner": "occivink",
+        "repo": "kakoune-find",
+        "type": "github"
+      }
+    },
     "naersk": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -228,6 +244,7 @@
         "comma": "comma",
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
+        "kakoune-find": "kakoune-find",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",

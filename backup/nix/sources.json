@@ -36,19 +36,6 @@
         "url": "https://github.com/Delapouite/kakoune-auto-percent/archive/efca07df24074823425b5e56487c7a24c97111f5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakoune-find": {
-        "branch": "master",
-        "description": "Find and replace on open buffers",
-        "homepage": "",
-        "kakoune": "plugin",
-        "owner": "occivink",
-        "repo": "kakoune-find",
-        "rev": "618b4a613ce7652c646dfecc3dff0bb35ebafb91",
-        "sha256": "0y0bz65wmv9yswp63367w3fziy5k9ckzxy1m9bm1vn523a8ipc1f",
-        "type": "tarball",
-        "url": "https://github.com/occivink/kakoune-find/archive/618b4a613ce7652c646dfecc3dff0bb35ebafb91.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-idris": {
         "branch": "master",
         "description": "Idris 2 IDE Protocol Integration for Kakoune",
