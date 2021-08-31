@@ -40,6 +40,10 @@
       url = "github:greenfork/active-window.kak";
       flake = false;
     };
+    kak-subvert = {
+      url = "github:dmerejkowsky/kak-subvert";
+      flake = false;
+    };
     kakoune-find = {
       url = "github:occivink/kakoune-find";
       flake = false;
@@ -71,73 +75,80 @@
       mkOverlays = system: [
         inputs.similar-sort.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
-        (final: prev: {
-          tmux = prev.tmux.overrideAttrs (attrs:
-            attrs // {
-              src = inputs.tmux;
+        (final: prev:
+          let naersk = inputs.naersk.lib."${system}";
+          in {
+            tmux = prev.tmux.overrideAttrs (attrs:
+              attrs // {
+                src = inputs.tmux;
 
-              # macOS does some weird stuff with locales and character widths.
-              # Practically, that means that without extra support tmux will
-              # behave weirdly around multi-byte characters like emoji. Enabling
-              # utf8proc support should backfill the right tables so that tmux
-              # can get the correct character widths.
-              buildInputs = attrs.buildInputs ++ [ prev.utf8proc ];
-              configureFlags = attrs.configureFlags ++ [ "--enable-utf8proc" ];
-            });
+                # macOS does some weird stuff with locales and character widths.
+                # Practically, that means that without extra support tmux will
+                # behave weirdly around multi-byte characters like emoji. Enabling
+                # utf8proc support should backfill the right tables so that tmux
+                # can get the correct character widths.
+                buildInputs = attrs.buildInputs ++ [ prev.utf8proc ];
+                configureFlags = attrs.configureFlags
+                  ++ [ "--enable-utf8proc" ];
+              });
 
-          git-gclone = final.callPackage ./pkgs/git-gclone { };
+            git-gclone = final.callPackage ./pkgs/git-gclone { };
 
-          # is this going to cause problems by not actually being a package?
-          fzf-tab = inputs.fzf-tab;
+            # is this going to cause problems by not actually being a package?
+            fzf-tab = inputs.fzf-tab;
 
-          lazygit-window = final.callPackage ./pkgs/lazygit-window { };
+            lazygit-window = final.callPackage ./pkgs/lazygit-window { };
 
-          tmux-session = final.callPackage ./pkgs/tmux-session { };
+            tmux-session = final.callPackage ./pkgs/tmux-session { };
 
-          comma = final.callPackage inputs.comma { };
+            comma = final.callPackage inputs.comma { };
 
-          kak-session = final.callPackage ./pkgs/kak-session { };
+            kak-session = final.callPackage ./pkgs/kak-session { };
 
-          kakounePlugins = let
-            buildKakounePlugin = name: input:
-              final.kakouneUtils.buildKakounePlugin {
-                inherit name;
-                version = input.rev;
-                src = input;
+            kak-subvert = naersk.buildPackage inputs.kak-subvert;
+
+            kakounePlugins = let
+              buildKakounePlugin = name: input:
+                final.kakouneUtils.buildKakounePlugin {
+                  inherit name;
+                  version = input.rev;
+                  src = input;
+                };
+            in prev.kakounePlugins // {
+              active-window =
+                buildKakounePlugin "active-window" inputs.active-window;
+
+              kak-subvert = buildKakounePlugin "kak-subvert" inputs.kak-subvert;
+
+              kakoune-find =
+                buildKakounePlugin "kakoune-find" inputs.kakoune-find;
+
+              kakoune-idris = final.kakouneUtils.buildKakounePlugin {
+                name = "kakoune-idris";
+                version = inputs.kakoune-idris.rev;
+                src = inputs.kakoune-idris;
+                patches = [
+                  (builtins.fetchurl {
+                    url =
+                      "https://patch-diff.githubusercontent.com/raw/stoand/kakoune-idris/pull/9.patch";
+                    sha256 =
+                      "sha256:1hwrn4hqji4qi4bxrzvccxcaq9gkd0cmyra3jl8zzaqplh6m7jyn";
+                  })
+                ];
               };
-          in prev.kakounePlugins // {
-            active-window =
-              buildKakounePlugin "active-window" inputs.active-window;
 
-            kakoune-find =
-              buildKakounePlugin "kakoune-find" inputs.kakoune-find;
+              kakoune-surround =
+                buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
 
-            kakoune-idris = final.kakouneUtils.buildKakounePlugin {
-              name = "kakoune-idris";
-              version = inputs.kakoune-idris.rev;
-              src = inputs.kakoune-idris;
-              patches = [
-                (builtins.fetchurl {
-                  url =
-                    "https://patch-diff.githubusercontent.com/raw/stoand/kakoune-idris/pull/9.patch";
-                  sha256 =
-                    "sha256:1hwrn4hqji4qi4bxrzvccxcaq9gkd0cmyra3jl8zzaqplh6m7jyn";
-                })
-              ];
+              shellcheck-kak =
+                buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
+
+              smarttab-kak =
+                buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
+
+              tug = buildKakounePlugin "tug" inputs.tug;
             };
-
-            kakoune-surround =
-              buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
-
-            shellcheck-kak =
-              buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
-
-            smarttab-kak =
-              buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
-
-            tug = buildKakounePlugin "tug" inputs.tug;
-          };
-        })
+          })
       ];
     in {
       nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem rec {

@@ -11,18 +11,6 @@
         "url": "https://github.com/kak-lsp/kak-lsp/archive/bad9859300ef1168b1422469247c8cbeeb029d2f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kak-subvert": {
-        "branch": "master",
-        "description": "Port of Tim Pope's vim abolish plugin coertion features to Kakoune",
-        "homepage": "",
-        "owner": "dmerejkowsky",
-        "repo": "kak-subvert",
-        "rev": "2aaf8b190692eb68d98facdd06cdf0446c79bd76",
-        "sha256": "0ih278zxy1ppxjd6h36hkb5rc8kydsskwazrik5zdksi2yjbjlak",
-        "type": "tarball",
-        "url": "https://github.com/dmerejkowsky/kak-subvert/archive/2aaf8b190692eb68d98facdd06cdf0446c79bd76.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "kakoune-auto-percent": {
         "branch": "master",
         "description": "Enhance some primitives with bigger selections.",

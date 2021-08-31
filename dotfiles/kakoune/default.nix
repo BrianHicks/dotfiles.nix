@@ -14,6 +14,7 @@ in {
       kakoune-find
       kakoune-idris
       kakoune-surround
+      kak-subvert
       shellcheck-kak
       smarttab-kak
       tug
@@ -105,6 +106,19 @@ in {
       map global surround d ': delete-surround<ret>' -docstring 'Delete'
       map global surround t ': select-surrounding-tag<ret>' -docstring 'Select tag'
       map global user s ': enter-user-mode surround<ret>' -docstring 'Surround'
+
+      # kak-subvert
+      declare-user-mode subvert
+      map global user c ': enter-user-mode subvert<ret>' -docstring 'case changes'
+      map global subvert c '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert camel <ret>' -docstring 'convert to camelCase'
+      map global subvert k '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert kebab <ret>' -docstring 'convert to kebab-case'
+      map global subvert p '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert pascal <ret>' -docstring 'convert to PascalCase'
+      map global subvert . '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert sentence <ret>' -docstring 'convert to Sentence case'
+      map global subvert s '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert snake <ret>' -docstring 'convert to snake_case'
+      map global subvert S '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert screaming <ret>' -docstring 'convert to SCREAMING_CASE'
+      map global subvert t '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert train <ret>' -docstring 'convert to Train-Case'
+      map global subvert T '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert title <ret>' -docstring 'convert to Title Case'
+      map global subvert u '<esc> | ${pkgs.kak-subvert}/bin/kak-subvert ugly <ret>' -docstring 'convert to Ugly_Case'
 
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{

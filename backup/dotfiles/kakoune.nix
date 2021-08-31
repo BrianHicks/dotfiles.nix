@@ -132,19 +132,6 @@ in {
 
       map global user r ': tree-select-parent-node<ret>' -docstring 'Select Parent'
 
-      # kak-subvert
-      declare-user-mode subvert
-      map global user c ': enter-user-mode subvert<ret>' -docstring 'case changes'
-      map global subvert c '<esc> | ${kak-subvert} camel <ret>' -docstring 'convert to camelCase'
-      map global subvert k '<esc> | ${kak-subvert} kebab <ret>' -docstring 'convert to kebab-case'
-      map global subvert p '<esc> | ${kak-subvert} pascal <ret>' -docstring 'convert to PascalCase'
-      map global subvert . '<esc> | ${kak-subvert} sentence <ret>' -docstring 'convert to Sentence case'
-      map global subvert s '<esc> | ${kak-subvert} snake <ret>' -docstring 'convert to snake_case'
-      map global subvert S '<esc> | ${kak-subvert} screaming <ret>' -docstring 'convert to SCREAMING_CASE'
-      map global subvert t '<esc> | ${kak-subvert} train <ret>' -docstring 'convert to Train-Case'
-      map global subvert T '<esc> | ${kak-subvert} title <ret>' -docstring 'convert to Title Case'
-      map global subvert u '<esc> | ${kak-subvert} ugly <ret>' -docstring 'convert to Ugly_Case'
-
       # outline jumping
       set global tree_grepper_path "${tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"

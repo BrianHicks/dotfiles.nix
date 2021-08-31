@@ -97,6 +97,22 @@
         "type": "github"
       }
     },
+    "kak-subvert": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1589477700,
+        "narHash": "sha256-U1G5pBdRz/bLjPkrPrVufiKWy5rQDGia7PcG3z86AkY=",
+        "owner": "dmerejkowsky",
+        "repo": "kak-subvert",
+        "rev": "2aaf8b190692eb68d98facdd06cdf0446c79bd76",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmerejkowsky",
+        "repo": "kak-subvert",
+        "type": "github"
+      }
+    },
     "kakoune-find": {
       "flake": false,
       "locked": {
@@ -232,6 +248,7 @@
         "comma": "comma",
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
+        "kak-subvert": "kak-subvert",
         "kakoune-find": "kakoune-find",
         "kakoune-idris": "kakoune-idris",
         "kakoune-surround": "kakoune-surround",
