@@ -44,6 +44,10 @@
       url = "github:dmerejkowsky/kak-subvert";
       flake = false;
     };
+    kakoune-auto-percent = {
+      url = "github:Delapouite/kakoune-auto-percent";
+      flake = false;
+    };
     kakoune-find = {
       url = "github:occivink/kakoune-find";
       flake = false;
@@ -119,6 +123,9 @@
                 buildKakounePlugin "active-window" inputs.active-window;
 
               kak-subvert = buildKakounePlugin "kak-subvert" inputs.kak-subvert;
+
+              kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
+                inputs.kakoune-auto-percent;
 
               kakoune-find =
                 buildKakounePlugin "kakoune-find" inputs.kakoune-find;

@@ -11,6 +11,7 @@ in {
     plugins = with pkgs.kakounePlugins; [
       active-window
       kak-auto-pairs
+      kakoune-auto-percent
       kakoune-find
       kakoune-idris
       kakoune-surround

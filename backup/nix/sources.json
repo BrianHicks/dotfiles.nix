@@ -11,19 +11,6 @@
         "url": "https://github.com/kak-lsp/kak-lsp/archive/bad9859300ef1168b1422469247c8cbeeb029d2f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "kakoune-auto-percent": {
-        "branch": "master",
-        "description": "Enhance some primitives with bigger selections.",
-        "homepage": "http://kakoune.org",
-        "kakoune": "plugin",
-        "owner": "Delapouite",
-        "repo": "kakoune-auto-percent",
-        "rev": "efca07df24074823425b5e56487c7a24c97111f5",
-        "sha256": "1ff1fc6lqa42hia2nlyxqyg9bsbf8msi0x8vxyl6wpl5j2wvmpay",
-        "type": "tarball",
-        "url": "https://github.com/Delapouite/kakoune-auto-percent/archive/efca07df24074823425b5e56487c7a24c97111f5.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "nixpkgs-mozilla": {
         "branch": "master",
         "description": "mozilla related nixpkgs (extends nixos/nixpkgs repo)",

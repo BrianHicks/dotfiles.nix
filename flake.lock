@@ -113,6 +113,22 @@
         "type": "github"
       }
     },
+    "kakoune-auto-percent": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1570546357,
+        "narHash": "sha256-Xt26uZCFXm6o7xt1EHVFbumVnsfdUytUhIIoTA1zwbk=",
+        "owner": "Delapouite",
+        "repo": "kakoune-auto-percent",
+        "rev": "efca07df24074823425b5e56487c7a24c97111f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Delapouite",
+        "repo": "kakoune-auto-percent",
+        "type": "github"
+      }
+    },
     "kakoune-find": {
       "flake": false,
       "locked": {
@@ -249,6 +265,7 @@
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "kak-subvert": "kak-subvert",
+        "kakoune-auto-percent": "kakoune-auto-percent",
         "kakoune-find": "kakoune-find",
         "kakoune-idris": "kakoune-idris",
         "kakoune-surround": "kakoune-surround",
