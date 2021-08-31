@@ -14,6 +14,7 @@ in {
       kakoune-find
       kakoune-surround
       shellcheck-kak
+      smarttab-kak
       tug
     ];
 
@@ -105,11 +106,15 @@ in {
       map global user s ': enter-user-mode surround<ret>' -docstring 'Surround'
 
       # Languages
+      define-command expandtab-with-width -params 1 -hidden %{
+        expandtab
+        set-option buffer tabstop %arg{1}
+        set-option buffer softtabstop %arg{1}
+        set-option buffer indentwidth %arg{1}
+      }
+
       hook global WinSetOption filetype=nix %{
-        #expandtab
-        #set-option buffer tabstop 2
-        #set-option buffer softtabstop 2
-        #set-option buffer indentwidth 2
+        expandtab-with-width 2
 
         # formatting
         set-option buffer formatcmd ${pkgs.nixfmt}/bin/nixfmt
@@ -117,10 +122,7 @@ in {
       }
 
       hook global WinSetOption filetype=sh %{
-        #expandtab
-        #set-option buffer softtabstop 2
-        #set-option buffer tabstop 2
-        #set-option buffer indentwidth 2
+        expandtab-with-width 2
 
         hook buffer BufWritePre .* lint
       }

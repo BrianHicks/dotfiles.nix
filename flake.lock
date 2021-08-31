@@ -267,6 +267,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "shellcheck-kak": "shellcheck-kak",
         "similar-sort": "similar-sort",
+        "smarttab-kak": "smarttab-kak",
         "tmux": "tmux",
         "tree-grepper": "tree-grepper",
         "tug": "tug"
@@ -309,6 +310,22 @@
         "ref": "main",
         "type": "git",
         "url": "https://git.bytes.zone/brian/similar-sort.git"
+      }
+    },
+    "smarttab-kak": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1614190700,
+        "narHash": "sha256-4kEXeYKJrEIzJ+aEP/zTUjtWcRbbKm5Levbe9w6ZiTw=",
+        "owner": "andreyorst",
+        "repo": "smarttab.kak",
+        "rev": "1dd3f33c4f65da5c13aee5d44b2e77399595830f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andreyorst",
+        "repo": "smarttab.kak",
+        "type": "github"
       }
     },
     "tmux": {

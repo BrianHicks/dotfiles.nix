@@ -122,18 +122,5 @@
         "type": "tarball",
         "url": "https://github.com/alexherbo2/prelude.kak/archive/5dbdc020c546032885c1fdb463e366cc89fc15ad.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "smarttab.kak": {
-        "branch": "master",
-        "description": "Automatic handling different styles of indentation and alignment. Mirror of https://gitlab.com/andreyorst/smarttab.kak",
-        "homepage": "",
-        "kakoune": "plugin",
-        "owner": "andreyorst",
-        "repo": "smarttab.kak",
-        "rev": "1dd3f33c4f65da5c13aee5d44b2e77399595830f",
-        "sha256": "0g49k47ggppng95nwanv2rqmcfsjsgy3z1764wrl5b49h9wifhg2",
-        "type": "tarball",
-        "url": "https://github.com/andreyorst/smarttab.kak/archive/1dd3f33c4f65da5c13aee5d44b2e77399595830f.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

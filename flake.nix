@@ -46,6 +46,10 @@
       url = "github:whereswaldon/shellcheck.kak";
       flake = false;
     };
+    smarttab-kak = {
+      url = "github:andreyorst/smarttab.kak";
+      flake = false;
+    };
     tug = {
       url = "github:matthias-margush/tug";
       flake = false;
@@ -100,6 +104,8 @@
               buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
             shellcheck-kak =
               buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
+            smarttab-kak =
+              buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
             tug = buildKakounePlugin "tug" inputs.tug;
           };
         })
