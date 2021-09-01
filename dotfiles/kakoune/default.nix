@@ -145,11 +145,53 @@ in {
         set-option buffer indentwidth %arg{1}
       }
 
+      hook global WinSetOption filetype=elm %{
+        expandtab-with-width 4
+
+        # formatting
+        set-option buffer formatcmd 'elm-format --stdin'
+        hook buffer BufWritePre .* format
+
+        # extra commands
+        map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
+        map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
+      }
+
+      hook global WinSetOption filetype=haskell %{
+        expandtab-with-width 2
+
+        evaluate-commands %sh{
+          if which ormolu > /dev/null; then
+            echo 'set-option buffer formatcmd ormolu'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
+
+      hook global WinSetOption filetype=html %{
+        expandtab-with-width 2
+      }
+
       hook global WinSetOption filetype=idris %{
         expandtab-with-width 2
 
         set buffer idris_node_binary_path "${pkgs.nodejs}/bin/node"
         map global user d ': enter-user-mode idris-ide<ret>' -docstring 'Idris IDE'
+      }
+
+      hook global WinSetOption filetype=json %{
+        expandtab-with-width 2
+      }
+
+      hook global WinSetOption filetype=javascript %{
+        expandtab-with-width 2
+
+        evaluate-commands %sh{
+          if which prettier > /dev/null; then
+            echo 'set-option buffer formatcmd "prettier --parser=typescript"'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
       }
 
       hook global WinSetOption filetype=nix %{
@@ -160,10 +202,67 @@ in {
         hook buffer BufWritePre .* format
       }
 
+      hook global WinSetOption filetype=python %{
+        expandtab-with-width 4
+
+        evaluate-commands %sh{
+          if which black > /dev/null; then
+            echo 'set-option buffer formatcmd "black - --quiet --fast"'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
+
+      hook global WinSetOption filetype=ruby %{
+        expandtab-with-width 2
+      }
+
+      hook global WinSetOption filetype=rust %{
+        expandtab-with-width 4
+
+        evaluate-commands %sh{
+          if which rustfmt > /dev/null; then
+            echo 'set-option buffer formatcmd rustfmt'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+
+        # lsp-enable-window
+
+        # hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
+        # hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
+        # hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
+        # hook -once -always window WinSetOption filetype=.* %{
+        #   remove-hooks window rust-inlay-hints
+        # }
+
+        # hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+        # hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+        # hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+        # hook -once -always window WinSetOption filetype=.* %{
+        #   remove-hooks window semantic-tokens
+        # }
+      }
+
       hook global WinSetOption filetype=sh %{
         expandtab-with-width 2
 
         hook buffer BufWritePre .* lint
+      }
+
+      hook global WinSetOption filetype=terraform %{
+        expandtab-with-width 2
+        
+        evaluate-commands %sh{
+          if which terraform > /dev/null; then
+            echo 'set-option buffer formatcmd "terraform fmt -"'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
+      }
+
+      hook global WinSetOption filetype=ts %{
+        expandtab-with-width 2
       }
     '';
   };
