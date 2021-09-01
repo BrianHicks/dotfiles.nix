@@ -116,6 +116,12 @@ in {
       # kak-subvert
       map global user c ': enter-user-mode subvert<ret>' -docstring 'case changes'
 
+      # File Browsing
+      require-module open
+      set global similar_sort_path '${pkgs.similar-sort}/bin/similar-sort'
+      map global normal <minus> ': open-similar<ret>'
+      map global normal _ ': open-similar-buffer<ret>'
+
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
         expandtab

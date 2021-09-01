@@ -113,11 +113,6 @@ in {
       require-module auto-pairs
       auto-pairs-enable
 
-      # File Browsing
-      set global similar_sort_path '${similar-sort}/bin/similar-sort'
-      map global normal <minus> ': open-similar<ret>'
-      map global normal _ ': open-similar-buffer<ret>'
-
       # kak-tree
       set global tree_cmd '${kak-tree.kak-tree}/bin/kak-tree'
 

@@ -24,3 +24,5 @@ define-command -docstring 'open buffers named similarly to the current buffer' o
         printf "evaluate-commands -client %s edit '%s'\n" "$3" "$BUFFER" | kak -p $4
     } -- %opt{similar_sort_path} %val{bufname} %val{client} %val{session} %sh{ echo $PWD } %val{buflist}
 }
+
+provide-module open nop
