@@ -19,6 +19,11 @@ in {
       shellcheck-kak
       smarttab-kak
       tug
+
+      (pkgs.kakouneUtils.buildKakounePlugin {
+        name = "dotfiles";
+        src = ./rc;
+      })
     ];
 
     config = {
