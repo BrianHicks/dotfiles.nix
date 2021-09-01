@@ -80,7 +80,14 @@
         inputs.similar-sort.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
         (final: prev:
-          let naersk = inputs.naersk.lib."${system}";
+          let
+            naersk = inputs.naersk.lib."${system}";
+
+            # kak-tree uses submodules. I don't know how to get Nix to fetch
+            # those in a flake, so we source with fetchgit instead, all wrapped
+            # up in this package. I'd love to move it to a real flake, though,
+            # so things would be all in one place!
+            kak-tree = final.callPackage ./pkgs/kak-tree { inherit naersk; };
           in {
             comma = final.callPackage inputs.comma { };
 
@@ -92,6 +99,8 @@
             kak-session = final.callPackage ./pkgs/kak-session { };
 
             kak-subvert = naersk.buildPackage inputs.kak-subvert;
+
+            kak-tree = kak-tree.kak-tree;
 
             kakounePlugins = let
               buildKakounePlugin = name: input:
@@ -105,6 +114,8 @@
                 buildKakounePlugin "active-window" inputs.active-window;
 
               kak-subvert = buildKakounePlugin "kak-subvert" inputs.kak-subvert;
+
+              kak-tree = kak-tree.kakounePlugins.kak-tree;
 
               kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
                 inputs.kakoune-auto-percent;

@@ -113,20 +113,6 @@ in {
       require-module auto-pairs
       auto-pairs-enable
 
-      # kak-tree
-      set global tree_cmd '${kak-tree.kak-tree}/bin/kak-tree'
-
-      declare-user-mode tree
-      map global user t ': enter-user-mode -lock tree<ret>' -docstring 'Tree Selection'
-      map global tree h ': tree-select-parent-node<ret>' -docstring 'Parent'
-      map global tree <a-l> ': tree-select-children<ret>' -docstring 'Children'
-      map global tree l ': tree-select-first-child<ret>' -docstring 'First Child'
-      map global tree j ': tree-select-next-node<ret>' -docstring 'Next Node'
-      map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
-      map global tree d ': tree-select-parent-node value_declaration<ret>' -docstring 'Parent Declaration'
-
-      map global user r ': tree-select-parent-node<ret>' -docstring 'Select Parent'
-
       # outline jumping
       set global tree_grepper_path "${tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"

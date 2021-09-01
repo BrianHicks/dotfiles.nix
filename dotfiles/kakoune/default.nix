@@ -11,6 +11,7 @@ in {
     plugins = with pkgs.kakounePlugins; [
       active-window
       kak-auto-pairs
+      kak-tree
       kakoune-auto-percent
       kakoune-find
       kakoune-idris
@@ -121,6 +122,20 @@ in {
       set global similar_sort_path '${pkgs.similar-sort}/bin/similar-sort'
       map global normal <minus> ': open-similar<ret>'
       map global normal _ ': open-similar-buffer<ret>'
+
+      # kak-tree
+      set global tree_cmd '${pkgs.kak-tree}/bin/kak-tree'
+
+      declare-user-mode tree
+      map global user t ': enter-user-mode -lock tree<ret>' -docstring 'Tree Selection'
+      map global tree h ': tree-select-parent-node<ret>' -docstring 'Parent'
+      map global tree <a-l> ': tree-select-children<ret>' -docstring 'Children'
+      map global tree l ': tree-select-first-child<ret>' -docstring 'First Child'
+      map global tree j ': tree-select-next-node<ret>' -docstring 'Next Node'
+      map global tree k ': tree-select-previous-node<ret>' -docstring 'Previous Node'
+      map global tree d ': tree-select-parent-node value_declaration<ret>' -docstring 'Parent Declaration'
+
+      map global user r ': tree-select-parent-node<ret>' -docstring 'Select Parent'
 
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
