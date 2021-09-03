@@ -137,6 +137,10 @@ in {
 
       map global user r ': tree-select-parent-node<ret>' -docstring 'Select Parent'
 
+      # outline jumping
+      set global tree_grepper_path "${pkgs.tree-grepper}/bin/tree-grepper"
+      set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
+
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
         expandtab
@@ -155,6 +159,8 @@ in {
         # extra commands
         map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
         map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
+
+        map buffer normal <a-minus> ': outline-jump-elm<ret>'
       }
 
       hook global WinSetOption filetype=haskell %{
@@ -166,6 +172,8 @@ in {
             echo 'hook buffer BufWritePre .* format'
           fi
         }
+
+        map buffer normal <a-minus> ': outline-jump-haskell<ret>'
       }
 
       hook global WinSetOption filetype=html %{
@@ -215,6 +223,8 @@ in {
 
       hook global WinSetOption filetype=ruby %{
         expandtab-with-width 2
+
+        map buffer normal <a-minus> ': outline-jump-ruby<ret>'
       }
 
       hook global WinSetOption filetype=rust %{
@@ -226,6 +236,8 @@ in {
             echo 'hook buffer BufWritePre .* format'
           fi
         }
+
+        map buffer normal <a-minus> ': outline-jump-rust<ret>'
 
         # lsp-enable-window
 
