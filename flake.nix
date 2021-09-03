@@ -154,6 +154,7 @@
             tmux = prev.tmux.overrideAttrs (attrs:
               attrs // {
                 src = inputs.tmux;
+                version = inputs.tmux.rev;
 
                 # macOS does some weird stuff with locales and character widths.
                 # Practically, that means that without extra support tmux will
