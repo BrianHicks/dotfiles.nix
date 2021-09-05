@@ -113,6 +113,8 @@
               active-window =
                 buildKakounePlugin "active-window" inputs.active-window;
 
+              kak-ayu = final.callPackage ./pkgs/kak-ayu { };
+
               kak-subvert = buildKakounePlugin "kak-subvert" inputs.kak-subvert;
 
               kak-tree = kak-tree.kakounePlugins.kak-tree;

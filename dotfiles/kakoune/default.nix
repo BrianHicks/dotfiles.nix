@@ -11,6 +11,7 @@ in {
     plugins = with pkgs.kakounePlugins; [
       active-window
       kak-auto-pairs
+      kak-ayu
       kak-tree
       kakoune-auto-percent
       kakoune-find

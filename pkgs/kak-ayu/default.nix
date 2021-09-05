@@ -5,14 +5,14 @@ let builder = (import ./node.nix { inherit pkgs system; }).package;
 in with pkgs;
 stdenv.mkDerivation {
   name = "kak-ayu";
-  src = ./dummy;
+  src = ./fakesrc;
 
   buildPhase = ''
     ${builder}/lib/node_modules/kak-ayu/bin/build.js
   '';
 
   installPhase = ''
-    mkdir $out
-    cp *.kak $out/
+    mkdir -p $out/share/kak/colors
+    cp *.kak $out/share/kak/colors
   '';
 }
