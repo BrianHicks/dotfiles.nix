@@ -80,7 +80,9 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1630076227,
@@ -244,22 +246,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1629363591,
-        "narHash": "sha256-Pv+nvztiR7BkWrWSgJnG9tFaNWkTdttjHKFc/YQwBxs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "f9698c475d357182c98ca93abf7957ad3e248be6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "release-21.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "active-window": "active-window",
@@ -273,7 +259,7 @@
         "kakoune-surround": "kakoune-surround",
         "naersk": "naersk",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "shellcheck-kak": "shellcheck-kak",
         "similar-sort": "similar-sort",
