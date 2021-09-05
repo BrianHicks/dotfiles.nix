@@ -76,6 +76,10 @@ in {
       }) } -- %val{session} %val{bufname}<ret>' -docstring "horizontal split with fzf"
       map global window <a-s> ': tmux-terminal-vertical sh -c %{ kak -c $1 $2 } -- %val{session} %val{bufname} <ret>' -docstring "horizontal split"
 
+      # automatically match opening/closing pairs like () and []
+      require-module auto-pairs
+      auto-pairs-enable
+
       # Git status
       hook global WinSetOption filetype=.+ %{ git show-diff }
       hook global BufWritePost .* %{ git update-diff }

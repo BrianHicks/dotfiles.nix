@@ -78,10 +78,6 @@ in {
     enable = true;
 
     extraConfig = ''
-      # automatically match opening/closing pairs like () and []
-      require-module auto-pairs
-      auto-pairs-enable
-
       # language server
       # eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
       # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
