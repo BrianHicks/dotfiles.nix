@@ -32,7 +32,7 @@ in {
     ];
 
     config = {
-      colorScheme = "ayu-mirage";
+      colorScheme = "gruvbox";
       scrollOff.lines = 5;
       numberLines = {
         enable = true;
