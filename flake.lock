@@ -65,11 +65,11 @@
     "fzf-tab": {
       "flake": false,
       "locked": {
-        "lastModified": 1628145081,
-        "narHash": "sha256-vfF0uEznND3p7eWHLLrnLIw80gVXQ7Zi4Qu+3GgIAL0=",
+        "lastModified": 1630831867,
+        "narHash": "sha256-lnzOsbVZsciTcvfeLaN0SLfssn6ZGXf85dXwPibJAG4=",
         "owner": "Aloxaf",
         "repo": "fzf-tab",
-        "rev": "89a33154707c09789177a893e5a8ebbb131d5d3d",
+        "rev": "220bee396dd3c2024baa54015a928d5915e4f48f",
         "type": "github"
       },
       "original": {
