@@ -6,7 +6,7 @@
       import XMonad
       import XMonad.Util.EZConfig
 
-      main = xmonad $ defaultConfig
+      main = xmonad $ def
           { terminal = "alacritty"
           }
           `additionalKeysP`
