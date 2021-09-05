@@ -163,8 +163,9 @@ in {
       set global tree_grepper_path "${pkgs.tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
 
-      # LSP
-      # ${pkgs.kak-lsp}
+      # language server
+      # eval %sh{${pkgs.kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
+      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
 
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
@@ -303,4 +304,11 @@ in {
       }
     '';
   };
+
+  home.file.".config/kak-lsp/kak-lsp.toml".text = ''
+    [language.rust]
+    filetypes = ["rust"]
+    roots = ["Cargo.toml"]
+    command = "${pkgs.rust-analyzer}/bin/rust-analyzer"
+  '';
 }

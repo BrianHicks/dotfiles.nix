@@ -77,11 +77,7 @@ in {
   programs.kakoune = {
     enable = true;
 
-    extraConfig = ''
-      # language server
-      # eval %sh{${kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
-      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
-    '';
+    extraConfig = "";
   };
 
   # plugins
@@ -90,10 +86,4 @@ in {
   home.file.".config/kak/autoload".source =
     "${kakoune.mkPlugins plugins}/share/kak/autoload";
 
-  home.file.".config/kak-lsp/kak-lsp.toml".text = ''
-    [language.rust]
-    filetypes = ["rust"]
-    roots = ["Cargo.toml"]
-    command = "${pkgs.rust-analyzer}/bin/rust-analyzer"
-  '';
 }
