@@ -17,8 +17,6 @@ in {
   ];
 
   home.packages = [
-    (pkgs.callPackage ../pkgs/tree-grepper { })
-
     # remote packages. Probably could do this better but I don't really want to
     # at the moment.
     pkgs.cachix

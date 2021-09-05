@@ -17,6 +17,7 @@
     ./ssh
     ./tmux
     ./tree
+    ./tree-grepper
     ./watch
     ./xmonad
     ./xsession
