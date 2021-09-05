@@ -49,6 +49,9 @@ in {
     };
 
     extraConfig = ''
+      # hide changelog on startup
+      set global startup_info_version 20200901
+
       # escape with fd
       hook global InsertChar d %{ try %{
         exec -draft hH <a-k>fd<ret> d
