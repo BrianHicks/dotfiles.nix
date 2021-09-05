@@ -8,6 +8,7 @@
 
       main = xmonad $ def
           { terminal = "alacritty"
+          , modMask = mod4Mask
           }
           `additionalKeysP`
             [ ( "M-p", spawn "rofi -show run" )
