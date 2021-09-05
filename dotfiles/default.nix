@@ -13,6 +13,7 @@
     ./jq
     ./kakoune
     ./keyboard
+    ./niv
     ./rofi
     ./ripgrep
     ./ssh

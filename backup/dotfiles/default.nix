@@ -16,7 +16,7 @@ in {
     ./zsh.nix
   ];
 
-  home.packages = [ niv.niv pkgs.nixfmt ];
+  home.packages = [ pkgs.nixfmt ];
 
   programs.man.enable = true;
   programs.home-manager.enable = true;
