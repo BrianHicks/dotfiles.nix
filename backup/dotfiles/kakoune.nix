@@ -76,25 +76,6 @@ in {
 
   programs.kakoune = {
     enable = true;
-    config = {
-      colorScheme = "ayu-mirage";
-      scrollOff = {
-        columns = 0;
-        lines = 5;
-      };
-      numberLines = {
-        enable = true;
-        highlightCursor = true;
-        separator = ''" "'';
-      };
-      showMatching = true;
-      ui.enableMouse = true;
-      ui.assistant = "clippy";
-      wrapLines = {
-        enable = true;
-        indent = true;
-      };
-    };
 
     extraConfig = ''
       declare-user-mode window
