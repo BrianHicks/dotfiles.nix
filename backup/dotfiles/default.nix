@@ -16,13 +16,7 @@ in {
     ./zsh.nix
   ];
 
-  home.packages = [
-    # remote packages. Probably could do this better but I don't really want to
-    # at the moment.
-    pkgs.cachix
-    niv.niv
-    pkgs.nixfmt
-  ];
+  home.packages = [ niv.niv pkgs.nixfmt ];
 
   programs.man.enable = true;
   programs.home-manager.enable = true;
