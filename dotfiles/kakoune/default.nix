@@ -142,6 +142,9 @@ in {
       set global tree_grepper_path "${pkgs.tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
 
+      # LSP
+      # ${pkgs.kak-lsp}
+
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
         expandtab

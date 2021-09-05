@@ -42,6 +42,10 @@
       url = "github:greenfork/active-window.kak";
       flake = false;
     };
+    kak-lsp = {
+      url = "github:kak-lsp/kak-lsp/v11.0.0";
+      flake = false;
+    };
     kak-subvert = {
       url = "github:dmerejkowsky/kak-subvert";
       flake = false;
@@ -97,6 +101,8 @@
             fzf-tab = inputs.fzf-tab;
 
             git-gclone = final.callPackage ./pkgs/git-gclone { };
+
+            kak-lsp = naersk.buildPackage inputs.kak-lsp;
 
             kak-session = final.callPackage ./pkgs/kak-session { };
 
