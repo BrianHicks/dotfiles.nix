@@ -78,18 +78,6 @@ in {
     enable = true;
 
     extraConfig = ''
-      declare-user-mode window
-      map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
-      map global window v ': tmux-terminal-horizontal sh -c %{ kak -c $1 $(${
-        similar-sort-files-cmd "$2"
-      }) } -- %val{session} %val{bufname}<ret>' -docstring "vertical split with fzf"
-      map global window <a-v> ': tmux-terminal-horizontal sh -c %{ kak -c $1 $2 } -- %val{session} %val{bufname} <ret>' -docstring "vertical split"
-
-      map global window s ': tmux-terminal-vertical sh -c %{ kak -c $1 $(${
-        similar-sort-files-cmd "$2"
-      }) } -- %val{session} %val{bufname}<ret>' -docstring "horizontal split with fzf"
-      map global window <a-s> ': tmux-terminal-vertical sh -c %{ kak -c $1 $2 } -- %val{session} %val{bufname} <ret>' -docstring "horizontal split"
-
       # automatically match opening/closing pairs like () and []
       require-module auto-pairs
       auto-pairs-enable

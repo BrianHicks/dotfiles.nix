@@ -4,6 +4,9 @@ let
     if pkgs.stdenv.isDarwin then "pbcopy" else "${pkgs.xclip}/bin/xclip -in";
   pasteCommand =
     if pkgs.stdenv.isDarwin then "pbpaste" else "${pkgs.xclip}/bin/xclip -out";
+
+  similar-sort-files-cmd = arg:
+    "git ls-files --others --cached --exclude-standard | ${pkgs.similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 in {
   programs.kakoune = {
     enable = true;
@@ -59,6 +62,19 @@ in {
 
       # automatically create directories on save
       # hook global BufWritePre .* %{ mkdir %val{bufname} }
+
+      # nicer window splits
+      declare-user-mode window
+      map global user w ': enter-user-mode window<ret>' -docstring 'Windowing'
+      map global window v ': tmux-terminal-horizontal sh -c %{ kak -c $1 $(${
+        similar-sort-files-cmd "$2"
+      }) } -- %val{session} %val{bufname}<ret>' -docstring "vertical split with fzf"
+      map global window <a-v> ': tmux-terminal-horizontal sh -c %{ kak -c $1 $2 } -- %val{session} %val{bufname} <ret>' -docstring "vertical split"
+
+      map global window s ': tmux-terminal-vertical sh -c %{ kak -c $1 $(${
+        similar-sort-files-cmd "$2"
+      }) } -- %val{session} %val{bufname}<ret>' -docstring "horizontal split with fzf"
+      map global window <a-s> ': tmux-terminal-vertical sh -c %{ kak -c $1 $2 } -- %val{session} %val{bufname} <ret>' -docstring "horizontal split"
 
       # Git status
       hook global WinSetOption filetype=.+ %{ git show-diff }
