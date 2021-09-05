@@ -16,9 +16,6 @@ in {
     ./zsh.nix
   ];
 
-  nixpkgs.overlays =
-    [ (self: super: { tmux = pkgs.callPackage ../pkgs/tmux { }; }) ];
-
   home.packages = [
     (pkgs.callPackage ../pkgs/tree-grepper { })
 
