@@ -7,7 +7,7 @@
       import XMonad.Util.EZConfig
 
       main = xmonad $ def
-          { terminal = "alacritty"
+          { terminal = "${pkgs.alacritty}/bin/alacritty"
           , modMask = mod4Mask
           }
           `additionalKeysP`
