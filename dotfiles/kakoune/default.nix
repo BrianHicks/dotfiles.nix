@@ -29,6 +29,7 @@ in {
     ];
 
     config = {
+      colorScheme = "ayu-mirage";
       scrollOff.lines = 5;
       numberLines = {
         enable = true;
