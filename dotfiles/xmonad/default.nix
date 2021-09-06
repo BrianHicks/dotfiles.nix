@@ -12,6 +12,13 @@
           }
           `additionalKeysP`
             [ ( "M-p", spawn "rofi -show run" )
+
+              -- reminder: look up key presses with xev
+
+              -- volume
+            , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 5%+" )
+            , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 5%-" )
+            , ("<XF86AudioMute>", spawn "amixer sset Master toggle" )
             ]
     '';
   };
