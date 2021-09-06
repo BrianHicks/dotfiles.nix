@@ -13,6 +13,7 @@ inputs:
     # system setup
     (import ../../nixos/nix inputs)
 
+    ../../nixos/1password
     ../../nixos/bluetooth
     ../../nixos/brian
     ../../nixos/gnome-keyring
