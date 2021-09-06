@@ -45,9 +45,10 @@ inputs:
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
+  # Enable sound. TODO: move to sound/default.nix or similar
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  environment.systemPackages = [ pkgs.lxqt.pavucontrol-qt ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
