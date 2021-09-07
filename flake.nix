@@ -208,6 +208,8 @@
             nix.package = pkgs.nixUnstable;
             nixpkgs.overlays = mkOverlays "x86_64-darwin";
           })
+          ./machines/flame
+          inputs.home-manager.darwinModules.home-manager
         ];
       };
     };

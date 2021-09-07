@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../home-manager/nix-darwin ./defaults.nix ];
-
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
@@ -46,7 +44,7 @@
   # dotfiles
   home-manager = {
     useUserPackages = true;
-    users.brianhicks = (import ../dotfiles);
+    users.brianhicks = import ../../dotfiles;
   };
 
   # darwin-rebuild told me to add this, so here we are
