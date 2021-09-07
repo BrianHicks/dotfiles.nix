@@ -4,8 +4,12 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-21.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-21.05-darwin";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     home-manager.url = "github:nix-community/home-manager/release-21.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -195,6 +199,15 @@
           ({ ... }: { nixpkgs.overlays = mkOverlays system; })
           (import ./machines/vbox-dev inputs)
           inputs.home-manager.nixosModules.home-manager
+        ];
+      };
+
+      darwinConfigurations.flame = inputs.darwin.lib.darwinSystem {
+        modules = [
+          ({ pkgs, ... }: {
+            nix.package = pkgs.nixUnstable;
+            nixpkgs.overlays = mkOverlays "x86_64-darwin";
+          })
         ];
       };
     };
