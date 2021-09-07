@@ -10,10 +10,6 @@
     '')
   ];
 
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.dotfiles/darwin/default.nix
-  environment.darwinConfig = "$HOME/code/brian/dotfiles.nix/darwin/default.nix";
-
   # allow zsh as a login shell
   environment.shells = [ pkgs.zsh ];
 
