@@ -18,4 +18,12 @@ if ! kak -l | grep -q "$SESSION"; then
   disown $!
 fi
 
+for DELAY in 0 0 1 1 2 3 5 8; do
+  if kak -l | grep -q "$SESSION"; then
+    break
+  fi
+
+  sleep DELAY
+done
+
 exec kak -c "$SESSION" "${@}"
