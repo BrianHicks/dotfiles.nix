@@ -106,6 +106,8 @@
 
             git-gclone = final.callPackage ./pkgs/git-gclone { };
 
+            gh = inputs.nixpkgs-unstable.legacyPackages."${system}".gh;
+
             kak-lsp = naersk.buildPackage inputs.kak-lsp;
 
             kak-session = final.callPackage ./pkgs/kak-session { };

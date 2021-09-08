@@ -79,6 +79,11 @@ in {
     };
   };
 
-  home.packages =
-    [ pkgs.git-lfs pkgs.lazygit pkgs.gitAndTools.delta pkgs.git-gclone ];
+  home.packages = [
+    pkgs.gh
+    pkgs.git-gclone
+    pkgs.git-lfs
+    pkgs.gitAndTools.delta
+    pkgs.lazygit
+  ];
 }
