@@ -8,6 +8,12 @@ let
   similar-sort-files-cmd = arg:
     "git ls-files --others --cached --exclude-standard | ${pkgs.similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
 in {
+  home.packages = [
+    # there's no configuration option for shellcheck.kak; it has to be in the PATH
+    # to work!
+    pkgs.shellcheck
+  ];
+
   programs.kakoune = {
     enable = true;
 
