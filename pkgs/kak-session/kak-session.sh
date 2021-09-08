@@ -14,16 +14,8 @@ fi
 SESSION=$(basename "$ROOT" | sed 's/\./-/g')
 
 if ! kak -l | grep -q "$SESSION"; then
-  kak -d -s "$SESSION" &
-  disown $!
+  exec kak -s "$SESSION" "${@}"
+else
+  exec kak -c "$SESSION" "${@}"
 fi
 
-for DELAY in 0 0 1 1 2; do
-  if kak -l | grep -q "$SESSION"; then
-    break
-  fi
-
-  sleep $DELAY
-done
-
-exec kak -c "$SESSION" "${@}"
