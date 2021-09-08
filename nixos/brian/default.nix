@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   environment.shells = [ pkgs.zsh ];
 
   users.users.brian = {
@@ -18,7 +18,7 @@
 
   services.borgbackup.jobs.brian-home = {
     user = "brian";
-    group = "";
+    group = config.users.users.brian.group;
 
     repo = "ipi51989@ipi51989.repo.borgbase.com:repo";
 
