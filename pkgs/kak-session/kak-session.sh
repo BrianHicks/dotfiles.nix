@@ -23,7 +23,7 @@ for DELAY in 0 0 1 1 2; do
     break
   fi
 
-  sleep DELAY
+  sleep $DELAY
 done
 
 exec kak -c "$SESSION" "${@}"
