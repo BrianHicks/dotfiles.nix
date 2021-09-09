@@ -385,11 +385,11 @@
     "tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1630573269,
-        "narHash": "sha256-FxsVsXf6OAe+CHZsV1cYu8s5RqYq8sVXM4rJsfmLmK0=",
+        "lastModified": 1631178070,
+        "narHash": "sha256-Yrmyo93gmFricrja6arlgZqMPcr/59zkH8llo9OIYFM=",
         "owner": "tmux",
         "repo": "tmux",
-        "rev": "d776c9acfca7b4b224f19c7a504fcf9980038319",
+        "rev": "cf5e1bb80a0900d87c4969ca03501753da892050",
         "type": "github"
       },
       "original": {
