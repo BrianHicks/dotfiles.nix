@@ -352,11 +352,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1630320215,
-        "narHash": "sha256-BDOAF3M8mBTHonnidms8ufkE+Qs1FdXR1GH3YcF0OTw=",
+        "lastModified": 1631183447,
+        "narHash": "sha256-2oS6lZ+xdqF+6XISiEdboyfDqupg4PzadtynZ3fHAAA=",
         "ref": "main",
-        "rev": "8510a82f45f84254c76b84c8f23e310b589ecf81",
-        "revCount": 43,
+        "rev": "f10f9ab4266ab53e7efea15755da26b4a89cda06",
+        "revCount": 45,
         "type": "git",
         "url": "https://git.bytes.zone/brian/similar-sort.git"
       },
