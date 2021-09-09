@@ -175,6 +175,7 @@ in {
       # language server
       eval %sh{${pkgs.kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
       map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
+      #set global lsp_cmd "${pkgs.kak-lsp}/bin/kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
