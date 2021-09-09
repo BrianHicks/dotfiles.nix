@@ -9,6 +9,7 @@
       main = xmonad $ def
           { terminal = "${pkgs.alacritty}/bin/alacritty"
           , modMask = mod4Mask
+          , startupHook = spawn "xset r rate 300 50"
           }
           `additionalKeysP`
             [ ( "M-p", spawn "rofi -show run" )
