@@ -175,7 +175,7 @@ in {
       # language server
       eval %sh{${pkgs.kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
       map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
-      #set global lsp_cmd "${pkgs.kak-lsp}/bin/kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log --config ~/.config/kak-lsp/kak-lsp.toml"
+      # set global lsp_cmd "${pkgs.kak-lsp}/bin/kak-lsp -s %val{session} -vvv --log kak-lsp.log --config ~/.config/kak-lsp/kak-lsp.toml"
       set global lsp_hover_anchor true
 
       # Languages
@@ -267,16 +267,11 @@ in {
       hook global WinSetOption filetype=rust %{
         expandtab-with-width 4
 
-        evaluate-commands %sh{
-          if which rustfmt > /dev/null; then
-            echo 'set-option buffer formatcmd rustfmt'
-            echo 'hook buffer BufWritePre .* format'
-          fi
-        }
-
         map buffer normal <a-minus> ': outline-jump-rust<ret>'
 
         lsp-enable-window
+
+        hook buffer BufWritePre .* lsp-formatting-sync
 
         hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
         hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
