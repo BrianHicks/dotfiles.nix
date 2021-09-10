@@ -119,23 +119,6 @@
         "type": "github"
       }
     },
-    "kak-lsp": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1630448216,
-        "narHash": "sha256-IACgpOaXgjrIqhCxFH3ejsrd57v70IfdTLChuMcUHqU=",
-        "owner": "kak-lsp",
-        "repo": "kak-lsp",
-        "rev": "1bd2e0547eb129e4e9543cf49548d5365c16f926",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kak-lsp",
-        "ref": "v11.0.0",
-        "repo": "kak-lsp",
-        "type": "github"
-      }
-    },
     "kak-subvert": {
       "flake": false,
       "locked": {
@@ -306,7 +289,6 @@
         "darwin": "darwin",
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
-        "kak-lsp": "kak-lsp",
         "kak-subvert": "kak-subvert",
         "kakoune-auto-percent": "kakoune-auto-percent",
         "kakoune-find": "kakoune-find",

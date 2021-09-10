@@ -46,10 +46,6 @@
       url = "github:greenfork/active-window.kak";
       flake = false;
     };
-    kak-lsp = {
-      url = "github:kak-lsp/kak-lsp/v11.0.0";
-      flake = false;
-    };
     kak-subvert = {
       url = "github:dmerejkowsky/kak-subvert";
       flake = false;
@@ -98,6 +94,8 @@
             # up in this package. I'd love to move it to a real flake, though,
             # so things would be all in one place!
             kak-tree = final.callPackage ./pkgs/kak-tree { inherit naersk; };
+
+            unstable = inputs.nixpkgs-unstable.legacyPackages."${system}";
           in {
             comma = final.callPackage inputs.comma { };
 
@@ -106,9 +104,9 @@
 
             git-gclone = final.callPackage ./pkgs/git-gclone { };
 
-            gh = inputs.nixpkgs-unstable.legacyPackages."${system}".gh;
+            gh = unstable.gh;
 
-            kak-lsp = naersk.buildPackage inputs.kak-lsp;
+            kak-lsp = unstable.kak-lsp;
 
             kak-session = final.callPackage ./pkgs/kak-session { };
 
