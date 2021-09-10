@@ -42,6 +42,10 @@
     };
 
     # kakoune plugins
+    auto-pairs = {
+      url = "github:alexherbo2/auto-pairs.kak";
+      flake = false;
+    };
     active-window = {
       url = "github:greenfork/active-window.kak";
       flake = false;
@@ -124,6 +128,9 @@
             in prev.kakounePlugins // {
               active-window =
                 buildKakounePlugin "active-window" inputs.active-window;
+
+              auto-pairs =
+                buildKakounePlugin "auto-pairs.kak" inputs.auto-pairs;
 
               kak-ayu = final.callPackage ./pkgs/kak-ayu { };
 

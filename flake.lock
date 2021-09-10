@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "auto-pairs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1629299056,
+        "narHash": "sha256-PVcW16xr2dox9IZ0CWsEhByHXuupJUXJ+2eo4lgA6IQ=",
+        "owner": "alexherbo2",
+        "repo": "auto-pairs.kak",
+        "rev": "5058de7ea20d2db8c88234df6d642e7a0a439413",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alexherbo2",
+        "repo": "auto-pairs.kak",
+        "type": "github"
+      }
+    },
     "comma": {
       "flake": false,
       "locked": {
@@ -285,6 +301,7 @@
     "root": {
       "inputs": {
         "active-window": "active-window",
+        "auto-pairs": "auto-pairs",
         "comma": "comma",
         "darwin": "darwin",
         "fzf-tab": "fzf-tab",
