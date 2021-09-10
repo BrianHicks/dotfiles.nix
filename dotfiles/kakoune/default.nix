@@ -178,6 +178,29 @@ in {
       # set global lsp_cmd "${pkgs.kak-lsp}/bin/kak-lsp -s %val{session} -vvv --log kak-lsp.log --config ~/.config/kak-lsp/kak-lsp.toml"
       set global lsp_hover_anchor true
 
+      define-command lsp-enable-window-without-completion %{
+        # enable LSP for the window, but then...
+        lsp-enable-window
+
+        # ... remove the hooks that it installs and ...
+        remove-hooks window lsp
+
+        # ... re-install only the ones I want
+        hook -group lsp window WinClose .* lsp-did-close
+        hook -group lsp window BufWritePost .* lsp-did-save
+        hook -group lsp window WinSetOption lsp_config=.* lsp-did-change-config
+        hook -group lsp window WinSetOption lsp_server_configuration=.* lsp-did-change-config
+      	# this InsertIdle hook is basically the one I want to try going without.
+      	# It means I won't get completions, but I think that's OK! I notice a lot
+      	# of lag while using kak-lsp, especially in rust-analyzer, and I don't
+      	# need lints as I'm typing.
+        # hook -group lsp window InsertIdle .* lsp-completion
+        hook -group lsp window NormalIdle .* %{
+          lsp-did-change
+          %sh{if $kak_opt_lsp_auto_highlight_references; then echo "lsp-highlight-references"; else echo "nop"; fi}
+        }
+      }
+
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
         expandtab
@@ -269,23 +292,9 @@ in {
 
         map buffer normal <a-minus> ': outline-jump-rust<ret>'
 
-        lsp-enable-window
+        lsp-enable-window-without-completion
 
         hook buffer BufWritePre .* lsp-formatting-sync
-
-        hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
-        hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
-        hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
-        hook -once -always window WinSetOption filetype=.* %{
-          remove-hooks window rust-inlay-hints
-        }
-
-        hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
-        hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
-        hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
-        hook -once -always window WinSetOption filetype=.* %{
-          remove-hooks window semantic-tokens
-        }
       }
 
       hook global WinSetOption filetype=sh %{
