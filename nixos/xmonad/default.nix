@@ -9,22 +9,14 @@
     };
 
     xserver = {
-      enable = true;
-      layout = "us";
-
-      libinput = {
+      windowManager.xmonad = {
         enable = true;
-        touchpad.disableWhileTyping = true;
+        enableContribAndExtras = true;
       };
 
       displayManager = {
         gdm.enable = true;
         defaultSession = "none+xmonad";
-      };
-
-      windowManager.xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
       };
     };
   };
