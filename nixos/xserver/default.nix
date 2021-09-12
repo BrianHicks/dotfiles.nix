@@ -9,4 +9,6 @@
       touchpad.disableWhileTyping = true;
     };
   };
+
+  services.picom.enable = true;
 }
