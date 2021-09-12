@@ -19,6 +19,7 @@ inputs:
     ../../nixos/gnome-keyring
     ../../nixos/networkmanager
     ../../nixos/pulseaudio
+    ../../nixos/redshift
     ../../nixos/upower
     ../../nixos/xmonad
   ];
