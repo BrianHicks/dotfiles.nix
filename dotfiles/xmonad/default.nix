@@ -20,6 +20,10 @@
             , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 5%+" )
             , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 5%-" )
             , ("<XF86AudioMute>", spawn "amixer sset Master toggle" )
+            , ("<XF86MonBrightnessUp>", spawn "${pkgs.brightnessctl}/bin/brightnessctl -d intel_backlight set 5%+")
+            , ("<XF86MonBrightnessDown>", spawn "${pkgs.brightnessctl}/bin/brightnessctl -d intel_backlight set 5%-")
+            , ("<XF86KbdBrightnessUp>", spawn "${pkgs.brightnessctl}/bin/brightnessctl -d smc::kbd_backlight set 5%+")
+            , ("<XF86KbdBrightnessDown>", spawn "${pkgs.brightnessctl}/bin/brightnessctl -d smc::kbd_backlight set 5%-")
             ]
     '';
   };
