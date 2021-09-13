@@ -210,6 +210,8 @@
       };
 
       darwinConfigurations.flame = inputs.darwin.lib.darwinSystem {
+        inherit inputs;
+
         modules = [
           ({ pkgs, ... }: {
             nix.package = pkgs.nixUnstable;
