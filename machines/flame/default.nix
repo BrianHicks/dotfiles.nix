@@ -12,15 +12,11 @@
 
   # allow zsh as a login shell
   environment.shells = [ pkgs.zsh ];
+  programs.zsh.enable = true;
 
   # nix.package = pkgs.nixUnstable;
   nix.allowedUsers = [ "brianhicks" ];
   nix.trustedUsers = [ "brianhicks" ];
-
-  # Create /etc/bashrc that loads the nix-darwin environment.
-  # programs.bash.enable = true;
-  programs.zsh.enable = true;
-  # programs.fish.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
