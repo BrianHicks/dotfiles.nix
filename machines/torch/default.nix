@@ -16,6 +16,7 @@ inputs:
     ../../nixos/1password
     ../../nixos/bluetooth
     ../../nixos/brian
+    ../../nixos/i3
     ../../nixos/gnome-keyring
     ../../nixos/networkmanager
     ../../nixos/pulseaudio
