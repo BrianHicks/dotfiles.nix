@@ -27,6 +27,7 @@
   services.nix-daemon.enable = false;
   nix.maxJobs = 8;
   nix.buildCores = 8;
+  users.nix.configureBuildUsers = true;
 
   # enabling distributed builds removes a blank config line from
   # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
@@ -67,7 +68,4 @@
       ];
     };
   };
-
-  # darwin-rebuild told me to add this, so here we are
-  users.nix.configureBuildUsers = true;
 }
