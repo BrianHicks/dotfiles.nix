@@ -11,7 +11,6 @@ inputs:
     (import ../../nixos/nix inputs)
 
     ../../nixos/brian
-    ../../nixos/xmonad
     ../../nixos/xserver
   ];
 

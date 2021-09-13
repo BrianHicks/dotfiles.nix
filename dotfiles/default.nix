@@ -21,7 +21,6 @@
     ./tree
     ./tree-grepper
     ./watch
-    ./xmonad
     ./xsession
     ./zoom
     ./zsh

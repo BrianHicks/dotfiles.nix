@@ -21,7 +21,6 @@ inputs:
     ../../nixos/pulseaudio
     ../../nixos/redshift
     ../../nixos/upower
-    ../../nixos/xmonad
   ];
 
   # Use the systemd-boot EFI boot loader.
