@@ -34,6 +34,12 @@
   # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
   # rest just fine.
   nix.distributedBuilds = true;
+  nix.buildMachines = [{
+    hostName = "nix-docker";
+    system = "x86_64-linux";
+    maxJobs = 4;
+    sshKey = "/etc/nix/docker_rsa";
+  }];
 
   # dotfiles
   home-manager = {
