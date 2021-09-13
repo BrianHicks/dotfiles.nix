@@ -31,6 +31,9 @@ inputs:
   networking.hostName = "torch"; # Define your hostname.
   networking.wireless.enable =
     false; # Enables wireless support via wpa_supplicant.
+  # Display settings
+  # this is a Retina display at 227 DPI, but it's way too big!
+  services.xserver.dpi = 163;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
