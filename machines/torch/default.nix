@@ -31,9 +31,6 @@ inputs:
   networking.hostName = "torch"; # Define your hostname.
   networking.wireless.enable =
     false; # Enables wireless support via wpa_supplicant.
-  # Display settings
-  # this is a Retina display at 227 DPI, but it's way too big!
-  services.xserver.dpi = 163;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -45,7 +42,12 @@ inputs:
   networking.interfaces.wlp3s0.useDHCP = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+
+    # this is a Retina display at 227 DPI, but it's way too big!
+    dpi = 163;
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
