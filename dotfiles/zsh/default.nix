@@ -40,6 +40,13 @@ in {
 
       PROMPT="%B%F{blue}%c%f%b %F{blue}»%f "
       RPROMPT=
+
+      # this is just a work thing, and temporary until we permanently enable a new
+      # watcher method
+      if test "$(uname -s)" = "Darwin"; then
+        SPRING_WATCHER_FSEVENT=1
+        export SPRING_WATCHER_FSEVENT
+      fi
     '' + extraInitExtra;
 
     history = {
