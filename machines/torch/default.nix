@@ -46,7 +46,7 @@ inputs:
     enable = true;
 
     # this is a Retina display at 227 DPI, but it's way too big!
-    dpi = 163;
+    # dpi = 163;
 
     xkbOptions = "ctrl:nocaps";
   };
