@@ -43,10 +43,10 @@
         bindsym XF86AudioMute exec --no-startup-id ${pkgs.alsaUtils}/bin/amixer sset Master toggle && $refresh_i3status
 
         # Use brightnessctl to adjust screen + key brightness
-        bindsym XF86MonBrightnessUp --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d intel_backlight set 5%+
-        bindsym XF86MonBrightnessDown --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d intel_backlight set 5%-
-        bindsym XF86KbdBrightnessUp --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d smc::kbd_backlight set 5%+
-        bindsym XF86KbdBrightnessDown --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d smc::kbd_backlight set 5%-
+        bindsym XF86MonBrightnessUp exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d intel_backlight set 5%+
+        bindsym XF86MonBrightnessDown exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d intel_backlight set 5%-
+        bindsym XF86KbdBrightnessUp exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d smc::kbd_backlight set 5%+
+        bindsym XF86KbdBrightnessDown exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl -d smc::kbd_backlight set 5%-
 
         # Use Mouse+$mod to drag floating windows to their wanted position
         floating_modifier $mod
