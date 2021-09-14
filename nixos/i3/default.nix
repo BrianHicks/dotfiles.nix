@@ -23,7 +23,7 @@
 
         # Font for window titles. Will also be used by the bar unless a different font
         # is used in the bar {} block below.
-        font pango:DejaVu Sans Mono 8
+        font pango:DejaVu Sans 8
 
         # The combination of xss-lock, nm-applet and pactl is a popular choice, so
         # they are included here as an example. Modify as you see fit.
