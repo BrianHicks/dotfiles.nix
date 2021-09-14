@@ -33,7 +33,7 @@
         # and nm-applet is a desktop environment-independent system tray GUI for it.
         exec --no-startup-id ${pkgs.networkmanagerapplet}/bin/nm-applet
 
-        # Use pactl to adjust volume in PulseAudio.
+        # Use amixer to adjust volume
         set $refresh_i3status killall -SIGUSR1 i3status
         bindsym XF86AudioRaiseVolume exec --no-startup-id ${pkgs.alsaUtils}/bin/amixer sset Master 5%+ && $refresh_i3status
         bindsym XF86AudioLowerVolume exec --no-startup-id ${pkgs.alsaUtils}/bin/amixer sset Master 5%- && $refresh_i3status
