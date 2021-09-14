@@ -191,6 +191,9 @@
         bar {
           status_command ${pkgs.i3status}/bin/i3status
         }
+
+        # Automatically send things to the right workspaces
+        assign [class="browser"] 2
       '';
     };
   };
