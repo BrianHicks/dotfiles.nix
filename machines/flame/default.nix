@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
@@ -27,7 +27,6 @@
   services.nix-daemon.enable = false;
   nix.maxJobs = 8;
   nix.buildCores = 8;
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs-darwin}" ];
   users.nix.configureBuildUsers = true;
 
   # enabling distributed builds removes a blank config line from
