@@ -190,6 +190,7 @@
         # finds out, if available)
         bar {
           status_command ${pkgs.i3status}/bin/i3status
+          position top
         }
 
         # Automatically send things to the right workspaces
