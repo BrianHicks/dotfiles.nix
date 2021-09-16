@@ -213,11 +213,15 @@
         ];
       };
 
-      darwinConfigurations.flame = inputs.darwin.lib.darwinSystem {
+      darwinConfigurations.flame = inputs.darwin.lib.darwinSystem rec {
+        inherit inputs;
+
+        system = "x86_64-darwin";
+
         modules = [
           ({ pkgs, ... }: {
             nix.package = pkgs.nixUnstable;
-            nixpkgs.overlays = mkOverlays "x86_64-darwin";
+            nixpkgs.overlays = mkOverlays system;
           })
           ./machines/flame
           inputs.home-manager.darwinModules.home-manager
