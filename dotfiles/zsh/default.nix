@@ -57,5 +57,5 @@ in {
     };
   };
 
-  home.packages = [ pkgs.kak-session ];
+  home.packages = [ pkgs.kak-session pkgs.mand ];
 }
