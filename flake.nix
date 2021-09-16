@@ -27,7 +27,7 @@
     tree-grepper.inputs.naersk.follows = "naersk";
 
     tmux = {
-      url = "github:tmux/tmux";
+      url = "github:tmux/tmux/3.3-rc";
       flake = false;
     };
 
