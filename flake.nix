@@ -22,7 +22,7 @@
     similar-sort.inputs.nixpkgs.follows = "nixpkgs";
     similar-sort.inputs.naersk.follows = "naersk";
 
-    tree-grepper.url = "github:BrianHicks/tree-grepper";
+    tree-grepper.url = "github:BrianHicks/tree-grepper/2.0.6";
     tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
     tree-grepper.inputs.naersk.follows = "naersk";
 
