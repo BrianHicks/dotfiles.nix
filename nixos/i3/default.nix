@@ -4,6 +4,7 @@
 
     windowManager.i3 = {
       enable = true;
+      package = pkgs.i3-gaps;
 
       extraPackages = [ pkgs.dejavu_fonts ];
 
@@ -192,6 +193,12 @@
 
         # Automatically send things to the right workspaces
         assign [class="browser"] 2
+
+        # i3-gaps: https://github.com/Airblader/i3
+        for_window [class=".*"] border pixel 0
+        gaps inner 10
+        smart_gaps on
+        smart_borders on
       '';
     };
   };
