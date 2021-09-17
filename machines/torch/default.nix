@@ -22,6 +22,7 @@ inputs:
     ../../nixos/pulseaudio
     ../../nixos/redshift
     ../../nixos/upower
+    ../../nixos/xserver
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -40,16 +41,6 @@ inputs:
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.wlp3s0.useDHCP = true;
-
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-
-    # this is a Retina display at 227 DPI, but it's way too big!
-    # dpi = 163;
-
-    xkbOptions = "ctrl:nocaps";
-  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
