@@ -42,6 +42,7 @@
     environment.BORG_RSH = "ssh -i /home/brian/.ssh/borgbase_ed25519";
 
     extraCreateArgs = "--stats";
+    extraPruneArgs = "--stats";
 
     prune.keep = {
       within = "1d";
