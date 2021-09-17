@@ -19,9 +19,8 @@
     };
   };
 
-  # services.picom = {
-  #   enable = true;
-  #   vSync = true;
-  #   backend = "xr_glx_hybrid";
-  # };
+  services.picom = {
+    enable = true;
+    # vSync = true;
+  };
 }
