@@ -7,18 +7,16 @@
     # dpi = 163;
 
     xkbOptions = "ctrl:nocaps";
+
+    libinput = {
+      enable = true;
+
+      touchpad = {
+        naturalScrolling = true;
+        disableWhileTyping = true;
+      };
+    };
   };
-
-  # services.xserver = {
-  #   layout = "us";
-
-  #   libinput = {
-  #     enable = true;
-
-  #     naturalScrolling = true;
-  #     touchpad.disableWhileTyping = true;
-  #   };
-  # };
 
   # services.picom = {
   #   enable = true;
