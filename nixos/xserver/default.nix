@@ -22,5 +22,8 @@
   services.picom = {
     enable = true;
     vSync = true;
+
+    # this was the thing that made the tearing go away!
+    backend = "glx";
   };
 }
