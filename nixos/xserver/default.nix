@@ -3,8 +3,8 @@
   services.xserver = {
     enable = true;
 
-    # this is a Retina display at 227 DPI, but it's way too big!
-    # dpi = 163;
+    # this is a Retina display, which x needs to know for some reason.
+    dpi = 227;
 
     xkbOptions = "ctrl:nocaps";
 
