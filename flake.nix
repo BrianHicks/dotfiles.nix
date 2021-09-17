@@ -192,6 +192,12 @@
               });
 
             tmux-session = final.callPackage ./pkgs/tmux-session { };
+
+            # tree-grepper tests pass most of the time, but sometimes the nixpkgs
+            # between that repo and this one cause clippy incompatibilities. The
+            # tests are run in CI anyway, so there's no need to re-run them here.
+            tree-grepper =
+              prev.tree-grepper.overrideAttrs (attrs: { doCheck = false; });
           })
       ];
     in {
