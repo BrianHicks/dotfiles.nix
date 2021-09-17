@@ -19,6 +19,7 @@ inputs:
     ../../nixos/i3
     ../../nixos/gnome-keyring
     ../../nixos/networkmanager
+    ../../nixos/picom
     ../../nixos/pulseaudio
     ../../nixos/redshift
     ../../nixos/upower
