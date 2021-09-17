@@ -5,7 +5,7 @@
 
     fade = true;
     activeOpacity = 1.0;
-    inactiveOpacity = 0.9;
+    inactiveOpacity = 0.95;
     fadeDelta = 3; # default 10
 
     # this was the thing that made the tearing go away!
