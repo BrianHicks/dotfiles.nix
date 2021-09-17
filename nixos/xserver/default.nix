@@ -23,6 +23,10 @@
     enable = true;
     vSync = true;
 
+    fade = true;
+    activeOpacity = 1.0;
+    inactiveOpacity = 0.9;
+
     # this was the thing that made the tearing go away!
     backend = "glx";
   };
