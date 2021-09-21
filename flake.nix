@@ -26,8 +26,8 @@
     tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
     tree-grepper.inputs.naersk.follows = "naersk";
 
-    tmux = {
-      url = "github:tmux/tmux/3.3-rc";
+    comma = {
+      url = "github:shopify/comma";
       flake = false;
     };
 
@@ -36,8 +36,8 @@
       flake = false;
     };
 
-    comma = {
-      url = "github:shopify/comma";
+    tmux = {
+      url = "github:tmux/tmux/3.3-rc";
       flake = false;
     };
 
