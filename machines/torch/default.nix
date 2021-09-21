@@ -43,6 +43,8 @@ inputs:
   networking.useDHCP = false;
   networking.interfaces.wlp3s0.useDHCP = true;
 
+  environment.systemPackages = [ pkgs.sysz ];
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 

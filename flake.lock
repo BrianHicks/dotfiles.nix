@@ -319,6 +319,7 @@
         "shellcheck-kak": "shellcheck-kak",
         "similar-sort": "similar-sort",
         "smarttab-kak": "smarttab-kak",
+        "sysz": "sysz",
         "tmux": "tmux",
         "tree-grepper": "tree-grepper",
         "tug": "tug"
@@ -378,6 +379,22 @@
       "original": {
         "owner": "andreyorst",
         "repo": "smarttab.kak",
+        "type": "github"
+      }
+    },
+    "sysz": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632244394,
+        "narHash": "sha256-mXTQvj3UoZH2T8cGnBHvS/3LZS8iPk46+vahOD51fC4=",
+        "owner": "joehillen",
+        "repo": "sysz",
+        "rev": "1940582fbfe49747e3e85bb1244d2d0a376cf798",
+        "type": "github"
+      },
+      "original": {
+        "owner": "joehillen",
+        "repo": "sysz",
         "type": "github"
       }
     },

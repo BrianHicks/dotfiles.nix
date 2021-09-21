@@ -36,6 +36,11 @@
       flake = false;
     };
 
+    sysz = {
+      url = "github:joehillen/sysz";
+      flake = false;
+    };
+
     tmux = {
       url = "github:tmux/tmux/3.3-rc";
       flake = false;
@@ -175,6 +180,22 @@
             mand = final.writeShellScriptBin "mand" ''
               ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
             '';
+
+            sysz = final.stdenv.mkDerivation {
+              name = "sysz";
+              src = inputs.sysz;
+
+              buildPhase = "true";
+              buildInputs = [ final.makeWrapper ];
+              installPhase = ''
+                mkdir -p $out/bin
+                install -m755 sysz $out/bin
+
+                wrapProgram $out/bin/sysz --prefix PATH : ${
+                  final.lib.makeBinPath [ final.fzf ]
+                }
+              '';
+            };
 
             tmux = prev.tmux.overrideAttrs (attrs:
               attrs // {
