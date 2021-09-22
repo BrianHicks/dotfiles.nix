@@ -9,8 +9,8 @@
 
     xkbOptions = "ctrl:nocaps";
 
-    autoRepeatDelay = 300;
-    autoRepeatInterval = 50;
+    autoRepeatDelay = 250;
+    autoRepeatInterval = 40;
 
     libinput = {
       enable = true;
