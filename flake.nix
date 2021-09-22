@@ -139,8 +139,6 @@
 
               kak-ayu = final.callPackage ./pkgs/kak-ayu { };
 
-              kak-subvert = buildKakounePlugin "kak-subvert" inputs.kak-subvert;
-
               kak-tree = kak-tree.kakounePlugins.kak-tree;
 
               kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
