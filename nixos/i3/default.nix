@@ -181,12 +181,17 @@
 
         bindsym $mod+r mode "resize"
 
-        # Start i3bar to display a workspace bar (plus the system information i3status
-        # finds out, if available)
-        bar {
-          status_command ${pkgs.i3status}/bin/i3status
-          position top
-        }
+        exec_always --no-startup-id ${
+          pkgs.writeShellScriptBin "launch-polybar.sh" ''
+            # note: all polybar configs have to have IPC enabled in order for
+            # this to work!
+            ${pkgs.polybarFull}/bin/polybar-msg cmd quit
+
+            ${pkgs.polybarFull}/bin/polybar --config=${
+              ./polybar.ini
+            } top 2>&1 | tee -a /tmp/polybar-top.log & disown
+          ''
+        }/bin/launch-polybar.sh
 
         # Automatically send things to the right workspaces
         assign [class="browser"] 2
