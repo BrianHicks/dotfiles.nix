@@ -225,7 +225,10 @@
       nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
-          ({ ... }: { nixpkgs.overlays = mkOverlays system; })
+          ({ ... }: {
+            nixpkgs.overlays = mkOverlays system;
+            nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+          })
           (import ./machines/torch inputs)
           inputs.home-manager.nixosModules.home-manager
         ];
