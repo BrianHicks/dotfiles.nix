@@ -199,6 +199,9 @@
         gaps inner 10
         smart_gaps on
         smart_borders on
+
+        # restore background
+        exec --no-startup-id ${pkgs.nitrogen}/bin/nitrogen --restore
       '';
     };
   };
