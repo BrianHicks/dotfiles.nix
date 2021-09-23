@@ -179,6 +179,10 @@
               ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
             '';
 
+            openmoji-black = unstable.openmoji-black;
+
+            openmoji-color = unstable.openmoji-color;
+
             sysz = final.stdenv.mkDerivation {
               name = "sysz";
               src = inputs.sysz;
