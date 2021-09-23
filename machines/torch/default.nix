@@ -17,6 +17,7 @@ inputs:
     ../../nixos/bluetooth
     ../../nixos/brian
     ../../nixos/i3
+    ../../nixos/fonts
     ../../nixos/gnome-keyring
     ../../nixos/networkmanager
     ../../nixos/picom
