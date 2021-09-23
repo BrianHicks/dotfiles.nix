@@ -385,11 +385,11 @@
     "sysz": {
       "flake": false,
       "locked": {
-        "lastModified": 1632244394,
-        "narHash": "sha256-mXTQvj3UoZH2T8cGnBHvS/3LZS8iPk46+vahOD51fC4=",
+        "lastModified": 1632342593,
+        "narHash": "sha256-uyNk6azPUrOgKawvkbAMp0dhN5zXJRRLjuBgsJXL1CI=",
         "owner": "joehillen",
         "repo": "sysz",
-        "rev": "1940582fbfe49747e3e85bb1244d2d0a376cf798",
+        "rev": "53a437b251a5ca94b41a144db6e2a1296fc6ae0d",
         "type": "github"
       },
       "original": {
