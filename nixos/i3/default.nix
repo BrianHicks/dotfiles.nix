@@ -197,11 +197,16 @@
         assign [class="browser"] 2
 
         # i3-gaps: https://github.com/Airblader/i3
-        for_window [class=".*"] border pixel 2
+        for_window [class=".*"] border pixel 1
         gaps inner 10
         smart_gaps on
         smart_borders on
         hide_edge_borders smart_no_gaps
+
+        # class                 border  backgr. text    indic.  child
+        client.focused          #342C2A #285577 #FFFFFF #FFF191 #342C2A
+        client.focused_inactive #342C2A #285577 #FFFFFF #FFF191 #342C2A
+        client.unfocused        #342C2A #222222 #888888 #342C2A #342C2A
 
         # restore background
         exec --no-startup-id ${pkgs.nitrogen}/bin/nitrogen --restore
