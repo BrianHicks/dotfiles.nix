@@ -42,7 +42,7 @@
     };
 
     tmux = {
-      url = "github:tmux/tmux/3.3-rc";
+      url = "github:tmux/tmux";
       flake = false;
     };
 
