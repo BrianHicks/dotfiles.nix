@@ -19,11 +19,11 @@
     "auto-pairs": {
       "flake": false,
       "locked": {
-        "lastModified": 1629299056,
-        "narHash": "sha256-PVcW16xr2dox9IZ0CWsEhByHXuupJUXJ+2eo4lgA6IQ=",
+        "lastModified": 1633713473,
+        "narHash": "sha256-CBjmABmrL40NCMV9jIeDAy2HsVk2Hu9feGeueXO7aUM=",
         "owner": "alexherbo2",
         "repo": "auto-pairs.kak",
-        "rev": "5058de7ea20d2db8c88234df6d642e7a0a439413",
+        "rev": "7692c77e8f7022adc510240dd3dd1aba549e9c71",
         "type": "github"
       },
       "original": {
