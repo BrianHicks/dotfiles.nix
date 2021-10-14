@@ -401,11 +401,11 @@
     "tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1633964473,
-        "narHash": "sha256-g4WY0QYB0eSmvwXilZTx6QwSDctgkdWBovtbs1u70J4=",
+        "lastModified": 1634209272,
+        "narHash": "sha256-gO6EU49HgAiMfO4j9lPn4FABrXu6H9BTeOl2aQYf1W4=",
         "owner": "tmux",
         "repo": "tmux",
-        "rev": "aff2a473ec3c16396d6be9d61c5e5dc1201a725b",
+        "rev": "ee9885a40ced1fd34fe2eed879a40975a0691ac8",
         "type": "github"
       },
       "original": {
