@@ -16,22 +16,6 @@
         "type": "github"
       }
     },
-    "auto-pairs": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1633713473,
-        "narHash": "sha256-CBjmABmrL40NCMV9jIeDAy2HsVk2Hu9feGeueXO7aUM=",
-        "owner": "alexherbo2",
-        "repo": "auto-pairs.kak",
-        "rev": "7692c77e8f7022adc510240dd3dd1aba549e9c71",
-        "type": "github"
-      },
-      "original": {
-        "owner": "alexherbo2",
-        "repo": "auto-pairs.kak",
-        "type": "github"
-      }
-    },
     "comma": {
       "flake": false,
       "locked": {
@@ -298,10 +282,25 @@
         "type": "github"
       }
     },
+    "prelude-kak": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1614136066,
+        "narHash": "sha256-DNHORL++3Pw+Qt+jqTZDjbqkw0WGwb99+oJu/BXKzN4=",
+        "owner": "kakounedotcom",
+        "repo": "prelude.kak",
+        "rev": "5dbdc020c546032885c1fdb463e366cc89fc15ad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kakounedotcom",
+        "repo": "prelude.kak",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "active-window": "active-window",
-        "auto-pairs": "auto-pairs",
         "comma": "comma",
         "darwin": "darwin",
         "fzf-tab": "fzf-tab",
@@ -316,6 +315,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "prelude-kak": "prelude-kak",
         "shellcheck-kak": "shellcheck-kak",
         "similar-sort": "similar-sort",
         "smarttab-kak": "smarttab-kak",

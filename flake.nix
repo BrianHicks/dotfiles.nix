@@ -47,10 +47,6 @@
     };
 
     # kakoune plugins
-    auto-pairs = {
-      url = "github:alexherbo2/auto-pairs.kak";
-      flake = false;
-    };
     active-window = {
       url = "github:greenfork/active-window.kak";
       flake = false;
@@ -73,6 +69,10 @@
     };
     kakoune-surround = {
       url = "github:h-youhei/kakoune-surround";
+      flake = false;
+    };
+    prelude-kak = {
+      url = "github:kakounedotcom/prelude.kak";
       flake = false;
     };
     shellcheck-kak = {
@@ -134,8 +134,11 @@
               active-window =
                 buildKakounePlugin "active-window" inputs.active-window;
 
-              auto-pairs =
-                buildKakounePlugin "auto-pairs.kak" inputs.auto-pairs;
+              auto-pairs = final.kakouneUtils.buildKakounePlugin {
+                pname = "auto-pairs";
+                version = "vendored";
+                src = ./vendor/auto-pairs.kak;
+              };
 
               kak-ayu = final.callPackage ./pkgs/kak-ayu { };
 
@@ -163,6 +166,8 @@
 
               kakoune-surround =
                 buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
+
+              prelude-kak = buildKakounePlugin "prelude.kak" inputs.prelude-kak;
 
               shellcheck-kak =
                 buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
