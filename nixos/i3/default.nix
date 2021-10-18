@@ -210,6 +210,7 @@
 
         # restore background
         exec --no-startup-id ${pkgs.nitrogen}/bin/nitrogen --restore
+        exec_always --no-startup-id ${pkgs.i3-auto-layout}/bin/i3-auto-layout
       '';
     };
   };
