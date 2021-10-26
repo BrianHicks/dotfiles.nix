@@ -11,6 +11,7 @@
     ./home-manager
     ./hyperfine
     ./jq
+    ./lf
     ./kakoune
     ./niv
     ./rofi
