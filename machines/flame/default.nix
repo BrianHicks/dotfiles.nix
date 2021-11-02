@@ -59,6 +59,7 @@
         ../../dotfiles/direnv
         ../../dotfiles/fzf
         ../../dotfiles/git
+        ../../dotfiles/lf
         ../../dotfiles/home-manager
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
