@@ -13,6 +13,7 @@
     ./jq
     ./lf
     ./kakoune
+    ./ncdu
     ./niv
     ./rofi
     ./ripgrep

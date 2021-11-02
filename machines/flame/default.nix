@@ -63,6 +63,7 @@
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
         ../../dotfiles/kakoune
+        ../../dotfiles/ncdu
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
         ../../dotfiles/ssh
