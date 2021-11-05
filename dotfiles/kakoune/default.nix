@@ -328,6 +328,10 @@ in {
       hook global WinSetOption filetype=ts %{
         expandtab-with-width 2
       }
+
+      hook global WinSetOption filetype=yaml %{
+        expandtab-with-width 2
+      }
     '';
   };
 
