@@ -3,7 +3,7 @@
     enable = true;
     enableZshIntegration = true;
 
-    defaultCommand = "${pkgs.fd}/bin/fd --type f";
+    defaultCommand = "${pkgs.fd}/bin/fd";
 
     fileWidgetCommand = defaultCommand;
     fileWidgetOptions = [
