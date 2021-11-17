@@ -332,6 +332,10 @@ in {
       hook global WinSetOption filetype=yaml %{
         expandtab-with-width 2
       }
+
+      hook global WinSetOption filetype=dhall %{
+        expandtab-with-width 2
+      }
     '';
   };
 
