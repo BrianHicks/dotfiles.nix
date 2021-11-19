@@ -303,9 +303,12 @@ in {
 
         map buffer normal <a-minus> ': outline-jump-rust<ret>'
 
-        lsp-enable-window-without-completion
-
-        hook buffer BufWritePre .* lsp-formatting-sync
+        evaluate-commands %sh{
+          if which rustfmt > /dev/null; then
+            echo 'set-option buffer formatcmd "rustfmt --emit stdout"'
+            echo 'hook buffer BufWritePre .* format'
+          fi
+        }
       }
 
       hook global WinSetOption filetype=sh %{
