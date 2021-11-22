@@ -338,11 +338,18 @@ in {
 
       hook global WinSetOption filetype=dhall %{
         expandtab-with-width 2
+
+        lsp-enable-window
       }
     '';
   };
 
   home.file.".config/kak-lsp/kak-lsp.toml".text = ''
+    [language.dhall]
+    filetypes = ["dhall"]
+    roots = []
+    command = "${pkgs.dhall-lsp-server}/bin/dhall-lsp-server"
+
     [language.rust]
     filetypes = ["rust"]
     roots = ["Cargo.toml"]
