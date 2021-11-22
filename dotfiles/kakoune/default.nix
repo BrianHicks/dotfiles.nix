@@ -340,6 +340,7 @@ in {
         expandtab-with-width 2
 
         # lsp-enable-window
+        set-option buffer formatcmd "dhall format"
       }
     '';
   };
