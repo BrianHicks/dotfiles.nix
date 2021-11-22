@@ -184,33 +184,33 @@ in {
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
 
       # language server
-      eval %sh{${pkgs.kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
-      map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
+      # eval %sh{${pkgs.kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
+      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
       # set global lsp_cmd "${pkgs.kak-lsp}/bin/kak-lsp -s %val{session} -vvv --log kak-lsp.log --config ~/.config/kak-lsp/kak-lsp.toml"
-      set global lsp_hover_anchor true
+      # set global lsp_hover_anchor true
 
-      define-command lsp-enable-window-without-completion %{
-        # enable LSP for the window, but then...
-        lsp-enable-window
+      # define-command lsp-enable-window-without-completion %{
+      #   # enable LSP for the window, but then...
+      #   lsp-enable-window
 
-        # ... remove the hooks that it installs and ...
-        remove-hooks window lsp
+      #   # ... remove the hooks that it installs and ...
+      #   remove-hooks window lsp
 
-        # ... re-install only the ones I want
-        hook -group lsp window WinClose .* lsp-did-close
-        hook -group lsp window BufWritePost .* lsp-did-save
-        hook -group lsp window WinSetOption lsp_config=.* lsp-did-change-config
-        hook -group lsp window WinSetOption lsp_server_configuration=.* lsp-did-change-config
-      	# this InsertIdle hook is basically the one I want to try going without.
-      	# It means I won't get completions, but I think that's OK! I notice a lot
-      	# of lag while using kak-lsp, especially in rust-analyzer, and I don't
-      	# need lints as I'm typing.
-        # hook -group lsp window InsertIdle .* lsp-completion
-        hook -group lsp window NormalIdle .* %{
-          lsp-did-change
-          %sh{if $kak_opt_lsp_auto_highlight_references; then echo "lsp-highlight-references"; else echo "nop"; fi}
-        }
-      }
+      #   # ... re-install only the ones I want
+      #   hook -group lsp window WinClose .* lsp-did-close
+      #   hook -group lsp window BufWritePost .* lsp-did-save
+      #   hook -group lsp window WinSetOption lsp_config=.* lsp-did-change-config
+      #   hook -group lsp window WinSetOption lsp_server_configuration=.* lsp-did-change-config
+      # 	# this InsertIdle hook is basically the one I want to try going without.
+      # 	# It means I won't get completions, but I think that's OK! I notice a lot
+      # 	# of lag while using kak-lsp, especially in rust-analyzer, and I don't
+      # 	# need lints as I'm typing.
+      #   # hook -group lsp window InsertIdle .* lsp-completion
+      #   hook -group lsp window NormalIdle .* %{
+      #     lsp-did-change
+      #     %sh{if $kak_opt_lsp_auto_highlight_references; then echo "lsp-highlight-references"; else echo "nop"; fi}
+      #   }
+      # }
 
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
@@ -339,7 +339,7 @@ in {
       hook global WinSetOption filetype=dhall %{
         expandtab-with-width 2
 
-        lsp-enable-window
+        # lsp-enable-window
       }
     '';
   };
