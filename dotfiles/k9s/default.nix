@@ -13,4 +13,40 @@
 
   home.file."Library/Preferences/k9s/production_skin.yml".text =
     builtins.readFile "${pkgs.k9s-skins}/red.yml";
+
+  home.file."Library/Preferences/k9s/config.yml".text = builtins.toJSON {
+    k9s = {
+      refreshRate = 2;
+      maxConnRetry = 5;
+
+      enableMouse = true;
+
+      headless = false;
+      logoless = true;
+      crumbsless = false;
+      readOnly = false;
+      noIcons = false;
+
+      logger = {
+        tail = 100;
+        buffer = 5000;
+        sinceSeconds = 60;
+        fullScreenLogs = false;
+        textWrap = false;
+        showTime = false;
+      };
+
+      # we need this or k9s blows up because it can't read the map (it's nil in
+      # memory. Classic.)
+      clusters = { };
+
+      thresholds = {
+        cpu.critical = 90;
+        cpu.warn = 70;
+
+        memory.critical = 90;
+        memory.warn = 70;
+      };
+    };
+  };
 }
