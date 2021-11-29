@@ -32,7 +32,7 @@
         buffer = 5000;
         sinceSeconds = 60;
         fullScreenLogs = false;
-        textWrap = false;
+        textWrap = true;
         showTime = false;
       };
 
