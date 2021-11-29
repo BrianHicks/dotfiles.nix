@@ -64,6 +64,7 @@
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
         ../../dotfiles/kakoune
+        ../../dotfiles/k9s
         ../../dotfiles/ncdu
         ../../dotfiles/niv
         ../../dotfiles/ripgrep

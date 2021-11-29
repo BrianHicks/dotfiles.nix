@@ -119,6 +119,22 @@
         "type": "github"
       }
     },
+    "k9s": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1637966504,
+        "narHash": "sha256-bAMoXkme4tn6lrQ2pNP32yAj6WerLJBWX3cEsHrHHSc=",
+        "owner": "derailed",
+        "repo": "k9s",
+        "rev": "265e0561aace52501924ed7ac05becde43aa3f52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "derailed",
+        "repo": "k9s",
+        "type": "github"
+      }
+    },
     "kak-subvert": {
       "flake": false,
       "locked": {
@@ -305,6 +321,7 @@
         "darwin": "darwin",
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
+        "k9s": "k9s",
         "kak-subvert": "kak-subvert",
         "kakoune-auto-percent": "kakoune-auto-percent",
         "kakoune-find": "kakoune-find",

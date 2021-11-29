@@ -36,6 +36,11 @@
       flake = false;
     };
 
+    k9s = {
+      url = "github:derailed/k9s";
+      flake = false;
+    };
+
     sysz = {
       url = "github:joehillen/sysz";
       flake = false;
@@ -176,6 +181,17 @@
                 buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
 
               tug = buildKakounePlugin "tug" inputs.tug;
+            };
+
+            k9s-skins = final.stdenv.mkDerivation {
+              pname = "k9s-skins";
+              version = inputs.k9s.rev;
+              src = "${inputs.k9s}/skins";
+              buildPhase = "true";
+              installPhase = ''
+                mkdir $out
+                cp * $out
+              '';
             };
 
             lazygit-window = final.callPackage ./pkgs/lazygit-window { };

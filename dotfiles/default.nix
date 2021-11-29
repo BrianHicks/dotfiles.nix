@@ -13,6 +13,7 @@
     ./jq
     ./lf
     ./kakoune
+    ./k9s
     ./ncdu
     ./niv
     ./rofi
