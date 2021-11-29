@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.lf = {
     enable = true;
     keybindings = {
@@ -6,5 +6,7 @@
       d = "delete";
       x = "cut";
     };
+
+    previewer.source = "${pkgs.pistol}/bin/pistol";
   };
 }
