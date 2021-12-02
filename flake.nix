@@ -155,19 +155,8 @@
               kakoune-find =
                 buildKakounePlugin "kakoune-find" inputs.kakoune-find;
 
-              kakoune-idris = final.kakouneUtils.buildKakounePlugin {
-                name = "kakoune-idris";
-                version = inputs.kakoune-idris.rev;
-                src = inputs.kakoune-idris;
-                patches = [
-                  (builtins.fetchurl {
-                    url =
-                      "https://patch-diff.githubusercontent.com/raw/stoand/kakoune-idris/pull/9.patch";
-                    sha256 =
-                      "sha256:1hwrn4hqji4qi4bxrzvccxcaq9gkd0cmyra3jl8zzaqplh6m7jyn";
-                  })
-                ];
-              };
+              kakoune-idris =
+                buildKakounePlugin "kakoune-idris" inputs.kakoune-idris;
 
               kakoune-surround =
                 buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
