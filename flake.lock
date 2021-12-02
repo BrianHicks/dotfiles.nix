@@ -170,11 +170,11 @@
     "kakoune-find": {
       "flake": false,
       "locked": {
-        "lastModified": 1628326515,
-        "narHash": "sha256-LrAbkRqi2B3qSjX4/idLs/j43eDHjGEu1z7tyov5C3g=",
+        "lastModified": 1636983695,
+        "narHash": "sha256-tSDVIqqEsQnq8QG9/llvSgdxtR42WAA98Hv2NY5qN1g=",
         "owner": "occivink",
         "repo": "kakoune-find",
-        "rev": "618b4a613ce7652c646dfecc3dff0bb35ebafb91",
+        "rev": "b424ad4edb62cb0f5ee15b26c6bdfca7797377fa",
         "type": "github"
       },
       "original": {
