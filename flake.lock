@@ -138,11 +138,11 @@
     "kak-subvert": {
       "flake": false,
       "locked": {
-        "lastModified": 1589477700,
-        "narHash": "sha256-U1G5pBdRz/bLjPkrPrVufiKWy5rQDGia7PcG3z86AkY=",
+        "lastModified": 1635597539,
+        "narHash": "sha256-4dN9nWZa2PxOWRYlvH1l+77dEetS9RZ7jjewzGJp/k8=",
         "owner": "dmerejkowsky",
         "repo": "kak-subvert",
-        "rev": "2aaf8b190692eb68d98facdd06cdf0446c79bd76",
+        "rev": "ad46d483dfd64db69c0ac374127f1787da1401a7",
         "type": "github"
       },
       "original": {
