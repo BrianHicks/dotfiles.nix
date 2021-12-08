@@ -21,6 +21,7 @@ in {
       active-window
       auto-pairs
       kak-ayu
+      kak-tmux-command
       kak-tree
       kakoune-auto-percent
       kakoune-find
@@ -178,6 +179,14 @@ in {
       map global tree d ': tree-select-parent-node value_declaration<ret>' -docstring 'Parent Declaration'
 
       map global user r ': tree-select-parent-node<ret>' -docstring 'Select Parent'
+
+      # sending commands places
+      declare-user-mode tmux-command
+      map global user x ': tmux-send-command<ret>' -docstring 'Execute command'
+      map global user X ': enter-user-mode tmux-command<ret>' -docstring 'Set up command'
+      map global tmux-command : ':tmux-send-command ' -docstring 'Send a one-off command'
+      map global tmux-command c ':tmux-set-command ' -docstring 'Set the command'
+      map global tmux-command t ':tmux-set-target ' -docstring 'Set the target'
 
       # outline jumping
       set global tree_grepper_path "${pkgs.tree-grepper}/bin/tree-grepper"

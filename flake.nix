@@ -147,6 +147,12 @@
 
               kak-ayu = final.callPackage ./pkgs/kak-ayu { };
 
+              kak-tmux-command = final.kakouneUtils.buildKakounePlugin {
+                pname = "kak-tmux-command";
+                version = "source";
+                src = ./pkgs/kak-tmux-command;
+              };
+
               kak-tree = kak-tree.kakounePlugins.kak-tree;
 
               kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
