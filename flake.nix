@@ -46,11 +46,6 @@
       flake = false;
     };
 
-    tmux = {
-      url = "github:tmux/tmux";
-      flake = false;
-    };
-
     # kakoune plugins
     active-window = {
       url = "github:greenfork/active-window.kak";
@@ -217,9 +212,6 @@
 
             tmux = prev.tmux.overrideAttrs (attrs:
               attrs // {
-                src = inputs.tmux;
-                version = inputs.tmux.rev;
-
                 # macOS does some weird stuff with locales and character widths.
                 # Practically, that means that without extra support tmux will
                 # behave weirdly around multi-byte characters like emoji. Enabling
