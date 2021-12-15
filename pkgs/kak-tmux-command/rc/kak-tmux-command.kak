@@ -18,11 +18,11 @@ define-command -override tmux-send-command -params 0.. -command-completion -docs
 }
 
 define-command -override tmux-set-command -params 1.. -command-completion -docstring "set the command to send to tmux" %{
-    set-option buffer tmux_command_command "%arg{@}"
+    set-option global tmux_command_command "%arg{@}"
 }
 
 define-command -override tmux-set-target -params 1 -shell-script-completion "tmux list-panes -F '#{pane_id} (#{pane_current_command}, #{pane_width}x#{pane_height})'" -docstring "set the tmux pane to send commands to" %{
     evaluate-commands %sh{
-        printf "set-option buffer tmux_command_target '%s'" "$(echo "$1" | cut -d ' ' -f 1)"
+        printf "set-option global tmux_command_target '%s'" "$(echo "$1" | cut -d ' ' -f 1)"
     }
 }
