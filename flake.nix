@@ -267,5 +267,20 @@
           inputs.home-manager.darwinModules.home-manager
         ];
       };
+
+      darwinConfigurations.sequoia = inputs.darwin.lib.darwinSystem rec {
+        inherit inputs;
+
+        system = "x86_64-darwin";
+
+        modules = [
+          ({ pkgs, ... }: {
+            nix.package = pkgs.nixUnstable;
+            nixpkgs.overlays = mkOverlays system;
+          })
+          ./machines/sequoia
+          inputs.home-manager.darwinModules.home-manager
+        ];
+      };
     };
 }
