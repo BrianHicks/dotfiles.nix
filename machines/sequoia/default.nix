@@ -41,40 +41,40 @@
   # }];
 
   # dotfiles
-  # home-manager = {
-  #   useUserPackages = true;
-  #   users.brianhicks = { ... }: {
-  #     # nixpkgs inside the Darwin home-manager is different than the nixpkgs that
-  #     # gets sent down from the flake. Why? No clue. It's frustrating TBH; it
-  #     # doesn't work this way on Linux! Anyway, the workaround is simple enough:
-  #     # set the things we care about inside home-manager explicitly.
-  #     nixpkgs.config = pkgs.config;
-  #     nixpkgs.overlays = pkgs.overlays;
+  home-manager = {
+    useUserPackages = true;
+    users.brianhicks = { ... }: {
+      # nixpkgs inside the Darwin home-manager is different than the nixpkgs that
+      # gets sent down from the flake. Why? No clue. It's frustrating TBH; it
+      # doesn't work this way on Linux! Anyway, the workaround is simple enough:
+      # set the things we care about inside home-manager explicitly.
+      nixpkgs.config = pkgs.config;
+      nixpkgs.overlays = pkgs.overlays;
 
-  #     imports = [
-  #       ../../dotfiles/alacritty
-  #       ../../dotfiles/bat
-  #       ../../dotfiles/cachix
-  #       ../../dotfiles/comma
-  #       ../../dotfiles/direnv
-  #       ../../dotfiles/fzf
-  #       ../../dotfiles/git
-  #       ../../dotfiles/lf
-  #       ../../dotfiles/home-manager
-  #       ../../dotfiles/hyperfine
-  #       ../../dotfiles/jq
-  #       ../../dotfiles/kakoune
-  #       ../../dotfiles/k9s
-  #       ../../dotfiles/ncdu
-  #       ../../dotfiles/niv
-  #       ../../dotfiles/ripgrep
-  #       ../../dotfiles/ssh
-  #       ../../dotfiles/tmux
-  #       ../../dotfiles/tree
-  #       ../../dotfiles/tree-grepper
-  #       ../../dotfiles/watch
-  #       ../../dotfiles/zsh
-  #     ];
-  #   };
-  # };
+      imports = [
+        ../../dotfiles/alacritty
+        ../../dotfiles/bat
+        ../../dotfiles/cachix
+        ../../dotfiles/comma
+        ../../dotfiles/direnv
+        ../../dotfiles/fzf
+        ../../dotfiles/git
+        ../../dotfiles/lf
+        ../../dotfiles/home-manager
+        ../../dotfiles/hyperfine
+        ../../dotfiles/jq
+        ../../dotfiles/kakoune
+        ../../dotfiles/k9s
+        ../../dotfiles/ncdu
+        ../../dotfiles/niv
+        ../../dotfiles/ripgrep
+        ../../dotfiles/ssh
+        ../../dotfiles/tmux
+        ../../dotfiles/tree
+        ../../dotfiles/tree-grepper
+        ../../dotfiles/watch
+        ../../dotfiles/zsh
+      ];
+    };
+  };
 }
