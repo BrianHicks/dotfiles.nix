@@ -73,6 +73,7 @@
         ../../dotfiles/tree
         ../../dotfiles/tree-grepper
         ../../dotfiles/watch
+        ../../dotfiles/wezterm
         ../../dotfiles/zsh
       ];
     };
