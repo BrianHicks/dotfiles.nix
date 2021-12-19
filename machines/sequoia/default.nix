@@ -15,8 +15,8 @@
   programs.zsh.enable = true;
 
   # nix.package = pkgs.nixUnstable;
-  nix.allowedUsers = [ "brianhicks" ];
-  nix.trustedUsers = [ "brianhicks" ];
+  nix.allowedUsers = [ "brianhicks" "root" ];
+  nix.trustedUsers = [ "brianhicks" "root" ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
