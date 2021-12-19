@@ -57,7 +57,7 @@ in {
 
     extraConfig = ''
       # hide changelog on startup
-      set global startup_info_version 20200901
+      set global startup_info_version 20211107
 
       # escape with fd
       hook global InsertChar d %{ try %{
