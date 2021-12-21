@@ -288,7 +288,7 @@
       darwinConfigurations.sequoia = inputs.darwin.lib.darwinSystem rec {
         inherit inputs;
 
-        system = "x86_64-darwin";
+        system = "aarch64-darwin";
 
         modules = [
           ({ pkgs, ... }: {
