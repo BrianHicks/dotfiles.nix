@@ -19,4 +19,6 @@
       hs.reload()
     end)
   '';
+
+  home.file.".hammerspoon/Spoons".source = pkgs.hammerspoon.spoons;
 }
