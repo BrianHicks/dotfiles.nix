@@ -235,6 +235,23 @@
         "type": "github"
       }
     },
+    "nix-index": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1640124423,
+        "narHash": "sha256-jI4pZt80fwVT31TP+KMyyiVTfSziAg455R84A6j1URI=",
+        "owner": "BrianHicks",
+        "repo": "nix-index",
+        "rev": "ff58579fd813ef1116053f31974f897042d4aa70",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BrianHicks",
+        "ref": "darwin-and-flake-fixes",
+        "repo": "nix-index",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1639240632,
@@ -328,6 +345,7 @@
         "kakoune-idris": "kakoune-idris",
         "kakoune-surround": "kakoune-surround",
         "naersk": "naersk",
+        "nix-index": "nix-index",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",

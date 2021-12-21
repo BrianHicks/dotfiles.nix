@@ -41,6 +41,11 @@
       flake = false;
     };
 
+    nix-index = {
+      url = "github:BrianHicks/nix-index/darwin-and-flake-fixes";
+      flake = false;
+    };
+
     spoons = {
       url = "github:Hammerspoon/Spoons";
       flake = false;
@@ -206,6 +211,8 @@
             mand = final.writeShellScriptBin "mand" ''
               ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
             '';
+
+            nix-index = final.callPackage inputs.nix-index { };
 
             openmoji-black = unstable.openmoji-black;
 
