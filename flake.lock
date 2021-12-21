@@ -235,6 +235,22 @@
         "type": "github"
       }
     },
+    "niv": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636372737,
+        "narHash": "sha256-VZfPs0Ns/TgeaVIPfL1Cb7pdIGqWZcmh+JhEtnHWdLQ=",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "5830a4dd348d77e39a0f3c4c762ff2663b602d4c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmattia",
+        "repo": "niv",
+        "type": "github"
+      }
+    },
     "nix-index": {
       "flake": false,
       "locked": {
@@ -345,6 +361,7 @@
         "kakoune-idris": "kakoune-idris",
         "kakoune-surround": "kakoune-surround",
         "naersk": "naersk",
+        "niv": "niv",
         "nix-index": "nix-index",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
