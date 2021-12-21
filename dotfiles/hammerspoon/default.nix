@@ -15,6 +15,23 @@
       win:setFrame(f)
     end)
 
+    hs.hotkey.bind(hyper, "M", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = win:screen()
+      local max = screen:frame()
+
+      local segments = 6
+      local segmentW = max.w / segments
+      local segmentH = max.h / segments
+
+      f.x = max.x + segmentW
+      f.y = max.y + segmentH
+      f.w = segmentW * 4
+      f.h = segmentH * 4
+      win:setFrame(f)
+    end)
+
     hs.loadSpoon("ReloadConfiguration")
     spoon.ReloadConfiguration:start()
   '';
