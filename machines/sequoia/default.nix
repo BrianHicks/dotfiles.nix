@@ -29,16 +29,14 @@
   nix.buildCores = 20;
   users.nix.configureBuildUsers = true;
 
-  # enabling distributed builds removes a blank config line from
-  # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
-  # rest just fine.
-  # nix.distributedBuilds = true;
-  # nix.buildMachines = [{
-  #   hostName = "nix-docker";
-  #   system = "x86_64-linux";
-  #   maxJobs = 4;
-  #   sshKey = "/etc/nix/docker_rsa";
-  # }];
+  # use nixbuild.net for distributed builds
+  nix.distributedBuilds = true;
+  nix.buildMachines = [{
+    hostName = "eu.nixbuild.net";
+    system = "x86_64-linux";
+    maxJobs = 100;
+    supportedFeatures = [ "benchmark" "big-parallel" ];
+  }];
 
   # dotfiles
   home-manager = {
