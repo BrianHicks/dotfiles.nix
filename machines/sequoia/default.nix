@@ -40,6 +40,13 @@
   nix.extraOptions = ''
     builders-use-substitutes = true
   '';
+  programs.ssh.knownHosts = {
+    nixBuild = {
+      hostNames = [ "eu.nixbuild.net" ];
+      publicKey =
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
+    };
+  };
 
   # dotfiles
   home-manager = {
