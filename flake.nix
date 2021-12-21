@@ -27,7 +27,7 @@
     tree-grepper.inputs.naersk.follows = "naersk";
 
     comma = {
-      url = "github:shopify/comma";
+      url = "github:nix-community/comma";
       flake = false;
     };
 
