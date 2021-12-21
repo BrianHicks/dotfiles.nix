@@ -15,9 +15,8 @@
       win:setFrame(f)
     end)
 
-    hs.hotkey.bind(hyper, "R", function()
-      hs.reload()
-    end)
+    hs.loadSpoon("ReloadConfiguration")
+    spoon.ReloadConfiguration:start()
   '';
 
   home.file.".hammerspoon/Spoons".source = pkgs.hammerspoon.spoons;
