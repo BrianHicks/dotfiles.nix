@@ -37,6 +37,9 @@
     maxJobs = 100;
     supportedFeatures = [ "benchmark" "big-parallel" ];
   }];
+  nix.extraOptions = ''
+    builders-use-substitutes = true
+  '';
 
   # dotfiles
   home-manager = {
