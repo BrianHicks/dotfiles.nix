@@ -29,24 +29,18 @@
   nix.buildCores = 20;
   users.nix.configureBuildUsers = true;
 
-  # use nixbuild.net for distributed builds
+  # note: needs github.com/nix-community/linuxkit-nix installed before this will work
   nix.distributedBuilds = true;
   nix.buildMachines = [{
-    hostName = "eu.nixbuild.net";
+    hostName = "ssh://nix-linuxkit";
     system = "x86_64-linux";
-    maxJobs = 100;
-    supportedFeatures = [ "benchmark" "big-parallel" ];
+    sshKey = "/Users/brianhicks/.cache/nix-linuxkit-builder/keys/client";
+    maxJobs = 20;
+    supportedFeatures = [ "benchmark" "big-parallel" "kvm" ];
   }];
   nix.extraOptions = ''
     builders-use-substitutes = true
   '';
-  programs.ssh.knownHosts = {
-    nixBuild = {
-      hostNames = [ "eu.nixbuild.net" ];
-      publicKey =
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
-    };
-  };
 
   # dotfiles
   home-manager = {
