@@ -68,6 +68,7 @@
         ../../dotfiles/fzf
         ../../dotfiles/git
         ../../dotfiles/lf
+        ../../dotfiles/hammerspoon
         ../../dotfiles/home-manager
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
