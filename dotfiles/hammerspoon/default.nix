@@ -55,6 +55,42 @@
       win:setFrame(f)
     end)
 
+    hs.hotkey.bind(hyper, "S", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = hs.mouse.getCurrentScreen()
+      local max = screen:frame()
+
+      local segments = 6
+      local segmentH = max.h / segments
+
+      f.x = max.x
+      f.y = max.y
+      f.w = max.w
+      f.h = segmentH * 4
+
+      win:moveToScreen(screen)
+      win:setFrame(f)
+    end)
+
+    hs.hotkey.bind(hyper, "T", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = hs.mouse.getCurrentScreen()
+      local max = screen:frame()
+
+      local segments = 6
+      local segmentH = max.h / segments
+
+      f.x = max.x
+      f.y = max.y + segmentH * 4
+      f.w = max.w
+      f.h = segmentH * 2
+
+      win:moveToScreen(screen)
+      win:setFrame(f)
+    end)
+
     hs.hotkey.bind(hyper, "Left", function()
       local win = hs.window.focusedWindow()
       local f = win:frame()
