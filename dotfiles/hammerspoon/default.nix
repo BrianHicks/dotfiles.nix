@@ -55,6 +55,66 @@
       win:setFrame(f)
     end)
 
+    hs.hotkey.bind(hyper, "Left", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = hs.mouse.getCurrentScreen()
+      local max = screen:frame()
+
+      f.x = max.x
+      f.y = max.y
+      f.w = max.w / 2
+      f.h = max.h
+
+      win:moveToScreen(screen)
+      win:setFrame(f)
+    end)
+
+    hs.hotkey.bind(hyper, "Right", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = hs.mouse.getCurrentScreen()
+      local max = screen:frame()
+
+      f.x = max.x + max.w / 2
+      f.y = max.y
+      f.w = max.w / 2
+      f.h = max.h
+
+      win:moveToScreen(screen)
+      win:setFrame(f)
+    end)
+
+    hs.hotkey.bind(hyper, "Up", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = hs.mouse.getCurrentScreen()
+      local max = screen:frame()
+
+      f.x = max.x
+      f.y = max.y
+      f.w = max.w
+      f.h = max.h / 2
+
+      win:moveToScreen(screen)
+      win:setFrame(f)
+    end)
+
+    hs.hotkey.bind(hyper, "Down", function()
+      local win = hs.window.focusedWindow()
+      local f = win:frame()
+      local screen = hs.mouse.getCurrentScreen()
+      local max = screen:frame()
+
+      f.x = max.x
+      f.y = max.y + max.h / 2
+      f.w = max.w
+      f.h = max.h / 2
+
+      win:moveToScreen(screen)
+      win:setFrame(f)
+    end)
+
     hs.hotkey.bind(hyper, "C", function()
       local win = hs.window.focusedWindow()
       local screen = hs.mouse.getCurrentScreen()
