@@ -38,13 +38,8 @@
 
     hs.hotkey.bind(hyper, "C", function()
       local win = hs.window.focusedWindow()
-      local f = win:frame()
-      local screen = win:screen()
-      local max = screen:frame()
-
-      f.x = max.w / 2 - f.w / 2
-      f.y = max.h / 2 - f.h / 2
-      win:setFrame(f)
+      local screen = hs.mouse.getCurrentScreen()
+      win:centerOnScreen(screen)
     end)
 
     hs.loadSpoon("ReloadConfiguration")
