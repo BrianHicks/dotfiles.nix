@@ -2,19 +2,25 @@
   home.file.".hammerspoon/init.lua".text = ''
     hyper = {"cmd", "alt", "ctrl", "shift"}
 
-    hs.hotkey.bind(hyper, "F", function()
+    function resizeToCursorScreen(modifyDimensions)
       local win = hs.window.focusedWindow()
-      local f = win:frame()
+      local windowFrame = win:frame()
       local screen = hs.mouse.getCurrentScreen()
-      local max = screen:frame()
+      local screenFrame = screen:frame()
 
-      f.x = max.x
-      f.y = max.y
-      f.w = max.w
-      f.h = max.h
+      modifyDimensions(windowFrame, screenFrame)
 
       win:moveToScreen(screen)
-      win:setFrame(f)
+      win:setFrame(windowFrame)
+    end
+
+    hs.hotkey.bind(hyper, "F", function()
+      resizeToCursorScreen(function(windowFrame, screenFrame)
+        windowFrame.x = screenFrame.x
+        windowFrame.y = screenFrame.y
+        windowFrame.w = screenFrame.w
+        windowFrame.h = screenFrame.h
+      end)
     end)
 
     hs.hotkey.bind(hyper, "M", function()
