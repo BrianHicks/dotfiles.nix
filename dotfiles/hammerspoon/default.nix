@@ -73,6 +73,14 @@
       win:centerOnScreen(screen)
     end)
 
+    hs.loadSpoon("TextClipboardHistory")
+    spoon.TextClipboardHistory:start()
+    spoon.TextClipboardHistory.paste_on_select = true
+
+    hs.hotkey.bind(hyper, "V", function()
+      spoon.TextClipboardHistory:showClipboard()
+    end)
+
     hs.loadSpoon("ReloadConfiguration")
     spoon.ReloadConfiguration:start()
   '';
