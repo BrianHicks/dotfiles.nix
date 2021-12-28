@@ -58,6 +58,7 @@
         ../../dotfiles/bat
         ../../dotfiles/cachix
         ../../dotfiles/comma
+        ../../dotfiles/comby
         ../../dotfiles/direnv
         ../../dotfiles/fzf
         ../../dotfiles/git
