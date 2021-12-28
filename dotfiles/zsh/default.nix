@@ -38,7 +38,7 @@ in {
 
       setopt PROMPT_SUBST
 
-      PROMPT="%B%F{blue}%c%f%b %F{blue}»%f "
+      PROMPT="%(?..[%F{red}%?%f] )%B%F{blue}%c%f%b %F{blue}»%f "
       RPROMPT=
 
       # this is just a work thing, and temporary until we permanently enable a new
