@@ -12,6 +12,13 @@
       color_scheme = "Ayu Mirage",
 
       hide_tab_bar_if_only_one_tab = true,
+
+      -- my Kinesis layout uses left alt as a hacked hyper key, and right alt for
+      -- an actual alt key everywhere. That means I want both of these to be
+      -- meta/esc.
+      send_composed_key_when_left_alt_is_pressed = false,
+      send_composed_key_when_right_alt_is_pressed = false,
+      use_dead_keys = false,
     }
   '';
 }
