@@ -2,6 +2,8 @@ declare-option -docstring "tmux pane ID to target" str tmux_command_target 1
 
 declare-option -docstring "command to send" str tmux_command_command ""
 
+declare-option -docstring "clear screen before sending command" bool tmux_command_clear true
+
 define-command -override tmux-send-command -params 0.. -command-completion -docstring "send a command to the target pane" %{
     evaluate-commands %sh{
         if test "$#" -gt 0; then
@@ -12,6 +14,10 @@ define-command -override tmux-send-command -params 0.. -command-completion -docs
         else
           COMMAND="$kak_opt_tmux_command_command"
         fi
+
+	if test "$kak_opt_tmux_command_clear" = "true"; then
+	  tmux send-keys -t "$kak_opt_tmux_command_target" "C-l" > /dev/null 2>&1
+	fi
 
         tmux send-keys -t "$kak_opt_tmux_command_target" "$COMMAND" "Enter" > /dev/null 2>&1
     }
