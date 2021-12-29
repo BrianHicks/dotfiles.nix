@@ -19,6 +19,10 @@
       send_composed_key_when_left_alt_is_pressed = false,
       send_composed_key_when_right_alt_is_pressed = false,
       use_dead_keys = false,
+
+      -- fonts
+      font = wezterm.font("Fira Code"),
+      harfbuzz_features = {"zero"},
     }
   '';
 }
