@@ -21,8 +21,7 @@
       use_dead_keys = false,
 
       -- fonts
-      font = wezterm.font("Fira Code"),
-      harfbuzz_features = {"zero"},
+      font = wezterm.font("JetBrains Mono"),
     }
   '';
 }
