@@ -7,6 +7,7 @@
     ./comby
     ./comma
     ./direnv
+    ./fd
     ./fzf
     ./git
     ./home-manager

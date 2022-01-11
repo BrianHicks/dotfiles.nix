@@ -66,6 +66,7 @@
         ../../dotfiles/comma
         ../../dotfiles/comby
         ../../dotfiles/direnv
+        ../../dotfiles/fd
         ../../dotfiles/fzf
         ../../dotfiles/git
         ../../dotfiles/lf
