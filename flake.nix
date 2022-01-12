@@ -22,6 +22,10 @@
     similar-sort.inputs.nixpkgs.follows = "nixpkgs";
     similar-sort.inputs.naersk.follows = "naersk";
 
+    tempo.url = "github:BrianHicks/tempo";
+    tempo.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    tempo.inputs.naersk.follows = "naersk";
+
     tree-grepper.url = "github:BrianHicks/tree-grepper/2.2.0";
     tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
     tree-grepper.inputs.naersk.follows = "naersk";
@@ -108,6 +112,7 @@
     let
       mkOverlays = system: [
         inputs.similar-sort.overlay."${system}"
+        inputs.tempo.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
         (final: prev:
           let

@@ -22,6 +22,7 @@
     ./ripgrep
     ./ssh
     ./tmux
+    ./tempo
     ./tree
     ./tree-grepper
     ./watch

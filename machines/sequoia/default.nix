@@ -81,6 +81,7 @@
         ../../dotfiles/ripgrep
         ../../dotfiles/ssh
         ../../dotfiles/tmux
+        ../../dotfiles/tempo
         ../../dotfiles/tree
         ../../dotfiles/tree-grepper
         ../../dotfiles/watch
