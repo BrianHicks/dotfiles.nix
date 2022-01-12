@@ -19,11 +19,11 @@
     "comma": {
       "flake": false,
       "locked": {
-        "lastModified": 1588170489,
-        "narHash": "sha256-IT7zlcM1Oh4sWeCJ1m4NkteuajPxTnNo1tbitG0eqlg=",
+        "lastModified": 1641144881,
+        "narHash": "sha256-WBIQmwlkb/GMoOq+Dnyrk8YmgiM/wJnc5HYZP8Uw72E=",
         "owner": "nix-community",
         "repo": "comma",
-        "rev": "4a62ec17e20ce0e738a8e5126b4298a73903b468",
+        "rev": "02e3e5545b0c62595a77f3d5de1223c536af0614",
         "type": "github"
       },
       "original": {
