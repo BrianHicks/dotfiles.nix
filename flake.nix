@@ -19,7 +19,7 @@
 
     similar-sort.url =
       "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
-    similar-sort.inputs.nixpkgs.follows = "nixpkgs";
+    similar-sort.inputs.nixpkgs.follows = "nixpkgs-unstable";
     similar-sort.inputs.naersk.follows = "naersk";
 
     tempo.url = "github:BrianHicks/tempo";
