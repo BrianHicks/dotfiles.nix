@@ -493,11 +493,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1642028971,
-        "narHash": "sha256-wP/UVE7nGFc0PnZPlP1FWgCpnVEc7x7RgbxefrUxCzU=",
+        "lastModified": 1642082210,
+        "narHash": "sha256-ZZRA9Cs0LgCQhaDd1hXIhgONa6CZV37BGLXD2MVh3ok=",
         "owner": "BrianHicks",
         "repo": "tempo",
-        "rev": "9cc60e92f8cb284811a9cf3efd0b89ea8da2b923",
+        "rev": "8ffb8492f46a9037c690ba7793498612967074c6",
         "type": "github"
       },
       "original": {
