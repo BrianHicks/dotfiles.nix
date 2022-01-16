@@ -169,11 +169,11 @@
     "kakoune-auto-percent": {
       "flake": false,
       "locked": {
-        "lastModified": 1570546357,
-        "narHash": "sha256-Xt26uZCFXm6o7xt1EHVFbumVnsfdUytUhIIoTA1zwbk=",
+        "lastModified": 1642075609,
+        "narHash": "sha256-IkiIdlx6TlzU4tx9xGmz3xPSnm1NVqVWSAhsO9f9Yog=",
         "owner": "Delapouite",
         "repo": "kakoune-auto-percent",
-        "rev": "efca07df24074823425b5e56487c7a24c97111f5",
+        "rev": "02f31481bf9912868aa38a0ca95295bf99c78ff4",
         "type": "github"
       },
       "original": {
