@@ -59,6 +59,8 @@
       nixpkgs.config = pkgs.config;
       nixpkgs.overlays = pkgs.overlays;
 
+      home.packages = [ pkgs.xbar-pr-status ];
+
       imports = [
         ../../dotfiles/alacritty
         ../../dotfiles/bat

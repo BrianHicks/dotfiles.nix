@@ -30,6 +30,10 @@
     tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
     tree-grepper.inputs.naersk.follows = "naersk";
 
+    xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
+    xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    xbar-pr-status.inputs.naersk.follows = "naersk";
+
     comma = {
       url = "github:nix-community/comma";
       flake = false;
@@ -114,6 +118,7 @@
         inputs.similar-sort.overlay."${system}"
         inputs.tempo.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
+        inputs.xbar-pr-status.overlay."${system}"
         (final: prev:
           let
             naersk = inputs.naersk.lib."${system}";

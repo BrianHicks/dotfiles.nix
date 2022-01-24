@@ -97,6 +97,21 @@
         "type": "github"
       }
     },
+    "flake-utils_4": {
+      "locked": {
+        "lastModified": 1642700792,
+        "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fzf-tab": {
       "flake": false,
       "locked": {
@@ -390,7 +405,8 @@
         "sysz": "sysz",
         "tempo": "tempo",
         "tree-grepper": "tree-grepper",
-        "tug": "tug"
+        "tug": "tug",
+        "xbar-pr-status": "xbar-pr-status"
       }
     },
     "shellcheck-kak": {
@@ -544,6 +560,30 @@
       "original": {
         "owner": "matthias-margush",
         "repo": "tug",
+        "type": "github"
+      }
+    },
+    "xbar-pr-status": {
+      "inputs": {
+        "flake-utils": "flake-utils_4",
+        "naersk": [
+          "naersk"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1643049548,
+        "narHash": "sha256-m+ZIH3aJQGtZ1TIZ3Ge/DTzs9Kwcp+65FsTp+pBlmrM=",
+        "owner": "BrianHicks",
+        "repo": "xbar-pr-status",
+        "rev": "2a333a5526a13fdb62604451ed4e590426a92010",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BrianHicks",
+        "repo": "xbar-pr-status",
         "type": "github"
       }
     }
