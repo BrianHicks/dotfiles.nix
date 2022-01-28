@@ -229,6 +229,15 @@ in {
         set-option buffer indentwidth %arg{1}
       }
 
+      hook global WinSetOption filetype=cue %{
+        noexpandtab
+        set-option buffer tabstop 4
+
+        # formatting
+        set-option buffer formatcmd "${pkgs.cue}/bin/cue fmt -s -"
+        hook buffer BufWritePre .* format
+      }
+
       hook global WinSetOption filetype=elm %{
         expandtab-with-width 4
 
