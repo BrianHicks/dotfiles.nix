@@ -4,7 +4,7 @@ declare-option -docstring "command to send" str tmux_command_command ""
 
 declare-option -docstring "clear screen before sending command" bool tmux_command_clear true
 
-define-command -override tmux-send-command -params 0.. -command-completion -docstring "send a command to the target pane" %{
+define-command -override tmux-send-command -params 0.. -shell-completion -docstring "send a command to the target pane" %{
     evaluate-commands %sh{
         if test "$#" -gt 0; then
           COMMAND="$@"
@@ -23,7 +23,7 @@ define-command -override tmux-send-command -params 0.. -command-completion -docs
     }
 }
 
-define-command -override tmux-set-command -params 1.. -command-completion -docstring "set the command to send to tmux" %{
+define-command -override tmux-set-command -params 1.. -shell-completion -docstring "set the command to send to tmux" %{
     set-option global tmux_command_command "%arg{@}"
 }
 
