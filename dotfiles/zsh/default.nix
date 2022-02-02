@@ -52,6 +52,11 @@ in {
         SPRING_WATCHER_FSEVENT=1
         export SPRING_WATCHER_FSEVENT
       fi
+
+      # grab Homebrew binaries if needed
+      if test -d /opt/homebrew/bin; then
+        export PATH="$PATH:/opt/homebrew/bin"
+      fi
     '' + extraInitExtra;
 
     history = {
