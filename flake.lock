@@ -469,11 +469,11 @@
     "spoons": {
       "flake": false,
       "locked": {
-        "lastModified": 1642379375,
-        "narHash": "sha256-ZAFrdG+vEmBsBuVEdFdXFP70qEFhryEJLb7blDSLnFY=",
+        "lastModified": 1643323582,
+        "narHash": "sha256-VMwO6dnHzPgDaXm2dCKqtEpJVrH3Vs7HSXxEKOiIXgg=",
         "owner": "Hammerspoon",
         "repo": "Spoons",
-        "rev": "466db55ccbabfffb2d84004d7b91859052ba1d8a",
+        "rev": "28c3aa65e2de1b12a23659544693f06dd4dc9836",
         "type": "github"
       },
       "original": {
