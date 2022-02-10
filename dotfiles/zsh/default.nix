@@ -37,6 +37,7 @@ in {
       alias ks=kak-session
 
       setopt PROMPT_SUBST
+      setopt PROMPT_SP
 
       EMOJI_NEUTRAL=(😃 🤓 👾 🤖 💯 🐵 🦍 🐺 🐈 🦄 🦅 🦉 🐬 🐋 🐙 🌲 🌳 🍀 🍁 🍇 🍍 🍩 🌍 🌎 🌏 🚄 🚍 🚲 🛴 🚡 🚠 🚀)
       EMOJI_UNHAPPY=(😵 😲 🤡 👹 😿 💔 💢)
