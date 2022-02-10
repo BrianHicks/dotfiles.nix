@@ -36,8 +36,9 @@ in {
       export EDITOR
       alias ks=kak-session
 
-      setopt PROMPT_SUBST
-      setopt PROMPT_SP
+      # see `man zshoptions`
+      setopt PROMPT_SUBST # do parameter, command, and arithmetic expansion in prompts
+      setopt PROMPT_SP    # preserve partial lines, adding inverse-colored % after a line
 
       EMOJI_NEUTRAL=(😃 🤓 👾 🤖 💯 🐵 🦍 🐺 🐈 🦄 🦅 🦉 🐬 🐋 🐙 🌲 🌳 🍀 🍁 🍇 🍍 🍩 🌍 🌎 🌏 🚄 🚍 🚲 🛴 🚡 🚠 🚀)
       EMOJI_UNHAPPY=(😵 😲 🤡 👹 😿 💔 💢)
