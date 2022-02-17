@@ -310,6 +310,10 @@ in {
         }
       }
 
+      hook global BufCreate .*[.](roc) %{
+        set-option buffer filetype coffee
+      }
+
       hook global WinSetOption filetype=ruby %{
         expandtab-with-width 2
 
