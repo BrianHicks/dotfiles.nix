@@ -26,7 +26,7 @@
     tempo.inputs.nixpkgs.follows = "nixpkgs-unstable";
     tempo.inputs.naersk.follows = "naersk";
 
-    tree-grepper.url = "github:BrianHicks/tree-grepper/2.2.0";
+    tree-grepper.url = "github:BrianHicks/tree-grepper";
     tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
     tree-grepper.inputs.naersk.follows = "naersk";
 
