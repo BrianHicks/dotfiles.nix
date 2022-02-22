@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1641205782,
+        "narHash": "sha256-4jY7RCWUoZ9cKD8co0/4tFARpWB+57+r1bLLvXNJliY=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "b7547d3eed6f32d06102ead8991ec52ab0a4f1a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1634851050,
@@ -282,18 +298,22 @@
       }
     },
     "nix-index": {
-      "flake": false,
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
       "locked": {
-        "lastModified": 1640124423,
-        "narHash": "sha256-jI4pZt80fwVT31TP+KMyyiVTfSziAg455R84A6j1URI=",
-        "owner": "BrianHicks",
+        "lastModified": 1645346330,
+        "narHash": "sha256-oWJ9TRQP6bTWE3/KfD7wYzAgukPg0033zf2Dx0vpC5Q=",
+        "owner": "bennofs",
         "repo": "nix-index",
-        "rev": "ff58579fd813ef1116053f31974f897042d4aa70",
+        "rev": "7f3d8c2f691cda8172118dfea1f1a2d5746906e4",
         "type": "github"
       },
       "original": {
-        "owner": "BrianHicks",
-        "ref": "darwin-and-flake-fixes",
+        "owner": "bennofs",
         "repo": "nix-index",
         "type": "github"
       }

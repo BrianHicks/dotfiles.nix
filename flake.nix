@@ -17,6 +17,9 @@
     naersk.url = "github:nix-community/naersk";
     naersk.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    nix-index.url = "github:bennofs/nix-index";
+    nix-index.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     similar-sort.url =
       "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
     similar-sort.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -51,11 +54,6 @@
 
     niv = {
       url = "github:nmattia/niv";
-      flake = false;
-    };
-
-    nix-index = {
-      url = "github:BrianHicks/nix-index/darwin-and-flake-fixes";
       flake = false;
     };
 
@@ -229,7 +227,7 @@
 
             niv = (final.callPackage inputs.niv { }).niv;
 
-            nix-index = final.callPackage inputs.nix-index { };
+            nix-index = inputs.nix-index.packages.${system}.nix-index;
 
             openmoji-black = unstable.openmoji-black;
 
