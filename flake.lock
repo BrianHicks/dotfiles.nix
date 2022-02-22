@@ -453,11 +453,11 @@
     "smarttab-kak": {
       "flake": false,
       "locked": {
-        "lastModified": 1614190700,
-        "narHash": "sha256-4kEXeYKJrEIzJ+aEP/zTUjtWcRbbKm5Levbe9w6ZiTw=",
+        "lastModified": 1644854375,
+        "narHash": "sha256-f6fPmiTQd68esBAqIuYjnBID5DEbpeUI0Bgiy2pbPEI=",
         "owner": "andreyorst",
         "repo": "smarttab.kak",
-        "rev": "1dd3f33c4f65da5c13aee5d44b2e77399595830f",
+        "rev": "17a0fc441ac3519fd6ed9495fd53e761a3a7424d",
         "type": "github"
       },
       "original": {
