@@ -3,6 +3,7 @@ let
   extras = [
     ./elm.zsh
     ./find-and-edit.zsh
+    ./flixify.sh
     ./git.zsh
     ./jetpack.zsh
     ./jump.zsh
