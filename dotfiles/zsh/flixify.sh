@@ -29,5 +29,5 @@ flixify() {
     direnv allow
   fi
 
-  ${EIDTOR:-kak} flake.nix
+  ${EDITOR:-kak} flake.nix
 }
