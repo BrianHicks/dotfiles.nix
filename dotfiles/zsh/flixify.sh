@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 flixify() {
+  if ! git status > /dev/null 2>&1; then
+    git init
+  fi
+
   if ! test -e flake.nix; then
     (
       echo '{'
