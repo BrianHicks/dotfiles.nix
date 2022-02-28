@@ -65,7 +65,7 @@ in {
       set-option -g status-fg colour7
       set-option -g status-bg colour0
       set-option -g status-right '#(${showBranch}/bin/showBranch) #(${shortStat}/bin/shortStat) %a %R #[bg=colour8] #[bg=colour2] #[]'
-      set-option -g status-interval 60
+      set-option -g status-interval 15
       set-option -g pane-active-border-style fg=colour2
       set-option -g pane-border-style fg=colour238
       set-window-option -g window-status-format '#[bg=colour8]#[fg=colour3] #I #[fg=colour15]#W#[fg=colour5]#F# '
