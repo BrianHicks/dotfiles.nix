@@ -2,7 +2,12 @@
 let
   shortStat = pkgs.writeShellScriptBin "shortStat" ''
     if ${pkgs.git}/bin/git show HEAD > /dev/null; then
-      ${pkgs.git}/bin/git diff --shortstat | ${pkgs.gnused}/bin/sed -E 's/ ([0-9]+) files? changed, ([0-9]+) insertions?\(\+\), ([0-9]+) deletions?\(\-\)/\1f \2+ \3-/'
+      OUTPUT="$(${pkgs.git}/bin/git diff --shortstat | ${pkgs.gnused}/bin/sed -E 's/ ([0-9]+) files? changed, ([0-9]+) insertions?\(\+\), ([0-9]+) deletions?\(\-\)/\1f \2+ \3-/')"
+      if test -z "$OUTPUT"; then
+        echo clean
+      else
+        echo "$OUTPUT"
+      fi
     fi
   '';
 
