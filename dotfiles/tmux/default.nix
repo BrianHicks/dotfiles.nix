@@ -73,6 +73,7 @@ in {
       set-option -g status-interval 15
       set-option -g pane-active-border-style fg=colour2
       set-option -g pane-border-style fg=colour238
+      set-option -g status-right-length 60
       set-window-option -g window-status-format '#[bg=colour8]#[fg=colour3] #I #[fg=colour15]#W#[fg=colour5]#F# '
       set-window-option -g window-status-current-format '#[bg=colour8]#[fg=colour3] #I #[bg=colour7]#[fg=colour8] #W#[fg=colour0]#F #[bg=colour8]'
     '';
