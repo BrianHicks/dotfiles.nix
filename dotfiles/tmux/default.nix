@@ -1,4 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  shortStat = pkgs.writeShellScriptBin "shortStat" ''
+    if ${pkgs.git}/bin/git show HEAD > /dev/null; then
+      ${pkgs.git}/bin/git diff --shortstat | ${pkgs.gnused}/bin/sed -E 's/ ([0-9]+) files? changed, ([0-9]+) insertions?\(\+\), ([0-9]+) deletions?\(\-\)/\1f \2+ \3-/'
+    fi
+  '';
+in {
   home.packages = [ pkgs.tmux-session ];
 
   programs.tmux = {
@@ -51,7 +58,7 @@
       set-option -g status-left-length 16
       set-option -g status-fg colour7
       set-option -g status-bg colour0
-      set-option -g status-right '%a %R #[bg=colour8] #[bg=colour2] #[]'
+      set-option -g status-right '#(${shortStat}/bin/shortStat) %a %R #[bg=colour8] #[bg=colour2] #[]'
       set-option -g status-interval 60
       set-option -g pane-active-border-style fg=colour2
       set-option -g pane-border-style fg=colour238
