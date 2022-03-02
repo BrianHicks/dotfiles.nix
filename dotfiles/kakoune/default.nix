@@ -224,6 +224,9 @@ in {
       #   }
       # }
 
+      # Formatting hooks
+      map global user F ': remove-hooks buffer format<ret>: echo Disabled auto-formatting for buffer<ret>'
+
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
         expandtab
@@ -238,7 +241,7 @@ in {
 
         # formatting
         set-option buffer formatcmd "${pkgs.cue}/bin/cue fmt -s -"
-        hook buffer BufWritePre .* format
+        hook -group format buffer BufWritePre .* format
       }
 
       hook global WinSetOption filetype=elm %{
@@ -246,7 +249,7 @@ in {
 
         # formatting
         set-option buffer formatcmd 'elm-format --stdin'
-        hook buffer BufWritePre .* format
+        hook -group format buffer BufWritePre .* format
 
         # extra commands
         map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
@@ -260,7 +263,7 @@ in {
         evaluate-commands %sh{
           if which ormolu > /dev/null; then
             echo 'set-option buffer formatcmd ormolu'
-            echo 'hook buffer BufWritePre .* format'
+            echo 'hook -group format buffer BufWritePre .* format'
           fi
         }
 
@@ -288,7 +291,7 @@ in {
         evaluate-commands %sh{
           if which prettier > /dev/null; then
             echo 'set-option buffer formatcmd "prettier --parser=typescript"'
-            echo 'hook buffer BufWritePre .* format'
+            echo 'hook -group format buffer BufWritePre .* format'
           fi
         }
       }
@@ -298,7 +301,7 @@ in {
 
         # formatting
         set-option buffer formatcmd ${pkgs.nixfmt}/bin/nixfmt
-        hook buffer BufWritePre .* format
+        hook -group format buffer BufWritePre .* format
       }
 
       hook global WinSetOption filetype=python %{
@@ -307,7 +310,7 @@ in {
         evaluate-commands %sh{
           if which black > /dev/null; then
             echo 'set-option buffer formatcmd "black - --quiet --fast"'
-            echo 'hook buffer BufWritePre .* format'
+            echo 'hook -group format buffer BufWritePre .* format'
           fi
         }
       }
@@ -330,7 +333,7 @@ in {
         evaluate-commands %sh{
           if which rustfmt > /dev/null; then
             echo 'set-option buffer formatcmd "rustfmt --emit stdout"'
-            echo 'hook buffer BufWritePre .* format'
+            echo 'hook -group format buffer BufWritePre .* format'
           fi
         }
       }
@@ -347,7 +350,7 @@ in {
         evaluate-commands %sh{
           if which terraform > /dev/null; then
             echo 'set-option buffer formatcmd "terraform fmt -"'
-            echo 'hook buffer BufWritePre .* format'
+            echo 'hook -group format buffer BufWritePre .* format'
           fi
         }
       }
