@@ -225,7 +225,7 @@ in {
       # }
 
       # Formatting hooks
-      map global user F ': remove-hooks buffer format<ret>: echo Disabled auto-formatting for buffer<ret>'
+      map global user F ': remove-hooks buffer format<ret>: echo Disabled auto-formatting for buffer<ret>' -docstring 'Disable auto-formatting'
 
       # Languages
       define-command expandtab-with-width -params 1 -hidden %{
