@@ -593,11 +593,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1645469905,
-        "narHash": "sha256-F00m2vF14n1sBNwBPKBQCX/RJqGpoiM5bL4A6JdKrnE=",
+        "lastModified": 1646246957,
+        "narHash": "sha256-rrvBNfaatCCPzgowMxOOSaz+v5+duWy/sZv1hFI3OMA=",
         "owner": "BrianHicks",
         "repo": "xbar-pr-status",
-        "rev": "06b181990f5c15486d2e3b1f1873f10ebfbac6c5",
+        "rev": "56a27b2238bc24f7f21e845d40f01e8c1a3303b7",
         "type": "github"
       },
       "original": {
