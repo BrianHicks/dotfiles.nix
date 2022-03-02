@@ -553,11 +553,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1645527829,
-        "narHash": "sha256-xVMLZT3Ga4hvwFUPInYCaL8GI3IamUZERbhp/zxyiGw=",
+        "lastModified": 1646218964,
+        "narHash": "sha256-Ldu1OTHRJoymW7cq4n6QnDVukNS2sUVO0kQ3P5WNcZw=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "57fde1dac55b483b2f2bc39e7e53072dc28d74b2",
+        "rev": "c07c6684445d9253b4d25f653fb507976f22df84",
         "type": "github"
       },
       "original": {
