@@ -167,7 +167,7 @@ in {
       map global normal _ ': open-similar-buffer<ret>'
 
       set global lf_path '${pkgs.lf}/bin/lf'
-      map global user d ': lf-browse<ret>'
+      map global user d ': lf-browse<ret>' -docstring 'Open lf browser'
 
       # kak-tree
       set global tree_cmd '${pkgs.kak-tree}/bin/kak-tree'
