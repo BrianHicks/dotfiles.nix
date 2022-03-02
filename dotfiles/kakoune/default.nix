@@ -250,7 +250,6 @@ in {
 
         # extra commands
         map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
-        map buffer user d ': execute-keys -draft y,ss)mliDebug.log<space>"<esc>Pi"<space><esc>' -docstring 'Debug selection'
 
         map buffer normal <a-minus> ': outline-jump-elm<ret>'
       }
