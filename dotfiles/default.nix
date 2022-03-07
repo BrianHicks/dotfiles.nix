@@ -4,7 +4,6 @@
     ./bat
     ./cachix
     ./chromium
-    ./comby
     ./comma
     ./direnv
     ./fd
