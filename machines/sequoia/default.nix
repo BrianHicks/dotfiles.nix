@@ -59,7 +59,7 @@
       nixpkgs.config = pkgs.config;
       nixpkgs.overlays = pkgs.overlays;
 
-      home.packages = [ pkgs.xbar-pr-status ];
+      home.packages = [ pkgs.xbar-pr-status pkgs.nix-tree ];
 
       imports = [
         ../../dotfiles/alacritty
