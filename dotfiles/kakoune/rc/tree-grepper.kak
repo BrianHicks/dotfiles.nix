@@ -22,7 +22,7 @@ define-command -hidden -params 2..3 outline-jump %{
         cd $7
         # do the magic!
 
-        EDIT_LOCATION="$("$TREE_GREPPER" --query "$LANGUAGE" "$QUERY" "$FILE" | fzf --with-nth 4,5 --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }" | bc):$(($(echo {2}) + 7))" {1}' | cut -d : -f 1-3 | tr : ' ')"
+        EDIT_LOCATION="$("$TREE_GREPPER" --query "$LANGUAGE" "$QUERY" "$FILE" | fzf --with-nth 4.. --nth 2,1 --delimiter=: --query "$FZF_QUERY" --select-1 --preview 'bat --color=always -pp --highlight-line {2} --line-range "$(echo "x = $(echo {2}) - 7; if (x < 0) { 0 } else { x }" | bc):$(($(echo {2}) + 7))" {1}' | cut -d : -f 1-3 | tr : ' ')"
         printf "evaluate-commands -client %s edit %s\n" "$CLIENT" "$EDIT_LOCATION" | kak -p "$SESSION"
     } -- %opt{tree_grepper_path} %opt{tree_grepper_fzf_path} %val{bufname} %arg{3} %val{client} %val{session} %sh{ echo $PWD } %arg{1} %arg{2}
 }
