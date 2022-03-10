@@ -40,5 +40,5 @@ define-command -override -docstring "jump somewhere in an Haskell file's definit
 }
 
 define-command -override -docstring "jump somewhere in an Rust file's definition outline" -params 0..1 outline-jump-rust %{
-    outline-jump rust "(use_declaration)@use (function_item _ (_) @function) (struct_item (type_identifier) @struct) (field_declaration)@field (parameter) (let_declaration)@let (enum_item (type_identifier)@enum) (enum_variant)"
+    outline-jump rust "(use_declaration (_)@use) (function_item (identifier)@function) (function_signature_item (identifier)@function) (struct_item (type_identifier)@struct) (field_declaration)@field (impl_item (type_identifier)@impl) (parameter)@arg (self_parameter)@arg (let_declaration (identifier)@let) (enum_item (type_identifier)@enum) (enum_variant (identifier)@enum)"
 }
