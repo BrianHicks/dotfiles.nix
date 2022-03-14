@@ -249,18 +249,6 @@
               '';
             };
 
-            tmux = prev.tmux.overrideAttrs (attrs:
-              attrs // {
-                # macOS does some weird stuff with locales and character widths.
-                # Practically, that means that without extra support tmux will
-                # behave weirdly around multi-byte characters like emoji. Enabling
-                # utf8proc support should backfill the right tables so that tmux
-                # can get the correct character widths.
-                buildInputs = attrs.buildInputs ++ [ prev.utf8proc ];
-                configureFlags = attrs.configureFlags
-                  ++ [ "--enable-utf8proc" ];
-              });
-
             tmux-session = final.callPackage ./pkgs/tmux-session { };
 
             # tree-grepper tests pass most of the time, but sometimes the nixpkgs
