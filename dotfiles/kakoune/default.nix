@@ -257,6 +257,15 @@ in {
         map buffer normal <a-minus> ': outline-jump-elm<ret>'
       }
 
+      hook global WinSetOption filetype=go %{
+        noexpandtab
+        set-option buffer tabstop 4
+
+        # formatting
+        set-option buffer formatcmd "${pkgs.goimports}/bin/goimports /dev/stdin"
+        hook -group format buffer BufWritePre .* format
+      }
+
       hook global WinSetOption filetype=haskell %{
         expandtab-with-width 2
 
