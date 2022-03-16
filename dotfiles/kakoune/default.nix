@@ -305,6 +305,10 @@ in {
         }
       }
 
+      hook global WinSetOption filetype=markdown %{
+        map buffer normal <a-minus> ': outline-jump-markdown<ret>'
+      }
+
       hook global WinSetOption filetype=nix %{
         expandtab-with-width 2
 
