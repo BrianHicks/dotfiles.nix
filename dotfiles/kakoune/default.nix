@@ -320,6 +320,10 @@ in {
             echo 'hook -group format buffer BufWritePre .* format'
           fi
         }
+
+        # it is annoying to have lifetime annotations have an automatic pair, so
+        # we turn that off by removing them from the default set in auto-pairs.kak
+        set-option global auto_pairs ( ) { } [ ] '"' '"' ` ` “ ” ‘ ’ « » ‹ ›
       }
 
       hook global WinSetOption filetype=sh %{
