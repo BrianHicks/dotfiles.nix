@@ -195,35 +195,6 @@ in {
       set global tree_grepper_path "${pkgs.tree-grepper}/bin/tree-grepper"
       set global tree_grepper_fzf_path "${pkgs.fzf}/bin/fzf"
 
-      # language server
-      # eval %sh{${pkgs.kak-lsp}/bin/kak-lsp --config ~/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}
-      # map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP'
-      # set global lsp_cmd "${pkgs.kak-lsp}/bin/kak-lsp -s %val{session} -vvv --log kak-lsp.log --config ~/.config/kak-lsp/kak-lsp.toml"
-      # set global lsp_hover_anchor true
-
-      # define-command lsp-enable-window-without-completion %{
-      #   # enable LSP for the window, but then...
-      #   lsp-enable-window
-
-      #   # ... remove the hooks that it installs and ...
-      #   remove-hooks window lsp
-
-      #   # ... re-install only the ones I want
-      #   hook -group lsp window WinClose .* lsp-did-close
-      #   hook -group lsp window BufWritePost .* lsp-did-save
-      #   hook -group lsp window WinSetOption lsp_config=.* lsp-did-change-config
-      #   hook -group lsp window WinSetOption lsp_server_configuration=.* lsp-did-change-config
-      # 	# this InsertIdle hook is basically the one I want to try going without.
-      # 	# It means I won't get completions, but I think that's OK! I notice a lot
-      # 	# of lag while using kak-lsp, especially in rust-analyzer, and I don't
-      # 	# need lints as I'm typing.
-      #   # hook -group lsp window InsertIdle .* lsp-completion
-      #   hook -group lsp window NormalIdle .* %{
-      #     lsp-did-change
-      #     %sh{if $kak_opt_lsp_auto_highlight_references; then echo "lsp-highlight-references"; else echo "nop"; fi}
-      #   }
-      # }
-
       # Formatting hooks
       map global user F ': remove-hooks buffer format<ret>: echo Disabled auto-formatting for buffer<ret>' -docstring 'Disable auto-formatting'
 
@@ -379,76 +350,8 @@ in {
       hook global WinSetOption filetype=dhall %{
         expandtab-with-width 2
 
-        # lsp-enable-window
         set-option buffer formatcmd "dhall format"
       }
     '';
   };
-
-  home.file.".config/kak-lsp/kak-lsp.toml".text = ''
-    [language.dhall]
-    filetypes = ["dhall"]
-    roots = []
-    command = "${pkgs.dhall-lsp-server}/bin/dhall-lsp-server"
-
-    [language.rust]
-    filetypes = ["rust"]
-    roots = ["Cargo.toml"]
-    command = "${pkgs.rust-analyzer}/bin/rust-analyzer"
-
-    # Semantic tokens support
-    # See https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_semanticTokens
-    # for the default list of tokens and modifiers.
-    # However, many language servers implement their own values.
-    # Make sure to check the output of `lsp-capabilities` and each server's documentation and source code as well.
-    # Examples:
-    # - TypeScript: https://github.com/microsoft/vscode-languageserver-node/blob/2645fb54ea1e764aff71dee0ecc8aceff3aabf56/client/src/common/semanticTokens.ts#L58
-    # - Rust Analyzer: https://github.com/rust-analyzer/rust-analyzer/blob/f6da603c7fe56c19a275dc7bab1f30fe1ad39707/crates/ide/src/syntax_highlighting.rs#L42
-    [[semantic_tokens]]
-    token = "comment"
-    face = "documentation"
-    modifiers = ["documentation"]
-
-    [[semantic_tokens]]
-    token = "comment"
-    face = "comment"
-
-    [[semantic_tokens]]
-    token = "function"
-    face = "function"
-
-    [[semantic_tokens]]
-    token = "keyword"
-    face = "keyword"
-
-    [[semantic_tokens]]
-    token = "namespace"
-    face = "module"
-
-    [[semantic_tokens]]
-    token = "operator"
-    face = "operator"
-
-    [[semantic_tokens]]
-    token = "string"
-    face = "string"
-
-    [[semantic_tokens]]
-    token = "type"
-    face = "type"
-
-    [[semantic_tokens]]
-    token = "variable"
-    face = "default+d"
-    modifiers = ["readonly"]
-
-    [[semantic_tokens]]
-    token = "variable"
-    face = "default+d"
-    modifiers = ["constant"]
-
-    [[semantic_tokens]]
-    token = "variable"
-    face = "variable"
-  '';
 }
