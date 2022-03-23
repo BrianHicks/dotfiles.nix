@@ -6,6 +6,8 @@
       d = "delete";
       x = "cut";
       "<enter>" = "open";
+      "<c-g>" = "quit";
+      "<esc>" = "quit";
     };
 
     previewer.source = "${pkgs.pistol}/bin/pistol";
