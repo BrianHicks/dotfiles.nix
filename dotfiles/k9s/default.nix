@@ -5,7 +5,7 @@ let
   # fail silently if I make a typo.
   backyardSkin = builtins.readFile "${pkgs.k9s-skins}/snazzy.yml";
   stagingSkin = builtins.readFile "${pkgs.k9s-skins}/monokai.yml";
-  productionSkin = builtins.readFile "${pkgs.k9s-skins}/red.yml";
+  productionSkin = builtins.readFile "${pkgs.k9s-skins}/rose_pine.yml";
 
   config = builtins.toJSON {
     k9s = {
