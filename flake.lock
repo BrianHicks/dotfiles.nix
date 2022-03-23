@@ -29,6 +29,7 @@
       "original": {
         "owner": "nix-community",
         "repo": "comma",
+        "rev": "54149dc417819af14ddc0d59216d4add5280ad14",
         "type": "github"
       }
     },

@@ -38,7 +38,8 @@
     xbar-pr-status.inputs.naersk.follows = "naersk";
 
     comma = {
-      url = "github:nix-community/comma";
+      url =
+        "github:nix-community/comma/54149dc417819af14ddc0d59216d4add5280ad14";
       flake = false;
     };
 
