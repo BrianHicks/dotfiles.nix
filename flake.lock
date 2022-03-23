@@ -305,11 +305,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1646684606,
-        "narHash": "sha256-xIJCzEHQJ2kHRbT4Ejrb5R5e/VqjKrklV7XneZIiyUg=",
+        "lastModified": 1647808006,
+        "narHash": "sha256-aBlJcylH7/MDiu0RVEiUwV1XufGfVk4OvsFutImCszY=",
         "owner": "bennofs",
         "repo": "nix-index",
-        "rev": "f09548f66790d2d7d53f07ad2af62993d7cabb08",
+        "rev": "e7c66ba52fcfba6bfe51adb5400c29a9622664a2",
         "type": "github"
       },
       "original": {
