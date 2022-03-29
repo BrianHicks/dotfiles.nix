@@ -55,6 +55,11 @@ in {
         whitespace-error-style = "22 reverse";
       };
     };
+
+    signing = {
+      key = null;
+      signByDefault = true;
+    };
   };
 
   programs.gh.enable = true;
