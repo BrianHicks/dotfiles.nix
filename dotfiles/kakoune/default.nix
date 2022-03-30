@@ -233,7 +233,7 @@ in {
         set-option buffer tabstop 4
 
         # formatting
-        set-option buffer formatcmd "${pkgs.goimports}/bin/goimports /dev/stdin"
+        set-option buffer formatcmd "${pkgs.gotools}/bin/goimports /dev/stdin"
         hook -group format buffer BufWritePre .* format
       }
 
