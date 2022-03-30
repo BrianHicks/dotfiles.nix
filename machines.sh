@@ -7,7 +7,7 @@ case "$(uname -s)" in
     ;;
 
   Darwin)
-    nix-shell "-p" nixUnstable --run "nix --experimental-features 'nix-command flakes' build .#darwinConfigurations.$(hostname -s).system"
+    nix --experimental-features 'nix-command flakes' build ".#darwinConfigurations.$(hostname -s).system"
     if test "$@" != "build"; then
       ./result/sw/bin/darwin-rebuild --flake ".#$(hostname -s)" "$@"
     fi
