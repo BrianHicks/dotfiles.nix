@@ -3,12 +3,6 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    # https://nixos.wiki/wiki/Flakes#Installation_as_an_extra_command
-    (pkgs.writeShellScriptBin "flix" ''
-      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
-    '')
-  ];
 
   # allow zsh as a login shell
   environment.shells = [ pkgs.zsh ];
@@ -39,6 +33,7 @@
   }];
   nix.extraOptions = ''
     builders-use-substitutes = true
+    experimental-features = nix-command flakes
   '';
   programs.ssh.knownHosts = {
     nixBuild = {
