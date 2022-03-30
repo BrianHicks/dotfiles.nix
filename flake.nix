@@ -2,39 +2,37 @@
   description = "Brian's Dotfiles";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-21.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-21.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     naersk.url = "github:nix-community/naersk";
-    naersk.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    naersk.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-index.url = "github:bennofs/nix-index";
-    nix-index.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nix-index.inputs.nixpkgs.follows = "nixpkgs";
 
     similar-sort.url =
       "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
-    similar-sort.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    similar-sort.inputs.nixpkgs.follows = "nixpkgs";
     similar-sort.inputs.naersk.follows = "naersk";
 
     tempo.url = "github:BrianHicks/tempo";
-    tempo.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    tempo.inputs.nixpkgs.follows = "nixpkgs";
     tempo.inputs.naersk.follows = "naersk";
 
     tree-grepper.url = "github:BrianHicks/tree-grepper";
-    tree-grepper.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    tree-grepper.inputs.nixpkgs.follows = "nixpkgs";
     tree-grepper.inputs.naersk.follows = "naersk";
 
     xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
-    xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs";
     xbar-pr-status.inputs.naersk.follows = "naersk";
 
     comma = {
@@ -127,8 +125,6 @@
             # up in this package. I'd love to move it to a real flake, though,
             # so things would be all in one place!
             kak-tree = final.callPackage ./pkgs/kak-tree { inherit naersk; };
-
-            unstable = inputs.nixpkgs-unstable.legacyPackages."${system}";
           in {
             comma = final.callPackage inputs.comma { };
 
@@ -136,8 +132,6 @@
             fzf-tab = inputs.fzf-tab;
 
             git-gclone = final.callPackage ./pkgs/git-gclone { };
-
-            gh = unstable.gh;
 
             hammerspoon.spoons = final.stdenv.mkDerivation {
               name = "spoons";
@@ -150,8 +144,6 @@
                 cp -r Source/* $out
               '';
             };
-
-            kak-lsp = unstable.kak-lsp;
 
             kak-session = final.callPackage ./pkgs/kak-session { };
 
@@ -230,10 +222,6 @@
 
             nix-index = inputs.nix-index.packages.${system}.nix-index;
 
-            openmoji-black = unstable.openmoji-black;
-
-            openmoji-color = unstable.openmoji-color;
-
             sysz = final.stdenv.mkDerivation {
               name = "sysz";
               src = inputs.sysz;
@@ -302,10 +290,7 @@
         system = "aarch64-darwin";
 
         modules = [
-          ({ pkgs, ... }: {
-            nix.package = pkgs.nixUnstable;
-            nixpkgs.overlays = mkOverlays system;
-          })
+          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
           ./machines/sequoia
           inputs.home-manager.darwinModules.home-manager
         ];
