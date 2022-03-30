@@ -65,6 +65,7 @@
         ../../dotfiles/fd
         ../../dotfiles/fzf
         ../../dotfiles/git
+        ../../dotfiles/htop
         ../../dotfiles/lf
         ../../dotfiles/hammerspoon
         ../../dotfiles/home-manager

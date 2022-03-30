@@ -10,6 +10,7 @@
     ./fzf
     ./git
     ./home-manager
+    ./htop
     ./hyperfine
     ./jq
     ./lf
