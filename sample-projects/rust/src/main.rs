@@ -22,6 +22,20 @@ impl Foo {
         let to_add = 1;
         self.count += to_add
     }
+
+    fn returns_tuple(&self) -> (int, bool) {
+        (1, true)
+    }
+
+    fn consumes_tuple(&self) -> bool {
+        let (base, should_double) = self.returns_tuple();
+
+        if should_double {
+            base * 2
+        } else {
+            base
+        }
+    }
 }
 
 impl Drop for Foo {
