@@ -54,6 +54,8 @@
       nixpkgs.config = pkgs.config;
       nixpkgs.overlays = pkgs.overlays;
 
+      home.sessionVariables.NIX_PATH = "nixpkgs=${pkgs.path}:$NIX_PATH";
+
       home.packages = [ pkgs.xbar-pr-status pkgs.nix-tree ];
 
       imports = [
