@@ -10,6 +10,13 @@ idString (Id id) =
     id
 
 
+idStringCase : Id -> String
+idStringCase id =
+    case id of
+        Id id_ ->
+            id_
+
+
 double : Int -> Int
 double half =
     half * 2
