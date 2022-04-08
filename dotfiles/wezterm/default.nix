@@ -35,6 +35,34 @@
 
       -- turn off the title bar (it doesn't do a lot and takes up a row or two of terminal output)
       window_decorations = "RESIZE",
+
+      -- copy the "normal" stuff from wezterm in, plus customizations (noted in comments)
+      -- https://wezfurlong.org/wezterm/hyperlinks.html
+      hyperlink_rules = {
+        -- things that look like URLs
+        {
+          regex = "\\b\\w+://(?:[\\w.-]+)\\.[a-z]{2,15}\\S*\\b",
+          format = "$0",
+        },
+
+        -- email addresses
+        {
+          regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
+          format = "mailto:$0",
+        },
+
+        -- file:// URI
+        {
+          regex = "\\bfile://\\S*\\b",
+          format = "$0",
+        },
+
+        -- Linear task IDs
+        {
+          regex = "\\b([A-Z]{3}-\\d+)\\b",
+          format = "https://linear.app/noredink/issue/$1",
+        },
+      },
     }
   '';
 }
