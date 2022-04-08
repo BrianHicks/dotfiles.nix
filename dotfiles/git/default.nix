@@ -88,6 +88,8 @@ in {
       colorArg = "always";
       pager = "${pkgs.gitAndTools.delta}/bin/delta --paging=never";
     };
+
+    git.overrideGpg = true; # prevents spawning a separate process on commits
   };
 
   home.packages = [
