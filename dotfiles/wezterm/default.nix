@@ -61,7 +61,7 @@
 
         -- Linear task IDs
         {
-          regex = "\\b([A-Z]{3}-\\d+)\\b",
+          regex = "\\b([A-Z0-9]{3}-\\d+)\\b",
           format = "https://linear.app/noredink/issue/$1",
         },
       },
