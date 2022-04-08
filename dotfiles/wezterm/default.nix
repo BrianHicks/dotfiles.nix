@@ -22,6 +22,13 @@
 
       -- fonts
       font = wezterm.font("JetBrains Mono"),
+
+      -- flare the cursor for visual bell instead of flashing the background
+      visual_bell = {
+        fade_in_duration_ms = 75,
+        fade_out_duration_ms = 75,
+        target = "CursorColor",
+      },
     }
   '';
 }
