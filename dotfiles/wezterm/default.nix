@@ -32,6 +32,9 @@
 
       -- I never want to hear BEL, thanks
       audible_bell = "Disabled",
+
+      -- turn off the title bar (it doesn't do a lot and takes up a row or two of terminal output)
+      window_decorations = "RESIZE",
     }
   '';
 }
