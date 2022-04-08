@@ -29,6 +29,9 @@
         fade_out_duration_ms = 75,
         target = "CursorColor",
       },
+
+      -- I never want to hear BEL, thanks
+      audible_bell = "Disabled",
     }
   '';
 }
