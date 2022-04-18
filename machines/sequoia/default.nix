@@ -78,6 +78,7 @@
         ../../dotfiles/ncdu
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
+        ../../dotfiles/sd
         ../../dotfiles/ssh
         ../../dotfiles/tmux
         ../../dotfiles/tempo

@@ -20,6 +20,7 @@
     ./niv
     ./rofi
     ./ripgrep
+    ./sd
     ./ssh
     ./tmux
     ./tempo
