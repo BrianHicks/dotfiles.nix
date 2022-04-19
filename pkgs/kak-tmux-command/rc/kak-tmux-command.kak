@@ -15,6 +15,8 @@ define-command -override tmux-send-command -params 0.. -shell-completion -docstr
           COMMAND="$kak_opt_tmux_command_command"
         fi
 
+        COMMAND="$(echo "$COMMAND" | sed "s|BUFFILE|$kak_buffile|g" | sed "s|CURSOR_LINE|$kak_cursor_line|")"
+
 	if test "$kak_opt_tmux_command_clear" = "true"; then
 	  tmux send-keys -t "$kak_opt_tmux_command_target" "C-l" > /dev/null 2>&1
 	fi
