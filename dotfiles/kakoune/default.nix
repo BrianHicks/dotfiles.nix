@@ -217,6 +217,8 @@ in {
         map buffer user i ': elm-copy-import-line<ret>' -docstring 'Copy an import line'
 
         map buffer normal <a-minus> ': outline-jump-elm<ret>'
+
+        map buffer user t ': tmux-send-command elm-test<ret>' -docstring 'Run elm-test'
       }
 
       hook global WinSetOption filetype=go %{
