@@ -6,6 +6,7 @@
     ./chromium
     ./comma
     ./direnv
+    ./dog
     ./fd
     ./fzf
     ./git

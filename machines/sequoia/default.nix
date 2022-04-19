@@ -64,6 +64,7 @@
         ../../dotfiles/cachix
         ../../dotfiles/comma
         ../../dotfiles/direnv
+        ../../dotfiles/dog
         ../../dotfiles/fd
         ../../dotfiles/fzf
         ../../dotfiles/git
