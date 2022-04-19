@@ -296,15 +296,15 @@ in {
         set-option buffer filetype coffee
       }
 
+      declare-user-mode rspec
+      map global rspec t ': tmux-send-command rspec BUFFILE<ret>' -docstring 'Run rspec on the current file'
+      map global rspec T ': tmux-send-command rspec BUFFILE:CURSOR_LINE<ret>' -docstring 'Run rspec on the spec under the cursor'
+      map global rspec a ': tmux-send-command rspec<ret>' -docstring 'Run all rspec tests'
+
       hook global WinSetOption filetype=ruby %{
         expandtab-with-width 2
 
         map buffer normal <a-minus> ': outline-jump-ruby<ret>'
-
-        declare-user-mode rspec
-        map buffer rspec t ': tmux-send-command rspec BUFFILE<ret>' -docstring 'Run rspec on the current file'
-        map buffer rspec T ': tmux-send-command rspec BUFFILE:CURSOR_LINE<ret>' -docstring 'Run rspec on the spec under the cursor'
-        map buffer rspec a ': tmux-send-command rspec<ret>' -docstring 'Run all rspec tests'
 
         map buffer user t ': enter-user-mode rspec<ret>' -docstring 'rspec'
       }
