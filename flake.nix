@@ -218,7 +218,13 @@
               ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
             '';
 
-            niv = (final.callPackage inputs.niv { }).niv;
+            niv = let
+              nivSources = import "${inputs.niv}/nix/sources.nix" { };
+              nivNixpkgs = import nivSources.nixpkgs {
+                sources = nivSources;
+                inherit system;
+              };
+            in (nivNixpkgs.callPackage inputs.niv { }).niv;
 
             nix-index = inputs.nix-index.packages.${system}.nix-index;
 
