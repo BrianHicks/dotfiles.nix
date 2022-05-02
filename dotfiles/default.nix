@@ -24,7 +24,6 @@
     ./sd
     ./ssh
     ./tmux
-    ./tempo
     ./tree
     ./tree-grepper
     ./watch

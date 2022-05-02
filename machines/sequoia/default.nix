@@ -82,7 +82,6 @@
         ../../dotfiles/sd
         ../../dotfiles/ssh
         ../../dotfiles/tmux
-        ../../dotfiles/tempo
         ../../dotfiles/tree
         ../../dotfiles/tree-grepper
         ../../dotfiles/watch
