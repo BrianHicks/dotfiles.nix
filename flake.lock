@@ -530,11 +530,11 @@
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1650622458,
-        "narHash": "sha256-GxziH+5xYYNyvmvLEO6f/0h3K8gw6EmVYsZ++y5+hSE=",
+        "lastModified": 1651488046,
+        "narHash": "sha256-nLlmxNthvyeUAvmFXo5Y9jTCfq6Z00wZ5aCczGEEMUM=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "2293197c63abf2131fbb5545cd689e6744b66b18",
+        "rev": "248a0e2051e7596faf88128289b44fa2c70f355a",
         "type": "github"
       },
       "original": {
