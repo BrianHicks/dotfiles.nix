@@ -484,17 +484,18 @@
         "tree-sitter-haskell": "tree-sitter-haskell",
         "tree-sitter-javascript": "tree-sitter-javascript",
         "tree-sitter-markdown": "tree-sitter-markdown",
+        "tree-sitter-nix": "tree-sitter-nix",
         "tree-sitter-php": "tree-sitter-php",
         "tree-sitter-ruby": "tree-sitter-ruby",
         "tree-sitter-rust": "tree-sitter-rust",
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1651488046,
-        "narHash": "sha256-nLlmxNthvyeUAvmFXo5Y9jTCfq6Z00wZ5aCczGEEMUM=",
+        "lastModified": 1651831394,
+        "narHash": "sha256-Cx0qtJxVj7tQznAJBXRdnutZvMeRTevgN/hrvoZNlBI=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "248a0e2051e7596faf88128289b44fa2c70f355a",
+        "rev": "0538cbc62c574e124279c8a2e003cb67196edefd",
         "type": "github"
       },
       "original": {
@@ -598,6 +599,22 @@
       "original": {
         "owner": "ikatyang",
         "repo": "tree-sitter-markdown",
+        "type": "github"
+      }
+    },
+    "tree-sitter-nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1647585728,
+        "narHash": "sha256-uayZNXkuSVvgMKmvXyJq1boSW6bOjm02MCGbCPytgMI=",
+        "owner": "cstrahan",
+        "repo": "tree-sitter-nix",
+        "rev": "470b15a60520ff7b86f51732b8d8f1118c86041e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cstrahan",
+        "repo": "tree-sitter-nix",
         "type": "github"
       }
     },
