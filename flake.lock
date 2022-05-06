@@ -270,11 +270,11 @@
     "niv": {
       "flake": false,
       "locked": {
-        "lastModified": 1651091244,
-        "narHash": "sha256-YrgYyjeG+RpEpxUDEm3c0J7MeUSlwFx5fIpeVTcnqWM=",
+        "lastModified": 1651852951,
+        "narHash": "sha256-RxUjVd3zYyKbxNlT4jFiml+hDbxP3xHHiA+wX1MQFCQ=",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "945aa20cd077a8eccb1c42e29f225370b9a8d78b",
+        "rev": "82e5cd1ad3c387863f0545d7591512e76ab0fc41",
         "type": "github"
       },
       "original": {
