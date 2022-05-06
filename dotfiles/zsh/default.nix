@@ -37,6 +37,8 @@ in {
       export EDITOR
       alias ks=kak-session
 
+      alias ready='gh pr create --reviewer NoRedInk/team-raven'
+
       # see `man zshoptions`
       setopt PROMPT_SUBST # do parameter, command, and arithmetic expansion in prompts
       setopt PROMPT_SP    # preserve partial lines, adding inverse-colored % after a line
