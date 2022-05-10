@@ -206,6 +206,10 @@ in {
         hook -group format buffer BufWritePre .* format
       }
 
+      declare-user-mode elm-test
+      map global elm-test t ': tmux-send-command elm-test BUFFILE<ret>' -docstring 'Run elm-test on the current file'
+      map global elm-test a ': tmux-send-command elm-test<ret>' -docstring 'Run all elm-test tests'
+
       hook global WinSetOption filetype=elm %{
         expandtab-with-width 4
 
@@ -218,7 +222,7 @@ in {
 
         map buffer normal <a-minus> ': outline-jump-elm<ret>'
 
-        map buffer user t ': tmux-send-command elm-test<ret>' -docstring 'Run elm-test'
+        map buffer user t ': enter-user-mode elm-test<ret>' -docstring 'elm-test'
       }
 
       hook global WinSetOption filetype=go %{
