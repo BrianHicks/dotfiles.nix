@@ -218,11 +218,11 @@
     "kakoune-idris": {
       "flake": false,
       "locked": {
-        "lastModified": 1638629674,
-        "narHash": "sha256-T/Sto6HFt8+4AS7+B0yWdqwEESWPcE7m+/m4XFDjXS8=",
+        "lastModified": 1652280096,
+        "narHash": "sha256-EeRAF5S4az7ikQkLO1JeIkEzPAb9QPhW2fhAjSEE4wI=",
         "owner": "stoand",
         "repo": "kakoune-idris",
-        "rev": "f39e55a4f17108ae7ff22cb2da7c3f00ce0b0f8e",
+        "rev": "bf1d1e34229e71c27b33dec00655b03b9679634c",
         "type": "github"
       },
       "original": {
