@@ -6,3 +6,5 @@
 end
 
 { c: 1, d: 2 }.each { |k, v| puts "#{k} #{v}" }
+
+let(:foo) { :bar }

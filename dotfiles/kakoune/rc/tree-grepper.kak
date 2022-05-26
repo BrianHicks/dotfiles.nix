@@ -32,7 +32,7 @@ define-command -override -docstring "jump somewhere in an Elm file's definition 
 }
 
 define-command -override -docstring "jump somewhere in a Ruby file's definition outline" -params 0..1 outline-jump-ruby %{
-    outline-jump ruby "(module name: (_) @module) (class name: (_) @class) (method name: (_) @method) (singleton_method name: (_) @method) (assignment left: (_) @assignment) (operator_assignment left: (_) @assignment) (block_parameters (identifier) @assignment)" %arg{1}
+    outline-jump ruby '(module name: (_) @module) (class name: (_) @class) (method name: (_) @method) (singleton_method name: (_) @method) (assignment left: (_) @assignment) (operator_assignment left: (_) @assignment) (block_parameters (identifier) @assignment) (call (identifier)@name (argument_list . (simple_symbol)@let .) (#eq? name "let")) (call (identifier)@name (argument_list . (simple_symbol)@let .) (#eq? name "let_it_be"))' %arg{1}
 }
 
 define-command -override -docstring "jump somewhere in an Haskell file's definition outline" -params 0..1 outline-jump-haskell %{
