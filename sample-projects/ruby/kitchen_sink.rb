@@ -8,3 +8,9 @@ end
 { c: 1, d: 2 }.each { |k, v| puts "#{k} #{v}" }
 
 let(:foo) { :bar }
+
+context "some rspec thing" do
+  describe "a component" do
+    it "should detect these names"
+  end
+end
