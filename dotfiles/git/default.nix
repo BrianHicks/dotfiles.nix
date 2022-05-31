@@ -90,6 +90,11 @@ in {
     };
 
     git.overrideGpg = true; # prevents spawning a separate process on commits
+
+    # my SSH agent (1password) currently spams auth prompts when using lazygit, so
+    # I'm turning off auto-fetch stuff, hopefully temporarily!
+    git.autoFetch = false;
+    git.autoRefresh = false;
   };
 
   home.packages = [
