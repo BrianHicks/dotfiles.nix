@@ -31,6 +31,11 @@
     xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs";
     xbar-pr-status.inputs.naersk.follows = "naersk";
 
+    xbar-review-request-status.url =
+      "github:BrianHicks/xbar-review-request-status";
+    xbar-review-request-status.inputs.nixpkgs.follows = "nixpkgs";
+    xbar-review-request-status.inputs.naersk.follows = "naersk";
+
     comma = {
       url =
         "github:nix-community/comma/54149dc417819af14ddc0d59216d4add5280ad14";
@@ -111,6 +116,7 @@
         inputs.similar-sort.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
         inputs.xbar-pr-status.overlay."${system}"
+        inputs.xbar-review-request-status.overlay."${system}"
         (final: prev:
           let
             naersk = inputs.naersk.lib."${system}";
