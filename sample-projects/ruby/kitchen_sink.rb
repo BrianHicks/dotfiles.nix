@@ -14,3 +14,8 @@ context "some rspec thing" do
     it "should detect these names"
   end
 end
+
+class Person < T::Struct
+  prop :name, String
+  const :dob, TimeWithZone
+end
