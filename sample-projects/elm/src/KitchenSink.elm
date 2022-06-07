@@ -1,5 +1,12 @@
 port module KitchenSink exposing (..)
 
+import Html
+import Html.Styled.Attributes as Attrs
+    exposing
+        ( css
+        , href
+        )
+
 
 type Id
     = Id String
