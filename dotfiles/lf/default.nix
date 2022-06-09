@@ -11,5 +11,11 @@
     };
 
     previewer.source = "${pkgs.pistol}/bin/pistol";
+
+    extraConfig = ''
+      set hidden
+      set nodirfirst
+      set incsearch
+    '';
   };
 }
