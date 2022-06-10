@@ -56,8 +56,12 @@
 
       home.sessionVariables.NIX_PATH = "nixpkgs=${pkgs.path}:$NIX_PATH";
 
-      home.packages =
-        [ pkgs.xbar-pr-status pkgs.xbar-review-request-status pkgs.nix-tree ];
+      home.packages = [
+        pkgs.xbar-pr-status
+        pkgs.xbar-review-request-status
+        pkgs.nix-tree
+        pkgs.pstree
+      ];
 
       imports = [
         ../../dotfiles/alacritty
