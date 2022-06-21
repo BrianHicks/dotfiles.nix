@@ -305,6 +305,11 @@ in {
       map global rspec T ': tmux-send-command rspec BUFFILE:CURSOR_LINE<ret>' -docstring 'Run rspec on the spec under the cursor'
       map global rspec a ': tmux-send-command rspec<ret>' -docstring 'Run all rspec tests'
 
+      # RBI files (used by Sorbet) are not included in Kakoune's current definitions
+      hook global BufCreate .*[.]rbi %{
+        set-option buffer filetype ruby
+      }
+
       hook global WinSetOption filetype=ruby %{
         expandtab-with-width 2
 
