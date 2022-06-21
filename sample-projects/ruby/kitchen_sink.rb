@@ -19,3 +19,7 @@ class Person < T::Struct
   prop :name, String
   const :dob, TimeWithZone
 end
+
+def method_with_keyword_arguments(required, keyword: nil, optional = nil) do
+  fail "whoops"
+end
