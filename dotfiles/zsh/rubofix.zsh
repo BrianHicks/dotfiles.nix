@@ -6,5 +6,5 @@ function rubofix() {
         | grep -E '.rb$' \
         | cut -c 3- \
         | sed "s|^|$TOPLEVEL/|g" \
-        | xargs rubocop --auto-correct
+        | xargs rubocop --autocorrect
 }
