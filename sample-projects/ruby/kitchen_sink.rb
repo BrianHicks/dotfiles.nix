@@ -23,3 +23,9 @@ end
 def method_with_keyword_arguments(required, keyword: nil, optional = nil) do
   fail "whoops"
 end
+
+class Foo
+  attr_reader :reader
+  attr_writer :writer
+  attr_accessor :accessor
+end
