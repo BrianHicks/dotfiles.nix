@@ -35,6 +35,9 @@ in {
 
       init.defaultBranch = "main";
 
+      # so that `git push` automatically does `-u origin` when 2.37.0 is in nixpkgs
+      push.autoSetupRemote = true;
+
       rerere.enabled = true;
 
       "filter \"lfs\"" = {
