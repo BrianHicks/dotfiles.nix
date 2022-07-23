@@ -86,7 +86,11 @@ in {
       activeBorderColor = [ "green" "bold" ];
       inactiveBorderColor = [ "white" ];
       optionsTextColor = [ "blue" ];
+
+      # the default highlighted color is a very bright blue that doesn't have
+      # sufficient contrast with the foreground.
       selectedLineBgColor = [ "bold" ];
+      selectedRangeBgColor = [ "black" "bold" ];
     };
 
     git.paging = {
