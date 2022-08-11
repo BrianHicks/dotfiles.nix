@@ -28,7 +28,7 @@ define-command -hidden -params 2..3 outline-jump %{
 }
 
 define-command -override -docstring "jump somewhere in an Elm file's definition outline" -params 0..1 outline-jump-elm %{
-    outline-jump elm "(import_clause . (_) (upper_case_qid)@module) (function_declaration_left (lower_case_identifier)@function) (type_declaration (type) (upper_case_identifier)@type) (type_alias_declaration (type) (alias) (upper_case_identifier)@alias) (union_variant (upper_case_identifier)@constructor) (field_type (lower_case_identifier)@field) (lower_pattern)@pattern (union_pattern (upper_case_qid)@pattern) (exposed_type)@exposed_type (exposed_value)@exposed_value (as_clause (as) (upper_case_identifier)@module_alias) (port_annotation (port) (lower_case_identifier)@port)" %arg{1}
+    outline-jump elm "(import_clause . (_) (upper_case_qid)@module) (function_declaration_left (lower_case_identifier)@function) (type_declaration (type) (upper_case_identifier)@type) (type_alias_declaration (type) (alias) (upper_case_identifier)@alias) (union_variant (upper_case_identifier)@constructor) (field_type (lower_case_identifier)@field) (lower_pattern)@pattern (union_pattern (upper_case_qid)@pattern) (exposed_type)@exposed_type (exposed_value)@exposed_value (as_clause (as) (upper_case_identifier)@module_alias) (port_annotation (port) (lower_case_identifier)@port) (field (lower_case_identifier)@field)" %arg{1}
 }
 
 define-command -override -docstring "jump somewhere in a Ruby file's definition outline" -params 0..1 outline-jump-ruby %{
