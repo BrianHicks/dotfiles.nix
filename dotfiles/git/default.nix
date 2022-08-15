@@ -18,7 +18,6 @@ in {
       co = "checkout";
       dc = "diff --cached";
       di = "diff";
-      publish = "push -u origin HEAD";
       st = "status";
       yoda = "push --force-with-lease";
       root = "rev-parse --show-toplevel";
@@ -35,7 +34,7 @@ in {
 
       init.defaultBranch = "main";
 
-      # so that `git push` automatically does `-u origin` when 2.37.0 is in nixpkgs
+      # make `git push` automatically do `-u origin`
       push.autoSetupRemote = true;
 
       rerere.enabled = true;
