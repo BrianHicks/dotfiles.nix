@@ -30,7 +30,7 @@ in {
       # out and come back and remove this line.
       core.sshCommand = "ssh";
 
-      # core.fsmonitor = "true";
+      core.fsmonitor = "true";
 
       init.defaultBranch = "main";
 
