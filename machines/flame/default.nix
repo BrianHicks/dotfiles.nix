@@ -15,8 +15,8 @@
   programs.zsh.enable = true;
 
   # nix.package = pkgs.nixUnstable;
-  nix.allowedUsers = [ "brianhicks" ];
-  nix.trustedUsers = [ "brianhicks" ];
+  nix.settings.allowed-users = [ "brianhicks" ];
+  nix.settings.trusted-users = [ "brianhicks" ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
@@ -25,9 +25,9 @@
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
   services.nix-daemon.enable = false;
-  nix.maxJobs = 8;
-  nix.buildCores = 8;
-  users.nix.configureBuildUsers = true;
+  nix.settings.max-jobs = 8;
+  nix.settings.cores = 8;
+  nix.configureBuildUsers = true;
 
   # enabling distributed builds removes a blank config line from
   # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
