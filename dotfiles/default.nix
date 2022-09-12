@@ -10,6 +10,7 @@
     ./fd
     ./fzf
     ./git
+    ./helix
     ./home-manager
     ./htop
     ./hyperfine
