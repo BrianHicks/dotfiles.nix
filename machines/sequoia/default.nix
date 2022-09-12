@@ -9,8 +9,8 @@
   programs.zsh.enable = true;
 
   # nix.package = pkgs.nixUnstable;
-  nix.allowedUsers = [ "brianhicks" "root" ];
-  nix.trustedUsers = [ "brianhicks" "root" ];
+  nix.settings.allowed-users = [ "brianhicks" "root" ];
+  nix.settings.trusted-users = [ "brianhicks" "root" ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
@@ -19,9 +19,9 @@
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
   services.nix-daemon.enable = true;
-  nix.maxJobs = 20;
-  nix.buildCores = 20;
-  users.nix.configureBuildUsers = true;
+  nix.settings.max-jobs = 20;
+  nix.settings.cores = 20;
+  nix.configureBuildUsers = true;
 
   # use nixbuild.net for distributed builds
   nix.distributedBuilds = true;
