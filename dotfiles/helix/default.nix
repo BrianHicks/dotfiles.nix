@@ -6,6 +6,16 @@
       auto-format = true;
     }];
 
-    settings.keys.insert.f.d = "normal_mode";
+    settings = {
+      theme = "monokai_pro_machine";
+
+      editor = {
+        lsp.display-messages = true;
+
+        file-picker.hidden = false;
+      };
+
+      keys = { insert.f.d = "normal_mode"; };
+    };
   };
 }
