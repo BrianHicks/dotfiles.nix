@@ -5,7 +5,7 @@
     return {
       -- anything in https://wezfurlong.org/wezterm/colorschemes/index.html
       -- another good one: BlulocoDark
-      color_scheme = "Ayu Mirage",
+      color_scheme = "HorizonDark (Gogh)",
 
       hide_tab_bar_if_only_one_tab = true,
 
