@@ -1,10 +1,4 @@
 { ... }: {
-  # note: there was a macOS bug in the 20220319 build that meant alt+shift would
-  # not send esc+shift, but a composed key. It's fixed in the nightly so that's
-  # what I have installed now. Updates will not automatically apply from this
-  # version, however!
-  #
-  # Issue link: https://github.com/wez/wezterm/issues/1826
   home.file.".config/wezterm/wezterm.lua".text = ''
     local wezterm = require('wezterm');
 
