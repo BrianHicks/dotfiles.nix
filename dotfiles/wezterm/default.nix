@@ -6,7 +6,7 @@
       -- anything in https://wezfurlong.org/wezterm/colorschemes/index.html
       -- another good one: MaterialDesignColors
       color_scheme = "neobones_dark",
-      window_background_opacity = 0.95,
+      window_background_opacity = 0.9,
 
       hide_tab_bar_if_only_one_tab = true,
 
