@@ -6,6 +6,7 @@
       -- anything in https://wezfurlong.org/wezterm/colorschemes/index.html
       -- another good one: BlulocoDark
       color_scheme = "HorizonDark (Gogh)",
+      window_background_opacity = 0.95,
 
       hide_tab_bar_if_only_one_tab = true,
 
