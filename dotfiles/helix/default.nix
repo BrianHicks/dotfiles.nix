@@ -1,10 +1,20 @@
 { pkgs, ... }: {
   programs.helix = {
     enable = true;
-    languages = [{
-      name = "rust";
-      auto-format = true;
-    }];
+    languages = [
+      {
+        name = "rust";
+        auto-format = true;
+      }
+      {
+        name = "ruby";
+        roots = ["Gemfile" "Gemfile.lock"];
+        language-server = {
+          command = "srb";
+          args = [ "typecheck" "--lsp" ];
+        };
+      }
+    ];
 
     settings = {
       theme = "monokai_pro_machine";
