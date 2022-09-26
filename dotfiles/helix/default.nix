@@ -25,7 +25,10 @@
         file-picker.hidden = false;
       };
 
-      keys = { insert.f.d = "normal_mode"; };
+      keys = {
+        insert.f.d = "normal_mode";
+        normal."#" = ":reflow 80";
+      };
     };
   };
 }
