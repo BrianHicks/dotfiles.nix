@@ -8,7 +8,7 @@
       }
       {
         name = "ruby";
-        roots = ["Gemfile" "Gemfile.lock"];
+        roots = [ "Gemfile" "Gemfile.lock" ];
         language-server = {
           command = "srb";
           args = [ "typecheck" "--lsp" ];
