@@ -37,7 +37,7 @@ in {
       export EDITOR
       alias ks=kak-session
 
-      alias ready='gh pr create --reviewer NoRedInk/team-raven'
+      alias ready='gh pr create --reviewer NoRedInk/team-kraken'
 
       # see `man zshoptions`
       setopt PROMPT_SUBST # do parameter, command, and arithmetic expansion in prompts
