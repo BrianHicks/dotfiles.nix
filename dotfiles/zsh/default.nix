@@ -33,9 +33,8 @@ in {
     }];
 
     initExtra = ''
-      EDITOR=kak-session
+      EDITOR=hx
       export EDITOR
-      alias ks=kak-session
 
       alias ready='gh pr create --reviewer NoRedInk/team-kraken'
 
