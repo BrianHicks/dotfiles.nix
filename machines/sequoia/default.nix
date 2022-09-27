@@ -43,6 +43,29 @@
     };
   };
 
+  homebrew = {
+    enable = true;
+
+    casks = [
+      "1password"
+      "anki"
+      "autodesk-fusion360"
+      "firefox"
+      "freecad"
+      "google-chrome"
+      "gpg-suite"
+      "hammerspoon"
+      "signal"
+      "slack"
+      "spotify"
+      "steam"
+      "wezterm"
+      "xbar"
+      "zoom"
+      "zulip"
+    ];
+  };
+
   # dotfiles
   home-manager = {
     useUserPackages = true;
