@@ -48,6 +48,7 @@
 
     casks = [
       "1password"
+      "alloy"
       "anki"
       "autodesk-fusion360"
       "firefox"
