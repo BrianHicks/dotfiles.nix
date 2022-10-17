@@ -56,6 +56,7 @@
       "google-chrome"
       "gpg-suite"
       "hammerspoon"
+      "shortcat"
       "signal"
       "slack"
       "spotify"
