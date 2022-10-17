@@ -9,6 +9,24 @@
       {
         name = "ruby";
         roots = [ "Gemfile" "Gemfile.lock" ];
+        file-types = [
+          # from upstream
+          "rb"
+          "rake"
+          "rakefile"
+          "irb"
+          "gemfile"
+          "gemspec"
+          "Rakefile"
+          "Gemfile"
+          "rabl"
+          "jbuilder"
+          "jb"
+
+          # what I added
+          "rbi"
+        ];
+
         language-server = {
           command = "srb";
           args = [ "typecheck" "--lsp" ];
