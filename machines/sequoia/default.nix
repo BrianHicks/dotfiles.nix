@@ -56,6 +56,7 @@
       "google-chrome"
       "gpg-suite"
       "hammerspoon"
+      "prusaslicer"
       "shortcat"
       "signal"
       "slack"
