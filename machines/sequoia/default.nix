@@ -108,7 +108,9 @@
         ../../dotfiles/k9s
         ../../dotfiles/kakoune
         ../../dotfiles/lf
-        ../../dotfiles/ncdu
+
+        # ncdu currently does not compile!
+        # ../../dotfiles/ncdu
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
         ../../dotfiles/sd
