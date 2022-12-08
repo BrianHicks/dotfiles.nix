@@ -29,7 +29,7 @@
 
         language-server = {
           command = "srb";
-          args = [ "typecheck" "--lsp" ];
+          args = [ "typecheck" "--lsp" "--enable-all-beta-lsp-features" ];
         };
       }
     ];
