@@ -310,5 +310,17 @@
           inputs.home-manager.darwinModules.home-manager
         ];
       };
+
+      darwinConfigurations.sergio = inputs.darwin.lib.darwinSystem rec {
+        inherit inputs;
+
+        system = "x86_64-darwin";
+
+        modules = [
+          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
+          ./machines/sergio
+          inputs.home-manager.darwinModules.home-manager
+        ];
+      };
     };
 }
