@@ -336,11 +336,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1670498129,
-        "narHash": "sha256-QOWbsKObHxNpBzrIVJrgR2TGQdwyYNFgBdoVCCvYuDU=",
+        "lastModified": 1670827406,
+        "narHash": "sha256-nLNk7uiLbhbvb4TVz67XK7+Ezr1zcWYDWmNrWGmEUqA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "52665b05cfd702e12b877aa519b62374d003231a",
+        "rev": "ffca9ffaaafb38c8979068cee98b2644bd3f14cb",
         "type": "github"
       },
       "original": {
@@ -507,11 +507,11 @@
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1670244086,
-        "narHash": "sha256-8bWawlt0q9xXE3fHp6pxt9so25bKggpW08OuZIyLpao=",
+        "lastModified": 1670845690,
+        "narHash": "sha256-mkPeynVQH6tRPBvc23Tc3XP6cPgiqqvyVerRoYhojGk=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "e0aa6caadd5c01002bb7e58b3fe09628e11dc0b7",
+        "rev": "a0d5ccf0f478d2b6212124511af2d430e9ab5108",
         "type": "github"
       },
       "original": {
@@ -725,11 +725,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1670267235,
-        "narHash": "sha256-369CmH9XTECZZr3cWzBqmfYjsqx3PxdA+HTIJNmcre4=",
+        "lastModified": 1670869544,
+        "narHash": "sha256-HgBpxO5WimKfAbm6DrJAtANCGea/Tq+IdVAemJfmZnI=",
         "owner": "BrianHicks",
         "repo": "xbar-pr-status",
-        "rev": "c74d552680fca3b96ee05597f9558861ac6563e1",
+        "rev": "9e047fe9208f75a6fb909d4b0165db301b6c9af1",
         "type": "github"
       },
       "original": {
