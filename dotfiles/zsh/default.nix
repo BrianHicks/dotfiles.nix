@@ -50,6 +50,9 @@ in {
       PROMPT="%(?.$EMOJI_PROMPT .$EMOJI_PROMPT_ERROR [%F{red}%?%f] )%B%F{blue}%c%f%b %F{blue}»%f "
       RPROMPT=
 
+      # 1password plugins
+      alias gh="op plugin run -- gh"
+
       # grab Homebrew binaries if needed
       if test -d /opt/homebrew/bin; then
         export PATH="$PATH:/opt/homebrew/bin"
