@@ -4,6 +4,7 @@ function rubofix() {
     git diff --name-status origin/master \
         | grep -vE '^D' \
         | grep -E '.rb$' \
+        | grep -v 'schema.rb' \
         | cut -c 3- \
         | sed "s|^|$TOPLEVEL/|g" \
         | xargs rubocop --autocorrect
