@@ -126,7 +126,8 @@
             # up in this package. I'd love to move it to a real flake, though,
             # so things would be all in one place!
             kak-tree = final.callPackage ./pkgs/kak-tree { inherit naersk; };
-          in {
+          in
+          {
             comma = final.callPackage inputs.comma { };
 
             # is this going to cause problems by not actually being a package?
@@ -152,55 +153,57 @@
 
             kak-tree = kak-tree.kak-tree;
 
-            kakounePlugins = let
-              buildKakounePlugin = name: input:
-                final.kakouneUtils.buildKakounePlugin {
-                  pname = name;
-                  version = input.rev;
-                  src = input;
+            kakounePlugins =
+              let
+                buildKakounePlugin = name: input:
+                  final.kakouneUtils.buildKakounePlugin {
+                    pname = name;
+                    version = input.rev;
+                    src = input;
+                  };
+              in
+              prev.kakounePlugins // {
+                active-window =
+                  buildKakounePlugin "active-window" inputs.active-window;
+
+                auto-pairs = final.kakouneUtils.buildKakounePlugin {
+                  pname = "auto-pairs";
+                  version = "vendored";
+                  src = ./vendor/auto-pairs.kak;
                 };
-            in prev.kakounePlugins // {
-              active-window =
-                buildKakounePlugin "active-window" inputs.active-window;
 
-              auto-pairs = final.kakouneUtils.buildKakounePlugin {
-                pname = "auto-pairs";
-                version = "vendored";
-                src = ./vendor/auto-pairs.kak;
+                kak-ayu = final.callPackage ./pkgs/kak-ayu { };
+
+                kak-tmux-command = final.kakouneUtils.buildKakounePlugin {
+                  pname = "kak-tmux-command";
+                  version = "source";
+                  src = ./pkgs/kak-tmux-command;
+                };
+
+                kak-tree = kak-tree.kakounePlugins.kak-tree;
+
+                kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
+                  inputs.kakoune-auto-percent;
+
+                kakoune-find =
+                  buildKakounePlugin "kakoune-find" inputs.kakoune-find;
+
+                kakoune-idris =
+                  buildKakounePlugin "kakoune-idris" inputs.kakoune-idris;
+
+                kakoune-surround =
+                  buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
+
+                prelude-kak = buildKakounePlugin "prelude.kak" inputs.prelude-kak;
+
+                shellcheck-kak =
+                  buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
+
+                smarttab-kak =
+                  buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
+
+                tug = buildKakounePlugin "tug" inputs.tug;
               };
-
-              kak-ayu = final.callPackage ./pkgs/kak-ayu { };
-
-              kak-tmux-command = final.kakouneUtils.buildKakounePlugin {
-                pname = "kak-tmux-command";
-                version = "source";
-                src = ./pkgs/kak-tmux-command;
-              };
-
-              kak-tree = kak-tree.kakounePlugins.kak-tree;
-
-              kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
-                inputs.kakoune-auto-percent;
-
-              kakoune-find =
-                buildKakounePlugin "kakoune-find" inputs.kakoune-find;
-
-              kakoune-idris =
-                buildKakounePlugin "kakoune-idris" inputs.kakoune-idris;
-
-              kakoune-surround =
-                buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
-
-              prelude-kak = buildKakounePlugin "prelude.kak" inputs.prelude-kak;
-
-              shellcheck-kak =
-                buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
-
-              smarttab-kak =
-                buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
-
-              tug = buildKakounePlugin "tug" inputs.tug;
-            };
 
             k9s-skins = final.stdenv.mkDerivation {
               pname = "k9s-skins";
@@ -219,13 +222,15 @@
               ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
             '';
 
-            niv = let
-              nivSources = import "${inputs.niv}/nix/sources.nix" { };
-              nivNixpkgs = import nivSources.nixpkgs {
-                sources = nivSources;
-                inherit system;
-              };
-            in (nivNixpkgs.callPackage inputs.niv { }).niv;
+            niv =
+              let
+                nivSources = import "${inputs.niv}/nix/sources.nix" { };
+                nivNixpkgs = import nivSources.nixpkgs {
+                  sources = nivSources;
+                  inherit system;
+                };
+              in
+              (nivNixpkgs.callPackage inputs.niv { }).niv;
 
             nix-index = inputs.nix-index.packages.${system}.nix-index;
 
@@ -254,7 +259,10 @@
               prev.tree-grepper.overrideAttrs (attrs: { doCheck = false; });
           })
       ];
-    in {
+    in
+    {
+      formatter.aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
+
       nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [

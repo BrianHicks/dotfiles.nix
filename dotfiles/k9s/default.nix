@@ -42,7 +42,8 @@ let
       };
     };
   };
-in {
+in
+{
   # for non-work contexts, I use a version of k9s that uses the macOS system
   # directories, but in work contexts I use an (older) version that uses
   # ~/.k9s. Gotta have both for my skins to work!

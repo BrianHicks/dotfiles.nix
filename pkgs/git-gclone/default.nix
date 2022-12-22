@@ -8,8 +8,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out/bin
     cp ./git-gclone.sh $out/bin/git-gclone
     wrapProgram $out/bin/git-gclone --prefix PATH : ${
-      pkgs.lib.makeBinPath [ pkgs.git ]
+      pkgs.lib.makeBinPath [pkgs.git]
     }
   '';
 }
-

@@ -1,5 +1,4 @@
-inputs:
-{ pkgs, ... }: {
+inputs: { pkgs, ... }: {
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''

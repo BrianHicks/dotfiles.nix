@@ -11,7 +11,6 @@
     ];
 
     changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type d";
-    changeDirWidgetOptions =
-      [ "--preview '${pkgs.tree}/bin/tree -C {} | head -200'" ];
+    changeDirWidgetOptions = [ "--preview '${pkgs.tree}/bin/tree -C {} | head -200'" ];
   };
 }

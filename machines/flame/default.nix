@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config
+, pkgs
+, ...
+}: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
@@ -33,12 +34,14 @@
   # /etc/nix/nix.conf. github.com/nix-community/linuxkit-nix seems to do the
   # rest just fine.
   nix.distributedBuilds = true;
-  nix.buildMachines = [{
-    hostName = "nix-docker";
-    system = "x86_64-linux";
-    maxJobs = 4;
-    sshKey = "/etc/nix/docker_rsa";
-  }];
+  nix.buildMachines = [
+    {
+      hostName = "nix-docker";
+      system = "x86_64-linux";
+      maxJobs = 4;
+      sshKey = "/etc/nix/docker_rsa";
+    }
+  ];
 
   # dotfiles
   home-manager = {

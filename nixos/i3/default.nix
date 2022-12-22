@@ -187,9 +187,7 @@
             # this to work!
             ${pkgs.polybarFull}/bin/polybar-msg cmd quit
 
-            ${pkgs.polybarFull}/bin/polybar --config=${
-              ./polybar.ini
-            } top 2>&1 | tee -a /tmp/polybar-top.log & disown
+            ${pkgs.polybarFull}/bin/polybar --config=${./polybar.ini} top 2>&1 | tee -a /tmp/polybar-top.log & disown
           ''
         }/bin/launch-polybar.sh
 

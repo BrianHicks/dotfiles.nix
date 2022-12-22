@@ -1,4 +1,7 @@
-{ pkgs, config, ... }: {
+{ pkgs
+, config
+, ...
+}: {
   environment.shells = [ pkgs.zsh ];
 
   users.users.brian = {
@@ -36,8 +39,7 @@
     compression = "auto,zlib,6";
 
     encryption.mode = "repokey-blake2";
-    encryption.passCommand =
-      "cat /home/brian/.ssh/borgbase-brian-home-encryption-key";
+    encryption.passCommand = "cat /home/brian/.ssh/borgbase-brian-home-encryption-key";
 
     environment.BORG_RSH = "ssh -i /home/brian/.ssh/borgbase_ed25519";
 

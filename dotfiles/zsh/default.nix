@@ -17,8 +17,9 @@ let
 
   extraInitExtra =
     builtins.foldl' (soFar: new: soFar + "\n" + builtins.readFile new) ""
-    extras;
-in {
+      extras;
+in
+{
   programs.zsh = {
     enable = true;
 
@@ -27,37 +28,41 @@ in {
     enableAutosuggestions = true;
     enableCompletion = true;
 
-    plugins = [{
-      name = "fzf-tab";
-      src = pkgs.fzf-tab;
-    }];
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = pkgs.fzf-tab;
+      }
+    ];
 
-    initExtra = ''
-      EDITOR=hx
-      export EDITOR
+    initExtra =
+      ''
+        EDITOR=hx
+        export EDITOR
 
-      alias ready='gh pr create --reviewer NoRedInk/team-kraken'
+        alias ready='gh pr create --reviewer NoRedInk/team-kraken'
 
-      # see `man zshoptions`
-      setopt PROMPT_SUBST # do parameter, command, and arithmetic expansion in prompts
-      setopt PROMPT_SP    # preserve partial lines, adding inverse-colored % after a line
+        # see `man zshoptions`
+        setopt PROMPT_SUBST # do parameter, command, and arithmetic expansion in prompts
+        setopt PROMPT_SP    # preserve partial lines, adding inverse-colored % after a line
 
-      EMOJI_NEUTRAL=(😃 🤓 👾 🤖 💯 🐵 🦍 🐺 🐈 🦄 🦅 🦉 🐬 🐋 🐙 🌲 🌳 🍀 🍁 🍇 🍍 🍩 🌍 🌎 🌏 🚄 🚍 🚲 🛴 🚡 🚠 🚀)
-      EMOJI_UNHAPPY=(😵 😲 🤡 👹 😿 💔 💢)
-      EMOJI_PROMPT="''${EMOJI_NEUTRAL[$RANDOM % ''${#EMOJI_NEUTRAL[@]}]}"
-      EMOJI_PROMPT_ERROR="''${EMOJI_UNHAPPY[$RANDOM % ''${#EMOJI_UNHAPPY[@]}]}"
+        EMOJI_NEUTRAL=(😃 🤓 👾 🤖 💯 🐵 🦍 🐺 🐈 🦄 🦅 🦉 🐬 🐋 🐙 🌲 🌳 🍀 🍁 🍇 🍍 🍩 🌍 🌎 🌏 🚄 🚍 🚲 🛴 🚡 🚠 🚀)
+        EMOJI_UNHAPPY=(😵 😲 🤡 👹 😿 💔 💢)
+        EMOJI_PROMPT="''${EMOJI_NEUTRAL[$RANDOM % ''${#EMOJI_NEUTRAL[@]}]}"
+        EMOJI_PROMPT_ERROR="''${EMOJI_UNHAPPY[$RANDOM % ''${#EMOJI_UNHAPPY[@]}]}"
 
-      PROMPT="%(?.$EMOJI_PROMPT .$EMOJI_PROMPT_ERROR [%F{red}%?%f] )%B%F{blue}%c%f%b %F{blue}»%f "
-      RPROMPT=
+        PROMPT="%(?.$EMOJI_PROMPT .$EMOJI_PROMPT_ERROR [%F{red}%?%f] )%B%F{blue}%c%f%b %F{blue}»%f "
+        RPROMPT=
 
-      # 1password plugins
-      alias gh="op plugin run -- gh"
+        # 1password plugins
+        alias gh="op plugin run -- gh"
 
-      # grab Homebrew binaries if needed
-      if test -d /opt/homebrew/bin; then
-        export PATH="$PATH:/opt/homebrew/bin"
-      fi
-    '' + extraInitExtra;
+        # grab Homebrew binaries if needed
+        if test -d /opt/homebrew/bin; then
+          export PATH="$PATH:/opt/homebrew/bin"
+        fi
+      ''
+      + extraInitExtra;
 
     history = {
       save = 10000;

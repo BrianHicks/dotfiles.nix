@@ -10,8 +10,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out/bin
     cp ./lazygit-window.sh $out/bin/lazygit-window
     wrapProgram $out/bin/lazygit-window --prefix PATH : ${
-      pkgs.lib.makeBinPath [ pkgs.tmux pkgs.lazygit ]
+      pkgs.lib.makeBinPath [pkgs.tmux pkgs.lazygit]
     }
   '';
 }
-

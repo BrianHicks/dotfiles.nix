@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{ ... }: {
   system.keyboard = {
     enableKeyMapping = true;
 

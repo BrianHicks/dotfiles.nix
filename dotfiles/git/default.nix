@@ -1,10 +1,11 @@
 { pkgs, ... }:
 let
-  lazygit-config = if pkgs.stdenv.isDarwin then
-    "Library/Application Support/jesseduffield/lazygit/config.yml"
-  else
-    ".config/jesseduffield/lazygit/config.yml";
-in {
+  lazygit-config =
+    if pkgs.stdenv.isDarwin
+    then "Library/Application Support/jesseduffield/lazygit/config.yml"
+    else ".config/jesseduffield/lazygit/config.yml";
+in
+{
   programs.git = {
     enable = true;
 

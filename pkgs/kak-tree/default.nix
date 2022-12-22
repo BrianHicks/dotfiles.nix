@@ -1,4 +1,7 @@
-{ pkgs, naersk, ... }:
+{ pkgs
+, naersk
+, ...
+}:
 let
   src = pkgs.fetchgit {
     url = "https://github.com/ul/kak-tree.git";
@@ -6,7 +9,8 @@ let
     sha256 = "1xd5qa8im0rjplp23v2fymh80kp1z25r7fd1v65s5wndxd49c0cs";
     fetchSubmodules = true;
   };
-in {
+in
+{
   kakounePlugins.kak-tree = pkgs.kakouneUtils.buildKakounePlugin {
     pname = "kak-tree";
     version = src.rev;
@@ -15,9 +19,10 @@ in {
 
   kak-tree = naersk.buildPackage {
     root = src;
-    cargoBuildOptions = (defaults:
-      defaults ++ [
+    cargoBuildOptions = defaults:
+      defaults
+      ++ [
         ''--features "bash css elm haskell html javascript json python ruby"''
-      ]);
+      ];
   };
 }

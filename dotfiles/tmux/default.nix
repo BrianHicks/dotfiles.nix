@@ -16,7 +16,8 @@ let
       ${pkgs.git}/bin/git rev-parse --abbrev-ref HEAD
     fi
   '';
-in {
+in
+{
   home.packages = [ pkgs.tmux-session ];
 
   programs.tmux = {

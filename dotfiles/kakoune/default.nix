@@ -1,13 +1,17 @@
 { pkgs, ... }:
 let
   copyCommand =
-    if pkgs.stdenv.isDarwin then "pbcopy" else "${pkgs.xclip}/bin/xclip -in";
+    if pkgs.stdenv.isDarwin
+    then "pbcopy"
+    else "${pkgs.xclip}/bin/xclip -in";
   pasteCommand =
-    if pkgs.stdenv.isDarwin then "pbpaste" else "${pkgs.xclip}/bin/xclip -out";
+    if pkgs.stdenv.isDarwin
+    then "pbpaste"
+    else "${pkgs.xclip}/bin/xclip -out";
 
-  similar-sort-files-cmd = arg:
-    "git ls-files --others --cached --exclude-standard | ${pkgs.similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
-in {
+  similar-sort-files-cmd = arg: "git ls-files --others --cached --exclude-standard | ${pkgs.similar-sort}/bin/similar-sort ${arg} | grep -v ${arg} | fzf --tiebreak index";
+in
+{
   home.packages = [
     # there's no configuration option for shellcheck.kak; it has to be in the PATH
     # to work!
@@ -343,7 +347,7 @@ in {
 
       hook global WinSetOption filetype=terraform %{
         expandtab-with-width 2
-        
+
         evaluate-commands %sh{
           if which terraform > /dev/null; then
             echo 'set-option buffer formatcmd "terraform fmt -"'
