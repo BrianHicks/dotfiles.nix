@@ -232,7 +232,7 @@
               in
               (nivNixpkgs.callPackage inputs.niv { }).niv;
 
-            nix-index = inputs.nix-index.packages.${system}.nix-index;
+            # nix-index = inputs.nix-index.packages.${system}.nix-index;
 
             sysz = final.stdenv.mkDerivation {
               name = "sysz";
