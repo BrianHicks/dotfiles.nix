@@ -35,7 +35,7 @@
     ];
 
     settings = {
-      theme = "monokai_pro_machine";
+      theme = "everforest_dark";
 
       editor = {
         lsp.display-messages = true;
