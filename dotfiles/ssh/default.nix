@@ -4,6 +4,7 @@
     extraConfig = ''
       AddKeysToAgent yes
       Include config.d/*
+      VisualHostKey yes
     '';
   };
 }
