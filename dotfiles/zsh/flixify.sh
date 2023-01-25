@@ -15,7 +15,12 @@ flixify() {
       echo '  outputs = inputs:'
       echo '    inputs.flake-utils.lib.eachDefaultSystem (system:'
       echo '      let pkgs = import inputs.nixpkgs { inherit system; };'
-      echo '      in { devShell = pkgs.mkShell { packages = [ ]; }; });'
+      echo '      in { '
+      echo '        formatter = pkgs.nixpkgs-fmt;'
+      echo ''
+      echo '        devShell = pkgs.mkShell { packages = [ ]; };'
+      echo '      };'
+      echo '    );'
       echo '}'
     ) > flake.nix
   fi
