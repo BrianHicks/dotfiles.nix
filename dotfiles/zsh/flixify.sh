@@ -19,7 +19,7 @@ flixify() {
       echo '        formatter = pkgs.nixpkgs-fmt;'
       echo ''
       echo '        devShell = pkgs.mkShell { packages = [ ]; };'
-      echo '      };'
+      echo '      }'
       echo '    );'
       echo '}'
     ) > flake.nix
