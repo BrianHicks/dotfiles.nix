@@ -32,6 +32,12 @@
           args = [ "typecheck" "--lsp" "--enable-all-beta-lsp-features" ];
         };
       }
+      {
+        name = "elm";
+        language-server = {
+          command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server";
+        };
+      }
     ];
 
     settings = {
