@@ -47,6 +47,8 @@
         lsp.display-messages = true;
 
         file-picker.hidden = false;
+
+        color-modes = true;
       };
 
       keys = {
