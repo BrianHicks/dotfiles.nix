@@ -67,7 +67,11 @@ in
     };
   };
 
-  programs.gh.enable = true;
+  programs.gh = {
+    enable = true;
+
+    settings.aliases.reviewer = "pr view --json reviewRequests --template '{{pluck \"login\" .reviewRequests | join \" \"}}'";
+  };
 
   home.file."${lazygit-config}".text = builtins.toJSON {
     reporting = "off";
