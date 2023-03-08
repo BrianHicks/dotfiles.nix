@@ -61,7 +61,12 @@
 
       keys = {
         insert.f.d = "normal_mode";
-        normal."#" = ":reflow 80";
+
+        normal = {
+          "#" = ":reflow 80";
+          "{" = "goto_prev_change";
+          "}" = "goto_next_change";
+        };
       };
     };
   };
