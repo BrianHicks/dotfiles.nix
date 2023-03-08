@@ -49,6 +49,8 @@
         file-picker.hidden = false;
 
         color-modes = true;
+
+        indent-guides.render = true;
       };
 
       keys = {
