@@ -38,6 +38,10 @@
           command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server";
         };
       }
+      {
+        name = "haskell";
+        auto-format = true;
+      }
     ];
 
     settings = {
