@@ -42,6 +42,10 @@
         name = "haskell";
         auto-format = true;
       }
+      {
+        name = "typescript";
+        auto-format = true;
+      }
     ];
 
     settings = {
