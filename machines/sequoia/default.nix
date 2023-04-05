@@ -88,6 +88,7 @@
       home.packages = [
         pkgs.nix-tree
         pkgs.pstree
+        pkgs.terminal-notifier
         pkgs.xbar-pr-status
         pkgs.xbar-review-request-status
       ];
