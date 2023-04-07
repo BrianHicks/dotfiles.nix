@@ -46,6 +46,13 @@
         name = "typescript";
         auto-format = true;
       }
+      {
+        name = "starlark";
+        language-server = {
+          command = "buck2";
+          args = [ "lsp" ];
+        };
+      }
     ];
 
     settings = {
