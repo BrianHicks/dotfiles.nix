@@ -60,6 +60,7 @@
 
       editor = {
         lsp.display-messages = true;
+        lsp.display-inline-hints = true;
 
         file-picker.hidden = false;
 
