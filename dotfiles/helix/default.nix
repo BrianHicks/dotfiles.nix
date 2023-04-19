@@ -56,7 +56,7 @@
     ];
 
     settings = {
-      theme = "everforest_dark";
+      theme = "nightfox";
 
       editor = {
         lsp.display-messages = true;
