@@ -68,8 +68,8 @@
       home.sessionVariables.NIX_PATH = "nixpkgs=${pkgs.path}:$NIX_PATH";
 
       home.packages = [
-        pkgs.xbar-pr-status
-        pkgs.xbar-review-request-status
+        # pkgs.xbar-pr-status
+        # pkgs.xbar-review-request-status
         pkgs.nix-tree
         pkgs.pstree
       ];
@@ -91,7 +91,7 @@
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
         ../../dotfiles/k9s
-        ../../dotfiles/kakoune
+        # ../../dotfiles/kakoune
         ../../dotfiles/lf
 
         # ncdu currently does not compile!
