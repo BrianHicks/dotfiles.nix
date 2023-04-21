@@ -49,9 +49,10 @@
       {
         name = "starlark";
         language-server = {
-          command = "buck2";
+          command = "buck";
           args = [ "lsp" ];
         };
+        file-types = [ "TARGETS" "PACKAGE" "BUCK" "bzl" "bxl" ];
       }
     ];
 
