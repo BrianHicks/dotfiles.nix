@@ -59,6 +59,7 @@
       "google-chrome"
       "gpg-suite"
       "hammerspoon"
+      "openscad"
       "prusaslicer"
       "shortcat"
       "signal"
