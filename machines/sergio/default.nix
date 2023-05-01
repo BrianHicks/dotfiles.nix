@@ -95,7 +95,7 @@
         ../../dotfiles/lf
 
         # ncdu currently does not compile!
-        # ../../dotfiles/ncdu
+        ../../dotfiles/ncdu
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
         ../../dotfiles/sd
