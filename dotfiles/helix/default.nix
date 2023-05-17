@@ -54,6 +54,10 @@
         };
         file-types = [ "TARGETS" "PACKAGE" "BUCK" "bzl" "bxl" ];
       }
+      {
+        name = "nix";
+        language-server.command = "${pkgs.nil}/bin/nil";
+      }
     ];
 
     settings = {
