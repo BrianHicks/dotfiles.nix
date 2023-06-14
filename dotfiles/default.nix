@@ -19,6 +19,7 @@
     ./kakoune
     ./k9s
     ./ncdu
+    ./neovim
     ./niv
     ./rofi
     ./ripgrep
