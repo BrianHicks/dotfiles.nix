@@ -38,7 +38,7 @@
       -- git
       require('gitsigns').setup()
 
-      vim.keymap.set('n', '<leader>gg', ':Git<CR>', { desc = '[G]it overview' })
+      vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[G]it overview' })
       vim.keymap.set('n', '<leader>gb', require('gitsigns').toggle_current_line_blame, { desc = 'Toggle [G]it [B]lame' })
       vim.keymap.set('n', '<leader>gh', require('gitsigns').preview_hunk_inline, { desc = 'Preview [G]it [H]unk' })
       vim.keymap.set('n', '<leader>gs', require('gitsigns').stage_hunk, { desc = '[G]it [S]tage hunk' })
