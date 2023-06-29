@@ -44,7 +44,7 @@
       vim.keymap.set('n', '<leader>gh', require('gitsigns').preview_hunk_inline, { desc = 'Preview [G]it [H]unk' })
       vim.keymap.set('n', '<leader>gs', require('gitsigns').stage_hunk, { desc = '[G]it [S]tage hunk' })
       vim.keymap.set('n', '<leader>gS', require('gitsigns').stage_buffer, { desc = '[G]it [S]tage buffer' })
-      vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', { desc = '[G]it [c]ommit' })
+      vim.keymap.set('n', '<leader>gc', ':Git commit -v<CR>', { desc = '[G]it [c]ommit' })
 
       vim.keymap.set('n', '{', require('gitsigns').prev_hunk)
       vim.keymap.set('n', '}', require('gitsigns').next_hunk)
