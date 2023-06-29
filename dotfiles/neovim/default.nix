@@ -19,6 +19,10 @@
 	-- TODO: clear_empty_lines?
       }
 
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup()
+
       -- git
       require('gitsigns').setup()
 
@@ -34,6 +38,7 @@
 
     plugins = with pkgs.vimPlugins; [
       better-escape-nvim
+      which-key-nvim
 
       # Git
       vim-fugitive
