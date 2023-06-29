@@ -22,8 +22,7 @@
       }
 
       -- make an easier way to exit insert and write
-      vim.keymap.set('i', '<c-;>', '<esc>:w<cr>')
-      vim.keymap.set('i', "<c-'>", '<esc>:wq<cr>')
+      vim.keymap.set('i', '<C-e>', '<esc>:w<cr>')
 
       -- which-key
       vim.o.timeout = true
