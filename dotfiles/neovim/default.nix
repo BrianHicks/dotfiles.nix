@@ -29,6 +29,9 @@
       # Git
       vim-fugitive
       vim-rhubarb
+
+      # Detect tabs and shiftwidth automatically
+      vim-sleuth
     ];
   };
 }
