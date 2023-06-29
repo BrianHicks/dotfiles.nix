@@ -33,6 +33,9 @@
       -- comments
       require('Comment').setup()
 
+      -- theming
+      vim.cmd('colorscheme nightfox')
+
       -- git
       require('gitsigns').setup()
 
@@ -59,6 +62,9 @@
 
       # Detect tabs and shiftwidth automatically
       vim-sleuth
+
+      # themes and visual niceties
+      nightfox-nvim
     ];
   };
 }
