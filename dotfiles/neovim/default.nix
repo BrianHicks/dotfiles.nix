@@ -19,8 +19,17 @@
 	-- TODO: clear_empty_lines?
       }
 
-      -- vim-fugitive
-      vim.keymap.set('n', 'gs', ':Git<CR>', { desc = '[G]it [S]tatus' })
+      -- git
+      require('gitsigns').setup()
+
+      vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[G]it [S]tatus' })
+      vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle [G]it [B]lame' })
+      vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk_inline<CR>', { desc = 'Preview [G]it [H]unk' })
+      vim.keymap.set('n', '<leader>gs', ':Gitsigns stage_hunk<CR>', { desc = '[G]it [S]tage hunk' })
+      vim.keymap.set('n', '<leader>gS', ':Gitsigns stage_buffer<CR>', { desc = '[G]it [S]tage buffer' })
+
+      vim.keymap.set('n', '{', ':Gitsigns prev_hunk<CR>')
+      vim.keymap.set('n', '}', ':Gitsigns next_hunk<CR>')
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -29,6 +38,7 @@
       # Git
       vim-fugitive
       vim-rhubarb
+      gitsigns-nvim
 
       # Detect tabs and shiftwidth automatically
       vim-sleuth
