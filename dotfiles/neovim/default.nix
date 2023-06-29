@@ -12,6 +12,15 @@
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
 
+      -- misc options
+      vim.wo.number = true
+      vim.o.mouse = 'a'
+      vim.o.breakindent = true
+      vim.o.ignorecase = true
+      vim.o.smartcase = true
+      vim.wo.signcolumn = 'yes'
+      vim.o.termguicolors = true
+
       -- swap ; and : to save a keystroke and reduce wear on the pinky finger
       vim.keymap.set('n', ';', ':')
       vim.keymap.set('n', ':', ';')
