@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -9,6 +9,15 @@
       -- correctly bound everywhere.
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
+
+      require("better_escape").setup {
+        mapping = {"fd"},
+	-- TODO: clear_empty_lines?
+      }
     '';
+
+    plugins = with pkgs.vimPlugins; [
+      better-escape-nvim
+    ];
   };
 }
