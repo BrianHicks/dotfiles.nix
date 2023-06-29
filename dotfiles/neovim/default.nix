@@ -10,6 +10,10 @@
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
 
+      -- swap ; and : to save a keystroke and reduce wear on the pinky finger
+      vim.keymap.set('n', ';', ':')
+      vim.keymap.set('n', ':', ';')
+
       require("better_escape").setup {
         mapping = {"fd"},
 	-- TODO: clear_empty_lines?
