@@ -22,7 +22,7 @@
       }
 
       -- make an easier way to exit insert and write
-      vim.keymap.set('i', '<C-e>', '<esc>:w<cr>')
+      vim.keymap.set('i', '<C-e>', '<esc>:w<cr>') # TODO: do :wq in a fugitive commit buffer
 
       -- which-key
       vim.o.timeout = true
