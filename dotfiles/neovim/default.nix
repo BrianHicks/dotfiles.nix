@@ -56,12 +56,18 @@
 
       vim.keymap.set('n', '{', require('gitsigns').prev_hunk)
       vim.keymap.set('n', '}', require('gitsigns').next_hunk)
+
+      -- surround
+      require('nvim-surround').setup()
     '';
 
     plugins = with pkgs.vimPlugins; [
       better-escape-nvim
       which-key-nvim
       comment-nvim
+
+      # Text editing (wait isn't that just all of vim?)
+      nvim-surround
 
       # Git
       vim-fugitive
