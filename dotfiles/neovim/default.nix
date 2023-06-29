@@ -4,7 +4,9 @@
     enable = true;
     vimAlias = true;
 
-    extraLuaConfig = ''
+    extraLuaConfig =
+      # lua
+      ''
       -- Leaders need to be mapped before requiring anything so they will be
       -- correctly bound everywhere.
       vim.g.mapleader = ' '
