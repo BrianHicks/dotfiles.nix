@@ -18,10 +18,17 @@
         mapping = {"fd"},
 	-- TODO: clear_empty_lines?
       }
+
+      -- vim-fugitive
+      vim.keymap.set('n', 'gs', ':Git<CR>', { desc = '[G]it [S]tatus' })
     '';
 
     plugins = with pkgs.vimPlugins; [
       better-escape-nvim
+
+      # Git
+      vim-fugitive
+      vim-rhubarb
     ];
   };
 }
