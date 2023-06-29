@@ -27,13 +27,13 @@
       require('gitsigns').setup()
 
       vim.keymap.set('n', '<leader>gg', ':Git<CR>', { desc = '[G]it overview' })
-      vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle [G]it [B]lame' })
-      vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk_inline<CR>', { desc = 'Preview [G]it [H]unk' })
-      vim.keymap.set('n', '<leader>gs', ':Gitsigns stage_hunk<CR>', { desc = '[G]it [S]tage hunk' })
-      vim.keymap.set('n', '<leader>gS', ':Gitsigns stage_buffer<CR>', { desc = '[G]it [S]tage buffer' })
+      vim.keymap.set('n', '<leader>gb', require('gitsigns').toggle_current_line_blame, { desc = 'Toggle [G]it [B]lame' })
+      vim.keymap.set('n', '<leader>gh', require('gitsigns').preview_hunk_inline, { desc = 'Preview [G]it [H]unk' })
+      vim.keymap.set('n', '<leader>gs', require('gitsigns').stage_hunk, { desc = '[G]it [S]tage hunk' })
+      vim.keymap.set('n', '<leader>gS', require('gitsigns').stage_buffer, { desc = '[G]it [S]tage buffer' })
 
-      vim.keymap.set('n', '{', ':Gitsigns prev_hunk<CR>')
-      vim.keymap.set('n', '}', ':Gitsigns next_hunk<CR>')
+      vim.keymap.set('n', '{', require('gitsigns').prev_hunk)
+      vim.keymap.set('n', '}', require('gitsigns').next_hunk)
     '';
 
     plugins = with pkgs.vimPlugins; [
