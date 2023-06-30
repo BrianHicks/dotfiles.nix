@@ -52,6 +52,7 @@
       -- git
       local gitsigns = require('gitsigns')
       gitsigns.setup()
+      gitsigns.toggle_numhl()
 
       vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[G]it overview' })
       vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>', { desc = 'View [G]it [B]ranches' })
