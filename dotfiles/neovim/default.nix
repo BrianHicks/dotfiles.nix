@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  # resources:
+  #
+  # - https://github.com/nunocf/home-manager-nix/blob/master/nvim/nvim.nix
+  # - https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L197-L198
+  #
   programs.neovim = {
     enable = true;
     vimAlias = true;
