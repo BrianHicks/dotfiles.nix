@@ -84,14 +84,12 @@
       # Text editing (wait isn't that just all of vim?)
       nvim-surround
       nvim-treesitter.withAllGrammars
+      vim-sleuth
 
       # Git
       vim-fugitive
       vim-rhubarb
       gitsigns-nvim
-
-      # Detect tabs and shiftwidth automatically
-      vim-sleuth
 
       # themes and visual niceties
       nightfox-nvim
