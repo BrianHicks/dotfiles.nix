@@ -63,6 +63,7 @@
       vim.keymap.set('n', '<leader>gC', ':Git commit -v<CR>', { desc = '[G]it [c]ommit' })
       vim.keymap.set('n', '<leader>gc', ':Git commit -m ""<Left>', { desc = '[G]it [C]ommit inline' })
       vim.keymap.set('n', '<leader>gr', ':Telescope git_bcommits<CR>', { desc = '[G]it [R]evert to commit' })
+      vim.keymap.set('n', '<leader>gm', ':Telescope git_status<CR>', { desc = '[G]it [M]odified files' })
 
       vim.keymap.set('n', '{', require('gitsigns').prev_hunk)
       vim.keymap.set('n', '}', require('gitsigns').next_hunk)
