@@ -55,8 +55,8 @@
       vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[G]it overview' })
       vim.keymap.set('n', '<leader>gb', require('gitsigns').toggle_current_line_blame, { desc = 'Toggle [G]it [B]lame' })
       vim.keymap.set('n', '<leader>gh', require('gitsigns').preview_hunk_inline, { desc = 'Preview [G]it [H]unk' })
-      vim.keymap.set('n', '<leader>gs', require('gitsigns').stage_hunk, { desc = '[G]it [S]tage hunk' })
-      vim.keymap.set('n', '<leader>gS', require('gitsigns').stage_buffer, { desc = '[G]it [S]tage buffer' })
+      vim.keymap.set('n', '<leader>gw', require('gitsigns').stage_hunk, { desc = '[G]it [S]tage hunk' })
+      vim.keymap.set('n', '<leader>gW', require('gitsigns').stage_buffer, { desc = '[G]it [S]tage buffer' })
       vim.keymap.set('n', '<leader>gc', ':Git commit -v<CR>', { desc = '[G]it [c]ommit' })
       vim.keymap.set('n', '<leader>gC', ':Git commit -m ""<Left>', { desc = '[G]it [C]ommit inline' })
 
