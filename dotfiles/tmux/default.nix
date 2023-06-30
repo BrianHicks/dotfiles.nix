@@ -22,7 +22,7 @@ in
 
   programs.tmux = {
     enable = true;
-    terminal = "xterm-256color";
+    terminal = "tmux-256color";
     shortcut = "a";
     keyMode = "vi";
     secureSocket = false;
