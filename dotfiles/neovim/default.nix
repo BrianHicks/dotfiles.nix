@@ -65,6 +65,14 @@
 
       -- surround
       require('nvim-surround').setup()
+
+      -- tree-sitter
+      -- require('nvim-treesitter.configs').setup {
+      --   -- grammars are taken care of by Nix
+      --   highlight = { enable = true },
+      --   incremental_selection = { enable = true },
+      --   textobjects = { enable = true },
+      -- }
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -74,6 +82,7 @@
 
       # Text editing (wait isn't that just all of vim?)
       nvim-surround
+      # (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
 
       # Git
       vim-fugitive
