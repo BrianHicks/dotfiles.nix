@@ -53,13 +53,14 @@
       require('gitsigns').setup()
 
       vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[G]it overview' })
-      vim.keymap.set('n', '<leader>gb', require('gitsigns').toggle_current_line_blame, { desc = 'Toggle [G]it [B]lame' })
+      vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>', { desc = 'View [G]it [B]ranches' })
       vim.keymap.set('n', '<leader>gh', require('gitsigns').preview_hunk_inline, { desc = 'Preview [G]it [H]unk' })
       vim.keymap.set('n', '<leader>gw', require('gitsigns').stage_hunk, { desc = '[G]it [S]tage hunk' })
       vim.keymap.set('n', '<leader>gW', require('gitsigns').stage_buffer, { desc = '[G]it [S]tage buffer' })
       vim.keymap.set('n', '<leader>gu', require('gitsigns').undo_stage_hunk, { desc = '[G]it [U]ndo stage hunk' })
       vim.keymap.set('n', '<leader>gC', ':Git commit -v<CR>', { desc = '[G]it [c]ommit' })
       vim.keymap.set('n', '<leader>gc', ':Git commit -m ""<Left>', { desc = '[G]it [C]ommit inline' })
+      vim.keymap.set('n', '<leader>gr', ':Telescope git_bcommits<CR>', { desc = '[G]it [R]evert to commit' })
 
       vim.keymap.set('n', '{', require('gitsigns').prev_hunk)
       vim.keymap.set('n', '}', require('gitsigns').next_hunk)
@@ -74,6 +75,14 @@
         incremental_selection = { enable = true },
         textobjects = { enable = true },
       }
+
+      -- telescope
+      vim.keymap.set('n', '-', ':Telescope find_files<CR>', { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>fb', ':Telescope find_buffers<CR>', { desc = '[F]ind [B]uffers' })
+      vim.keymap.set('n', '<leader>f/', ':Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
+      vim.keymap.set('n', '<leader>fp', ':Telescope.live_grep<CR>', { desc = '[F]ind in [P]roject' })
+      vim.keymap.set('n', '<leader>fa', ':Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
+      vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>', { desc = '[F]ind [H]elp tags' })
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -85,6 +94,9 @@
       nvim-surround
       nvim-treesitter.withAllGrammars
       vim-sleuth
+
+      # Navigation
+      telescope-nvim
 
       # Git
       vim-fugitive
