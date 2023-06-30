@@ -81,7 +81,7 @@
       vim.keymap.set('n', '<leader>ff', ':Telescope resume<CR>', { desc = 'Resume last Telescope operation' })
       vim.keymap.set('n', '<leader>fb', ':Telescope find_buffers<CR>', { desc = '[F]ind [B]uffers' })
       vim.keymap.set('n', '<leader>f/', ':Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
-      vim.keymap.set('n', '<leader>fp', ':Telescope.live_grep<CR>', { desc = '[F]ind in [P]roject' })
+      vim.keymap.set('n', '<leader>fp', ':Telescope live_grep<CR>', { desc = '[F]ind in [P]roject' })
       vim.keymap.set('n', '<leader>fa', ':Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
       vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>', { desc = '[F]ind [H]elp tags' })
     '';
