@@ -87,6 +87,14 @@
       vim.keymap.set('n', '<leader>fp', ':Telescope live_grep<CR>', { desc = '[F]ind in [P]roject' })
       vim.keymap.set('n', '<leader>fa', ':Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
       vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>', { desc = '[F]ind [H]elp tags' })
+
+      -- LSP
+      local lspconfig = require('lspconfig')
+      lspconfig.elmls.setup({ cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" } })
+      lspconfig.rust_analyzer.setup({})
+      lspconfig.sorbet.setup({ cmd = { "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" } })
+      lspconfig.tsserver.setup({})
+      lspconfig.nil_ls.setup({ cmd = { "${pkgs.nil}/bin/nil" } })
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -98,6 +106,7 @@
       nvim-surround
       nvim-treesitter.withAllGrammars
       vim-sleuth
+      nvim-lspconfig
 
       # Navigation
       telescope-nvim
