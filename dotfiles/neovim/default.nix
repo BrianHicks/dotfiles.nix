@@ -140,19 +140,19 @@
       comment-nvim
 
       # Text editing (wait isn't that just all of vim?)
+      fidget-nvim
+      nvim-lspconfig
       nvim-surround
       nvim-treesitter.withAllGrammars
       vim-sleuth
-      nvim-lspconfig
-      fidget-nvim
 
       # Navigation
       telescope-nvim
 
       # Git
+      gitsigns-nvim
       vim-fugitive
       vim-rhubarb
-      gitsigns-nvim
 
       # themes and visual niceties
       nightfox-nvim
