@@ -92,7 +92,7 @@
       local lspconfig = require('lspconfig')
       lspconfig.elmls.setup({ cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" } })
       lspconfig.rust_analyzer.setup({})
-      lspconfig.sorbet.setup({ cmd = { "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" } })
+      print(lspconfig.sorbet.setup({ cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" } }))
       lspconfig.tsserver.setup({})
       lspconfig.nil_ls.setup({ cmd = { "${pkgs.nil}/bin/nil" } })
 
