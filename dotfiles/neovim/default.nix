@@ -129,6 +129,8 @@
             vim.lsp.buf.format()
           end, { desc = 'Format current buffer with LSP' })
        end,
+
+       require("fidget").setup({})
       })
     '';
 
@@ -142,6 +144,7 @@
       nvim-treesitter.withAllGrammars
       vim-sleuth
       nvim-lspconfig
+      fidget-nvim
 
       # Navigation
       telescope-nvim
