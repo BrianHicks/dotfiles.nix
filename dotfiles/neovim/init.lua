@@ -70,13 +70,12 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- telescope
-vim.keymap.set('n', '-', ':Telescope find_files<CR>', { desc = 'find files' })
-vim.keymap.set('n', '_', ':Telescope buffers<CR>', { desc = '[F]ind [B]uffers' })
-vim.keymap.set('n', '<leader>ff', ':Telescope resume<CR>', { desc = 'Resume last Telescope operation' })
-vim.keymap.set('n', '<leader>f/', ':Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
-vim.keymap.set('n', '<leader>fp', ':Telescope live_grep<CR>', { desc = '[F]ind in [P]roject' })
-vim.keymap.set('n', '<leader>fa', ':Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
-vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>', { desc = '[F]ind [H]elp tags' })
+vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', { desc = 'find files' })
+vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>', { desc = '[F]ind [B]uffers' })
+vim.keymap.set('n', "<leader>'", ':Telescope resume<CR>', { desc = 'Resume last Telescope operation' })
+vim.keymap.set('n', '<leader>l', ':Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
+vim.keymap.set('n', '<leader>/', ':Telescope live_grep<CR>', { desc = '[F]ind in [P]roject' })
+vim.keymap.set('n', '<leader>s', ':Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
 
 -- LSP
 -- NOTE: language servers are set up in default.nix!
