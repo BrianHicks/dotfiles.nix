@@ -188,3 +188,6 @@ cmp.setup.cmdline(':', {
     { { name = 'cmdline' } }
   )
 })
+
+-- status line
+require('lualine').setup()

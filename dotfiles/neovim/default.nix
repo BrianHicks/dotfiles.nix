@@ -67,6 +67,7 @@
 
       # themes and visual niceties
       nightfox-nvim
+      lualine-nvim
     ];
   };
 }
