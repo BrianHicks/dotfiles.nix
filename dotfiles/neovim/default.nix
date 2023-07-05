@@ -90,11 +90,24 @@
 
       -- LSP
       local lspconfig = require('lspconfig')
-      lspconfig.elmls.setup({ cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" } })
-      lspconfig.rust_analyzer.setup({})
-      print(lspconfig.sorbet.setup({ cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" } }))
-      lspconfig.tsserver.setup({})
-      lspconfig.nil_ls.setup({ cmd = { "${pkgs.nil}/bin/nil" } })
+
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+      lspconfig.elmls.setup({
+        cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" },
+        capabilities = capabilities,
+      })
+      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+      print(lspconfig.sorbet.setup({
+        cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" },
+        capabilities = capabilities,
+      }))
+      lspconfig.tsserver.setup({ capabilities = capabilities })
+      lspconfig.nil_ls.setup({
+        cmd = { "${pkgs.nil}/bin/nil" },
+        capabilities = capabilities,
+      })
 
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
@@ -132,6 +145,81 @@
 
        require("fidget").setup({})
       })
+
+      -- completion
+      local cmp = require('cmp')
+      local luasnip = require('luasnip')
+      require('luasnip.loaders.from_vscode').lazy_load()
+      luasnip.config.setup({})
+
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          },
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+        }),
+        sources = cmp.config.sources(
+          {
+            { name = 'nvim_lsp' },
+            { name = 'luasnip' },
+          },
+          {
+            { name = 'buffer' },
+          }
+        ),
+      })
+
+      -- get better completions in 
+      cmp.setup.filetype('gitcommit', {
+        sources = cmp.config.sources(
+          { { name = 'git' } },
+          { { name = 'buffer' } }
+        )
+      })
+
+      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = { { name = 'buffer' } },
+      })
+
+      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources(
+          { { name = 'path' } },
+          { { name = 'cmdline' } }
+        )
+      })
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -145,6 +233,16 @@
       nvim-surround
       nvim-treesitter.withAllGrammars
       vim-sleuth
+
+      # Completion and snippets
+      cmp-buffer
+      cmp-cmdline
+      cmp-nvim-lsp
+      cmp-path
+      cmp_luasnip
+      friendly-snippets
+      luasnip
+      nvim-cmp
 
       # Navigation
       telescope-nvim
