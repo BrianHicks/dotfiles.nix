@@ -10,7 +10,6 @@
     vimAlias = true;
 
     extraLuaConfig =
-      # lua
       ''
       vim.cmd(':luafile ${./init.lua}')
 
