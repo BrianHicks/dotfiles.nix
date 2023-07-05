@@ -59,6 +59,8 @@
 
       # Navigation
       telescope-nvim
+      neo-tree-nvim
+      nvim-web-devicons
 
       # Git
       gitsigns-nvim
