@@ -12,6 +12,7 @@
     extraLuaConfig =
       ''
       vim.cmd [[source ${./init.lua}]]
+      vim.cmd [[source ${./neo-tree.lua}]]
 
       -- language servers
       local lspconfig = require('lspconfig')
