@@ -97,7 +97,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- Buffer-local mappings
-    nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+    nmap('<leader>r', vim.lsp.buf.rename, '[R]ename')
     nmap('<leader>a', vim.lsp.buf.code_action, 'Code [a]ction')
 
     nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
