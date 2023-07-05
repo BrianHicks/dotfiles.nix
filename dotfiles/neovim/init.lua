@@ -16,6 +16,10 @@ vim.o.termguicolors = true
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
 
+-- deal with word wrap nicely
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 require("better_escape").setup {
   mapping = {"fd"},
   -- TODO: clear_empty_lines?
