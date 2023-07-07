@@ -13,4 +13,4 @@ require("neo-tree").setup({
   },
 })
 
-vim.keymap.set('n', '-', ':Neotree reveal=true position=left<CR>')
+vim.keymap.set('n', '-', '<cmd>Neotree reveal=true position=left<CR>')

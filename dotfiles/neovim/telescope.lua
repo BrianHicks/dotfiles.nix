@@ -12,9 +12,9 @@ telescope.setup {
   },
 }
 
-vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', { desc = 'find files' })
-vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>', { desc = '[F]ind [B]uffers' })
-vim.keymap.set('n', "<leader>'", ':Telescope resume<CR>', { desc = 'Resume last Telescope operation' })
-vim.keymap.set('n', '<leader>l', ':Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
-vim.keymap.set('n', '<leader>/', ':Telescope live_grep<CR>', { desc = '[F]ind in [P]roject' })
-vim.keymap.set('n', '<leader>s', ':Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
+vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>', { desc = 'find files' })
+vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', { desc = '[F]ind [B]uffers' })
+vim.keymap.set('n', "<leader>'", '<cmd>Telescope resume<CR>', { desc = 'Resume last Telescope operation' })
+vim.keymap.set('n', '<leader>l', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
+vim.keymap.set('n', '<leader>/', '<cmd>Telescope live_grep<CR>', { desc = '[F]ind in [P]roject' })
+vim.keymap.set('n', '<leader>s', '<cmd>Telescope builtin<CR>', { desc = '[F]ind [a]nything telescope can' })
