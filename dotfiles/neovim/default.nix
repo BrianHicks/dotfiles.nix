@@ -12,7 +12,9 @@
     extraLuaConfig =
       ''
       vim.cmd [[source ${./init.lua}]]
+
       vim.cmd [[source ${./neo-tree.lua}]]
+      vim.cmd [[source ${./telescope.lua}]]
       vim.cmd [[source ${./trouble.lua}]]
 
       -- language servers
