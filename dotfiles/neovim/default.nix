@@ -13,6 +13,7 @@
       ''
       vim.cmd [[source ${./init.lua}]]
       vim.cmd [[source ${./neo-tree.lua}]]
+      vim.cmd [[source ${./trouble.lua}]]
 
       -- language servers
       local lspconfig = require('lspconfig')
@@ -47,6 +48,7 @@
       nvim-surround
       nvim-treesitter.withAllGrammars
       vim-sleuth
+      trouble-nvim
 
       # Completion and snippets
       cmp-buffer
