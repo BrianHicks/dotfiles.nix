@@ -51,7 +51,7 @@ vim.keymap.set('n', '<leader>gw', gitsigns.stage_hunk, { desc = '[G]it [S]tage h
 vim.keymap.set('n', '<leader>gW', gitsigns.stage_buffer, { desc = '[G]it [S]tage buffer' })
 vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = '[G]it [U]ndo stage hunk' })
 vim.keymap.set('n', '<leader>gC', '<cmd>Git commit -v<CR>', { desc = '[G]it [c]ommit' })
-vim.keymap.set('n', '<leader>gc', '<cmd>Git commit -m ""<Left>', { desc = '[G]it [C]ommit inline' })
+vim.keymap.set('n', '<leader>gc', ':Git commit -m ""<Left>', { desc = '[G]it [C]ommit inline' })
 vim.keymap.set('n', '<leader>gr', '<cmd>Telescope git_bcommits<CR>', { desc = '[G]it [R]evert to commit' })
 vim.keymap.set('n', '<leader>gm', '<cmd>Telescope git_status<CR>', { desc = '[G]it [M]odified files' })
 
