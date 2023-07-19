@@ -16,6 +16,7 @@
       vim.cmd [[source ${./neo-tree.lua}]]
       vim.cmd [[source ${./telescope.lua}]]
       vim.cmd [[source ${./trouble.lua}]]
+      vim.cmd [[source ${./autoformat.lua}]]
 
       -- language servers
       local lspconfig = require('lspconfig')
