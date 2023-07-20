@@ -44,6 +44,7 @@
       better-escape-nvim
       which-key-nvim
       comment-nvim
+      vim-tmux-navigator
 
       # Text editing (wait isn't that just all of vim?)
       fidget-nvim
