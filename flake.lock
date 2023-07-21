@@ -74,11 +74,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1687709756,
-        "narHash": "sha256-Y5wKlQSkgEK2weWdOu4J3riRd+kV/VCgHsqLNTTWQ/0=",
+        "lastModified": 1689068808,
+        "narHash": "sha256-6ixXo3wt24N/melDWjq70UuHQLxGV8jZvooRanIHXw0=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "dbabf0ca0c0c4bce6ea5eaf65af5cb694d2082c7",
+        "rev": "919d646de7be200f3bf08cb76ae1f09402b6f9b4",
         "type": "github"
       },
       "original": {
@@ -290,11 +290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1689775152,
-        "narHash": "sha256-sUBTklaZt934tFYuVig6lYgNpZimwCVSRo46L/pdMGo=",
+        "lastModified": 1689969019,
+        "narHash": "sha256-GXuVG9a1K8nKKIoN2wIYO/WJM0ztX06et0GIz34EkIo=",
         "ref": "main",
-        "rev": "b7056ea35369f44be65ceab433a6b132cf2ebb65",
-        "revCount": 156,
+        "rev": "a7077eead22b78b6fda680a3a937397913fcbab2",
+        "revCount": 203,
         "type": "git",
         "url": "https://git.bytes.zone/brian/montage.git"
       },
