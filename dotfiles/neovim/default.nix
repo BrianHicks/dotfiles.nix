@@ -29,10 +29,10 @@
         capabilities = capabilities,
       })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      print(lspconfig.sorbet.setup({
+      lspconfig.sorbet.setup({
         cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" },
         capabilities = capabilities,
-      }))
+      })
       lspconfig.tsserver.setup({ capabilities = capabilities })
       lspconfig.nil_ls.setup({
         cmd = { "${pkgs.nil}/bin/nil" },
