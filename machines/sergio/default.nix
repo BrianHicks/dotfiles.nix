@@ -16,17 +16,33 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
+  # use nixbuild.net for distributed builds
+  nix.distributedBuilds = true;
+  nix.buildMachines = [
+    {
+      hostName = "eu.nixbuild.net";
+      system = "x86_64-linux";
+      maxJobs = 100;
+      supportedFeatures = [ "benchmark" "big-parallel" ];
+    }
+  ];
+  nix.extraOptions = ''
+    builders-use-substitutes = true
+    experimental-features = nix-command flakes
+  '';
+  programs.ssh.knownHosts = {
+    nixBuild = {
+      hostNames = [ "eu.nixbuild.net" ];
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
+    };
+  };
+
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
   services.nix-daemon.enable = true;
   nix.settings.max-jobs = 20;
   nix.settings.cores = 20;
   nix.configureBuildUsers = true;
-
-  nix.extraOptions = ''
-    builders-use-substitutes = true
-    experimental-features = nix-command flakes
-  '';
 
   homebrew = {
     enable = true;
