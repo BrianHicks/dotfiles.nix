@@ -116,8 +116,6 @@
         ../../dotfiles/jq
         ../../dotfiles/k9s
         ../../dotfiles/lf
-
-        # ncdu currently does not compile!
         ../../dotfiles/ncdu
         ../../dotfiles/neovim
         ../../dotfiles/niv
