@@ -64,6 +64,9 @@
     }
   ];
 
+  # https://github.com/nix-community/home-manager/issues/4026
+  users.users.brianhicks.home = "/Users/brianhicks";
+
   # dotfiles
   home-manager = {
     useUserPackages = true;
