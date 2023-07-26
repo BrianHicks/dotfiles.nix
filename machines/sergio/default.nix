@@ -110,11 +110,9 @@
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
         ../../dotfiles/k9s
-        # ../../dotfiles/kakoune
         ../../dotfiles/lf
-
-        # ncdu currently does not compile!
         ../../dotfiles/ncdu
+        ../../dotfiles/neovim
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
         ../../dotfiles/sd
