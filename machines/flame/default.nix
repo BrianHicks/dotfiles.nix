@@ -84,22 +84,29 @@
         ../../dotfiles/cachix
         ../../dotfiles/comma
         ../../dotfiles/direnv
+        ../../dotfiles/dog
+        ../../dotfiles/fd
         ../../dotfiles/fzf
         ../../dotfiles/git
-        ../../dotfiles/lf
+        ../../dotfiles/hammerspoon
+        ../../dotfiles/helix
         ../../dotfiles/home-manager
+        ../../dotfiles/htop
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
-        ../../dotfiles/kakoune
         ../../dotfiles/k9s
+        ../../dotfiles/lf
         ../../dotfiles/ncdu
+        ../../dotfiles/neovim
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
+        ../../dotfiles/sd
         ../../dotfiles/ssh
         ../../dotfiles/tmux
         ../../dotfiles/tree
         ../../dotfiles/tree-grepper
         ../../dotfiles/watch
+        ../../dotfiles/wezterm
         ../../dotfiles/zsh
       ];
     };
