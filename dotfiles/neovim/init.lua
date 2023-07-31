@@ -67,6 +67,10 @@ require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
+
+  -- the Markdown parser currently has some issue in my main work repo that
+  -- makes neovim quit (segfault?) when it tries to load the README.
+  disable = { "markdown" },
 }
 
 -- LSP
