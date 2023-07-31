@@ -21,6 +21,6 @@ nixify() {
       echo "  buildInputs = with pkgs; [ niv.niv git ];"
       echo '}'
     ) > shell.nix
-    ${EDITOR:-vim} shell.nix
+    ${EDITOR:-nvim} shell.nix
   fi
 }

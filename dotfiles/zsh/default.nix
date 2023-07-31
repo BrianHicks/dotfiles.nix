@@ -37,7 +37,7 @@ in
 
     initExtra =
       ''
-        EDITOR=hx
+        EDITOR=nvim
         export EDITOR
 
         alias ready='gh pr create --reviewer NoRedInk/team-kraken'

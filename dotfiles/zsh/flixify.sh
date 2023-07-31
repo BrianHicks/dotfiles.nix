@@ -34,7 +34,7 @@ flixify() {
     direnv allow
   fi
 
-  ${EDITOR:-kak} flake.nix
+  ${EDITOR:-nvim} flake.nix
 
   # we need to add at least flake.nix so that Nix can see it
   git add flake.nix
