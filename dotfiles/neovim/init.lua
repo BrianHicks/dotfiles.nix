@@ -65,7 +65,16 @@ require('nvim-surround').setup()
 require('nvim-treesitter.configs').setup {
   -- grammars are taken care of by Nix
   highlight = { enable = true },
-  incremental_selection = { enable = true },
+  incremental_selection = {
+    enable = true,
+
+    keymaps = {
+      init_selection = "<M-o>",
+      node_incremental = "<M-o>",
+      scope_incremental = "<M-S-o>",
+      node_decremental = "<M-i>",
+    },
+  },
   textobjects = { enable = true },
 
   -- the Markdown parser currently has some issue in my main work repo that
