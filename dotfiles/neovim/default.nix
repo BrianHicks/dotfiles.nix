@@ -38,6 +38,9 @@
         cmd = { "${pkgs.nil}/bin/nil" },
         capabilities = capabilities,
       })
+      lspconfig.dafny.setup({
+        capabilities = capabilities,
+      })
     '';
 
     plugins = with pkgs.vimPlugins; [
