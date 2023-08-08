@@ -4,11 +4,15 @@ vim.cmd [[let g:neo_tree_remove_legacy_commands = 1]]
 require("neo-tree").setup({
   open_files_do_not_replace_types = {"terminal", "trouble", "qf", "fugitive"},
   filesystem = {
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true,
+    },
     group_empty_dirs = true,
   },
   buffers = {
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true,
+    },
     group_empty_dirs = true,
   },
 })
