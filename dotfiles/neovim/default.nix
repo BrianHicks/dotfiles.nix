@@ -17,6 +17,7 @@
       vim.cmd [[source ${./telescope.lua}]]
       vim.cmd [[source ${./trouble.lua}]]
       vim.cmd [[source ${./autoformat.lua}]]
+      vim.cmd [[source ${./testing.lua}]]
 
       -- language servers
       local lspconfig = require('lspconfig')
@@ -76,6 +77,10 @@
       gitsigns-nvim
       vim-fugitive
       vim-rhubarb
+
+      # Testing and Running
+      vim-dispatch
+      vim-test
 
       # themes and visual niceties
       nightfox-nvim
