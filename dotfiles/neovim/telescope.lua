@@ -10,7 +10,14 @@ telescope.setup {
       n = { ["<c-t>"] = trouble.open_with_trouble },
     },
   },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {},
+    },
+  },
 }
+
+telescope.load_extension("ui-select")
 
 vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>', { desc = 'find files' })
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', { desc = '[F]ind [B]uffers' })

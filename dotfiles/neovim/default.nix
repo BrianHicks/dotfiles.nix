@@ -70,6 +70,7 @@
 
       # Navigation
       telescope-nvim
+      telescope-ui-select-nvim
       neo-tree-nvim
       nvim-web-devicons
 
