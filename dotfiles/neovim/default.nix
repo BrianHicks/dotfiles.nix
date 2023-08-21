@@ -75,6 +75,7 @@
       neo-tree-nvim
       nvim-web-devicons
       other-nvim
+      vim-eunuch
 
       # Git
       gitsigns-nvim
