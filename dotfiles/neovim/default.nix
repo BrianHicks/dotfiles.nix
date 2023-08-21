@@ -18,6 +18,7 @@
       vim.cmd [[source ${./trouble.lua}]]
       vim.cmd [[source ${./autoformat.lua}]]
       vim.cmd [[source ${./testing.lua}]]
+      vim.cmd [[source ${./alternate.lua}]]
 
       -- language servers
       local lspconfig = require('lspconfig')
@@ -73,6 +74,7 @@
       telescope-ui-select-nvim
       neo-tree-nvim
       nvim-web-devicons
+      other-nvim
 
       # Git
       gitsigns-nvim
