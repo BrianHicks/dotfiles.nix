@@ -110,7 +110,7 @@
         ../../dotfiles/jq
         ../../dotfiles/k9s
         ../../dotfiles/lf
-        ../../dotfiles/ncdu
+        # ../../dotfiles/ncdu
         ../../dotfiles/neovim
         ../../dotfiles/niv
         ../../dotfiles/ripgrep
