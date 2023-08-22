@@ -104,7 +104,6 @@
         ../../dotfiles/fzf
         ../../dotfiles/git
         ../../dotfiles/hammerspoon
-        ../../dotfiles/helix
         ../../dotfiles/home-manager
         ../../dotfiles/htop
         ../../dotfiles/hyperfine
