@@ -6,6 +6,10 @@
     mserver = "montage serve";
     mvex = "montage vex --script-dir ${./scripts}";
 
+    # alias to get around conflict with imagemagick's `montage` binary in
+    # projects where that's in the PATH
+    m = "${pkgs.montage}/bin/montage";
+
     # tasks
     mstart = "${pkgs.montage}/bin/montage start";
     mextend = "${pkgs.montage}/bin/montage extend";
