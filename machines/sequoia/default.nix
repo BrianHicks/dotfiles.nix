@@ -91,7 +91,6 @@
 
       home.packages = [
         pkgs.jless
-        pkgs.montage
         pkgs.nix-tree
         pkgs.pstree
         pkgs.pv
@@ -116,6 +115,7 @@
         ../../dotfiles/jq
         ../../dotfiles/k9s
         ../../dotfiles/lf
+        ../../dotfiles/montage
         # ../../dotfiles/ncdu
         ../../dotfiles/neovim
         ../../dotfiles/niv
