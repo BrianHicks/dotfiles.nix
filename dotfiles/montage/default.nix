@@ -17,7 +17,7 @@
     m10 = "${pkgs.montage}/bin/montage extend --by PT10M";
 
     # breaks
-    mbreak = "${pkgs.montage}/bin/montage start --break";
+    mbreak = "${pkgs.montage}/bin/montage start --break Break";
     mlunch = "${pkgs.montage}/bin/montage start Lunch --break --duration 60";
 
     # meetings
