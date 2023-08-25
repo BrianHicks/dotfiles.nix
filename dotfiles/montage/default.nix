@@ -2,6 +2,11 @@
   home.packages = [ pkgs.montage ];
 
   programs.zsh.shellAliases = {
+    # server managment
+    mserver = "montage serve";
+    mvex = "montage vex --script-dir ${./scripts}";
+
+    # tasks
     mstart = "${pkgs.montage}/bin/montage start";
 
     # breaks

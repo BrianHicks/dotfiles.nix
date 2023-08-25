@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+osascript -e 'tell application "Slack" to activate'
+osascript -e 'tell application "Mail" to activate'
+osascript -e 'tell application "Zulip" to activate'
+osascript -e 'tell application "Mail" to activate'

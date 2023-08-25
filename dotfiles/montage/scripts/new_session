@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+osascript -e 'tell application "Slack" to quit'
+osascript -e 'tell application "Mail" to quit'
+osascript -e 'tell application "Zulip" to quit'
+osascript -e 'tell application "Mail" to quit'
+osascript -e 'tell application "Discord" to quit'
