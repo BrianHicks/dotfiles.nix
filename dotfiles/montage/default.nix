@@ -8,6 +8,9 @@
 
     # tasks
     mstart = "${pkgs.montage}/bin/montage start";
+    mextend = "${pkgs.montage}/bin/montage extend";
+    m5 = "${pkgs.montage}/bin/montage extend --by PT5M";
+    m10 = "${pkgs.montage}/bin/montage extend --by PT10M";
 
     # breaks
     mbreak = "${pkgs.montage}/bin/montage start --break";
