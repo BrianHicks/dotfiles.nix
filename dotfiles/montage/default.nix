@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = [ pkgs.montage ];
-  
+
   programs.zsh.shellAliases = {
     mstart = "${pkgs.montage}/bin/montage start";
 

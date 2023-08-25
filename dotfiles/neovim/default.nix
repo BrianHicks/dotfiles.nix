@@ -11,39 +11,39 @@
 
     extraLuaConfig =
       ''
-      vim.cmd [[source ${./init.lua}]]
+        vim.cmd [[source ${./init.lua}]]
 
-      vim.cmd [[source ${./neo-tree.lua}]]
-      vim.cmd [[source ${./telescope.lua}]]
-      vim.cmd [[source ${./trouble.lua}]]
-      vim.cmd [[source ${./autoformat.lua}]]
-      vim.cmd [[source ${./testing.lua}]]
-      vim.cmd [[source ${./alternate.lua}]]
+        vim.cmd [[source ${./neo-tree.lua}]]
+        vim.cmd [[source ${./telescope.lua}]]
+        vim.cmd [[source ${./trouble.lua}]]
+        vim.cmd [[source ${./autoformat.lua}]]
+        vim.cmd [[source ${./testing.lua}]]
+        vim.cmd [[source ${./alternate.lua}]]
 
-      -- language servers
-      local lspconfig = require('lspconfig')
+        -- language servers
+        local lspconfig = require('lspconfig')
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-      lspconfig.elmls.setup({
-        cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" },
-        capabilities = capabilities,
-      })
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      lspconfig.sorbet.setup({
-        cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" },
-        capabilities = capabilities,
-      })
-      lspconfig.tsserver.setup({ capabilities = capabilities })
-      lspconfig.nil_ls.setup({
-        cmd = { "${pkgs.nil}/bin/nil" },
-        capabilities = capabilities,
-      })
-      lspconfig.dafny.setup({
-        capabilities = capabilities,
-      })
-    '';
+        lspconfig.elmls.setup({
+          cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" },
+          capabilities = capabilities,
+        })
+        lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+        lspconfig.sorbet.setup({
+          cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" },
+          capabilities = capabilities,
+        })
+        lspconfig.tsserver.setup({ capabilities = capabilities })
+        lspconfig.nil_ls.setup({
+          cmd = { "${pkgs.nil}/bin/nil" },
+          capabilities = capabilities,
+        })
+        lspconfig.dafny.setup({
+          capabilities = capabilities,
+        })
+      '';
 
     plugins = with pkgs.vimPlugins; [
       better-escape-nvim
