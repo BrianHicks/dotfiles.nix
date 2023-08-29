@@ -79,8 +79,8 @@
       vim-eunuch
 
       # Git
-      gitsigns-nvim
       vim-fugitive
+      vim-gitgutter
       vim-rhubarb
 
       # Testing and Running
