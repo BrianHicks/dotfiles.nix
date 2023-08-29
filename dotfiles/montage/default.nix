@@ -20,6 +20,10 @@
     mbreak = "${pkgs.montage}/bin/montage start --break Break";
     mlunch = "${pkgs.montage}/bin/montage start Lunch --break --duration 60";
 
+    # signing off for the day and weekend
+    msignoff = "${pkgs.montage}/bin/montage start Offline --break --until $(date -j -v+1d -v09H -v00M -v00S -I seconds)";
+    mweekend = "${pkgs.montage}/bin/montage start Offline --break --until $(date -j -v+monday -v09H -v00M -v00S -I seconds)";
+
     # meetings
     mstandup = "${pkgs.montage}/bin/montage start Standup --meeting --duration 30";
     mdonut = "${pkgs.montage}/bin/montage start Donut --meeting --duration 30";
