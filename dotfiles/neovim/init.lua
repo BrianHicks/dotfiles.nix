@@ -11,6 +11,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
+vim.api.nvim_set_option('updatetime', 750)
 
 -- swap ; and : to save a keystroke and reduce wear on the pinky finger
 vim.keymap.set('n', ';', ':')
