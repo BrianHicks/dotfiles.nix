@@ -290,11 +290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1692978550,
-        "narHash": "sha256-Vovpigf6/KwYwpVVZMgfz1X5EjmpxIT/ce47C2BoJF4=",
+        "lastModified": 1693427689,
+        "narHash": "sha256-rEjpp0nvLPTCvXodBrrfWfbP6sgCXg7ky3MjOHgBNh0=",
         "ref": "main",
-        "rev": "e558d1591fca961221c6c767595631c2f66f1fa1",
-        "revCount": 309,
+        "rev": "22ebe41d56ceeac57f405011ad854ecdf45c5415",
+        "revCount": 319,
         "type": "git",
         "url": "https://git.bytes.zone/brian/montage.git"
       },
