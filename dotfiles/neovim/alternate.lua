@@ -1,7 +1,7 @@
 require("other-nvim").setup({
   mappings = {
     -- builtins
-    "rails",
+    "rails", -- https://github.com/rgroli/other.nvim/blob/main/lua/other-nvim/builtin/mappings/rails.lua
 
     -- the "going back to source from tests" from the Rails builtin but with a _spec suffix
     {
