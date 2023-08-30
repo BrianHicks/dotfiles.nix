@@ -22,7 +22,11 @@
 
     # signing off for the day and weekend
     msignoff = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+1d -v09H -v00M -v00S -I seconds)";
-    mweekend = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+monday -v09H -v00M -v00S -I seconds)";
+    mmonday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+monday -v09H -v00M -v00S -I seconds)";
+    mtuesday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+tuesday -v09H -v00M -v00S -I seconds)";
+    mwednesday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+wednesday -v09H -v00M -v00S -I seconds)";
+    mthursday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+thursday -v09H -v00M -v00S -I seconds)";
+    mfriday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j -v+friday -v09H -v00M -v00S -I seconds)";
 
     # meetings
     mstandup = "${pkgs.montage}/bin/montage start Standup --meeting --duration 30";
