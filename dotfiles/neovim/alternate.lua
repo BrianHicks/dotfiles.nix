@@ -26,6 +26,11 @@ require("other-nvim").setup({
         { target = "%1/app/%4s/%3_%4.rb" },
       },
     }, 
+    {
+      pattern = "/lib/(.*)/(.*).rb",
+      target = "/spec/lib/%1/%2_spec.rb",
+      context = "test",
+    },
   },
 })
 
