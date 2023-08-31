@@ -17,6 +17,10 @@ vim.api.nvim_set_option('updatetime', 750)
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
 
+-- swap ^ and 0 because I always want ^ but 0 is easier to press
+vim.keymap.set('n', '^', '0')
+vim.keymap.set('n', '0', '^')
+
 -- deal with word wrap nicely
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
