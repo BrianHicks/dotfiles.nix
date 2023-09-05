@@ -77,6 +77,7 @@
       telescope-ui-select-nvim
       toggleterm-nvim
       vim-eunuch
+      vim-vinegar
 
       # Git
       vim-fugitive
