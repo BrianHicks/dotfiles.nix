@@ -19,6 +19,7 @@
         vim.cmd [[source ${./telescope.lua}]]
         vim.cmd [[source ${./testing.lua}]]
         vim.cmd [[source ${./trouble.lua}]]
+        vim.cmd [[source ${./toggleterm.lua}]]
 
         -- language servers
         local lspconfig = require('lspconfig')
@@ -70,10 +71,11 @@
       nvim-cmp
 
       # Navigation
-      telescope-nvim
-      telescope-ui-select-nvim
       nvim-web-devicons
       other-nvim
+      telescope-nvim
+      telescope-ui-select-nvim
+      toggleterm-nvim
       vim-eunuch
 
       # Git
