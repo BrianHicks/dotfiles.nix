@@ -57,8 +57,9 @@
       nvim-lspconfig
       nvim-surround
       nvim-treesitter.withAllGrammars
-      vim-sleuth
       trouble-nvim
+      vim-sleuth
+      vim-unimpaired
 
       # Completion and snippets
       cmp-buffer
