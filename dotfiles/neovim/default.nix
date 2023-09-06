@@ -48,9 +48,10 @@
 
     plugins = with pkgs.vimPlugins; [
       better-escape-nvim
-      which-key-nvim
       comment-nvim
+      vim-sensible
       vim-tmux-navigator
+      which-key-nvim
 
       # Text editing (wait isn't that just all of vim?)
       fidget-nvim
