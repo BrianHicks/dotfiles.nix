@@ -35,5 +35,6 @@
 
     # pairings
     mpair = "mpair_f() { ${pkgs.montage}/bin/montage start \"pairing with \$1\" --meeting };mpair_f";
+    m11 = "m11_f() { ${pkgs.montage}/bin/montage start \"1:1 with \$1\" --meeting };m11_f";
   };
 }
