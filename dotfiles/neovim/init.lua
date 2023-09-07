@@ -21,6 +21,9 @@ vim.keymap.set('n', ':', ';')
 vim.keymap.set('n', '^', '0')
 vim.keymap.set('n', '0', '^')
 
+-- bounce on leader to go back to alternate file
+vim.keymap.set('n', '<leader><leader>', '<C-6>')
+
 -- deal with word wrap nicely
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
