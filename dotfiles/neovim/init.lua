@@ -28,6 +28,10 @@ vim.keymap.set('n', '<leader><leader>', '<C-6>')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- stay in visual mode while indenting
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
+
 require("better_escape").setup {
   mapping = {"fd"},
   -- TODO: clear_empty_lines?
