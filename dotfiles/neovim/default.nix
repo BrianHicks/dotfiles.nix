@@ -41,6 +41,7 @@
           cmd = { "${pkgs.nil}/bin/nil" },
           capabilities = capabilities,
         })
+        lspconfig.pyright.setup({ capabilities = capabilities })
       '';
 
     plugins = with pkgs.vimPlugins; [
