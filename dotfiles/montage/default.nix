@@ -21,12 +21,12 @@
     mlunch = "${pkgs.montage}/bin/montage start Lunch --offline --duration 60";
 
     # signing off for the day and weekend
-    msignoff = "${pkgs.montage}/bin/montage start Offline --offline --until $(date +%Y-%m-%dT%H:%M:%S%z -v+1d -v09H -v00M -v00S)";
-    mmonday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date +%Y-%m-%dT%H:%M:%S%z -v+monday -v09H -v00M -v00S)";
-    mtuesday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date +%Y-%m-%dT%H:%M:%S%z -v+tuesday -v09H -v00M -v00S)";
-    mwednesday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date +%Y-%m-%dT%H:%M:%S%z -v+wednesday -v09H -v00M -v00S)";
-    mthursday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date +%Y-%m-%dT%H:%M:%S%z -v+thursday -v09H -v00M -v00S)";
-    mfriday = "${pkgs.montage}/bin/montage start Offline --offline --until $(date -j +%Y-%m-%dT%H:%M:%S%z -v09H -v00M -v00S)";
+    msignoff = "${pkgs.montage}/bin/montage start Offline --offline --until $(${pkgs.coreutils}/bin/date --date 'tomorrow 9am' -Iseconds)";
+    mmonday = "${pkgs.montage}/bin/montage start Offline --offline --until $(${pkgs.coreutils}/bin/date --date 'Monday 9am' -Iseconds)";
+    mtuesday = "${pkgs.montage}/bin/montage start Offline --offline --until $((${pkgs.coreutils}/bin/date --date 'Tuesday 9am' -Iseconds))";
+    mwednesday = "${pkgs.montage}/bin/montage start Offline --offline --until $((${pkgs.coreutils}/bin/date --date 'Wednesday 9am' -Iseconds))";
+    mthursday = "${pkgs.montage}/bin/montage start Offline --offline --until $((${pkgs.coreutils}/bin/date --date 'Thursday 9am' -Iseconds))";
+    mfriday = "${pkgs.montage}/bin/montage start Offline --offline --until $((${pkgs.coreutils}/bin/date --date 'Friday 9am' -Iseconds))";
 
     # meetings
     mstandup = "${pkgs.montage}/bin/montage start Standup --meeting --duration 30";
