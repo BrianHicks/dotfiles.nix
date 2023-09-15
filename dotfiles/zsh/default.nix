@@ -61,6 +61,9 @@ in
         if test -d /opt/homebrew/bin; then
           export PATH="$PATH:/opt/homebrew/bin"
         fi
+
+        # make delete key work
+        bindkey "^[[3~" delete-char
       ''
       + extraInitExtra;
 
