@@ -4,7 +4,7 @@ set -euo pipefail
 SESSION_DESCRIPTION="${1:-NO SESSION}"
 SESSION_KIND="${2:-UNKNOWN}"
 
-say "starting $SESSION_KIND $SESSION_DESCRIPTION"
+# say "starting $SESSION_KIND $SESSION_DESCRIPTION"
 
 if test "$SESSION_KIND" = "task"; then
   osascript -e 'tell application "Slack" to quit'
@@ -12,5 +12,5 @@ if test "$SESSION_KIND" = "task"; then
   osascript -e 'tell application "Zulip" to quit'
   osascript -e 'tell application "Mail" to quit'
   osascript -e 'tell application "Discord" to quit'
-  say "I quit the apps. Have fun!"
+  # say "I quit the apps. Have fun!"
 fi
