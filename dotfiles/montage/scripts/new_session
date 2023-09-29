@@ -13,4 +13,5 @@ if test "$SESSION_KIND" = "task"; then
   osascript -e 'tell application "Mail" to quit'
   osascript -e 'tell application "Discord" to quit'
   # say "I quit the apps. Have fun!"
+  open "focus://focus"
 fi

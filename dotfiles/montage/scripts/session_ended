@@ -8,4 +8,5 @@ if test "${2:-}" != "break" && test "${3:-}" != "task"; then
   osascript -e 'tell application "Mail" to activate'
   osascript -e 'tell application "Zulip" to activate'
   osascript -e 'tell application "Mail" to activate'
+  open "focus://unfocus"
 fi
