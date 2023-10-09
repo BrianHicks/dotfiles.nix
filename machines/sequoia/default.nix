@@ -48,6 +48,10 @@
   homebrew = {
     enable = true;
 
+    brews = [
+      "ical-buddy"
+    ];
+
     casks = [
       "1password"
       "1password/tap/1password-cli"
@@ -59,7 +63,6 @@
       "google-chrome"
       "gpg-suite"
       "hammerspoon"
-      "ical-buddy"
       "openscad"
       "prusaslicer"
       "shortcat"
