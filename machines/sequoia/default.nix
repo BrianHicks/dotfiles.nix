@@ -59,6 +59,7 @@
       "google-chrome"
       "gpg-suite"
       "hammerspoon"
+      "ical-buddy"
       "openscad"
       "prusaslicer"
       "shortcat"
@@ -91,6 +92,7 @@
 
       home.packages = [
         pkgs.jless
+        pkgs.meet
         pkgs.nix-tree
         pkgs.pstree
         pkgs.pv

@@ -228,6 +228,8 @@
               ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
             '';
 
+            meet = final.callPackage ./pkgs/meet { };
+
             niv =
               let
                 nivSources = import "${inputs.niv}/nix/sources.nix" { };
