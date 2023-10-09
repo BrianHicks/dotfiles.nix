@@ -115,8 +115,6 @@ def choose_meeting(calendars):
 def create_note(args, event):
     now = datetime.now().strftime("%Y-%m-%d")
     filename = os.path.join(args.meetings_notes_base, f'{now} {event.note_name()}.md')
-    print(filename)
-    print()
 
     subprocess.check_call([
         'open',
