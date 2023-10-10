@@ -22,6 +22,10 @@ PERSON_EMAIL_RE = re.compile(
     r"^\|\s*(?P<link>.+?)\s*\|\s*(?P<email>.+?@.+?)\s*\|$",
 )
 
+ATTENDEES_RE = re.compile(r"^attendees: (.+?)$")
+
+DATETIME_RE = re.compile(r"^(.+?) - (.+?)$")
+
 
 class Event:
     SEPARATOR = '[!!]'
@@ -30,32 +34,40 @@ class Event:
     ICALBUDDY_PROPERTY_ORDER = ['title', 'attendees', 'datetime']
     ICALBUDDY_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S'
 
-    def __init__(self, title=None, attendees=None, datetime=None):
+    def __init__(self, title, datetime, attendees):
         self.title = title
-        self.attendees = attendees
         self.datetime = datetime
+        self.attendees = attendees
 
     @classmethod
     def from_icalbuddy_line(cls, line):
         sections = line.split(cls.SEPARATOR)
 
-        attrs = {}
+        # title should always be the first section
+        title = sections[0]
+        event_datetime = None
+        attendees = []
 
-        for (i, attr) in enumerate(cls.ICALBUDDY_PROPERTY_ORDER):
-            value = sections[i]
+        for section in sections[1:]:
+            attendees_match = ATTENDEES_RE.match(section)
 
-            if attr == 'title':
-                attrs[attr] = value
-            elif attr == 'attendees':
-                attrs[attr] = value[len('attendees: '):].split(', ')
-            elif attr == 'datetime':
-                start, end = value.split(' - ')
-                attrs[attr] = (
+            if attendees_match:
+                attendees.extend(attendees_match.groups()[0].split(', '))
+                continue
+
+            datetime_match = DATETIME_RE.match(section)
+
+            if datetime_match:
+                start, end = datetime_match.groups()
+                event_datetime = (
                     datetime.strptime(start, cls.ICALBUDDY_TIME_FORMAT),
                     datetime.strptime(end, cls.ICALBUDDY_TIME_FORMAT),
                 )
+                continue
 
-        return cls(**attrs)
+            sys.stderr.write(f"[WARNING] unmatched section: `{section}`\n")
+
+        return cls(title, event_datetime, attendees)
 
     def __repr__(self):
         return f'<Event: {self.title or "no title"} at {self.datetime or "no time"} with {self.attendees or "nobody"}>'
