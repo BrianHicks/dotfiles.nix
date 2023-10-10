@@ -118,7 +118,6 @@ def choose_meeting(calendars):
     out = subprocess.check_output(
         [
             'fzf',
-            '--nth=2',
             f'--delimiter={delimiter}',
             '--with-nth=2',
         ],
