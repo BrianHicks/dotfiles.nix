@@ -138,11 +138,6 @@ def create_note(args, event):
     now = datetime.now().strftime("%Y-%m-%d")
     filename = os.path.join(args.meetings_notes_base, f'{now} {event.note_name()}.md')
 
-    subprocess.check_call([
-        'open',
-        f"obsidian://advanced-uri?vault=Notes&filepath={quote(filename)}", # TODO: parametrize the vault name?
-    ])
-
     links = prepare_links_to_attendees(args.vault_dir, event)
     with open(os.path.join(args.vault_dir, filename), 'a') as fh:
         fh.write('---\nattendees: ')
@@ -154,6 +149,11 @@ def create_note(args, event):
         fh.write('\nstart: ')
         fh.write(event.datetime[0].isoformat())
         fh.write('\n---\n')
+
+    subprocess.check_call([
+        'open',
+        f"obsidian://advanced-uri?vault=Notes&filepath={quote(filename)}", # TODO: parametrize the vault name?
+    ])
 
 
 def prepare_links_to_attendees(vault, event):
