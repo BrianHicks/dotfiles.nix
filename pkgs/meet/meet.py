@@ -81,6 +81,13 @@ class Event:
     def duration(self):
         return self.datetime[1] - self.datetime[0]
 
+    def to_json(self):
+        return {
+            'title': self.title,
+            'attendees': self.attendees,
+            'datetime': self.datetime,
+        }
+
 
 def meetings_today(calendars):
     out = subprocess.check_output([
@@ -189,7 +196,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         'command',
-        choices=['start', 'note'],
+        choices=['start', 'note', 'choose'],
         help='What should I do? `start` a meeting or start a `note`?',
     )
     parser.add_argument(
@@ -206,6 +213,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     meeting = choose_meeting('brian@noredink.com,brian@brianthicks.com')
+
+    if args.command == 'choose':
+        json.dump(meeting.to_json(), sys.stdout)
+        sys.exit(0)
 
     if args.command == 'start':
         start_montage(meeting)
