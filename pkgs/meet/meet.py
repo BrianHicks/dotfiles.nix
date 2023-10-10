@@ -5,6 +5,7 @@ import json
 import os.path
 import re
 import subprocess
+import sys
 from urllib.parse import quote
 
 EMOJI_RE = re.compile(
@@ -137,7 +138,7 @@ def prepare_links_to_attendees(vault, event):
         with open(os.path.join(vault, 'contacts.md'), 'r') as fh:
             lines = fh.readlines()
     except IOError:  # file doesn't exist
-        print("[WARNING] could not read contacts.md!")
+        sys.stderr.write("[WARNING] could not read contacts.md!\n")
         return ""
 
     emails_to_people = {}
@@ -156,7 +157,7 @@ def prepare_links_to_attendees(vault, event):
         try:
             people.append(emails_to_people[attendee])
         except KeyError:
-            print(f"[WARNING] could not find a link for {attendee}")
+            sys.stderr.write(f"[WARNING] could not find a link for {attendee}\n")
             people.append(attendee)
 
     return people
