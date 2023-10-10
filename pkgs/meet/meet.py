@@ -151,6 +151,8 @@ def create_note(args, event):
         json.dump(event.title, fh)
         fh.write('\nup: ')
         fh.write(event.datetime[0].strftime('"[[%Y-%m-%d]]"'))
+        fh.write('\nstart: ')
+        fh.write(event.datetime[0].isoformat())
         fh.write('\n---\n')
 
 
