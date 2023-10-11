@@ -86,10 +86,8 @@ class Event:
         return {
             'title': self.title,
             'attendees': self.attendees,
-            'datetime': [
-                self.datetime[0].isoformat(),
-                self.datetime[1].isoformat(),
-            ],
+            'start': self.datetime[0].isoformat(),
+            'end': self.datetime[1].isoformat(),
         }
 
 
