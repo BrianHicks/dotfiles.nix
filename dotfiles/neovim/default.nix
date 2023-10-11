@@ -73,6 +73,7 @@
       # Navigation
       nvim-web-devicons
       other-nvim
+      telescope-fzf-native-nvim
       telescope-nvim
       telescope-ui-select-nvim
       toggleterm-nvim
