@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime, timedelta
 import json
+import os
 import os.path
 import re
 import subprocess
@@ -213,10 +214,15 @@ if __name__ == '__main__':
         default='meetings',
         help='Where should I store notes within your Obsidian vault?',
     )
+    parser.add_argument(
+        '--calendars',
+        default=os.environ.get('MEET_CALENDARS', ''),
+        help='Which calendars should I pull events from? (comma-separated list)'
+    )
 
     args = parser.parse_args()
 
-    meeting = choose_meeting('brian@noredink.com,brian@brianthicks.com')
+    meeting = choose_meeting(args.calendars)
 
     if args.command == 'choose':
         json.dump(meeting.to_json(), sys.stdout)
