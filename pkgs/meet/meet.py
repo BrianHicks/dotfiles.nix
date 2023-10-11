@@ -18,8 +18,8 @@ EMOJI_RE = re.compile(
     flags=re.UNICODE
 )
 
-PERSON_EMAIL_RE = re.compile(
-    r"^\|\s*(?P<link>.+?)\s*\|\s*(?P<email>.+?@.+?)\s*\|$",
+PERSON_CALENDAR_NAME_RE = re.compile(
+    r"^\|\s*(?P<link>.+?)\s*\|\s*(?P<calendar_name>.+?)\s*\|$",
 )
 
 ATTENDEES_RE = re.compile(r"^attendees: (.+?)$")
@@ -164,21 +164,21 @@ def prepare_links_to_attendees(vault, event):
         sys.stderr.write("[WARNING] could not read contacts.md!\n")
         return ""
 
-    emails_to_people = {}
+    calendar_names_to_people = {}
 
     for line in lines:
-        match = PERSON_EMAIL_RE.match(line)
+        match = PERSON_CALENDAR_NAME_RE.match(line)
         if match is None:
             continue
 
         groups = match.groupdict()
-        emails_to_people[groups['email']] = groups['link']
+        calendar_names_to_people[groups['calendar_name']] = groups['link']
 
     people = []
 
     for attendee in event.attendees:
         try:
-            people.append(emails_to_people[attendee])
+            people.append(calendar_names_to_people[attendee])
         except KeyError:
             sys.stderr.write(f"[WARNING] could not find a link for {attendee}\n")
             people.append(attendee)
