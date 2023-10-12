@@ -13,7 +13,7 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
 vim.api.nvim_set_option('updatetime', 750)
 vim.o.undofile = true
-vim.o.copmletetopt = 'menuone,noselect'
+vim.o.completeopt = 'menuone,noselect'
 
 -- swap ; and : to save a keystroke and reduce wear on the pinky finger
 vim.keymap.set('n', ';', ':')
