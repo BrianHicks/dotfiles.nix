@@ -26,7 +26,7 @@ telescope.setup {
 telescope.load_extension("ui-select")
 telescope.load_extension("fzf")
 
-vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>', { desc = 'find files' })
+vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files hidden=true<CR>', { desc = 'find files' })
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', "<leader>'", '<cmd>Telescope resume<CR>', { desc = 'Resume last Telescope operation' })
 vim.keymap.set('n', '<leader>l', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { desc = '[F]ind by searching' })
