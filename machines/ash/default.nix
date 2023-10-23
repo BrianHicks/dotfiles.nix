@@ -45,29 +45,6 @@
     };
   };
 
-  homebrew = {
-    enable = true;
-
-    brews = [
-      "ical-buddy"
-    ];
-
-    casks = [
-      "1password"
-      "1password/tap/1password-cli"
-      "alloy"
-      "anki"
-      "firefox"
-      "gpg-suite"
-      "hammerspoon"
-      "signal"
-      "spotify"
-      "wezterm"
-      "xbar"
-      "zulip"
-    ];
-  };
-
   # https://github.com/nix-community/home-manager/issues/4026
   users.users.brianhicks.home = "/Users/brianhicks";
 
