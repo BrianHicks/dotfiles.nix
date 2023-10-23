@@ -64,6 +64,11 @@ in
     signing = {
       key = null;
       signByDefault = true;
+
+      # The gpg2 binary provided by Nix doesn't work with the gpg paths
+      # provided by gpg-tools for Mac. Use the thing that's just on the PATH,
+      # although I'm not terribly happy with that.
+      gpgPath = "gpg";
     };
   };
 
