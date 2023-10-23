@@ -54,12 +54,6 @@
             regex = "\\bfile://\\S*\\b",
             format = "$0",
           },
-
-          -- Linear task IDs
-          {
-            regex = "\\b([A-Z0-9]{3}-\\d+)\\b",
-            format = "https://linear.app/noredink/issue/$1",
-          },
         },
       }
     '';
