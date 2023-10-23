@@ -95,6 +95,7 @@ def meetings_today(calendars):
     out = subprocess.check_output([
         'icalbuddy',
         '-nc',
+        '-ea',
         '-b', '',
         '-ic', calendars,
         '-iep', ','.join(Event.ICALBUDDY_PROPERTY_ORDER),
