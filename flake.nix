@@ -271,66 +271,6 @@
     {
       formatter.aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
 
-      nixosConfigurations.torch = inputs.nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        modules = [
-          ({ ... }: {
-            nixpkgs.overlays = mkOverlays system;
-            nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-          })
-          (import ./machines/torch inputs)
-          inputs.home-manager.nixosModules.home-manager
-        ];
-      };
-
-      nixosConfigurations.vbox-dev = inputs.nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        modules = [
-          ({ ... }: { nixpkgs.overlays = mkOverlays system; })
-          (import ./machines/vbox-dev inputs)
-          inputs.home-manager.nixosModules.home-manager
-        ];
-      };
-
-      darwinConfigurations.flame = inputs.darwin.lib.darwinSystem rec {
-        inherit inputs;
-
-        system = "x86_64-darwin";
-
-        modules = [
-          ({ pkgs, ... }: {
-            nix.package = pkgs.nixUnstable;
-            nixpkgs.overlays = mkOverlays system;
-          })
-          ./machines/flame
-          inputs.home-manager.darwinModules.home-manager
-        ];
-      };
-
-      darwinConfigurations.sequoia = inputs.darwin.lib.darwinSystem rec {
-        inherit inputs;
-
-        system = "aarch64-darwin";
-
-        modules = [
-          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
-          ./machines/sequoia
-          inputs.home-manager.darwinModules.home-manager
-        ];
-      };
-
-      darwinConfigurations.sergio = inputs.darwin.lib.darwinSystem rec {
-        inherit inputs;
-
-        system = "x86_64-darwin";
-
-        modules = [
-          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
-          ./machines/sergio
-          inputs.home-manager.darwinModules.home-manager
-        ];
-      };
-
       darwinConfigurations.ash = inputs.darwin.lib.darwinSystem rec {
         inherit inputs;
 
