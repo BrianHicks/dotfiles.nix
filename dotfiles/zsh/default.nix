@@ -5,7 +5,6 @@ let
     ./find-and-edit.zsh
     ./flixify.sh
     ./git.zsh
-    ./jetpack.zsh
     ./jump.zsh
     ./llvm-13.zsh
     ./nix.zsh
