@@ -7,6 +7,7 @@ let
     ./git.zsh
     ./jetpack.zsh
     ./jump.zsh
+    ./llvm-13.zsh
     ./nix.zsh
     ./nixify.sh
     ./root.zsh
