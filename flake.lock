@@ -299,11 +299,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1696605326,
-        "narHash": "sha256-k/rSLzsIrv43A69y1RsiXl3yI6U73UDP9+zrd9axB/E=",
+        "lastModified": 1698202886,
+        "narHash": "sha256-GFy1smQkVIPXqireuloNrUN7Om0dd0yEtIkZZTusR2Y=",
         "ref": "main",
-        "rev": "8845f7b416c45de91f0dc2c706dd67ec6d5cce7e",
-        "revCount": 338,
+        "rev": "18a094ab0b156f75eaf797e4570a024f3e181296",
+        "revCount": 339,
         "type": "git",
         "url": "https://git.bytes.zone/brian/montage.git"
       },
@@ -623,11 +623,11 @@
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1697457696,
-        "narHash": "sha256-3l3nQ8kQ0iqHWPbtCygKRsM2k9fg50azcB4iKXiMNkQ=",
+        "lastModified": 1698228729,
+        "narHash": "sha256-In7FGySl3cYyjzDVQhUrUZ6plV77KGwXG8TpIFxATKY=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "b8d7cea1be7fd606000c2d3bfbc7048a7298dd2d",
+        "rev": "314ea01094bea8a91717ae1fd7420085415ebc1a",
         "type": "github"
       },
       "original": {
@@ -929,11 +929,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1696369864,
-        "narHash": "sha256-hg991Sc0tRbaM01hw6JRYz8ktNw8OzdjiZXkUQiUQcc=",
+        "lastModified": 1698198058,
+        "narHash": "sha256-IF18Z6uAXisFtrFHOA3AWaTa8x72YQ6mgvXQkca3mQw=",
         "owner": "BrianHicks",
         "repo": "xbar-review-request-status",
-        "rev": "44743207d2ec27d274f6596fe4770d2ad330a191",
+        "rev": "72b0c22888e5ebf91f4d7abbd946f93e6bed3cc8",
         "type": "github"
       },
       "original": {
