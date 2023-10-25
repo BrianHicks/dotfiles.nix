@@ -14,3 +14,7 @@ SESSION_KIND="${2:-UNKNOWN}"
   # say "I quit the apps. Have fun!"
   # open "focus://focus"
 # fi
+
+if test "$SESSION_KIND" = "meeting"; then
+  osascript -e 'tell application "Obsidian" to activate'
+fi
