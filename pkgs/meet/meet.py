@@ -77,7 +77,7 @@ class Event:
         return f'{self.datetime[0].strftime("%I:%M %p")} to {self.datetime[1].strftime("%I:%M %p")}, {self.title}, {", ".join(self.attendees)}'
 
     def note_name(self):
-        return EMOJI_RE.sub('', self.title).strip().replace(' / ', ', ').replace('/', ', ')
+        return EMOJI_RE.sub('', self.title).strip().replace(' / ', ', ').replace('/', ', ').replace(': ', ' - ').replace(':', '-')
 
     def duration(self):
         return self.datetime[1] - self.datetime[0]
