@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# if test "${2:-}" != "break" && test "${3:-}" != "task"; then
+if test "${2:-}" != "break" && test "${3:-}" != "task"; then
   # say "session ended. Restarting apps."
 
-  # osascript -e 'tell application "Slack" to activate'
-  # osascript -e 'tell application "Mail" to activate'
+  osascript -e 'tell application "Slack" to activate'
+  osascript -e 'tell application "Mail" to activate'
   # osascript -e 'tell application "Zulip" to activate'
   # open "focus://unfocus"
-# fi
+fi

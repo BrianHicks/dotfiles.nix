@@ -6,14 +6,14 @@ SESSION_KIND="${2:-UNKNOWN}"
 
 # say "starting $SESSION_KIND $SESSION_DESCRIPTION"
 
-# if test "$SESSION_KIND" = "task"; then
-  # osascript -e 'tell application "Slack" to quit'
-  # osascript -e 'tell application "Mail" to quit'
-  # osascript -e 'tell application "Zulip" to quit'
-  # osascript -e 'tell application "Discord" to quit'
+if test "$SESSION_KIND" = "task"; then
+  osascript -e 'tell application "Slack" to quit'
+  osascript -e 'tell application "Mail" to quit'
+  osascript -e 'tell application "Zulip" to quit'
+  osascript -e 'tell application "Discord" to quit'
   # say "I quit the apps. Have fun!"
   # open "focus://focus"
-# fi
+fi
 
 if test "$SESSION_KIND" = "meeting"; then
   osascript -e 'tell application "Obsidian" to activate'
