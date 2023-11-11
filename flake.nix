@@ -282,5 +282,17 @@
           inputs.home-manager.darwinModules.home-manager
         ];
       };
+
+      darwinConfigurations.birch = inputs.darwin.lib.darwinSystem rec {
+        inherit inputs;
+
+        system = "aarch64-darwin";
+
+        modules = [
+          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
+          ./machines/birch
+          inputs.home-manager.darwinModules.home-manager
+        ];
+      };
     };
 }
