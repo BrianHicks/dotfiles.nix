@@ -29,8 +29,6 @@
     similar-sort.inputs.naersk.follows = "naersk";
 
     tree-grepper.url = "github:BrianHicks/tree-grepper";
-    tree-grepper.inputs.nixpkgs.follows = "nixpkgs";
-    tree-grepper.inputs.naersk.follows = "naersk";
 
     xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
     xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs";

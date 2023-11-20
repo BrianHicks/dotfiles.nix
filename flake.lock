@@ -333,6 +333,27 @@
         "type": "github"
       }
     },
+    "naersk_2": {
+      "inputs": {
+        "nixpkgs": [
+          "tree-grepper",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1692351612,
+        "narHash": "sha256-KTGonidcdaLadRnv9KFgwSMh1ZbXoR/OBmPjeNMhFwU=",
+        "owner": "nmattia",
+        "repo": "naersk",
+        "rev": "78789c30d64dea2396c9da516bbcc8db3a475207",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmattia",
+        "repo": "naersk",
+        "type": "github"
+      }
+    },
     "niv": {
       "flake": false,
       "locked": {
@@ -392,6 +413,22 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "3f21a22b5aafefa1845dec6f4a378a8f53d8681c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1692808169,
+        "narHash": "sha256-x9Opq06rIiwdwGeK2Ykj69dNc2IvUH1fY55Wm7atwrE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9201b5ff357e781bf014d0330d18555695df7ba8",
         "type": "github"
       },
       "original": {
@@ -600,12 +637,8 @@
     "tree-grepper": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "naersk": [
-          "naersk"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "naersk": "naersk_2",
+        "nixpkgs": "nixpkgs_2",
         "tree-sitter-c": "tree-sitter-c",
         "tree-sitter-cpp": "tree-sitter-cpp",
         "tree-sitter-elixir": "tree-sitter-elixir",
