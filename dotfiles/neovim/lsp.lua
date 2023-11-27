@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.api.nvim_buf_create_user_command(ev.buf, 'Format', function(_)
       vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
- end,
 
- require("fidget").setup({})
+   require("fidget").setup({})
+ end,
 })
