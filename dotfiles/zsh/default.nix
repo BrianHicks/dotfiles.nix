@@ -60,7 +60,9 @@ in
           export PATH="$PATH:/opt/homebrew/bin"
         fi
 
-        # make delete key work
+        # make various keybindings work
+        # run `bindkey` for a list of current bindings
+        # run `zle -al` to list all commands
         bindkey "^[[3~" delete-char
       ''
       + extraInitExtra;
