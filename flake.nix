@@ -269,14 +269,14 @@
     {
       formatter.aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
 
-      darwinConfigurations.ash = inputs.darwin.lib.darwinSystem rec {
+      darwinConfigurations.VNDR-A535 = inputs.darwin.lib.darwinSystem rec {
         inherit inputs;
 
         system = "x86_64-darwin";
 
         modules = [
           ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
-          ./machines/ash
+          ./machines/VNDR-A535
           inputs.home-manager.darwinModules.home-manager
         ];
       };
