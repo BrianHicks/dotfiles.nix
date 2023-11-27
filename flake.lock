@@ -40,11 +40,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1699867978,
-        "narHash": "sha256-+arl45HUOcBdKiRGrKXZYXDyBQ6MQGkYPZa/28f6Yzo=",
+        "lastModified": 1700795494,
+        "narHash": "sha256-gzGLZSiOhf155FW7262kdHo2YDeugp3VuIFb4/GGng0=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "e67f2bf515343da378c3f82f098df8ca01bccc5f",
+        "rev": "4b9b83d5a92e8c1fbfd8eb27eda375908c11ec4d",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700419052,
-        "narHash": "sha256-U6a5f9ynbzcp8PMIHULbHPkbwp7YfPKOYmTcLqlalD4=",
+        "lastModified": 1701071203,
+        "narHash": "sha256-lQywA7QU/vzTdZ1apI0PfgCWNyQobXUYghVrR5zuIeM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "993fb02d20760067b8ee19c713d94cee07037759",
+        "rev": "db1878f013b52ba5e4034db7c1b63e8d04173a86",
         "type": "github"
       },
       "original": {
@@ -195,11 +195,11 @@
     "k9s": {
       "flake": false,
       "locked": {
-        "lastModified": 1700408619,
-        "narHash": "sha256-9r4YxasVXuL/Nr/KcQ22woHOwMMgUWjDO6JIPmAiotY=",
+        "lastModified": 1701044266,
+        "narHash": "sha256-X0uI2q8lFYgLpe4jLx98gYypjv+NYt3JWAUW082nhPY=",
         "owner": "derailed",
         "repo": "k9s",
-        "rev": "702f6f01b2144b973ab2c4c1a2e6faddc8aef7a0",
+        "rev": "fcfff5701ea56c71f5f0997ea1c7cdd11f7cbd13",
         "type": "github"
       },
       "original": {
@@ -357,11 +357,11 @@
     "niv": {
       "flake": false,
       "locked": {
-        "lastModified": 1697534853,
-        "narHash": "sha256-IONzFV8BEqshlMxF0s/CeQqV8jiFiwdgm6I9MMShJgA=",
+        "lastModified": 1700926881,
+        "narHash": "sha256-Nz9990rhl/umQC/bmIVYXlX2IzgLiAV6klC1/j4MgeI=",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "723f0eeb969a730db3c30f977c2b66b9dce9fe4a",
+        "rev": "7b76374b2b44152bfbf41fcb60162c2ce9182e7a",
         "type": "github"
       },
       "original": {
@@ -393,11 +393,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1700392353,
-        "narHash": "sha256-KARn8aVJu5fdW0jdJYoOQ1SPqWlNdz4l7r90NbArWSY=",
+        "lastModified": 1701020860,
+        "narHash": "sha256-NwnRn04C8s+hH+KdVtGmVB1FFNIG7DtPJmQSCBDaET4=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "2b00bc76dc893cd996a3d76a2f059d657a5ef37a",
+        "rev": "b006ec52fce23b1d57f6ab4a42d7400732e9a0a2",
         "type": "github"
       },
       "original": {
@@ -408,11 +408,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1700444282,
-        "narHash": "sha256-s/+tgT+Iz0LZO+nBvSms+xsMqvHt2LqYniG9r+CYyJc=",
+        "lastModified": 1701040486,
+        "narHash": "sha256-vawYwoHA5CwvjfqaT3A5CT9V36Eq43gxdwpux32Qkjw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3f21a22b5aafefa1845dec6f4a378a8f53d8681c",
+        "rev": "45827faa2132b8eade424f6bdd48d8828754341a",
         "type": "github"
       },
       "original": {
@@ -656,11 +656,11 @@
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1700046128,
-        "narHash": "sha256-fiMrHy7RSrmsjyYKt+YkEE7EyHJJ0mU/b2VSdOSuqKA=",
+        "lastModified": 1701082991,
+        "narHash": "sha256-R7MMqlhAxCvgVZo1cyV3IICphugRa7rr0wRp2OJAHIA=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "7cd70ff548f5f2f301c25a18e9d2bd1555f8598d",
+        "rev": "4b43cf74e48aa2e0913b93718c89e76f35317fd9",
         "type": "github"
       },
       "original": {
@@ -938,11 +938,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1699900123,
-        "narHash": "sha256-EIQasZyb8bdUWt1sSJ5C+G4LaeqvOFTKS8BHTQL8dj4=",
+        "lastModified": 1700595716,
+        "narHash": "sha256-43SkwkQHtw0xX8um7kt/ncX0BSRGXsLo1UovwL91yQ8=",
         "owner": "BrianHicks",
         "repo": "xbar-pr-status",
-        "rev": "89be2a586eb54d6de4bd8ee342bb7f6db265e3d0",
+        "rev": "3739da0cb47cab627e65f4bcd1cd7a06e91df041",
         "type": "github"
       },
       "original": {
