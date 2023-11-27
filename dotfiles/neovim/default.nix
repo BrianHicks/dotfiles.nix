@@ -16,11 +16,12 @@
         vim.cmd [[source ${./alternate.lua}]]
         vim.cmd [[source ${./autoformat.lua}]]
         vim.cmd [[source ${./git.lua}]]
+        vim.cmd [[source ${./lsp.lua}]]
         vim.cmd [[source ${./lualine.lua}]]
         vim.cmd [[source ${./telescope.lua}]]
         vim.cmd [[source ${./testing.lua}]]
-        vim.cmd [[source ${./trouble.lua}]]
         vim.cmd [[source ${./toggleterm.lua}]]
+        vim.cmd [[source ${./trouble.lua}]]
 
         -- language servers
         local lspconfig = require('lspconfig')
