@@ -72,8 +72,6 @@ in
     };
   };
 
-  programs.gh.enable = true;
-
   home.file."${lazygit-config}".text = builtins.toJSON {
     reporting = "off";
     startupPopupVersion = 1;
