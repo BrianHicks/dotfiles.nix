@@ -19,6 +19,7 @@
         vim.cmd [[source ${./lsp.lua}]]
         vim.cmd [[source ${./lualine.lua}]]
         vim.cmd [[source ${./persistence.lua}]]
+        vim.cmd [[source ${./startify.vim}]]
         vim.cmd [[source ${./telescope.lua}]]
         vim.cmd [[source ${./testing.lua}]]
         vim.cmd [[source ${./toggleterm.lua}]]
