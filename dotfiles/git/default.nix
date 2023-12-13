@@ -72,11 +72,7 @@ in
     };
   };
 
-  programs.gh = {
-    enable = true;
-
-    settings.aliases.reviewer = "pr view --json reviewRequests --template '{{pluck \"login\" .reviewRequests | join \" \"}}'";
-  };
+  programs.gh.enable = true;
 
   home.file."${lazygit-config}".text = builtins.toJSON {
     reporting = "off";
