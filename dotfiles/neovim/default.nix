@@ -80,6 +80,7 @@
       telescope-ui-select-nvim
       toggleterm-nvim
       vim-eunuch
+      vim-startify
       vim-vinegar
 
       # Git
