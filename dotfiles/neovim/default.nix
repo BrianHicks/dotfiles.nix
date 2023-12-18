@@ -40,7 +40,13 @@
           cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" },
           capabilities = capabilities,
         })
-        lspconfig.tsserver.setup({ capabilities = capabilities })
+        lspconfig.tsserver.setup({
+          cmd = {
+            "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server",
+            "--stdio",
+          },
+          capabilities = capabilities
+        })
         lspconfig.nil_ls.setup({
           cmd = { "${pkgs.nil}/bin/nil" },
           capabilities = capabilities,
