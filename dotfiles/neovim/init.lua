@@ -129,13 +129,14 @@ cmp.setup({
   ),
 })
 
--- get better completions in 
+-- get better completions in git commits
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources(
     { { name = 'git' } },
     { { name = 'buffer' } }
   )
 })
+require("cmp_git").setup()
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
