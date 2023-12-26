@@ -3,10 +3,6 @@ let
   # The idea here is to set a different k9s skin for each cluster I work in. I use
   # `builtins.readFile` here instead of setting `home.file.*.source` so it doesn't
   # fail silently if I make a typo.
-  backyardSkin = builtins.readFile "${pkgs.k9s-skins}/snazzy.yml";
-  stagingSkin = builtins.readFile "${pkgs.k9s-skins}/monokai.yml";
-  productionSkin = builtins.readFile "${pkgs.k9s-skins}/rose_pine.yml";
-
   config = builtins.toJSON {
     k9s = {
       refreshRate = 2;
@@ -47,18 +43,6 @@ in
   # for non-work contexts, I use a version of k9s that uses the macOS system
   # directories, but in work contexts I use an (older) version that uses
   # ~/.k9s. Gotta have both for my skins to work!
-  home.file.".k9s/backyard_skin.yml".text = backyardSkin;
-  home.file."Library/Application Support/k9s/backyard_skin.yml".text =
-    backyardSkin;
-
-  home.file.".k9s/staging_skin.yml".text = stagingSkin;
-  home.file."Library/Application Support/k9s/staging_skin.yml".text =
-    stagingSkin;
-
-  home.file.".k9s/production_skin.yml".text = productionSkin;
-  home.file."Library/Application Support/k9s/production_skin.yml".text =
-    productionSkin;
-
   home.file.".k9s/config.yml".text = config;
   home.file."Library/Application Support/k9s/config.yml".text = config;
 }
