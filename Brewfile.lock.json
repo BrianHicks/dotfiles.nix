@@ -32,7 +32,7 @@
         }
       },
       "spotify": {
-        "version": "1.2.26.1187,36b715a1,272",
+        "version": "1.2.26.1187,36b715a1,270",
         "options": {
           "full_name": "spotify"
         }
@@ -53,6 +53,12 @@
         "version": "4.2.25",
         "options": {
           "full_name": "bartender"
+        }
+      },
+      "gpg-suite": {
+        "version": "2023.3",
+        "options": {
+          "full_name": "gpg-suite"
         }
       }
     }
