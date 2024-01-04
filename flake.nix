@@ -272,7 +272,7 @@
       darwinConfigurations.VNDR-A535 = inputs.darwin.lib.darwinSystem rec {
         inherit inputs;
 
-        system = "x86_64-darwin";
+        system = "aarch64-darwin";
 
         modules = [
           ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
