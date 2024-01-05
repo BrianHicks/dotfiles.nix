@@ -6,6 +6,7 @@ let
     ./git.zsh
     ./jump.zsh
     ./llvm-13.zsh
+    ./mark-safe.zsh
     ./nix.zsh
     ./nixify.zsh
     ./root.zsh
