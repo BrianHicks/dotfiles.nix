@@ -31,6 +31,7 @@
     ./tree
     ./tree-grepper
     ./watch
+    ./wezterm
     ./zsh
   ];
 }
