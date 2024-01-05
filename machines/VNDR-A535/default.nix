@@ -88,7 +88,6 @@
         ../../dotfiles/jq
         ../../dotfiles/k9s
         ../../dotfiles/lf
-        ../../dotfiles/montage
         ../../dotfiles/ncdu
         ../../dotfiles/neovim
         ../../dotfiles/niv

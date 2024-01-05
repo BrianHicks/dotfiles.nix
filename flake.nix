@@ -12,11 +12,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    montage.url =
-      "git+https://git.bytes.zone/brian/montage.git?ref=main";
-    montage.inputs.nixpkgs.follows = "nixpkgs";
-    montage.inputs.naersk.follows = "naersk";
-
     naersk.url = "github:nix-community/naersk";
     naersk.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -64,7 +59,6 @@
   outputs = inputs:
     let
       mkOverlays = system: [
-        inputs.montage.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
         inputs.xbar-pr-status.overlay."${system}"
         inputs.xbar-review-request-status.overlay."${system}"

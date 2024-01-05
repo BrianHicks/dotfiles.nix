@@ -12,6 +12,6 @@ pkgs.stdenv.mkDerivation {
     cp ./meet.py $out/bin/meet
     wrapProgram $out/bin/meet \
       --set MEET_CALENDARS "brian.hicks@vendr.com,brian@brianthicks.com" \
-      --prefix PATH : ${pkgs.lib.makeBinPath [pkgs.python3 pkgs.montage]}
+      --prefix PATH : ${pkgs.lib.makeBinPath [pkgs.python3]}
   '';
 }

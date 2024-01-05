@@ -186,21 +186,11 @@ def prepare_links_to_attendees(vault, event):
     return people
 
 
-def start_montage(event):
-    subprocess.check_call([
-        'montage',
-        'start',
-        '--duration', str(round(event.duration() / timedelta(minutes=1))),
-        '--meeting',
-        event.title,
-    ])
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         'command',
-        choices=['start', 'note', 'choose'],
+        choices=['note', 'choose'],
         help='What should I do? `start` a meeting or start a `note`?',
     )
     parser.add_argument(
@@ -226,8 +216,5 @@ if __name__ == '__main__':
     if args.command == 'choose':
         json.dump(meeting.to_json(), sys.stdout)
         sys.exit(0)
-
-    if args.command == 'start':
-        start_montage(meeting)
 
     create_note(args, meeting)
