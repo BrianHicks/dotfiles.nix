@@ -3,12 +3,11 @@ let
   extras = [
     ./elm.zsh
     ./find-and-edit.zsh
-    ./flixify.sh
     ./git.zsh
     ./jump.zsh
     ./llvm-13.zsh
     ./nix.zsh
-    ./nixify.sh
+    ./nixify.zsh
     ./root.zsh
     ./rubofix.zsh
     ./scripts.zsh

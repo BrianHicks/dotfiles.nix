@@ -40,11 +40,6 @@
       flake = false;
     };
 
-    niv = {
-      url = "github:nmattia/niv";
-      flake = false;
-    };
-
     spoons = {
       url = "github:Hammerspoon/Spoons";
       flake = false;
@@ -93,16 +88,6 @@
             '';
 
             meet = final.callPackage ./pkgs/meet { };
-
-            niv =
-              let
-                nivSources = import "${inputs.niv}/nix/sources.nix" { };
-                nivNixpkgs = import nivSources.nixpkgs {
-                  sources = nivSources;
-                  inherit system;
-                };
-              in
-              (nivNixpkgs.callPackage inputs.niv { }).niv;
 
             # nix-index = inputs.nix-index.packages.${system}.nix-index;
 

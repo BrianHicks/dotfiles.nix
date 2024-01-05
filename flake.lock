@@ -184,22 +184,6 @@
         "type": "github"
       }
     },
-    "niv": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1701267567,
-        "narHash": "sha256-JH2EiPhEHbwFKJj8EfLZ2lj/N1nzMHzMaiV4I2lXlJU=",
-        "owner": "nmattia",
-        "repo": "niv",
-        "rev": "6bd7cd686220bf3db0e212481faf9578e8c8ff0f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nmattia",
-        "repo": "niv",
-        "type": "github"
-      }
-    },
     "nix-index": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -275,7 +259,6 @@
         "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "naersk": "naersk",
-        "niv": "niv",
         "nix-index": "nix-index",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",

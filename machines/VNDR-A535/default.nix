@@ -90,7 +90,6 @@
         ../../dotfiles/lf
         ../../dotfiles/ncdu
         ../../dotfiles/neovim
-        ../../dotfiles/niv
         ../../dotfiles/ripgrep
         ../../dotfiles/sd
         ../../dotfiles/ssh

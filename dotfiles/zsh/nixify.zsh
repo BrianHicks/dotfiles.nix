@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-flixify() {
+nixify() {
   if ! git status > /dev/null 2>&1; then
     git init
   fi

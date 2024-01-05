@@ -15,7 +15,6 @@
     ./lf
     ./ncdu
     ./neovim
-    ./niv
     ./rofi
     ./ripgrep
     ./sd
