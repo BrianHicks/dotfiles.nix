@@ -60,6 +60,12 @@
         "options": {
           "full_name": "gpg-suite"
         }
+      },
+      "obsidian": {
+        "version": "1.5.3",
+        "options": {
+          "full_name": "obsidian"
+        }
       }
     }
   },
