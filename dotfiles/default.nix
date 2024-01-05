@@ -14,7 +14,6 @@
     ./jq
     ./lf
     ./kakoune
-    ./k9s
     ./ncdu
     ./neovim
     ./niv
