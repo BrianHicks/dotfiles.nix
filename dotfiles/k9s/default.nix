@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 let
   # The idea here is to set a different k9s skin for each cluster I work in. I use
   # `builtins.readFile` here instead of setting `home.file.*.source` so it doesn't
