@@ -12,7 +12,6 @@ let
     ./root.zsh
     ./rubofix.zsh
     ./scripts.zsh
-    ./search.zsh
   ];
 
   extraInitExtra =
@@ -74,5 +73,5 @@ in
     };
   };
 
-  home.packages = [ pkgs.kak-session pkgs.mand ];
+  home.packages = [ pkgs.mand ];
 }

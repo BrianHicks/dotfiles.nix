@@ -23,11 +23,6 @@
     nix-index.url = "github:bennofs/nix-index";
     nix-index.inputs.nixpkgs.follows = "nixpkgs";
 
-    similar-sort.url =
-      "git+https://git.bytes.zone/brian/similar-sort.git?ref=main";
-    similar-sort.inputs.nixpkgs.follows = "nixpkgs";
-    similar-sort.inputs.naersk.follows = "naersk";
-
     tree-grepper.url = "github:BrianHicks/tree-grepper";
 
     xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
@@ -50,11 +45,6 @@
       flake = false;
     };
 
-    k9s = {
-      url = "github:derailed/k9s";
-      flake = false;
-    };
-
     niv = {
       url = "github:nmattia/niv";
       flake = false;
@@ -69,67 +59,18 @@
       url = "github:joehillen/sysz";
       flake = false;
     };
-
-    # kakoune plugins
-    active-window = {
-      url = "github:greenfork/active-window.kak";
-      flake = false;
-    };
-    kak-subvert = {
-      url = "github:dmerejkowsky/kak-subvert";
-      flake = false;
-    };
-    kakoune-auto-percent = {
-      url = "github:Delapouite/kakoune-auto-percent";
-      flake = false;
-    };
-    kakoune-find = {
-      url = "github:occivink/kakoune-find";
-      flake = false;
-    };
-    kakoune-idris = {
-      url = "github:stoand/kakoune-idris";
-      flake = false;
-    };
-    kakoune-surround = {
-      url = "github:h-youhei/kakoune-surround";
-      flake = false;
-    };
-    prelude-kak = {
-      url = "github:kakounedotcom/prelude.kak";
-      flake = false;
-    };
-    shellcheck-kak = {
-      url = "github:whereswaldon/shellcheck.kak";
-      flake = false;
-    };
-    smarttab-kak = {
-      url = "github:andreyorst/smarttab.kak";
-      flake = false;
-    };
-    tug = {
-      url = "github:matthias-margush/tug";
-      flake = false;
-    };
   };
 
   outputs = inputs:
     let
       mkOverlays = system: [
         inputs.montage.overlay."${system}"
-        inputs.similar-sort.overlay."${system}"
         inputs.tree-grepper.overlay."${system}"
         inputs.xbar-pr-status.overlay."${system}"
         inputs.xbar-review-request-status.overlay."${system}"
         (final: prev:
           let
             naersk = inputs.naersk.lib."${system}";
-
-            # kak-tree uses submodules. I don't know how to get Nix to fetch
-            # those in a flake, so we source with fetchgit instead, all wrapped
-            # up in this package. I'd love to move it to a real flake, though,
-            # so things would be all in one place!
-            kak-tree = final.callPackage ./pkgs/kak-tree { inherit naersk; };
           in
           {
             comma = final.callPackage inputs.comma { };
@@ -148,75 +89,6 @@
               installPhase = ''
                 mkdir -p $out
                 cp -r Source/* $out
-              '';
-            };
-
-            kak-session = final.callPackage ./pkgs/kak-session { };
-
-            kak-subvert = naersk.buildPackage inputs.kak-subvert;
-
-            kak-tree = kak-tree.kak-tree;
-
-            kakounePlugins =
-              let
-                buildKakounePlugin = name: input:
-                  final.kakouneUtils.buildKakounePlugin {
-                    pname = name;
-                    version = input.rev;
-                    src = input;
-                  };
-              in
-              prev.kakounePlugins // {
-                active-window =
-                  buildKakounePlugin "active-window" inputs.active-window;
-
-                auto-pairs = final.kakouneUtils.buildKakounePlugin {
-                  pname = "auto-pairs";
-                  version = "vendored";
-                  src = ./vendor/auto-pairs.kak;
-                };
-
-                kak-ayu = final.callPackage ./pkgs/kak-ayu { };
-
-                kak-tmux-command = final.kakouneUtils.buildKakounePlugin {
-                  pname = "kak-tmux-command";
-                  version = "source";
-                  src = ./pkgs/kak-tmux-command;
-                };
-
-                kak-tree = kak-tree.kakounePlugins.kak-tree;
-
-                kakoune-auto-percent = buildKakounePlugin "kakoune-auto-percent"
-                  inputs.kakoune-auto-percent;
-
-                kakoune-find =
-                  buildKakounePlugin "kakoune-find" inputs.kakoune-find;
-
-                kakoune-idris =
-                  buildKakounePlugin "kakoune-idris" inputs.kakoune-idris;
-
-                kakoune-surround =
-                  buildKakounePlugin "kakoune-surround" inputs.kakoune-surround;
-
-                prelude-kak = buildKakounePlugin "prelude.kak" inputs.prelude-kak;
-
-                shellcheck-kak =
-                  buildKakounePlugin "shellcheck.kak" inputs.shellcheck-kak;
-
-                smarttab-kak =
-                  buildKakounePlugin "smarttab.kak" inputs.smarttab-kak;
-
-                tug = buildKakounePlugin "tug" inputs.tug;
-              };
-
-            k9s-skins = final.stdenv.mkDerivation {
-              pname = "k9s-skins";
-              version = inputs.k9s.rev;
-              src = "${inputs.k9s}/skins";
-              buildPhase = "true";
-              installPhase = ''
-                mkdir $out
-                cp * $out
               '';
             };
 

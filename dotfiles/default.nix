@@ -13,7 +13,6 @@
     ./hyperfine
     ./jq
     ./lf
-    ./kakoune
     ./ncdu
     ./neovim
     ./niv

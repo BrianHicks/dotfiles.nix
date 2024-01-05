@@ -70,7 +70,6 @@
       ];
 
       imports = [
-        ../../dotfiles/alacritty
         ../../dotfiles/bat
         ../../dotfiles/cachix
         ../../dotfiles/direnv
@@ -83,7 +82,6 @@
         ../../dotfiles/htop
         ../../dotfiles/hyperfine
         ../../dotfiles/jq
-        ../../dotfiles/k9s
         ../../dotfiles/lf
         ../../dotfiles/ncdu
         ../../dotfiles/neovim
