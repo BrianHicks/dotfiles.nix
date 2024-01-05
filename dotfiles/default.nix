@@ -1,9 +1,7 @@
 { ... }: {
   imports = [
-    ./alacritty
     ./bat
     ./cachix
-    ./chromium
     ./comma
     ./direnv
     ./dog
