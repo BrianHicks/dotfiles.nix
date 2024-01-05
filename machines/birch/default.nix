@@ -69,32 +69,7 @@
         pkgs.pv
       ];
 
-      imports = [
-        ../../dotfiles/bat
-        ../../dotfiles/cachix
-        ../../dotfiles/direnv
-        ../../dotfiles/dog
-        ../../dotfiles/fd
-        ../../dotfiles/fzf
-        ../../dotfiles/git
-        ../../dotfiles/hammerspoon
-        ../../dotfiles/home-manager
-        ../../dotfiles/htop
-        ../../dotfiles/hyperfine
-        ../../dotfiles/jq
-        ../../dotfiles/lf
-        ../../dotfiles/ncdu
-        ../../dotfiles/neovim
-        ../../dotfiles/ripgrep
-        ../../dotfiles/sd
-        ../../dotfiles/ssh
-        ../../dotfiles/tmux
-        ../../dotfiles/tree
-        ../../dotfiles/tree-grepper
-        ../../dotfiles/watch
-        ../../dotfiles/wezterm
-        ../../dotfiles/zsh
-      ];
+      imports = [ ../../dotfiles ];
     };
   };
 }
