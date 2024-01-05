@@ -22,7 +22,6 @@
     ./tree
     ./tree-grepper
     ./watch
-    ./zoom
     ./zsh
   ];
 }
