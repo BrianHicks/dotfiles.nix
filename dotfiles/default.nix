@@ -1,4 +1,12 @@
-{ ... }: {
+{ pkgs, ... }: {
+  home.packages = [
+    pkgs.jless
+    pkgs.meet
+    pkgs.nix-tree
+    pkgs.pstree
+    pkgs.pv
+  ];
+
   imports = [
     ./bat
     ./cachix

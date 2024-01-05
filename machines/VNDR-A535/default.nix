@@ -62,11 +62,6 @@
       home.sessionVariables.NIX_PATH = "nixpkgs=${pkgs.path}:$NIX_PATH";
 
       home.packages = [
-        pkgs.jless
-        pkgs.meet
-        pkgs.nix-tree
-        pkgs.pstree
-        pkgs.pv
         pkgs.xbar-pr-status
         pkgs.xbar-review-request-status
       ];

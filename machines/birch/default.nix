@@ -61,14 +61,6 @@
 
       home.sessionVariables.NIX_PATH = "nixpkgs=${pkgs.path}:$NIX_PATH";
 
-      home.packages = [
-        pkgs.jless
-        pkgs.meet
-        pkgs.nix-tree
-        pkgs.pstree
-        pkgs.pv
-      ];
-
       imports = [ ../../dotfiles ];
     };
   };
