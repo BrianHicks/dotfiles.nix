@@ -15,7 +15,6 @@
     ./lf
     ./ncdu
     ./neovim
-    ./rofi
     ./ripgrep
     ./sd
     ./ssh
