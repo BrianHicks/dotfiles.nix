@@ -76,11 +76,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1694529238,
-        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+        "lastModified": 1701680307,
+        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
         "type": "github"
       },
       "original": {
@@ -94,11 +94,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1694529238,
-        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+        "lastModified": 1701680307,
+        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
         "type": "github"
       },
       "original": {
@@ -368,11 +368,11 @@
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1704801810,
-        "narHash": "sha256-beNVIS36YohY7eQMEsKGFCjg1DMaGEgoArOMKKSIXpU=",
+        "lastModified": 1704948481,
+        "narHash": "sha256-mzdHTRAkmQgRsyyRdCkAFAKFd4rHrtjUi5nAf+YgfQE=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "99b042ffe3c10bb3699ded17a7bad4b5cb290470",
+        "rev": "e19fd65fa36ec1e7c1b139c7ab94dc8f86aedde8",
         "type": "github"
       },
       "original": {
@@ -634,11 +634,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704738712,
-        "narHash": "sha256-NZxogLhrtFIp2IN22v+rbljbBVs9s7Vr+nhH0UfZKCY=",
+        "lastModified": 1704948658,
+        "narHash": "sha256-xzCIYKYrFWBlsaG3Zt84YTjPzYQBfmQk+QjJX0y6nrY=",
         "owner": "BrianHicks",
         "repo": "xbar-pr-status",
-        "rev": "6ae7515ba08ff1db524362a9cf111b41d06f8e43",
+        "rev": "6cbafa22c02a79838af1e8e1b39bc017cc3c6182",
         "type": "github"
       },
       "original": {
@@ -658,11 +658,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704762941,
-        "narHash": "sha256-NLYwkYxxFsEF7Ju8thqX1uUEIDpD915XLl90ud2ZXqE=",
+        "lastModified": 1704949477,
+        "narHash": "sha256-gewMLUPRSiFG+Ddwi3KisJjAoRSAhoMYy2b3EaPuHY8=",
         "owner": "BrianHicks",
         "repo": "xbar-review-request-status",
-        "rev": "2eb0052aa3a93bc1c82f07baa1fc621560a63453",
+        "rev": "e33ecd8fb62c1373c45b5d09bf666346f403a63d",
         "type": "github"
       },
       "original": {
