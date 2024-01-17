@@ -4,6 +4,7 @@ vim.keymap.set('n', '<leader>gC', '<cmd>Git commit -v<CR>', { desc = '[G]it [c]o
 vim.keymap.set('n', '<leader>gc', ':Git commit -m ""<Left>', { desc = '[G]it [C]ommit inline' })
 vim.keymap.set('n', '<leader>gr', '<cmd>Telescope git_bcommits<CR>', { desc = '[G]it [R]evert to commit' })
 vim.keymap.set('n', '<leader>gm', '<cmd>Telescope git_status<CR>', { desc = '[G]it [M]odified files' })
+vim.keymap.set('n', '<leader>gW', '<cmd>Git add %<CR>', { desc = 'Write file' })
 
 -- vim-gitgutter
 vim.g.gitgutter_map_keys = 0
