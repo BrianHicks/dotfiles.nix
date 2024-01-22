@@ -2,7 +2,7 @@
   "entries": {
     "cask": {
       "arc": {
-        "version": "1.21.3,44713",
+        "version": "1.26.0,45314",
         "options": {
           "full_name": "arc"
         }
@@ -20,13 +20,13 @@
         }
       },
       "firefox": {
-        "version": "121.0",
+        "version": "121.0.1",
         "options": {
           "full_name": "firefox"
         }
       },
       "raycast": {
-        "version": "1.64.5",
+        "version": "1.65.1",
         "options": {
           "full_name": "raycast"
         }
@@ -66,6 +66,12 @@
         "options": {
           "full_name": "obsidian"
         }
+      },
+      "meetingbar": {
+        "version": "4.6.0",
+        "options": {
+          "full_name": "meetingbar"
+        }
       }
     }
   },
@@ -80,12 +86,12 @@
         "macOS": "13.6.3"
       },
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.2",
+        "HOMEBREW_VERSION": "4.2.4",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.1.0.0.1.1700200546",
         "Xcode": "15.1",
-        "macOS": "14.2"
+        "macOS": "14.2.1"
       }
     }
   }
