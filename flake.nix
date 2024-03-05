@@ -144,7 +144,10 @@
       };
 
       homeConfigurations.brianhicks = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+        pkgs = import inputs.nixpkgs rec {
+          system = "aarch64-darwin";
+          overlays = mkOverlays system;
+        };
 
         modules = [ ./home.nix ];
       };
