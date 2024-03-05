@@ -119,30 +119,6 @@
       ];
     in
     {
-      darwinConfigurations.VNDR-A535 = inputs.darwin.lib.darwinSystem rec {
-        inherit inputs;
-
-        system = "aarch64-darwin";
-
-        modules = [
-          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
-          ./machines/VNDR-A535
-          inputs.home-manager.darwinModules.home-manager
-        ];
-      };
-
-      darwinConfigurations.birch = inputs.darwin.lib.darwinSystem rec {
-        inherit inputs;
-
-        system = "aarch64-darwin";
-
-        modules = [
-          ({ pkgs, ... }: { nixpkgs.overlays = mkOverlays system; })
-          ./machines/birch
-          inputs.home-manager.darwinModules.home-manager
-        ];
-      };
-
       homeConfigurations.brianhicks = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs rec {
           system = "aarch64-darwin";
