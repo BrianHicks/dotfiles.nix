@@ -71,6 +71,8 @@
 
             git-gclone = final.callPackage ./pkgs/git-gclone { };
 
+            home-manager = inputs.home-manager.packages.${system}.home-manager;
+
             hammerspoon.spoons = final.stdenv.mkDerivation {
               name = "spoons";
               rev = inputs.spoons.rev;
@@ -152,6 +154,12 @@
       in
       {
         formatter = pkgs.nixpkgs-fmt;
+
+        devShell = pkgs.mkShell {
+          packages = [
+            pkgs.home-manager
+          ];
+        };
       }
     );
 }
