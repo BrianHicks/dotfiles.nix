@@ -60,9 +60,6 @@
         inputs.xbar-pr-status.overlay."${system}"
         inputs.xbar-review-request-status.overlay."${system}"
         (final: prev:
-          let
-            naersk = inputs.naersk.lib."${system}";
-          in
           {
             comma = final.callPackage inputs.comma { };
 
