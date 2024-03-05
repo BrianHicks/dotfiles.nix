@@ -155,6 +155,10 @@
       let
         pkgs = import inputs.nixpkgs {
           inherit system;
+
+          # we need overlays even in the dev-shell home-manager because we want
+          # to use the exact home-manager version from the flake, not whatever
+          # one happens to be upstream in nixpkgs.
           overlays = mkOverlays system;
         };
       in
