@@ -8,9 +8,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -145,6 +142,8 @@
           packages = [
             pkgs.home-manager
           ];
+
+          FLAKE_CONFIG_URI = ".";
         };
       }
     );
