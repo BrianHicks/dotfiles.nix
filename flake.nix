@@ -142,6 +142,12 @@
           inputs.home-manager.darwinModules.home-manager
         ];
       };
+
+      homeConfigurations.brianhicks = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+
+        modules = [ ./home.nix ];
+      };
     } // inputs.flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import inputs.nixpkgs {
