@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     darwin.url = "github:LnL7/nix-darwin";
@@ -118,8 +120,6 @@
       ];
     in
     {
-      formatter.aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
-
       darwinConfigurations.VNDR-A535 = inputs.darwin.lib.darwinSystem rec {
         inherit inputs;
 
@@ -143,5 +143,15 @@
           inputs.home-manager.darwinModules.home-manager
         ];
       };
-    };
+    } // inputs.flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = mkOverlays system;
+        };
+      in
+      {
+        formatter = pkgs.nixpkgs-fmt;
+      }
+    );
 }
