@@ -143,7 +143,7 @@
             pkgs.home-manager
           ];
 
-          FLAKE_CONFIG_URI = ".";
+          FLAKE_CONFIG_URI = "/Users/brianhicks/code/brian/dotfiles.nix#homeConfigurations.brianhicks";
         };
       }
     );
