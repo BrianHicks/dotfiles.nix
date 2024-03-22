@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     nmap('<leader>S', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', 'Workspace [S]ymbols')
     nmap('K', vim.lsp.buf.hover, 'Hover documentation')
 
-    vim.api.nvim_buf_create_user_command(ev.buf, 'Format', function(_)
+    vim.api.nvim_buf_create_user_command(ev.buf, 'LspFormat', function(_)
       vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
 
