@@ -4,6 +4,7 @@ require("formatter").setup {
   logging = true,
   log_level = vim.log.levels.WARN,
   filetype = {
+    -- https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes
     javascript = { require("formatter.filetypes.javascript").prettier },
     typescript = { require("formatter.filetypes.javascript").prettier },
 
