@@ -21,6 +21,7 @@
     ./htop
     ./hyperfine
     ./jq
+    ./jujutsu
     ./lf
     ./ncdu
     ./neovim
