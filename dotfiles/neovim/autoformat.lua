@@ -7,6 +7,15 @@ require("formatter").setup {
     -- https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes
     javascript = { require("formatter.filetypes.javascript").prettier },
     typescript = { require("formatter.filetypes.javascript").prettier },
+    elm = {
+      function()
+	return {
+	  exe = "elm-format",
+	  args = { "--stdin" },
+	  stdin = true,
+	}
+      end,
+    },
 
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
