@@ -15,6 +15,7 @@ require("formatter").setup {
       end,
     },
     javascript = { require("formatter.filetypes.javascript").prettier },
+    rust = { require("formatter.filetypes.rust").rustfmt },
     typescript = { require("formatter.filetypes.javascript").prettier },
 
     -- Use the special "*" filetype for defining formatter configurations on
