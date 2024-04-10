@@ -35,7 +35,21 @@
           cmd = { "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server" },
           capabilities = capabilities,
         })
-        lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+        lspconfig.rust_analyzer.setup({
+          capabilities = capabilities,
+          settings = {
+            ["rust-analyzer"] = {
+              files = {
+                excludeDirs = {
+                  ".direnv",
+                },
+              },
+            },
+          },
+          on_attach = function(client, bufnr)
+            vim.lsp.inlay_hint.enable(bufnr)
+          end,
+        })
         lspconfig.sorbet.setup({
           cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--enable-all-beta-lsp-features" },
           capabilities = capabilities,
