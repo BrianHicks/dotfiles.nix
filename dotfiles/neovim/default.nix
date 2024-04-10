@@ -41,6 +41,9 @@
             ["rust-analyzer"] = {
               files = {
                 excludeDirs = {
+                  -- rust-analyzer wants to look in .direnv by default. Problem
+                  -- is, that's where all the Nix stuff lives and it's a huuuuuuge
+                  -- directory to scan. Stop it, rust-analyzer!
                   ".direnv",
                 },
               },
