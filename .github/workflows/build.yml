@@ -1,0 +1,13 @@
+name: Build Dotfiles
+
+on:
+  push:
+
+jobs:
+  build-dotfiles:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - run: nix run nixpkgs#bash -- home-manager build --flake flake.nix
