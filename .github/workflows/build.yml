@@ -10,4 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
+      - uses: cachix/cachix-action@v14
+        with:
+          name: brianhicks-dotfiles
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix build .#homeConfigurations.brianhicks.activationPackage
