@@ -6,11 +6,12 @@ on:
 jobs:
   build-dotfiles:
     name: Build
-    runs-on: macos-latest
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
       - run: |
           nix build nixpkgs#hello --system aarch64-darwin
+          file ./result/bin/hello
           ./result/bin/hello
       # - run: nix build .#homeConfigurations.brianhicks.activationPackage --system aarch64-darwin
