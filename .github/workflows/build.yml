@@ -14,4 +14,4 @@ jobs:
         with:
           name: brianhicks-dotfiles
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#homeConfigurations.brianhicks.activationPackage
+      - run: nix build --print-build-logs .#homeConfigurations.brianhicks.activationPackage
