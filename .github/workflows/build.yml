@@ -10,4 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
-      - run: nix build .#homeConfigurations.brianhicks.activationPackage --system aarch64-darwin
+      - run: |
+          nix build nixpkgs#hello --system aarch64-darwin
+          ./result/bin/hello
+      # - run: nix build .#homeConfigurations.brianhicks.activationPackage --system aarch64-darwin
