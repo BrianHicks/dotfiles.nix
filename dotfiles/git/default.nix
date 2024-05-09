@@ -91,7 +91,7 @@ in
 
     git.paging = {
       colorArg = "always";
-      externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always --display=inline";
+      externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
     };
 
     git.overrideGpg = true; # prevents spawning a separate process on commits
