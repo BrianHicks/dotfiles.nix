@@ -50,17 +50,6 @@ in
 
     ignores = [ ".direnv" ".DS_Store" ];
 
-    delta = {
-      enable = true;
-      options = {
-        syntax-theme = "1337";
-        plus-color = "#32473d";
-        minus-color = "#643632";
-        features = "line-numbers";
-        whitespace-error-style = "22 reverse";
-      };
-    };
-
     signing = {
       key = null;
       signByDefault = true;
