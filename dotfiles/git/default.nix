@@ -92,7 +92,7 @@ in
 
       # the default highlighted color is a very bright blue that doesn't have
       # sufficient contrast with the foreground.
-      selectedLineBgColor = [ "bold" ];
+      selectedLineBgColor = [ "reverse" ];
       selectedRangeBgColor = [ "black" "bold" ];
     };
 
