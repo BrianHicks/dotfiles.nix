@@ -114,6 +114,7 @@ in
     pkgs.git-gclone
     pkgs.git-lfs
     pkgs.gitAndTools.delta
+    pkgs.gitAndTools.difftastic
     pkgs.lazygit
   ];
 }
