@@ -50,6 +50,10 @@ in
 
     ignores = [ ".direnv" ".DS_Store" ];
 
+    difftastic = {
+      enable = true;
+    };
+
     signing = {
       key = null;
       signByDefault = true;
