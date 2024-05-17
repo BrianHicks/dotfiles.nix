@@ -69,6 +69,7 @@
           capabilities = capabilities,
         })
         lspconfig.pyright.setup({ capabilities = capabilities })
+        lspconfig.svelte.setup({ capabilities = capabilities })
       '';
 
     plugins = with pkgs.vimPlugins; [
