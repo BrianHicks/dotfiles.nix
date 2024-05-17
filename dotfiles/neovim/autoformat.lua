@@ -15,6 +15,7 @@ require("formatter").setup {
       end,
     },
     javascript = { require("formatter.filetypes.javascript").prettier },
+    markdown = { require("formatter.filetypes.markdown").prettier },
     rust = { require("formatter.filetypes.rust").rustfmt },
     svelte = { require("formatter.filetypes.javascript").prettier },
     typescript = { require("formatter.filetypes.javascript").prettier },
