@@ -12,9 +12,6 @@
     naersk.url = "github:nix-community/naersk";
     naersk.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-index.url = "github:bennofs/nix-index";
-    nix-index.inputs.nixpkgs.follows = "nixpkgs";
-
     tree-grepper.url = "github:BrianHicks/tree-grepper";
 
     xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
@@ -84,8 +81,6 @@
             '';
 
             meet = final.callPackage ./pkgs/meet { };
-
-            # nix-index = inputs.nix-index.packages.${system}.nix-index;
 
             sysz = final.stdenv.mkDerivation {
               name = "sysz";
