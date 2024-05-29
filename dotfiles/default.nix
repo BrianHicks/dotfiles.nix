@@ -26,6 +26,7 @@
     ./lf
     ./ncdu
     ./neovim
+    ./nixconfig
     ./ripgrep
     ./sd
     ./ssh
