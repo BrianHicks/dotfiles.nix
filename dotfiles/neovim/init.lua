@@ -171,3 +171,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- quickfix
 vim.keymap.set('n', '<leader>wq', '<cmd>copen<CR>', { desc = 'Open quickfix' })
+
+-- leap
+require('leap').create_default_mappings()

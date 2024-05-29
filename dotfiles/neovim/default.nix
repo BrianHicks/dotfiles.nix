@@ -102,6 +102,7 @@
       nvim-cmp
 
       # Navigation
+      leap-nvim
       nvim-web-devicons
       other-nvim
       telescope-fzf-native-nvim
