@@ -153,6 +153,11 @@ cmp.setup.cmdline(':', {
   )
 })
 
+-- autopairs
+require("nvim-autopairs").setup({})
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
+
 -- highlight on yank
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

@@ -82,6 +82,7 @@
       # Text editing (wait isn't that just all of vim?)
       fidget-nvim
       formatter-nvim
+      nvim-autopairs
       nvim-lspconfig
       nvim-surround
       nvim-treesitter.withAllGrammars
