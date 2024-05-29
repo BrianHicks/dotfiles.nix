@@ -25,7 +25,7 @@ in
     };
 
     extraConfig = {
-      # after upgrading to 21.11 I suddently need to explicitly set an SSH command
+      # after upgrading to 21.11 I suddenly need to explicitly set an SSH command
       # to connect a port other than :22. How weird! Fortunately it's easy to work
       # around with this but I'm not happy with it. Maybe someday I'll figure this
       # out and come back and remove this line.
