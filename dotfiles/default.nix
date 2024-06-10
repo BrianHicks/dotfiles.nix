@@ -24,7 +24,7 @@
     ./jq
     ./jujutsu
     ./lf
-    ./ncdu
+    # ./ncdu
     ./neovim
     ./nixconfig
     ./ripgrep
