@@ -89,6 +89,24 @@
         "type": "github"
       }
     },
+    "flake-utils_5": {
+      "inputs": {
+        "systems": "systems_5"
+      },
+      "locked": {
+        "lastModified": 1710146030,
+        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fzf-tab": {
       "flake": false,
       "locked": {
@@ -210,7 +228,8 @@
         "sysz": "sysz",
         "tree-grepper": "tree-grepper",
         "xbar-pr-status": "xbar-pr-status",
-        "xbar-review-request-status": "xbar-review-request-status"
+        "xbar-review-request-status": "xbar-review-request-status",
+        "xbar-shortcut": "xbar-shortcut"
       }
     },
     "spoons": {
@@ -275,6 +294,21 @@
       }
     },
     "systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_5": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -662,6 +696,30 @@
       "original": {
         "owner": "BrianHicks",
         "repo": "xbar-review-request-status",
+        "type": "github"
+      }
+    },
+    "xbar-shortcut": {
+      "inputs": {
+        "flake-utils": "flake-utils_5",
+        "naersk": [
+          "naersk"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1720823528,
+        "narHash": "sha256-4Dt/K02IliC85pPJ3nPOqbzU2OmGcOmy+IJw7646k24=",
+        "owner": "BrianHicks",
+        "repo": "xbar-shortcut",
+        "rev": "9ebab4b1b11bd7b6601991ed311230e35c8c51ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BrianHicks",
+        "repo": "xbar-shortcut",
         "type": "github"
       }
     }

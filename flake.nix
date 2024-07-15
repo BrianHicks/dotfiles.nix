@@ -23,6 +23,10 @@
     xbar-review-request-status.inputs.nixpkgs.follows = "nixpkgs";
     xbar-review-request-status.inputs.naersk.follows = "naersk";
 
+    xbar-shortcut.url = "github:BrianHicks/xbar-shortcut";
+    xbar-shortcut.inputs.nixpkgs.follows = "nixpkgs";
+    xbar-shortcut.inputs.naersk.follows = "naersk";
+
     comma = {
       url =
         "github:nix-community/comma/54149dc417819af14ddc0d59216d4add5280ad14";
@@ -51,6 +55,7 @@
         inputs.tree-grepper.overlay."${system}"
         inputs.xbar-pr-status.overlay."${system}"
         inputs.xbar-review-request-status.overlay."${system}"
+        inputs.xbar-shortcut.overlay."${system}"
         (final: prev:
           {
             comma = final.callPackage inputs.comma { };
