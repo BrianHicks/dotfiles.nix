@@ -130,11 +130,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721852138,
-        "narHash": "sha256-JH8N5uoqoVA6erV4O40VtKKHsnfmhvMGbxMNDLtim5o=",
+        "lastModified": 1722462338,
+        "narHash": "sha256-ss0G8t8RJVDewA3MyqgAlV951cWRK6EtVhVKEZ7J5LU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "304a011325b7ac7b8c9950333cd215a7aa146b0e",
+        "rev": "6e090576c4824b16e8759ebca3958c5b09659ee8",
         "type": "github"
       },
       "original": {
@@ -186,11 +186,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1721782431,
-        "narHash": "sha256-UNDpwjYxNXQet/g3mgRLsQ9zxrbm9j2JEvP4ijF3AWs=",
+        "lastModified": 1722415718,
+        "narHash": "sha256-5US0/pgxbMksF92k1+eOa8arJTJiPvsdZj9Dl+vJkM4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4f02464258baaf54992debfd010a7a3662a25536",
+        "rev": "c3392ad349a5227f4a3464dce87bcc5046692fce",
         "type": "github"
       },
       "original": {
@@ -202,11 +202,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1721782431,
-        "narHash": "sha256-UNDpwjYxNXQet/g3mgRLsQ9zxrbm9j2JEvP4ijF3AWs=",
+        "lastModified": 1722415718,
+        "narHash": "sha256-5US0/pgxbMksF92k1+eOa8arJTJiPvsdZj9Dl+vJkM4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4f02464258baaf54992debfd010a7a3662a25536",
+        "rev": "c3392ad349a5227f4a3464dce87bcc5046692fce",
         "type": "github"
       },
       "original": {
@@ -363,11 +363,11 @@
         "tree-sitter-typescript": "tree-sitter-typescript"
       },
       "locked": {
-        "lastModified": 1721869463,
-        "narHash": "sha256-GN6bCYWab6DiLJzcyjqrnUuarM99WQA/o7t+amC1cI4=",
+        "lastModified": 1722472429,
+        "narHash": "sha256-DzF8Bxw0COQO9Y+qfGKAaa1moYQcqqtLd+pl/s4bxCE=",
         "owner": "BrianHicks",
         "repo": "tree-grepper",
-        "rev": "9fe3361f3a99b0db58e3a88bcb396c5f65ec055e",
+        "rev": "1aac742795fe22605ed0611df5550ef261efc1e7",
         "type": "github"
       },
       "original": {
@@ -558,11 +558,11 @@
     "tree-sitter-php": {
       "flake": false,
       "locked": {
-        "lastModified": 1720191806,
-        "narHash": "sha256-lvgxProv6EYBSFqMuQZh3nzC9ayjBQeafOECrRHzYtU=",
+        "lastModified": 1722009597,
+        "narHash": "sha256-It3UC98PZn1jXJ/LQfPdJ5e/dRdADPMgAawBzvlJfQE=",
         "owner": "tree-sitter",
         "repo": "tree-sitter-php",
-        "rev": "575a0801f430c8672db70b73493c033a9dcfc328",
+        "rev": "c07d69739ba71b5a449bdbb7735991f8aabf8546",
         "type": "github"
       },
       "original": {
@@ -662,11 +662,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721611115,
-        "narHash": "sha256-OWIc4qJCbsZcCQ5OwQQ2y82ZEM7YnIx1UY2QkWUfjN0=",
+        "lastModified": 1722305910,
+        "narHash": "sha256-+xuOvId3mU0N/jDULJkGUO/bAnEOjxFQ9xRKQhgmC3E=",
         "owner": "BrianHicks",
         "repo": "xbar-pr-status",
-        "rev": "d908e604ade2eab913c2dbf965c1c9bb039f45e3",
+        "rev": "99e36f6980456a1b3f87bfec6e5c2bb345a32440",
         "type": "github"
       },
       "original": {
@@ -686,11 +686,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721693276,
-        "narHash": "sha256-WR7bUnimL/cxtex7tnuI+21RaOfdNDyFZGyMIUiEFR8=",
+        "lastModified": 1722304702,
+        "narHash": "sha256-5Rx6Zgi3V+PiyxDvTB2VNw0hWn02Q8ZX4NRpoz4iAfY=",
         "owner": "BrianHicks",
         "repo": "xbar-review-request-status",
-        "rev": "ea062c1784d473407568dcfb94d8823b4bb90edd",
+        "rev": "05284ead7021b56ce3a777865e321ca41fce8e53",
         "type": "github"
       },
       "original": {
@@ -710,11 +710,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721680947,
-        "narHash": "sha256-H+T2dtlDhKKVbQuV9z5kuLoOOFrKrgp8V27sxqm6SME=",
+        "lastModified": 1722288459,
+        "narHash": "sha256-/44gGyuTAAuKV/pOcCb2lyw+RxPS/+v/cPjmffEQtX4=",
         "owner": "BrianHicks",
         "repo": "xbar-shortcut",
-        "rev": "692ac272012226fdbe2855c4213c48defc61b983",
+        "rev": "a62bc41743b12a6eee68284d5f8b5b5f24752538",
         "type": "github"
       },
       "original": {
