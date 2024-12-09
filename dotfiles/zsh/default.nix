@@ -61,6 +61,11 @@ in
           export PATH="$PATH:/opt/homebrew/bin"
         fi
 
+        # grab Cargo binaries if needed
+        if test -d "$HOME/.cargo/bin"; then
+          export PATH="$PATH:$HOME/.cargo/bin"
+        fi
+
         # make various keybindings work
         # run `bindkey` for a list of current bindings
         # run `zle -al` to list all commands
