@@ -70,6 +70,10 @@ in
         # run `bindkey` for a list of current bindings
         # run `zle -al` to list all commands
         bindkey "^[[3~" delete-char
+
+        if which mise > /dev/null; then
+          eval "$(mise activate zsh)"
+        fi
       ''
       + extraInitExtra;
 
