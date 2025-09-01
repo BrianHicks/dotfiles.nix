@@ -12,8 +12,6 @@
     naersk.url = "github:nix-community/naersk";
     naersk.inputs.nixpkgs.follows = "nixpkgs";
 
-    tree-grepper.url = "github:BrianHicks/tree-grepper";
-
     xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
     xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs";
     xbar-pr-status.inputs.naersk.follows = "naersk";
@@ -52,7 +50,6 @@
   outputs = inputs:
     let
       mkOverlays = system: [
-        inputs.tree-grepper.overlay."${system}"
         inputs.xbar-pr-status.overlay."${system}"
         inputs.xbar-review-request-status.overlay."${system}"
         inputs.xbar-shortcut.overlay."${system}"
@@ -104,12 +101,6 @@
             };
 
             tmux-session = final.callPackage ./pkgs/tmux-session { };
-
-            # tree-grepper tests pass most of the time, but sometimes the nixpkgs
-            # between that repo and this one cause clippy incompatibilities. The
-            # tests are run in CI anyway, so there's no need to re-run them here.
-            tree-grepper =
-              prev.tree-grepper.overrideAttrs (attrs: { doCheck = false; });
           })
       ];
     in

@@ -32,7 +32,6 @@
     ./ssh
     ./tmux
     ./tree
-    ./tree-grepper
     ./watch
     ./wezterm
     ./zsh
