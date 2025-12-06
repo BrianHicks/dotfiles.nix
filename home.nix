@@ -15,6 +15,11 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  # packages that I always want but which don't require any config.
+  home.packages = with pkgs; [
+    jq
+  ];
+
   imports = [
     ./dotfiles/git
     ./dotfiles/fzf
