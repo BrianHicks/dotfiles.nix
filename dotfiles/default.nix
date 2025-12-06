@@ -17,7 +17,6 @@
     ./fd
     ./fzf
     ./git
-    ./hammerspoon
     ./home-manager
     ./htop
     ./hyperfine

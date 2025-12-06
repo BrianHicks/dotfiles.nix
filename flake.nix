@@ -36,11 +36,6 @@
       flake = false;
     };
 
-    spoons = {
-      url = "github:Hammerspoon/Spoons";
-      flake = false;
-    };
-
     sysz = {
       url = "github:joehillen/sysz";
       flake = false;
@@ -63,18 +58,6 @@
             git-gclone = final.callPackage ./pkgs/git-gclone { };
 
             home-manager = inputs.home-manager.packages.${system}.home-manager;
-
-            hammerspoon.spoons = final.stdenv.mkDerivation {
-              name = "spoons";
-              rev = inputs.spoons.rev;
-              src = inputs.spoons;
-
-              buildPhase = "true";
-              installPhase = ''
-                mkdir -p $out
-                cp -r Source/* $out
-              '';
-            };
 
             lazygit-window = final.callPackage ./pkgs/lazygit-window { };
 

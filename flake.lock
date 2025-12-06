@@ -169,27 +169,10 @@
         "home-manager": "home-manager",
         "naersk": "naersk",
         "nixpkgs": "nixpkgs",
-        "spoons": "spoons",
         "sysz": "sysz",
         "xbar-pr-status": "xbar-pr-status",
         "xbar-review-request-status": "xbar-review-request-status",
         "xbar-shortcut": "xbar-shortcut"
-      }
-    },
-    "spoons": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747090751,
-        "narHash": "sha256-ZRSRb2QW8hrTkdCg5xezF09DntPocE842rc4ZKt7aHY=",
-        "owner": "Hammerspoon",
-        "repo": "Spoons",
-        "rev": "e5b871250346c3fe93bac0d431fc75f6f0e2f92a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Hammerspoon",
-        "repo": "Spoons",
-        "type": "github"
       }
     },
     "systems": {
