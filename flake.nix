@@ -1,116 +1,31 @@
 {
-  description = "Brian's Dotfiles";
+  description = "Home Manager configuration of brianhicks";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
-    flake-utils.url = "github:numtide/flake-utils";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    naersk.url = "github:nix-community/naersk";
-    naersk.inputs.nixpkgs.follows = "nixpkgs";
-
-    xbar-pr-status.url = "github:BrianHicks/xbar-pr-status";
-    xbar-pr-status.inputs.nixpkgs.follows = "nixpkgs";
-    xbar-pr-status.inputs.naersk.follows = "naersk";
-
-    xbar-review-request-status.url =
-      "github:BrianHicks/xbar-review-request-status";
-    xbar-review-request-status.inputs.nixpkgs.follows = "nixpkgs";
-    xbar-review-request-status.inputs.naersk.follows = "naersk";
-
-    xbar-shortcut.url = "github:BrianHicks/xbar-shortcut";
-    xbar-shortcut.inputs.nixpkgs.follows = "nixpkgs";
-    xbar-shortcut.inputs.naersk.follows = "naersk";
-
-    comma = {
-      url =
-        "github:nix-community/comma/54149dc417819af14ddc0d59216d4add5280ad14";
-      flake = false;
-    };
-
-    fzf-tab = {
-      url = "github:Aloxaf/fzf-tab";
-      flake = false;
-    };
-
-    sysz = {
-      url = "github:joehillen/sysz";
-      flake = false;
+    # Specify the source of Home Manager and Nixpkgs.
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
-      mkOverlays = system: [
-        inputs.xbar-pr-status.overlay."${system}"
-        inputs.xbar-review-request-status.overlay."${system}"
-        inputs.xbar-shortcut.overlay."${system}"
-        (final: prev:
-          {
-            comma = final.callPackage inputs.comma { };
-
-            # is this going to cause problems by not actually being a package?
-            fzf-tab = inputs.fzf-tab;
-
-            git-gclone = final.callPackage ./pkgs/git-gclone { };
-
-            home-manager = inputs.home-manager.packages.${system}.home-manager;
-
-            lazygit-window = final.callPackage ./pkgs/lazygit-window { };
-
-            sysz = final.stdenv.mkDerivation {
-              name = "sysz";
-              src = inputs.sysz;
-
-              buildPhase = "true";
-              buildInputs = [ final.makeWrapper ];
-              installPhase = ''
-                mkdir -p $out/bin
-                install -m755 sysz $out/bin
-
-                wrapProgram $out/bin/sysz --prefix PATH : ${
-                  final.lib.makeBinPath [ final.fzf ]
-                }
-              '';
-            };
-
-            tmux-session = final.callPackage ./pkgs/tmux-session { };
-          })
-      ];
+      system = "aarch64-darwin";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations.brianhicks = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = import inputs.nixpkgs rec {
-          system = "aarch64-darwin";
-          overlays = mkOverlays system;
-        };
+      homeConfigurations."brianhicks" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
         modules = [ ./home.nix ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
       };
-    } // inputs.flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import inputs.nixpkgs {
-          inherit system;
-
-          # we need overlays even in the dev-shell home-manager because we want
-          # to use the exact home-manager version from the flake, not whatever
-          # one happens to be upstream in nixpkgs.
-          overlays = mkOverlays system;
-        };
-      in
-      {
-        formatter = pkgs.nixpkgs-fmt;
-
-        devShell = pkgs.mkShell {
-          packages = [
-            pkgs.home-manager
-          ];
-
-          FLAKE_CONFIG_URI = "/Users/brianhicks/code/BrianHicks/dotfiles.nix#homeConfigurations.brianhicks";
-        };
-      }
-    );
+    };
 }

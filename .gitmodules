@@ -1,4 +1,0 @@
-[submodule "home-manager"]
-	path = home-manager
-	url = https://github.com/nix-community/home-manager
-	branch = release-20.09
