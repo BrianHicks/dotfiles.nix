@@ -9,7 +9,6 @@
 
   imports = [
     ./bat
-    ./bun
     ./cachix
     ./comma
     ./direnv
