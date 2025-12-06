@@ -17,6 +17,7 @@
 
   imports = [
     ./dotfiles/git
+    ./dotfiles/fzf
   ];
 
   # Let Home Manager install and manage itself.
