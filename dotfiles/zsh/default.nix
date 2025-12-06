@@ -84,5 +84,5 @@ in
     };
   };
 
-  home.packages = [ pkgs.mand ];
+  home.packages = [];
 }

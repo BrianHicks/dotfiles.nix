@@ -61,10 +61,6 @@
 
             lazygit-window = final.callPackage ./pkgs/lazygit-window { };
 
-            mand = final.writeShellScriptBin "mand" ''
-              ${final.pandoc}/bin/pandoc -s -f markdown -t man $1 | ${final.groff}/bin/groff -T utf8 -man | ${final.less}/bin/less
-            '';
-
             meet = final.callPackage ./pkgs/meet { };
 
             sysz = final.stdenv.mkDerivation {
