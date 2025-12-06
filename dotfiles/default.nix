@@ -12,7 +12,6 @@
     ./cachix
     ./comma
     ./direnv
-    ./dog
     ./fd
     ./fzf
     ./git
