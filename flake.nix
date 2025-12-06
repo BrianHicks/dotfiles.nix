@@ -61,8 +61,6 @@
 
             lazygit-window = final.callPackage ./pkgs/lazygit-window { };
 
-            meet = final.callPackage ./pkgs/meet { };
-
             sysz = final.stdenv.mkDerivation {
               name = "sysz";
               src = inputs.sysz;
