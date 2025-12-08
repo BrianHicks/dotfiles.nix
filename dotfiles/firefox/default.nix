@@ -1,0 +1,5 @@
+{ ... }: {
+  homebrew.formulae = [
+    "firefox"
+  ];
+}

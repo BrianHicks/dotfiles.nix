@@ -19,6 +19,7 @@
     ./dotfiles/1password
     ./dotfiles/backrest
     ./dotfiles/bambu-studio
+    ./dotfiles/firefox
     ./dotfiles/fzf
     ./dotfiles/git
     ./dotfiles/lazygit
