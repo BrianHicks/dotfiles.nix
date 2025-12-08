@@ -19,11 +19,6 @@
   };
 
   home.shellAliases = {
-    # Home-manager commands
-    hm = "home-manager";
-    hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#brianhicks";
-    hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#brianhicks";
-
     # 1Password plugins
     gh = "op plugin run -- gh";
     glab = "op plugin run -- glab";

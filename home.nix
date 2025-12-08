@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, specialArgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -15,17 +15,27 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  imports = [
-    ./dotfiles/1password
-    ./dotfiles/backrest
-    ./dotfiles/bambu-studio
-    ./dotfiles/firefox
-    ./dotfiles/fzf
-    ./dotfiles/git
-    ./dotfiles/lazygit
-    ./dotfiles/zed
-    ./dotfiles/zsh
-  ];
+  imports =
+    let
+      homeImports = if specialArgs.profile == "home" then [ ./dotfiles/backrest ./dotfiles/bambu-studio ] else [];
+      commonImports = [
+        ./dotfiles/1password
+        ./dotfiles/firefox
+        ./dotfiles/fzf
+        ./dotfiles/git
+        ./dotfiles/lazygit
+        ./dotfiles/obsidian
+        ./dotfiles/zed
+        ./dotfiles/zsh
+      ];
+    in homeImports ++ commonImports;
+
+  home.shellAliases = {
+    # Home-manager commands
+    hm = "home-manager";
+    hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+    hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

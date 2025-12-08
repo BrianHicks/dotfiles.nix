@@ -1,5 +1,5 @@
 { ... }: {
-  homebrew.casks = [
+  homebrew.formulae = [
     "zed"
   ];
 }

@@ -20,9 +20,8 @@
           homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync/default.nix {};
         })
       ];
-    in
-    {
-      homeConfigurations."brianhicks" = home-manager.lib.homeManagerConfiguration {
+
+      mkProfile = profile: home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs rec {
           system = "aarch64-darwin";
           inherit overlays;
@@ -30,10 +29,19 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ./modules/brew ];
+        modules = [ ./home.nix ./modules/homebrew ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit profile;
+        };
+      };
+    in
+    {
+      homeConfigurations = {
+        home = mkProfile "home";
+        work = mkProfile "work";
       };
     };
 }
