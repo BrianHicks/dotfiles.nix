@@ -10,17 +10,24 @@
       update.method = "never"; # managed through nixpkgs
 
       keybindings = {
-        universal.return = "q";
         universal.createRebaseOptionsMenu = "M";
         branches.mergeIntoCurrentBranch = "m";
       };
 
-      git.pagers = [
-        {
-          colorArg = "always";
-          externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
-        }
-      ];
+      git = {
+        overrideGpg = true;
+
+        # Triggers 1PW auth prompts constantly; stop it!
+        autoFetch = false;
+        autoRefresh = false;
+
+        pagers = [
+          {
+            colorArg = "always";
+            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+          }
+        ];
+      };
     };
   };
 }
