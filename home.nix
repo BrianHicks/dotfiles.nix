@@ -17,6 +17,8 @@
 
   imports = [
     ./dotfiles/fzf
+    ./dotfiles/git
+    ./dotfiles/lazygit
     ./dotfiles/zsh
   ];
 
