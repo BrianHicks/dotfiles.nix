@@ -14,18 +14,6 @@
         branches.mergeIntoCurrentBranch = "m";
       };
 
-      gui.theme = {
-        lightTheme = false;
-        activeBorderColor = [ "green" "bold" ];
-        inactiveBorderColor = [ "white" ];
-        optionsTextColor = [ "blue" ];
-
-        # the default highlighted color is a very bright blue that doesn't have
-        # sufficient contrast with the foreground.
-        selectedLineBgColor = [ "reverse" ];
-        selectedRangeBgColor = [ "black" "bold" ];
-      };
-
       git.pagers = [{
         colorArg = "always";
         externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
