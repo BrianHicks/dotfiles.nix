@@ -16,9 +16,13 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
+    ./dotfiles/1password
+    ./dotfiles/backrest
+    ./dotfiles/bambu-studio
     ./dotfiles/fzf
     ./dotfiles/git
     ./dotfiles/lazygit
+    ./dotfiles/zed
     ./dotfiles/zsh
   ];
 

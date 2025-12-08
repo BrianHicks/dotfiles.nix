@@ -15,14 +15,22 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [
+        (final: prev: {
+          homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync/default.nix {};
+        })
+      ];
     in
     {
       homeConfigurations."brianhicks" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = import nixpkgs rec {
+          system = "aarch64-darwin";
+          inherit overlays;
+        };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [ ./home.nix ./modules/brew ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
