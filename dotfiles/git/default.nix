@@ -1,35 +1,24 @@
-{ pkgs, ... }:
-let
-  lazygit-config =
-    if pkgs.stdenv.isDarwin
-    then "Library/Application Support/jesseduffield/lazygit/config.yml"
-    else ".config/jesseduffield/lazygit/config.yml";
-in
-{
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
 
-    userName = "Brian Hicks";
-    userEmail = "brian@brianthicks.com";
+    settings = {
+      user = {
+        name = "Brian Hicks";
+        email = "brian@brianthicks.com";
+      };
 
-    aliases = {
-      aa = "add --all";
-      amend = "commit --amend";
-      ci = "commit";
-      co = "checkout";
-      dc = "diff --cached";
-      di = "diff";
-      st = "status";
-      yoda = "push --force-with-lease";
-      root = "rev-parse --show-toplevel";
-    };
-
-    extraConfig = {
-      # after upgrading to 21.11 I suddenly need to explicitly set an SSH command
-      # to connect a port other than :22. How weird! Fortunately it's easy to work
-      # around with this but I'm not happy with it. Maybe someday I'll figure this
-      # out and come back and remove this line.
-      core.sshCommand = "ssh";
+      alias = {
+        aa = "add --all";
+        amend = "commit --amend";
+        ci = "commit";
+        co = "checkout";
+        dc = "diff --cached";
+        di = "diff";
+        st = "status";
+        yoda = "push --force-with-lease";
+        root = "rev-parse --show-toplevel";
+      };
 
       core.fsmonitor = "true";
 
@@ -50,13 +39,9 @@ in
 
     ignores = [ ".direnv" ".DS_Store" ];
 
-    difftastic = {
-      enable = true;
-    };
-
     signing = {
       key = null;
-      signByDefault = true;
+      # signByDefault = true;
 
       # The gpg2 binary provided by Nix doesn't work with the gpg paths
       # provided by gpg-tools for Mac. Use the thing that's just on the PATH,
@@ -64,50 +49,4 @@ in
       signer = "gpg";
     };
   };
-
-  home.file."${lazygit-config}".text = builtins.toJSON {
-    reporting = "off";
-    startupPopupVersion = 1;
-
-    update.method = "never"; # managed through nixpkgs
-
-    keybindings = {
-      universal.return = "q";
-      universal.createRebaseOptionsMenu = "M";
-      branches.mergeIntoCurrentBranch = "m";
-    };
-
-    gui.theme = {
-      lightTheme = false;
-      activeBorderColor = [ "green" "bold" ];
-      inactiveBorderColor = [ "white" ];
-      optionsTextColor = [ "blue" ];
-
-      # the default highlighted color is a very bright blue that doesn't have
-      # sufficient contrast with the foreground.
-      selectedLineBgColor = [ "reverse" ];
-      selectedRangeBgColor = [ "black" "bold" ];
-    };
-
-    git.paging = {
-      colorArg = "always";
-      externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
-    };
-
-    git.overrideGpg = true; # prevents spawning a separate process on commits
-
-    # my SSH agent (1password) currently spams auth prompts when using lazygit, so
-    # I'm turning off auto-fetch stuff, hopefully temporarily!
-    git.autoFetch = false;
-    git.autoRefresh = false;
-  };
-
-  home.packages = [
-    pkgs.gh
-    pkgs.git-gclone
-    pkgs.git-lfs
-    pkgs.gitAndTools.delta
-    pkgs.gitAndTools.difftastic
-    pkgs.lazygit
-  ];
 }

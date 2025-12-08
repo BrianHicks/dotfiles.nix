@@ -13,5 +13,5 @@ jobs:
       - uses: cachix/cachix-action@v16
         with:
           name: brianhicks-dotfiles
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build --print-build-logs .#homeConfigurations.brianhicks.activationPackage
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - run: nix build --print-build-logs .#homeConfigurations.home.activationPackage .#homeConfigurations.work.activationPackage

@@ -1,14 +1,42 @@
-{ pkgs, ... }: {
-  home.stateVersion = "23.11";
+{ config, pkgs, specialArgs, ... }:
 
+{
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
   home.username = "brianhicks";
   home.homeDirectory = "/Users/brianhicks";
 
-  home.packages = [
-    pkgs.xbar-pr-status
-    pkgs.xbar-review-request-status
-    pkgs.xbar-shortcut
-  ];
+  # This value determines the Home Manager release that your configuration is
+  # compatible with. This helps avoid breakage when a new Home Manager release
+  # introduces backwards incompatible changes.
+  #
+  # You should not change this value, even if you update Home Manager. If you do
+  # want to update the value, then make sure to first check the Home Manager
+  # release notes.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  imports = [ ./dotfiles ];
+  imports =
+    let
+      homeImports = if specialArgs.profile == "home" then [ ./dotfiles/backrest ./dotfiles/bambu-studio ] else [];
+      commonImports = [
+        ./dotfiles/1password
+        ./dotfiles/firefox
+        ./dotfiles/fzf
+        ./dotfiles/git
+        ./dotfiles/lazygit
+        ./dotfiles/obsidian
+        ./dotfiles/zed
+        ./dotfiles/zsh
+      ];
+    in homeImports ++ commonImports;
+
+  home.shellAliases = {
+    # Home-manager commands
+    hm = "home-manager";
+    hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+    hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+  };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }
