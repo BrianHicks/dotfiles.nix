@@ -32,5 +32,8 @@
 
     # Common shortenings
     lg = "lazygit";
+
+    # Fix macOS quarantine
+    mark-safe = "xattr -dr com.apple.quarantine";
   };
 }
