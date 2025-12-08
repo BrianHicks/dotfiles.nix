@@ -24,16 +24,25 @@
         context = "Editor && vim_mode == normal && vim_operator == none && !VimWaiting";
         bindings = {
           # TUIs
-          "space k" = ["task::Spawn" { task_name = "k9s"; }];
+          "space k" = [
+            "task::Spawn"
+            { task_name = "k9s"; }
+          ];
 
           # Git
-          "space g" = ["task::Spawn" { task_name = "lazygit"; }];
+          "space g" = [
+            "task::Spawn"
+            { task_name = "lazygit"; }
+          ];
           "space G" = "git::Diff";
           "space c" = "git::Commit";
           "cmd-enter" = "git::Commit";
           "space p" = "git::Pull";
           "space P" = "git::Push";
-          "space l" = ["task::Spawn" { task_name = "GitLab MR"; }];
+          "space l" = [
+            "task::Spawn"
+            { task_name = "GitLab MR"; }
+          ];
           "space b" = "git::Branch";
           "space s" = "git::ToggleStaged";
 
@@ -57,7 +66,7 @@
 
     userSettings = {
       edit_predictions = {
-        disabled_globs = [];
+        disabled_globs = [ ];
         mode = "eager";
         copilot = {
           proxy = null;
@@ -102,7 +111,7 @@
           # deal with multi-doc YAML files well, and I encounter quite a few of
           # those in my day-to-day work. Instead of dealing with the whole buffer
           # being red squigglies, I find it better to just disable the server.
-          language_servers = [];
+          language_servers = [ ];
         };
       };
     };
