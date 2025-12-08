@@ -22,7 +22,7 @@
 
   imports =
     let
-      homeImports =
+      profileImports =
         if specialArgs.profile == "home" then
           [
             ./dotfiles/backrest
@@ -30,6 +30,8 @@
             ./dotfiles/dropbox
             ./dotfiles/signal
           ]
+        else if specialArgs.profile == "work" then
+          [ ] # TODO: fill this in as I need things
         else
           [ ];
       commonImports = [
@@ -45,7 +47,7 @@
         ./dotfiles/zsh
       ];
     in
-    homeImports ++ commonImports;
+    commonImports ++ profileImports;
 
   home.shellAliases = {
     # Home-manager commands
