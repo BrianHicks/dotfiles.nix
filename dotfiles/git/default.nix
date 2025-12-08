@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  home.packages = [ pkgs.git-gclone ];
+
   programs.git = {
     enable = true;
 

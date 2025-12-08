@@ -25,6 +25,8 @@
       pkgs = nixpkgs.legacyPackages.${system};
       overlays = [
         (final: prev: {
+          git-gclone = pkgs.callPackage ./pkgs/git-gclone/default.nix { };
+
           homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync/default.nix { };
         })
       ];
