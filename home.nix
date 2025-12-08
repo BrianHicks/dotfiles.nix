@@ -71,14 +71,9 @@
     # EDITOR = "emacs";
   };
 
-  programs.zsh.enable = true;
-
-  # Shell aliases for home-manager commands
-  home.shellAliases = {
-    hm = "home-manager";
-    hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#brianhicks";
-    hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#brianhicks";
-  };
+  imports = [
+    ./dotfiles/zsh
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
