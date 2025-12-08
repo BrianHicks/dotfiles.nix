@@ -27,6 +27,7 @@
           [
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
+            ./dotfiles/dropbox
             ./dotfiles/signal
           ]
         else

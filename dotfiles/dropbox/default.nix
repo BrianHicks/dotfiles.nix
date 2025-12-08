@@ -1,0 +1,6 @@
+{ ... }:
+{
+  homebrew.formulae = [
+    "dropbox"
+  ];
+}
