@@ -1,0 +1,6 @@
+{ ... }:
+{
+  homebrew.formulae = [
+    "raycast"
+  ];
+}

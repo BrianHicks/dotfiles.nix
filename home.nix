@@ -39,6 +39,7 @@
         ./dotfiles/git
         ./dotfiles/lazygit
         ./dotfiles/obsidian
+        ./dotfiles/raycast
         ./dotfiles/zed
         ./dotfiles/zsh
       ];
