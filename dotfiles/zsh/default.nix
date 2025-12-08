@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
 
@@ -12,10 +13,12 @@
       size = 10000;
     };
 
-    initContent = builtins.concatStringsSep "\n\n# ---\n\n" (map builtins.readFile [
-      ./prompt.zsh
-      ./nixify.zsh
-    ]);
+    initContent = builtins.concatStringsSep "\n\n# ---\n\n" (
+      map builtins.readFile [
+        ./prompt.zsh
+        ./nixify.zsh
+      ]
+    );
   };
 
   home.shellAliases = {

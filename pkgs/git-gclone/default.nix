@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> { } }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 pkgs.stdenv.mkDerivation {
   name = "git-gclone";
   src = ./.;
@@ -7,8 +9,6 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out/bin
     cp ./git-gclone.sh $out/bin/git-gclone
-    wrapProgram $out/bin/git-gclone --prefix PATH : ${
-      pkgs.lib.makeBinPath [pkgs.git]
-    }
+    wrapProgram $out/bin/git-gclone --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.git ]}
   '';
 }

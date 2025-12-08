@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.git = {
     enable = true;
 
@@ -37,7 +38,10 @@
       };
     };
 
-    ignores = [ ".direnv" ".DS_Store" ];
+    ignores = [
+      ".direnv"
+      ".DS_Store"
+    ];
 
     signing = {
       key = null;
