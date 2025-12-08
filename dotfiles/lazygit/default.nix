@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.lazygit = {
     enable = true;
     enableZshIntegration = true;
@@ -14,10 +15,12 @@
         branches.mergeIntoCurrentBranch = "m";
       };
 
-      git.pagers = [{
-        colorArg = "always";
-        externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
-      }];
+      git.pagers = [
+        {
+          colorArg = "always";
+          externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+        }
+      ];
     };
   };
 }

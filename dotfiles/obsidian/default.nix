@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   homebrew.formulae = [
     "obsidian"
   ];

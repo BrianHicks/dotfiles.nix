@@ -1,6 +1,6 @@
 { ... }:
 {
   homebrew.formulae = [
-    "firefox"
+    "signal"
   ];
 }

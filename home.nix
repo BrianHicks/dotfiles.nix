@@ -1,4 +1,9 @@
-{ config, pkgs, specialArgs, ... }:
+{
+  config,
+  pkgs,
+  specialArgs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,18 +22,30 @@
 
   imports =
     let
-      homeImports = if specialArgs.profile == "home" then [ ./dotfiles/backrest ./dotfiles/bambu-studio ] else [];
+      homeImports =
+        if specialArgs.profile == "home" then
+          [
+            ./dotfiles/backrest
+            ./dotfiles/bambu-studio
+            ./dotfiles/dropbox
+            ./dotfiles/signal
+          ]
+        else
+          [ ];
       commonImports = [
         ./dotfiles/1password
         ./dotfiles/firefox
         ./dotfiles/fzf
         ./dotfiles/git
         ./dotfiles/lazygit
+        ./dotfiles/nixconfig
         ./dotfiles/obsidian
+        ./dotfiles/raycast
         ./dotfiles/zed
         ./dotfiles/zsh
       ];
-    in homeImports ++ commonImports;
+    in
+    homeImports ++ commonImports;
 
   home.shellAliases = {
     # Home-manager commands
