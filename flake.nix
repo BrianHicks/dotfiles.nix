@@ -27,7 +27,7 @@
 
     comma = {
       url =
-        "github:nix-community/comma/54149dc417819af14ddc0d59216d4add5280ad14";
+        "github:nix-community/comma/3bdb4b82150dd2375eac586ff0582817816afca2";
       flake = false;
     };
 

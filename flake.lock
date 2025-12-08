@@ -3,17 +3,17 @@
     "comma": {
       "flake": false,
       "locked": {
-        "lastModified": 1645081562,
-        "narHash": "sha256-iSkHFMgYh31UDFZ5BZ9AHBivdgO0n2iCrYKjwAWxXvY=",
+        "lastModified": 1765198089,
+        "narHash": "sha256-pBsp1h+5ErJx+kf5KMLWv7l5DzDyletKq3MZu0XtzzM=",
         "owner": "nix-community",
         "repo": "comma",
-        "rev": "54149dc417819af14ddc0d59216d4add5280ad14",
+        "rev": "3bdb4b82150dd2375eac586ff0582817816afca2",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "comma",
-        "rev": "54149dc417819af14ddc0d59216d4add5280ad14",
+        "rev": "3bdb4b82150dd2375eac586ff0582817816afca2",
         "type": "github"
       }
     },
