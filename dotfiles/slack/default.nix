@@ -1,0 +1,4 @@
+{ ... }:
+{
+  homebrew.formulae = [ "slack" ];
+}

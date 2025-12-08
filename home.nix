@@ -43,6 +43,7 @@
         ./dotfiles/nixconfig
         ./dotfiles/obsidian
         ./dotfiles/raycast
+        ./dotfiles/slack
         ./dotfiles/zed
         ./dotfiles/zsh
       ];
