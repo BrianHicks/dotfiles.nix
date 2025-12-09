@@ -39,13 +39,17 @@ def main(args):
 
     # Take care of taps, then formulae. Remove in reverse.
     if missing_taps:
+        print(f"tapping {', '.join(missing_taps)}")
         subprocess.check_call([args.homebrew_bin, "tap", *missing_taps])
     if missing_formulae:
+        print(f"installing {', '.join(missing_formulae)}")
         subprocess.check_call([args.homebrew_bin, "install", *missing_formulae])
 
     if extra_formulae:
+        print(f"uninstalling {', '.join(extra_formulae)}")
         subprocess.check_call([args.homebrew_bin, "uninstall", *extra_formulae])
     if extra_taps:
+        print(f"untapping {', '.join(extra_taps)}")
         subprocess.check_call([args.homebrew_bin, "untap", *extra_taps])
 
 
