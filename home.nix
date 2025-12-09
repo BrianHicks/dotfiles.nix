@@ -31,7 +31,7 @@
             ./dotfiles/signal
           ]
         else if specialArgs.profile == "work" then
-          [ ] # TODO: fill this in as I need things
+          [ ./dotfiles/k9s ]
         else
           [ ];
       commonImports = [
