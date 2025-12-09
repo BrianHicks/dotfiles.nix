@@ -41,6 +41,7 @@
         ./dotfiles/fzf
         ./dotfiles/git
         ./dotfiles/lazygit
+        ./dotfiles/lf
         ./dotfiles/nixconfig
         ./dotfiles/obsidian
         ./dotfiles/raycast
