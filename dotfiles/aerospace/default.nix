@@ -4,6 +4,21 @@
     enable = true;
 
     userSettings = {
+      # Config version for compatibility and deprecations
+      # Fallback value (if you omit the key): config-version = 1
+      config-version = 2;
+
+      # You can use it to add commands that run after AeroSpace startup.
+      # Available commands : https://nikitabobko.github.io/AeroSpace/commands
+      after-startup-command = [];
+
+      # Start AeroSpace at login
+      start-at-login = false;
+
+      # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
+      enable-normalization-flatten-containers = true;
+      enable-normalization-opposite-orientation-for-nested-containers = true;
+
       # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
       # The 'accordion-padding' specifies the size of accordion padding
       # You can set 0 to disable the padding feature
