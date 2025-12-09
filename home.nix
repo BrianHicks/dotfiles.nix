@@ -40,6 +40,7 @@
         ./dotfiles/firefox
         ./dotfiles/fzf
         ./dotfiles/git
+        ./dotfiles/json
         ./dotfiles/lazygit
         ./dotfiles/lf
         ./dotfiles/nixconfig
