@@ -1,6 +1,9 @@
 { ... }:
 {
-  homebrew.formulae = [ "nikitabobko/tap/aerospace" ];
+  homebrew = {
+    taps = [ "nikitabobko/tap" ];
+    formulae = [ "aerospace" ];
+  };
 
   programs.aerospace = {
     enable = true;
