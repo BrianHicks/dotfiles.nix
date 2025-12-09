@@ -6,6 +6,6 @@
   },
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 12pm on Monday"]
+    "schedule": ["before 12pm every weekday"]
   }
 }
