@@ -41,6 +41,7 @@
         ./dotfiles/fzf
         ./dotfiles/ghostty
         ./dotfiles/git
+        ./dotfiles/gpg
         ./dotfiles/json
         ./dotfiles/lazygit
         ./dotfiles/lf
