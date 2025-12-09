@@ -36,6 +36,7 @@
           [ ];
       commonImports = [
         ./dotfiles/1password
+        ./dotfiles/aerospace
         ./dotfiles/firefox
         ./dotfiles/fzf
         ./dotfiles/git
