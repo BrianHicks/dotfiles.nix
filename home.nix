@@ -27,7 +27,6 @@
           [
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
-            ./dotfiles/dropbox
             ./dotfiles/signal
           ]
         else if specialArgs.profile == "work" then
@@ -37,6 +36,7 @@
       commonImports = [
         ./dotfiles/1password
         ./dotfiles/aerospace
+        ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
         ./dotfiles/ghostty
