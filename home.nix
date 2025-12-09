@@ -39,6 +39,7 @@
         ./dotfiles/aerospace
         ./dotfiles/firefox
         ./dotfiles/fzf
+        ./dotfiles/ghostty
         ./dotfiles/git
         ./dotfiles/json
         ./dotfiles/lazygit
