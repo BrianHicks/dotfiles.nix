@@ -1,3 +1,7 @@
-{ pkgs, ... }: {
-  home.packages = [ pkgs.jq pkgs.jless ];
+{ pkgs, ... }:
+{
+  home.packages = [
+    pkgs.jq
+    pkgs.jless
+  ];
 }
