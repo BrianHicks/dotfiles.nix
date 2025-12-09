@@ -1,7 +1,10 @@
 { ... }:
 {
+  homebrew.formulae = [ "nikitabobko/tap/aerospace" ];
+
   programs.aerospace = {
     enable = true;
+    package = null; # managed by brew to get latest
 
     userSettings = {
       # Config version for compatibility and deprecations
