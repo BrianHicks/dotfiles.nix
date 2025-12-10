@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.git-gclone ];
+  home.packages = [
+    pkgs.git-gclone
+    pkgs.git-hclone
+  ];
 
   programs.git = {
     enable = true;
