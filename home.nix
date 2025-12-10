@@ -60,6 +60,7 @@
     hm = "home-manager";
     hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
     hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+    hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
   };
 
   # Let Home Manager install and manage itself.
