@@ -10,7 +10,10 @@
     package = null; # Managed by homebrew
 
     # names: https://github.com/zed-industries/extensions/tree/main/extensions
-    extensions = [ "nix" ];
+    extensions = [
+      "nix"
+      "toml"
+    ];
 
     # I find it very nice to be able to experiment with the settings in Zed
     # using the UI and then copy them back to a known-good place. So… mutable!
