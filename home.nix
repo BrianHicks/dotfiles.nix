@@ -29,8 +29,9 @@
           ]
         else if specialArgs.profile == "work" then
           [
-            ./dotfiles/k9s
             ./dotfiles/docker-desktop
+            ./dotfiles/k9s
+            ./dotfiles/mise
           ]
         else
           [ ];
