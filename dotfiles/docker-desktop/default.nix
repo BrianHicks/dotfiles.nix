@@ -1,0 +1,4 @@
+{ ... }:
+{
+  homebrew.formulae = [ "docker-desktop" ];
+}

@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   specialArgs,
   ...
 }:
@@ -30,7 +28,10 @@
             ./dotfiles/signal
           ]
         else if specialArgs.profile == "work" then
-          [ ./dotfiles/k9s ]
+          [
+            ./dotfiles/k9s
+            ./dotfiles/docker-desktop
+          ]
         else
           [ ];
       commonImports = [
