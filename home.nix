@@ -45,7 +45,7 @@
         ./dotfiles/json
         ./dotfiles/lazygit
         ./dotfiles/lf
-        ./dotfiles/nixconfig
+        ./dotfiles/nix
         ./dotfiles/obsidian
         ./dotfiles/python
         ./dotfiles/raycast

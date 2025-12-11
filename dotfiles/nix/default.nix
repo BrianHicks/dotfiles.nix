@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # Note: need to put `trusted-users = brianhicks` in `/etc/nix/nix.conf` for this to work.
   home.file.".config/nix/nix.conf".text = ''
@@ -8,4 +8,9 @@
     builders = ssh://eu.nixbuild.net x86_64-linux - 100 1 big-parallel,benchmark
     builders-use-substitutes = true
   '';
+
+  home.packages = [
+    pkgs.nil
+    pkgs.nixd
+  ];
 }
