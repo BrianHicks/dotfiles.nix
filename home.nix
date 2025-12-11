@@ -47,6 +47,7 @@
         ./dotfiles/lf
         ./dotfiles/nixconfig
         ./dotfiles/obsidian
+        ./dotfiles/python
         ./dotfiles/raycast
         ./dotfiles/slack
         ./dotfiles/zed
