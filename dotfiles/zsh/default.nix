@@ -17,6 +17,7 @@
       map builtins.readFile [
         ./prompt.zsh
         ./nixify.zsh
+        ./local-bin.zsh
       ]
     );
   };
