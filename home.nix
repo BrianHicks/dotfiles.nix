@@ -38,6 +38,7 @@
       commonImports = [
         ./dotfiles/1password
         ./dotfiles/aerospace
+        ./dotfiles/chrome
         ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
@@ -53,6 +54,7 @@
         ./dotfiles/raycast
         ./dotfiles/slack
         ./dotfiles/zed
+        ./dotfiles/zoom
         ./dotfiles/zsh
       ];
     in
