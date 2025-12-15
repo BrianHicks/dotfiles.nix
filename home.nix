@@ -42,6 +42,7 @@
         ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
+        ./dotfiles/gh
         ./dotfiles/ghostty
         ./dotfiles/git
         ./dotfiles/glab

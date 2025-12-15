@@ -23,9 +23,6 @@
   };
 
   home.shellAliases = {
-    # 1Password plugins
-    gh = "op plugin run -- gh";
-
     # Navigation
     root = "cd \"$(git rev-parse --show-toplevel)\"";
 
