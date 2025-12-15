@@ -56,6 +56,7 @@
         ./dotfiles/raycast
         ./dotfiles/slack
         ./dotfiles/tidal
+        ./dotfiles/tofu
         ./dotfiles/tree
         ./dotfiles/zed
         ./dotfiles/zoom
