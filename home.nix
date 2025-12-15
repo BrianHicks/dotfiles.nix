@@ -44,6 +44,7 @@
         ./dotfiles/fzf
         ./dotfiles/ghostty
         ./dotfiles/git
+        ./dotfiles/glab
         ./dotfiles/gpg
         ./dotfiles/json
         ./dotfiles/lazygit

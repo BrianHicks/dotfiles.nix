@@ -25,8 +25,6 @@
   home.shellAliases = {
     # 1Password plugins
     gh = "op plugin run -- gh";
-    glab = "op plugin run -- glab";
-    "glab.mr" = "glab mr create --push";
 
     # Navigation
     root = "cd \"$(git rev-parse --show-toplevel)\"";
