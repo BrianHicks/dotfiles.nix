@@ -25,6 +25,7 @@
           [
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
+            ./dotfiles/gh
             ./dotfiles/signal
           ]
         else if specialArgs.profile == "work" then
@@ -42,7 +43,6 @@
         ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
-        ./dotfiles/gh
         ./dotfiles/ghostty
         ./dotfiles/git
         ./dotfiles/glab
