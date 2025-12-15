@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -20,6 +20,10 @@
         ./local-bin.zsh
       ]
     );
+
+    envExtra = ''
+      EDITOR=${pkgs.neovim}/bin/nvim
+    '';
   };
 
   home.shellAliases = {
