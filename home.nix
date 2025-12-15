@@ -54,6 +54,7 @@
         ./dotfiles/raycast
         ./dotfiles/slack
         ./dotfiles/tidal
+        ./dotfiles/tree
         ./dotfiles/zed
         ./dotfiles/zoom
         ./dotfiles/zsh
