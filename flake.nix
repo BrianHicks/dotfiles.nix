@@ -36,7 +36,7 @@
       mkProfile =
         profile:
         home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs rec {
+          pkgs = import nixpkgs {
             system = "aarch64-darwin";
             inherit overlays;
           };
