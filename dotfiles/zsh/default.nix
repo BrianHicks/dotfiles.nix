@@ -29,9 +29,6 @@
     # Navigation
     root = "cd \"$(git rev-parse --show-toplevel)\"";
 
-    # Common shortenings
-    lg = "lazygit";
-
     # Fix macOS quarantine
     mark-safe = "xattr -dr com.apple.quarantine";
   };
