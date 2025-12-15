@@ -53,6 +53,7 @@
         ./dotfiles/python
         ./dotfiles/raycast
         ./dotfiles/slack
+        ./dotfiles/tidal
         ./dotfiles/zed
         ./dotfiles/zoom
         ./dotfiles/zsh
