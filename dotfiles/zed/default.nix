@@ -15,12 +15,10 @@
       "toml"
     ];
 
-    # I find it very nice to be able to experiment with the settings in Zed
-    # using the UI and then copy them back to a known-good place. So… mutable!
-    mutableUserDebug = true;
-    mutableUserKeymaps = true;
-    mutableUserSettings = true;
-    mutableUserTasks = true;
+    mutableUserDebug = false;
+    mutableUserKeymaps = false;
+    mutableUserSettings = false;
+    mutableUserTasks = false;
 
     userKeymaps = [
       {
