@@ -1,7 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
   homebrew.formulae = [
     "zed"
+  ];
+
+  # Needed as global deps for Zed in a work project
+  home.packages = [
+    pkgs.clojure-lsp
+    pkgs.nodejs_24
   ];
 
   programs.zed-editor = {
