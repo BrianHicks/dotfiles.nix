@@ -11,6 +11,12 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    nix-doom-emacs-unstraightened = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      # Optional, to download less. Neither the module nor the overlay uses this input.
+      inputs.nixpkgs.follows = "";
+    };
   };
 
   outputs =
@@ -18,6 +24,7 @@
       nixpkgs,
       home-manager,
       flake-utils,
+      nix-doom-emacs-unstraightened,
       ...
     }:
     let
@@ -46,6 +53,7 @@
           modules = [
             ./home.nix
             ./modules/homebrew
+            nix-doom-emacs-unstraightened.homeModule
           ];
 
           # Optionally use extraSpecialArgs
