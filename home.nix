@@ -25,6 +25,7 @@
           [
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
+            ./dotfiles/discord
             ./dotfiles/gh
             ./dotfiles/signal
           ]
