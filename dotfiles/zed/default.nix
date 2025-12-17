@@ -6,6 +6,7 @@
 
   # Needed as global deps for Zed in a work project
   home.packages = [
+    pkgs.openjdk17
     pkgs.clojure-lsp
     pkgs.nodejs_24
   ];
