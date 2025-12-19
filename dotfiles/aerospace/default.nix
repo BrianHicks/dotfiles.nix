@@ -67,6 +67,12 @@
         "9"
       ];
 
+      # Make my "misc" workspace always hang out on the secondary display.
+      # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+      workspace-to-monitor-force-assignment = {
+        "9" = "secondary";
+      };
+
       # A callback that runs every time binding mode changes
       # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
       # See: https://nikitabobko.github.io/AeroSpace/commands#mode
