@@ -28,6 +28,7 @@
             ./dotfiles/discord
             ./dotfiles/gh
             ./dotfiles/signal
+            ./dotfiles/steam
           ]
         else if specialArgs.profile == "work" then
           [
