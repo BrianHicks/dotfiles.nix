@@ -34,7 +34,6 @@
           [
             ./dotfiles/docker-desktop
             ./dotfiles/k9s
-            ./dotfiles/mise
           ]
         else
           [ ];
@@ -52,6 +51,7 @@
         ./dotfiles/json
         ./dotfiles/lazygit
         ./dotfiles/lf
+        ./dotfiles/mise
         ./dotfiles/nix
         ./dotfiles/obsidian
         ./dotfiles/python
