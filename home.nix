@@ -23,6 +23,7 @@
       profileImports =
         if specialArgs.profile == "home" then
           [
+            ./dotfiles/aws
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
             ./dotfiles/discord
