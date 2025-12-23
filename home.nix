@@ -42,6 +42,7 @@
         ./dotfiles/1password
         ./dotfiles/aerospace
         ./dotfiles/chrome
+        ./dotfiles/diffoscope
         ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
