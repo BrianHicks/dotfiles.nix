@@ -33,7 +33,6 @@
           ]
         else if specialArgs.profile == "work" then
           [
-            ./dotfiles/docker-desktop
             ./dotfiles/k9s
           ]
         else
@@ -43,6 +42,7 @@
         ./dotfiles/aerospace
         ./dotfiles/chrome
         ./dotfiles/diffoscope
+        ./dotfiles/docker-desktop
         ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
