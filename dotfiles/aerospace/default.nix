@@ -55,7 +55,6 @@
       # This config version is only available since 'config-version = 2'
       # Fallback value (if you omit the key): persistent-workspaces = []
       persistent-workspaces = [
-        # TODO: could these be minimized?
         "1"
         "2"
         "3"
