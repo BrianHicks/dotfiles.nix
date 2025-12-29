@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  home.packages = [ pkgs.list-python-tests ];
+
   programs.zsh = {
     enable = true;
 
@@ -18,6 +20,7 @@
         ./prompt.zsh
         ./nixify.zsh
         ./local-bin.zsh
+        ./find-test.zsh
       ]
     );
 

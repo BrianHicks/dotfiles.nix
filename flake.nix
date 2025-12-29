@@ -30,6 +30,8 @@
           git-hclone = pkgs.callPackage ./pkgs/git-hclone { };
 
           homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync { };
+
+          list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
         })
       ];
 
