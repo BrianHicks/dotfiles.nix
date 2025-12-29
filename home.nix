@@ -59,6 +59,7 @@
         ./dotfiles/obsidian
         ./dotfiles/python
         ./dotfiles/raycast
+        ./dotfiles/ripgrep
         ./dotfiles/slack
         ./dotfiles/tidal
         ./dotfiles/tofu
