@@ -33,6 +33,7 @@
         else if specialArgs.profile == "work" then
           [
             ./dotfiles/k9s
+            ./dotfiles/robot-friends
           ]
         else
           [ ];
