@@ -26,7 +26,6 @@
             ./dotfiles/aws
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
-            ./dotfiles/discord
             ./dotfiles/gh
             ./dotfiles/signal
             ./dotfiles/steam
@@ -43,6 +42,7 @@
         ./dotfiles/chrome
         ./dotfiles/diffoscope
         ./dotfiles/docker-desktop
+        ./dotfiles/discord
         ./dotfiles/dropbox
         ./dotfiles/firefox
         ./dotfiles/fzf
