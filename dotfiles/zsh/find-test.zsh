@@ -10,4 +10,4 @@ find-test-widget() {
 
 zle -N find-test-widget
 
-bindkey '^I' find-test-widget
+bindkey '^[t' find-test-widget
