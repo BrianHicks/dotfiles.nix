@@ -109,6 +109,7 @@
       };
       terminal = {
         line_height = "standard";
+        option_as_meta = true;
       };
       languages = {
         Markdown = {
