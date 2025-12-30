@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  home = {
-    packages = [ pkgs.mise ];
+  programs.mise = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
