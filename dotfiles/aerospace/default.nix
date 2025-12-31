@@ -205,6 +205,22 @@
         # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
         #s = ['layout sticky tiling', 'mode main']
       };
+
+      on-window-detected =
+        let
+          # hint: `aerospace list-apps`
+          comms-app = app-id: {
+            "if".app-id = app-id;
+            run = "move-node-to-workspace 9";
+          };
+        in
+        [
+          (comms-app "com.apple.mail")
+          (comms-app "com.apple.iCal")
+          (comms-app "com.hnc.Discord")
+          (comms-app "com.tinyspeck.slackmacgap")
+          (comms-app "com.tidal.desktop") # yeah not technically "comms" but it's nicer on that workspace
+        ];
     };
   };
 }
