@@ -218,8 +218,20 @@
           (comms-app "com.apple.mail")
           (comms-app "com.apple.iCal")
           (comms-app "com.hnc.Discord")
-          (comms-app "com.tinyspeck.slackmacgap")
           (comms-app "com.tidal.desktop") # yeah not technically "comms" but it's nicer on that workspace
+
+          # ordering matters here. The first one that matches will be used.
+          {
+            "if" = {
+              app-id = "com.tinyspeck.slackmacgap";
+              window-title-regex-substring = "Huddle: .+";
+            };
+            run = [
+              "move-node-to-workspace 4"
+              "workspace 4"
+            ];
+          }
+          (comms-app "com.tinyspeck.slackmacgap")
         ];
     };
   };
