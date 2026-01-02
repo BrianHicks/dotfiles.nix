@@ -32,7 +32,6 @@
           ]
         else if specialArgs.profile == "work" then
           [
-            ./dotfiles/k9s
             ./dotfiles/robot-friends
           ]
         else
@@ -52,6 +51,7 @@
         ./dotfiles/glab
         ./dotfiles/gpg
         ./dotfiles/json
+        ./dotfiles/k9s
         ./dotfiles/lazygit
         ./dotfiles/lf
         ./dotfiles/mise
