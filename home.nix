@@ -50,6 +50,7 @@
         ./dotfiles/git
         ./dotfiles/glab
         ./dotfiles/gpg
+        ./dotfiles/jj
         ./dotfiles/json
         ./dotfiles/k9s
         ./dotfiles/lazygit
