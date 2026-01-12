@@ -53,7 +53,7 @@
           "--interactive"
         ];
 
-        # from converations, but still not in muscle memory
+        # from conversations, but still not in muscle memory
         unify = [
           "new"
           "-r"
