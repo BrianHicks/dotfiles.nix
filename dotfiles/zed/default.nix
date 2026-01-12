@@ -54,6 +54,12 @@
           "space b" = "git::Branch";
           "space s" = "git::ToggleStaged";
 
+          # jj
+          "space j" = [
+            "task::Spawn"
+            { task_name = "jjui"; }
+          ];
+
           # Tasks
           "space r" = "task::Rerun";
         };
@@ -129,6 +135,12 @@
       {
         label = "lazygit";
         command = "lazygit";
+        hide = "on_success";
+        reveal_target = "center";
+      }
+      {
+        label = "jjui";
+        command = "jjui";
         hide = "on_success";
         reveal_target = "center";
       }
