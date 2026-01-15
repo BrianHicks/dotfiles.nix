@@ -57,7 +57,6 @@
         ./dotfiles/lf
         ./dotfiles/mise
         ./dotfiles/nix
-        ./dotfiles/nvim
         ./dotfiles/obsidian
         ./dotfiles/python
         ./dotfiles/raycast
