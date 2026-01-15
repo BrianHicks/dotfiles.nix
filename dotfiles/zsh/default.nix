@@ -25,7 +25,7 @@
     );
 
     envExtra = ''
-      EDITOR=${pkgs.neovim}/bin/nvim
+      EDITOR=nvim
     '';
   };
 
