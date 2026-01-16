@@ -4,6 +4,7 @@
 
   programs.zsh = {
     enable = true;
+    defaultKeymap = "emacs";
 
     autosuggestion.enable = true;
     enableCompletion = true;
