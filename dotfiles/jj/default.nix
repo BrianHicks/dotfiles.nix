@@ -52,6 +52,11 @@
           "squash"
           "--interactive"
         ];
+        last-month = [
+          "log"
+          "-r"
+          "mine() & author_date(after:\"1 month ago\")"
+        ];
 
         # from conversations, but still not in muscle memory
         unify = [
