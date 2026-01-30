@@ -44,6 +44,7 @@
         ./dotfiles/docker-desktop
         ./dotfiles/discord
         ./dotfiles/dropbox
+        ./dotfiles/element
         ./dotfiles/firefox
         ./dotfiles/fzf
         ./dotfiles/ghostty
