@@ -1,6 +1,4 @@
 { ... }:
 {
-  programs.element-desktop = {
-    enable = true;
-  };
+  homebrew.formulae = [ "element" ];
 }
