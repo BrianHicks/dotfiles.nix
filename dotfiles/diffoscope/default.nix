@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = [
-    (pkgs.diffoscope.overrideAttrs (old: {
+    (pkgs.diffoscope.overridePythonAttrs (old: {
       doCheck = false;
     }))
   ];
