@@ -219,6 +219,7 @@
           (comms-app "com.apple.iCal")
           (comms-app "com.hnc.Discord")
           (comms-app "org.whispersystems.signal-desktop")
+          (comms-app "im.riot.app")
           (comms-app "com.tidal.desktop") # not technically "comms" but it's nicer on that workspace
 
           # ordering matters here. The first one that matches will be used.
