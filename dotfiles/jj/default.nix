@@ -7,6 +7,9 @@
       user.name = config.programs.git.settings.user.name;
       user.email = config.programs.git.settings.user.email;
 
+      signing.behavior = "own";
+      signing.backend = "gpg";
+
       aliases = {
         # Aliases from Artem that haven't entered my muscle memory yet
         log-recent = [
