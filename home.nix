@@ -32,9 +32,7 @@
             ./dotfiles/steam
           ]
         else if specialArgs.profile == "work" then
-          [
-            ./dotfiles/robot-friends
-          ]
+          [ ]
         else
           [ ];
       commonImports = [
@@ -63,6 +61,7 @@
         ./dotfiles/python
         ./dotfiles/raycast
         ./dotfiles/ripgrep
+        ./dotfiles/robot-friends
         ./dotfiles/slack
         ./dotfiles/tidal
         ./dotfiles/tofu
