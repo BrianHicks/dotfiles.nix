@@ -8,6 +8,8 @@
     formulae = [ "opencode-desktop" ];
   };
 
+  home.file.".claude/commands".source = ./commands;
+
   programs.claude-code = {
     enable = true;
   };
