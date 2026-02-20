@@ -93,7 +93,6 @@
         edit_prediction_provider = "copilot";
       };
       agent = {
-        always_allow_tool_actions = true;
         default_profile = "write";
         inline_assistant_model = {
           provider = "zed.dev";
