@@ -1,5 +1,6 @@
 ---
 description: Code review a jj diff
+argument-hint: Changes to review (optional)
 ---
 
 Review the following diff as a careful code reviewer. Look for:
@@ -13,7 +14,12 @@ Be specific: reference file names and line numbers from the diff. If everything 
 
 ## Getting the Diff
 
-Work with the code author to determine the scope of the review. Don't assume just `jj diff` is fine. Some hints:
+If there is a change ID or description of a range below, review that. Otherwise, look in `jj log` and prompt the user for what they'd like reviewed.
 
-- Get a diff with `jj diff --from <change-id> --to <change-id> --git`. Be sure to use `--git`, as it will output a diff suitable for agent consumption.
-- `jj log` will show you all relevant changes and commits. Either the jj change IDs or git commit IDs will be suitable for diffs.
+Get a diff with `jj diff --revision <change-id> --git` or `jj diff --from <change-id> --to <change-id> --git`. Be sure to use `--git`, as it will output a diff suitable for agent consumption.
+
+The user described the commits they want you to start with (if any) in this way:
+
+```
+$ARGUMENTS
+```
