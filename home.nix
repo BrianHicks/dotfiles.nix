@@ -40,6 +40,7 @@
         ./dotfiles/aerospace
         ./dotfiles/chrome
         ./dotfiles/diffoscope
+        ./dotfiles/direnv
         ./dotfiles/docker-desktop
         ./dotfiles/discord
         ./dotfiles/dropbox
