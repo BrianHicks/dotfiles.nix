@@ -80,6 +80,7 @@
 
     userSettings = {
       agent_servers = {
+        codex-acp.type = "registry";
         claude-acp.type = "registry";
         opencode.type = "registry";
       };
