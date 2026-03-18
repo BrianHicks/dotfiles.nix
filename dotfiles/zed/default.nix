@@ -22,10 +22,10 @@
       "toml"
     ];
 
-    mutableUserDebug = false;
-    mutableUserKeymaps = false;
-    mutableUserSettings = false;
-    mutableUserTasks = false;
+    mutableUserDebug = true;
+    mutableUserKeymaps = true;
+    mutableUserSettings = true;
+    mutableUserTasks = true;
 
     userKeymaps = [
       {
@@ -79,6 +79,10 @@
     ];
 
     userSettings = {
+      agent_servers = {
+        claude-acp.type = "registry";
+        opencode.type = "registry";
+      };
       edit_predictions = {
         disabled_globs = [ ];
         mode = "eager";
@@ -88,9 +92,6 @@
           enterprise_uri = null;
         };
         enabled_in_text_threads = false;
-      };
-      features = {
-        edit_prediction_provider = "copilot";
       };
       agent = {
         default_profile = "write";
