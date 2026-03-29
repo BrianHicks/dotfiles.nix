@@ -5,7 +5,10 @@
 
   homebrew = {
     taps = [ "anomalyco/tap" ];
-    formulae = [ "opencode-desktop" ];
+    formulae = [
+      "opencode-desktop"
+      "lm-studio"
+    ];
   };
 
   home.file.".claude/commands".source = ./commands;
