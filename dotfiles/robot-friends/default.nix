@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # For claude-code
   nixpkgs.config.allowUnfree = true;
@@ -20,4 +20,6 @@
   programs.gemini-cli = {
     enable = true;
   };
+
+  home.packages = [ pkgs.ollama ];
 }
