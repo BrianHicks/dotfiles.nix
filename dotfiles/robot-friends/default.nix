@@ -5,9 +5,7 @@
 
   homebrew = {
     taps = [ "anomalyco/tap" ];
-    formulae = [
-      "opencode-desktop"
-    ];
+    formulae = [ "opencode" ];
   };
 
   home.file.".claude/commands".source = ./commands;
