@@ -7,7 +7,6 @@
     taps = [ "anomalyco/tap" ];
     formulae = [
       "opencode-desktop"
-      "lm-studio"
     ];
   };
 
