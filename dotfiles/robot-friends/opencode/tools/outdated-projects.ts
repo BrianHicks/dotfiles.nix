@@ -46,17 +46,19 @@ async function reportOutdated() {
       out.push(`## ${project} (agent review: ${ages.agentReview ?? "never"})`);
       out.push("");
       out.push(
-        `- Main file should exist at ${project}/${project.split(" ").slice(1).join(" ")}.md`,
+        `- Main file should exist at ${base}/1 Projects/${project}/${project.split(" ").slice(1).join(" ")}.md`,
       );
       if (ages.agentReview) {
-        out.push(`- Agent review should be at ${project}/Agent Review.md`);
+        out.push(
+          `- Agent review should be at ${base}/1 Projects/${project}/Agent Review.md`,
+        );
       }
       out.push("");
       out.push("Updated files since last agent review:");
       out.push("");
       console.log();
       for (const [path, date] of newerFiles) {
-        out.push(` - ${path.split("/").slice(1).join("/")}: updated ${date}`);
+        out.push(` - ${base}/${path}: updated ${date}`);
       }
       out.push("");
     }
