@@ -3,11 +3,6 @@
   # For claude-code
   nixpkgs.config.allowUnfree = true;
 
-  homebrew = {
-    taps = [ "anomalyco/tap" ];
-    formulae = [ "opencode" ];
-  };
-
   programs.claude-code = {
     enable = true;
     commandsDir = ./commands;
@@ -15,6 +10,12 @@
 
   programs.gemini-cli = {
     enable = true;
+  };
+
+  programs.opencode = {
+    enable = true;
+    agents = ./opencode/agents;
+    commands = ./opencode/commands;
   };
 
   home.packages = [ pkgs.ollama ];

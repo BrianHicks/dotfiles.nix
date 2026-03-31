@@ -1,0 +1,82 @@
+---
+description: Create a daily/weekly/etc schedule
+agent: schedule-planner
+---
+
+NOTE: while we're developing this command, you need to be pretty loud if something is missing or broken that you haven't been told about already.
+
+Create a plan for the coming day/week/etc.
+
+1. Look at the projects in `1 Projects` (you have been provided a list of currenctly active projects below; these are the directory names inside there.)
+2. Invoke the command included below with the indicated sub-agent.
+3. Pull all the agent review for the active projects
+4. Work with the user to figure out constraints and goals according to the instructions below.
+
+You do not need to "explore" anywhere—just invoke the sub-agents for each project and then coalesce.
+
+## What the User Wants
+
+$ARGUMENTS
+
+## Current Projects
+
+Each of these lines is a literal directory name under `1 Projects`. The inclusion of any emoji, spaces, typos, etc must be preserved to succeed at this task.
+
+!`ls '1 Projects'`
+
+## Review Command
+
+```
+---
+agent: project-reviewer
+---
+
+Review the project at PROJECT PATH.
+
+## Your Task
+
+1. Read the file previous review agents may have written for context.
+
+2. Read the project's main file (the Markdown file matching the directory name in the project directory) to understand:
+   - The ideal outcome and deadline
+   - Any existing tasks or action items
+
+3. Read and analyze any updates you haven't seen in from the Updates/ folder (may not exist, which is OK)
+   - For efficiency's sake, you should generally avoid re-reading files which have not changed since the last agent review.
+
+4. Analyze the project for:
+   - Language indicating missing tasks: "it would be nice/good to…", "I should…", "TODO", etc.
+   - Whether the deadline is coming up and if the project needs prioritization
+   - Whether the outcome has been achieved or if the project is too ambitious
+   - Any decomposition opportunities if the project is too large
+   - Warning signs that the project has stalled or been abandoned
+   - Any resources which would be pulled into a PARA resource folder, if the project is complete or very nearly so.
+
+5. Update the context file for future invocations.
+
+DO NOT SUMMARIZE after writing the file; you'll just be wasting tokens since the output will go unread.
+
+## Output Format
+
+Write your review to the context file in this format:
+
+> ## Summary
+> [Brief overview of project status]
+> 
+> ## Outstanding Tasks
+> [Any suggested tasks based on your analysis]
+> 
+> ## Deadline
+> [Is the deadline realistic? Is the project on track?]
+> 
+> ## Outcome
+> [Has the outcome been achieved? Is it still relevant?]
+> 
+> ## Decomposition Opportunities
+> [Can this be split into smaller projects?]
+> 
+> ## Scratch Pad
+> [Your thinking, notes, and observations]
+
+Be thorough but focused. Your goal is to help the user identify what they might be missing or should reconsider. Do not comment on project organization; these can get messy and it's OK.
+```
