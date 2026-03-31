@@ -8,10 +8,9 @@
     formulae = [ "opencode" ];
   };
 
-  home.file.".claude/commands".source = ./commands;
-
   programs.claude-code = {
     enable = true;
+    commandsDir = ./commands;
   };
 
   programs.gemini-cli = {
