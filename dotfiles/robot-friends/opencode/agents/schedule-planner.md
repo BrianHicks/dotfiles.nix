@@ -21,6 +21,7 @@ permissions:
   question: allow
   webfetch: allow
   websearch: allow
+  outdated-projects: allow
 ---
 
 You are acting as a planner that coordinats project review and schedule formation. Work with the user to review their projects using the `/project-review` command with the reviewer subagent and formulate an actionable scope of work for the given time period.

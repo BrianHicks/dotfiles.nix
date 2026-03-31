@@ -12,6 +12,7 @@
     enable = true;
     agents = ./opencode/agents;
     commands = ./opencode/commands;
+    tools = ./opencode/tools;
   };
 
   services.ollama.enable = true;

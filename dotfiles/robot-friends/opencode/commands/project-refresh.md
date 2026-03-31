@@ -3,7 +3,7 @@ description: Refresh agent context for projects.
 agent: project-reviewer
 ---
 
-Review any projects under `1 Projects` which have files newer than the newest `Agent Review.md`.
+Review any projects under `1 Projects` which are outdated according to the `oudated-projects` tool.
 
 ## For Each Project
 

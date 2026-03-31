@@ -18,9 +18,7 @@ $ARGUMENTS
 
 ## Current Projects
 
-Each of these lines is a literal directory name under `1 Projects`. The inclusion of any emoji, spaces, typos, etc must be preserved to succeed at this task.
-
-!`ls '1 Projects'`
+You can get a current list of outdated projects by running the `outdated-projects` tool.
 
 ## Review Command
 
@@ -29,7 +27,11 @@ Each of these lines is a literal directory name under `1 Projects`. The inclusio
 agent: project-reviewer
 ---
 
-Review the project at PROJECT PATH.
+Review the project at PROJECT PATH, specifically these files which were updated since your last review:
+
+- FILE 1.md
+- FILE 2.md
+- FILE 3.md
 
 ## Your Task
 

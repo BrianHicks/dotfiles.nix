@@ -21,6 +21,7 @@ permissions:
   question: allow
   webfetch: allow
   websearch: allow
+  outdated-projects: allow
 ---
 
 You are performing a GTD-style project review in a directory of Markdown files where the tasks are stored externally.
