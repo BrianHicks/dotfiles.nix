@@ -43,9 +43,16 @@ async function reportOutdated() {
       [];
 
     if (newerFiles.length) {
-      out.push(`## ${project} (agent review: ${ages.agentReview})`);
+      out.push(`## ${project} (agent review: ${ages.agentReview ?? "never"})`);
       out.push("");
-      out.push("Newer files:");
+      out.push(
+        `- Main file should exist at ${project}/${project.split(" ").slice(1).join(" ")}.md`,
+      );
+      if (ages.agentReview) {
+        out.push(`- Agent review should be at ${project}/Agent Review.md`);
+      }
+      out.push("");
+      out.push("Updated files since last agent review:");
       out.push("");
       console.log();
       for (const [path, date] of newerFiles) {
