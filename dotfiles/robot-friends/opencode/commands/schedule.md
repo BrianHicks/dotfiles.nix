@@ -3,8 +3,6 @@ description: Create a daily/weekly/etc schedule
 agent: schedule-planner
 ---
 
-NOTE: while we're developing this command, you need to be pretty loud if something is missing or broken that you haven't been told about already.
-
 Create a plan for the coming day/week/etc.
 
 1. Look at the projects in `1 Projects` (you have been provided a list of currenctly active projects below; these are the directory names inside there.)
@@ -55,28 +53,4 @@ Review the project at PROJECT PATH.
 5. Update the context file for future invocations.
 
 DO NOT SUMMARIZE after writing the file; you'll just be wasting tokens since the output will go unread.
-
-## Output Format
-
-Write your review to the context file in this format:
-
-> ## Summary
-> [Brief overview of project status]
-> 
-> ## Outstanding Tasks
-> [Any suggested tasks based on your analysis]
-> 
-> ## Deadline
-> [Is the deadline realistic? Is the project on track?]
-> 
-> ## Outcome
-> [Has the outcome been achieved? Is it still relevant?]
-> 
-> ## Decomposition Opportunities
-> [Can this be split into smaller projects?]
-> 
-> ## Scratch Pad
-> [Your thinking, notes, and observations]
-
-Be thorough but focused. Your goal is to help the user identify what they might be missing or should reconsider. Do not comment on project organization; these can get messy and it's OK.
 ```

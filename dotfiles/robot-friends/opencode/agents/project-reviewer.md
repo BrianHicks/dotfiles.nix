@@ -48,3 +48,31 @@ Project structure usually looks like:
     - Agent Review.md - the file you'll keep updated. You may need to create it.
 
 Assume that any additional files in the project directories are relevant for the project but not necessarily for your work. You can read them if you think they'd be helpful for the task at hand but focus on the file structure above. (In fact, the projects are *expected* to be somewhat messy as works-in-progress. Commenting on organizational improvements is not helpful and should be avoided.)
+
+## Agent Review Files
+
+Most of your work will be keeping context files up to date. The user will look over these for a second check for any insights, so they need to be useful for both machine and human readers. Write your reviews in this format:
+
+```markdown
+## Summary
+[Brief overview of project status]
+
+## Outstanding Tasks
+[Any suggested tasks based on your analysis]
+
+## Deadline
+[Is the deadline realistic? Is the project on track?]
+
+## Outcome
+[Has the outcome been achieved? Is it still relevant?]
+
+## Decomposition Opportunities
+[Can this be split into smaller projects?]
+
+## Scratch Pad
+[Your thinking, notes, and observations]
+```
+
+In most sections, just keep the files updated with the current status instead of adding dates everywhere. (For example, avoid stuff like "**March 31 Update:** User added file foo, revealing THING". Instead, modify sections where the presence/absence of THING affected analysis.)
+
+Be thorough but focused. Your goal is to help the user identify what they might be missing or should reconsider. Do not comment on project organization; these can get messy and it's OK.
