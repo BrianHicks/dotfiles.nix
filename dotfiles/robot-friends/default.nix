@@ -8,10 +8,6 @@
     commandsDir = ./commands;
   };
 
-  programs.gemini-cli = {
-    enable = true;
-  };
-
   programs.opencode = {
     enable = true;
     agents = ./opencode/agents;
