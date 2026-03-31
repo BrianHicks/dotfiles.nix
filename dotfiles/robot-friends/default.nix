@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # For claude-code
   nixpkgs.config.allowUnfree = true;
@@ -14,5 +14,5 @@
     commands = ./opencode/commands;
   };
 
-  home.packages = [ pkgs.ollama ];
+  services.ollama.enable = true;
 }
