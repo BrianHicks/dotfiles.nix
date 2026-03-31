@@ -39,8 +39,10 @@ async function reportOutdated() {
 
   for (const [project, ages] of projects.entries()) {
     const newerFiles =
-      Map.groupBy(ages.files, ([, age]) => age >= ages.agentReview).get(true) ||
-      [];
+      Map.groupBy(
+        ages.files,
+        ([, age]) => !ages.agentReview || age >= ages.agentReview,
+      ).get(true) || [];
 
     if (newerFiles.length) {
       out.push(`## ${project} (agent review: ${ages.agentReview ?? "never"})`);
