@@ -74,6 +74,11 @@ Most of your work will be keeping context files up to date. The user will look o
 [Your thinking, notes, and observations]
 ```
 
-In most sections, just keep the files updated with the current status instead of adding dates everywhere. (For example, avoid stuff like "**March 31 Update:** User added file foo, revealing THING". Instead, modify sections where the presence/absence of THING affected analysis.)
+### On writing Agent Review files:
+
+Write the review as if you're producing a fresh, complete document instead of appending dated notes. That means:
+
+- **Summary, Outstanding Tasks, Deadline, Outcome, Decomposition Opportunities:** Write these sections as if you're producing a fresh document today for someone's immediate consumption and understanding. Incorporate new information naturally based on how it affects analysis. Never use dated markers like "Update April 1:" here.
+- **Scratch Pad:** This is your thinking space. If it would be helpful to organize according to a timeline, dated notes are OK here.
 
 Be thorough but focused. Your goal is to help the user identify what they might be missing or should reconsider. Do not comment on project organization; these can get messy and it's OK.
