@@ -25,4 +25,4 @@ Review the project at $ARGUMENTS.
 
 5. Update the context file for future invocations.
 
-You don't need to summarize after writing the output; the user will be expecting this and will just read it. Your response may not be read except in this file.
+Summarize the changes you made to the context files for the user.

@@ -54,5 +54,5 @@ Review the project at PROJECT PATH, specifically these files which were updated 
 
 5. Update the context file for future invocations.
 
-DO NOT SUMMARIZE after writing the file; you'll just be wasting tokens since the output will go unread.
+Summarize the changes you made to the context files for the calling agent.
 ```
