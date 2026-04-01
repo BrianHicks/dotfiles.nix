@@ -63,6 +63,14 @@ async function reportOutdated() {
         out.push(` - ${base}/${path}: updated ${date}`);
       }
       out.push("");
+    } else {
+      out.push(`## ${project} (agent review: ${ages.agentReview})`);
+      out.push("");
+      out.push(
+        `- Agent review should be at ${base}/1 Projects/${project}/Agent Review.md`,
+      );
+      out.push("- Agent review is up to date!");
+      out.push("");
     }
   }
 
