@@ -25,4 +25,4 @@ Review the project at $ARGUMENTS.
 
 5. Update the context file for future invocations.
 
-Summarize the changes you made to the context files for the user.
+Summarize the changes you made to the context files for the user. When updating files, prefer to use the edit tool instead of completely rewriting them so that it's easier for the user to see what you changed.
