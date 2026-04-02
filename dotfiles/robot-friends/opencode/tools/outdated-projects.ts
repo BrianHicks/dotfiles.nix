@@ -8,13 +8,18 @@ export default {
   },
 };
 
+interface Ages {
+  agentReview: Date | undefined;
+  files: Map<string, Date>;
+}
+
 async function reportOutdated() {
   const base = "1 Projects";
   const paths = await readdir(base, {
     recursive: true,
   });
 
-  const projects = new Map();
+  const projects = new Map<string, Ages>();
   for (const path of paths) {
     const project = path.split("/")[0];
     const pathStat = await stat(`${base}/${path}`);
@@ -35,7 +40,8 @@ async function reportOutdated() {
     projects.set(project, current);
   }
 
-  const out = [];
+  const outdated = [];
+  const upToDate = [];
 
   for (const [project, ages] of projects.entries()) {
     const newerFiles =
@@ -45,34 +51,40 @@ async function reportOutdated() {
       ).get(true) || [];
 
     if (newerFiles.length) {
-      out.push(`## ${project} (agent review: ${ages.agentReview ?? "never"})`);
-      out.push("");
-      out.push(
-        `- Main file should exist at ${base}/1 Projects/${project}/${project.split(" ").slice(1).join(" ")}.md`,
-      );
-      if (ages.agentReview) {
-        out.push(
-          `- Agent review should be at ${base}/1 Projects/${project}/Agent Review.md`,
-        );
+      const out = [
+        `## ${project} (agent review: ${date(ages.agentReview)})`,
+        "",
+        `- Main file should exist at ${base}/${project}/${project.split(" ").slice(1).join(" ")}.md`,
+        `- Agent review ${ages.agentReview ? "exists" : "should be created at"} at ${base}/${project}/Agent Review.md`,
+        "",
+        "Updated files since last agent review:",
+        "",
+      ];
+      for (const [path, updatedAt] of newerFiles) {
+        out.push(` - ${base}/${path}: updated ${date(updatedAt)}`);
       }
-      out.push("");
-      out.push("Updated files since last agent review:");
-      out.push("");
-      console.log();
-      for (const [path, date] of newerFiles) {
-        out.push(` - ${base}/${path}: updated ${date}`);
-      }
-      out.push("");
+
+      outdated.push(out.join("\n"));
     } else {
-      out.push(`## ${project} (agent review: ${ages.agentReview})`);
-      out.push("");
-      out.push(
-        `- Agent review should be at ${base}/1 Projects/${project}/Agent Review.md`,
-      );
-      out.push("- Agent review is up to date!");
-      out.push("");
+      upToDate.push(project);
     }
   }
 
-  return out.join("\n");
+  return [
+    "## Summary",
+    `Outdated projects: ${outdated.length}`,
+    `Up to date projects: ${upToDate.length}`,
+    "",
+    "## Up-to-date Projects",
+    upToDate.length ? upToDate.join(", ") : "None!",
+    "",
+    "## Outdated Projects",
+    outdated.length ? outdated.join("\n\n") : "None!",
+  ].join("\n");
 }
+
+function date(d: Date | undefined) {
+  return d ? d.toISOString() : "never";
+}
+
+console.log(await reportOutdated());
