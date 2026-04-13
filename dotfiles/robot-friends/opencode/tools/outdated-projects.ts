@@ -86,5 +86,3 @@ async function reportOutdated() {
 function date(d: Date | undefined) {
   return d ? d.toISOString() : "never";
 }
-
-console.log(await reportOutdated());
