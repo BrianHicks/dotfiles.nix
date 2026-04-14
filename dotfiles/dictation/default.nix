@@ -1,0 +1,7 @@
+{ ... }:
+{
+  homebrew.formulae = [
+    "apfel"
+    "handy"
+  ];
+}

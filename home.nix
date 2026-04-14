@@ -39,6 +39,7 @@
         ./dotfiles/1password
         ./dotfiles/aerospace
         ./dotfiles/chrome
+        ./dotfiles/dictation
         ./dotfiles/diffoscope
         ./dotfiles/direnv
         ./dotfiles/docker-desktop
