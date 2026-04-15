@@ -23,7 +23,6 @@
       profileImports =
         if specialArgs.profile == "home" then
           [
-            ./dotfiles/anki
             ./dotfiles/aws
             ./dotfiles/backrest
             ./dotfiles/bambu-studio
@@ -38,6 +37,7 @@
       commonImports = [
         ./dotfiles/1password
         ./dotfiles/aerospace
+        ./dotfiles/anki
         ./dotfiles/chrome
         ./dotfiles/dictation
         ./dotfiles/diffoscope
