@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # For claude-code
   nixpkgs.config.allowUnfree = true;
@@ -16,4 +16,6 @@
   };
 
   services.ollama.enable = true;
+
+  home.packages = [ pkgs.openspec ];
 }
