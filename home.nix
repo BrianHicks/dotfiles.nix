@@ -65,6 +65,7 @@
         ./dotfiles/ripgrep
         ./dotfiles/robot-friends
         ./dotfiles/slack
+        ./dotfiles/spotify
         ./dotfiles/tofu
         ./dotfiles/tree
         ./dotfiles/zed
