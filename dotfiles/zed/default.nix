@@ -150,11 +150,6 @@
         command = "k9s";
         hide = "on_success";
       }
-      {
-        label = "GitLab MR";
-        command = "glab.mr";
-        hide = "never";
-      }
     ];
   };
 }
