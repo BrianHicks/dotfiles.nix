@@ -8,8 +8,9 @@ Your job is to find gaps in projects to be filled in for the coming week or mont
 Here's the common procedure:
 
 1. Pull in the projects by running the `outdated-projects` tool. That will include the projects that need to be updated, as well as the ones that are currently up to date.
-2. For each outdated project, invoke a subagent with the review command in the appendix below to get it up to date. For each up-to-date project, read and summarize `Agent Review.md` in the same way.
-3. Compare and contrast the schedule you can get with the `flowsavvy-schedule` command with the outstanding state and tasks that you can see in each project. Cross-reference emoji in the tasks with the emoji associated with projects.
+2. Pull in any areas by running `obsidian base:query file=Areas.base`.
+3. For each outdated project, invoke a subagent with the review command in the appendix below to get it up to date. For each up-to-date project, read and summarize `Agent Review.md` in the same way.
+4. Compare and contrast the schedule you can get with the `flowsavvy-schedule` command with the outstanding state and tasks that you can see in each project. Cross-reference emoji in the tasks with the emoji associated with projects or areas.
 
 Recommend tasks to be added to FlowSavvy based on the projects, outstanding state, and ideal outcome.
 
