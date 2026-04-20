@@ -1,0 +1,5 @@
+FROM gemma4:e4b
+
+PARAMETER num_ctx 4096
+PARAMETER temperature 0.7
+PARAMETER repeat_penalty 1.0
