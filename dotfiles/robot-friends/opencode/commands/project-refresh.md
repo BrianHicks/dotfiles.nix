@@ -7,6 +7,8 @@ Review any projects under `1 Projects` which are outdated according to the `ouda
 
 ## For Each Project
 
+Launch a sub-agent to deal with each of these in parallel and then summarize the result for the user. Otherwise, context tends to get muddy and boundaries between projects slip.
+
 1. Read the file previous review agents may have written for context.
 
 2. Read the project's main file (the Markdown file matching the directory name in the project directory) to understand:
