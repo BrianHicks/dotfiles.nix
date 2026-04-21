@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.list-python-tests ];
+  home.packages = [
+    pkgs.list-python-tests
+    pkgs.mypy-coverage-score
+  ];
 
   programs.zsh = {
     enable = true;

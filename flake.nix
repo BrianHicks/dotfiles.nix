@@ -32,6 +32,8 @@
           homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync { };
 
           list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
+
+          mypy-coverage-score = pkgs.callPackage ./pkgs/mypy-coverage-score { };
         })
       ];
 
