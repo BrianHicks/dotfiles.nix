@@ -4,7 +4,7 @@ import { join } from "node:path";
 export default {
   description:
     "Get upcoming calendar events from FlowSavvy, grouped by project and week.",
-  execute() {
+  async execute() {
     const script = join(import.meta.dirname, "flowsavvy-schedule");
     const output = execFileSync(script, ["FlowSavvy", "28"], {
       encoding: "utf-8",
