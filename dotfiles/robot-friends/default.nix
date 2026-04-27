@@ -3,6 +3,8 @@
   # For claude-code
   nixpkgs.config.allowUnfree = true;
 
+  homebrew.formulae = [ "ollama-app" ];
+
   programs.mcp = {
     enable = true;
     servers = {
@@ -35,8 +37,6 @@
     commands = ./opencode/commands;
     tools = ./opencode/tools;
   };
-
-  services.ollama.enable = true;
 
   home.packages = [ pkgs.openspec ];
 }
