@@ -52,6 +52,7 @@
         ./dotfiles/git
         ./dotfiles/glab
         ./dotfiles/gpg
+        ./dotfiles/graphviz
         ./dotfiles/jj
         ./dotfiles/json
         ./dotfiles/k9s
@@ -68,6 +69,7 @@
         ./dotfiles/spotify
         ./dotfiles/tofu
         ./dotfiles/tree
+        ./dotfiles/watch
         ./dotfiles/zed
         ./dotfiles/zoom
         ./dotfiles/zsh
