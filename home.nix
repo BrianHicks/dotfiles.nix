@@ -31,7 +31,7 @@
             ./dotfiles/steam
           ]
         else if specialArgs.profile == "work" then
-          [ ]
+          [ ./dotfiles/mypy-type-work ]
         else
           [ ];
       commonImports = [
