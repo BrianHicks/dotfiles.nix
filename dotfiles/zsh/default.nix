@@ -2,7 +2,12 @@
 {
   home.packages = [
     pkgs.list-python-tests
+
+    # these are more for Python typing work than anything… should they go
+    # elsewhere? Not hurting anything being here for now, though.
     pkgs.mypy-error-count-score
+    pkgs.tokei
+    (pkgs.writeShellScriptBin "mypy-error-count" "mypy --strict . | wc -l")
   ];
 
   programs.zsh = {
