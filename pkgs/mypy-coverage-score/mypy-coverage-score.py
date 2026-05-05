@@ -1,71 +1,139 @@
 #!/usr/bin/env python3
+import ast
 import collections
 import re
 import signal
 import subprocess
-import tempfile
-from os import path
+from pathlib import Path
 
 signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
-# Get commit history with rename detection
-log_output = (
-    subprocess.check_output(["git", "log", "-M", "--pretty=format:", "--name-status"])
-    .decode("utf-8")
+# Enumerate tracked Python files; "migration" paths are excluded to mirror prior behavior.
+ls_output = subprocess.check_output(["git", "ls-files", "*.py"]).decode("utf-8")
+py_files = [
+    Path(line)
+    for line in ls_output.strip().split("\n")
+    if line and "migration" not in line
+]
+
+
+def path_to_module(p: Path) -> str:
+    parts = list(p.with_suffix("").parts)
+    if parts and parts[-1] == "__init__":
+        parts.pop()
+    return ".".join(parts)
+
+
+modules: dict[str, Path] = {path_to_module(p): p for p in py_files}
+
+
+def resolve(name: str) -> str | None:
+    parts = name.split(".")
+    while parts:
+        candidate = ".".join(parts)
+        if candidate in modules:
+            return candidate
+        parts.pop()
+    return None
+
+
+graph: dict[str, set[str]] = {m: set() for m in modules}
+for module, file_path in modules.items():
+    try:
+        tree = ast.parse(file_path.read_text(encoding="utf-8"))
+    except (SyntaxError, UnicodeDecodeError):
+        continue
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                resolved = resolve(alias.name)
+                if resolved and resolved != module:
+                    graph[module].add(resolved)
+        elif isinstance(node, ast.ImportFrom):
+            if node.level > 0:
+                base_parts = module.split(".")[: -node.level] if module else []
+                if node.module:
+                    base_parts.append(node.module)
+                base = ".".join(base_parts)
+            else:
+                base = node.module or ""
+            for alias in node.names:
+                full = f"{base}.{alias.name}" if base else alias.name
+                resolved = resolve(full) or (resolve(base) if base else None)
+                if resolved and resolved != module:
+                    graph[module].add(resolved)
+
+
+def pagerank(
+    graph: dict[str, set[str]],
+    damping: float = 0.85,
+    iterations: int = 100,
+    tol: float = 1e-8,
+) -> dict[str, float]:
+    nodes = list(graph)
+    n = len(nodes)
+    if n == 0:
+        return {}
+    incoming: dict[str, list[str]] = {node: [] for node in nodes}
+    for src, dsts in graph.items():
+        for dst in dsts:
+            incoming[dst].append(src)
+    out_count = {node: len(graph[node]) for node in nodes}
+    rank = {node: 1.0 / n for node in nodes}
+    for _ in range(iterations):
+        dangling = sum(rank[node] for node in nodes if out_count[node] == 0)
+        base = (1.0 - damping) / n + damping * dangling / n
+        new_rank = {node: base for node in nodes}
+        for node in nodes:
+            for src in incoming[node]:
+                new_rank[node] += damping * rank[src] / out_count[src]
+        diff = sum(abs(new_rank[node] - rank[node]) for node in nodes)
+        rank = new_rank
+        if diff < tol:
+            break
+    return rank
+
+
+ranks = pagerank(graph)
+
+# Run mypy --strict and tally errors per module. mypy returns non-zero when
+# errors are present, so we don't use check_call here.
+mypy_result = subprocess.run(
+    ["mypy", "--strict", "."], capture_output=True, text=True
 )
 
-path_counts: collections.Counter[str] = collections.Counter()
-rename_map: dict[str, str] = {}  # old_path -> current_path
+ERROR_RE = re.compile(r"^(.+?):\d+:(?:\d+:)? error: ", re.MULTILINE)
 
-for line in log_output.split("\n"):
-    line = line.strip()
-    if not line:
-        continue
-    parts = line.split("\t")
-    status = parts[0]
+errors_by_module: collections.Counter[str] = collections.Counter()
+for match in ERROR_RE.finditer(mypy_result.stdout):
+    module = path_to_module(Path(match.group(1)))
+    if module in modules:
+        errors_by_module[module] += 1
 
-    if status.startswith("R") and len(parts) >= 3:
-        old_path, new_path = parts[1], parts[2]
-        if old_path.endswith(".py") and new_path.endswith(".py"):
-            canonical = rename_map.get(new_path, new_path)
-            rename_map[old_path] = canonical
-        if new_path.endswith(".py"):
-            canonical = rename_map.get(new_path, new_path)
-            path_counts[canonical] += 1
-    elif len(parts) >= 2:
-        file_path = parts[1]
-        if file_path.endswith(".py"):
-            canonical = rename_map.get(file_path, file_path)
-            path_counts[canonical] += 1
+total_errors = sum(errors_by_module.values()) or 1
 
-# Filter to existing files and convert to module names
-commit_count_by_file: collections.Counter[str] = collections.Counter()
-for file_path, count in path_counts.items():
-    if path.exists(file_path):
-        module_name = file_path.replace("/", ".").replace(".py", "")
-        commit_count_by_file[module_name] = count
-
-with tempfile.TemporaryDirectory("mypy-coverage-score") as dir:
-    subprocess.check_call(["mypy", ".", "--report", "--txt-report", dir])
-    with open(path.join(dir, "index.txt"), "r") as fh:
-        report_contents = fh.read()
-
-COVERAGE_RE = re.compile(r"^\| ([^ ]+) *\| +([\d\.]+)% imprecise \|.+?$", re.MULTILINE)
-
-imprecision_by_file: dict[str, float] = {}
-for line in report_contents.strip().split("\n"):
-    if match := COVERAGE_RE.match(line):
-        imprecision_by_file[match[1]] = float(match[2]) / 100.0
-
+# Scoring: pagerank × error_share — important AND broken bubbles to the top,
+# clean modules score 0 and drop off.
+#
+# Alternative we may revisit: error density (pagerank × errors / LOC).
+# Same shape but penalizes concentration of errors rather than volume —
+# surfaces small, important, very-broken files; demotes large files where
+# a handful of errors are diluted across many lines.
 ranking = sorted(
     (
-        (imprecision_by_file.get(filename, 1.0) * count, imprecision_by_file.get(filename, 1.0), count, filename)
-        for filename, count in commit_count_by_file.items()
-        if "migration" not in filename
+        (
+            ranks.get(module, 0.0) * (count / total_errors),
+            count,
+            count / total_errors,
+            ranks.get(module, 0.0),
+            module,
+        )
+        for module, count in errors_by_module.items()
     ),
     reverse=True,
 )
 
-for score, imprecision, count, filename in ranking:
-    print(f"{score:.2f}\t{filename} ({imprecision * 100:.2f}% imprecision, modified in {count} commits)")
-
+for score, count, share, rank_value, module in ranking:
+    print(
+        f"{score:.6f}\t{module} ({count} errors, {share * 100:.2f}% share, pagerank {rank_value:.4f})"
+    )
