@@ -2,7 +2,7 @@
 {
   home.packages = [
     pkgs.list-python-tests
-    pkgs.mypy-coverage-score
+    pkgs.mypy-error-count-score
   ];
 
   programs.zsh = {

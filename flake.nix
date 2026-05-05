@@ -33,7 +33,7 @@
 
           list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
 
-          mypy-coverage-score = pkgs.callPackage ./pkgs/mypy-coverage-score { };
+          mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
         })
       ];
 
