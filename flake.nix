@@ -11,6 +11,11 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    crit = {
+      url = "github:tomasz-tomczyk/crit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -18,6 +23,7 @@
       nixpkgs,
       home-manager,
       flake-utils,
+      crit,
       ...
     }:
     let
@@ -34,6 +40,8 @@
           list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
 
           mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
+
+          crit = crit.packages.${system}.crit;
         })
       ];
 

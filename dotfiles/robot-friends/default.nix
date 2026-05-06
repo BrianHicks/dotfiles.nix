@@ -27,6 +27,8 @@
     enableMcpIntegration = true;
 
     commandsDir = ./commands;
+
+    plugins = [ "${pkgs.crit.src}/integrations/claude-code" ];
   };
 
   programs.opencode = {
@@ -38,5 +40,8 @@
     tools = ./opencode/tools;
   };
 
-  home.packages = [ pkgs.openspec ];
+  home.packages = [
+    pkgs.openspec
+    pkgs.crit
+  ];
 }
