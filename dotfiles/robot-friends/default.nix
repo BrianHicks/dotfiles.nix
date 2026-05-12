@@ -6,6 +6,10 @@
     enable = true;
     servers = {
       context7.url = "https://mcp.context7.com/mcp";
+      mise = {
+        command = "${pkgs.mise}/bin/mise";
+        args = [ "mcp" ];
+      };
     };
   };
 
