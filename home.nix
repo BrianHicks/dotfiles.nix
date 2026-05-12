@@ -57,6 +57,7 @@
         ./dotfiles/glab
         ./dotfiles/gpg
         ./dotfiles/graphviz
+        ./dotfiles/hyperfine
         ./dotfiles/jj
         ./dotfiles/json
         ./dotfiles/k9s
