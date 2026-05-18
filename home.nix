@@ -1,5 +1,6 @@
 {
   specialArgs,
+  pkgs,
   ...
 }:
 
@@ -89,6 +90,8 @@
     hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
     hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
   };
+
+  nix.package = pkgs.nix;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
