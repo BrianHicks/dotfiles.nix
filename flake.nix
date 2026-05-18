@@ -16,6 +16,11 @@
       url = "github:tomasz-tomczyk/crit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    learning-opportunities = {
+      url = "github:DrCatHicks/learning-opportunities";
+      flake = false;
+    };
   };
 
   outputs =
@@ -24,6 +29,7 @@
       home-manager,
       flake-utils,
       crit,
+      learning-opportunities,
       ...
     }:
     let
@@ -42,6 +48,9 @@
           mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
           crit = crit.packages.${system}.crit;
+
+          # source only
+          learning-opportunities = learning-opportunities;
         })
       ];
 

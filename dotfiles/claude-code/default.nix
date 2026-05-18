@@ -9,7 +9,11 @@
 
     commandsDir = ./commands;
 
-    plugins = [ "${pkgs.crit.src}/integrations/claude-code" ];
+    plugins = [
+      "${pkgs.crit.src}/integrations/claude-code"
+      "${pkgs.learning-opportunities}/learning-opportunities"
+      "${pkgs.learning-opportunities}/learning-opportunities-auto"
+    ];
   };
 
 }

@@ -58,6 +58,22 @@
         "type": "github"
       }
     },
+    "learning-opportunities": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777744774,
+        "narHash": "sha256-GliPWy0AI4mgC6EKJdKESVEpZhIg3qXlPpjbYKcNt+M=",
+        "owner": "DrCatHicks",
+        "repo": "learning-opportunities",
+        "rev": "ae8412fb1b9118bfb2fad9872048f9384f797098",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DrCatHicks",
+        "repo": "learning-opportunities",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1778869304,
@@ -79,6 +95,7 @@
         "crit": "crit",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
+        "learning-opportunities": "learning-opportunities",
         "nixpkgs": "nixpkgs"
       }
     },
