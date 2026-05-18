@@ -48,6 +48,7 @@
         ./dotfiles/diffoscope
         ./dotfiles/direnv
         ./dotfiles/docker-desktop
+        ./dotfiles/difftastic
         ./dotfiles/discord
         ./dotfiles/dropbox
         ./dotfiles/element

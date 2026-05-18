@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.jujutsu = {
     enable = true;
@@ -75,6 +75,13 @@
           "trunk()"
         ];
       };
+
+      ui.diff-formatter = [
+        "${pkgs.difftastic}/bin/difft"
+        "--color=always"
+        "$left"
+        "$right"
+      ];
     };
   };
 
