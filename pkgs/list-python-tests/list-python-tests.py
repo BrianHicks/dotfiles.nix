@@ -10,8 +10,7 @@ test_re = re.compile(
 files = subprocess.check_output(["fd", "--glob", "*test*.py"]).decode("utf-8").split()
 
 for file in files:
-    base = file.replace("/", ".").replace(".py", "")
-    print(base)
+    print(file)
 
     with open(file, "r") as fh:
         current_class = None
@@ -20,9 +19,9 @@ for file in files:
             parts = match.groupdict()
             if parts["cls"]:
                 current_class = parts["cls"]
-                print(f"{base}.{current_class}")
+                print(f"{file}::{current_class}")
             elif parts["test"]:
-                print(f"{base}.{current_class}.{parts['test']}")
+                print(f"{file}::{current_class}.{parts['test']}")
             else:
                 print("regex misconfiguration: neither cls nor test was set")
                 sys.exit(1)
