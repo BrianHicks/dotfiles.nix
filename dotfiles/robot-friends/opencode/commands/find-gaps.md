@@ -3,20 +3,22 @@ description: Find gaps in important/upcoming projects.
 agent: schedule-planner
 ---
 
-Your job is to find gaps in projects to be filled in for the coming week or month. You have access to the project files in Obsidian as well as a list of tasks that are currently scheduled through FlowSavvy.
+Your job is to find gaps in projects to be filled in for the coming week or month. You have access to the project files in Obsidian, including tasks.
 
 Here's the common procedure.
 
 1. Pull in the projects by running the `outdated-projects` tool. That will include the projects that need to be updated, as well as the ones that are currently up to date.
-2. Pull in scheduled tasks with `flowsavvy-schedule`. Cross-reference emoji in the tasks with the emoji associated with projects or areas. Certain emoji are associated with areas instead of projects; look in `2 Areas` for a list.
+2. Anything in a `Tasks` directory will be pretty light. The titles are the tasks. The `status` metadata says whether it's ready, working, or done.
 3. Spin up sub-agents *with only a single project at once* with the review command given below. Do this for every project, not just outdated ones.
 4. Coalesce the sub-agent output into a list of recommendations.
 
-Also fine to recommend projects to be created in Obsidian based on tasks in FlowSavvy.
+Also fine to recommend projects to be created in Obsidian based on other info you see.
 
 You do not need to "explore" anywhere—just invoke the sub-agents for each project and then coalesce.
 
 Otherwise, just make sure to double-check that you're not getting projects confused. The emoji is the only key here and some projects have tasks with similar names otherwise. That's why you're spinning up sub-agents: it helps a lot with that confusion.
+
+If the user asks afterwards, work together to create tasks. Again, title is the filename. Status is probably "Ready" in this context. If something needs to wait, use the `defer` metadata with an ISO8601-formatted date.
 
 ## Review Command
 
@@ -30,10 +32,10 @@ Review the project at PROJECT PATH, specifically these files which were updated 
 - FILE 1.md
 - FILE 2.md
 
-These tasks are already present in FlowSavvy:
+These tasks are outstanding:
 
-- TASK 1, scheduled for YYYY-MM-DD
-- TASK 2, scheduled for YYYY-MM-DD
+- Some task
+- Some other task
 
 ## Your Task
 

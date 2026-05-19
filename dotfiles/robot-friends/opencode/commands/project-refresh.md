@@ -18,13 +18,17 @@ Launch a sub-agent to deal with each of these in parallel and then summarize the
 3. Read and analyze any updates you haven't seen in from the Updates/ folder (may not exist, which is OK)
    - For efficiency's sake, you should generally avoid re-reading files which have not changed since the last agent review.
 
-4. Analyze the project for:
+4. Take note of any tasks in the `Tasks` folder. The tasks are just the file titles; it's normal to have nothing but metadata in the files. Stages: unknown->ready->working->done.
+
+5. Analyze the project for:
    - Language indicating missing tasks: "it would be nice/good to…", "I should…", "TODO", etc.
    - Whether the deadline is coming up and if the project needs prioritization
    - Whether the outcome has been achieved or if the project is too ambitious
    - Any decomposition opportunities if the project is too large
    - Any resources which would be pulled into a PARA resource folder, if the project is complete or very nearly so.
 
-5. Update the context file for future invocations.
+6. Update the context file for future invocations.
 
 Summarize the changes you made to the context files for the user. When updating files, prefer to use the edit tool instead of completely rewriting them so that it's easier for the user to see what you changed.
+
+If the user asks afterwards, work together to create tasks. Again, title is the filename. Status is probably "Ready" in this context. If something needs to wait, use the `defer` metadata with an ISO8601-formatted date.
