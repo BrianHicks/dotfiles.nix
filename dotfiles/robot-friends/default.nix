@@ -18,11 +18,11 @@
     enableZshIntegration = true;
 
     settings = {
-      default_pack = "glados";
+      default_pack = "peon";
       volume = 1.0;
     };
 
-    installPacks = [ "glados" ];
+    installPacks = [ "peon" ];
   };
 
   programs.opencode = {
