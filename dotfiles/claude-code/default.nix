@@ -3,6 +3,8 @@
   # For claude-code
   nixpkgs.config.allowUnfree = true;
 
+  programs.peon-ping.claudeCodeIntegration = true;
+
   programs.claude-code = {
     enable = true;
     enableMcpIntegration = true;

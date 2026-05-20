@@ -90,13 +90,37 @@
         "type": "github"
       }
     },
+    "peon-ping": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779067831,
+        "narHash": "sha256-nfdz9bx7IrOJW7J4LAcbkNXcMp3jUzWvZ4IwOG4ClqE=",
+        "owner": "PeonPing",
+        "repo": "peon-ping",
+        "rev": "8bb290c177fb07dea980aa9fe6e89e68ecea0919",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PeonPing",
+        "repo": "peon-ping",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "crit": "crit",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "learning-opportunities": "learning-opportunities",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "peon-ping": "peon-ping"
       }
     },
     "systems": {

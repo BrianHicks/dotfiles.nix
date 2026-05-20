@@ -13,6 +13,18 @@
     };
   };
 
+  programs.peon-ping = {
+    enable = true;
+    enableZshIntegration = true;
+
+    settings = {
+      default_pack = "glados";
+      volume = 1.0;
+    };
+
+    installPacks = [ "glados" ];
+  };
+
   programs.opencode = {
     enable = true;
     enableMcpIntegration = true;
@@ -21,6 +33,10 @@
     commands = ./opencode/commands;
     tools = ./opencode/tools;
   };
+
+  # if programs.opencode.plugins ever exists, this should move there.
+  home.file.".config/opencode/plugins/peon-ping.ts".source =
+    "${pkgs.peon-ping.src}/adapters/opencode/peon-ping.ts";
 
   home.packages = [
     pkgs.openspec
