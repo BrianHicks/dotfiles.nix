@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  homebrew.formulae = [ "ollama-app" ];
-
   programs.mcp = {
     enable = true;
     servers = {
