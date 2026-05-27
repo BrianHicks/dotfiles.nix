@@ -44,6 +44,7 @@
         ./dotfiles/aerospace
         ./dotfiles/anki
         ./dotfiles/chrome
+        ./dotfiles/container
         ./dotfiles/dictation
         ./dotfiles/diffoscope
         ./dotfiles/direnv
