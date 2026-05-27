@@ -10,6 +10,7 @@
     enableMcpIntegration = true;
 
     commandsDir = ./commands;
+    skills = ../robot-friends/skills;
 
     plugins = [
       "${pkgs.crit.src}/integrations/claude-code"

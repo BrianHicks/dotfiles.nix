@@ -30,6 +30,7 @@
     agents = ./opencode/agents;
     commands = ./opencode/commands;
     tools = ./opencode/tools;
+    skills = ./skills;
 
     settings = {
       provider.omlx = {
