@@ -69,6 +69,7 @@
         ./dotfiles/mise
         ./dotfiles/nix
         ./dotfiles/obsidian
+        ./dotfiles/pv
         ./dotfiles/python
         ./dotfiles/raycast
         ./dotfiles/ripgrep
