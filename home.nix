@@ -36,6 +36,7 @@
             ./dotfiles/claude-code
             ./dotfiles/mcp-work
             ./dotfiles/mypy-type-work
+            ./dotfiles/stencil
           ]
         else
           [ ];
