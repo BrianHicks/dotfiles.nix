@@ -1,7 +1,6 @@
 { ... }:
 {
   homebrew.formulae = [
-    "apfel"
     "handy"
   ];
 }
