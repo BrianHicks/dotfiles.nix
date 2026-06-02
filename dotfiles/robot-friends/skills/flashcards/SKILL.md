@@ -1,185 +1,204 @@
 ---
 name: flashcards
-description: Turn a document into atomic Anki flashcards — question/answer pairs and cloze deletions following spaced-repetition best practices. Use when the user wants to make flashcards, Anki cards, cloze deletions, or study prompts from notes, an article, a paper, or any document.
+description: Lint a set of flashcards against their source material — find coverage gaps, flag weak cards, and write new cards to fill the holes. Use when the user has source material (their notes and/or the original) plus some already-made flashcards (often just question/answer pairs in a file) and wants to know what's missing or weak. Falls back to generating cards from scratch when no deck exists yet.
 ---
 
-Read a document and produce a set of **atomic, brief** spaced-repetition
-flashcards in Anki's import syntax. Writing good cards is an act of
-understanding, not transcription — interpret the material, then encode it.
+You are given **source material** and an **existing set of flashcards**. Your
+job is to audit the deck against the source: find what the source teaches that
+the cards don't yet cover, flag cards that are weak by spaced-repetition
+standards, and write **new, atomic** cards that fill the gaps — in the same
+shape as the cards you were given. Auditing and writing cards is an act of
+understanding, not transcription — interpret the material.
 
-This skill distills three sources; follow all of them:
+This skill distills three sources; use them as the quality bar:
 - Fernando Borretti, *Effective Spaced Repetition*
 - Michael Nielsen, *Augmenting Long-term Memory*
 - Andy Matuschak, *How to Write Good Prompts*
 
+## Inputs — expect both
+
+- **Source material**: the user's own notes, the original article/paper/book, or
+  both. Treat the *notes* as the signal for what the user cares about and how
+  they frame it; treat the *original* as ground truth for facts. Either may be a
+  path passed as an argument, "this file", or pasted text.
+- **Existing flashcards**: most often a plain list of question/answer pairs in a
+  file. Could also be a markdown list/table or an Anki export.
+
+If one input is missing, ask for it. If there genuinely are **no existing
+cards**, fall back to generating from scratch — same quality bar.
+
+## Reading existing cards
+
+Don't assume one fixed format — **infer the card structure from the document**.
+Common shapes:
+
+- A **question line followed by its answer** on the next line(s), pairs often
+  separated by a blank line:
+  ```
+  What is foo bar?
+  Baz.
+  ```
+- A markdown list or table, or `Q:` / `A:` labels, or a heading as the front
+  with the body as the back.
+- **Cloze** sentences containing `{{c1::…}}` (see syntax below).
+- An **Anki export** (tab-separated, `#`-prefixed headers, fields maybe wrapped
+  in HTML). It's self-documenting — read the headers and parse accordingly;
+  treat HTML wrappers as incidental and judge the card's *content*.
+
+When you write new cards, **mirror the structure you were given** so they drop
+straight in — if the input is bare question/answer lines, emit bare
+question/answer lines. The only format detail you must actively manage is cloze
+syntax. Don't impose Anki headers, decks, or GUIDs unless the input clearly uses
+them.
+
 ## Process
 
-1. **Get the document.** If a path or text was passed as an argument, use it.
-   If the user pointed at "this file" or the current buffer, read that. If you
-   have nothing concrete, ask which document before continuing.
-2. **Understand it first.** Do not ankify material you don't understand —
-   you'd just be memorizing noise. Clarify the concepts until you have a solid
-   grasp. If reasoning reveals an unstated insight, capture it too ("cache your
-   insight"), but verify it's correct first.
-3. **Be selective.** Don't ankify everything. Extract the load-bearing ideas:
-   key terms, core claims, central techniques, important relationships, and the
-   *why* behind them. For a quick pass aim for ~5–20 cards; go deeper only when
-   the material justifies it. Skipping the trivia is a feature.
-4. **Decompose into atomic facts.** Break each idea into the smallest
-   standalone pieces. Write *more* cards than feels natural — many tiny cards
-   beat one big one.
-5. **Write each card**, choosing Q&A or cloze (see below), and run it through
-   the checklist.
-6. **Check every card** against the five properties and the anti-patterns
-   before emitting it. Rewrite or drop any that fail.
-7. **Emit** the cards in Anki import format (see Output). Then briefly tell the
-   user the count and how to import.
+1. **Gather both inputs.** Ask if one is missing; generate-from-scratch only if
+   there are no existing cards.
+2. **Understand the source**, then build the **ideal coverage set** — the list
+   of atomic, card-worthy facts the material should teach: key terms, core
+   claims, techniques, important relationships, and the *why* behind them. Lean
+   on the user's notes for what matters most; use the original for accuracy.
+   Interpret — include load-bearing insights even if unstated ("cache your
+   insight"), after verifying they're correct.
+3. **Parse the existing cards** and map each to the fact(s) it covers.
+4. **Find gaps** — walk the ideal set; mark each fact covered / partial /
+   missing (gap checklist below).
+5. **Lint the existing cards** for quality (lint checklist below). Report issues
+   and propose fixes, but **don't rewrite the user's cards** unless they ask —
+   adding new cards is the default, lower-risk action.
+6. **Write new cards** for the gaps: atomic, brief, passing every property, in
+   the same shape as the input.
+7. **Output** the coverage report, the lint findings, and the new cards.
 
-## The five properties (check every card)
+## Gap checklist — what to hunt for
+
+- **Uncovered fact** — an idea in the source with no card at all.
+- **Partial list** — a set where some items are carded and others dropped (e.g.
+  a 3-part definition missing one part). Add the missing items in consistent
+  order.
+- **Missing reverse** — term→definition exists but not definition→term (or vice
+  versa).
+- **Missing meaning** — a bare fact with no "Why?"/"How?" card to anchor it.
+- **Orphan** — an isolated fact not linked to the broader framework; add 1–2
+  integrative cards that connect it to what's already there.
+- **Single framing** — a key idea phrased only one way; add a variant.
+- **Untested nuance** — an important qualifier or condition not captured (e.g.
+  "only if adequately detailed", "regardless of how eloquent").
+- **Source / attribution** — a named source, author, or date worth a card (only
+  if the user cares about it).
+
+## Lint checklist — weak cards to flag (and how to fix)
+
+- **Too broad / not atomic** — combines multiple facts → split it.
+- **Vague answer** — open-ended or "…etc." answers (false-negative risk) →
+  make the target precise.
+- **Clause-level cloze** — a deletion hiding a whole sentence → tighten to the
+  load-bearing keyword (one or two words).
+- **Yes/no or binary** — a "question smell" → rephrase as open-ended ("Under
+  what conditions…?", "What does X mean?").
+- **Pattern-matchable** — a distinctive cue gives the answer away mechanically →
+  remove the giveaway; keep it short and plain.
+- **Ambiguous / not self-contained** — couldn't be answered months later
+  without the source → add just enough context, or namespace it ("In sensemaking,
+  …").
+- **Over-specified** — needless context makes the knowledge feel narrower than
+  it is → trim to what disambiguates.
+- **Unqualified claim** — a contestable finding stated as fact → reframe as a
+  claim ("What does X *claim*…?").
+
+## The quality bar — five properties (every card must pass)
 
 From Matuschak — a good card is:
 
-1. **Focused** — one detail per card. Too much detail dulls concentration and
-   produces incomplete recall.
-2. **Precise** — vague questions get vague answers. Say exactly what you want.
-3. **Consistent** — the card should elicit the *same* answer every time.
-   Inconsistent prompts cause interference and erode related memories.
-4. **Tractable** — you should be able to answer it ~90% of the time. If it's
-   too hard, break it down or add a cue.
-5. **Effortful** — the answer must require genuine retrieval; you shouldn't be
-   able to trivially infer it from the question's wording.
+1. **Focused** — one detail per card; too much detail dulls recall.
+2. **Precise** — vague questions get vague answers; say exactly what you want.
+3. **Consistent** — elicits the *same* answer every time (inconsistency causes
+   interference and erodes related memories).
+4. **Tractable** — answerable ~90% of the time; if too hard, break it down or
+   add a cue.
+5. **Effortful** — requires genuine retrieval; the answer can't be trivially
+   inferred from the wording.
 
-## Core rules
+## Card-craft rules (the standard you audit and write to)
 
-**Atomicity & brevity — the headline rule.**
-Cards should be short and refer to as little information as possible. One fact
-per card. Larger cards are harder to recall and create grading ambiguity (right
-on part, wrong on part). When in doubt, split.
+- **Atomic & brief — the headline rule.** One fact per card; refer to as little
+  as possible. When in doubt, split. Write *more* cards than feels natural.
+- **Never put a whole list in one card.** One cloze per item; consistent order
+  so you learn the set's "shape". For sequences add adjacency ("what comes after
+  X?") and position cards.
+- **Open-ended categories** — don't ask for "the complete list." Use
+  instance→category, pattern-recognition, and generative ("name an example")
+  cards instead.
+- **Both directions, multiple framings** — term→definition *and*
+  definition→term; formal *and* informal phrasings.
+- **Add meaning** — pair facts with "Why?"/"How?" cards. For concepts probe
+  several lenses: attributes, similarities/differences vs. adjacent ideas,
+  parts/wholes, causes/effects, significance, and what it is *not*.
+- **No orphans** — connect new facts into a nucleus of related cards.
+- **Redundancy across the deck is fine** — memory is frequency × volume; each
+  card brief, the deck as repetitive as you like.
+- **Cloze vs. Q&A** — cloze when the fact lives naturally inside a sentence
+  (terminology in context, a value in a memorable statement, one list item);
+  Q&A for definitions, why/how, relationships, procedures. Many facts deserve
+  both.
 
-**Don't memorize a list in one card.**
-Break enumerations into individual cards — typically one cloze per item. Keep
-the items in a *consistent order* so you also learn the "shape" of the set. For
-ordered sequences, additionally make adjacency cards ("what comes after X?",
-"what comes before X?") and position cards.
+## Cloze syntax
 
-**Open-ended categories: don't ask for "the complete list."**
-For sets with no fixed membership, write instance→category cards ("X is an
-example of what?"), pattern-recognition cards ("what do these instances share?"),
-and generative cards ("name an example of Y" — answered from memory or fresh).
+Fill-in-the-blank cards use Anki's cloze notation, which you should produce
+directly:
 
-**Ask in both directions and multiple ways.**
-For a term and its definition, make both term→definition and
-definition→term. Ask for formal *and* informal phrasings. Multiple framings of
-one idea build richer associative paths and reduce pattern-matching.
+- `{{c1::answer}}` hides "answer"; `{{c1::answer::hint}}` shows a hint in the
+  blank.
+- Different numbers → **separate** cards from one sentence
+  (`The {{c1::mitochondria}} is the {{c2::powerhouse}} of the cell.` → 2 cards).
+- The **same** number → revealed **together** on one card (for tightly-coupled
+  pieces).
+- Keep each deletion to one or two words. Put arbitrary mnemonics in parentheses
+  in the answer for elaborative encoding.
 
-**Add meaning, not just facts.**
-Pair raw facts with "Why?" / "How?" / explanation cards. For concepts, probe
-multiple lenses: attributes, similarities and differences vs. adjacent ideas,
-parts/wholes, causes/effects, significance, and what the concept is *not*.
+## Output
 
-**Avoid orphans — build a nucleus.**
-Never leave a single isolated card on a tangential topic; it decays fast. Add
-2–3 connected cards and some integrative cards that link the new fact to things
-already known. Build from simple facts up to higher-level connections.
+1. **Coverage report** — lead with what matters. A compact list/table:
+   - each key fact → **covered / partial / missing**, and
+   - each lint finding → which existing card, the problem, the suggested fix.
+2. **New cards** — the gap-filling cards **only**, in the **same shape as the
+   input** (bare question/answer pairs if that's what you got; cloze sentences
+   where fill-in-the-blank fits). Show them inline, and write them to a file
+   next to the input (e.g. `<name>-additions.md`) so they're easy to merge.
+3. **Wrap up** — report the counts (facts checked, gaps filled, weak cards
+   flagged) and offer to apply the proposed rewrites to existing cards if the
+   user wants them.
 
-**Redundancy across the deck is good.**
-Memory is frequency × volume. Each *card* stays brief, but the *deck* can repeat
-a concept from many angles freely. Don't feel guilty about overlap.
+## Worked example (lint + gap-fill)
 
-## Anti-patterns — reject cards that do these
+Source note: *"The ideal response: decide without being emotionally affected,
+without FOMO, and without panic."* Existing card (bare Q/A pairs):
 
-- **No yes/no or binary questions.** "Is X true?" is a smell. Rephrase as
-  open-ended: "Under what conditions is X true?", "What does X mean?"
-- **No pattern-matching shortcuts.** Don't include unusual/distinctive words or
-  giveaway cues that let you answer mechanically without recalling the fact.
-  Keep questions short and simple.
-- **No ambiguity (false negatives).** The card must be self-contained. Test:
-  *could I answer this months from now without the source?* If a reasonable
-  alternative answer exists, add just enough context to rule it out.
-- **Namespace when domains collide.** If you're learning similar things in two
-  contexts, name the context: "In Emacs, how do you delete a word?" not a bare
-  "how do you delete a word?".
-- **Don't over-specify.** Adding needless context can make knowledge feel more
-  narrow/provincial than it is. Include enough to disambiguate, no more.
-- **Qualify claims.** Frame contestable findings as claims, not facts: "What
-  does Jones 2011 *claim* the average age is?" rather than stating it outright.
-- **Don't ankify what you don't understand**, and don't transcribe verbatim —
-  interpret.
-
-## Q&A vs. cloze — which to use
-
-Use **cloze deletion** when the fact lives naturally inside a sentence or phrase:
-terminology in context, a value or name within a memorable statement, or one
-item of a list. Cloze keeps surrounding context visible, which aids recall.
-
-Use **Q&A (Basic)** when you want a direct prompt→response: definitions (both
-directions), why/how questions, relationships, and procedures.
-
-Many facts are worth encoding *both* ways across the deck. Prefer whichever
-makes the retrieval most focused and effortful.
-
-## Anki syntax reference
-
-**Cloze deletion** (Cloze note type, one `Text` field):
-- `{{c1::hidden answer}}` — hides "hidden answer".
-- `{{c1::answer::hint}}` — shows "hint" in place of the blank.
-- Different numbers make **separate** cards from one note:
-  `The {{c1::mitochondria}} is the {{c2::powerhouse}} of the cell.` → 2 cards.
-- The **same** number reveals together: `{{c1::a}}` and `{{c1::b}}` hide on the
-  same card. Use this to blank tightly-coupled pieces at once.
-- Keep each deletion small — one or two words is ideal (atomicity applies here
-  too). Avoid blanking so much of the sentence that it's unanswerable.
-- Put arbitrary mnemonics or vivid associations in parentheses in the answer to
-  aid elaborative encoding.
-
-**Q&A** (Basic note type): a `Front` and a `Back` field.
-
-## Output format
-
-Emit cards as Anki text-import blocks with header lines so they import cleanly.
-Use **tab** as the field separator. Keep each note on a single line (use `<br>`
-for an intentional line break and set `#html:true` if you do).
-
-Produce up to two fenced code blocks — one per note type used — and also write
-each to a file in the working directory (`flashcards-basic.txt`,
-`flashcards-cloze.txt`) so the user can import directly.
-
-**Basic (Q&A):**
 ```
-#separator:tab
-#html:false
-#notetype:Basic
-#deck:Default
-What command creates a soft link?	ln -s
-In `ln -s`, which path comes first — target or link name?	the target (the existing file)
+What is the ideal response to accelerating change?
+Deciding without being emotionally affected and panicking.
 ```
 
-**Cloze:**
+Findings:
+- **Partial list** — folds two of three qualities together and **drops "FOMO"**.
+- **Not atomic** — three qualities in one prompt; recall will be incomplete.
+
+Fix = add atomic cards in the same bare Q/A shape, leaving the original in place:
+
 ```
-#separator:tab
-#html:false
-#notetype:Cloze
-#deck:Default
-A soft link is created with {{c1::ln -s}}.
-The {{c1::target}} path is given before the {{c2::link name}} in `ln -s`.
+The ideal response lets you decide without being what (1 of 3)?
+Emotionally affected.
+
+The ideal response lets you decide without what feeling (2 of 3)?
+FOMO.
+
+The ideal response lets you decide without what (3 of 3)?
+Distraction and panic.
 ```
 
-Tell the user: in Anki, **File → Import**, pick the file; the headers set the
-note type, deck, and separator automatically. Mention how many cards you made
-and offer to revise any (watch for cards that make you mentally "sigh").
+Or, where a sentence carries the idea better, as cloze:
 
-## Worked example
-
-Source sentence: *"In 1856, working with pea plants, Mendel discovered that
-traits are inherited as discrete units, later called genes."*
-
-Too big (reject): `Front: Tell me about Mendel's 1856 discovery / Back: …`.
-
-Atomic cards instead:
-- Basic: `Who discovered that traits are inherited as discrete units?` → `Mendel`
-- Basic: `What organism did Mendel use in his inheritance experiments?` → `pea plants`
-- Basic: `In what year did Mendel begin his inheritance work?` → `1856`
-- Basic (reverse): `What did Mendel call the discrete units of inheritance (later named genes)?` → `discrete units / "factors"`
-- Cloze: `Mendel worked with {{c1::pea plants}} to study inheritance.`
-- Cloze: `Mendel showed traits are inherited as {{c1::discrete units}}, later called {{c2::genes}}.`
-- Meaning (Basic): `Why was Mendel's "discrete units" idea significant?` → `it contradicted blending inheritance — traits don't average, they pass on intact`
+```
+The ideal response is deciding without being {{c1::emotionally affected}}, without {{c2::FOMO}}, and without {{c3::distraction and panic}}.
+```
