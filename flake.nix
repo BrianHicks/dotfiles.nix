@@ -1,9 +1,13 @@
 {
-  description = "Home Manager configuration of brianhicks";
+  description = "Dotfiles galore!";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    disko.url = "github:nix-community/disko";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -41,8 +45,10 @@
     }:
     let
       system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-      overlays = [
+
+      mkOverlays = system:
+        let pkgs = import nixpkgs { inherit system };
+	in [
         (final: prev: {
           git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
 
@@ -60,15 +66,15 @@
 
           # source only
           learning-opportunities = learning-opportunities;
-        })
+        });
       ];
 
-      mkProfile =
-        profile:
+      mkHomeConfiguration =
+        system: profile:
         home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            inherit overlays;
+	    inherit system;
+	    overlays = mkOverlays system;
           };
 
           # Specify your home configuration modules here, for example,
@@ -88,8 +94,8 @@
     in
     {
       homeConfigurations = {
-        home = mkProfile "home";
-        work = mkProfile "work";
+        home = mkHomeConfiguration "aarch64-darwin" "home";
+        work = mkHomeConfiguration "aarch64-darwin" "work";
       };
     }
     // flake-utils.lib.eachDefaultSystem (
