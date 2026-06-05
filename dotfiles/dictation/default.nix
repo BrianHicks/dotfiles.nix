@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, pkgs, ... }:
 {
-  homebrew.formulae = [
+  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [
     "handy"
   ];
 }
