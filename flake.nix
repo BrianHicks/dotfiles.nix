@@ -41,13 +41,14 @@
       crit,
       learning-opportunities,
       peon-ping,
+      disko,
       ...
     }:
     let
       system = "aarch64-darwin";
 
       mkOverlays = system:
-        let pkgs = import nixpkgs { inherit system };
+        let pkgs = import nixpkgs { inherit system; };
 	in [
         (final: prev: {
           git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
@@ -66,7 +67,7 @@
 
           # source only
           learning-opportunities = learning-opportunities;
-        });
+        })
       ];
 
       mkHomeConfiguration =
@@ -91,12 +92,19 @@
             inherit profile;
           };
         };
+
+      mkHost = hostPath: nixpkgs.lib.nixosSystem {
+        system = "x86-64_linux";
+	modules = [ disko.nixosModules.disko hostPath ];
+      };
     in
     {
       homeConfigurations = {
         home = mkHomeConfiguration "aarch64-darwin" "home";
         work = mkHomeConfiguration "aarch64-darwin" "work";
       };
+
+      nixosConfigurations.avior = mkHost ./machines/avior;
     }
     // flake-utils.lib.eachDefaultSystem (
       system:
@@ -107,7 +115,7 @@
           # we need overlays even in the dev-shell home-manager because we want
           # to use the exact home-manager version from the flake, not whatever
           # one happens to be upstream in nixpkgs.
-          inherit overlays;
+	  overlays = mkOverlays system;
         };
       in
       {
