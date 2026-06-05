@@ -27,12 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-
-    serena = {
-      url = "github:oraios/serena";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
   };
 
   outputs =
@@ -43,7 +37,6 @@
       crit,
       learning-opportunities,
       peon-ping,
-      serena,
       ...
     }:
     let
@@ -64,8 +57,6 @@
           crit = crit.packages.${system}.crit;
 
           peon-ping = peon-ping.packages.${system}.default;
-
-          serena = serena.packages.${system}.default;
 
           # source only
           learning-opportunities = learning-opportunities;

@@ -8,10 +8,7 @@
         command = "${pkgs.mise}/bin/mise";
         args = [ "mcp" ];
       };
-      serena = {
-        command = "${pkgs.serena}/bin/serena";
-        args = [ "start-mcp-server" ];
-      };
+
     };
   };
 
