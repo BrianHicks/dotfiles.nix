@@ -44,7 +44,7 @@
         ./dotfiles/1password
         ./dotfiles/aerospace
         ./dotfiles/anki
-        ./dotfiles/chrome
+        ./dotfiles/chromium
         ./dotfiles/container
         ./dotfiles/dictation
         ./dotfiles/diffoscope
@@ -54,7 +54,6 @@
         ./dotfiles/discord
         ./dotfiles/dropbox
         ./dotfiles/element
-        ./dotfiles/firefox
         ./dotfiles/fzf
         ./dotfiles/ghostty
         ./dotfiles/git
