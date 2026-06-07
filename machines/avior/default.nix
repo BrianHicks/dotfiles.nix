@@ -16,7 +16,7 @@
 
   hardware.system76.enableAll = true;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "avior"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -62,22 +62,27 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #   ];
-  # };
   users.users = {
     anne.isNormalUser = true;
 
     brian = {
       isNormalUser = true;
       extraGroups = ["wheel"]; # sudo
+      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCEhx+zxZ5XKDGT8Sp4BRJcsQ0bwulek6RSIH8O1zL" ];
+      packages = [ pkgs.neovim pkgs.git ];
     };
 
-    nate.isNormalUser = true;
+    nate = {
+      isNormalUser = true;
+    };
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
   };
 
   # programs.firefox.enable = true;
@@ -133,4 +138,3 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }
-
