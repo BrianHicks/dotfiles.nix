@@ -72,6 +72,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCEhx+zxZ5XKDGT8Sp4BRJcsQ0bwulek6RSIH8O1zL"
       ];
+      shell = pkgs.zsh;
       packages = [
         pkgs.neovim
         pkgs.git
@@ -94,6 +95,8 @@
       extra-experimental-features = nix-command flakes
     '';
   };
+
+  programs.zsh.enable = true;
 
   services.openssh = {
     enable = true;
