@@ -85,7 +85,15 @@
     };
   };
 
-  nix.settings.trusted-users = [ "brian" ];
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      trusted-users = [ "brian" ];
+    };
+    extraOptions = ''
+      extra-experimental-features = nix-command flakes
+    '';
+  };
 
   services.openssh = {
     enable = true;
