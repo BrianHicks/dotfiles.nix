@@ -85,6 +85,8 @@
     };
   };
 
+  nix.settings.trusted-users = [ "brian" ];
+
   services.openssh = {
     enable = true;
     settings = {
