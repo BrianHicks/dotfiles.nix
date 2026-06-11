@@ -1,14 +1,15 @@
 {
   specialArgs,
   pkgs,
+  lib,
   ...
 }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "brianhicks";
-  home.homeDirectory = "/Users/brianhicks";
+  home.username = if pkgs.stdenv.isDarwin then "brianhicks" else "brian";
+  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/brianhicks" else "/home/brian";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -87,15 +88,22 @@
     in
     commonImports ++ profileImports;
 
-  home.shellAliases = {
-    # Home-manager commands
-    hm = "home-manager";
-    hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
-    hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
-    hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
-  };
+  home.shellAliases =
+    if pkgs.stdenv.isDarwin then
+      {
+        # Home-manager commands
+        hm = "home-manager";
+        hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+        hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+        hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+      }
+    else
+      {
+        hmb = "nixos-rebuild build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.hostname}";
+        hms = "nixos-rebuild switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.hostname} --sudo";
+      };
 
-  nix.package = pkgs.nix;
+  nix.package = lib.mkIf pkgs.stdenv.isDarwin pkgs.nix;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

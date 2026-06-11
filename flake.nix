@@ -43,39 +43,40 @@
       peon-ping,
       disko,
       ...
-    }:
+    }@inputs:
     let
-      system = "aarch64-darwin";
+      mkOverlays =
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        [
+          (final: prev: {
+            git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
 
-      mkOverlays = system:
-        let pkgs = import nixpkgs { inherit system; };
-	in [
-        (final: prev: {
-          git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
+            git-hclone = pkgs.callPackage ./pkgs/git-hclone { };
 
-          git-hclone = pkgs.callPackage ./pkgs/git-hclone { };
+            homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync { };
 
-          homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync { };
+            list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
 
-          list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
+            mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
-          mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
+            crit = crit.packages.${system}.crit;
 
-          crit = crit.packages.${system}.crit;
+            peon-ping = peon-ping.packages.${system}.default;
 
-          peon-ping = peon-ping.packages.${system}.default;
-
-          # source only
-          learning-opportunities = learning-opportunities;
-        })
-      ];
+            # source only
+            learning-opportunities = learning-opportunities;
+          })
+        ];
 
       mkHomeConfiguration =
         system: profile:
         home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
-	    inherit system;
-	    overlays = mkOverlays system;
+            inherit system;
+            overlays = mkOverlays system;
           };
 
           # Specify your home configuration modules here, for example,
@@ -93,10 +94,35 @@
           };
         };
 
-      mkHost = hostPath: nixpkgs.lib.nixosSystem {
-        system = "x86-64_linux";
-	modules = [ disko.nixosModules.disko hostPath ];
-      };
+      mkHost =
+        hostPath:
+        nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = mkOverlays system;
+            config.allowUnfree = true;
+          };
+          modules = [
+            disko.nixosModules.disko
+            hostPath
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.sharedModules = [
+                ./modules/homebrew
+                peon-ping.homeManagerModules.default
+              ];
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                profile = "home";
+                hostname = baseNameOf hostPath;
+              };
+              home-manager.users.brian = ./home.nix;
+            }
+          ];
+        };
     in
     {
       homeConfigurations = {
@@ -115,7 +141,7 @@
           # we need overlays even in the dev-shell home-manager because we want
           # to use the exact home-manager version from the flake, not whatever
           # one happens to be upstream in nixpkgs.
-	  overlays = mkOverlays system;
+          overlays = mkOverlays system;
         };
       in
       {

@@ -1,11 +1,17 @@
-{ config, lib, pkgs, specialArgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  specialArgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./disk-config.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./disk-config.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -67,13 +73,20 @@
 
     brian = {
       isNormalUser = true;
-      extraGroups = ["wheel"]; # sudo
-      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCEhx+zxZ5XKDGT8Sp4BRJcsQ0bwulek6RSIH8O1zL" ];
-      packages = [ pkgs.neovim pkgs.git ];
+      extraGroups = [ "wheel" ]; # sudo
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCEhx+zxZ5XKDGT8Sp4BRJcsQ0bwulek6RSIH8O1zL"
+      ];
+      packages = [
+        pkgs.neovim
+        pkgs.git
+        pkgs.prismlauncher
+      ];
     };
 
     nate = {
       isNormalUser = true;
+      packages = [ pkgs.prismlauncher ];
     };
   };
 
@@ -83,6 +96,14 @@
       PasswordAuthentication = false;
       PermitRootLogin = "no";
     };
+  };
+
+  # Stop the computer from going to sleep while I'm trying to run things on it.
+  systemd.sleep.settings.Sleep = {
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspend = "no";
+    AllowSuspendThenHibernate = "no";
   };
 
   # programs.firefox.enable = true;
