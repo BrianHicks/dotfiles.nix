@@ -25,12 +25,6 @@
       url = "github:DrCatHicks/learning-opportunities";
       flake = false;
     };
-
-    peon-ping = {
-      url = "github:PeonPing/peon-ping";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
   };
 
   outputs =
@@ -40,7 +34,6 @@
       flake-utils,
       crit,
       learning-opportunities,
-      peon-ping,
       disko,
       ...
     }@inputs:
@@ -64,8 +57,6 @@
 
             crit = crit.packages.${system}.crit;
 
-            peon-ping = peon-ping.packages.${system}.default;
-
             # source only
             learning-opportunities = learning-opportunities;
           })
@@ -84,7 +75,6 @@
           modules = [
             ./home.nix
             ./modules/homebrew
-            peon-ping.homeManagerModules.default
           ];
 
           # Optionally use extraSpecialArgs
@@ -112,7 +102,6 @@
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
                 ./modules/homebrew
-                peon-ping.homeManagerModules.default
               ];
               home-manager.extraSpecialArgs = {
                 inherit inputs;

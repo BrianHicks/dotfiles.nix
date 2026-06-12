@@ -2,9 +2,7 @@
   "nodes": {
     "crit": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1781080231,
@@ -58,9 +56,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1781189114,
@@ -140,29 +136,6 @@
         "type": "github"
       }
     },
-    "peon-ping": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1780931011,
-        "narHash": "sha256-dAUSsQ0dZN60QZ2H9s9N75UW1dTaEly7dzkAfVXYRZw=",
-        "owner": "PeonPing",
-        "repo": "peon-ping",
-        "rev": "dacbbafc332484ffa3c17568323eb91ecbbadde9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PeonPing",
-        "repo": "peon-ping",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "crit": "crit",
@@ -171,8 +144,7 @@
         "home-manager": "home-manager",
         "learning-opportunities": "learning-opportunities",
         "nixos": "nixos",
-        "nixpkgs": "nixpkgs_2",
-        "peon-ping": "peon-ping"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
