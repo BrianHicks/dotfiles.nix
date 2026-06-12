@@ -23,7 +23,7 @@
     '';
 
     plugins = [
-      "${pkgs.crit.src}/integrations/claude-code"
+      "${pkgs.crit.src}/cmd/crit/integrations/claude-code"
       "${pkgs.learning-opportunities}/learning-opportunities"
       "${pkgs.learning-opportunities}/learning-opportunities-auto"
     ];
