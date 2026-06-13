@@ -6,6 +6,7 @@
 {
   imports = [
     ./no-sleep.nix
+    ./ollama.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./disk-config.nix
