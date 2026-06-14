@@ -25,6 +25,11 @@
       url = "github:DrCatHicks/learning-opportunities";
       flake = false;
     };
+
+    ik-llama-cpp = {
+      url = "github:ikawrakow/ik_llama.cpp";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -35,6 +40,7 @@
       crit,
       learning-opportunities,
       disko,
+      ik-llama-cpp,
       ...
     }@inputs:
     let
@@ -56,6 +62,20 @@
             mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
             crit = crit.packages.${system}.crit;
+
+            ik-llama-cpp = (
+              ik-llama-cpp.packages.${system}.default.overrideAttrs (old: {
+                NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -mavx2 -mavxvnni -mfma -mf16c";
+
+                cmakeFlags = old.cmakeFlags ++ [
+                  "-DGGML_AVX2=ON"
+                  "-DGGML_AVX_VNNI=ON"
+                  "-DGGML_FMA=ON"
+                  "-DGGML_F16C=ON"
+                  "-DGGML_OPENMP=ON"
+                ];
+              })
+            );
 
             # source only
             learning-opportunities = learning-opportunities;

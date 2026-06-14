@@ -79,6 +79,7 @@
         pkgs.neovim
         pkgs.git
         pkgs.prismlauncher
+        pkgs.ik-llama-cpp
       ];
     };
 
