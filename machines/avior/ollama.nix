@@ -19,6 +19,17 @@
     package = pkgs.ik-llama-cpp;
   };
 
+  # TODO: don't use this forever!
+  systemd.services."user@1000".serviceConfig.LimitNOFILE = "unlimited";
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
+  ];
+
   services.ollama = {
     enable = false;
     # looks like the default uses 15 CPUs by default (of 16 on Avior)
