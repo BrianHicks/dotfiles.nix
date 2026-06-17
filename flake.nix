@@ -93,7 +93,7 @@
           # Specify your home configuration modules here, for example,
           # the path to your home.nix.
           modules = [
-            ./home.nix
+            ./homes/brian.nix
             ./modules/homebrew
           ];
 
@@ -128,7 +128,10 @@
                 profile = "home";
                 hostname = baseNameOf hostPath;
               };
-              home-manager.users.brian = ./home.nix;
+
+              home-manager.users.anne = ./homes/anne.nix;
+              home-manager.users.brian = ./homes/brian.nix;
+              home-manager.users.nate = ./homes/nate.nix;
             }
           ];
         };

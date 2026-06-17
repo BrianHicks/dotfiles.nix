@@ -25,65 +25,65 @@
       profileImports =
         if specialArgs.profile == "home" then
           [
-            ./dotfiles/aws
-            ./dotfiles/backrest
-            ./dotfiles/bambu-studio
-            ./dotfiles/gh
-            ./dotfiles/signal
-            ./dotfiles/steam
+            ../dotfiles/aws
+            ../dotfiles/backrest
+            ../dotfiles/bambu-studio
+            ../dotfiles/gh
+            ../dotfiles/signal
+            ../dotfiles/steam
           ]
         else if specialArgs.profile == "work" then
           [
-            ./dotfiles/claude-code
-            ./dotfiles/mcp-work
-            ./dotfiles/mypy-type-work
-            ./dotfiles/podman-desktop
-            ./dotfiles/stencil
+            ../dotfiles/claude-code
+            ../dotfiles/mcp-work
+            ../dotfiles/mypy-type-work
+            ../dotfiles/podman-desktop
+            ../dotfiles/stencil
           ]
         else
           [ ];
       commonImports = [
-        ./dotfiles/1password
-        ./dotfiles/aerospace
-        ./dotfiles/anki
-        ./dotfiles/chromium
-        ./dotfiles/container
-        ./dotfiles/dictation
-        ./dotfiles/diffoscope
-        ./dotfiles/direnv
-        ./dotfiles/docker-desktop
-        ./dotfiles/difftastic
-        ./dotfiles/discord
-        ./dotfiles/dropbox
-        ./dotfiles/element
-        ./dotfiles/fzf
-        ./dotfiles/ghostty
-        ./dotfiles/git
-        ./dotfiles/glab
-        ./dotfiles/gpg
-        ./dotfiles/graphviz
-        ./dotfiles/hyperfine
-        ./dotfiles/jj
-        ./dotfiles/json
-        ./dotfiles/k9s
-        ./dotfiles/lazygit
-        ./dotfiles/lf
-        ./dotfiles/mise
-        ./dotfiles/nix
-        ./dotfiles/obsidian
-        ./dotfiles/pv
-        ./dotfiles/python
-        ./dotfiles/raycast
-        ./dotfiles/ripgrep
-        ./dotfiles/robot-friends
-        ./dotfiles/slack
-        ./dotfiles/spotify
-        ./dotfiles/tofu
-        ./dotfiles/tree
-        ./dotfiles/watch
-        ./dotfiles/zed
-        ./dotfiles/zoom
-        ./dotfiles/zsh
+        ../dotfiles/1password
+        ../dotfiles/aerospace
+        ../dotfiles/anki
+        ../dotfiles/chromium
+        ../dotfiles/container
+        ../dotfiles/dictation
+        ../dotfiles/diffoscope
+        ../dotfiles/direnv
+        ../dotfiles/docker-desktop
+        ../dotfiles/difftastic
+        ../dotfiles/discord
+        ../dotfiles/dropbox
+        ../dotfiles/element
+        ../dotfiles/fzf
+        ../dotfiles/ghostty
+        ../dotfiles/git
+        ../dotfiles/glab
+        ../dotfiles/gpg
+        ../dotfiles/graphviz
+        ../dotfiles/hyperfine
+        ../dotfiles/jj
+        ../dotfiles/json
+        ../dotfiles/k9s
+        ../dotfiles/lazygit
+        ../dotfiles/lf
+        ../dotfiles/mise
+        ../dotfiles/nix
+        ../dotfiles/obsidian
+        ../dotfiles/pv
+        ../dotfiles/python
+        ../dotfiles/raycast
+        ../dotfiles/ripgrep
+        ../dotfiles/robot-friends
+        ../dotfiles/slack
+        ../dotfiles/spotify
+        ../dotfiles/tofu
+        ../dotfiles/tree
+        ../dotfiles/watch
+        ../dotfiles/zed
+        ../dotfiles/zoom
+        ../dotfiles/zsh
       ];
     in
     commonImports ++ profileImports;
