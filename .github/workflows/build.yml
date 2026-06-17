@@ -26,4 +26,4 @@ jobs:
         with:
           name: brianhicks-dotfiles
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - run: nix build --print-build-logs .#nixosConfigurations.avior
+      - run: nix build --print-build-logs .#nixosConfigurations.avior.config.system.build.toplevel
