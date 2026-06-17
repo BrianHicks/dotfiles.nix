@@ -8,6 +8,13 @@
 
       model = "Qwen3.6-35B-A3B-IQ4_KS_mixed.gguf";
 
+      # reduce repetition etc
+      temp = 0.7;
+      top-k = 20;
+      top-p = 0.95;
+      min-p = 0;
+      presence-penalty = 1.5;
+
       special = true;
       jinja = true;
       ctx-size = 23768;
@@ -15,7 +22,6 @@
       merge-up-gate-experts = true;
       mlock = true;
       run-time-repack = true;
-      temp = 0.7;
       cache-type-k = "q8_0";
       cache-type-v = "q8_0";
       scheduler_async = true;
