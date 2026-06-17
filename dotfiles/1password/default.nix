@@ -5,8 +5,5 @@
     "1password-cli"
   ];
 
-  home.packages = lib.mkIf (!pkgs.stdenv.isDarwin) [
-    pkgs._1password-gui
-    pkgs._1password-cli
-  ];
+  # On Linux, this should be enabled at the system level
 }

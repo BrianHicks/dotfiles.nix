@@ -5,12 +5,12 @@
 
 {
   imports = [
-    ./no-sleep.nix
-    ./local-ai
-    ./steam.nix
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./_1password.nix
     ./disk-config.nix
+    ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./local-ai
+    ./no-sleep.nix
+    ./steam.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
