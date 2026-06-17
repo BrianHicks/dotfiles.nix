@@ -43,7 +43,7 @@
   };
 
   services.librechat = {
-    enable = true;
+    enable = false; # enabling makes GHA build Mongo; heads up!
     enableLocalDB = true;
     credentialsFile = "/run/secrets/librechat"; # TODO: back up
     env = {
