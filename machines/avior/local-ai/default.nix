@@ -30,6 +30,12 @@
   # (20gb) just to be safe.
   systemd.services.llama-cpp.serviceConfig.LimitMEMLOCK = "20000000000";
 
+  services.open-webui = {
+    enable = true;
+    host = "192.168.0.240";
+    openFirewall = true;
+  };
+
   services.librechat = {
     enable = true;
     enableLocalDB = true;
