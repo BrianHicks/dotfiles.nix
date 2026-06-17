@@ -34,6 +34,10 @@
     enable = true;
     host = "192.168.0.240";
     openFirewall = true;
+    environment = {
+      ENABLE_AUTOCOMPLETE_GENERATION = "False";
+      ENABLE_FOLLOW_UP_GENERATION = "False";
+    };
   };
 
   services.librechat = {
