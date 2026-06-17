@@ -37,6 +37,8 @@
     environment = {
       ENABLE_AUTOCOMPLETE_GENERATION = "False";
       ENABLE_FOLLOW_UP_GENERATION = "False";
+      ENABLE_TITLE_GENERATION = "False";
+      ENABLE_TAGS_GENERATION = "False";
     };
   };
 
