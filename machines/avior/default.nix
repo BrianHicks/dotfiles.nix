@@ -6,7 +6,7 @@
 {
   imports = [
     ./no-sleep.nix
-    ./ollama.nix
+    ./local-ai
     ./steam.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
