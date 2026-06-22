@@ -27,7 +27,7 @@
     };
 
     ik-llama-cpp = {
-      url = "github:ikawrakow/ik_llama.cpp?rev=6c00e87ac84404af588ad2e65935bd6f079c696f";
+      url = "github:ikawrakow/ik_llama.cpp?rev=b47b90d0be80981f6f476c997afbdfab99bba6c7";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
