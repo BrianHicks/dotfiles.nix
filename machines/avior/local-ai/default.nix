@@ -39,7 +39,7 @@
 
   services.open-webui = {
     enable = true;
-    host = "192.168.0.240";
+    host = "0.0.0.0";
     openFirewall = true;
     environment = {
       ENABLE_AUTOCOMPLETE_GENERATION = "False";
