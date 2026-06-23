@@ -14,6 +14,7 @@
       top-p = 0.95;
       min-p = 0;
       presence-penalty = 1.5;
+      frequency-penalty = 0.1;
 
       special = true;
       jinja = true;
