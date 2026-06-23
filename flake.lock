@@ -102,17 +102,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1782139990,
-        "narHash": "sha256-5gMczWvF/oItFYrYkl4MjOKEREMcWbbon8aADpVUKOE=",
+        "lastModified": 1782200268,
+        "narHash": "sha256-AH0WgOBCqg6cwVkjqx2aP6RufRdZt3fj1QJzz2tNZgE=",
         "owner": "ikawrakow",
         "repo": "ik_llama.cpp",
-        "rev": "b47b90d0be80981f6f476c997afbdfab99bba6c7",
+        "rev": "9eaf86a7c710be044d1dfc1f8ed612f413d37db5",
         "type": "github"
       },
       "original": {
         "owner": "ikawrakow",
         "repo": "ik_llama.cpp",
-        "rev": "b47b90d0be80981f6f476c997afbdfab99bba6c7",
+        "rev": "9eaf86a7c710be044d1dfc1f8ed612f413d37db5",
         "type": "github"
       }
     },
