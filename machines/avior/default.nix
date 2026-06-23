@@ -11,6 +11,7 @@
     ./local-ai
     ./no-sleep.nix
     ./steam.nix
+    ./tailscale.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
