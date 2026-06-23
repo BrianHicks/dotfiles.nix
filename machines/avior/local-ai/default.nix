@@ -48,6 +48,4 @@
       ENABLE_TAGS_GENERATION = "False";
     };
   };
-
-  networking.firewall.allowedTCPPorts = [ 3080 ];
 }
