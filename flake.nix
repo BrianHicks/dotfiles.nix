@@ -30,6 +30,12 @@
       url = "github:ikawrakow/ik_llama.cpp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
@@ -77,6 +83,8 @@
               })
             );
 
+            agenix = inputs.agenix.packages.${system}.default;
+
             # source only
             learning-opportunities = learning-opportunities;
           })
@@ -117,6 +125,7 @@
             disko.nixosModules.disko
             hostPath
             home-manager.nixosModules.home-manager
+            inputs.agenix.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
