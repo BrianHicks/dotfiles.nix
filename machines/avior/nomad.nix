@@ -30,10 +30,19 @@
       plugin = [
         {
           nomad-driver-podman = {
-            config = [{
-              # https://github.com/hashicorp/nomad-driver-podman
-            }];
+            config = [
+              {
+                # https://github.com/hashicorp/nomad-driver-podman
+              }
+            ];
           };
+        }
+      ];
+
+      telemetry = [
+        {
+          publish_allocation_metrics = true;
+          publish_node_metrics = true;
         }
       ];
     };
