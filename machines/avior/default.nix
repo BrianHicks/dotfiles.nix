@@ -8,9 +8,11 @@
     ./_1password.nix
     ./disk-config.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    ./k3s.nix
+    # ./k3s.nix
     ./local-ai
     ./no-sleep.nix
+    ./nomad.nix
+    ./podman.nix
     ./steam.nix
     ./tailscale.nix
   ];
