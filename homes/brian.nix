@@ -30,6 +30,7 @@
             ../dotfiles/backrest
             ../dotfiles/bambu-studio
             ../dotfiles/gh
+            ../dotfiles/nomad
             ../dotfiles/signal
             ../dotfiles/steam
           ]
