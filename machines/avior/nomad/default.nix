@@ -29,6 +29,8 @@
         options."driver.blacklist" = "docker";
       };
 
+      acl.enabled = true;
+
       tls = [
         {
           http = true;
