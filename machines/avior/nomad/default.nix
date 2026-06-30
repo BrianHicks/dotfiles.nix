@@ -1,4 +1,6 @@
 { pkgs, config, ... }: {
+  age.secrets."global-server-nomad-key.pem".file = ../../../secrets/global-server-nomad-key.pem.age;
+
   services.nomad = {
     enable = true;
 
@@ -26,6 +28,20 @@
         # but... it still works!
         options."driver.blacklist" = "docker";
       };
+
+      tls = [
+        {
+          http = true;
+          rpc = true;
+
+          ca_file = ./nomad-agent-ca.pem;
+          cert_file = ./global-server-nomad.pem;
+          key_file = config.age.secrets."global-server-nomad-key.pem".path;
+
+          verify_server_hostname = true;
+          verify_https_client = false;
+        }
+      ];
 
       plugin = [
         {

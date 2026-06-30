@@ -11,7 +11,7 @@
     # ./k3s.nix
     ./local-ai
     ./no-sleep.nix
-    ./nomad.nix
+    ./nomad
     ./podman.nix
     ./steam.nix
     ./tailscale.nix
