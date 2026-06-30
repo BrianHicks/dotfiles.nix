@@ -3,7 +3,10 @@ let
 
   avior = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP95a9BGO3m+97xul/OZ8wuyYEbaCY91V9jj043AQ4hX";
 
-  default = [brian avior];
+  default = [
+    brian
+    avior
+  ];
 in
 {
   "tailscale-key.age".publicKeys = default;
