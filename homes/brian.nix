@@ -25,7 +25,6 @@
       profileImports =
         if specialArgs.profile == "home" then
           [
-            ../dotfiles/agenix
             ../dotfiles/aws
             ../dotfiles/backrest
             ../dotfiles/bambu-studio

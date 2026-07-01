@@ -5,10 +5,6 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    disko.url = "github:nix-community/disko";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,17 +21,6 @@
       url = "github:DrCatHicks/learning-opportunities";
       flake = false;
     };
-
-    ik-llama-cpp = {
-      url = "github:ikawrakow/ik_llama.cpp";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
   };
 
   outputs =
@@ -45,10 +30,8 @@
       flake-utils,
       crit,
       learning-opportunities,
-      disko,
-      ik-llama-cpp,
       ...
-    }@inputs:
+    }:
     let
       mkOverlays =
         system:
@@ -68,22 +51,6 @@
             mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
             crit = crit.packages.${system}.crit;
-
-            ik-llama-cpp = (
-              ik-llama-cpp.packages.${system}.default.overrideAttrs (old: {
-                NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -mavx2 -mavxvnni -mfma -mf16c";
-
-                cmakeFlags = old.cmakeFlags ++ [
-                  "-DGGML_AVX2=ON"
-                  "-DGGML_AVX_VNNI=ON"
-                  "-DGGML_FMA=ON"
-                  "-DGGML_F16C=ON"
-                  "-DGGML_OPENMP=ON"
-                ];
-              })
-            );
-
-            agenix = inputs.agenix.packages.${system}.default;
 
             # source only
             learning-opportunities = learning-opportunities;
@@ -111,47 +78,12 @@
             inherit profile;
           };
         };
-
-      mkHost =
-        hostPath:
-        nixpkgs.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = mkOverlays system;
-            config.allowUnfree = true;
-          };
-          modules = [
-            disko.nixosModules.disko
-            hostPath
-            home-manager.nixosModules.home-manager
-            inputs.agenix.nixosModules.default
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.sharedModules = [
-                ./modules/homebrew
-              ];
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                profile = "home";
-                hostname = baseNameOf hostPath;
-              };
-
-              home-manager.users.anne = ./homes/anne.nix;
-              home-manager.users.brian = ./homes/brian.nix;
-              home-manager.users.nate = ./homes/nate.nix;
-            }
-          ];
-        };
     in
     {
       homeConfigurations = {
         home = mkHomeConfiguration "aarch64-darwin" "home";
         work = mkHomeConfiguration "aarch64-darwin" "work";
       };
-
-      nixosConfigurations.avior = mkHost ./machines/avior;
     }
     // flake-utils.lib.eachDefaultSystem (
       system:
