@@ -89,20 +89,13 @@
     in
     commonImports ++ profileImports;
 
-  home.shellAliases =
-    if pkgs.stdenv.isDarwin then
-      {
-        # Home-manager commands
-        hm = "home-manager";
-        hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
-        hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
-        hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
-      }
-    else
-      {
-        hmb = "nixos-rebuild build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.hostname}";
-        hms = "nixos-rebuild switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.hostname} --sudo";
-      };
+  home.shellAliases = lib.mkIf pkgs.stdenv.isDarwin {
+    # Home-manager commands
+    hm = "home-manager";
+    hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+    hmb = "home-manager build --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+    hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
+  };
 
   nix.package = lib.mkIf pkgs.stdenv.isDarwin pkgs.nix;
 
