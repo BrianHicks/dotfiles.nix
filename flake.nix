@@ -24,17 +24,13 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      flake-utils,
-      crit,
-      learning-opportunities,
-      ...
-    }:
+    inputs:
     let
       mkOverlays =
-        system:
+        {
+          system ? "x86_64-linux",
+          nixpkgs ? inputs.nixpkgs,
+        }:
         let
           pkgs = import nixpkgs { inherit system; };
         in
@@ -50,51 +46,78 @@
 
             mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
-            crit = crit.packages.${system}.crit;
+            crit = inputs.crit.packages.${system}.crit;
 
             # source only
-            learning-opportunities = learning-opportunities;
+            learning-opportunities = inputs.learning-opportunities;
           })
         ];
 
-      mkHomeConfiguration =
-        system: profile:
-        home-manager.lib.homeManagerConfiguration {
+      homeModuleSetup =
+        {
+          system ? "aarch64-darwin",
+          extraSpecialArgs ? { },
+          nixpkgs ? inputs.nixpkgs,
+        }:
+        {
           pkgs = import nixpkgs {
             inherit system;
-            overlays = mkOverlays system;
+            overlays = mkOverlays { inherit system; };
           };
 
           # Specify your home configuration modules here, for example,
           # the path to your home.nix.
           modules = [
-            ./homes/brian.nix
             ./modules/homebrew
           ];
 
           # Optionally use extraSpecialArgs
           # to pass through arguments to home.nix
-          extraSpecialArgs = {
-            inherit profile;
+          inherit extraSpecialArgs;
+        };
+
+      mkHomeConfiguration =
+        {
+          system ? "aarch64-darwin",
+          profile,
+        }:
+        let
+          base = homeModuleSetup {
+            system = system;
+            extraSpecialArgs.profile = profile;
           };
+        in
+        inputs.home-manager.lib.homeManagerConfiguration {
+          inherit (base) pkgs extraSpecialArgs;
+          modules = [ ./homes/brian.nix ] ++ base.modules;
         };
     in
     {
+      inherit mkOverlays homeModuleSetup;
+
+      homeModules = {
+        anne = ./homes/anne.nix;
+        brian = ./homes/brian.nix;
+        nate = ./homes/nate.nix;
+      };
+
       homeConfigurations = {
-        home = mkHomeConfiguration "aarch64-darwin" "home";
-        work = mkHomeConfiguration "aarch64-darwin" "work";
+        home = mkHomeConfiguration { profile = "home"; };
+        work = mkHomeConfiguration { profile = "work"; };
       };
     }
-    // flake-utils.lib.eachDefaultSystem (
+    // inputs.flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs {
+        pkgs = import inputs.nixpkgs {
           inherit system;
 
           # we need overlays even in the dev-shell home-manager because we want
           # to use the exact home-manager version from the flake, not whatever
           # one happens to be upstream in nixpkgs.
-          overlays = mkOverlays system;
+          overlays = mkOverlays {
+            inherit system;
+          };
         };
       in
       {
