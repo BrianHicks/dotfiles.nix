@@ -26,7 +26,7 @@
   outputs =
     inputs:
     let
-      mkOverlays =
+      mkOverlay =
         {
           system ? "x86_64-linux",
           nixpkgs ? inputs.nixpkgs,
@@ -34,24 +34,22 @@
         let
           pkgs = import nixpkgs { inherit system; };
         in
-        [
-          (final: prev: {
-            git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
+        (final: prev: {
+          git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
 
-            git-hclone = pkgs.callPackage ./pkgs/git-hclone { };
+          git-hclone = pkgs.callPackage ./pkgs/git-hclone { };
 
-            homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync { };
+          homebrew-sync = pkgs.callPackage ./pkgs/homebrew-sync { };
 
-            list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
+          list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
 
-            mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
+          mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
-            crit = inputs.crit.packages.${system}.crit;
+          crit = inputs.crit.packages.${system}.crit;
 
-            # source only
-            learning-opportunities = inputs.learning-opportunities;
-          })
-        ];
+          # source only
+          learning-opportunities = inputs.learning-opportunities;
+        });
 
       homeModuleSetup =
         {
@@ -62,7 +60,7 @@
         {
           pkgs = import nixpkgs {
             inherit system;
-            overlays = mkOverlays { inherit system; };
+            overlays = [ (mkOverlay { inherit system; }) ];
           };
 
           # Specify your home configuration modules here, for example,
@@ -93,7 +91,7 @@
         };
     in
     {
-      inherit mkOverlays homeModuleSetup;
+      inherit mkOverlay homeModuleSetup;
 
       homeModules = {
         anne = ./homes/anne.nix;
@@ -115,7 +113,7 @@
           # we need overlays even in the dev-shell home-manager because we want
           # to use the exact home-manager version from the flake, not whatever
           # one happens to be upstream in nixpkgs.
-          overlays = mkOverlays {
+          overlays = mkOverlay {
             inherit system;
           };
         };
