@@ -1,7 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+let
+  plugins = {
+    crit-integration = "${pkgs.crit.src}/integrations/claude-code";
+    learning-opportunities = "${pkgs.learning-opportunities}/learning-opportunities";
+    learning-opportunities-auto = "${pkgs.learning-opportunities}/learning-opportunities-auto";
+  };
+in
 {
   # For claude-code
   nixpkgs.config.allowUnfree = true;
+
+  assertions = map (attr: {
+    message = "claude-code: plugin \`${attr.name}\` path must exist";
+    assertion = builtins.pathExists attr.value;
+  }) (lib.attrsToList plugins);
 
   programs.claude-code = {
     enable = true;
@@ -22,11 +34,6 @@
       4. Re-snapshot after page changes
     '';
 
-    plugins = [
-      "${pkgs.crit.src}/integrations/claude-code"
-      "${pkgs.learning-opportunities}/learning-opportunities"
-      "${pkgs.learning-opportunities}/learning-opportunities-auto"
-    ];
+    plugins = builtins.attrValues plugins;
   };
-
 }
