@@ -39,9 +39,7 @@
         name = "oMLX (local)";
         options.baseURL = "http://localhost:10378/v1";
 
-        models.gpt-oss-20b-MXFP4-Q8.name = "GPT OSS";
         models."Qwen3.6-35B-a3B-4bit".name = "Qwen 3.6";
-        models."gemma-4-26B-a4B-it-MLX-8bit".name = "Gemma 26B 8-bit";
       };
     };
   };
