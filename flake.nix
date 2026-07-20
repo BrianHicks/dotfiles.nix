@@ -35,6 +35,8 @@
           pkgs = import nixpkgs { inherit system; };
         in
         (final: prev: {
+          crit = inputs.crit.packages.${system}.crit;
+
           git-gclone = pkgs.callPackage ./pkgs/git-gclone { };
 
           git-hclone = pkgs.callPackage ./pkgs/git-hclone { };
@@ -44,8 +46,6 @@
           list-python-tests = pkgs.callPackage ./pkgs/list-python-tests { };
 
           mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
-
-          crit = inputs.crit.packages.${system}.crit;
 
           # source only
           learning-opportunities = inputs.learning-opportunities;
