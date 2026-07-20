@@ -48,5 +48,6 @@
     pkgs.openspec
     pkgs.crit
     pkgs.agent-browser
+    pkgs.rtk # needs manual setup: rtk init --opencode -g
   ];
 }

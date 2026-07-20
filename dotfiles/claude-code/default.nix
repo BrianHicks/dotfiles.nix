@@ -23,7 +23,7 @@ in
     skills = ../robot-friends/skills;
 
     context = ''
-      ## Browser Automation
+      # Browser Automation
 
       Use `agent-browser` for web automation. Run `agent-browser --help` for all commands.
 
@@ -32,8 +32,24 @@ in
       2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
       3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
       4. Re-snapshot after page changes
+
+      ${builtins.readFile "${pkgs.rtk.src}/hooks/claude/rtk-awareness.md"}
     '';
 
     plugins = builtins.attrValues plugins;
+
+    hooks."rtk-rewrite.sh" = builtins.readFile "${pkgs.rtk.src}/hooks/claude/rtk-rewrite.sh";
+
+    settings.hooks.PreToolUse = [
+      {
+        matcher = "Bash";
+        hooks = [
+          {
+            type = "command";
+            command = "rtk hook claude";
+          }
+        ];
+      }
+    ];
   };
 }
