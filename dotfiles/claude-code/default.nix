@@ -36,7 +36,7 @@ in
       ${builtins.readFile "${pkgs.rtk.src}/hooks/claude/rtk-awareness.md"}
     '';
 
-    plugins = builtins.attrValues plugins;
+    plugins = plugins;
 
     hooks."rtk-rewrite.sh" = builtins.readFile "${pkgs.rtk.src}/hooks/claude/rtk-rewrite.sh";
 
