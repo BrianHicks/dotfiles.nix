@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786955524,
-        "narHash": "sha256-bzZajKZpIwkdVht1yEVt3VqgUz3KB900IzyAXhVWAjY=",
+        "lastModified": 1786957805,
+        "narHash": "sha256-H5kXHi8frq6/CwGYFFvYsleDF56T6OfIDiV9yA3rUf8=",
         "owner": "tomasz-tomczyk",
         "repo": "crit",
-        "rev": "b9c5f15481898466ef0661e242e2d272941d5a85",
+        "rev": "0a5be71c7ca8612b7ebea190eb05a78a42f9d912",
         "type": "github"
       },
       "original": {
@@ -76,11 +76,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1786719841,
-        "narHash": "sha256-QcpQOT0NQEFkI77t+YXPZqDJc35iIodG7zinieOwFUg=",
+        "lastModified": 1786858016,
+        "narHash": "sha256-Vczr2zxD0orq6N2QQe5uqOGF7TRDcQJRRuAcsdHr4kg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8be7bd0c83f12e2e3bbba07c9044d6fed9e66f7f",
+        "rev": "54ba4bcec4043e72a4006d825e0d7aff5562008f",
         "type": "github"
       },
       "original": {
