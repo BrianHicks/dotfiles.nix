@@ -72,6 +72,7 @@
         ../dotfiles/mise
         ../dotfiles/nix
         ../dotfiles/obsidian
+        ../dotfiles/omnifocus
         ../dotfiles/pv
         ../dotfiles/python
         ../dotfiles/raycast
