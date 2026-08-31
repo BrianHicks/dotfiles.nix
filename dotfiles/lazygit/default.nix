@@ -21,10 +21,11 @@
         autoFetch = false;
         autoRefresh = false;
 
-        pagers = [
+        diffRenderers = [
           {
             colorArg = "always";
-            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+            command = "${pkgs.difftastic}/bin/difft --color=always";
+            type = "extDiff";
           }
         ];
       };
