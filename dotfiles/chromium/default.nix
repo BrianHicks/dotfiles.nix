@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 {
-  # use ungoogled-chromium on macos since chromium is deprecated in homebrew
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "ungoogled-chromium" ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "google-chrome" ];
 
   programs.chromium = lib.mkIf (!pkgs.stdenv.isDarwin) {
     enable = true;
@@ -11,9 +10,6 @@
 
       # Kagi search
       { id = "cdglnehniifkbagbbombnjghhcihifij"; }
-
-      # 1Password
-      { id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa"; }
     ];
   };
 }
