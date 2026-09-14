@@ -1,8 +1,8 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "google-chrome" ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ "google-chrome" ];
 
-  programs.chromium = lib.mkIf (!pkgs.stdenv.isDarwin) {
+  programs.chromium = lib.mkIf (!pkgs.stdenv.hostPlatform.isDarwin) {
     enable = true;
     extensions = [
       # uBlock Origin Lite

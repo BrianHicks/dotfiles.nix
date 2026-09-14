@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "zed" ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ "zed" ];
 
   # Needed as global deps for Zed in a work project
   home.packages = [
@@ -12,7 +12,7 @@
   programs.zed-editor = {
     enable = true;
 
-    package = lib.mkIf pkgs.stdenv.isDarwin null; # Managed by homebrew
+    package = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin null; # Managed by homebrew
 
     # names: https://github.com/zed-industries/extensions/tree/main/extensions
     extensions = [

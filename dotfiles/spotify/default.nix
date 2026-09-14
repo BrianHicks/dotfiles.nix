@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "spotify" ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ "spotify" ];
 
-  home.packages = lib.mkIf (!pkgs.stdenv.isDarwin) [ pkgs.spotify ];
+  home.packages = lib.mkIf (!pkgs.stdenv.hostPlatform.isDarwin) [ pkgs.spotify ];
 }

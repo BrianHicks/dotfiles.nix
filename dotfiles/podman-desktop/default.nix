@@ -1,4 +1,4 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "podman-desktop" ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ "podman-desktop" ];
 }

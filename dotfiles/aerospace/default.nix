@@ -1,5 +1,5 @@
 { pkgs, lib, ... }:
-lib.mkIf pkgs.stdenv.isDarwin {
+lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
   homebrew = {
     taps = [ "nikitabobko/tap" ];
     formulae = [ "aerospace" ];

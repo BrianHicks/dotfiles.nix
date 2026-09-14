@@ -1,4 +1,4 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "steam" ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ "steam" ];
 }

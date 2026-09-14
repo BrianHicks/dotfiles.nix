@@ -1,5 +1,5 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [ "obsidian" ];
-  home.packages = lib.mkIf (!pkgs.stdenv.isDarwin) [ pkgs.obsidian ];
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ "obsidian" ];
+  home.packages = lib.mkIf (!pkgs.stdenv.hostPlatform.isDarwin) [ pkgs.obsidian ];
 }

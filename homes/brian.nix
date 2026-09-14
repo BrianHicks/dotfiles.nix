@@ -8,8 +8,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = if pkgs.stdenv.isDarwin then "brianhicks" else "brian";
-  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/brianhicks" else "/home/brian";
+  home.username = if pkgs.stdenv.hostPlatform.isDarwin then "brianhicks" else "brian";
+  home.homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/brianhicks" else "/home/brian";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -90,7 +90,7 @@
     in
     commonImports ++ profileImports;
 
-  home.shellAliases = lib.mkIf pkgs.stdenv.isDarwin {
+  home.shellAliases = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     # Home-manager commands
     hm = "home-manager";
     hms = "home-manager switch --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
@@ -98,7 +98,7 @@
     hmn = "home-manager news --flake $HOME/code/BrianHicks/dotfiles.nix#${specialArgs.profile}";
   };
 
-  nix.package = lib.mkIf pkgs.stdenv.isDarwin pkgs.nix;
+  nix.package = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin pkgs.nix;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

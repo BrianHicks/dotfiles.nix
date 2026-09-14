@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  homebrew.formulae = lib.mkIf pkgs.stdenv.isDarwin [
+  homebrew.formulae = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [
     "1password"
     "1password-cli"
   ];
