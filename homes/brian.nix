@@ -84,6 +84,7 @@
         ../dotfiles/tofu
         ../dotfiles/tree
         ../dotfiles/watch
+        ../dotfiles/xz
         ../dotfiles/zed
         ../dotfiles/zellij
         ../dotfiles/zoom
