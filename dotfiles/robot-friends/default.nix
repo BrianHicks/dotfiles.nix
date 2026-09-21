@@ -50,6 +50,5 @@
     pkgs.crit
     pkgs.agent-browser
     pkgs.ncr
-    pkgs.rtk # needs manual setup: rtk init --opencode -g
   ];
 }
