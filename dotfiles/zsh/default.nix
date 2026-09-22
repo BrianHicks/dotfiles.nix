@@ -26,10 +26,6 @@
         ./find-test.zsh
       ]
     );
-
-    envExtra = ''
-      export EDITOR=${pkgs.neovim}/bin/nvim
-    '';
   };
 
   home.shellAliases = {

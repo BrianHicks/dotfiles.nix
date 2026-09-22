@@ -63,6 +63,7 @@
         ../dotfiles/glab
         ../dotfiles/gpg
         ../dotfiles/graphviz
+        ../dotfiles/helix
         ../dotfiles/hyperfine
         ../dotfiles/jj
         ../dotfiles/json
@@ -84,6 +85,7 @@
         ../dotfiles/tree
         ../dotfiles/watch
         ../dotfiles/zed
+        ../dotfiles/zellij
         ../dotfiles/zoom
         ../dotfiles/zsh
       ];

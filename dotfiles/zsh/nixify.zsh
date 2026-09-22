@@ -33,7 +33,7 @@ nixify() {
     direnv allow
   fi
 
-  ${EDITOR:-nvim} flake.nix
+  ${EDITOR:-hx} flake.nix
 
   # we need to add at least flake.nix so that Nix can see it
   git add flake.nix
