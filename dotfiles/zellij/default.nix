@@ -48,9 +48,11 @@ in
         locked {
           // allow navigation even when locked
           bind "Alt h" { MoveFocusOrTab "Left"; }
-          bind "Alt j" { MoveFocusOrTab "Up"; }
-          bind "Alt k" { MoveFocusOrTab "Down"; }
+          bind "Alt j" { MoveFocus "Down"; }
+          bind "Alt k" { MoveFocus "Up"; }
           bind "Alt l" { MoveFocusOrTab "Right"; }
+          bind "Alt -" { Resize "Decrease"; }
+          bind "Alt =" { Resize "Increase"; }
         }
 
         normal {
