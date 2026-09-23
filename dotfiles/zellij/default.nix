@@ -62,7 +62,7 @@ in
         }
 
         tab {
-          bind "r" { NewTab { layout "hzi"; name "hzi"; }; SwitchToMode "normal"; }
+          bind "r" { NewTab { layout "hzi"; name "servers"; }; SwitchToMode "normal"; }
         }
       }
     '';
