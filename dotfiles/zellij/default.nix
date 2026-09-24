@@ -42,7 +42,14 @@ in
 
           // This is a bit provisional, but I *think* I want it even when
           // locked (which practically means whenever I'm in Helix)
-          bind "Alt g" { Run "${vcs-ui}" { floating true; close_on_exit true; }; }
+          bind "Alt g" {
+            Run "${vcs-ui}" {
+              floating true
+              close_on_exit true
+              width "80%"
+              height "80%"
+            };
+          }
         }
 
         locked {
