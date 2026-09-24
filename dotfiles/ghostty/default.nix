@@ -5,7 +5,7 @@
     enableZshIntegration = true;
 
     settings = {
-      theme = "ayu";
+      theme = "Adventure";
       macos-option-as-alt = true;
     };
 
