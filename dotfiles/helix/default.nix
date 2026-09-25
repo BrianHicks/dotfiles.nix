@@ -13,6 +13,12 @@
         inline-diagnostics = {
           cursor-line = "warning";
         };
+
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
       };
 
       keys.insert = {
