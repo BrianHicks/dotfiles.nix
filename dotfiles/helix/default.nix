@@ -19,6 +19,9 @@
           normal = "block";
           select = "underline";
         };
+
+        # need .github, .rfcs, etc
+        file-picker.hidden = false;
       };
 
       keys.insert = {
