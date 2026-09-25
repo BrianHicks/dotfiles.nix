@@ -5,7 +5,7 @@
     enableZshIntegration = true;
 
     settings = {
-      theme = "Adventure";
+      theme = "Adwaita Dark";
       macos-option-as-alt = true;
     };
 

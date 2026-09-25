@@ -4,7 +4,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "base16_default";
+      theme = "adwaita-dark";
 
       editor = {
         soft-wrap.enable = true;
