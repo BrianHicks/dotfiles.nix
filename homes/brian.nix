@@ -9,7 +9,8 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = if pkgs.stdenv.hostPlatform.isDarwin then "brianhicks" else "brian";
-  home.homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/brianhicks" else "/home/brian";
+  home.homeDirectory =
+    if pkgs.stdenv.hostPlatform.isDarwin then "/Users/brianhicks" else "/home/brian";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -70,6 +71,7 @@
         ../dotfiles/k9s
         ../dotfiles/lazygit
         ../dotfiles/lf
+        ../dotfiles/mergiraf
         ../dotfiles/mise
         ../dotfiles/nix
         ../dotfiles/obsidian
