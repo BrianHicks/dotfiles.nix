@@ -86,6 +86,8 @@
         };
 
         clojure-lsp.command = "${pkgs.clojure-lsp}/bin/clojure-lsp";
+
+        rust-analyzer.command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
       };
 
       language = [
