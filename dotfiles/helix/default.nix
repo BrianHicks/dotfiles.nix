@@ -84,6 +84,8 @@
           command = "${pkgs.ruff}/bin/ruff";
           args = [ "server" ];
         };
+
+        clojure-lsp.command = "${pkgs.clojure-lsp}/bin/clojure-lsp";
       };
 
       language = [
