@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -80,25 +80,22 @@
             };
           };
 
-        ruff = {
-          command = "${pkgs.ruff}/bin/ruff";
-          args = [ "server" ];
-        };
+        ruff.command = lib.getExe pkgs.ruff;
 
-        clojure-lsp.command = "${pkgs.clojure-lsp}/bin/clojure-lsp";
+        clojure-lsp.command = lib.getExe pkgs.clojure-lsp;
 
-        rust-analyzer.command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
 
-        typescript-language-server.command = "${pkgs.typescript-language-server}/bin/typescript-language-server";
+        typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
 
-        vscode-css-language-server.command = "${pkgs.vscode-css-languageserver}/bin/vscode-css-languageserver";
+        vscode-css-language-server.command = lib.getExe pkgs.vscode-css-languageserver;
       };
 
       language = [
         {
           name = "nix";
           auto-format = true;
-          formatter.command = "${pkgs.nixfmt-tree}/bin/nixfmt-tree";
+          formatter.command = lib.getExe pkgs.nixfmt-tree;
         }
         {
           name = "python";
