@@ -88,6 +88,10 @@
         clojure-lsp.command = "${pkgs.clojure-lsp}/bin/clojure-lsp";
 
         rust-analyzer.command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+
+        typescript-language-server.command = "${pkgs.typescript-language-server}/bin/typescript-language-server";
+
+        vscode-css-language-server.command = "${pkgs.vscode-css-languageserver}/bin/vscode-css-languageserver";
       };
 
       language = [
