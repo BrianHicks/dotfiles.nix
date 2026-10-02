@@ -21,7 +21,6 @@
     initContent = builtins.concatStringsSep "\n\n# ---\n\n" (
       map builtins.readFile [
         ./prompt.zsh
-        ./nixify.zsh
         ./local-bin.zsh
         ./find-test.zsh
       ]

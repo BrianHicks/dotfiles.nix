@@ -40,13 +40,11 @@
             ../dotfiles/mcp-work
             ../dotfiles/mypy-type-work
             ../dotfiles/podman-desktop
-            ../dotfiles/stencil
           ]
         else
           [ ];
       commonImports = [
         ../dotfiles/1password
-        ../dotfiles/aerospace
         ../dotfiles/anki
         ../dotfiles/chromium
         ../dotfiles/container
