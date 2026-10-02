@@ -21,6 +21,11 @@
       url = "github:DrCatHicks/learning-opportunities";
       flake = false;
     };
+
+    pi = {
+      url = "github:lukasl-dev/pi.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -69,6 +74,7 @@
           # the path to your home.nix.
           modules = [
             ./modules/homebrew
+            inputs.pi.homeModules.default
           ];
 
           # Optionally use extraSpecialArgs

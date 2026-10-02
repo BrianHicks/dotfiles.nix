@@ -52,10 +52,10 @@
         ../dotfiles/container
         ../dotfiles/dictation
         ../dotfiles/diffoscope
-        ../dotfiles/direnv
-        ../dotfiles/docker-desktop
         ../dotfiles/difftastic
+        ../dotfiles/direnv
         ../dotfiles/discord
+        ../dotfiles/docker-desktop
         ../dotfiles/dropbox
         ../dotfiles/element
         ../dotfiles/fzf
@@ -76,6 +76,7 @@
         ../dotfiles/nix
         ../dotfiles/obsidian
         ../dotfiles/omnifocus
+        ../dotfiles/pi
         ../dotfiles/pv
         ../dotfiles/python
         ../dotfiles/raycast
