@@ -95,7 +95,7 @@
         {
           name = "nix";
           auto-format = true;
-          formatter.command = lib.getExe pkgs.nixfmt-tree;
+          formatter.command = "${pkgs.nixfmt-tree}/bin/nixfmt-tree";
         }
         {
           name = "python";
