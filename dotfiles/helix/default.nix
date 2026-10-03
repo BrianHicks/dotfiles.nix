@@ -84,8 +84,6 @@
 
         clojure-lsp.command = lib.getExe pkgs.clojure-lsp;
 
-        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
-
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
 
         vscode-css-language-server.command = lib.getExe pkgs.vscode-css-languageserver;
