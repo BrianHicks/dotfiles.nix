@@ -57,6 +57,7 @@
         ../dotfiles/discord
         ../dotfiles/docker-desktop
         ../dotfiles/dropbox
+        ../dotfiles/dust
         ../dotfiles/element
         ../dotfiles/fzf
         ../dotfiles/ghostty
