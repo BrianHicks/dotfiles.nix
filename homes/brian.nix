@@ -91,6 +91,7 @@
         ../dotfiles/zellij
         ../dotfiles/zoom
         ../dotfiles/zsh
+        ../dotfiles/zstd
       ];
     in
     commonImports ++ profileImports;
