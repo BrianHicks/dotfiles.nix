@@ -9,7 +9,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
-      "before 12pm on monday"
+      "before 8pm on monday"
     ]
   }
 }
