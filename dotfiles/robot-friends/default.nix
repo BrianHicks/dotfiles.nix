@@ -39,6 +39,5 @@
     pkgs.openspec
     pkgs.crit
     pkgs.agent-browser
-    pkgs.ncr
   ];
 }

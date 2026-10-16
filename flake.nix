@@ -52,8 +52,6 @@
 
           mypy-error-count-score = pkgs.callPackage ./pkgs/mypy-error-count-score { };
 
-          ncr = pkgs.callPackage ./pkgs/ncr { };
-
           # source only
           learning-opportunities = inputs.learning-opportunities;
         });
