@@ -3,6 +3,38 @@
     enable = true;
     defaultEditor = true;
 
+    package = pkgs.symlinkJoin {
+      name = "helix-venv";
+      paths = [ pkgs.helix ];
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/hx --run '
+          # source venv automatically first if available to get language servers
+          if [ -z "$VIRTUAL_ENV" ]; then
+            for arg in "$@"; do
+              case "$arg" in
+                -*) ;;
+                *) target="$arg"; break ;;
+              esac
+            done
+            if [ -d "''${target:-$PWD}" ]; then
+              dir=$(cd "''${target:-$PWD}" && pwd)
+            else
+              dir=$(cd "$(dirname "$target")" 2>/dev/null && pwd || pwd)
+            fi
+            while [ "$dir" != "/" ]; do
+              if [ -f "$dir/.venv/pyvenv.cfg" ]; then
+                export VIRTUAL_ENV="$dir/.venv"
+                export PATH="$VIRTUAL_ENV/bin:$PATH"
+                break
+              fi
+              dir=$(dirname "$dir")
+            done
+          fi
+        '
+      '';
+    };
+
     settings = {
       theme = "adwaita-dark";
 
@@ -32,53 +64,10 @@
     languages = {
       # defaults at https://github.com/helix-editor/helix/blob/master/languages.toml
       language-server = {
-        pylsp =
-          let
-            # primary project is still on Python 3.13. Just use that for the
-            # sake of consistency.
-            pylspEnv = pkgs.python313.withPackages (ps: [
-              ps.python-lsp-server
-              ps.pylsp-mypy
-            ]);
-
-            # Use project mypy and plugins first, then the global one.
-            mypyWrapper = pkgs.writeShellScript "mypy-prefer-venv" ''
-              if [ -n "$VIRTUAL_ENV" ] && [ -x "$VIRTUAL_ENV/bin/mypy" ]; then
-                exec "$VIRTUAL_ENV/bin/mypy" "$@"
-              fi
-
-              for arg in "$@"; do
-                case "$arg" in
-                  -*) ;;
-                  *) target="$arg" ;;
-                esac
-              done
-
-              dir=$(dirname "''${target:-$PWD}")
-              while [ "$dir" != "/" ]; do
-                if [ -x "$dir/.venv/bin/mypy" ]; then
-                  exec "$dir/.venv/bin/mypy" "$@"
-                fi
-                dir=$(dirname "$dir")
-              done
-
-              exec "${pylspEnv}/bin/mypy" "$@"
-            '';
-          in
-          {
-            command = "${pylspEnv}/bin/pylsp";
-
-            # required for pylsp-mypy to honor mypy_command. Note that this
-            # also lets a project's pyproject.toml set mypy_command, so opening
-            # an untrusted repo can run its code.
-            environment.PYLSP_MYPY_ALLOW_DANGEROUS_CODE_EXECUTION = "1";
-
-            config.pylsp.plugins.pylsp_mypy = {
-              enabled = true;
-              live_mode = true;
-              mypy_command = [ "${mypyWrapper}" ];
-            };
-          };
+        pylsp.config.pylsp.plugins.pylsp_mypy = {
+          enabled = true;
+          live_mode = true;
+        };
 
         ruff.command = lib.getExe pkgs.ruff;
 
@@ -98,11 +87,17 @@
         {
           name = "python";
           auto-format = true;
-          # ruff for linting + formatting, pylsp only for mypy
           language-servers = [
-            "pylsp"
+            {
+              name = "pylsp";
+              except-features = [ "format" ];
+            }
             "ruff"
           ];
+        }
+        {
+          name = "clojure";
+          auto-format = true;
         }
       ];
     };
