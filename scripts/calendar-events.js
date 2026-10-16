@@ -7,14 +7,14 @@ function formatDuration(seconds) {
   if (seconds < 60) {
     return `${seconds} seconds`;
   } else if (seconds < 3600) {
-    const mins = Math.floor(seconds / 60);
-    return mins === 1 ? "1 minute" : `${mins} minutes`;
+    const minutes = Math.floor(seconds / 60);
+    return minutes === 1 ? "1 minute" : `${minutes} minutes`;
   } else if (seconds < 86400) {
     const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds - hrs * 3600) / 60);
+    const minutes = Math.floor((seconds - hrs * 3600) / 60);
     const hPart = hrs === 1 ? "1 hour" : `${hrs} hours`;
-    if (mins === 0) return hPart;
-    const mPart = mins === 1 ? "1 minute" : `${mins} minutes`;
+    if (minutes === 0) return hPart;
+    const mPart = minutes === 1 ? "1 minute" : `${minutes} minutes`;
     return `${hPart} ${mPart}`;
   } else {
     const days = Math.floor(seconds / 86400);

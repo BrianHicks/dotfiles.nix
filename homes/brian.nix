@@ -47,6 +47,7 @@
         ../dotfiles/1password
         ../dotfiles/anki
         ../dotfiles/chromium
+        ../dotfiles/codebook
         ../dotfiles/container
         ../dotfiles/dictation
         ../dotfiles/diffoscope

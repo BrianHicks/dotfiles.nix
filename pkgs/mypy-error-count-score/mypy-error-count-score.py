@@ -68,7 +68,7 @@ def pagerank(
     graph: dict[str, set[str]],
     damping: float = 0.85,
     iterations: int = 100,
-    tol: float = 1e-8,
+    tolerance: float = 1e-8,
 ) -> dict[str, float]:
     nodes = list(graph)
     n = len(nodes)
@@ -89,7 +89,7 @@ def pagerank(
                 new_rank[node] += damping * rank[src] / out_count[src]
         diff = sum(abs(new_rank[node] - rank[node]) for node in nodes)
         rank = new_rank
-        if diff < tol:
+        if diff < tolerance:
             break
     return rank
 

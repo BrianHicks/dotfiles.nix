@@ -69,6 +69,11 @@
         typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
 
         vscode-css-language-server.command = lib.getExe pkgs.vscode-css-languageserver;
+
+        codebook = {
+          command = "${pkgs.codebook}/bin/codebook-lsp";
+          args = [ "serve" ];
+        };
       };
 
       language = [
@@ -76,14 +81,49 @@
           name = "nix";
           auto-format = true;
           formatter.command = "${pkgs.nixfmt-tree}/bin/nixfmt-tree";
+          language-servers = [
+            # built-in config
+            "nil"
+            "nixd"
+
+            # mine
+            "codebook"
+          ];
         }
         {
           name = "python";
           auto-format = true;
+          language-servers = [
+            "pylsp"
+            "codebook"
+          ];
         }
         {
           name = "clojure";
           auto-format = true;
+          language-servers = [
+            "clojure-lsp"
+            "codebook"
+          ];
+        }
+        {
+          name = "rust";
+          language-servers = [
+            "rust-analyzer"
+            "codebook"
+          ];
+        }
+        {
+          name = "markdown";
+          language-servers = [
+            # built-in config
+            "marksman"
+            "markdown-oxide"
+            "rumdl"
+
+            # mine
+            "codebook"
+          ];
         }
       ];
     };

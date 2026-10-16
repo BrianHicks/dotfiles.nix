@@ -49,7 +49,7 @@ def main(args):
         print(f"uninstalling {', '.join(extra_formulae)}")
         subprocess.check_call([args.homebrew_bin, "uninstall", *extra_formulae])
     if extra_taps:
-        print(f"untapping {', '.join(extra_taps)}")
+        print(f"un-tapping {', '.join(extra_taps)}")
         subprocess.check_call([args.homebrew_bin, "untap", *extra_taps])
 
 
