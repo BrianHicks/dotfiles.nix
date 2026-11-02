@@ -12,7 +12,7 @@ in
 {
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
+    enableZshIntegration = false; # no need to start a session in every shell
 
     layouts.hzi = ./layouts/hzi.kdl;
 
