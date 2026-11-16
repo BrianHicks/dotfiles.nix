@@ -8,5 +8,6 @@
 
   home.shellAliases = {
     "dir-diff" = "diffoscope --exclude-directory-metadata=yes";
+    "fe-diff" = "dir-diff --exclude='*.map'";
   };
 }
