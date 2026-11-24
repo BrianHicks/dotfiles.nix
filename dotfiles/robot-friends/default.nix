@@ -21,7 +21,11 @@
     tools = ./opencode/tools;
     skills = ./skills;
 
-    context = builtins.readFile ./browser-automation-context.md;
+    context = ''
+      ${builtins.readFile ../robot-friends/browser-automation-context.md}
+
+      ${builtins.readFile ../robot-friends/simplicity.md}
+    '';
 
     settings = {
       provider.omlx = {

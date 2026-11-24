@@ -22,7 +22,11 @@ in
     commandsDir = ./commands;
     skills = ../robot-friends/skills;
 
-    context = builtins.readFile ../robot-friends/browser-automation-context.md;
+    context = ''
+      ${builtins.readFile ../robot-friends/browser-automation-context.md}
+
+      ${builtins.readFile ../robot-friends/simplicity.md}
+    '';
 
     plugins = plugins;
   };
